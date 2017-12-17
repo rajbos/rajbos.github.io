@@ -2,4 +2,4 @@
 name: Rob Bos
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-theme: jekyll-theme-leap-day
+theme: jekyll-theme-cayman
