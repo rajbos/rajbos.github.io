@@ -6,6 +6,7 @@ layout: feed
 
 	<title>Rob's Blog</title>
 	<link href="https://rajbos.github.io/blog/atom.xml" rel="self"/>
+	<link href="{{ "/blog/atom.xml" | absolute_url }}" rel="self"/>
 	<link href="https://rajbos.github.io/blog"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
 	<id>https://rajbos.github.io/blog</id>
