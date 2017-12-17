@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Trying out Jekyll"
+title: "DotNetCore: Adding HTTPS to your MVC webapp"
 date: 2016-08-20
 ---
 <p>
@@ -56,7 +56,8 @@ public class HttpsRedirectMiddleware
 ```
 <p>
   I've added this right before the Mvc call:
-</p><
+</p>
+
 ``` c#
 services.AddMvc();
 ```
