@@ -10,4 +10,4 @@ missing on my current method (WithKnown)[https://withknown.com/], like RSS and G
 
 So far I like the easy setup (like: no installation whatsoever!) and the fact that it uses Jekyll to generate static pages.
 
-I started with the excelent guide of (Jonathan MCGlone)[http://jmcglone.com/guides/github-pages/].
+I started with the excelent guide of [Jonathan MCGlone](http://jmcglone.com/guides/github-pages/).
