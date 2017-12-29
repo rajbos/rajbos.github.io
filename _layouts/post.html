@@ -1,9 +1,16 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p class="meta">Date posted: <strong>{{ page.date | date_to_string }}</strong></p>
 
-<div class="post">
-  {{ content }}
+<div class="panel panel-default">
+  <div class=panel-heading>
+    <p class="meta">
+      Date posted: <strong>{{ page.date | date_to_string }}</strong>
+    </p>
+    {{ page.title }}
+  </div>
+
+  <div class="panel-body post">
+    {{ content }}
+  </div>
 </div>
