@@ -6,8 +6,8 @@ layout: feed
 
 	<title>Rob's Blog</title>
 	<link href="{{ "/blog/atom.xml" | absolute_url }}" rel="self"/>
-	<link href="{{ "/blog/" | absolute_url }}
-        <updated>{{ site.time | date_to_xmlschema }}</updated>
+	<link href="{{ "/blog/" | absolute_url }}" />
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
 	<id>{{ "/blog/" | absolute_url }}</id>
 	<author>
 		<name>Rob Bos</name>
