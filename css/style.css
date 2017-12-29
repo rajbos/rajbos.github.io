@@ -6,3 +6,12 @@
     line-height: 60px;
     background-color: #f5f5f5;
 }
+
+body{
+    background-image: url(../images/20171229_01.jpg);
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;    
+    background-size: cover;   
+}
