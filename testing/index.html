@@ -20,122 +20,234 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- styles -->
-<link href="../css/style.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+
+<!-- google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111364229-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-111364229-1');
+</script>
 
 </head>
 
 
-<body>   
-    <div class="content">
-    <div class="container"> 
-        <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand active" href="#">Robs blog</a>
-                  </div>
-              
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                      <li><a href="https://github.com/rajbos/">Github</a></li>                      
-                    </ul>                    
-                  </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-              </nav>
-    </div>
-    <div class="container ">
-
-        <div class="posts">
-
-
-        <div class="panel panel-default">
-        <div class="panel-heading">
-            <span>17 Dec 2017</span>
-        </div>
-        <div class="panel-body">
-
-        <p class="post-excerpt">
-
-        
-            Trying out Jekyll on top of GitHub pages as a new blogging platform. For know, I just needed a simple way to create posts, but add some stuff I am missing on my current method WithKnown, like RSS and Google...
-        
-        
-        </p>      
-        
-        <a href="/blog/2017/12/17/trying-out-jekyll-on-github-pages" title="Trying out Jekyll">Trying out Jekyll</a>
-        </div>
-        </div>
-
-        <div class="panel panel-default">
-        <div class="panel-heading">
-            <span>19 Nov 2017</span>
-        </div>
-        <div class="panel-body">
-
-        <p class="post-excerpt">
-
-        
-            After searching for the third time on how to do this, I thought it would be time to write about this here 😬. If you have an Azure App Service that for some reason should just display a message to...
-        
-        
-        </p>      
-        
-        <a href="/blog/2017/11/19/take-an-azure-app-service-offline" title="Azure App Service - a quick way to take your app Offline">Azure App Service - a quick way to take your app Offline</a>
-        </div>
-        </div>
-
-        <div class="panel panel-default">
-        <div class="panel-heading">
-            <span>20 Aug 2016</span>
-        </div>
-        <div class="panel-body">
-
-        <p class="post-excerpt">
-
-        
-            I wanted to use https in my dotnetcore application (v. 1.0.0-rc2-final) and had to dig around the web quite a bit to find the most recent and working method to accomplish this. Eventually a link in the MVC github site...
-        
-        
-        </p>      
-        
-        <a href="/blog/2016/08/20/dotnetcore-adding-https-to-your-mvc-webapp" title="DotNetCore: Adding HTTPS to your MVC webapp">DotNetCore: Adding HTTPS to your MVC webapp</a>
-        </div>
-        </div>
-
-        <div class="panel panel-default">
-        <div class="panel-heading">
-            <span>04 Jun 2016</span>
-        </div>
-        <div class="panel-body">
-
-        <p class="post-excerpt">
-
-        
-            Some links to important Visual Studio extensions for later reference:
-
-
-        Open Bin folder Visual Studio Extension: Visual Studio Gallery
-        Wakatime: wakatime.com
-        SlowCheetah Visual Studio Gallery
-        SonarLint sonarlint.org
-        T4MVC github.io
-        
-        
-        </p>      
-        
-        <a href="/blog/2016/06/04/links-to-visual-studio-extensions" title="Links to Visual Studio Extensions">Links to Visual Studio Extensions</a>
-        </div>
-        </div>
-
-        </div>
-    </div>
-</body>
+<body>
     
+    <div class="container"> 
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand active" href="https://rajbos.github.io/">Robs blog</a>
+                </div>
+            
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://github.com/rajbos/" target="_blank">Github</a></li>						
+                    <li><a href="https://twitter.com/robbos81/" target="_blank">Twitter</a></li>   
+                    <li><a href="https://rajbos.github.io/blog/atom.xml" target="_blank">RSS</a></li>                    
+                </ul>                    
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+    
+    <div class="container">
+
+    <div class="posts">
+
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>29 Dec 2017 - Using excerpts in Jekyll</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      I wanted to include at least some more information in the index page of my blog instead of just the publish date and title, so I searched around for some help to include an excerpt in Jekyll and found some help on this blog. The solution was very straightforward, but I’ll include it here for future reference. Index page In the index page, you can search the content of a...
+    
+    &nbsp;<a href="/blog/2017/12/29/jekyll-excerpts" title="Using excerpts in Jekyll">View post</a>      
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>17 Dec 2017 - Trying out Jekyll</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      Trying out Jekyll on top of GitHub pages as a new blogging platform. For know, I just needed a simple way to create posts, but add some stuff I am missing on my current method (WithKnown), like RSS and Google Analytics. So far I like the easy setup (like: no installation whatsoever!) and the fact that it uses Jekyll to generate static pages. I started with the excelent guide of...
+    
+    &nbsp;<a href="/blog/2017/12/17/trying-out-jekyll-on-github-pages" title="Trying out Jekyll">View post</a>      
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>19 Nov 2017 - Azure App Service - a quick way to take your app Offline</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      After searching for the third time on how to do this, I thought it would be time to write about this here 😬. If you have an Azure App Service that for some reason should just display a message to the user, indicating that it isn’t available, you can do this. I have had several reasons to do this: single app service host, without a deployment slot and a big...
+    
+    &nbsp;<a href="/blog/2017/11/19/take-an-azure-app-service-offline" title="Azure App Service - a quick way to take your app Offline">View post</a>      
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>20 Aug 2016 - DotNetCore: Adding HTTPS to your MVC webapp</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      I wanted to use https in my dotnetcore application (v. 1.0.0-rc2-final) and had to dig around the web quite a bit to find the most recent and working method to accomplish this. Eventually a link in the MVC github site lead to an example how to fix this (link). First, the most easy way I've found to do this, is to add some custom middleware for redirecting all http requests...
+    
+    &nbsp;<a href="/blog/2016/08/20/dotnetcore-adding-https-to-your-mvc-webapp" title="DotNetCore: Adding HTTPS to your MVC webapp">View post</a>      
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>04 Jun 2016 - Links to Visual Studio Extensions</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      Some links to important Visual Studio extensions for later reference:
+
+
+Open Bin folder Visual Studio Extension: Visual Studio Gallery
+Wakatime: wakatime.com
+SlowCheetah Visual Studio Gallery
+SonarLint sonarlint.org
+T4MVC github.io
+
+
+    
+    &nbsp;<a href="/blog/2016/06/04/links-to-visual-studio-extensions" title="Links to Visual Studio Extensions">View post</a>      
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>03 Mar 2016 - Not geting new windows 10 preview builds after reverting to an older build?</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      If you previously had a new Windows 10 preview build installed in your computer and then you reverted back to an older build, you could lose access to the new build where the new build is no longer offered as an upgrade option. If you want to install that build again, deleting that build number from the list in the Registry Editor will restore the ability to upgrade. HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\Applicability\RecoveredFrom Source...
+    
+    &nbsp;<a href="/blog/2016/03/03/not-getting-new-windows-10-preview-builds-after-reverting-back" title="Not geting new windows 10 preview builds after reverting to an older build?">View post</a>      
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>23 Jan 2016 - Integrate SonarQube with TFS 2015 update 1</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      While migrating CI stuff from Jenkins into TFS 2015 SP1 I ran into this blog post from Microsoft explaining how to include SonarQube runs information in the TFS Build Tasks. We have been running SonarQube on our projecs for about a year now to gain some insights into Code Coverage and basic code smells. I sure don’t want to lose the information Sonar gives us. The problem was that we...
+    
+    &nbsp;<a href="/blog/2016/01/23/integrate-sonarqube-with-tfs-2015-update-1-build-tasks" title="Integrate SonarQube with TFS 2015 update 1">View post</a>      
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>09 Jan 2016 - Windows 10: Enable 8.1 fly-out style WiFi / VPN menu</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      I’m not the only one who is annoyed by the new Windows 10 way to connect to VPN connections. The new route takes a lot of new clicks, just to connect to a VPN! The old Windows 8 style was a lot faster. Since I frequently change connections at work, It’s a recurring annoyance everyday :-(. Today, I’ve found out that there is a simple registry setting to revert the...
+    
+    &nbsp;<a href="/blog/2016/01/09/windows-10-enable-81-fly-out-style-wifi-vpn-menu" title="Windows 10: Enable 8.1 fly-out style WiFi / VPN menu">View post</a>      
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>03 Jan 2016 - Visual Studio 2015 update 1 - Service update 1</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      Just putting this out here for future reference: there is a service update for VS2015 update 1 to fix some issues. I needed this update to fix an error in VS with T4MVC.
+
+Knowledge base article: Link
+
+    
+    &nbsp;<a href="/blog/2016/01/03/visual-studio-2015-update-1-service-update-1" title="Visual Studio 2015 update 1 - Service update 1">View post</a>      
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>19 May 2015 - WakaTime</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      https://wakatime.com/dashboard
+
+Plugin for Visual Studio (and other editors) to log hours spend in the editor. Free account only retains the information for a couple of weeks and gives you an overview of time per project/solution and per language. Really neat to see those stats.
+
+Currently I have this extension installed on both my laptop, pc and in a VM designated for SharePoint development.
+
+    
+    &nbsp;<a href="/blog/2015/05/19/wakatime.md" title="WakaTime">View post</a>      
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+    <span>19 May 2015 - ASP.NET Demoproject started</span>
+</div>
+<div class="panel-body">
+  <div class="post-excerpt">
+    
+      Tonight, I had the idea of starting a new project to test and demo new area’s and features of ASP.NET. Initially it will be a project to test ASP.NET MVC 6 from Visual Studio 2015. I’ll set the project on Github for future reference and to get more familiair with git.
+
+Github: https://github.com/rajbos/Asp.Net-DemoProject
+
+    
+    &nbsp;<a href="/blog/2015/05/19/aspnet-demoproject-started" title="ASP.NET Demoproject started">View post</a>      
+  </div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+
+</body>
+
 </html>
