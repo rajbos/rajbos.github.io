@@ -15,6 +15,7 @@ layout: feed
 	</author>
 
 	{% for post in site.posts %}
+		{% if post.visible == 1 %}
 		<entry>
 			<title>{{ post.title }}</title>
 			<link href="{{ post.url | absolute_url }}"/>
@@ -22,6 +23,7 @@ layout: feed
 			<id>{{ post.id | absolute_url }}</id>
 			<content type="html">{{ post.content | xml_escape }}</content>
 		</entry>
+		{% endif %}
 	{% endfor %}
 
 </feed>
