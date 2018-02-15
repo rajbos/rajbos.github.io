@@ -7,7 +7,7 @@ title: Robs - Blog
 
   {% for post in site.posts %}
   
-    {% if post.visible == 1 %}
+    {% if post.visible==1 %}
       <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
     {% endif %}
   
