@@ -10,7 +10,7 @@ The problem was that we weren't getting any results into SonarQube. The default 
 In Jenkins, we used [OpenCover](https://github.com/OpenCover/opencover) to generate the coverage data, which integrates into the calls to the SonarQube runner. Its open souce, which is a big plus.
 
 ## Step 1:
-Create a new location on the server to place the coverage reports into. I've used `C:\OpenCover\` for this, and let OpenCover generate a file for each assembly where testing, using the name of the assembly as the filename for the xml report.
+Create a new location on the server to place the coverage reports into. I've used `C:\OpenCover\` for this, and let OpenCover generate a file for each assembly we're testing, using the name of the assembly as the filename for the xml report.
 
 ## Step 2:
 Add arguments to the SonarQube build step to tell Sonar where to find the coverage report. This needs to be done in the start step:
