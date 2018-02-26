@@ -6,7 +6,7 @@ date: 2018-02-23
 
 
 ## Update proces templates
-Recently I had a customer request to update their process definition in Visual Studio Team Services (VSTS). They had 30+ different process migrated from TFS (Team Foundation Server), so they were all Hosted XML processes.  
+Recently I had a customer request to update their process definition in Visual Studio Team Services (VSTS). They had 30+ different processes migrated from TFS (Team Foundation Server), so they were all Hosted XML processes.  
 
 Somehow they had the process setup like this:  
 
