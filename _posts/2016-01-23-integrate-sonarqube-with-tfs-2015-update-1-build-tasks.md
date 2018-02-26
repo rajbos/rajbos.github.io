@@ -19,7 +19,7 @@ Add this argument to 'Additional Settings':
 ```
 /d:sonar.cs.opencover.reportsPaths="C:\OpenCover\SolutionName.AssemblyName.UnitTests.opencover.xml": Sonar settings
 ```
-![TFS screenshot](../images/20160123_01.png)
+![TFS screenshot](/images/20160123_01.png)
 
 ## Step 3:
 Add in an additional Command Line build task to start the OpenCover tools. As you can see, I've added this after the build step. I think Sonar needs the build step for some data, but I need to test if it still works when we move that step out of the Sonar Start and End steps. Running the OpenCover tool should be enough, but I'm not sure of that.
