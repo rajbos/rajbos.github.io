@@ -6,6 +6,6 @@ title: About
 
 About Rob  
 
-![Rob](/images/rob.jpg)
+![Rob](/images/Rob.jpg){: height=36 width=36}
 
 ![Xpirit Expert Blog](/images/xpirit%20export%20blog.png)
