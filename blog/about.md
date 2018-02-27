@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Robs - About
+title: About
 ---
 <h1>{{ page.title }}</h1>
 
 About Rob  
 
-![Rob](/images/rob.jpg){:height="36px" width="36px"}
+![Rob](/images/rob.jpg)
 
 ![Xpirit Expert Blog](/images/xpirit%20export%20blog.png)
