@@ -32,7 +32,7 @@ What information do you need to check?
 
 ## Are we up?
 Maybe the first information we started gathering was information about the incoming requests to the web application: raw number of requests and request errors, together with information like server side duration, user agent, request path, tenantid and userid. 
-![health](/images/20180314_health.png)
+![health](/images/20180314_health.png)  
 At first we gathered this information by just logging it into the database after a request was ended, but after a while we learned that this was putting quite a load on our database, locking tables on inserts and live checking them in production is not a great idea: performance will tank if you have a small database tier and > 800k entries in the table per month. We could start to shard that table, but even then it would still be a performance issue with our growing customer and user base. Remember, inserting new records in that table will lock it and new insert will have to wait. 
 
 We decided to test and later implemented logging that same information into [table storage](https://azure.microsoft.com/en-us/services/storage/tables/), with a sensible keying strategy that would effectively shard that information inside the table storage. That way, inserting and reading that data would no longer hit our database performance.
