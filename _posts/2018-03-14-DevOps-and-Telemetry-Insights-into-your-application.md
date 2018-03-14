@@ -53,6 +53,9 @@ After the next rollout, we were gathering the (basic) data so that Application I
 * Finding errors in both our own requests, but also to our dependencies like SQL server, blob storage, key vault, etc.
 * A very easy way to initiate alerts to our admins: even adding sending an email to a distribution group is a simple way to get started.
 
+
+![insights](/images/20180314_03.png)
+
 With this information available, we created dashboards inside the Azure portal that we'd share between the team members that had access to the Azure subscription.
 
 Since we didn't add any additional data into Application Insights like tenantid or userid for better correlation to those levels, we needed to rely on Application Insights way of calculation user and session counts. Since these are gathered based on application insights own methods, we saw a difference with our own unique user counts. Application Insights would see a user logging into a different browser or device as a new user/session and count it thusly. Without a userid, it couldn't relate the information back to the same user (of course!). 
