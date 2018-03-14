@@ -13,7 +13,7 @@ title: About
 <div class="row">
 <div class="col-md-3" markdown="1">
 
-![Rob](/images/Rob.jpg)
+![Rob](/images/Rob_.jpg)
 
 </div>
 
