@@ -6,7 +6,7 @@ date: 2018-02-23
 
 I like to make work and performance visible for teams by giving them the necessary information to gauge the performance of a system, both on a daily basis as well as over time. This will help them to find less performant parts of the system, or checking engagement statistics. Sometimes I feel this part of the process is forgotten when talking about DevOps these days. People will focus on bringing the different teams together, create vertacilly oriented teams and changing the static mindset into 'the DevOps mindset'.  
 
-In my opinion, telemetry Is a very important part into the DevOps journey. Without it, it's hard to prove anything: whether its effectiveness of your organization into rolling faster or more reliable, or checking usage statistics on new features. Step one should be to get a solid understanding of (a lot of different aspects of) your application. 
+In my opinion, telemetry Is a very important part into the DevOps journey. Without it, it's hard to prove anything: whether it is the effectiveness of your organization into rolling faster, or checking usage statistics on new features. Step one should be to get a solid understanding of (a lot of different aspects of) your application. 
 
 This series of posts will go through my own journey in this aspect of DevOps. 
 
