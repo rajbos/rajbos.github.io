@@ -18,7 +18,7 @@ As we followed the adagio: 'You build it, you run it', I made sure it was possib
 
 ## Series
 * Part 1 - This post, my journey with telemetry and starting with logging
-* Part 2 - Supporting systems and how to gather that information
+* [Part 2](2018-03-29-DevOps-and-Telemetry-Insights-supporting-systems) - Supporting systems and how to gather that information
 * Part 3 - ?
 
 ### Part 1 in the series
