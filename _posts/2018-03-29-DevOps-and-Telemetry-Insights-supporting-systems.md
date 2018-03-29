@@ -12,7 +12,7 @@ In this post I want to explain about the next step: logging information about th
 * Part 2 - Supporting systems and how to gather that information (this post)
 * Part 3 - ?
 
-![Dashboard example](/Images/20180329_03_Dashboard.png)
+![Dashboard example](/images/20180329_03_Dashboard.png)
 
 # Telemetry on supporting systems:
 
@@ -34,14 +34,14 @@ Some of this information is also visbible from the Azure Sql Database itself, bu
 This came in very handy when searching for performance issues throughout the application. I made this information available in a separate dashboard to be used for hunting down those issues, because I didn't need them for the operational overview that I made sure to have always visible on a seperate screen.  
 *Note:* some of this information is also available from [Query Insights](https://docs.microsoft.com/azure/sql-database/sql-database-query-performance).
 
-![Query Performance Insights](/Images/20180329_QueryPerformanceInsights.png)
+![Query Performance Insights](/images/20180329_QueryPerformanceInsights.png)
 
 ### Database Transaction Units (DTU)
 Next up is the standard database telemetry that Azure allready logged for us: the most interesting parts are database size, maximum database size and even more important: DTU measurements! For a more in dept explanation about DTU's, check Microsofts explanation [here](https://docs.microsoft.com/azure/sql-database/sql-database-what-is-a-dtu). 
 
 Picking a good service tier for your database can be tricky and depends heavily on you useage patterns. If you have spikey traffic (think long running transactions or daily ETL tasks), you can consider changing the database tier up front or over provisioning (can be costly). Ofcourse, you can think of other tactics to prevent running into the Max DTU for your service level, like caching (always tricky!), offloading heavy writes & updates to a different storage mechanism (or sticking it in a queue!).
 
-![DTU](/Images/20180329_02_DTU.png)
+![DTU](/images/20180329_02_DTU.png)
 
 Anyway: make sure to test with a respresentitave load before running it in production! Seeing a chart link above is not great in production.  
 Changing the service tier is possible, but you really do not want to do this during a long running transaction. This will only make your performance issue last longer :-).
