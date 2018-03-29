@@ -71,6 +71,4 @@ A way to do so into Power BI is described [here](https://www.patrickvankleef.com
 
 
 ## Next up:
-The next post in this series will be: 'Part 2 - Supporting systems and how to gather that information'. I think it could be helpful to have a (start of) a list of items I started tracking about supporting systems. What parts of your infrastructure does an 'Ops' team really care about? I'll dive into that in the next post.
-
-I'll update this post with a link when Part 2 is available. 
+The next post in this series will be: 'Part 2 - Supporting systems and how to gather that information'. I think it could be helpful to have a (start of) a list of items I started tracking about supporting systems. What parts of your infrastructure does an 'Ops' team really care about? I'll dive into that in the next post, wich you can find [here](2018-03-29-DevOps-and-Telemetry-Insights-supporting-systems)
