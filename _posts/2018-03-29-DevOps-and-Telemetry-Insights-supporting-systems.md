@@ -19,11 +19,21 @@ In this post I want to explain about the next step: logging information about th
 For a SaaS application running on an [Azure Web Service Plan](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview), you can use a lot of components, so I'll focus on stuff I have used in the past and are most commonly used:
 * App Service Plan
 * Sql Database
-* Blob Storage
+* Blob Storage  
 This should be enough to give a broad overview of the standard monitoring options. 
 
 ## Available information from Application Insights
-I'll start at the point from the previous post where I added [Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) to the application: I had (request) telemetry available from that, with visibility into all calls to depending services. From this, I started creating a dashboard to bring all this information together in one view, so that it could be shared with the team responsible for building and running the application.
+I'll start at the point from the previous post where I added [Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) to the application: I had (request) telemetry available from that, with visibility into all calls to depending services. From this, I started creating a dashboard to bring all this information together in one view, so that it could be shared with the team responsible for building and running the application. From Application Insights, I always add the application map to the main telemetry dashboard for the operations team. In that map, you'll get a quick insight into ALL aspects of the application, including the parts that are suffering (performance wise).
+![Application Insights Map](https://docs.microsoft.com/nl-nl/azure/application-insights/media/app-insights-app-map/02.png)
+
+## App Service Plan
+The default telemetry on an App Service Plan level are pretty basic. You can see CPU and Memory usage of the hosted web server, with data in and out. 
+![App Service Plan](/images/20180329_04_AppServicPlan.png)  
+I do check this ever so often, but not on a daily basis. If you have more than one app service on the same plan, then you can check to see if there is an application that is hogging resources. To do so, navigate to: App Service Plan --> Diagnose and solve problems --> 
+Tools - Metrics per instance. *Note* this menu item keeps moving around. I think this is the third location I've seen this item appear. Search around if you cannot find it.
+
+## App Service
+On the App Service level itself, you get most of the same information as on a Plan level, but only for the application you are viewing. Additionally, you have information available like: number of requests, errornous requests (can be filtered per status code (4xx and 5xx)) and cpu utilization of this app service. See the information about the metrics from Application Insights for more (and better in my opinion) informational data.
 
 ## Database
 One example of the additional telemetry data that I got from Application Insights was for the Azure Sql Database that was used. Thanks to Application Insights, you'll get the following (very handy!) information:
