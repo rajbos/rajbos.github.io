@@ -13,7 +13,10 @@ title: Tools
 
 <div class="col-md-12">
 <div class="panel panel-default">
-Tools and references for feature reference.
+
+<div class="panel-heading" markdown="1">
+# Tools and references for feature reference.
+<div>
 
 </div>
 </div>
@@ -24,8 +27,8 @@ Tools and references for feature reference.
 <div class="row">
 <div class="col-md-12">
 <div class="panel panel-default">
-<div class="panel-heading">
-Development (General)
+<div class="panel-heading" markdown="1">
+## Development (General)
 </div>
 <div class="panel-body" markdown="1">
 Visual Studio Code: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)  
@@ -48,8 +51,8 @@ Add-PoshGitToProfile
 <div class="row">
 <div class="col-md-12">
 <div class="panel panel-default">
-<div class="panel-heading">
-Development (Blazor)
+<div class="panel-heading" markdown="1">
+## Development (Blazor)
 </div>
 <div class="panel-body" markdown="1">
 Blazor relaged links:  
@@ -65,8 +68,8 @@ Blazor relaged links:
 <div class="row">
 <div class="col-md-12">
 <div class="panel panel-default">
-<div class="panel-heading">
-Images
+<div class="panel-heading" markdown="1">
+## Images
 </div>
 <div class="panel-body" markdown="1">
 * Unsplash: [unsplash.com](unsplash.com)
