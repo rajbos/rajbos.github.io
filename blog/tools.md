@@ -6,10 +6,7 @@ title: Tools
 .pnl{float:left;margin-right:7px;}    
 </style>
 
-<h1>{{ page.title }}</h1>
-
 <div class="row">
-<div class="col-md-12" markdown="1">
 
 <div class="col-md-12">
 <div class="panel panel-default">
@@ -17,9 +14,6 @@ title: Tools
 <div class="panel-heading" markdown="1">
 # Tools and references for feature reference.
 <div>
-
-<div class="panel-body" markdown="1">
-</div>
 
 </div>
 </div>
