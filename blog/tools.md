@@ -7,17 +7,13 @@ title: Tools
 </style>
 
 <div class="row">
-
 <div class="col-md-12">
 <div class="panel panel-default">
-
 <div class="panel-heading" markdown="1">
-# Tools and references for feature reference.
+## Tools and references for feature reference
 <div>
 
 </div>
-</div>
-
 </div>
 </div>
 
