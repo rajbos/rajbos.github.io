@@ -28,7 +28,7 @@ To organise all this, [Peter Groenewegen](https://twitter.com/pgroene) and [Geer
 
 We build on that for this years version, where Peter has added the webhook callback so VSTS could tell us when a workitem changed.
 
-Off course, this .NET core application is hosted in Azure on an App Service instance backed by an Azure Sql Database. The code is on GitHub and we created a build and release pipeline in VSTS:
+Off course, this .NET core application is hosted in Azure on an App Service instance backed by an Azure Sql Database. The code is on GitHub and we created a build and release pipeline in VSTS:  
 ![Build](/images/2018_06_16_GDBC_Build.png)
 
 This build would trigger when a pull request got merged into master and after succesfully running all unit tests would trigger a release.
