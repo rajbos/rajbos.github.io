@@ -41,7 +41,7 @@ To check the application during the event, we created a dashboard to monitor the
 ## During the event
 The event started everywhere at 10:00 AM local time, so New Zealand and Australia got to be the first to use the application. We were a sleep during most of that timeframe, but we checked during the start to see if there where no errors. Luckily, that wasn't the case!
 
-![DevOps with Geert van der Cruijsen by Jesse Houwing](/images/2018_06_16_GDBC_By_Jesse_Houwing.jpg)
+![DevOps with Geert van der Cruijsen by Jesse Houwing](/images/2018_06_16_GDBC_By_Jesse_Houwing.jpg)  
 *Checking issues together with Geert, image by [Jesse Houwing](https://twitter.com/jessehouwing/).*
 
 ### EMEA region starting with the challenges
