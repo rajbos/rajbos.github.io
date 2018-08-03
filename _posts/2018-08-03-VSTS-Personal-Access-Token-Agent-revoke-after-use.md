@@ -2,7 +2,7 @@ Today I was listening to [RadioTFS episode 163](http://www.radiotfs.com/Show/163
 
 ![](/images/2018_08_03_VSTS.png)
 
-Apparantly the PAT is only used for the initial authentication to VSTS/TFS and after that it isn't needed anymore! That indeed means that you can revoke the token after it has been used and that you don't need to keep the token around. Until this day, I had alwas copied the token into [keepass](https://keepass.info/) for keepsake, but I don't need to do that anymore. 
+Apparantly the PAT is only used for the initial authentication to VSTS/TFS and after that it isn't needed anymore! That indeed means that you can revoke the token after it has been used and that you don't need to keep the token around. Until this day, I had alwas copied the token into [keepass](https://keepass.info/) for keepsake, but I don't need to do that anymore. This will also save me from seeing the expiration date and wondering if I need to update this token!
 
 If I ever need to register another agent, I can always create a new one. Revoking the old one also means that it cannot be used anymore, so that's also less of a security concern then :-).
 
