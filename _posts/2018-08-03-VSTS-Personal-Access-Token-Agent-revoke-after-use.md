@@ -1,4 +1,4 @@
-Today I was listening to [RadioTFS episode 163](http://www.radiotfs.com/Show/163/DevOpsDevOpswithWouterdeKortandHenryBeen) on my commute, with guests [Wouter de Kort](https://twitter.com/wouterdekort) and [Henry Been](https://twitter.com/henry_been/). During the show Wouter mentioned that he always revoked his VSTS Personal Access Token after using it, especially when used for a Build Agent. 
+Today I was listening to [RadioTFS episode 163](http://www.radiotfs.com/Show/163/DevOpsDevOpswithWouterdeKortandHenryBeen) on my commute, with guests [Wouter de Kort](https://twitter.com/wouterdekort) and [Henry Been](https://twitter.com/henry_been/). During the show Wouter mentioned that he always revoked his [VSTS Personal Access Token](https://roadtoalm.com/2015/07/22/using-personal-access-tokens-to-access-visual-studio-online/) after using it, especially when used for a Build Agent. 
 
 ![](/images/2018_08_03_VSTS.png)
 
