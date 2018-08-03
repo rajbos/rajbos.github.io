@@ -27,7 +27,7 @@ Open parameters.json
  - change allowRdpFromThisIpAddress
 .\Deploy-AzureResourceGroup.ps1 -ResourceGroupLocation "West Europe" -StorageAccountName "ChocoARM"
 ```
-Do note that the ARM template will report failure on the DSC step. To still get a working server you'll need to log in to the new VM and execute the last 5 lines by hand.
+~~Do note that the ARM template will report failure on the DSC step. To still get a working server you'll need to log in to the new VM and execute the last 5 lines by hand.~~ Update: thanks to [Reinier](https://twitter.com/MaanenReinier) this is now fixed! The ARM template now uses 2 steps to make sure the IIS management cmdlets are available for the second step. You can read how he fixed that [here](https://r-vm.com/depend-on-multiple-arm-script-extensions). 
 
 To check it, you can navigate to [http://localhost/](http://localhost/). 
 We are aware of the use of http, we need still to add that step to the script. We decided we could live with it for a small demo and blocking it from your own IP-address.
