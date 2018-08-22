@@ -14,7 +14,7 @@ I didn't manage to get the SonarQube VSTS Tasks working with the self-signed cer
 ![SonarQube logo](/images/2018_08_12_SonarQube.png)
 
 # ARM template issues
-At my first go with it, it took some time to figure out that the reason we couldn't connect to it came from the way the self-signed certificate was created: the template didn't create the certificate with a [fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name). A couple of years ago that would've worked, but with the tigher security rules in browsers that doesn't work anymore. Luckily I changed that with a small adjustment in the script and a [pull request](https://github.com/Azure/azure-quickstart-templates/pull/4692) later that problem has been fixed.
+At my first go with it, it took some time to figure out that the reason we couldn't connect to it came from the way the self-signed certificate was created: the template didn't create the certificate with a [fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name). A couple of years ago that would've worked, but with the tighter security rules in browsers that doesn't work anymore. Luckily I changed that with a small adjustment in the script and a [pull request](https://github.com/Azure/azure-quickstart-templates/pull/4692) later that problem has been fixed.
 
 A little later I found out that SonarQube updated their download links, deprecating the older TLS 1.2 versions which gave another issue. Another [pull request](https://github.com/Azure/azure-quickstart-templates/pull/4840) later and that is also fixed.
 
@@ -24,7 +24,7 @@ Now that those issues have been handled, you'll probably find that you've missed
 For this step you'll need to RDP into the server and install the JDK by hand.   
 **Do note**: don't forget to change the default passwords for logging in to the SonarQube installation!!
 
-After that you'll find out that the template provisions an IIS installation to host the SSL certifcate and then be the proxy for the SonarQube server. 
+After that you'll find out that the template provisions an IIS installation to host the SSL certificate and then be the proxy for the SonarQube server. 
 
 ![SonarQube project page](/images/2018_08_12_SonarQube_Project_page.png)
 
@@ -41,4 +41,4 @@ Unfortunately: this doesn't work! Nest, you double check and find out a part of 
 Next, you'll find that NodeJS is used to send the requests to the SonarQube server! Great, now that also has its own version of the trust chain setup...
 
 # End result
-And this is where we couldn't figure out how to include the certificate here. Given the time that it already cost to get here and the expectation that a hosted agent could still be needed (where you cannot trust your own certificates and need to have an official one), we stopped searching around for the solution and got an actual certificate. That prevented all these errors and also enables the useage of a hosted agent.
+And this is where we couldn't figure out how to include the certificate here. Given the time that it already cost to get here and the expectation that a hosted agent could still be needed (where you cannot trust your own certificates and need to have an official one), we stopped searching around for the solution and got an actual certificate. That prevented all these errors and also enables the usage of a hosted agent.
