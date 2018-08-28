@@ -15,6 +15,33 @@ layout: default
   </div>
 
   <div class="panel-footer">
-    <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large">Tweet</a>
+    <a class="twitter-mention-button" href="https://twitter.com/intent/tweet?screen_name=RobBos81" data-size="large">Tweet to @RobBos81</a>
   </div>
 </div>
+
+<script>
+window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+
+twttr.widgets.createMentionButton(
+  "TwitterDev",
+  document.getElementById("container"),
+  {
+    size:"large"
+  }
+);
+</script>
