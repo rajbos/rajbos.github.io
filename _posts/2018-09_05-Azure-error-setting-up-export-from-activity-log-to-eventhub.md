@@ -13,6 +13,9 @@ When saving the export setting via this blade:
 I got this error:  
 ![](/images/2018_09_05_Export_activity_log_failure_setup_notification.png)
 
+![](/images/adam-solomon-472458-unsplash.jpg)
+#### Photo by [Adam Solomon on Unsplash](https://unsplash.com/photos/WHUDOzd5IYU)
+
 After scratching my head a little I checked the browsers console log:  
 ![](/images/2018_09_05_Export_activity_log_failure_setup_consolelog.png)
 
