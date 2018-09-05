@@ -6,15 +6,15 @@ date: 2018-09-05
 
 While working to setup an export from Activity Log to an Event Hub I got no response on a save action. This took some time to figure out why this happened, so I thought it could be helpful for someone else.
 
+![](/images/adam-solomon-472458-unsplash.jpg)
+#### Photo by [Adam Solomon on Unsplash](https://unsplash.com/photos/WHUDOzd5IYU)
+
 ## Issue when saving
 When saving the export setting via this blade:  
 ![](/images/2018_09_05_Export_activity_log_failure_setup.png)
 
 I got this error:  
 ![](/images/2018_09_05_Export_activity_log_failure_setup_notification.png)
-
-![](/images/adam-solomon-472458-unsplash.jpg)
-#### Photo by [Adam Solomon on Unsplash](https://unsplash.com/photos/WHUDOzd5IYU)
 
 After scratching my head a little I checked the browsers console log:  
 ![](/images/2018_09_05_Export_activity_log_failure_setup_consolelog.png)
