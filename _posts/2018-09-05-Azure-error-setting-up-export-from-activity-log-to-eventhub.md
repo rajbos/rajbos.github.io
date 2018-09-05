@@ -19,7 +19,7 @@ I got this error:
 After scratching my head a little I checked the browsers console log:  
 ![](/images/2018_09_05_Export_activity_log_failure_setup_consolelog.png)
 
-Well, what do you now! Apparently the resource provider `microsoft.insights` hasn't been registered yet! Would have been a nice message inside of the Portal itself, but at least now I can fix it!
+Well, what do you know! Apparently the resource provider `microsoft.insights` hasn't been registered yet! Would have been a nice message inside of the Portal itself, but at least now I can fix it!
 
 ## The fix using the portal
 Go to your subscriptions, pick the correct one and navigate to resource providers:  
