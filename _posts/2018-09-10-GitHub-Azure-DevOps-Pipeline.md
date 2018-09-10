@@ -35,9 +35,10 @@ It detects the kind of project in the repository and gives you a default option 
 A yaml file is created for your (named `azure-pipelines.yml`) which will be saved inside of your repository: that also means you now have a two-way binding between GitHub and Azure DevOps: it can also write changes back to the GitHub repository. 
 ![](/images/2018_09_10-10-New-pipeline.png)  
 `Save and run` does exactly what is says, and if left with the default setting, will commit the new yml file to the choosen repository:    
-![](/images/2018_09_10-11-New-pipeline.png) 
+![](/images/2018_09_10-11-New-pipeline.png)  
 Now we have a running pipeline (free of charge! how nice is that!).    
-![](/images/2018_09_10-11-Running.png) 
+![](/images/2018_09_10-11-Running.png)  
+
 After the build is done and it succeeded, you get a summary page:  
 ![](/images/2018_09_10-12-rajbos.VSTSClient.png)  
 
@@ -46,7 +47,8 @@ If you want to show your build status on a project page, you can also get the bu
 Note: you could do that for any project before.  
 
 Go to the build definition, find the menu, go to `status badge`:    
-![](/images/2018_09_10-12-Status-Badge-Create.png) 
+![](/images/2018_09_10-12-Status-Badge-Create.png)  
+
 And copy the necessary code/markdown into the place you want to show it.  
 ![](/images/2018_09_10-12-Status-badge.png)  
 And the end result inside the readme of my repository:  
