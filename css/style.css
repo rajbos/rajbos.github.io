@@ -7,6 +7,7 @@ body{
     background-size: cover;   
 
     padding-top:75px;
+    font-size: 18px;
 }
 
 /* bootstrap navbar overrides */
@@ -41,4 +42,8 @@ body{
 .panel-default>.panel-heading{
     border-color: #4286f4;
     background-color: white;
+}
+
+img{
+    max-width: 100%;
 }
