@@ -37,7 +37,7 @@ To help fix this, you can use the [Visual Studio Test Platform Installer](https:
 Out of the box, SonarQube can scan your CSS files for issues with over 180 available [rules](https://github.com/racodond/sonar-css-plugin#available-rules). To do this, the agent needs to have [Node.js](https://nodejs.org/en/download/) installed. This is already available on a hosted agent, but you cannot use that yet because of the dependency on JRE! 
 
 ### SonarQube CSS issue on large solution
-Currently there is an [issue](https://community.sonarsource.com/t/sonarqube-post-processing-fails-with-unknown-reason/1798/6) on SonarQube with larger solutions or CSS files. The process seems to run out of memory somewhere. In the Azure DevOps Build log you'll see these as the last steps being logged:  
+Currently there is an [issue](https://community.sonarsource.com/t/sonarqube-post-processing-fails-with-unknown-reason/1798/6) on SonarQube with larger solutions or CSS files. The process seems to run out of memory somewhere. In the Azure DevOps Build log, you'll see these as the last steps being logged:  
 ```
 INFO: Quality profile for cs: Sonar way
 INFO: Quality profile for css: Sonar way
@@ -49,7 +49,7 @@ INFO: Sensor SonarCSS Metrics [cssfamily] (done) | time=1937ms
 INFO: Sensor SonarCSS Rules [cssfamily]
 ```
 
-For now the recommended fix is: do not use the CSS analysis, which isn't great, but better then the alternative: currently the `Run Analysis Task` just hangs until the maximum runtime of your build has been reached. Al that time, your build server will run at 100% CPU (if you have 1 CPU available, 2 CPU's got me 50% utilization)!
+For now the recommended fix is: **do not use the CSS analysis**, which isn't great, but better then the alternative: currently the `Run Analysis Task` just hangs until the maximum runtime of your build has been reached. Al that time, your build server will run at 100% CPU (if you have 1 CPU available, 2 CPU's got me 50% utilization)!
 It took me quite some searching around to find this one, so it's good to document it here. 
 
 The current fix is to start the analysis task with a parameter that redirects the CSS files to a non-existing analyzer:  
