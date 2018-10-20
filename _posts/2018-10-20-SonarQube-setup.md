@@ -16,7 +16,7 @@ For installation on an Azure environment I used the same [Azure QuickStart ARM t
 
 You can follow the usual steps from the ARM template: download and install the Java Development Kit on the SonarQube server, restart the SonarQube service and you're up and running with the **server side**.
 
-## Things to now for next time
+## Things to know for next time
 There are a couple of things that you need to think of when starting an installation yourself. The ARM template is already a great help in it, but you need to think of some other things. Those are mostly client  side, so on the agent.
 
 ### Bring a valid certificate 
@@ -26,7 +26,7 @@ As noted [before](2018-08-12-self-signed-certificate-on-sonarqube-server), the t
 Go to the [marketplace](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarqube) and download or request installation in your Azure DevOps subscription.
 
 ### The 'Run Analysis Task' has java as a requirement
-This was a gotcha this time that I forgot: the Run Analysis Task has a demand requirement that it needs Java (specifically the Java Runtime Environment 8.0) **on the agent**. This also means that you cannot run it on a hosted agent : those do not have the JRE installed! Only the JDK is installed, which doesn't add support for the `java` demand. I raised an [issue](https://github.com/Microsoft/azure-pipelines-image-generation/issues/315) on the hosted agent with a request for it.
+This was a gotcha that I forgot this time: the `Run Analysis Task` has a demand requirement that it needs Java (specifically the Java Runtime Environment 8.0) **on the agent**. This also means that you cannot run it on a hosted agent : those do not have the JRE installed! Only the JDK is installed, which doesn't add support for the `java` demand. I raised an [issue](https://github.com/Microsoft/azure-pipelines-image-generation/issues/315) on the hosted agent with a request for it.
 
 ### Building on a new agent?
 When you have a new agent you could install [Visual Studio Community edition](https://visualstudio.microsoft.com/downloads/) on it, that will provide you with the `msbuild` capability on the agent. This does **not** give you the tools to run the unit tests on the server, which is needed for the `Run unit test` task, which will provide SonarQube with the necessary information it needs to do, well basically, anything! You can install a licensed Visual Studio Enterprise on it, but then you need to update that license every once in a while. You probably don't want that, because of the occasional error it will give you, for which you need to login to the server.
@@ -39,15 +39,14 @@ Out of the box, SonarQube can scan your CSS files for issues with over 180 avail
 ### SonarQube CSS issue on large solution
 Currently there is an [issue](https://community.sonarsource.com/t/sonarqube-post-processing-fails-with-unknown-reason/1798/6) on SonarQube with larger solutions or CSS files. The process seems to run out of memory somewhere. In the Azure DevOps Build log you'll see these as the last steps being logged:  
 ```
-
-2018-10-19T12:44:46.1240459Z INFO: Quality profile for cs: Sonar way
-2018-10-19T12:44:46.1241984Z INFO: Quality profile for css: Sonar way
-2018-10-19T12:44:46.1242474Z INFO: Quality profile for js: Sonar way
-2018-10-19T12:44:46.1242877Z INFO: Quality profile for xml: Sonar way
-2018-10-19T12:44:46.2738672Z INFO: Sensor SonarCSS Metrics [cssfamily]
-2018-10-19T12:44:46.3944228Z WARNING: WARN: Metric 'comment_lines_data' is deprecated. Provided value is ignored.
-2018-10-19T12:44:48.1689991Z INFO: Sensor SonarCSS Metrics [cssfamily] (done) | time=1937ms
-2018-10-19T12:44:48.1691752Z INFO: Sensor SonarCSS Rules [cssfamily]
+INFO: Quality profile for cs: Sonar way
+INFO: Quality profile for css: Sonar way
+INFO: Quality profile for js: Sonar way
+INFO: Quality profile for xml: Sonar way
+INFO: Sensor SonarCSS Metrics [cssfamily]
+WARNING: WARN: Metric 'comment_lines_data' is deprecated. Provided value is ignored.
+INFO: Sensor SonarCSS Metrics [cssfamily] (done) | time=1937ms
+INFO: Sensor SonarCSS Rules [cssfamily]
 ```
 
 For now the recommended fix is: do not use the CSS analysis, which isn't great, but better then the alternative: currently the `Run Analysis Task` just hangs until the maximum runtime of your build has been reached. Al that time, your build server will run at 100% CPU (if you have 1 CPU available, 2 CPU's got me 50% utilization)!
