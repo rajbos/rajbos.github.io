@@ -1,0 +1,36 @@
+---
+layout: post
+title: "Azure Functions Connection Monitoring"
+date: 2018-10-24
+---
+
+Last week I noticed our Azure Function wasn't running anymore and I got a pop-up in the [Azure Portal](https://portal.azure.com) indicating that we reached the limit on our open connections. The popup message contains something like `Azure Host thresholds exceeded: [Connections]` and links to this [documentation page](https://docs.microsoft.com/en-us/azure/azure-functions/manage-connections). The documentation already hints at the usual suspects: HttpClient holds on to the connections longer then you'll usually need. Since the whole Azure Functions sandbox has several hard limits, usage of an HttpClient in the default pattern is a common way to hit the Connection Count limit. The documentation also notes an example for a DocumentClient and SqlClient, although the latter already uses connection pooling.
+
+![Header image](/images/tofind.png)
+
+## Searching around
+When searching for this pattern, you can find a lot of examples that show you how the HttpClient does things and how to fix it (declare the client as static so it isn't disposed on every function execution). You can even fin examples from [Troy Hunt](https://www.troyhunt.com/breaking-azure-functions-with-too-many-connections/) and from the [ALM Rangers](https://blogs.msdn.microsoft.com/visualstudioalmrangers/2018/04/03/how-we-checked-and-fixed-the-503-error-and-performance-issue-in-our-azure-function/).
+
+## Monitoring
+Since we are using the [Azure Fluent SDK](https://github.com/Azure/azure-libraries-for-net) to retrieve information from an Azure Subscription, and that instantiates several HttpClients inside of it, I wanted to start monitoring the connection count first, to see if it was a gradual ramp up (first time finding it was 24 hours **after** deployment of a change), or something else.
+
+Monitoring would give a better idea overall about the issue and it's part of the DevOps practice: you cannot improve things if you aren't monitoring them first.
+
+## Searching around for monitoring
+Since I couldn't directly find how to monitor the connection count, I even opened an [issue](https://github.com/MicrosoftDocs/azure-docs/issues/17205#issuecomment-432484636) on the documentation repository to see if someone could help. Sure enough, someone responded with the location where to find the metric.
+
+Since it took me a lot of searching and overlooking the first selection option, I am documenting the full process here.
+
+## Finding the metric
+Of course, the information is only available when you are running [Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview).
+
+1. Go to the Application Insights instance connected to the Function
+1. Go to 'metrics'
+1. **Change the resource** from your 'Application Insights' instance to 'App Service' to connect to the App Service that is hosting the function.
+1. There is only one 'metric namespace' to choose from, and it is already selected.
+1. Select the 'Connections' metric:
+![Azure Metrics](/images/2018_10_24_01_Metrics.png)
+
+## Fixing the used connection count
+After monitoring we changed the instantiation of the clients we used from the Azure Fluent SDK to static instances and you can see that the connection count has improved a lot:
+![Improvement](/images/2018_10_24_02_Metrics.png)

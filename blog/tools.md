@@ -3,7 +3,7 @@ layout: default
 title: Tools
 ---
 <style>
-.pnl{float:left;margin-right:7px;}    
+.pnl{float:left;margin-right:7px;}
 </style>
 
 <div class="row">
@@ -24,16 +24,33 @@ title: Tools
 ### Development (General)
 </div>
 <div class="panel-body" markdown="1">
-Visual Studio Code: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)  
-ARM Template plugin: [https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)  
+Visual Studio Code: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
+ARM Template plugin: [https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
-Git for windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)  
+Git for windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)
 
-PowerShell extension Posh Git: 
+PowerShell extension Posh Git:
 ``` powershell
-Install-Module posh-git -Scope CurrentUser 
+Install-Module posh-git -Scope CurrentUser
 Add-PoshGitToProfile
 ```
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-md-12">
+<div class="panel panel-default">
+<div class="panel-heading" markdown="1">
+### Azure DevOps Tasks
+</div>
+<div class="panel-body" markdown="1">
+WhiteSource Bolt: [marketplace](https://marketplace.visualstudio.com/items?itemName=whitesource.ws-bolt)
+SonarQube: [marketplace](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarqube)
+
 
 </div>
 </div>
@@ -48,7 +65,7 @@ Add-PoshGitToProfile
 ### Development (Blazor)
 </div>
 <div class="panel-body" markdown="1">
-Blazor relaged links:  
+Blazor relaged links:
 * Context menu element: [https://github.com/stavroskasidis/BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu)
 * Complete CRUD using Entity Framework and Web API: [https://www.codeproject.com/Articles/1244729/ASP-NET-Core-Blazor-CRUD-using-Entity-Framework-an](https://www.codeproject.com/Articles/1244729/ASP-NET-Core-Blazor-CRUD-using-Entity-Framework-an)
 
