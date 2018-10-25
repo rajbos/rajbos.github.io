@@ -3,13 +3,14 @@ layout: default
 title: Tools
 ---
 <style>
-.pnl{float:left;margin-right:7px;}
+    .pnl{float:left;margin-right:7px;}
 </style>
 
 <div class="row">
 <div class="col-md-12">
 <div class="panel panel-default">
 <div class="panel-heading" markdown="1">
+
 ## Tools and references for feature reference
 <div>
 
@@ -21,13 +22,15 @@ title: Tools
 <div class="col-md-12">
 <div class="panel panel-default">
 <div class="panel-heading" markdown="1">
+
 ### Development (General)
 </div>
 <div class="panel-body" markdown="1">
-Visual Studio Code: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
-ARM Template plugin: [https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
-Git for windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+Visual Studio Code: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)  
+ARM Template plugin: [https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)  
+
+Git for windows: [https://git-scm.com/download/win](https://git-scm.com/download/win)  
 
 PowerShell extension Posh Git:
 ``` powershell
@@ -45,9 +48,11 @@ Add-PoshGitToProfile
 <div class="col-md-12">
 <div class="panel panel-default">
 <div class="panel-heading" markdown="1">
+
 ### Azure DevOps Tasks
 </div>
 <div class="panel-body" markdown="1">
+
 |Task|Link|Description|
 |---|---|---|
 |WhiteSource Bolt|[marketplace](https://marketplace.visualstudio.com/items?itemName=whitesource.ws-bolt)|Scan your solution for open source issues and known vulnerabilities. Needs the full product for file and line-number specific reports, but provides a good start.|
@@ -63,6 +68,7 @@ Add-PoshGitToProfile
 <div class="col-md-12">
 <div class="panel panel-default">
 <div class="panel-heading" markdown="1">
+
 ### Development (Blazor)
 </div>
 <div class="panel-body" markdown="1">
@@ -80,9 +86,11 @@ Blazor relaged links:
 <div class="col-md-12">
 <div class="panel panel-default">
 <div class="panel-heading" markdown="1">
+
 ### Images
 </div>
 <div class="panel-body" markdown="1">
+
 * Unsplash: [www.unsplash.com](https://www.unsplash.com)
 </div>
 </div>
