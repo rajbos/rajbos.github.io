@@ -58,6 +58,7 @@ Add-PoshGitToProfile
 |WhiteSource Bolt|[marketplace](https://marketplace.visualstudio.com/items?itemName=whitesource.ws-bolt)|Scan your solution for open source issues and known vulnerabilities. Needs the full product for file and line-number specific reports, but provides a good start.|
 |SonarQube|[marketplace](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarqube)|Analyzing solutions for code smells, unit test coverage and other technical dept. Needs a SonarQube server or SonarCloud (SaaS offering of the server)|
 |Visual Studio Test Platform Installer||Task to install the necessary test tools on a (clean) Agent server to enable running code coverage information from unit tests|
+|Analyze test results|[documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/test/test-analytics?view=vsts#install-the-analytics-extension)[marketplace](https://marketplace.visualstudio.com/items?itemName=ms.vss-analytics)|Analyze your test results from inside Azure DevOps! Gives you insight into the most failing tasks and total progression.|
 </div>
 </div>
 </div>
