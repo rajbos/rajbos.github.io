@@ -66,6 +66,24 @@ Add-PoshGitToProfile
 </div>
 </div>
 
+<div class="row">
+<div class="col-md-12">
+<div class="panel panel-default">
+<div class="panel-heading" markdown="1">
+
+### Interesting stuff
+</div>
+<div class="panel-body" markdown="1">
+
+|Link|Description|
+|---|---|
+|[GitHub Repo](https://github.com/vanderby/SonarQube-AzureAppService)|How to host SonarQube in an Azure [App Service](https://blogs.msdn.microsoft.com/premier_developer/2018/12/23/sonarqube-hosted-on-azure-app-service/)|
+|(Azure Quick Start ARM Templates)[https://github.com/Azure/azure-quickstart-templates]|ARM templates for a lot of different Azure resources. Good starting point.|
+
+</div>
+</div>
+</div>
+</div>
 
 <div class="row">
 <div class="col-md-12">
@@ -75,7 +93,7 @@ Add-PoshGitToProfile
 ### Development (Blazor)
 </div>
 <div class="panel-body" markdown="1">
-Blazor relaged links:
+Blazor related links:
 * Context menu element: [https://github.com/stavroskasidis/BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu)
 * Complete CRUD using Entity Framework and Web API: [https://www.codeproject.com/Articles/1244729/ASP-NET-Core-Blazor-CRUD-using-Entity-Framework-an](https://www.codeproject.com/Articles/1244729/ASP-NET-Core-Blazor-CRUD-using-Entity-Framework-an)
 
