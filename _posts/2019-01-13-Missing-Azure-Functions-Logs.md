@@ -32,3 +32,5 @@ You can now change the sampling setting:
 Wait for a couple of runs to execute and you can verify that it now shows all the logs again:  
 ![](/images/20190113_04_Fixed.png)
 
+
+
