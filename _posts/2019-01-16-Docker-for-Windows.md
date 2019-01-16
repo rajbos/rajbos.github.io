@@ -47,6 +47,6 @@ After testing all sorts of stuff, reinstalling Docker (reboots required) and sea
 Switching to use the **username** in Docker will switch the login for the session, and all of a sudden it just works!
 
 ![](/images/2019_01_16_Docker_for_windows_logged_in_user.png)  
-Very odd that docker does accept both for the login here, while the e-mail address is not working. Somebody probably enabled that for the webfront end and didn't test the CLI.
+Very odd that docker does accept both for the login here, while the e-mail address is not working. Somebody probably enabled that for the web front-end and didn't test the CLI.
 
 Maybe someone else will find this post when hitting the same issue and it saves them a lot of time!  
