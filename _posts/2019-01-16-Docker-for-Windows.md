@@ -8,9 +8,7 @@ After installing [Docker for Windows](https://docs.docker.com/docker-for-windows
 
 # The issue
 
-After installation Docker present you with a login screen:
-![]()
-
+After installation Docker present you with a login screen.
 Since that login worked just fine, I'd expect that everything is setup correctly.
 
 The next step is then to verify that you can run at least `hello-world`:
@@ -29,7 +27,7 @@ Since it tells you the call back to the docker registry is not authorized, you t
 # Logging in again
 If I run `docker login`, it shows me the currently logged in user, which I did via the login interface after the installation:  
 
-![](/images/2019_01_16_Docker_For_Windows_Login.png)
+![](/images/2019_01_16_Docker_For_Windows_Login.png)  
 Notice that I am using my e-mail address here. The login is just fine:  
 
 ![](/images/2019_01_16_Docker_for_Windows_Email_Logged_In.png)
@@ -48,7 +46,7 @@ After testing all sorts of stuff, reinstalling Docker (reboots required) and sea
 # Fixing it
 Switching to use the **username** in Docker will switch the login for the session, and all of a sudden it just works!
 
-![](/images/2019_01_16_Docker_for_windows_logged_in_user.png)
+![](/images/2019_01_16_Docker_for_windows_logged_in_user.png)  
 Very odd that docker does accept both for the login here, while the e-mail address is not working. Somebody probably enabled that for the webfront end and didn't test the CLI.
 
 Maybe someone else will find this post when hitting the same issue and it saves them a lot of time!  
