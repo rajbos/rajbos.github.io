@@ -181,7 +181,7 @@ az functionapp config appsettings set --resource-group $resourcegroup --name $fu
 ```
 The name of the setting we are changing here (`EventHubConnectionAppSetting`) needs to match the name of the Connection you gave the parameter on the function:
 
-``` powershell
+``` c#
 [FunctionName("EventHubActivitiesFunction"))]
         public static async Task Run(
             [EventHubTrigger("insights-operational-Logs", Connection = "EventHubConnectionAppSetting")]
