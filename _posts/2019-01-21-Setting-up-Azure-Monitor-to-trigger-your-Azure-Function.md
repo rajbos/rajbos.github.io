@@ -8,7 +8,7 @@ I wanted to trigger an Azure Function based on changes in the Azure Subscription
 
 ## Architecture
 To get [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview) to send in the changes it has been configured for I use this architecture:  
-![](/Images/2019_01_21_Azure_Monitor_Architecture.png)
+![](/images/2019_01_21_Azure_Monitor_Architecture.png)
 
 ## Steps
 To configure Azure Monitor to send all activities into an EventHub and then into our Function, you need to execute several steps.
@@ -21,31 +21,31 @@ To configure Azure Monitor to send all activities into an EventHub and then into
 How to do this manually via the Azure Portal is described below.
 
 ### Create a new event hub to send the Activity Log to:
-![](/Images/2019_01_21_Azure_Monitor_CreateEventHub.png)  
+![](/images/2019_01_21_Azure_Monitor_CreateEventHub.png)  
 The default setting of 1 throughput unit is enough for this setup, as mentioned by Microsoft's documentation.
 
 ### Create the export of the Activity Log
 
 Go to Activity Log, hit export button:  
-![](/Images/2019_01_21_Azure_Monitor_Activity_log_Configuration.png)  
+![](/images/2019_01_21_Azure_Monitor_Activity_log_Configuration.png)  
 
  **PICK ALL REGIONS!!** Most activities we want to see are GLOBAL and those would be missed otherwise.
 
-![](/Images/2019_01_21_Azure_Monitor_LinkEventHubToActivityLogExport.png)
+![](/images/2019_01_21_Azure_Monitor_LinkEventHubToActivityLogExport.png)
 
 ## Configure the event hub to send the messages to the Azure Function
 Choose the EventHub entity you picked for the Azure Monitor to export the activities to:  
-![](/Images/2019_01_21_Azure_Monitor_EventHubChooseHub.png)
+![](/images/2019_01_21_Azure_Monitor_EventHubChooseHub.png)
 
 You can add a consumer group to it, named '$default` by default.
 
 ### Get the Access Policy
 Go to `Shared Access Policies` and create a policy. We only need to have the `Listen` rights so we can listen to incoming events.  
-![](/Images/2019_01_21_Azure_Monitor_EventHubAccessPolicy.png)  
+![](/images/2019_01_21_Azure_Monitor_EventHubAccessPolicy.png)  
 
 Copy either on of the `Connection strings` and configure the Azure Function host with it:
 
-![](/Images/2019_01_21_Azure_Monitor_AzureFunctionEventHub.png)  
+![](/images/2019_01_21_Azure_Monitor_AzureFunctionEventHub.png)  
 
 No need to restart the function app: the platform does that for you.
 
@@ -111,7 +111,7 @@ You could get one of two results:
 
 1. No profile set for this subscription: `[]`
 2. There already is a profile for this subscription:  
-![](/Images/2019_01_21_Azure_Monitor_AzureMonitorExportProfile.png)
+![](/images/2019_01_21_Azure_Monitor_AzureMonitorExportProfile.png)
 
 If there already is a profile, carefully read through the results to see if it contains everything we need.  
 *Note*: there can only be one profile per subscription. If there is only one subscription with a profile and that is set to export to the correct EventHub, that is fine.
