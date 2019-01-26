@@ -4,7 +4,7 @@ title: "Setting up Azure Monitor to trigger your Azure Function"
 date: 2019-01-21
 ---
 
-I wanted to trigger an Azure Function based on changes in the Azure Subscription(s) we where monitoring. The incoming data can than be used to do interesting things with: keeping track of who does what, see new resources being deployed or old ones being deleted, etc. Back when I started working on this, there was no [Event Grid](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid) option to use in Azure Functions, so I started with linking it to [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview). I haven't checked the current options yet, so I cannot compare them yet. 
+I wanted to trigger an Azure Function based on changes in the Azure Subscription(s) we where monitoring. The incoming data can than be used to do interesting things with: keeping track of who does what, see new resources being deployed or old ones being deleted, etc. Back when I started working on this, there was no [Event Grid](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid) option to use in Azure Functions, so I started with linking it to [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview) events. I haven't checked the current options, so I cannot compare them yet. 
 
 In this blog I wanted to show how you can do this, both by using the Azure Portal and the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest).
 
@@ -13,7 +13,7 @@ To get [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/over
 ![](/images/2019_01_21_Azure_Monitor_Architecture.png)
 
 ## Steps
-To configure Azure Monitor to send all activities into an EventHub and then into our Function, you need to execute several steps.
+To configure Azure Monitor to send all activities into an EventHub and then into our Function, you'll need to execute several steps.
 
 1. Create a new event hub
 1. Configure the Activity Monitor to send the changes into the event hub
@@ -28,7 +28,8 @@ The default setting of 1 throughput unit is enough for this setup, as mentioned 
 
 ### Create the export of the Activity Log
 
-Go to Activity Log, hit export button:  
+Go to Activity Log, hit the `export` button: 
+ 
 ![](/images/2019_01_21_Azure_Monitor_Activity_log_Configuration.png)  
 
  **PICK ALL REGIONS!!** Most activities we want to see are GLOBAL and those would be missed otherwise.
