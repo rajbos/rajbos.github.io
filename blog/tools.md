@@ -78,7 +78,8 @@ Add-PoshGitToProfile
 |Link|Description|
 |---|---|
 |[GitHub Repo](https://github.com/vanderby/SonarQube-AzureAppService)|How to host SonarQube in an Azure [App Service](https://blogs.msdn.microsoft.com/premier_developer/2018/12/23/sonarqube-hosted-on-azure-app-service/)|
-|(Azure Quick Start ARM Templates)[https://github.com/Azure/azure-quickstart-templates]|ARM templates for a lot of different Azure resources. Good starting point.|
+|[Azure Quick Start ARM Templates](https://github.com/Azure/azure-quickstart-templates)|ARM templates for a lot of different Azure resources. Good starting point.|
+|[Recover Deleted Azure DevOps Release Definition](https://blogs.msdn.microsoft.com/aseemb/2017/11/22/how-to-undelete-a-deleted-release-definition/)|PowerShell script to recover a deleted Azure DevOps release definition (within 4 weeks after deletion!)|
 
 </div>
 </div>
