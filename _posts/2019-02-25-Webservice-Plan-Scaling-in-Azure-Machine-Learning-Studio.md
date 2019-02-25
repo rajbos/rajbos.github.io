@@ -29,7 +29,7 @@ Go to: [https://services.azureml.net/](https://services.azureml.net/) to manage 
 
 ![](/images/20190225/03-MLS-Plans.png)
 
-Select the plan and click on `Down- or upscale plan`:  
+Select the plan and click on `Upgrade/Downgrade plan`:  
 Now, you can actually scale the plan to your needs.  
 ![](/images/20190225/04-MLS-Scale.png)
 
