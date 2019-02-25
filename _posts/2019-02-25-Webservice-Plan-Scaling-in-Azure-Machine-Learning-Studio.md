@@ -22,6 +22,8 @@ To do any of this, you need to look inside of the workspace in MLS. To find the 
 
 Here, you can only see the actual deployed services from the experiments you made (I don't have any running here). You still cannot see the web service plan!
 
+## The Trick
+
 To actually find the web service plan and act on it, you need to go to a different interface for Azure ML:  
 Go to: [https://services.azureml.net/](https://services.azureml.net/) to manage your deployed services, then go to "Plans" and there you can administer your plans. 
 
