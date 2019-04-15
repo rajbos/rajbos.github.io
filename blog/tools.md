@@ -109,11 +109,12 @@ Blazor related links:
 <div class="panel panel-default">
 <div class="panel-heading" markdown="1">
 
-### Images
+### Miscellaneous
 </div>
 <div class="panel-body" markdown="1">
 
-* Unsplash: [www.unsplash.com](https://www.unsplash.com)
+* Unsplash for great images: [www.unsplash.com](https://www.unsplash.com)
+* Download Azure Icons from the Portal: [Azure Icon Downloader Chrome Extension](https://buildazure.com/2019/04/12/azure-icon-downloader-chrome-extension/)
 </div>
 </div>
 </div>
