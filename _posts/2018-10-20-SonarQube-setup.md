@@ -59,7 +59,7 @@ The current fix is to start the analysis task with a parameter that redirects th
 `d:sonar.css.file.suffixes=.foo` or do that globally for your entire SonarQube server via the settings on the CSS analysis there (which would be easier if you have multiple projects with this issue). 
 
 # Update (05-01-2019) Run it in an Azure App Service!
-[Nathan Vanderby](https://www.linkedin.com/in/nathan-vanderby-92a19814/), a Premier Field Engineer from Microsoft, has created an ARM template to run the SonarQube installation behind an Azure App Service with an Java host. This saves you a lot of steps mentioned above!
+[Nathan Vanderby](https://www.linkedin.com/in/nathan-vanderby-92a19814/), a Premier Field Engineer from Microsoft, has created an ARM template to run the SonarQube installation behind an Azure App Service with an Java host. This saves you a lot of steps mentioned above! You can find the scripts for it on[GitHub](https://github.com/vanderby/SonarQube-AzureAppService). 
 
 Several benefits you get this way:
 * You don't have to manage a Virtual Machine anymore.
