@@ -41,13 +41,13 @@ In the [Azure Portal](portal.azure.com), find your new App Service and navigate 
 Open a debug console:  
 ![](/images/20190429/2019-04-29-02-Kudu%20Services.png)  
 
-And navigate to the configuration folder of your SonarQube and open the file sonar.properties.
+And navigate to the configuration folder of your SonarQube and open the file `sonar.properties`:
 ``` dos
 D:\home\site\wwwroot\sonarqube-7.7\conf>
 ```
 
 Update these properties:
-```dos
+``` dos
 sonar.jdbc.username=SonarQubeUI
 sonar.jdbc.password=<your sql server user password>
 sonar.jdbc.url=jdbc:sqlserver://mysqlserver.database.windows.net:1433;databaseName=SonarQubeDb
@@ -61,4 +61,5 @@ Setting up authentication for the users with Azure Active Directory is very easy
 
 Follow the setup [here](https://github.com/hkamel/sonar-auth-aad/wiki/Setup)  
 
-Do note the Server base URL in SonarQube, I missed it the first time. By default, this is empty! Go to `Administration`, `Configuration`, `General` --> `Server base URL`.
+Do note the Server base URL in SonarQube, I missed it the first time.  
+By default, this is empty! Go to `Administration`, `Configuration`, `General` --> `Server base URL`.
