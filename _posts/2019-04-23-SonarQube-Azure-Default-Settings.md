@@ -21,11 +21,11 @@ Setting up a new SonarQube server this way is a breeze. Updating it should be ea
 
 # Set up
 After creating the basic SonarQube App Service from GitHub or the ARM template, you need to create a new SQL database. Do note that you need to set the database to the correct collation for it to work: `SQL_Latin1_General_CP1_CS_AS`. Next, create a new SQL user by running this on the `Master` Database:
-``` sql 
+``` SQL 
 CREATE LOGIN SonarQubeUI WITH password='<make a new secure password here>';
 ```
 Then create a login from the new user account by running this statement `on the new database`:
-``` sql
+``` SQL
 CREATE USER SonarQubeUI FROM LOGIN SonarQubeUI 
 ```
 
