@@ -23,7 +23,7 @@ You can follow the usual steps from the ARM template: download and install the J
 There are a couple of things that you need to think of when starting an installation yourself. The ARM template is already a great help in it, but you need to think of some other things. Those are mostly client side, so on the Azure DevOps Agent.
 
 ### Bring a valid certificate 
-As noted [before](2018-08-12-self-signed-certificate-on-sonarqube-server), the template uses a self signed certificate, which will not work with Azure DevOps: the tasks from the marketplace need a valid certificate that it trusts for the connection with the server. Therefore you need to provide a valid certificate and setup a DNS entry to match the URL in the certificate.
+As noted [before](https://rajbos.github.io/blog/2018/08/12/self-signed-certificate-on-sonarqube-server), the template uses a self signed certificate, which will not work with Azure DevOps: the tasks from the marketplace need a valid certificate that it trusts for the connection with the server. Therefore you need to provide a valid certificate and setup a DNS entry to match the URL in the certificate.
 
 ### Download or install the SonarQube extension
 Go to the [marketplace](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarqube) and download or request installation in your Azure DevOps subscription.
@@ -59,7 +59,7 @@ The current fix is to start the analysis task with a parameter that redirects th
 `d:sonar.css.file.suffixes=.foo` or do that globally for your entire SonarQube server via the settings on the CSS analysis there (which would be easier if you have multiple projects with this issue). 
 
 # Update (05-01-2019) Run it in an Azure App Service!
-[Nathan Vanderby](https://www.linkedin.com/in/nathan-vanderby-92a19814/), a Premier Field Engineer from Microsoft, has created an ARM template to run the SonarQube installation behind an Azure App Service with an Java host. This saves you a lot of steps mentioned above! You can find the scripts for it on[GitHub](https://github.com/vanderby/SonarQube-AzureAppService). 
+[Nathan Vanderby](https://www.linkedin.com/in/nathan-vanderby-92a19814/), a Premier Field Engineer from Microsoft, has created an ARM template to run the SonarQube installation behind an Azure App Service with a Java host. This saves you a lot of steps mentioned above! You can find the scripts for it on[GitHub](https://github.com/vanderby/SonarQube-AzureAppService). 
 
 Several benefits you get this way:
 * You don't have to manage a Virtual Machine anymore.
