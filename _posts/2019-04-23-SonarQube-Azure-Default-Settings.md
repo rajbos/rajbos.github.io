@@ -57,9 +57,7 @@ Also note that the database name your enter is CASE-SENSITIVE! SonarQube is runn
 
 # Azure Active Directory
 
-Setting up authentication for the users with Azure Active Directory is very easy, thanks to the work of the [ALM Rangers](https://www.almdevopsrangers.org/). 
-
-Follow the setup [here](https://github.com/hkamel/sonar-auth-aad/wiki/Setup)  
+Setting up authentication for the users with Azure Active Directory is very easy, thanks to the work of the [ALM Rangers](https://www.almdevopsrangers.org/). Follow the setup [here](https://github.com/hkamel/sonar-auth-aad/wiki/Setup).  
 
 Do note the Server base URL in SonarQube, I missed it the first time.  
 By default, this is empty! Go to `Administration`, `Configuration`, `General` --> `Server base URL`.
