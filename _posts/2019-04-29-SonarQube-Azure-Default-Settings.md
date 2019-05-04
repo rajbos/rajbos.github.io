@@ -63,3 +63,9 @@ Do note the Server base URL in SonarQube, I missed it the first time.
 By default, this is empty! 
 
 Go to `Administration`, `Configuration`, `General` --> `Server base URL` to set the url to match the url of the App Service.
+
+# Blocking anonymous users
+If you don't want to show the state of your projects to the entire world, don't forget to change the default setting for this. Since the free edition is available for open source projects, this setting is `on` by default.
+You can find it under Administration:  
+
+![](/images/20190429/2019-05-04SecureSonarQubeServer.png)
