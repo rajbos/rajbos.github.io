@@ -20,16 +20,35 @@ The biggest benefit is that the App Service already has Java installed! So no mo
 Setting up a new SonarQube server this way is a breeze. Updating it should be easier as well and that is the another big plus: you now have the ability to run the installation on a [Deployment Slot](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots), let it update the database and then switch to the slot. No manual updating anymore! 
 
 # Set up
-After creating the basic SonarQube App Service from GitHub or the ARM template, you need to create a new SQL database. Do note that you need to set the database to the correct collation for it to work: `SQL_Latin1_General_CP1_CS_AS`. Next, create a new SQL user by running this on the `Master` Database:
+After creating the basic SonarQube App Service from GitHub or the ARM template, you need to create a new SQL database. Do note that you need to set the database to the correct collation for it to work: `SQL_Latin1_General_CP1_CS_AS`. 
+
+## Creating a user
+There are two options to create a new user in the database. You can create one like you would do in a full MSSQL server installation, by using the `master` database. Running this way on a Azure SQL Db has a couple of downsides: 
+
+1. You now have a dependency on the master database. Every new connection will have to do a lookup in the master database and then route you through to the database you want to connect to. This will create a potential bottleneck from the master database, if you are running a lot of connections or a lot of databases on the server.
+1. Moving the database to another server takes more configuration, since the user configuration is not inside the database (see option two), but in the server itself.
+
+### Creating a contained user
+A Contained user is a user account created **inside the database itself**, making it easier to move if needed.
+Run this statement in a query editor connected to your database. Of course, you can make the user a `data_reader`, `data_writer` or something else.
+Since I need the application using this connection also creating the tables, stored procedures, etc, I gave it DBO rights in this database.
+``` SQL
+CREATE USER [MyUser] WITH PASSWORD = 'Secret';
+EXEC SP_ADDROLEMEMBER N'db_owner', N'MyUser'
+```
+
+### Creating a regular MSSQL user
+To create a regular MSSQL user if you do not want to have it contained in the database (see above), you can create a new SQL user by running this on the `Master` Database:
 ``` SQL 
 CREATE LOGIN SonarQubeUI WITH password='<make a new secure password here>';
 ```
-Then create a login from the new user account by running this statement `on the new database`:
+Then create a login from the new user account by running this statement `on the new database` (you cannot use a `use database_name` statement in Azure SQL database, so you need to switch to it in the UI of your query editor):
 ``` SQL
 CREATE USER SonarQubeUI FROM LOGIN SonarQubeUI 
 ```
 
-Copy these settings for next use:
+# Settings
+Copy these settings from the previous steps for next use:
 * SQL Server address (`mysqlserver.database.windows.net`)
 * DatabaseName
 * MSSQL Username and password
