@@ -80,7 +80,6 @@ Add-PoshGitToProfile
 |[GitHub Repo](https://github.com/vanderby/SonarQube-AzureAppService)|How to host SonarQube in an Azure [App Service](https://blogs.msdn.microsoft.com/premier_developer/2018/12/23/sonarqube-hosted-on-azure-app-service/)|
 |[Azure Quick Start ARM Templates](https://github.com/Azure/azure-quickstart-templates)|ARM templates for a lot of different Azure resources. Good starting point.|
 |[Recover Deleted Azure DevOps Release Definition](https://blogs.msdn.microsoft.com/aseemb/2017/11/22/how-to-undelete-a-deleted-release-definition/)|PowerShell script to recover a deleted Azure DevOps release definition (within 4 weeks after deletion!)|
-|`[Console]::ResetColor()`|Resetting the console colors in PowerShell. I somehow have this issue a lot (mostly from VS Code where my colors are wrong. Usually because of an error or warning message that got posted that didn't reset the colors. Running this command will fix it|
 
 </div>
 </div>
@@ -116,6 +115,8 @@ Blazor related links:
 
 * Unsplash for great images: [www.unsplash.com](https://www.unsplash.com)
 * Download Azure Icons from the Portal: [Azure Icon Downloader Chrome Extension](https://buildazure.com/2019/04/12/azure-icon-downloader-chrome-extension/)
+* `[Console]::ResetColor()` for resetting the console colors in PowerShell. I somehow have this issue a lot (mostly from VS Code) where my colors are wrong. Usually because of an error or warning message that got posted that didn't reset the colors.    
+Running this command will fix it.
 </div>
 </div>
 </div>
