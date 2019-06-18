@@ -52,3 +52,7 @@ img{
     color: darkorange;
     font-weight: 800;
 }
+
+.viewPost a {
+    color: darkorange;
+}
