@@ -1,5 +1,5 @@
 body{
-    background-image: url(../images/20171229_01.jpg);
+    background-color: darkorange;
     background-origin: content-box;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -12,8 +12,8 @@ body{
 
 /* bootstrap navbar overrides */
 .navbar-inverse {
-    background-color: #4286f4; 
-    border-color: #4286f4;
+    background-color: darkslategray; 
+    border-color: darkslategray;
     border-radius: 0;
 }
 .navbar-inverse .navbar-brand {
