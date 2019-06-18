@@ -47,3 +47,8 @@ body{
 img{
     max-width: 100%;
 }
+
+.viewPost{
+    color: darkorange;
+    font-weight: 800;
+}
