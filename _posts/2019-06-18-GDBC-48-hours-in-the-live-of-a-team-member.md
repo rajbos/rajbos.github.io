@@ -49,7 +49,7 @@ During the day an organizer checked their setup and asked us for more teams! The
 
 ![Azure extra resource groups](/images/20190618/2019-06-18_04a.png) ![Azure DevOps extra team projects](/images/20190618/2019-06-18_04b.png)  
 
-## A teams is missing!
+## A team is missing!
 During the call that evening another organizer pinged us letting us know that he missed team-05 out of the 16 teams we provisioned for them. In Azure the resource group and the team users where created, but the team project was not available in Azure DevOps. As they also indicated they had sold out all the tickets, we needed to fix this. So I planned in a new run for that venue as well. 
 
 ## If it hurts, do it more often
