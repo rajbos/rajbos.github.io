@@ -21,7 +21,7 @@ body{
 }
 .navbar-inverse .navbar-brand:focus
 .navbar-inverse .navbar-brand:hover {
-    color: black;
+    color: darkorange;
     background-color: transparent;
 }
 
@@ -31,7 +31,7 @@ body{
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: black;
+  color: darkorange;
   background-color: transparent;
 }
 
@@ -40,7 +40,7 @@ body{
 }
 
 .panel-default>.panel-heading{
-    border-color: #4286f4;
+    border-color: darkorange;
     background-color: white;
 }
 
