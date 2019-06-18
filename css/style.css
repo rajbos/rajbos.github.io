@@ -46,6 +46,9 @@ body{
 
 img{
     max-width: 100%;
+    border-color: silver;
+    border-style: solid;
+    border-width: thin;
 }
 
 .viewPost{

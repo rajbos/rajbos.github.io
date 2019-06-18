@@ -9,7 +9,7 @@ Last weekend we got the opportunity to organize the Global DevOps Bootcamp [link
 ![GDBC Logo](/images/20190618/2019-06-18_01_GDBC_Logo.png)
  
 Thanks to [René van Osnabrugge](https://twitter.com/renevo), [Marcel de Vries](https://twitter.com/marcelv) and [Mathias Olausson](https://twitter.com/molausson) for coming up with the idea to create GDBC and sticking with the team to get this idea of the ground!  
-Without them and our sponsors ( [Xpirit](www.xpirit.com), [Solidify](https://solidify.se/), [Microsoft](www.microsoft.com)) we could not have started with the event!
+Without them and our sponsors ([Xpirit](www.xpirit.com), [Solidify](https://solidify.se/), [Microsoft](www.microsoft.com)) we could not have started with the event!
 
 # Team work!
 To set everything up we send out a call to everyone who helped last year and also to their friends. In the end we had a team with around 15 members, each picking up tasks they could handle (or try something new!). Without all that countless effort of them we would not have been able to pull this off! 
@@ -25,13 +25,14 @@ We lived the event through [Slack](www.slack.com), where the whole team would co
 
 # Wednesday and Thursday
 Although we got a sponsorship from [Microsoft](www.microsoft.com), our funds where limited, so we started provisioning all the infrastructure we needed for the event on Wednesday. I will dive into that setup later on, but you can see my explanation here: 
-<iframe width="900" height="506" src="https://www.youtube.com/embed/VPKNvE9Lnpk?list=PLCnpc4jNC9lBPR65GtrXYMXyge4VKll9l" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<iframe width="900" height="506" src="https://www.youtube.com/embed/VPKNvE9Lnpk?list=PLCnpc4jNC9lBPR65GtrXYMXyge4VKll9l" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+  
+## Azure DevOps Pipelines:  
 ![Azure DevOps Pipelines](/images/20190618/2019-06-18_40-pipelines.png)  
-
-## Resources for Azure Subscription 1
+  
+## Resources for Azure Subscription 1:  
 ![Azure Resources for subscription 1](/images/20190618/2019-06-18_41_Azure.png)  
-
+  
 This didn't go as easy as we hoped, luckily we anticipated throttling, availability issues of resources in the Azure regions we needed, etcetera, so we had plenty of time to do so. I will blog about the lessons we learned here separately and update this post with a link to it. Fortunately we had four different Azure Subscriptions to use so we could spread the load!  
 
 As most of our infrastructure got available, we enabled the venue organizers to pick on of the teams available for them and start testing our infrastructure end-to-end with it. We already did that with some specific demo venues, so we got some confidence that this would mostly work. We needed their feedback, specifically because there is no place to test on, then production!
