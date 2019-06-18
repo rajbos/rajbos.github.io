@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GDBC: 48 hours in the live of a team member"
+title: "GDBC: 48 hours in the life of a team member"
 date: 2019-06-18
 ---
 
