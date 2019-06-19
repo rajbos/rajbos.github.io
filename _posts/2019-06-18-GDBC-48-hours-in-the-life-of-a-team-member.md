@@ -4,12 +4,12 @@ title: "GDBC: 48 hours in the life of a team member"
 date: 2019-06-18
 ---
 
-Last weekend we got the opportunity to organize the Global DevOps Bootcamp [link](www.globaldevopsbootcamp.com) and it was a blast!
+Last weekend we got the opportunity to organize the Global DevOps Bootcamp [link](https://www.globaldevopsbootcamp.com) and it was a blast!
 
 ![GDBC Logo](/images/20190618/2019-06-18_01_GDBC_Logo.png)
  
 Thanks to [René van Osnabrugge](https://twitter.com/renevo), [Marcel de Vries](https://twitter.com/marcelv) and [Mathias Olausson](https://twitter.com/molausson) for coming up with the idea to create GDBC and sticking with the team to get this idea of the ground!  
-Without them and our sponsors ([Xpirit](www.xpirit.com), [Solidify](https://solidify.se/), [Microsoft](www.microsoft.com)) we could not have started with the event!
+Without them and our sponsors ([Xpirit](https://www.xpirit.com), [Solidify](https://solidify.se/), [Microsoft](https://www.microsoft.com)) we could not have started with the event!
 
 # Team work!
 To set everything up we send out a call to everyone who helped last year and also to their friends. In the end we had a team with around 15 members, each picking up tasks they could handle (or try something new!). Without all that countless effort of them we would not have been able to pull this off! 
@@ -21,10 +21,10 @@ During the last few months, we had a Monday call at 9:00 PM with the entire core
 
 We all do have day jobs to feed our families, so we actually worked as much as we could during the regular working days and then switched to GDBC when we could. For most of us that meant as soon as the kids or our partners where asleep. I've seen a lot of input, commits and feedback after midnight, so everyone was fully committed to this cause. 
 
-We lived the event through [Slack](www.slack.com), where the whole team would communicate with everyone involved: from sponsors, core team to the local venue organizers.
+We lived the event through [Slack](https://www.slack.com), where the whole team would communicate with everyone involved: from sponsors, core team to the local venue organizers.
 
 # Wednesday and Thursday
-Although we got a sponsorship from [Microsoft](www.microsoft.com), our funds where limited, so we started provisioning all the infrastructure we needed for the event on Wednesday. I will dive into that setup later on, but you can see my explanation here: 
+Although we got a sponsorship from [Microsoft](https://www.microsoft.com), our funds where limited, so we started provisioning all the infrastructure we needed for the event on Wednesday. I will dive into that setup later on, but you can see my explanation here: 
 <iframe width="900" height="506" src="https://www.youtube.com/embed/VPKNvE9Lnpk?list=PLCnpc4jNC9lBPR65GtrXYMXyge4VKll9l" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
   
 ## Azure DevOps Pipelines:  
@@ -38,7 +38,7 @@ This didn't go as easy as we hoped, luckily we anticipated throttling, availabil
 As most of our infrastructure got available, we enabled the venue organizers to pick on of the teams available for them and start testing our infrastructure end-to-end with it. We already did that with some specific demo venues, so we got some confidence that this would mostly work. We needed their feedback, specifically because there is no place to test on, then production!
 
 # Thursday call
-On Thursday we had an extra call: around 24 hours before the event would start, so we could cross the t's and dot the last i's. There where some last minute challenges that some of us where facing, like the flaky connection that had issues with the way the Parts Unlimited website now used the connection strings and a call to [Azure DevOps](dev.azure.com) that wasn't tested with 1300 team projects :smile: .
+On Thursday we had an extra call: around 24 hours before the event would start, so we could cross the t's and dot the last i's. There where some last minute challenges that some of us where facing, like the flaky connection that had issues with the way the Parts Unlimited website now used the connection strings and a call to [Azure DevOps](https://dev.azure.com) that wasn't tested with 1300 team projects :smile: .
 
 ## Firewall rules for challenge 
 To handle the firewall rules changes I've spend the rest of the evening with [Jakob](https://twitter.com/jakobehn) testing and updating all the SQL servers that we had provisioned so that the challenge could work.  
