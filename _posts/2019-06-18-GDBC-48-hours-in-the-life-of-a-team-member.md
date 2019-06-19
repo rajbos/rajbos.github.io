@@ -4,7 +4,7 @@ title: "GDBC: 48 hours in the life of a team member"
 date: 2019-06-18
 ---
 
-Last weekend we got the opportunity to organize the Global DevOps Bootcamp [link](https://www.globaldevopsbootcamp.com) and it was a blast!
+Last weekend we got the opportunity to organize the Global DevOps Bootcamp ([link](https://www.globaldevopsbootcamp.com)) and it was a blast!
 
 ![GDBC Logo](/images/20190618/2019-06-18_01_GDBC_Logo.png)
  
