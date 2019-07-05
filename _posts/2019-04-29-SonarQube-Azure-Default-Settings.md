@@ -74,6 +74,19 @@ sonar.jdbc.url=jdbc:sqlserver://mysqlserver.database.windows.net:1433;databaseNa
 Note the portnumber and the property of `databaseName` instead of `database` (this was changed in SonarQube > 5.3). 
 Also note that the database name your enter is CASE-SENSITIVE! SonarQube is running on Java, hence the sensitivity.
 
+After setting these properties. Stop and Start the App Service again: SonarQube only reads in this file at startup and then initializes the new database.
+
+# Set an admin password!
+By default, the admin login is admin/admin, so you want to change that ASAP (after setting up the database). 
+
+# Errors?
+If the SonarQube server doesn't load after the changes, you can find the errors in the SonarQube folder here 
+```
+/logs/sonar.log
+/logs/web.log
+```
+Remember to restart the App Service after changing anything in the config!
+
 # Azure Active Directory
 
 Setting up authentication for the users with Azure Active Directory is very easy, thanks to the work of the [ALM Rangers](https://www.almdevopsrangers.org/). Follow the setup [here](https://github.com/hkamel/sonar-auth-aad/wiki/Setup).  
