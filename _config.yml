@@ -5,4 +5,4 @@ permalink: /blog/:year/:month/:day/:title
 theme: jekyll-theme-cayman
 plugins:
   - jemoji
-highlighter: Pygments
+highlighter: rouge
