@@ -15,7 +15,7 @@ I've fixed it before, but it took a while to find it again. That is why I am doc
 
 ## The issue in PowerShell
 Running this Azure CLI command in PowerShell will result in an error, because storage accounts cannot have a dash in the name:
-```powershell
+```PowerShell
 $StorageAccountName = "testRb-001"
 $ResourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -28,7 +28,7 @@ Result:
 Seems like an error, what's the issue then?  
 Well, adding error handling like you'd expect from PowerShell will not work!  
 
-```powershell
+```PowerShell
 $StorageAccountName = "testRb-001"
 $ResourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -49,7 +49,7 @@ Even adding -ErrorAction will not work.
 ## How to add error handling yourself
 The Azure CLI runs on JSON: it will try to give you JSON results on every call, so we can use that to see if we got any data back from the call. After converting the result, we can test to see if it has data:  
   
-```powershell
+```PowerShell
 $StorageAccountName = "testRb-001"
 $ResourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -84,8 +84,7 @@ The reasons for not using bash is that:
 
 Here is a shell example to make sure you are connected to the correct [Azure](https://azure.com) Subscription, to be complete:
 
-```bash
-
+```Shell
 # Switch to the correct subscription
 az account set --subscription ${SUBSCRIPTION_ID}
 output=$(az account show | jq '.')
