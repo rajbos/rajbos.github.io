@@ -30,3 +30,7 @@ Lazy as I am, I searched around and found a [gist](https://gist.github.com/iphto
 ``` 
 
 I also needed to add the syntax name that I am using in lowercase to get it all to work: so `powershell` instead of `PowerShell`.
+
+### Cool feature of GitHub Pages
+GitHub pages is already cool by itself, but did you now they actually send you an e-mail if there is an issue with you setup that prevents the yml-build from working?   
+![E-mail error from GitHub with Page Build Warning](/images/20190712.02/20190712_01.png)  
