@@ -15,7 +15,7 @@ I've fixed it before, but it took a while to find it again. That is why I am doc
 
 ## The issue in PowerShell
 Running this Azure CLI command in PowerShell will result in an error, because storage accounts cannot have a dash in the name:
-```PowerShell
+```powershell
 $StorageAccountName = "testRb-001"
 $ResourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -28,7 +28,7 @@ Result:
 Seems like an error, what's the issue then?  
 Well, adding error handling like you'd expect from PowerShell will not work!  
 
-```PowerShell
+```powershell
 $StorageAccountName = "testRb-001"
 $ResourceGroup = "myResourceGroup"
 $location = "westeurope"
