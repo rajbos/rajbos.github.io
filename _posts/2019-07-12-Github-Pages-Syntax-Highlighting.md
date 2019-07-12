@@ -29,4 +29,4 @@ Lazy as I am, I searched around and found a [gist](https://gist.github.com/iphto
 <link href="/css/syntax.css" rel="stylesheet">
 ``` 
 
-I also needed to add the synax name that I am using in lowercase to get it all to work: so `powershell` instead of `PowerShell`.
+I also needed to add the syntax name that I am using in lowercase to get it all to work: so `powershell` instead of `PowerShell`.
