@@ -84,7 +84,7 @@ The reasons for not using bash is that:
 
 Here is a shell example to make sure you are connected to the correct [Azure](https://azure.com) Subscription, to be complete:
 
-```Shell
+```shell
 # Switch to the correct subscription
 az account set --subscription ${SUBSCRIPTION_ID}
 output=$(az account show | jq '.')
