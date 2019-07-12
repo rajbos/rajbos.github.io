@@ -49,7 +49,7 @@ Even adding -ErrorAction will not work.
 ## How to add error handling yourself
 The Azure CLI runs on JSON: it will try to give you JSON results on every call, so we can use that to see if we got any data back from the call. After converting the result, we can test to see if it has data:  
   
-```PowerShell
+```powershell
 $StorageAccountName = "testRb-001"
 $ResourceGroup = "myResourceGroup"
 $location = "westeurope"
