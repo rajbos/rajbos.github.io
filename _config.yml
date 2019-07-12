@@ -6,4 +6,3 @@ theme: jekyll-theme-cayman
 plugins:
   - jemoji
 highlighter: rouge
-syntax_highlighter: rouge
