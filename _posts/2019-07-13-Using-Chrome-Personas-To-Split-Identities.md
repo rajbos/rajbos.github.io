@@ -78,4 +78,7 @@ Note the difference with the screenshot before, when that persona was not loaded
 
 When you try to pin that persona, it's pinned as the default process! There is no way to have that persona pinned on the taskbar. If you close that session, the icon is clear again. If you click on it **it will open the last opened persona**!
 
-If you have a way to fix this (If have even tried to mess around in `C:\Users\RobBos\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned` with manual shortcuts, but none of it worked), please reach out! That would solve the only issue that I have with this setup: it could be complete by fixing this!
+## Help me out
+If you have a way to fix this (If have even tried to mess around in `C:\Users\RobBos\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinne\` with manual shortcuts, but none of it worked), please reach out!  
+
+That would solve the only issue that I have with this setup: it could be complete by fixing this!
