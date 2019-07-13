@@ -95,3 +95,5 @@ Or look in the registry editor:
 
 I've tried them all before finding that the Default profile is indeed called.... the Default profile! Unfortunately does the same thing. 
 I also found to extra personas that might have been deleted at some point. After launching them, they are also visible again in the Chrome UI!
+
+By the way, storing the shortcut like this on the desktop and launching it does work. But I don't like to switch to the desktop each time I want to launch into this profile.
