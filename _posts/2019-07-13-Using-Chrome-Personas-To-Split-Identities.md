@@ -79,6 +79,19 @@ Note the difference with the screenshot before, when that persona was not loaded
 When you try to pin that persona, it's pinned as the default process! There is no way to have that persona pinned on the taskbar. If you close that session, the icon is clear again. If you click on it **it will open the last opened persona**!
 
 ## Help me out
-If you have a way to fix this (If have even tried to mess around in `C:\Users\RobBos\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinne\` with manual shortcuts, but none of it worked), please reach out!  
+If you have a way to fix this (If have even tried to mess around in `C:\Users\RobBos\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\` with manual shortcuts, but none of it worked), please reach out!  
 
 That would solve the only issue that I have with this setup: it could be complete by fixing this!
+
+## Update: also tested with launching Chrome manually
+After a tip from [Jasper](https://twitter.com/jaspergilhuis) I tried to see if I can launch Chrome.exe from the commandline with the correct persona. You can do so by providing it an extra parameter:  
+`.\chrome.exe --profile-directory="Profile 1" `
+Maybe this can be included in a shortcut and launch it that way?
+
+To see how Chrome names the personas, you can check your user directory here: `C:\Users\RobBos\AppData\Local\Google\Chrome\User Data\Guest Profile`  
+
+Or look in the registry editor:  
+![Registry editor window with Chrome settings open](/images/20190713/20190713_06_ChromeManually.png)
+
+I've tried them all before finding that the Default profile is indeed called.... the Default profile! Unfortunately does the same thing. 
+I also found to extra personas that might have been deleted at some point. After launching them, they are also visible again in the Chrome UI!
