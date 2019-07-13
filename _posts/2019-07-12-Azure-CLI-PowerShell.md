@@ -68,6 +68,36 @@ Writing the error to the output helps with:
 
 ![](/images/20190712/20190712_04_ErrorHandlingCorrectly.png)  
 
+### Shorthand
+There is a shorthand version of this code that you can use, if you don't care about the information in the output (Thanks [Rasťo](https://twitter.com/duracellko) !). You can use PowerShells [about automatic variable](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1): `$?` to just check if the result was successful or not.
+
+```powershell
+$StorageAccountName = "testRb-001"
+$ResourceGroup = "myResourceGroup"
+$location = "westeurope"
+$output = az storage account create -n $StorageAccountName -g $ResourceGroup -l $location --sku Standard_LRS | ConvertFrom-Json
+$LastExitCode
+if (!$?) {
+    Write-Error "Error creating storage account"
+    return
+}
+```
+
+As stated in the documentation:
+```
+Contains the execution status of the last operation. It contains TRUE if the last operation succeeded and FALSE if it failed.
+```
+I am just not sure yet as to why this works. I suspect `$?` is looking at the `$LastExitCode`, because this will print out `1`:
+
+```powershell
+$StorageAccountName = "testRb-001"
+$ResourceGroup = "myResourceGroup"
+$location = "westeurope"
+$output = az storage account create -n $StorageAccountName -g $ResourceGroup -l $location --sku Standard_LRS | ConvertFrom-Json
+
+$LastExitCode
+```
+
 ### Why am I using the Azure CLI?
 After posting this, I got asked why I am using the CLI to do this at all? Surely, Azure PowerShell or ARM Templates would be sufficient.
 
