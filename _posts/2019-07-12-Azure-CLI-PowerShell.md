@@ -14,7 +14,7 @@ I've fixed it before, but it took a while to find it again. That is why I am doc
 ![Yak to shave](/images/20190712/Yak.jpg)
 
 ## The issue in PowerShell
-Running this Azure CLI command in PowerShell will result in an error, because storage accounts cannot have a dash in the name:
+Running this Azure CLI command in PowerShell will result in an error, because storage accounts cannot have a dash or capitals in the name:
 ```powershell
 $StorageAccountName = "testRb-001"
 $ResourceGroup = "myResourceGroup"
