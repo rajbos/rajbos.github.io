@@ -6,11 +6,11 @@ title: Robs blog
 
   {% for post in site.posts %}
   <div class="panel panel-default">
-    <a href="{{ post.url }}">
-      <div class="panel-heading">
+    <div class="panel-heading viewPost">
+        <a href="{{ post.url }}">
           <span>{{ post.date | date_to_string }} - {{ post.title }}</span>
-      </div>
-    </a>
+        </a>
+    </div>
     <div class="panel-body">
       <div class="post-excerpt">
         {% if post.content contains '<!--excerpt.start-->' and post.content contains '<!--excerpt.end-->' %}
