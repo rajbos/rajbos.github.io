@@ -16,7 +16,7 @@ title: Robs blog
         {% else %}
           {{ post.content | strip_html | truncatewords: 70 }}
         {% endif %}
-        &nbsp;<div class="btn btn-default viewPost"><a href="{{ post.url }}" title="{{ post.title }}">View post</a></div>      
+        &nbsp;<a href="{{ post.url }}" title="{{ post.title }}"><div class="btn btn-default viewPost">View post</div></a>
       </div>
     </div>
   </div>
