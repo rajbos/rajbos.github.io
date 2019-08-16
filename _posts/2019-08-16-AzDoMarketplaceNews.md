@@ -6,6 +6,9 @@ date: 2019-08-16
 
 I've been developing software for over 16 years now and every now and then I come across someone who thinks developers do something magic that they can never learn to do. Maybe they are even afraid to ask us something because they don't understand something. As a consultant my role has often meant that I could take the time and explain to someone more functional oriented the reasoning behind some decisions a developer could make.
 
+![Picture of shoes on a forest background](/images/20190816/clem-onojeghuo-JUHW6hAToY4-unsplash.jpg)
+##### Photo by Clem Onojeghuo on Unsplash
+
 So this post is meant as an example battling against [imposter syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) and to openly document the development process and some key decisions along the way and give an insight about the stuff I need to look up (hint: **it is a lot!**).
 
 The git repository with the source for the tool is open source and can be found on [Github](https://github.com/rajbos/azure-devops-marketplace-extension-news).
