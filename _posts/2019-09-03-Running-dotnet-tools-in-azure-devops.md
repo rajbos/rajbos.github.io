@@ -11,6 +11,7 @@ In the latest versions of .NET Core 3.0 (currently still in preview), you can in
 
 ## Calling the installation of the tool in Azure DevOps
 To actually install the tool (locally) through the .NET Core tasks you need to run the command in a specific way. This took quite some testing to figure this out. I wish this was documented a little better, so here it is for myself in the future 😁:  
+
 ![Example of the configuration in Azure DevOps](/images/20190903/20190903_ToolInstall.png)
 
 Do note that the `custom command` to run is just `tool` and the parameter input gets the name of the action and the tool.
