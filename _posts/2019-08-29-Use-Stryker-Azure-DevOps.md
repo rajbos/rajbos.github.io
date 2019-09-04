@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use Stryker for .NET code in Azure DevOps"
-date: 2019-08-29
+date: 2019-09-04
 ---
 
 Recently I was at a customer where they where testing running test mutation with  [Stryker](https://stryker-mutator.io/stryker-net/). Mutation testing is a concept where you change the code in your System Under Test (SUT) to see if your unit test would actually fail. If they don't, your unit tests aren't specific enough for the SUT and should be re-evaluated. Since Stryker changes your code, they call it `mutations` and they check if they `survive` with the unit tests or not. Nice play on words there 😄.  
