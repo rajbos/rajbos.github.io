@@ -114,12 +114,12 @@ The release just consists of extracting the build artefact, overwriting the appl
 I started out with a Git repo, pushed that to [GitHub](https://github.com/rajbos/azure-devops-marketplace-extension-news), build and run in Azure DevOps and then report the status of the build and release through badges in Azure DevOps and included those in the readme of the repository: 
 |Step|Latest execution|
 |---|---|
-|Build|[![Build status](https://dev.azure.com/raj-bos/AzDo%20Marketplace%20News/_apis/build/status/AzDo%20Marketplace%20News-CI)](https://dev.azure.com/raj-bos/AzDo%20Marketplace%20News/_build/latest?definitionId=10)|
+|Build| ![Build status](https://dev.azure.com/raj-bos/AzDo%20Marketplace%20News/_apis/build/status/AzDo%20Marketplace%20News-CI)|
 |Release/Run status|![Release status](https://vsrm.dev.azure.com/raj-bos/_apis/public/Release/badge/301c7ef0-13c9-491b-b16d-cd07a6ec02ef/1/1)|
 
 By the way, I am using [Azure Pipelines from the GitHub marketplace](https://rajbos.github.io/blog/2018/09/10/GitHub-Azure-DevOps-Pipeline) to run the CI/CD triggers for the project.
 
-For the scheduling part I am using a scheduled trigger that will run the release definition every three hours. Somewhat irksome to add so many (no chron notation), but if it works....
+For the scheduling part I am using a scheduled trigger that will run the release definition every three hours. Somewhat irksome to add so many (no cron notation), but if it works....
 
 ## Conclusion
 I hope this gives an insight to the development process to someone that is curios and maybe helps to lower some of the [imposter syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) that some developers seem to have (myself included!). With a good mindset you can figure things out or just reach out and ask for help. With that, you can get anything done!
