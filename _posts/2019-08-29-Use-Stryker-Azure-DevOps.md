@@ -46,6 +46,10 @@ In the screenshot above you can see that by default, running Stryker in your sol
 ## Running Stryker in the CLI
 Running Stryker from the unit test project directory will start mutating your code and running the unit tests on it again. It will try out all the mutations it can find and then track if it survived all the unit tests (meaning that there was at least one unit test that failed when running against the mutation). The results are visible inline.
 
+``` powershell
+dotnet stryker --reporters "['cleartext', 'html']"
+```
+
 ![Executing Stryker](/images/20190829/2019-08-29_TerminalStrykerRun.png) 
 
 ## Mutations
