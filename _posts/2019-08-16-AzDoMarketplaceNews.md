@@ -112,6 +112,7 @@ The release just consists of extracting the build artefact, overwriting the appl
 
 ## Full circle
 I started out with a Git repo, pushed that to [GitHub](https://github.com/rajbos/azure-devops-marketplace-extension-news), build and run in Azure DevOps and then report the status of the build and release through badges in Azure DevOps and included those in the readme of the repository: 
+
 |Step|Latest execution|
 |---|---|
 |Build| ![Build status](https://dev.azure.com/raj-bos/AzDo%20Marketplace%20News/_apis/build/status/AzDo%20Marketplace%20News-CI) |
