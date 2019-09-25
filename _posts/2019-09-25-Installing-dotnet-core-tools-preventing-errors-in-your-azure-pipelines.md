@@ -34,11 +34,11 @@ dotnet tool update dotnet-stryker -g
 ```
 
 Outcome:
-* if the tool is not installed, it will install the latest version
+* if the tool is not installed, it will install the latest version!
 
 Seems strange behavior to me, but ok... At least it will return an exit code of 0 and we can move along.
 
-If you run the command, the tool will try to upgrade to the latest version, which is what I would expect.
+If you run the command again, the tool will try to upgrade to the latest version, which is what I would expect.
 The logs do seem to indicate an interesting story... It seems to  reinstall that same version (given there is no newer version available)...! 
 
 ![Result of dotnet update](/images/20190925/2019-09-25_UpdateCommandResult.png)  
