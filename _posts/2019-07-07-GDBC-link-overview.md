@@ -50,3 +50,12 @@ Here is an overview:
 
 ## Behind the scenes
 If you want to see what the team created to run the event, you can find all the behind the scenes video's here: [https://xpir.it/GDBC2019](https://xpir.it/GDBC2019).
+
+## Keynotes
+Here are some of the keynotes that have been published online.  
+
+|Year|Speaker|Topic|Link|
+|---|---|---|---|
+|2017|Donovan Brown|What is DevOps|No video online|
+|2018|Buck Hodges|How Microsoft does DevOps when creating Azure DevOps|[Youtube](https://www.youtube.com/watch?v=aIiLhK0NIlY)|
+|2019|Niall Murphy|Azure SRE Practices|Coming soon|
