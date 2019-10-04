@@ -58,4 +58,4 @@ Here are some of the keynotes that have been published online.
 |---|---|---|---|
 |2017|Donovan Brown|What is DevOps|No video online|
 |2018|Buck Hodges|How Microsoft does DevOps when creating Azure DevOps|[YouTube](https://www.youtube.com/watch?v=aIiLhK0NIlY)|
-|2019|Niall Murphy|Azure SRE Practices|[YouTube](https://youtu.be/ayyWqGlqjCc|
+|2019|Niall Murphy|Azure SRE Practices|[YouTube](https://youtu.be/ayyWqGlqjCc)|
