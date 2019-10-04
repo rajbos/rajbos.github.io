@@ -19,7 +19,7 @@ I previously posted about using Stryker for .NET in your Azure Pipeline (find it
 1. Join all files together
 1. Run the full report with the new file
 
-I created all code to do this in a PowerShell file and have shared that [here](https://github.com/rajbos/Stryker.MultipleProjectRunner). All information on how to do things is in de readme of that repository.
+I created all code to do this in a PowerShell file and have shared that on [GitHub](https://github.com/rajbos/Stryker.MultipleProjectRunner). All information on how to do things is in de readme of that repository.
 
 
 ### Files
