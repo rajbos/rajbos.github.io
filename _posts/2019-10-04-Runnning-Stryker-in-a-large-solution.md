@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Running Stryker on a large .NET core solution"
-date: 2019-07-07
+date: 2019-10-04
 ---
 
 
