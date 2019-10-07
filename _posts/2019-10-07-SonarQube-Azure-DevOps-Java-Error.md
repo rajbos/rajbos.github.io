@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "SonarQube analysis on a Java project - fixing error Project was never analyzed"
+title: "SonarQube analysis on a Java project - fixing error 'Project was never analyzed'"
 date: 2019-10-07
 ---
 
-Today I was configuring a SonarQube Analysis in Azure DevOps. Following the [documentation](https://sonarcloud.io/documentation/analysis/scan/sonarscanner-for-azure-devops/) I still got this error:  
+Today I was configuring a SonarQube Analysis in [Azure DevOps](http://dev.azure.com) on a Java project. Following the [documentation](https://sonarcloud.io/documentation/analysis/scan/sonarscanner-for-azure-devops/) I still got this error:  
 ```
 [ERROR] Failed to execute goal org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar (default-cli) on project 'prefix-project' Project was never analyzed. A regular analysis is required before a branch analysis -> [Help 1]
 ```
@@ -16,7 +16,7 @@ Running a build on the master branch, just to make sure it wasn't related to a d
 
 ![Build Error](/images/20191007/20191007_BuildError.png)
 
-In the pom file I noticed that there was an extra groupId added:
+In the pom file I noticed that there was an extra `groupId` added:
 ``` xml
  <groupId>com.organizationname</groupId>
  <artifactId>prefix-project</artifactId>
