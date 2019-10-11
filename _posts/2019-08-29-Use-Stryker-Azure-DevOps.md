@@ -85,3 +85,8 @@ Running Stryker on my current set of tests will actually fail the build because 
 The next step is to include the html report in you build pipeline and upload it as an artifact. You can then download it if you need to check it.
 
 The Stryker team seems to be working on an extension for Azure DevOps to enable the build results to show an extra tab that would open that artefact file, but it seems that this is not yet ready. Keep up to date on this by watching this [repository](https://github.com/stryker-mutator/azure-devops-mutationreport-publisher).
+
+# Update
+Read more information about the setup in Azure DevOps in my follow up post [here](https://rajbos.github.io/blog/2019/09/04/Use-Stryker-Azure-DevOps). 
+
+For the final setup with all steps running in parallel in Azure DevOps you can find the end result [here]().

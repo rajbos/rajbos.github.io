@@ -35,3 +35,6 @@ From that, I can paste it into the HTML file and store that as a new result file
 The next step is to update the code in the repo so I can do things like running multiple projects in multiple runs through this script (for example in Azure DevOps, where this can be parallelized), and join the resulting json files back together with an extra call at the end. That means I need to make the current code a little bit more modularized 😄.
 
 For now, this is already a working solution, so: Happy mutating!
+
+## Update:
+For the final setup with all steps running in parallel in Azure DevOps you can find the end result [here]().
