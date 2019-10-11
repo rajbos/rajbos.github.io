@@ -44,3 +44,10 @@ The logs do seem to indicate an interesting story... It seems to  reinstall that
 ![Result of dotnet update](/images/20190925/2019-09-25_UpdateCommandResult.png)  
 
 Strange way of implementing this functionality, at least there is a work around to prevent the CI build from failing.
+
+
+## Update for multiple parallel executions
+I needed to run a dotnet tool parallel on multiple machines in the same pipeline and then this method does not work. Seemed like a conflict when running the update command during the same time window.
+
+To circumvent this, I had to create a small PowerShell script to check the output of the `dotnet tool list -g` command and first manually check if the tool was installed. You can find the code for it in this [Gist](https://gist.github.com/rajbos/b148e9833a5d08165188dbe00cc32301).
+##### Note: Not sure why the last exitcode is not 0 when running the regular .NET Core command in an Azure DevOps pipeline, so I had to enforce a normal exit code.
