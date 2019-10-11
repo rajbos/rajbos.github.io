@@ -89,4 +89,4 @@ The Stryker team seems to be working on an extension for Azure DevOps to enable 
 # Update
 Read more information about the setup in Azure DevOps in my follow up post [here](https://rajbos.github.io/blog/2019/09/04/Use-Stryker-Azure-DevOps). 
 
-For the final setup with all steps running in parallel in Azure DevOps you can find the end result [here]().
+For the final setup with all steps running in parallel in Azure DevOps you can find the end result [here](https://rajbos.github.io/blog/2019/10/11/Parallelizing-a-long-Stryker-Run-in-Azure-DevOps).

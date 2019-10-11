@@ -37,4 +37,4 @@ The next step is to update the code in the repo so I can do things like running 
 For now, this is already a working solution, so: Happy mutating!
 
 ## Update:
-For the final setup with all steps running in parallel in Azure DevOps you can find the end result [here]().
+For the final setup with all steps running in parallel in Azure DevOps you can find the end result [here](https://rajbos.github.io/blog/2019/10/11/Parallelizing-a-long-Stryker-Run-in-Azure-DevOps).
