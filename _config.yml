@@ -5,6 +5,7 @@ permalink: /blog/:year/:month/:day/:title
 theme: jekyll-theme-cayman
 plugins:
   - jemoji
+  - jekyll-paginate
 tag_archive:
   type: liquid
   path: /tags/
