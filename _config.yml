@@ -10,7 +10,10 @@ tag_archive:
   type: liquid
   path: /tags/
 jekyll-archives:
-  enabled: []
+  enabled: 
+    - year
+    - month
+    - tags
   layout: archive
   permalinks:
     year: '/:year/'
