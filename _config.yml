@@ -14,7 +14,7 @@ jekyll-archives:
     - year
     - month
     - tags
-  layout: archive
+  layout: tags
   permalinks:
     year: '/:year/'
     month: '/:year/:month/'
