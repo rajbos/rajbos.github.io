@@ -9,3 +9,10 @@ plugins:
 tag_archive:
   type: liquid
   path: /tags/
+jekyll-archives:
+  enabled: []
+  layout: archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    tag: '/tag/:name/'
