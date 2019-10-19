@@ -2,6 +2,9 @@
 layout: post
 title: "Parallelizing a long Stryker Run in Azure DevOps"
 date: 2019-10-11
+tag:
+   - Azure DevOps
+   - Stryker
 ---
 
 I've been working on a [Stryker](https://stryker-mutator.io/stryker-net/) run for a larger .NET solution (115 projects and counting) and wanted to document on the final setup in Azure DevOps. 
