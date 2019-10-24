@@ -12,7 +12,11 @@ There is an [extension](https://marketplace.visualstudio.com/items?itemName=auto
 Add the extension and perform the tasks that you need:  
 ![Azure DevOps screenshot](/images/20191023/20191023_01_Tasks.png)  
 
-In this case, I first delete the existing service (will fail on the first try when the service is not available!), copy the files to the destination path, set up the parameters for that server and then install the service on the remote server.
+In this case, I use these tasks:
+* delete the existing service (will fail on the first try when the service is not available!)
+* copy the files to the destination path
+* set up the parameters for that server 
+* install the service on the remote server
 
 ## Caveats
 There are some small caveats to get this to work:  
