@@ -4,16 +4,8 @@ title: Robs - Blog - Tags
 ---
 
 <h1>Archive of posts with {{ page.type }} '{{ page.title }}'</h1>
-<ul class="posts">
-  {% for tag in site.tags %}
-    <li>
-      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <a class="post-link" href="{{ tag.url | prepend: site.baseurl }}">{{ tag }}</a>
-    </li>
-  {% endfor %}
-</ul>
 
-<hr/>
+<hr class="testTags"/>
 
 <ul class="tags">
     {% for post in site.posts %}    
@@ -25,7 +17,7 @@ title: Robs - Blog - Tags
     {% endfor %}
   </ul>
 
-<hr/>
+<hr class="test"/>
 
   {% comment %}
 =======================
