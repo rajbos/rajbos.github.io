@@ -19,7 +19,8 @@ title: Robs - Blog - Tags
     {% for post in site.posts %}
       <li>
           {% for tag in posts.tags %}
-        <a class="post-link" href="{{ tag.url | prepend: site.baseurl }}">{{ tag }}</a>
+            <a class="post-link" href="{{ tag.url | prepend: site.baseurl }}">{{ tag }}</a>
+          {% endfor %}
       </li>
     {% endfor %}
   </ul>
