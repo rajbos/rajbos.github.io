@@ -16,20 +16,23 @@ title: Robs - Blog - Tags
 <hr/>
 
 <ul class="tags">
-    {% for post in site.posts %}
+    {% for post in site.posts %}    
+      {% for tag in posts.tags %}
       <li>
-          {% for tag in posts.tags %}
-            <a class="post-link" href="{{ tag.url | prepend: site.baseurl }}">{{ tag }}</a>
-          {% endfor %}
+        <a class="post-link" href="{{ tag.url | prepend: site.baseurl }}">{{ tag }}</a>
       </li>
+      {% endfor %}
     {% endfor %}
   </ul>
 
-{% comment %}
+<hr/>
+
+  {% comment %}
 =======================
 The following part extracts all the tags from your posts and sort tags, so that you do not need to manually collect your tags to a place.
 =======================
 {% endcomment %}
+
 {% assign rawtags = "" %}
 {% for post in site.posts %}
 	{% assign ttags = post.tags | join:'|' | append:'|' %}
@@ -52,4 +55,13 @@ The following part removes duplicated tags and invalid tags like blank tag.
 			{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
 		{% endunless %}
 	{% endif %}
+{% endfor %}
+
+{% comment %}
+=======================
+The purpose of this snippet is to list all the tags you have in your site.
+=======================
+{% endcomment %}
+{% for tag in tags %}
+	<a href="#{{ tag | slugify }}"> {{ tag }} </a>
 {% endfor %}
