@@ -17,10 +17,13 @@ layout: default
   <div class="panel-footer">
     <a class="twitter-share-button" rel="canonical" href="https://twitter.com/intent/tweet?screen_name=RobBos81" data-size="large">Tweet to @RobBos81</a>
     
-    {% for tag in page.tags %}
-      <span class="post-date">{{ tag }}</span>
-      <a class="post-link" href="tag.url | prepend: site.baseurl">{{ tag.title }}</a>
-    {% endfor %}
+    <span style="vertical-align:middle;"> Tags: 
+      {% for tag in page.tags %}
+        <span class="btn btn-default">
+            <a class="post-link" href="tag.url | prepend: site.baseurl">{{ tag }}</a>
+        </span>
+      {% endfor %}
+    </span>
   </div>
 </div>
 
