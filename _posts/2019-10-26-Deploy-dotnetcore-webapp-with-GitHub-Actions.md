@@ -2,6 +2,9 @@
 layout: post
 title: "Deploy .NET Core web application using GitHub Actions"
 date: 2019-10-26
+tags:
+ - ".NET Core"
+ - "GitHub Actions"
 ---
 
 
