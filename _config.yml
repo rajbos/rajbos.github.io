@@ -5,7 +5,10 @@ permalink: /blog/:year/:month/:day/:title
 theme: jekyll-theme-cayman
 plugins:
   - jemoji
-  - jekyll-paginate
+  - jekyll-paginate 
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 tag_archive:
   type: liquid
   path: /tags/
