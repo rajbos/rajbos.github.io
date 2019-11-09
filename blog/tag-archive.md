@@ -5,7 +5,6 @@ layout: tags
 author_profile: true
 ---
 
-
 <h1>Archive of posts with {{ page.type }} '{{ page.title }}'</h1>
 <ul class="posts">
   {% for post in page.posts %}
