@@ -15,19 +15,18 @@ layout: default
   </div>
 
   <div class="panel-footer">
-
-    <a class="twitter-share-button" rel="canonical" href="https://twitter.com/intent/tweet?screen_name=RobBos81" data-size="large">Tweet to @RobBos81</a>
-    
-    <span style="vertical-align:middle;"> Tags: 
-      {% for tag in page.tags %}
-        <span class="btn btn-default">
-            <a class="post-link" href="{{ tag.url | prepend: site.baseurl }}">{{ tag }}</a>
-        </span>
-      {% endfor %}
-    </span>
-  </div>
+      <a class="twitter-share-button" rel="canonical" href="https://twitter.com/intent/tweet?screen_name=RobBos81" data-size="large">Tweet to @RobBos81</a>
+      
+      <span style="vertical-align:middle;left:75px; position:relative;"> Tags: 
+        {% for tag in page.tags %}
+          <span class="btn btn-default">
+              <a class="post-link" href="{{ tag.url | prepend: site.baseurl }}">{{ tag }}</a>
+          </span>
+        {% endfor %}
+      </span>
+   </div>
+   
 </div>
-
 <script>
 window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
