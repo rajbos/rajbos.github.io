@@ -18,7 +18,9 @@ You can find the entire playlist [here](https://www.youtube.com/watch?v=eEB9h8mU
 
 Some of the topics explained are:
 ## What is DevOps?
-I couldn't just start and not talk about the origination and basic idea's behind DevOps. This is a starting point for the series so I took a little extra time to explain why I started creating these video's. You can find this episode [here](https://www.youtube.com/watch?v=eEB9h8mU8rY&list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT&index=1).
+I couldn't just start and not talk about the origination and basic idea's behind DevOps. This is a starting point for the series so I took a little extra time to explain why I started creating these video's. You can find this episode 
+<iframe width="900" height="506" src="https://www.youtube.com/embed/eEB9h8mU8rY?list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Shift Left
 The first principle I explained is 'Shift Left', a common theme when we talk about DevOps. The basic goal here is to have a fast feedback cycle on anything in the development process. Watch this episode [here](https://www.youtube.com/watch?v=E4UD1dloNM8&list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT&index=2).
