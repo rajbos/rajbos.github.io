@@ -12,7 +12,7 @@ I also want share that information with the rest of the team members that weren'
 
 Creating these video's helps me getting a little more comfortable speaking to an audience, even if it is through a camera lens and with the ability to stop and do it again 😄. It also helps that I have some time to think through the message I'm trying to explain to the team. From there I am trying to get my intonation and articulation under control. This stuff is all new to me, so I am figuring this all out live on the job. I'm learning tons of stuff I didn't really think about before. This will be explained below. Somehow I like to challenge myself and do this stuff out in the open 😁.
 
-I have a different post explaining my setup and learning process on recording: [link](https://rajbos.github.io/blog/2019/07-10/DevOps-Principles-series-recording-setup).
+I have a different post explaining my setup and learning process on recording: [link](https://rajbos.github.io/blog/2019/07/10/DevOps-Principles-series-recording-setup).
 
 You can find the entire playlist [here](https://www.youtube.com/watch?v=eEB9h8mU8rY&list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT). I try to keep them as short as possible: bite-size!
 
