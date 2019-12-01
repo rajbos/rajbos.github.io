@@ -5,7 +5,7 @@ layout: default
 <div class="panel panel-default">
   <div class=panel-heading>
     <p class="meta">
-      Date posted: <strong>{{ page.date | date_to_string }}</strong>
+      Date posted: <strong>{{ page.date | date_to_string }}</strong>, {{ page.content | number_of_words | divided_by: 265 }} minutes to read
     </p>
     <h1> {{ page.title }} </h1>
   </div>
@@ -15,10 +15,21 @@ layout: default
   </div>
 
   <div class="panel-footer">
-    <a class="twitter-share-button" rel="canonical" href="https://twitter.com/intent/tweet?screen_name=RobBos81" data-size="large">Tweet to @RobBos81</a>
-  </div>
-</div>
+      <a class="twitter-share-button" rel="canonical" href="https://twitter.com/intent/tweet?screen_name=RobBos81" data-size="large">Tweet to @RobBos81</a>
+      
+      {% if page.tags == [] %}
+        <span style="vertical-align:middle;"> Tags: 
+          {% for tag in page.tags %}
+            <span class="btn btn-default">
+                <a class="post-link" href="{{ tag.url | prepend: site.baseurl }}">{{ tag }}</a>
+            </span>
+          {% endfor %}
+        </span>
+      {% endif %}
 
+   </div>
+
+</div>
 <script>
 window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
@@ -45,3 +56,9 @@ twttr.widgets.createMentionButton(
   }
 );
 </script>
+
+<style>
+    #twitter-widget-0 {
+      vertical-align: middle;
+    }
+</style>

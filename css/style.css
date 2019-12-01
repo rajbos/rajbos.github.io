@@ -1,5 +1,5 @@
 body{
-    background-color: darkorange;
+    background-color: bisque;
     background-origin: content-box;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -40,7 +40,7 @@ body{
 }
 
 .panel-default>.panel-heading{
-    border-color: darkorange;
+    border-color: bisque;
     background-color: white;
 }
 
@@ -58,4 +58,35 @@ img{
 
 .viewPost a {
     color: darkorange;
+}
+
+/* custom table styling */
+table {  
+    color: #333; 
+    border-collapse: 
+    collapse; border-spacing: 0; 
+}
+
+td, th {  
+    border: 1px solid silver;
+    padding: 5px;
+}
+
+th {  
+    background: #DFDFDF;  /* Darken header a bit */
+    font-weight: bold;
+}
+
+td {  
+    background: #FAFAFA;
+}
+
+/* Cells in even rows (2,4,6...) are one color */        
+tr:nth-child(even) td { background: #F1F1F1; }   
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */        
+tr:nth-child(odd) td { background: #FEFEFE; }  
+
+.post-excerpt {
+    overflow-x: auto;
 }

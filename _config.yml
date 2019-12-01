@@ -1,7 +1,30 @@
 # Build settings
 name: Rob Bos
 markdown: kramdown
+site.baseurl: "rajbos.github.io"
 permalink: /blog/:year/:month/:day/:title
 theme: jekyll-theme-cayman
 plugins:
   - jemoji
+  - jekyll-paginate 
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+tag_archive:
+  type: liquid
+  path: /tags/
+jekyll-archives:
+  enabled: 
+    - year
+    - month
+    - tags
+  layout:
+    year: year.html
+    tag:  tags.html
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    tag: '/tag/:name/'
+tag_archive:
+  type: liquid
+  path: /tags/

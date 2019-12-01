@@ -23,7 +23,7 @@ I like going to the movies, read a lot of fantasy and sometimes find the time to
 
 <div class="col-md-3" markdown="1">
 
-![Rob](/images/Rob_.jpg)
+![Rob](/images/RobBos.jpg)
 
 ![Xpirit Expert Blog](/images/xpirit%20export%20blog.png)
 

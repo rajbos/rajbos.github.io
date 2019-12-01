@@ -6,8 +6,10 @@ title: Robs blog
 
   {% for post in site.posts %}
   <div class="panel panel-default">
-    <div class="panel-heading">
-        <span>{{ post.date | date_to_string }} - {{ post.title }}</span>
+    <div class="panel-heading viewPost">
+        <a href="{{ post.url }}">
+          <span>{{ post.date | date_to_string }} - {{ post.title }}</span>
+        </a>
     </div>
     <div class="panel-body">
       <div class="post-excerpt">
@@ -16,11 +18,13 @@ title: Robs blog
         {% else %}
           {{ post.content | strip_html | truncatewords: 70 }}
         {% endif %}
-        &nbsp;<div class="btn btn-default viewPost"><a href="{{ post.url }}" title="{{ post.title }}">View post</a></div>      
+        &nbsp;<a href="{{ post.url }}" title="{{ post.title }}"><div class="btn btn-default viewPost">View post</div></a>
       </div>
     </div>
   </div>
+
   {% endfor %}
+
 </div>
 
 <!-- Mailchimp integration -->
