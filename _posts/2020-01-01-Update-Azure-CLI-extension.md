@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DevOps Principles series"
+title: "Update Azure CLI Extensions"
 date: 2020-01-09
 ---
 
