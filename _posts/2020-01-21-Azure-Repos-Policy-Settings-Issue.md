@@ -8,13 +8,13 @@ I ran into an issue where I could not change Azure Repositories Policy settings,
 
 ## Adding an email validation policy
 It all started at a new organization where I wanted to make sure that everyone was pushing changes into the repositories connected with their work e-mail address. To do that, you can set up a 'Commit author email validation' policy on each repository. That can be a lot of work if you have a lot of repo's 😀. Fortunately for us, a feature has been added to set those policies on the `project level`. 
-##### Side note: you can even set those policies on the company level, but only with the [api](https://jessehouwing.net/azure-repos-git-configuring-standard-policies-on-repositories/).
-##### Side note: you can have multiple patterns here as well, just split them with a semicolon in between.
+#### Side note: you can even set those policies on the company level, but only with the [api](https://jessehouwing.net/azure-repos-git-configuring-standard-policies-on-repositories/).
+#### Side note: you can have multiple patterns here as well, just split them with a semicolon in between.
 
 ![Adding a policy](/images/20200121/20200121_AddingPolicy.png)
 
 You can see here, that I have set a policy on the `Git repositories` level, easy as that. From now on, everyone that tries to push something into any of these repositories with an email that doesn't match this policy, will get an error telling them to fix the setting. 
-##### Side note: find out how to setup the commit email address from the [Git documentation](https://git-scm.com/docs/user-manual#telling-git-your-name).
+#### Side note: find out how to setup the commit email address from the [Git documentation](https://git-scm.com/docs/user-manual#telling-git-your-name).
 
 ## Policy Inheritance
 The tricky part for me was that these policies are now `inherited` by all the repositories. It's not that clear in the UI what happens with the inheritance: are the settings from the top level extended with the settings on the lower level? I've seen strange things happen here. I'll come back to that later.
@@ -46,5 +46,4 @@ If you remove the initial domain but add a different one, then only that new dom
 ![Policy Inheritance Extended](/images/20200121/20200121_PolicyInheritanceExtend.png)  
 
 If you remove all text from the policy, it will show that it stored an empty value. On refresh, the policy from the top-level has been filled in again!
-
-#### I suspect that the entries at the lower level is additive and the top level value always gets verified.
+##### I suspect that the entries at the lower level is additive and the top level value always gets verified.
