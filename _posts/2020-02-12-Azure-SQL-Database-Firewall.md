@@ -18,8 +18,12 @@ There is one extra option, which is very helpful if you want more control per da
 
 You can set the firewall rules on the database level as well! These will be checked after the server level settings, so you can mix and match. 
 
-There is no editor available, you need to edit the settings in the database itself, for example with the Query editor or through a query or table editor with the SQL Server Management Studio or Azure Data Studio
+There is no editor available, you'll need to edit the settings in the database itself, for example with the Query editor or through a query or table editor with the SQL Server Management Studio or Azure Data Studio
 ![Firewall rules on the database level](/images/20200212/20200212_02_DatabaseFirewallRules.png)  
 
 ## Opening up the connection for Azure Cloud resources
 To open the connection from other Azure resources (note: not limited to **your** subscriptions), you can toggle the setting for IP-address `0.0.0.0`.
+
+### Other options
+You can only set the server level firewall rules with the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/sql/server/firewall-rule?view=azure-cli-latest) or through [PowerShell](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure#server-level-versus-database-level-ip-firewall-rules).
+For database level, your only option is the SQL statements.
