@@ -25,8 +25,9 @@ I like going to the movies, read a lot of fantasy and sometimes find the time to
 
 ![Rob](/images/RobBos.jpg)
 
-![Xpirit Expert Blog](/images/xpirit%20export%20blog.png)
+![Xpirit Expert Blog](/images/xpirit%20export%20blog.png)  
 
+![MVP](/images/MVP.svg)
 </div>
 
 </div>
