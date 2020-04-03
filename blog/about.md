@@ -27,6 +27,7 @@ I like going to the movies, read a lot of fantasy and sometimes find the time to
 
 ![Xpirit Expert Blog](/images/xpirit%20export%20blog.png)  
 
+Microsoft MVP ([Profile here](https://mvp.microsoft.com/en-us/PublicProfile/5003719))
 ![MVP](/images/MVP.svg)
 </div>
 
