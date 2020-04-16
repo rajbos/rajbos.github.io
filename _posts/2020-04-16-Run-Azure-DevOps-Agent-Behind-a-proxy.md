@@ -13,50 +13,50 @@ To be able to install the agent we have requested these urls to be added to the 
 ### Organization specific:
 Replace ORGANIZATIONNAME with the name of your organization of course.
 
-https://ORGANIZATIONNAME.visualstudio.com
-https://ORGANIZATIONNAME.vsrm.visualstudio.com
-https://ORGANIZATIONNAME.pkgs.visualstudio.com
-https://ORGANIZATIONNAME.vssps.visualstudio.com
-http://sso.ORGANIZATIONNAME.com
-https://sso.ORGANIZATIONNAME.com
-https://login.ORGANIZATIONNAME.com/
+https://ORGANIZATIONNAME.visualstudio.com 
+https://ORGANIZATIONNAME.vsrm.visualstudio.com  
+https://ORGANIZATIONNAME.pkgs.visualstudio.com  
+https://ORGANIZATIONNAME.vssps.visualstudio.com  
+http://sso.ORGANIZATIONNAME.com  
+https://sso.ORGANIZATIONNAME.com  
+https://login.ORGANIZATIONNAME.com  
 
 ### Generic
-https://login.microsoftonline.com
-https://app.vssps.visualstudio.com
-https://login.live.com
-https://auth.gfx.ms
-https://app.vsspsext.visualstudio.com
-https://*.ods.opinsights.azure.com
-https://*.oms.opinsights.azure.com
-https://ods.systemcenteradvisor.com
-https://secure.aadcdn.microsoftonline-p.com
-https://*.dev.azure.com
-https://dev.azure.com
-https://login.microsoftonline.com
-https://management.core.windows.net
-https://api.nuget.org
-https://login.microsoftonline.com
-https://microsoftonline.com
-https://go.microsoft.com
-https://microsoft.com
-https://app.vssps.dev.azure.com
-https://dev.azure.com
-https://aex.dev.azure.com
-https://vstsagentpackage.azureedge.net
-https://graph.windows.net
-https://aadcdn.msauth.net
-https://aadcdn.msftauth.net
-https://windows.net
-https://visualstudio.com
-https://live.com
-https://app.vssps.visualstudio.com
-https://cdn.vsassets.io
-https://gallerycdn.vsassets.io
-https://static2.sharepointonline.com
-https://spsprodweu2.vssps.visualstudio.com/
-https://vssps.dev.azure.com/
-https://vsrm.dev.azure.com/
+https://login.microsoftonline.com  
+https://app.vssps.visualstudio.com  
+https://login.live.com  
+https://auth.gfx.ms  
+https://app.vsspsext.visualstudio.com  
+https://\*.ods.opinsights.azure.com  
+https://\*.oms.opinsights.azure.com  
+https://ods.systemcenteradvisor.com  
+https://secure.aadcdn.microsoftonline-p.com  
+https://\*.dev.azure.com  
+https://dev.azure.com  
+https://login.microsoftonline.com  
+https://management.core.windows.net  
+https://api.nuget.org  
+https://login.microsoftonline.com  
+https://microsoftonline.com  
+https://go.microsoft.com  
+https://microsoft.com  
+https://app.vssps.dev.azure.com  
+https://dev.azure.com  
+https://aex.dev.azure.com  
+https://vstsagentpackage.azureedge.net  
+https://graph.windows.net  
+https://aadcdn.msauth.net  
+https://aadcdn.msftauth.net  
+https://windows.net  
+https://visualstudio.com  
+https://live.com  
+https://app.vssps.visualstudio.com  
+https://cdn.vsassets.io  
+https://gallerycdn.vsassets.io  
+https://static2.sharepointonline.com  
+https://spsprodweu2.vssps.visualstudio.com  
+https://vssps.dev.azure.com  
+https://vsrm.dev.azure.com  
 
 ## Start the installation by making it aware of the proxy:
 The installation will then do the rest.
