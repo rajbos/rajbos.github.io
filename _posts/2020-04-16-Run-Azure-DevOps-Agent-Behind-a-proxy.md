@@ -13,7 +13,7 @@ To be able to install the agent we have requested these urls to be added to the 
 ### Organization specific:
 Replace ORGANIZATIONNAME with the name of your organization of course.
 
-https://ORGANIZATIONNAME.visualstudio.com 
+https://ORGANIZATIONNAME.visualstudio.com  
 https://ORGANIZATIONNAME.vsrm.visualstudio.com  
 https://ORGANIZATIONNAME.pkgs.visualstudio.com  
 https://ORGANIZATIONNAME.vssps.visualstudio.com  
