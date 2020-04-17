@@ -77,3 +77,6 @@ Good to note that you need `Manage Releases` with the service you are running th
 ```
 VS402904: Access denied: User Project Collection Build Service (AzDoServiceAccountName) does not have manage releases permission. Contact your  release manager.
 ```
+
+## Future Azure DevOps update
+There is a new update for Azure DevOps on its way to make this even easier as noted by the Azure DevOps team [here](https://github.com/microsoft/azure-pipelines-tasks/issues/4743#issuecomment-614721900). You can see that the initial issues was created in 2017 and the solution is rolling out in 2020 😄.
