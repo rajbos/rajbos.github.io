@@ -8,7 +8,7 @@ date: 2020-04-17
 In Azure DevOps I needed to determine a variable in one deployment stage, and use it in another. I remember finding and implementing this solution before but couldn't figure out how I did things, so this post is for me to find it easier next time 😉.
 
 For example, in a stage I want to set a variable with the name `ReleaseVariableName` to a value. Searching online points you to an example on how to do this with for example the PowerShell command below. You first create a variable in the variable tab and then set/overwrite its value:
-```PowerShell
+```powershell
 Write-Host "##vso[task.setvariable variable=ReleaseVariableName;]Value1.0"
 ```
 #### Note that you don't necessarily need to create variable, Azure DevOps does that for you. But it helps in figuring out what is happening later on.
@@ -24,7 +24,7 @@ The only way I found to update the variable value is to use the REST API for Azu
 
 ##### Do note that this updated value will not be available with this in the *same stage* as you're updating it in! Handle that separately.
 
-```PowerShell
+```powershell
 #region variables
 $ReleaseVariableName = 'StageVar'
 $releaseurl = ('{0}{1}/_apis/release/releases/{2}?api-version=5.0' -f $($env:SYSTEM_TEAMFOUNDATIONSERVERURI), $($env:SYSTEM_TEAMPROJECTID), $($env:RELEASE_RELEASEID)  )
