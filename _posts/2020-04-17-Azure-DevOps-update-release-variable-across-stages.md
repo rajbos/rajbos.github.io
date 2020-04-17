@@ -71,3 +71,9 @@ Write-Output ('Updated Release Pipeline variables output: {0}' -f $($Release.var
 
 ## Even easier, download the Task Group definition
 Making implementing this even easier, you can download my exported Task Group [here](\images\20200417\rajbos%20-%20Update%20Release%20Variable%20value%20across%20stages.json) and import it (after reviewing it for security issues of course!) into your own environment.
+
+### Authorization for the Service account you are using
+Good to note that you need `Manage Releases` with the service you are running the deployment pipeline with, otherwise you will run into an error like this:
+```
+VS402904: Access denied: User Project Collection Build Service (AzDoServiceAccountName) does not have manage releases permission. Contact your  release manager.
+```
