@@ -80,3 +80,33 @@ VS402904: Access denied: User Project Collection Build Service (AzDoServiceAccou
 
 ## Future Azure DevOps update
 There is a new update for Azure DevOps on its way to make this even easier as noted by the Azure DevOps team [here](https://github.com/microsoft/azure-pipelines-tasks/issues/4743#issuecomment-614721900). You can see that the initial issues was created in 2017 and the solution is rolling out in 2020 😄.
+
+# Update for yaml pipelines
+After reading this blog post, Sebastian Schütze new about another way to fix this issue in a yaml pipeline: you have the option there to upload an artefact from the pipeline that can be downloaded in any subsequent stage/job. 
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just created a new blog post: Variables Cross Stage in Azure DevOps with YAML <a href="https://twitter.com/hashtag/AzureDevOps?src=hash&amp;ref_src=twsrc%5Etfw">#AzureDevOps</a> <a href="https://twitter.com/hashtag/DevOps?src=hash&amp;ref_src=twsrc%5Etfw">#DevOps</a> <a href="https://twitter.com/hashtag/AzurePipelines?src=hash&amp;ref_src=twsrc%5Etfw">#AzurePipelines</a> <a href="https://twitter.com/hashtag/AzureDevOps?src=hash&amp;ref_src=twsrc%5Etfw">#AzureDevOps</a> <a href="https://twitter.com/hashtag/Cross?src=hash&amp;ref_src=twsrc%5Etfw">#Cross</a>-Stage <a href="https://twitter.com/hashtag/Variables?src=hash&amp;ref_src=twsrc%5Etfw">#Variables</a> <a href="https://twitter.com/hashtag/YAML?src=hash&amp;ref_src=twsrc%5Etfw">#YAML</a> AzureDevOps AzureDevOps <a href="https://t.co/CI94l1K8yG">https://t.co/CI94l1K8yG</a></p>&mdash; Sebastian Schütze 🚀☁️ (@RazorSPoint) <a href="https://twitter.com/RazorSPoint/status/1251537984366743553?ref_src=twsrc%5Etfw">April 18, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+You can read his post here: [www.razorspoint.com](https://www.razorspoint.com/2020/04/18/variables-cross-stage-in-azure-devops-with-yaml/).
+
+## Recreation in Classic Pipeline
+I wanted to check to see if I could replicate the behavior in a classic pipeline and it all seemed good: there is a Publish Pipeline Artifact task available that is meant just for cases like this.
+
+![Screenshot of Publish pipeline artifact](/images/20200417/20200417_02_PublishPipelineArtefact.png)
+
+[docs](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/publish-pipeline-artifact?view=azure-devops&viewFallbackFrom=vsts)
+
+You can then retrieve the file in the next stage/job and read it back in.... Or so was the plan:
+
+![Screenshot of Publish pipeline artifact](/images/20200417/20200417_03_ReadPublishedPipelineArtefact.png)
+
+
+![Screenshot of Publish pipeline artifact](/images/20200417/20200417_04_ErrorReadingPublishedPipelineArtefact.png)
+
+The Upload Artifact task cannot be run in a release pipeline! 😠💩
+It has been added to the [documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/publish-pipeline-artifact?view=azure-devops&viewFallbackFrom=vsts), but why they then show the task as being available and all, is beyond me. There have been more people who want this to work, as you can find in this [GitHub issue](https://github.com/Microsoft/azure-pipelines-tasks/issues/8812).
+
+There is an option to upload a file to the release pipeline, but then you cannot download it again:
+```powershell
+Write-Host "##vso[task.uploadfile]$($file.FullName)"
+```
+##### Note: you can then download this file with the logs for the release pipeline.
