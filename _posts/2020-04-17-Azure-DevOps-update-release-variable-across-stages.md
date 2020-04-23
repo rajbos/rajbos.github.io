@@ -1,5 +1,4 @@
 ---
-
 layout: post
 title: "Azure DevOps: Update release variables across stages"
 date: 2020-04-17
