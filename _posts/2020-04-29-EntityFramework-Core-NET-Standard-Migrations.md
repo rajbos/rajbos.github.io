@@ -34,6 +34,8 @@ cd Provisioning.ConsoleApp
 dotnet add package Microsoft.EntityFrameworkCore.Design
 ```
 
+Also note that I am using the `appsettings.json` to read the connection string to the database to use for EntityFramework, so I've included them to the console app: that is what EF Core will be using for running everything, so it needs to find those files as well (don't forget to mark them as `Copy always` to actually get them in the correct bin folder.).
+
 I usually open the `Package Manager Console` to execute actions like calling the EF Core Tools, just to stay in the same window. If you open it, you will start in the folder of the solution file. To use the EF Core tools, you'd normally change into the correct folder: in this case `Provisioning.DataLibary` ad then run the tools, like the migration actions:
 
 ```powershell
