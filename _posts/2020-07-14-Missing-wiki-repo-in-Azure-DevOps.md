@@ -14,7 +14,7 @@ Of course, I was intrigued and started to search: this functionality was always 
 ##### <span>Photo by <a href="https://unsplash.com/@matthewhenry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Matthew Henry</a></span>)
 
 ## TL;DR
-Sort version: it is not available anywhere, but you can 'guess' the correct URL and navigate to it: 
+Short version: it is not available anywhere, but you can 'guess' the correct URL and navigate to it: 
 `https://dev.azure.com/<organization>/<project>_git/<name of wiki>.wiki`
 
 ## Wiki types
