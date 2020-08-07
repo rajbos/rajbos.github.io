@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ADAL error in Azure DevOps API interaction"
-date: 2020-07-14
+date: 2020-08-07
 ---
 
 Today I encountered an issue while interacting with the [Azure DevOps API](https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.0). In the end this is not an issue with the API but with the user authentication and verification of tokens.
