@@ -5,7 +5,7 @@
 			"replacement": "https://rajbos.github.io/images/"
 		},
 		{
-			"pattern": "20",
+			"pattern": "20^",
 			"replacement": "https://rajbos.github.io/20"
 		}
 	]
