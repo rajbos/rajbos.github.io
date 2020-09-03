@@ -12,7 +12,7 @@ After installation Docker present you with a login screen.
 Since that login worked just fine, I'd expect that everything is setup correctly.
 
 The next step is then to verify that you can run at least `hello-world`:
-
+<!-- markdown-link-check-disable -->
 ```
 C:\Users\RobBos> docker run hello-world
 Unable to find image 'hello-world:latest' locally
@@ -21,6 +21,7 @@ See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
 ```
 
 That message: 'Error response from daemon: Get https://registry-1.docker.io/v2/library/hello-world/manifests/latest: unauthorized: incorrect username or password.' can send you down a wild goose-chase to figure out what is wrong!!!
+<!-- markdown-link-check-enable -->
 
 Since it tells you the call back to the docker registry is not authorized, you think you need to login again, even though Docker tells you, you are logged in.... Hmm, already strange, let's try that nonetheless.
 
@@ -33,15 +34,14 @@ Notice that I am using my e-mail address here. The login is just fine:
 ![](/images/2019_01_16_Docker_for_Windows_Email_Logged_In.png)
 
 Still, calling `docker run hello-world` gives me the same error:
-
+<!-- markdown-link-check-disable -->
 ```
 C:\Users\RobBos> docker run hello-world
 Unable to find image 'hello-world:latest' locally
-<!-- markdown-link-check-disable -->
 C:\Program Files\Docker\Docker\Resources\bin\docker.exe: Error response from daemon: Get https://registry-1.docker.io/v2/library/hello-world/manifests/latest unauthorized: incorrect username or password.
-<!-- markdown-link-check-enable -->
 See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
 ```
+<!-- markdown-link-check-enable -->
 
 
 After testing all sorts of stuff, reinstalling Docker (reboots required) and searching around some more, I *finally* got to a comment somewhere on another issue... And the issue is.... I am logged in with my **e-mail** address and **not** with my "insert curse" username! 
