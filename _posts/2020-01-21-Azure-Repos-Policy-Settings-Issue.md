@@ -38,7 +38,7 @@ If you go back to the e-mail policy on the top level, you can see that the messa
 In hindsight, it is clear that this is because my account is also part of the `Contributors` group. `Deny` settings have a higher priority then `Allow` settings! Fixing it was changing the `Deny` setting to `Not set`: that means that the contributors cannot change the settings, but this setting is not as explicit and people with the correct rights can still update policies.
 
 # Policy Inheritance questions
-As noted before, it's not clear if the policies are overwritten on the lower level if you set additional data on it. This is not clear from the [documentation](https://docs.microsoft.com/en-us/azure/devops/organizations/security/permissions?view=azure-devops&tabs=preview-page#git-repository-permissions-object-level)  
+As noted before, it's not clear if the policies are overwritten on the lower level if you set additional data on it. This is not clear from the [documentation](https://docs.microsoft.com/en-us/azure/devops/organizations/security/permissions?view=azure-devops&tabs=preview-page#git-repository-permissions-object-level&WT.mc_id=DOP-MVP-5003719)  
 ![Policy Inheritance](/images/20200121/20200121_PolicyInheritance.png)  
 
 For example, you can add an extra domain to use validation. It will get stored and stays in the input if you refresh.

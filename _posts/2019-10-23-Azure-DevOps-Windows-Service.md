@@ -20,6 +20,6 @@ In this case, I use these tasks:
 
 ## Caveats
 There are some small caveats to get this to work:  
-1. [WinRM](https://docs.microsoft.com/en-us/windows/win32/winrm/portal) needs to be enabled on the target server.
+1. [WinRM](https://docs.microsoft.com/en-us/windows/win32/winrm/portal?WT.mc_id=AZ-MVP-5003719) needs to be enabled on the target server.
 1. This extension cannot use the standard service user accounts to run the service as. This means you are tied to local user accounts on the target server and cannot use `Local System` or `Network Service`.
 1. Only works for X64 server and installed agent.

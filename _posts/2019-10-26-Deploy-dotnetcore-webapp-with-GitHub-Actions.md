@@ -130,6 +130,6 @@ To be really sure, the files now exist in the Kudu editor:
 ![File exist in Kudu editor](/images/20191026/11_Kudu_files_exists.png)  
 
 # Summary
-There you go, a complete example of setting up your first GitHub Actions Workflow for pushing a .NET Core application into an Azure App Service. The set of actions I used also has options for deploying to a [deployment slot](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots) as well, witch makes it complete! If this is the first time you use yaml, this can look a bit daunting, but after reading what is happening, I figured everything out as well!
+There you go, a complete example of setting up your first GitHub Actions Workflow for pushing a .NET Core application into an Azure App Service. The set of actions I used also has options for deploying to a [deployment slot](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots?WT.mc_id=AZ-MVP-5003719) as well, witch makes it complete! If this is the first time you use yaml, this can look a bit daunting, but after reading what is happening, I figured everything out as well!
 
 Next up is seeing if we can parameterize this yaml file and deploy to different web applications (for example `staging`) with the same template. That's something for another time!

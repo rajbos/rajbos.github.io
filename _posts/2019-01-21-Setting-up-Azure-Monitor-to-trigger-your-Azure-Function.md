@@ -4,12 +4,12 @@ title: "Setting up Azure Monitor to trigger your Azure Function"
 date: 2019-01-21
 ---
 
-I wanted to trigger an Azure Function based on changes in the Azure Subscription(s) we where monitoring. The incoming data can than be used to do interesting things with: keeping track of who does what, see new resources being deployed or old ones being deleted, etc. Back when I started working on this, there was no [Event Grid](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid) option to use in Azure Functions, so I started with linking it to [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview) events. I haven't checked the current options, so I cannot compare them yet. 
+I wanted to trigger an Azure Function based on changes in the Azure Subscription(s) we where monitoring. The incoming data can than be used to do interesting things with: keeping track of who does what, see new resources being deployed or old ones being deleted, etc. Back when I started working on this, there was no [Event Grid](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid?WT.mc_id=AZ-MVP-5003719) option to use in Azure Functions, so I started with linking it to [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview?WT.mc_id=AZ-MVP-5003719) events. I haven't checked the current options, so I cannot compare them yet. 
 
-In this blog I wanted to show how you can do this, both by using the Azure Portal and the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest).
+In this blog I wanted to show how you can do this, both by using the Azure Portal and the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest&WT.mc_id=AZ-MVP-5003719).
 
 ## Architecture
-To get [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview) to send in the changes that we need to see, I use this architecture:  
+To get [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview?WT.mc_id=AZ-MVP-5003719) to send in the changes that we need to see, I use this architecture:  
 ![](/images/2019_01_21_Azure_Monitor_Architecture.png)
 
 ## Steps
@@ -191,4 +191,4 @@ The name of the setting we are changing here (`EventHubConnectionAppSetting`) ne
         { ... }
 ```
 
-For more documentation about the Event Hub binding, check [docs.microsoft.com](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs).
+For more documentation about the Event Hub binding, check [docs.microsoft.com](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs?WT.mc_id=AZ-MVP-5003719).

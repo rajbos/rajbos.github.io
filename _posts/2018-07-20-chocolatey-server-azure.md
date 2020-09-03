@@ -10,9 +10,9 @@ Since that worked out an I now have a local document with the neccesary steps to
 
 ![chocolatey](/images/chocolatey.png)
 
-Ofcourse, Microsoft just announced that they started working on a different artifact server in VSTS (called [Universal Package Management](https://blogs.msdn.microsoft.com/devops/2018/07/09/universal-packages-bring-large-generic-artifact-management-to-vsts/)), next to the already available NuGet / npm / Maven [package management](https://visualstudio.microsoft.com/team-services/package-management/).
+Ofcourse, Microsoft just announced that they started working on a different artifact server in VSTS (called [Universal Package Management](https://blogs.msdn.microsoft.com/devops/2018/07/09/universal-packages-bring-large-generic-artifact-management-to-vsts/?WT.mc_id=AZ-MVP-5003719)), next to the already available NuGet / npm / Maven [package management](https://visualstudio.microsoft.com/team-services/package-management/?WT.mc_id=AZ-MVP-5003719).
 
-Since I needed something to show, I started researching how you can do this with your own Chocoserver. Unfortunately, the installation for Choco.Server on Windows consists of [multiple steps](https://chocolatey.org/docs/how-to-set-up-chocolatey-server#setup-normally) that can take up some time. That just doesn't feel right, so I wanted to see if I could wrap that inside of a PowerShell script being triggered from an [ARM template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authoring-templates) and Azure Automation DSC. I couldn't seem to find the time to really start on it, but fortunately enough, my colleague [Reinier van Maanen](http://rvanmaanen.github.io) needed a bit of a challenge and picked this up. You can find his ARM template [here](https://github.com/rvanmaanen/arm.chocolateyserver), together with the necessary PowerShell script.
+Since I needed something to show, I started researching how you can do this with your own Chocoserver. Unfortunately, the installation for Choco.Server on Windows consists of [multiple steps](https://chocolatey.org/docs/how-to-set-up-chocolatey-server#setup-normally) that can take up some time. That just doesn't feel right, so I wanted to see if I could wrap that inside of a PowerShell script being triggered from an [ARM template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authoring-templates?WT.mc_id=AZ-MVP-5003719) and Azure Automation DSC. I couldn't seem to find the time to really start on it, but fortunately enough, my colleague [Reinier van Maanen](http://rvanmaanen.github.io) needed a bit of a challenge and picked this up. You can find his ARM template [here](https://github.com/rvanmaanen/arm.chocolateyserver), together with the necessary PowerShell script.
 
 Beneath you can find the steps to get a working Choco.Server and Client up and running with a first basic package.
 
@@ -40,7 +40,7 @@ Install choco (elevated PowerShell) with this command:
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 You are now ready to create new packages and push it to the Choco.Server. I did this on my own laptop, so therefor I am using the public IP address of the Azure server.
-To wrap the files Chocolatey uses the well known [NuSpec](https://docs.microsoft.com/en-us/nuget/reference/nuspec) file, known from its use in [NuGet](https://www.nuget.org/).
+To wrap the files Chocolatey uses the well known [NuSpec](https://docs.microsoft.com/en-us/nuget/reference/nuspec?WT.mc_id=DOP-MVP-5003719) file, known from its use in [NuGet](https://www.nuget.org/).
 ``` 
 choco new testpackage creates the default nuspec in that folder
 change it, add notepad.exe into the \tools directory

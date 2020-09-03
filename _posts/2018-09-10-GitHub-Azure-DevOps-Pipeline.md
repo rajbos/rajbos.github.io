@@ -4,7 +4,7 @@ title: "Azure DevOps Pipeline for GitHub Open Source Projects"
 date: 2018-09-10
 ---
 
-Microsoft [announced](https://azure.microsoft.com/en-us/blog/introducing-azure-devops/) today that they have a 'new' product: Azure DevOps! With that announcement came another one: Azure DevOps pipelines for GitHub open source projects with unlimited minutes! I wanted to see what the integration with GitHub would look like, so I tried it out.
+Microsoft [announced](https://azure.microsoft.com/en-us/blog/introducing-azure-devops/?WT.mc_id=DOP-MVP-5003719) today that they have a 'new' product: Azure DevOps! With that announcement came another one: Azure DevOps pipelines for GitHub open source projects with unlimited minutes! I wanted to see what the integration with GitHub would look like, so I tried it out.
 
 Note: of course, you could already create pipelines for GitHub repo's, but only inside of a VSTS account and not **with unlimited build/release minutes!** If you had you own private agent installation, you could build with that.
 

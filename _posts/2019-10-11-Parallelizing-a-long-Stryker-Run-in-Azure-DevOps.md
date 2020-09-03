@@ -17,7 +17,7 @@ In this post you can find how I got to this point: [link](https://rajbos.github.
 You can find the repository with all the scripts on [GitHub](https://github.com/rajbos/Stryker.MultipleProjectRunner). I call these scripts in the Azure DevOps pipelines.
 
 ## High level overview
-See the screenshot below for the final setup. Jobs 1 & 2 will run in parallel since they aren't linked to any other job as a [dependency](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases?view=azure-devops&tabs=classic#dependencies). This enables us to run multiple Stryker jobs (each with multiple projects!) at the same time. If there are enough eligible agents in the build pool, we can fan out this rather extensive task. Depending on the number of unit tests and the code that is being tested, mutation testing can easily take a while.
+See the screenshot below for the final setup. Jobs 1 & 2 will run in parallel since they aren't linked to any other job as a [dependency](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/phases?view=azure-devops&tabs=classic#dependencies&WT.mc_id=DOP-MVP-5003719). This enables us to run multiple Stryker jobs (each with multiple projects!) at the same time. If there are enough eligible agents in the build pool, we can fan out this rather extensive task. Depending on the number of unit tests and the code that is being tested, mutation testing can easily take a while.
 
 Task 3 **does** have a dependency on the other tasks, so it will run when task 1 and 2 are completed successfully. 
 

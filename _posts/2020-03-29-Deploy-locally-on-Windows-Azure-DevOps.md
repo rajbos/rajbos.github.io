@@ -23,7 +23,7 @@ First, create a local windows user to run the agent with. We need to give the ac
 The user needs to be added to the local Administrator group to be able to execute **AppExec** commands, used for administrative tasks in IIS, like creating a website. I've checked, but couldn't find better ways to do this with a less privileged account.
 
 ## Windows Remote Management (WinRM)
-The default [deploy task](https://github.com/microsoft/azure-pipelines-extensions/blob/master/Extensions/IISWebAppDeploy/Src/Tasks/IISWebAppMgmt/IISWebAppMgmtV1/README_IISAppMgmt.md) in Azure DevOps use PowerShell with remote management to do the administrative tasks through [AppCmd](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe). You can enable to use this from a remote host, but you can also use this on the local host! 
+The default [deploy task](https://github.com/microsoft/azure-pipelines-extensions/blob/master/Extensions/IISWebAppDeploy/Src/Tasks/IISWebAppMgmt/IISWebAppMgmtV1/README_IISAppMgmt.md) in Azure DevOps use PowerShell with remote management to do the administrative tasks through [AppCmd](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe?WT.mc_id=DOP-MVP-5003719). You can enable to use this from a remote host, but you can also use this on the local host! 
 
 #### Check locally trusted hosts:
 Check the existing trusted hosts to see if the local host is already in the list:

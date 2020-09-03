@@ -30,4 +30,4 @@ You can then update the extension with the following command.
  Do note, that the command will tell you nothing that displays if the update was successful or not! Apparently the decision was made to not show you any feedback during default execution. If you want more information, you can add `--verbose` to the end of the command.
 
 ### Updating the Azure CLI itself
- Do note, that you cannot update the CLI itself by using any commands for it. You need to download and install the latest version from [Microsoft](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
+ Do note, that you cannot update the CLI itself by using any commands for it. You need to download and install the latest version from [Microsoft](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest&WT.mc_id=AZ-MVP-5003719).

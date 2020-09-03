@@ -5,7 +5,7 @@ date: 2020-04-16
 ---
 Sometimes you need to run the Azure DevOps Agent behind a proxy. If you search around you can find a lot of posts regarding this, and I wanted to have my own overview of all the things you need to keep in mind. At least I've tested this list myself 😁.
 
-To run the Azure DevOps agent behind a proxy, the proxy must be updated with the urls below in the allow-list. The origination of this list comes from [Microsoft](https://docs.microsoft.com/en-us/azure/devops/organizations/security/allow-list-ip-url?view=azure-devops) and [Jesse Houwing](https://jessehouwing.net/azure-devops-what-domains-are-used-by-your-account/).
+To run the Azure DevOps agent behind a proxy, the proxy must be updated with the urls below in the allow-list. The origination of this list comes from [Microsoft](https://docs.microsoft.com/en-us/azure/devops/organizations/security/allow-list-ip-url?view=azure-devops&WT.mc_id=AZ-MVP-5003719) and [Jesse Houwing](https://jessehouwing.net/azure-devops-what-domains-are-used-by-your-account/).
 
 # Proxy allow-list
 To be able to install the agent we have requested these urls to be added to the allow-list:

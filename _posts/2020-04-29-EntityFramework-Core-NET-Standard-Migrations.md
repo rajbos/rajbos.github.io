@@ -16,7 +16,7 @@ This means that when you use a .NET Standard project to host your database setup
 ```
 Startup project 'Provisioning.DataLibrary.csproj' targets framework '.NETStandard'. There is no runtime associated with this framework, and projects targeting it cannot be executed directly. To use the Entity Framework Core .NET Command-line Tools with this project, add an executable project targeting .NET Core or .NET Framework that references this project, and set it as the startup project using --startup-project; or, update this project to cross-target .NET Core or .NET Framework. For more information on using the EF Core Tools with .NET Standard projects, see https://go.microsoft.com/fwlink/?linkid=2034781
 ```
-The documentation [link](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet#other-target-frameworks) does point you in the right direction, but it wasn't as easy to find. Next time I run into this issue, I should be able to find the solution quicker 😄.
+The documentation [link](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet#other-target-frameworks?WT.mc_id=DOP-MVP-5003719) does point you in the right direction, but it wasn't as easy to find. Next time I run into this issue, I should be able to find the solution quicker 😄.
 
 ##### Do note: I happen to still have the version '2.2.0-rtm-35687' of the EF Core tools installed, not sure how this behavior is with the newer versions.
 

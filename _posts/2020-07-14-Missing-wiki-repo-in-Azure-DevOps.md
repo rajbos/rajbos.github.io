@@ -21,7 +21,7 @@ Short version: it is not available anywhere, but you can 'guess' the correct URL
 In Azure DevOps there is a distinction between two ways to setup your wiki:
 1. The default (old) way of creating a wiki. It is a Git repo under the covers
 1. Publish one or more repositories as a wiki
-You can find more documentation [here](https://docs.microsoft.com/en-us/azure/devops/project/wiki/provisioned-vs-published-wiki?view=azure-devops)
+You can find more documentation [here](https://docs.microsoft.com/en-us/azure/devops/project/wiki/provisioned-vs-published-wiki?view=azure-devops?WT.mc_id=DOP-MVP-5003719)
 
 ## History
 If you created a wiki a couple of years ago, you have the first wiki type. You could get the git URL to clone the repo and when you made changes to it, the repository would become visible on the Repos overview. This is no longer the case.
@@ -30,7 +30,7 @@ Currently when you create a new team project, you get the option to choose betwe
 ##### Note: I find the two types very confusing for the user and there is not a clear way to use them the same way. It would be better if a Project Admin could choose to include the repository in the normal overview or not. If the team using it is mature enough to use it as a normal repository, then why limit its use?
 
 ### Current Wiki creation
-When you create a new project and navigate to the wiki page, you are now greeted with this screen. Already confusing and the [Learn more](https://docs.microsoft.com/en-us/azure/devops/project/wiki/provisioned-vs-published-wiki?view=azure-devops) link tries to make the difference more clear, but doesn't really make it clear it will always be a repo underneath.  
+When you create a new project and navigate to the wiki page, you are now greeted with this screen. Already confusing and the [Learn more](https://docs.microsoft.com/en-us/azure/devops/project/wiki/provisioned-vs-published-wiki?view=azure-devops?WT.mc_id=DOP-MVP-5003719) link tries to make the difference more clear, but doesn't really make it clear it will always be a repo underneath.  
 ![New project screen](/images/20200714/20200714_01_NewProject.png)
 
 I mean, if you need this large a matrix to try and make the differences clear, while under the covers it is the same setup, why not make your product easier to use?  
@@ -55,13 +55,13 @@ If you update the URL in your browser, you can test the API with normal GET requ
 ##### Note this does not include the wiki repo, only the default empty repo with the same name as the project.
 
 ### Include Hidden repositories
-If you include the query string `includeHidden=True` as can be found in the [API docs](https://docs.microsoft.com/en-us/rest/api/azure/devops/git/repositories/list?view=azure-devops-rest-5.1), you see that the wiki repo is visible:  
+If you include the query string `includeHidden=True` as can be found in the [API docs](https://docs.microsoft.com/en-us/rest/api/azure/devops/git/repositories/list?view=azure-devops-rest-5.1&WT.mc_id=DOP-MVP-5003719), you see that the wiki repo is visible:  
 
 ![](/images/20200714/20200714_06_API_ReposCall_Hidden.png)
 
 Conclusion: it is a repo, but a hidden one!
 
-I've searched and tested some options, but I didn't manage to [update](https://docs.microsoft.com/en-us/rest/api/azure/devops/git/repositories/update?view=azure-devops-rest-5.1) the repo and make it not hidden anymore.
+I've searched and tested some options, but I didn't manage to [update](https://docs.microsoft.com/en-us/rest/api/azure/devops/git/repositories/update?view=azure-devops-rest-5.1&WT.mc_id=DOP-MVP-5003719) the repo and make it not hidden anymore.
 
 Finding some really old posts and a GitHub issue that requested the hidden repo to be visible (that got redirected to a UserVoice request that was closed due to inactivity 😧), I figured that this old URL might still be working... And luckily it is!
 

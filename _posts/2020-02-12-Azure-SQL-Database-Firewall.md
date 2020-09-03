@@ -25,5 +25,5 @@ There is no editor available, you'll need to edit the settings in the database i
 To open the connection from other Azure resources (note: not limited to **your** subscriptions), you can toggle the setting for IP-address `0.0.0.0`.
 
 ### Other options
-You can only set the server level firewall rules with the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/sql/server/firewall-rule?view=azure-cli-latest) or through [PowerShell](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure#server-level-versus-database-level-ip-firewall-rules).
+You can only set the server level firewall rules with the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/sql/server/firewall-rule?view=azure-cli-latest&WT.mc_id=AZ-MVP-5003719) or through [PowerShell](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure#server-level-versus-database-level-ip-firewall-rules?WT.mc_id=AZ-MVP-5003719).
 For database level, your only option is the SQL statements.

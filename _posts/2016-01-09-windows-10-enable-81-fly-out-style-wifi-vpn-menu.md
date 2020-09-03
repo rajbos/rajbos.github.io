@@ -18,6 +18,6 @@ Values:
 2 - Windows 8 style
 ```
 
-Note: you'll need adminstrator rights to change the settings, or use a tool like [RegOwnershipEx](http://winaero.com/) to change the settings. Take ownership of the folder and then open the register editor to change the value. 
+Note: you'll need administrator rights to change the settings, or use a tool like [RegOwnershipEx](http://winaero.com/) to change the settings. Take ownership of the folder and then open the register editor to change the value. 
 
 Thanks to [Nick Craver](https://twitter.com/Nick_Craver/status/685593210186543107), for mentioning it was possible to change it.

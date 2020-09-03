@@ -45,14 +45,14 @@ The event started everywhere at 10:00 AM local time, so New Zealand and Australi
 *Checking issues together with Geert, image by [Jesse Houwing](https://twitter.com/jessehouwing/).*
 
 ### EMEA region starting with the challenges
-When we started in Hilversum, The Netherlands, 10:00 AM CET, we noticed the average page load time climbing up and up. Appearently, a lot of venues in the EMEA region where using the leaderboard and where updating the workitems, causing some load on the webhook as well!
+When we started in Hilversum, The Netherlands, 10:00 AM CET, we noticed the average page load time climbing up and up. Apparently, a lot of venues in the EMEA region where using the leaderboard and where updating the workitems, causing some load on the webhook as well!
 
-We quickly scaled the App Service Plan and the Azure Sql Database to fix the page loads. This was important, because the webhooks where also on the same endpoint. When a webhook fails a couple of times, it will be disabled! That would mean teams not getting new points for the challenges they would complete!
+We quickly scaled the App Service Plan and the Azure SQL Database to fix the page loads. This was important, because the webhooks where also on the same endpoint. When a webhook fails a couple of times, it will be disabled! That would mean teams not getting new points for the challenges they would complete!
 
 Thanks to the power of Azure and our team being enabled to fix things while running, we mitigated the issue.
 
 #### Failing webhooks
-A couple of hours later, someone spotted errors in Application Insights for the cals into the webhook. Checking the callstacks and exception messages, we found the culprit. We made sure we checked the workitems coming in to find their correct tags so we could find the points they where gathering, but we didn't aniticipated our participants creating their own workitems and tasks to distribute the work between them!
+A couple of hours later, someone spotted errors in Application Insights for the calls into the webhook. Checking the callstacks and exception messages, we found the culprit. We made sure we checked the workitems coming in to find their correct tags so we could find the points they where gathering, but we didn't anticipated our participants creating their own workitems and tasks to distribute the work between them!
 This meant the webhook was being called with workitems that didn't have **any** tags! So: a simple edge case we missed in our unit tests!
 
 A commit, push, pull request, review and merge later, the CI/CD pipeline we created kicked in and the application was pushed to production! Just like the teams where learning to use today!
@@ -64,7 +64,7 @@ Somehow, some teams managed to trigger the webhook in such a way that we got a d
 ![WebApp](/images/2018_06_16_GDBC_WebApp.png)
 
 ## Usage throughout the day
-There was a noticable bump for the period EMEA region was live:
+There was a noticeable bump for the period EMEA region was live:
 ![Users](/images/2018_06_16_GDBC_Users.png)
 
 

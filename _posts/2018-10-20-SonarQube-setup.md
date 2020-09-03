@@ -69,4 +69,4 @@ Several benefits you get this way:
 
 The biggest benefit is that the App Service already has Java installed! So no more downloading the JRE by hand, installing it manually and starting the SonarQube service by hand! 
 
-Setting up a new SonarQube server this way is a breeze. Updating it should be easier as well and that is the another big plus: you now have the ability to run the installation on a [Deployment Slot](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots), let it update the database and then switch to the slot. No manual updating anymore! 
+Setting up a new SonarQube server this way is a breeze. Updating it should be easier as well and that is the another big plus: you now have the ability to run the installation on a [Deployment Slot](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots?WT.mc_id=AZ-MVP-5003719), let it update the database and then switch to the slot. No manual updating anymore! 
