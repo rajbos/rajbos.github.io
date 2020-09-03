@@ -4,13 +4,13 @@ title: "ADAL error in Azure DevOps API interaction"
 date: 2020-08-07
 ---
 
-Today I encountered an issue while interacting with the [Azure DevOps API](https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.0). In the end this is not an issue with the API but with the user authentication and verification of tokens.
+Today I encountered an issue while interacting with the [Azure DevOps API](https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.1&WT.mc_id=DOP-MVP-5003719). In the end this is not an issue with the API but with the user authentication and verification of tokens.
 Since it took me a while to figure out what was happening, I'm documenting it here.
 
 ## Error message 'Failed to obtain an access token of identity ..., The refresh token has expired due to inactivity'
 It matched the current project that I was working on: it had been a while since I used that project (and Azure DevOps organization for that matter) last: at least 5 months ago.
-The weird thing is, other calls to the REST API where working, using the same Personal Access Token ([PAT](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)) to setup projects, create repositories and other calls. 
-The script that failed was adding new users from the [AAD](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis) to our project, calling this endpoint with a body that holds the full username (`username@domain.tld`) with `Invoke-RestMethod` from PowerShell:
+The weird thing is, other calls to the REST API where working, using the same Personal Access Token ([PAT](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page&WT.mc_id=DOP-MVP-5003719)) to setup projects, create repositories and other calls. 
+The script that failed was adding new users from the [AAD](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis?WT.mc_id=AZ-MVP-5003719) to our project, calling this endpoint with a body that holds the full username (`username@domain.tld`) with `Invoke-RestMethod` from PowerShell:
 ```
 https://vssps.dev.azure.com/<<organization>>/_apis/graph/users?api-version=5.0-preview.1"`
 ```
