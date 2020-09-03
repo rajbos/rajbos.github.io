@@ -72,7 +72,7 @@ You have all the regular options for your pipeline available. For example: the n
 Since you now have an Azure DevOps project available, you can also enable other features for this project. This way you can leverage the powerful options Azure DevOps gives you. 
 
 Go to `Project settings`--> `Services` and enable the services you like to use.
-![](/images/2018_09_10-15Settings·Services.png)  
+![](/images/2018_09_10-15Settings-Services.png)  
 
 Reload the page and the enabled services are available. Here I enabled the `Boards` service:   
 ![](/images/2018-09_10-Work-Items-Boards.png)  
