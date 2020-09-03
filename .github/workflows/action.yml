@@ -12,4 +12,4 @@ jobs:
       with:
         check-modified-files-only: 'no'
         use-quiet-mode: 'no'
-        config-file: 'markdown-link-config.json'
+        config-file: '.github/workflows/markdown-link-config.json'
