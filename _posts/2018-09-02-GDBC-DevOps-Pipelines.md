@@ -8,7 +8,7 @@ date: 2018-09-02
 In June 2018 I was part of the team behind [Global DevOps BootCamp](https://globaldevopsbootcamp.com/) (or GDBC in short). The goal of the boot camp is to create a world wide event where everyone could get a taste of DevOps on the Microsoft Stack. It is an amazing combination between getting your hands dirty and sharing experience and knowledge around VSTS, Azure, DevOps with other community members. This years edition was great, with 75 registered venues worldwide and 8.000 registered attendees! The feedback we've got was wonderful: a true community event where everybody was asking for more!
 
 ![](/images/2018_08_31_Unsplash.jpg)
-#### Photo by [rawpixel on Unsplash](https://unsplash.com/photos/mcLpPD36-2k)
+#### Photo by [rawpixel on Unsplash](https://unsplash.com/)
 
 ## Challenges
 During the GDBC participants could try to complete 60+ challenges that the GDBC team had created. Those challenges where created by a team of more than 15 people (global organizers and venue organizers helped out), so they had quite a lot of changes during the preparation period. If you want to see and dive into the challenges, you can! The challenges have been open sourced for the community and can be found here: [GitHub/XpiritBV/GDBC2018-Challenges](https://github.com/XpiritBV/GDBC2018-Challenges).
