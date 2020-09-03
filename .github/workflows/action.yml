@@ -6,9 +6,10 @@ jobs:
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
+      # check all links in the md files to see if they are correct (http 200)
     - uses: actions/checkout@master
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
         check-modified-files-only: 'no'
         use-quiet-mode: 'no'
-        config-file: 'markdown-link-config.json'
+        config-file: '.github/workflows/markdown-link-config.json'
