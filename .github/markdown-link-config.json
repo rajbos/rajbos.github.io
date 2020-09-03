@@ -1,0 +1,8 @@
+{	
+	"replacementPatterns": [
+		{
+			"pattern": "/images/",
+			"replacement": "https://rajbos.github.io/images/"
+		}
+	]
+}
