@@ -18,7 +18,7 @@ As we followed the adagio: 'You build it, you run it', I made sure it was possib
 
 ## Series
 * Part 1 - This post, my journey with telemetry and starting with logging
-* [Part 2](https://rajbos.github.com/2018-03-29-DevOps-and-Telemetry-Insights-supporting-systems) - Supporting systems and how to gather that information
+* [Part 2](https://rajbos.github.io/blog/2018/03/22/DevOps-and-Telemetry-Insights-supporting-systems) - Supporting systems and how to gather that information
 * Part 3 - ?
 
 ### Part 1 in the series
@@ -71,4 +71,4 @@ A way to do so into Power BI is described [here](https://www.patrickvankleef.com
 
 
 ## Next up:
-The next post in this series will be: 'Part 2 - Supporting systems and how to gather that information'. I think it could be helpful to have a (start of) a list of items I started tracking about supporting systems. What parts of your infrastructure does an 'Ops' team really care about? I'll dive into that in the next post, wich you can find [here](2018-03-29-DevOps-and-Telemetry-Insights-supporting-systems)
+The next post in this series will be: 'Part 2 - Supporting systems and how to gather that information'. I think it could be helpful to have a (start of) a list of items I started tracking about supporting systems. What parts of your infrastructure does an 'Ops' team really care about? I'll dive into that in the next post, which you can find [here](https://rajbos.github.io/blog/2018/03/22/DevOps-and-Telemetry-Insights-supporting-systems)
