@@ -86,7 +86,7 @@ The keynote was finished at 12:00 AM and we watched the infrastructure with hawk
 
 ![Christchurch communication](/images/20190618/2019-06-18_06_StartEvent.png)  
 
-The teams in Australia where running by then and still everything look great on our end. Besides looking for issues there wasn't really anything to do but check the social media channels and respond there as well (we got sponsoring from [Walls_io](http://twitter.com/walls_io) to host a tweet wall [here](https://walls.io/gdbc2019)). 
+The teams in Australia where running by then and still everything look great on our end. Besides looking for issues there wasn't really anything to do but check the social media channels and respond there as well (we got sponsoring from [Walls_io](http://twitter.com/walls_io) to host a tweet wall [here](https://walls.io/)). 
 
 ## 2:00 AM Crashing team members!
 At 2:00 AM both René and Michiel really needed to go to bed and sleep to be worth anything in the morning. I was still rushing with excitement and stayed online if anything came up. I managed to do that until 4:00 AM:   
@@ -105,7 +105,7 @@ I actually managed to sleep until 6:30AM, even with the youngest kid taking up a
 
 In Hilversum we planned to set up the Command Center / War Room for the event. Everything was planned around this because we knew from last years that West-Europe and the America's would take up the most resources and chatter to handle. Luckily for us: [Jasper](https://xpirit.com/xpiriter/jasper-gilhuis/) had taken it upon himself to host our own venue there. As usual, our hospitality team has the perfect setup to host a venue like this.
 
-At the office, we have a [Ripple maker](https://www.drinkripples.com/) to print on your cappuccino's and [Jesse](https://xpirit.com/xpiriter/) needed a laptop to upload new GDBC images for it, so I helped him out with them:  
+At the office, we have a [Ripple maker](https://www.drinkripples.com/) to print on your cappuccino's and [Jesse](https://xpirit.com/xpiriter/jesse-houwing) needed a laptop to upload new GDBC images for it, so I helped him out with them:  
 ![Coffee first](/images/20190618/2019-06-18_09_WakingUp.jpg)  
 
 We had 10 colleagues from Xpirit in the office to help during the day with receiving guests, proctoring the teams and running the venue in Hilversum. 

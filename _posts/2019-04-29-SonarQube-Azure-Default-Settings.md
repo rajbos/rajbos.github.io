@@ -54,7 +54,7 @@ Copy these settings from the previous steps for next use:
 * MSSQL Username and password
 
 ## App Service update
-In the [Azure Portal](portal.azure.com), find your new App Service and navigate to Advanced Tools --> Kudu   
+In the [Azure Portal](https://portal.azure.com), find your new App Service and navigate to Advanced Tools --> Kudu   
 ![Advanced tools](/images/20190429/2019-04-29-01_AdvancedTools.png)  
 
 Open a debug console:  

@@ -51,7 +51,8 @@ choco push testpackage.{your.version.number.here}.nupkg --source http://{public.
 Note: the `-force` is necessary because we are using http instead of https.
 
 # Client machine (in the same resourcegroup/nsg/network!)
-For demo purposes I created another Azure Windows Server in the same resourcegroup, connected to the same network so the servers could easily connect to each other.  
+For demo purposes I created another Azure Windows Server in the same resource group, connected to the same network so the servers could easily connect to each other.  
+<!-- markdown-link-check-disable -->
 On that extra server, verify that it can see the Choco.Server by navigating to [http://local.ip.of.chocoserver/chocolatey](http://local.ip.of.chocoserver/chocolatey) to see if you get a valid result.  
 Then you can install the chocolatey client, link you own server as a source and use that server to install your own package. 
 
@@ -63,5 +64,6 @@ disable Internet Explorer Enhanced Security Configuration (IE ESC) to prevent th
 choco install testpackage
 Files are copied into C:\ProgramData\chocolatey\bin\ by default
 ```
+<!-- markdown-link-check-enable -->
 
 All in all, I found the process pretty straight forward. Now to start using the Choco.Server and push new versions to it! 

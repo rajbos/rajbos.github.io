@@ -24,7 +24,7 @@ There is another highlighter ([Pygments](http://pygments.org/)), but this is not
 
 I found a [Stack Overflow question](https://stackoverflow.com/questions/42188235/jekyll-github-pages-syntax-highlighting-not-working) that indicated I needed to include a CSS file with the highlighting I want myself.
 
-Lazy as I am, I searched around and found a [gist](https://gist.github.com/iphton/d4e607bfd4759f02ae6f68bd33fbca34) with a SCSS setup in it. I modified that to be just CSS and added it to my `head.html` like so:  
+Lazy as I am, I searched around and found a [gist](https://gist.github.com/) with a SCSS setup in it. I modified that to be just CSS and added it to my `head.html` like so:  
 ```html
 <link href="/css/syntax.css" rel="stylesheet">
 ``` 

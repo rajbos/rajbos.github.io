@@ -3,11 +3,11 @@ layout: post
 title: "Integrate SonarQube with TFS 2015 update 1"
 date: 2016-01-23
 ---
-While migrating CI stuff from Jenkins into TFS 2015 SP1 I ran into [this](http://blogs.msdn.com/b/visualstudioalm/archive/2015/08/24/build-tasks-for-sonarqube-analysis.aspx) blog post from Microsoft explaining how to include [SonarQube](http://www.sonarqube.org/) runs information in the TFS Build Tasks. We have been running SonarQube on our projecs for about a year now to gain some insights into Code Coverage and basic code smells. I sure don't want to lose the information Sonar gives us. 
+While migrating CI stuff from Jenkins into TFS 2015 SP1 I ran into [this](https://devblogs.microsoft.com/devops/build-tasks-for-sonarqube-analysis/?WT.mc_id=DOP-MVP-5003719) blog post from Microsoft explaining how to include [SonarQube](http://www.sonarqube.org/) runs information in the TFS Build Tasks. We have been running SonarQube on our projects for about a year now to gain some insights into Code Coverage and basic code smells. I sure don't want to lose the information Sonar gives us. 
 
-The problem was that we weren't getting any results into SonarQube. The default way TFS runs the UnitTests is that it generates a trx file with coverage information in it. Unfortunatly,when you have a VS Professional license, it will not generate the code coverage. You'd need a Enterprise license for it!
+The problem was that we weren't getting any results into SonarQube. The default way TFS runs the UnitTests is that it generates a trx file with coverage information in it. Unfortunately,when you have a VS Professional license, it will not generate the code coverage. You'd need a Enterprise license for it!
 
-In Jenkins, we used [OpenCover](https://github.com/OpenCover/opencover) to generate the coverage data, which integrates into the calls to the SonarQube runner. Its open souce, which is a big plus.
+In Jenkins, we used [OpenCover](https://github.com/OpenCover/opencover) to generate the coverage data, which integrates into the calls to the SonarQube runner. Its open source, which is a big plus.
 
 ## Step 1:
 Create a new location on the server to place the coverage reports into. I've used `C:\OpenCover\` for this, and let OpenCover generate a file for each assembly we're testing, using the name of the assembly as the filename for the xml report.
