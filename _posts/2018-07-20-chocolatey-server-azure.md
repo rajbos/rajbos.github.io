@@ -4,9 +4,9 @@ title: "Chocolatey Server in Azure"
 date: 2018-07-20
 ---
 
-Recently I wanted to demo an example of how you can rollout [Chocolatey](https://chocolatey.org/) packages via your own choco server. Sometimes we cannot save every binary in VSTS to use it in a pipeline as an artifact and therefor I needed a different artifact server. Chocolatey provides a NuGet wrapper around binaries that you can easliy track different versions with.
+Recently I wanted to demo an example of how you can rollout [Chocolatey](https://chocolatey.org/) packages via your own choco server. Sometimes we cannot save every binary in VSTS to use it in a pipeline as an artifact and therefor I needed a different artifact server. Chocolatey provides a NuGet wrapper around binaries that you can easily track different versions with.
 
-Since that worked out an I now have a local document with the neccesary steps to do so, I wanted to share that for later reuse.
+Since that worked out an I now have a local document with the necessary steps to do so, I wanted to share that for later reuse.
 
 ![chocolatey](/images/chocolatey.png)
 
@@ -28,8 +28,9 @@ Open parameters.json
 .\Deploy-AzureResourceGroup.ps1 -ResourceGroupLocation "West Europe" -StorageAccountName "ChocoARM"
 ```
 ~~Do note that the ARM template will report failure on the DSC step. To still get a working server you'll need to log in to the new VM and execute the last 5 lines by hand.~~ Update: thanks to [Reinier](https://twitter.com/MaanenReinier) this is now fixed! The ARM template now uses 2 steps to make sure the IIS management cmdlets are available for the second step. You can read how he fixed that [here](https://r-vm.com/depend-on-multiple-arm-script-extensions). 
-
+<!-- markdown-link-check-disable -->
 To check it, you can navigate to [http://localhost/](http://localhost/). 
+<!-- markdown-link-check-enable -->
 We are aware of the use of http, we need still to add that step to the script. We decided we could live with it for a small demo and blocking it from your own IP-address.
 
 ![Chocopackagelisting](/images/2018_07_20_Choco_Server_packagelistexample.png)

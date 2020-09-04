@@ -8,7 +8,7 @@ date: 2018-03-22
 In this post I want to explain about the next step: logging information about the systems that support the application: servers, database, storage and anything that comes with that.
 
 ## Series overview
-* [Part 1](https://rajbos.github.io/2018-03-14-DevOps-and-Telemetry-Insights-into-your-application) - My journey with telemetry and starting with logging
+* [Part 1](https://rajbos.github.io/blog/2018/02/23/DevOps-and-Telemetry-Insights-into-your-application) - My journey with telemetry and starting with logging
 * Part 2 - Supporting systems and how to gather that information (this post)
 * Part 3 - ?
 

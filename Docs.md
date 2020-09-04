@@ -1,10 +1,13 @@
-MS Learn suffixes:
+## Link rot link:
+https://wikipedia.org/wiki/Link_rot
+
+## MS Learn suffixes:
 Microsoft Azure	        ?WT.mc_id=AZ-MVP-5003719
 Developer / DevOps	    ?WT.mc_id=DOP-MVP-5003719
 
 
 
-Link check action: skip the links between these tags:
+## Link check action: skip the links between these tags:
 
 <!-- markdown-link-check-disable -->
 ## Section
