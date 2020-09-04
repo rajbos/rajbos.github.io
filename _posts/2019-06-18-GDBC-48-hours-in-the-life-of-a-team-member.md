@@ -38,7 +38,7 @@ This didn't go as easy as we hoped, luckily we anticipated throttling, availabil
 As most of our infrastructure got available, we enabled the venue organizers to pick on of the teams available for them and start testing our infrastructure end-to-end with it. We already did that with some specific demo venues, so we got some confidence that this would mostly work. We needed their feedback, specifically because there is no place to test on, then production!
 
 # Thursday call
-On Thursday we had an extra call: around 24 hours before the event would start, so we could cross the t's and dot the last i's. There where some last minute challenges that some of us where facing, like the flaky connection that had issues with the way the Parts Unlimited website now used the connection strings and a call to [Azure DevOps](https://dev.azure.com) that wasn't tested with 1300 team projects :smile: .
+On Thursday we had an extra call: around 24 hours before the event would start, so we could cross the t's and dot the last i's. There where some last minute challenges that some of us where facing, like the flaky connection that had issues with the way the Parts Unlimited website now used the connection strings and a call to <!-- markdown-link-check-disable -->[Azure DevOps](https://dev.azure.com) that wasn't tested with 1300 team projects :smile: .<!-- markdown-link-check-enable -->
 
 ## Firewall rules for challenge 
 To handle the firewall rules changes I've spend the rest of the evening with [Jakob](https://twitter.com/jakobehn) testing and updating all the SQL servers that we had provisioned so that the challenge could work.  
