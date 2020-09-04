@@ -77,7 +77,7 @@ Just adding this step in the yaml file ran the workflow again and indicated a wa
 ```
 ##[warning]This action is moved to azure/webapps-deploy repository, update your workflows to use those actions instead.
 ```
-To bad this warning doesn't include a link to the correct repository. Luckily the name of the action is also its path after GitHub.com: [https://github.com/azure/webapps-deploy](https://github.com/azure/webapps-deploy). Scrolling through the repository shows even more example yaml files to use! For .NET Core the example can be found [here](https://github.com/Azure/actions-workflow-samples/blob/master/asp.net-core-webapp-on-azure.yml). 
+To bad this warning doesn't include a link to the correct repository. Luckily the name of the action is also its path after GitHub.com: [https://github.com/azure/webapps-deploy](https://github.com/azure/webapps-deploy). Scrolling through the repository shows even more example yaml files to use! For .NET Core the example can be found [here](https://wikipedia.org/wiki/Linkrot). 
 ##### Do note that this also adds a publish step: I forgot that one initially!
 
 By now my mail application has caught up as well: on each failed run, GitHub sends you an email message to make sure you know something is not right 😄. 

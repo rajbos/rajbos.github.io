@@ -8,4 +8,4 @@ If you previously had a new Windows 10 preview build installed in your computer 
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsSelfHost\Applicability\RecoveredFrom 
 ```
 
-[Source](http://www.askvg.com/fix-windows-10-insider-preview-build-10240-not-appearing-on-windows-update/)
+[Source](https://www.askvg.com/fix-windows-10-insider-preview-build-10240-not-appearing-on-windows-update/)
