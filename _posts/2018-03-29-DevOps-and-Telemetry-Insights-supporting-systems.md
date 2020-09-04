@@ -9,8 +9,8 @@ In this post I want to explain about the next step: logging information about th
 
 ## Series overview
 * [Part 1](https://rajbos.github.io/blog/2018/02/23/DevOps-and-Telemetry-Insights-into-your-application) - My journey with telemetry and starting with logging
-* Part 2 - Supporting systems and how to gather that information (this post)
-* Part 3 - ?
+* [Part 2](https://rajbos.github.io/blog/2018/03/22/DevOps-and-Telemetry-Insights-supporting-systems) - Supporting systems and how to gather that information (this post)
+* [Part 3](https://rajbos.github.io/blog/2018/04/02/DevOps-and-Telemetry-support-the-support-systems) - Supporting the support systems
 
 ![Dashboard example](/images/20180329_03_Dashboard.png)
 

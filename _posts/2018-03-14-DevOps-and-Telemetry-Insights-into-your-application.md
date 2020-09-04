@@ -17,9 +17,9 @@ As we followed the adagio: 'You build it, you run it', I made sure it was possib
 
 
 ## Series
-* Part 1 - This post, my journey with telemetry and starting with logging
-* [Part 2](https://rajbos.github.io/blog/2018/03/22/DevOps-and-Telemetry-Insights-supporting-systems) - Supporting systems and how to gather that information
-* Part 3 - ?
+* [Part 1](https://rajbos.github.io/blog/2018/02/23/DevOps-and-Telemetry-Insights-into-your-application) - My journey with telemetry and starting with logging
+* [Part 2](https://rajbos.github.io/blog/2018/03/22/DevOps-and-Telemetry-Insights-supporting-systems) - Supporting systems and how to gather that information (this post)
+* [Part 3](https://rajbos.github.io/blog/2018/04/02/DevOps-and-Telemetry-support-the-support-systems) - Supporting the support systems
 
 ### Part 1 in the series
 In this first post I'm exploring the information I found necessary to have and will follow this up in another post with several methods to gather that information. The closing part of this series will be an overview of tools that could be use to gather the necessary information and display inside of a dashboard.
