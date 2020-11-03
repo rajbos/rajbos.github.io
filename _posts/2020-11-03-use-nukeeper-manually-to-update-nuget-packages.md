@@ -4,7 +4,9 @@ title: "Use NuKeeper 'manually' to update NuGet packages"
 date: 2020-11-03
 ---
 
-While building up a scheduled pipeline for updating our [NuGet](https://docs.microsoft.com/en-us/nuget?WT.mc_id=DOP-MVP-5003719) dependencies I found [NuKeeper](https://nukeeper.com/) to help with automatically updating the packages we use. If you don't know [NuKeeper](https://nukeeper.com/), it is an open source project that will go through your .NET solution and check with the configured NuGet sources to see if there are any packages that have available updates. If there are updates, it can update your project (or solution) and even generate a Pull Request for you. With the DevOps mindset of handling these updates as technical debt, I wanted to run this check automatically each day, get any updates if possible and start our build pipeline to verify if it works.
+While building up a scheduled pipeline for updating our [NuGet](https://docs.microsoft.com/en-us/nuget?WT.mc_id=DOP-MVP-5003719) dependencies I found [NuKeeper](https://nukeeper.com/) to help with automatically updating the packages we use. If you don't know [NuKeeper](https://nukeeper.com/), it is an open source project that will go through your .NET solution and check with the configured NuGet sources to see if there are any packages that have available updates. If there are updates, it can update your project (or solution) and even generate a Pull Request for you. 
+
+With the DevOps mindset of handling these updates as technical debt, I wanted to run this check automatically each day, get any updates if possible and start our build pipeline to verify if it works.
 
 ##### Side note: it uses the normal NuGet flow to check for updates and uses that flow for authenticated/private package sources as well.  
 
