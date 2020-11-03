@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Use NuKeeper manually to update NuGet packages"
+title: "Use NuKeeper 'manually' to update NuGet packages"
 date: 2020-11-03
 ---
 
