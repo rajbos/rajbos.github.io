@@ -70,4 +70,11 @@ When updates where found, I can create the new branch and create a Pull Request 
     CreateMergeRequest -branchName $branchName -branchPrefix $branchPrefix -gitLabProjectId $gitLabProjectId
 ```
 
+In UpdatePackages I use the NuKeeper command to update the solution/project:
+``` powershell
+function UpdatePackages {
+    .\nukeeper update
+}
+```
+
 The full code is available in this [GitHub Gist](https://gist.github.com/rajbos/c4ff9619b9da7dd7f9062d69e0d364e5). I've split this up between the NuKeeper code (nukeeper.ps1) and the GitLab code (gitlab.ps1) for easier reuse.
