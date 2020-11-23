@@ -21,10 +21,10 @@ Together with my wife we raise our two sons, love summer vacationing in France a
 I like going to the movies, read a lot of fantasy and sometimes find the time to play Tak (a [board game](https://cheapass.com/tak/) from a [book](https://www.patrickrothfuss.com/content/books.asp)).  
 
 <ul>
-<li>🐦 [Social](https://twitter.com/RobBos81)</li>
-<li>📣 [Speaking](https://sessionize.com/RobBos/)</li>
-<li>🏗️ [LinkedIn](https://www.linkedin.com/in/bosrob/)</li>
-<li>🔊 [DevOps principles](https://www.youtube.com/playlist?list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT)</li>
+<li>🐦 <a href="https://twitter.com/RobBos81">Social</a>
+<li>📣 <a href="https://sessionize.com/RobBos/">Speaking</a>
+<li>🏗️ <a href="https://www.linkedin.com/in/bosrob/">LinkedIn</a>
+<li>🔊 <a href="https://www.youtube.com/playlist?list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT">DevOps principles</a>
 </ul>
 </div>
 
