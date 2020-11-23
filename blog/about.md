@@ -18,7 +18,14 @@ Hi there, I am a ALM/DevOps consultant at [Xpirit](https://xpirit.com/rob) with 
 
 Together with my wife we raise our two sons, love summer vacationing in France and winters in Austria or Switzerland. In our spare time we go on walks with the dog, play soccer, go biking or skating with the kids. 
 
-I like going to the movies, read a lot of fantasy and sometimes find the time to play Tak (a [board game](https://cheapass.com/tak/) from a [book](https://www.patrickrothfuss.com/content/books.asp)).
+I like going to the movies, read a lot of fantasy and sometimes find the time to play Tak (a [board game](https://cheapass.com/tak/) from a [book](https://www.patrickrothfuss.com/content/books.asp)).  
+
+|-|-|
+|---|---|
+|🐦|[Social](https://twitter.com/RobBos81)|
+|📣|[Speaking](https://sessionize.com/RobBos/)|
+|🏗️|[LinkedIn](https://www.linkedin.com/in/bosrob/)|
+|🔊|[DevOps principles](https://www.youtube.com/playlist?list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT)|
 </div>
 
 <div class="col-md-3" markdown="1">
