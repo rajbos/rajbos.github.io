@@ -20,7 +20,7 @@ Together with my wife we raise our two sons, love summer vacationing in France a
 
 I like going to the movies, read a lot of fantasy and sometimes find the time to play Tak (a [board game](https://cheapass.com/tak/) from a [book](https://www.patrickrothfuss.com/content/books.asp)).  
 
-|-|-|
+|🔦|Link|
 |---|---|
 |🐦|[Social](https://twitter.com/RobBos81)|
 |📣|[Speaking](https://sessionize.com/RobBos/)|
