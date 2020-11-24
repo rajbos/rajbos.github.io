@@ -51,10 +51,10 @@ To enable the deployment of the application on a Windows box, you'll have to use
 
 The runner runs on demand or as a Windows Service and will periodically open a long polling connection to GitHub, asking if there is work to do. The connection is always outgoing and on port 443.
 
-Installing a runner can be done from a repository, team or organization level from the website. Go to "Settings" --> Actions and scroll down to Self-hosted runners:
+Installing a runner can be done from a repository, team or organization level from the website. Go to "Settings" --> Actions and scroll down to Self-hosted runners: 
 ![Screenshot of the self-hosted runners view](/images/20201124/20201124_01_SelfHostedRunners.png)  
 
-Adding a runner is made very easy, all the steps are listed right in the screen, even including the temporary token it uses for a one time authentication process:
+Adding a runner is made very easy, all the steps are listed right in the screen, even including the temporary token it uses for a one time authentication process:  
 ![Screenshot of the steps to add a self-hosted runner](/images/20201124/20201124_02_AddingARunner.png)
 
 
