@@ -62,3 +62,5 @@ Adding a runner is made very easy, all the steps are listed right in the screen,
 The next question that came up was if you could run a Selenium WebTest (as I call that type of end-to-end test) with such a runner and if that would also work with a hosted runner. Long story short: it just works.
 
 In both [workflows](https://github.com/rajbos/dotnetcore-webapp/blob/main/.github/workflows/) I've added the last step 'Run Web Test' that runs the unit tests in the [WebTest](https://github.com/rajbos/dotnetcore-webapp/blob/main/dotnet-core-webapp.webtests/UnitTest1.cs) project that use a Selenium Driver to talk to the installed Chrome instance on the runner. You can find all the preinstalled software on the hosted runner [here](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-software).
+
+![Screenshot of webtest output](/images/20201124/20201124_03_WebTest.png)
