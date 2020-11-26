@@ -124,4 +124,4 @@ By the way, I am using [Azure Pipelines from the GitHub marketplace](https://raj
 For the scheduling part I am using a scheduled trigger that will run the release definition every three hours. Somewhat irksome to add so many (no cron notation), but if it works....
 
 ## Conclusion
-I hope this gives an insight to the development process to someone that is curios and maybe helps to lower some of the [imposter syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) that some developers seem to have (myself included!). With a good mindset you can figure things out or just reach out and ask for help. With that, you can get anything done!
+I hope this gives an insight to the development process to someone that is curious and maybe helps to lower some of the [imposter syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) that some developers seem to have (myself included!). With a good mindset you can figure things out or just reach out and ask for help. With that, you can get anything done!
