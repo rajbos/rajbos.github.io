@@ -92,7 +92,7 @@ tr:nth-child(odd) td { background: #FEFEFE; }
 }
 
 .panel-footer {
-    height: 121px;
+    height: 67px;
 }
 
 .panel-footer .tweet {
@@ -103,6 +103,6 @@ tr:nth-child(odd) td { background: #FEFEFE; }
 
 .panel-footer .logo {
     float:right;
-    width: 76px;
-    height: 28px;
+    width: 113px;
+    height: 84px;
 }
