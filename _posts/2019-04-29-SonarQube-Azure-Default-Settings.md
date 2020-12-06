@@ -58,7 +58,7 @@ In the [Azure Portal](https://portal.azure.com), find your new App Service and n
 ![Advanced tools](/images/20190429/2019-04-29-01_AdvancedTools.png)  
 
 Open a debug console:  
-![](/images/20190429/2019-04-29-02-Kudu%20Services.png)  
+![Debug console](/images/20190429/2019-04-29-02-KuduServices.png)  
 
 And navigate to the configuration folder of your SonarQube and open the file `sonar.properties`:
 ``` dos
