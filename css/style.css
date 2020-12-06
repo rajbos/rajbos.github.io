@@ -90,3 +90,19 @@ tr:nth-child(odd) td { background: #FEFEFE; }
 .post-excerpt {
     overflow-x: auto;
 }
+
+.panel-footer {
+    height: 121px;
+}
+
+.panel-footer .tweet {
+    float:left;
+    width: 76px;
+    height: 28px;
+}
+
+.panel-footer .logo {
+    float:right;
+    width: 76px;
+    height: 28px;
+}

@@ -15,8 +15,11 @@ layout: default
   </div>
 
   <div class="panel-footer">
+    <div class="tweet">
       <a class="twitter-share-button" rel="canonical" href="https://twitter.com/intent/tweet?screen_name=RobBos81" data-size="large">Tweet to @RobBos81</a>
-      
+    </div>
+
+    <div>
       {% if page.tags == [] %}
         <span style="vertical-align:middle;"> Tags: 
           {% for tag in page.tags %}
@@ -26,9 +29,11 @@ layout: default
           {% endfor %}
         </span>
       {% endif %}
+    </div>
 
+    <div class="logo">
       <a href="https://www.xpirit.com/xpiriter/rob"><img src="/images/xpirit_export_blog.png" alt="Xpirit logo" height="100px" style="align-self: flex-end;" /></a>
-
+    </div>
    </div>
 
 </div>
