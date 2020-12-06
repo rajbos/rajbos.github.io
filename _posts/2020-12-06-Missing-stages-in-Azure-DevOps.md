@@ -35,7 +35,8 @@ You can see that I needed to add [dependsOn](https://docs.microsoft.com/en-us/az
 Looking back, the first clue was that I didn't get multiple stages in any overview page:  
 ![Pipeline runs overview with only one stage visible](/images/20201206/20201206_01_MissingStages.png)
 
-My confusion came from this screen and not making the connection. The different 'stages' of my pipeline where showing here, so why not in the overview page?  
+My confusion came from this screen and not making the connection.  
+The different 'stages' of my pipeline where showing here, so why not in the overview page?  
 ![Job overview showing multiple jobs](/images/20201206/20201206_02_MultipleJobs.png)
 
 ## Finding a solution
@@ -43,7 +44,7 @@ Skipping the confusion part (I assumed I must have done something wrong or Azure
 
 ## Environment approval blocks all jobs
 Running the pipeline with an approval on one of the [environments](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops&WT.mc_id=DOP-MVP-5003719), blocked the **whole pipeline**! Not just the job targeting that specific environment, as I was expecting.
-![Environment approval blocks all jobs](/images/20201206/20201206_05_ApprovalBlocksAllJobs.png)
+![Environment approval blocks all jobs](/images/20201206/20201206_05_ApprovalBlocksAllJobs.png)  
 Searching the web, I came across other people having sort of the [same issue](https://stackoverflow.com/questions/57321733/checks-approvals-for-a-deployment-job-are-blocking-the-entire-stage), like for example this [uservoice](https://developercommunity.visualstudio.com/idea/673881/dont-block-the-entire-stage-when-checks-approvals.html). An almost two year old feature request to prevent this scenario from happening?!? Surely this is not happening in Azure DevOps?
 
 Eventually it was this [Stack Overflow answer](https://stackoverflow.com/a/60810101/4395661) that finally pushed me in the right direction...
@@ -55,7 +56,8 @@ This leads to this message, not making it that much more clear (oh hindsight):
 ![Message: Configuration is only available for multi-stage pipelines.](/images/20201206/20201206_04_StagesToRun.png)  
 
 # The fix
-This is where I felt stupid, shocked and reinforced the 'magic incantation' part of the [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops#define-pipelines-using-yaml-syntax&WT.mc_id=DOP-MVP-5003719)... The jobs relate to the same jobs in a [classic pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops#define-pipelines-using-the-classic-interface&WT.mc_id=DOP-MVP-5003719) and you need to wrap them in stages to have an actual multi-stage pipeline!
+This is where I felt stupid, shocked and reinforced the 'magic incantation' part of the [YAML pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops#define-pipelines-using-yaml-syntax&WT.mc_id=DOP-MVP-5003719)...  
+The jobs relate to the same jobs in a [classic pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops#define-pipelines-using-the-classic-interface&WT.mc_id=DOP-MVP-5003719) and you need to wrap them in stages to have an actual multi-stage pipeline!
 
 ``` yaml
 stages:
