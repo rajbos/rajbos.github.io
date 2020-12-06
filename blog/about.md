@@ -3,7 +3,7 @@ layout: default
 title: About
 ---
 <style>
-.pnl{float:left;margin-right:7px;}    
+ .pnl{float:left;margin-right:7px;}    
 </style>
 
 <h1>{{ page.title }}</h1>
@@ -34,7 +34,7 @@ I like going to the movies, read a lot of fantasy and sometimes find the time to
 
 ![Rob](/images/RobBos.jpg)
 
-![Xpirit Expert Blog](/images/xpirit%20export%20blog.png)  
+![Xpirit Expert Blog](/images/xpirit_export_blog.png)  
 
 Microsoft MVP ([Profile here](https://mvp.microsoft.com/en-us/PublicProfile/5003719))
 ![MVP](/images/MVP.svg)
