@@ -27,7 +27,8 @@ I've tried to set these in a logical order in the image below and will (try to) 
 I've color coded the states indicating their main point of view and if this is Developer driven (blue) or Operations driven (green), although this is not always as clear cut of course.
 
 ## Dev - Source control in order
-From a developer perspective you need to have your source control in order. I still come across code that is not version controlled at all, sometimes it just sits on a user machine, a share or even worse: on the shared server used for CI/CD (continuous integration and deployment)!
+From a developer perspective you need to have your source control in order. I still come across code that is not version controlled at all 🙀, sometimes it just sits on a user machine, a share or even worse: on the shared server used for CI/CD (continuous integration and deployment)!  
+Link 👉 [DevOps - Source control in order](/blog/2020/12/31/DevOps-Source-Control).
 
 ## Dev - CI (continuous integration) pipelines
 From a developer driven wish they usually start implementing something of a continuous pipeline, that at least builds the code on a different machine then the developer who wrote that code. This state will be split up into different maturity levels since there are a lot of different improvements to be made.
