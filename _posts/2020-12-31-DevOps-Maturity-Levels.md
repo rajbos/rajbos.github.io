@@ -32,6 +32,7 @@ Link 👉 [DevOps - Source control in order](/blog/2020/12/31/DevOps-Source-Cont
 
 ## Dev - CI (continuous integration) pipelines
 From a developer driven wish they usually start implementing something of a continuous pipeline, that at least builds the code on a different machine then the developer who wrote that code. This state will be split up into different maturity levels since there are a lot of different improvements to be made.
+Link 👉 [DevOps - Continuous Integration](/blog/2020/12/31/DevOps-Continuous-Integration).
 
 ## Ops - CD (continuous deployment / delivery) pipelines
 Often times the people who are deploying the application to an environment have the need to automate these actions into a repeatable process that can be executed without manual interactions. I've still seen teams that where orchestrating this process with six designated team members, each having to wait for someone else was done to start the next step in the deployment by running their own batch file (non versioned of course!) with custom settings for that environment. This state also can be split up into multiple maturity levels.

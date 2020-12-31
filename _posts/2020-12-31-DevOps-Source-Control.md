@@ -4,7 +4,6 @@ title: "DevOps Maturity Levels - Source control"
 date: 2020-12-31
 ---
 
-
 One of the first things to get in order when improving your [DevOps way of working](/blog/2020/12/31/DevOps-Maturity-Levels) is having proper version control of your source code. Source code in this case means anything: from application source code that you can build and deploy, to scripts you use to do the deployment. In my opinion: anything around your team that can be saved as text, should end up in source control. 
 
 ![Displaying the different States of Enlightenment](/images/20201231/20201231_01_StatesOfEnlightenment.png)
