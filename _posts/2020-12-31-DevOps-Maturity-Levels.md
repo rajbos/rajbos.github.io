@@ -13,14 +13,14 @@ The entry point often is something specific, like for example:
 
 After the initial question is handled (or planned to be handled), I often start helping the teams with additional steps they can include to improve certain aspects of their way of working and we go from there.
 
-Since my expertise is DevOps, all these things are around those topics. I've done a lot of things around the DevOps cycle, from explaining Git as a way to version your code to monitoring in production.
+Since my expertise is DevOps, all these things are around those topics. I've done a lot of things around the DevOps cycle, from explaining Git as a way to version your code to monitoring in production and deployment into a cloud environment.
 
-![DevOps Cycle]
+![DevOps Cycle](/images/20201231/20201231_01_DevOpsCycle.png)
 
 # DevOps - States of enlightenment
 Looking back at my assignments, I found different states where the teams where in their DevOps way of working and from that you can find the next thing that would probably help to improve their environment. With environment I mean everything they do to keep the application running in production. Of course, some teams already have (part of) these topics handled, so you can check other states as well to find possible improvements.
 
-I've tried to set these in a logical order in the image below and will (try to) create a blogpost for each stage to describe what this means and ways to implement this in your setup.
+I've tried to set these in a logical order in the image below and will (try to) create a blogpost for each stage to describe what this means and ways to implement this in your setup. You can always dive deeper into a specific item no matter where your team is in the improvement process or skip things and come back later. In my mind, this is an order that makes sense to me:
 
 ![Displaying the different States of Enlightenment](/images/20201231/20201231_01_StatesOfEnlightenment.png)
 
