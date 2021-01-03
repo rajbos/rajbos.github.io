@@ -15,12 +15,12 @@ After the initial question is handled (or planned to be handled), I often start 
 
 Since my expertise is DevOps, all these things are around those topics. I've done a lot of things around the DevOps cycle, from explaining Git as a way to version your code to monitoring in production and deployment into a cloud environment.
 
-![DevOps Cycle](/images/20201231/20201231_01_DevOpsCycle.png)
+![DevOps Cycle](/images/20201231/20201231_01_DevOpsCycle?v2.png)
 
 # DevOps - States of enlightenment
 Looking back at my assignments, I found different states where the teams where in their DevOps way of working and from that you can find the next thing that would probably help to improve their environment. With environment I mean everything they do to keep the application running in production. Of course, some teams already have (part of) these topics handled, so you can check other states as well to find possible improvements.
 
-I've tried to set these in a logical order in the image below and will (try to) create a blogpost for each stage to describe what this means and ways to implement this in your setup. You can always dive deeper into a specific item no matter where your team is in the improvement process or skip things and come back later. In my mind, this is an order that makes sense to me:
+I've tried to set these in a logical order in the image below and will (try to) create a blog post for each stage to describe what this means and ways to implement this in your setup. You can always dive deeper into a specific item no matter where your team is in the improvement process or skip things and come back later. In my mind, this is an order that makes sense to me:
 
 ![Displaying the different States of Enlightenment](/images/20201231/20201231_01_StatesOfEnlightenment.png)
 
@@ -31,11 +31,12 @@ From a developer perspective you need to have your source control in order. I st
 Link 👉 [DevOps - Source control in order](/blog/2020/12/31/DevOps-Source-Control).
 
 ## Dev - CI (continuous integration) pipelines
-From a developer driven wish they usually start implementing something of a continuous pipeline, that at least builds the code on a different machine then the developer who wrote that code. This state will be split up into different maturity levels since there are a lot of different improvements to be made.
+From a developer driven wish they usually start implementing something of a continuous pipeline, that at least builds the code on a different machine then the developer who wrote that code. This state will be split up into different maturity levels since there are a lot of different improvements to be made.  
 Link 👉 [DevOps - Continuous Integration](/blog/2020/12/31/DevOps-Continuous-Integration).
 
 ## Ops - CD (continuous deployment / delivery) pipelines
-Often times the people who are deploying the application to an environment have the need to automate these actions into a repeatable process that can be executed without manual interactions. I've still seen teams that where orchestrating this process with six designated team members, each having to wait for someone else was done to start the next step in the deployment by running their own batch file (non versioned of course!) with custom settings for that environment. This state also can be split up into multiple maturity levels.
+Often times the people who are deploying the application to an environment have the need to automate these actions into a repeatable process that can be executed without manual interactions. I've still seen teams that where orchestrating this process with six designated team members, each having to wait for someone else was done to start the next step in the deployment by running their own batch file (non versioned of course!) with custom settings for that environment. This state also can be split up into multiple maturity levels.  
+Link 👉 [DevOps - Continuous Deployment](/blog/2020/12/31/DevOps-Continuous-Deployment)  
 
 ## DevOps - Pre and post deployment gates with actual checks
 This is the first common scenario where both dev and ops have a stake to get things done: operations usually has an interest in checking if things are still working after a deployment and this often is the last step for the developers when they thing their work is complete. 
