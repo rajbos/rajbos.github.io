@@ -7,6 +7,10 @@
 		{
 			"pattern": "20^",
 			"replacement": "https://rajbos.github.io/20"
+		},
+		{
+			"pattern": "/blog/^",
+			"replacement": "https://rajbos.github.io/blog/"
 		}
 	]
 }

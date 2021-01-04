@@ -16,7 +16,7 @@ After the initial question is handled (or planned to be handled), I often start 
 Since my expertise is DevOps, all these things are around those topics. I've done a lot of things around the DevOps cycle, from explaining Git as a way to version your code to monitoring in production and deployment into a cloud environment.
 Note that these items are mostly based on using technology to improve things. The world of people and culture in an organization is for another time 😄.
 
-![DevOps Cycle](/images/20201231/20201231_01_DevOpsCycle?v2.png)
+![DevOps Cycle](/images/20201231/20201231_01_DevOpsCycle.png?v2)
 
 # DevOps - States of enlightenment
 Looking back at my assignments, I found different states where the teams where in their DevOps way of working and from that you can find the next thing that would probably help to improve their environment. With environment I mean everything they do to keep the application running in production. Of course, some teams already have (part of) these topics handled, so you can check other states as well to find possible improvements.
