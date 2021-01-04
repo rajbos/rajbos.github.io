@@ -11,6 +11,10 @@
 		{
 			"pattern": "/blog/^",
 			"replacement": "https://rajbos.github.io/blog/"
+		},
+		{
+			"pattern": "^/blog/",
+			"replacement": "https://rajbos.github.io/blog/"
 		}
 	]
 }
