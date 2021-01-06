@@ -94,3 +94,14 @@ jobs:
 
 ## Secret names
 Do note that I am using `secrets.GH_PAT` to inject the PAT token I'm using into the workflow. You cannot use `GITHUB` as a prefix for the secret name, so you need to change that. The secrets user interface doesn't tell you about that in a great way, which I have sent GitHub feedback on through the [GitHub Community](https://github.community/t/add-a-warning-or-explanation-when-saving-a-secret-with-a-wrong-name/154018).
+
+# Consuming the new image
+By default the images are kept behind a login, so if you want to make the image publicly available you need to do that for each package. 
+
+#### Note: this is a one way trip: it cannot be made private after making it publicly available
+
+To change this setting: go to the package and to its settings:
+![Package settings](/images/20210106/20210106_03_MakePackagePublic.png)  
+
+And make the image publicly available:
+![Make the image public](/images/20210106/20210106_04_MakePackagePublic.png)
