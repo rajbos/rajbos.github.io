@@ -98,6 +98,13 @@ Do note that I am using `secrets.GH_PAT` to inject the PAT token I'm using into 
 # Consuming the new image
 By default the images are kept behind a login, so if you want to make the image publicly available you need to do that for each package. 
 
+## Keep the image behind a login 
+To use the image behind the login, you'll need to authenticate with the registry first:
+``` powershell
+echo "$env:GH_PAT" | docker login https://ghcr.io -u USERNAME --password-stdin
+```
+
+## Enable the public registry
 #### Note: this is a one way trip: it cannot be made private after making it publicly available
 
 To change this setting: go to the package and to its settings:
