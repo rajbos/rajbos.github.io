@@ -46,7 +46,7 @@ Here is an overview:
 <!-- markdown-link-check-disable -->
 * [Hannupekka Sormunen](https://www.linkedin.com/in/hannupekka-sormunen/) visited a venue in Helsinki, Finland and posted <!-- markdown-link-check-enable -->his whole dairy [here](https://sorhanp.github.io/programming/2019/06/18/Global-DevOps-Bootcamp.html).
 * In Zaragoza (Spain), [Veronica Rivas](https://dev.to/vronik) helped to organize their second GDBC an wrote about it [here](https://dev.to/dotnetters/global-devops-bootcamp-zaragoza-2019-by-dotnetters-3ah2).
-* Read [here](https://devstyler.io/blog/2019/06/17/devops-kulturata-i-nivoto-na-global-devops-bootcamp/) about the event in Sofia, Bulgaria, which they organized for the third time (perfect score!).
+* Read [here](https://wikipedia.org/wiki/Link_rot) about the event in Sofia, Bulgaria, which they organized for the third time (perfect score!).
 * The organizers in Toronto, Canada blogged [here](https://objectsharp.com/blog/global-devops-bootcamp-toronto-2019-thats-a-wrap) about the event.
 * [David Gardiner](https://twitter.com/DavidRGardiner) helped organizing the third edition in Adelaide, Australia. Read about their day [here](https://david.gardiner.net.au/2019/06/global-devops-bootcamp.html).
 

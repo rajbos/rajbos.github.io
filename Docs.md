@@ -12,5 +12,5 @@ Developer / DevOps	    ?WT.mc_id=DOP-MVP-5003719
 <!-- markdown-link-check-disable -->
 ## Section
 
-Disbale link checking in this section. Ignore this [Bad Link](https://exampleexample.cox)
+Disable link checking in this section. Ignore this [Bad Link](https://exampleexample.cox)
 <!-- markdown-link-check-enable -->
