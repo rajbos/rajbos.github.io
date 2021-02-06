@@ -8,7 +8,11 @@ I've been diving into the security aspects of using [GitHub Actions](https://git
 
 From the beginning, GitHub always indicated that the best way to use GitHub Actions is to fork the repository containing them and take control over the code that you are running. That way you can review what the Action is doing before you start using it. You don't want to run just any random code from the internet, would you?
 
+<div align="center">
+
 ![Image of three forks with their shadows on the wall](/images/20210206/anita-jankovic-c1hg-BHe8Uk-unsplash.jpg)
+
+</div>
 ##### <span>Photo by <a href="https://unsplash.com/@dslr_newb?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Anita Jankovic</a> on <a href="https://unsplash.com/s/photos/forks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 # Always for the Actions repository and use that!
@@ -114,11 +118,10 @@ For this purpose I created this repository: [github.com/rajbos/github-fork-updat
 * Wait for the magic to happen
 * Your fork is updated
 * The issue is closed
+* Sit back and wait for new notifications the next time the fork is out of date
 
 You can also watch the demo video I created here:
-<div align="center">
   <a href="https://www.youtube.com/watch?v=Jj033ffS1YQE"><img src="https://img.youtube.com/vi/Jj033ffS1YQ/hqdefault.jpg" alt="GitHub Fork Updater"></a>
-</div>
 
 ## Summary
 This will make your life a lot easier. The default GitHub [notification methods](https://docs.github.com/en/github/managing-subscriptions-and-notifications-on-github/about-notifications) are used to notify you of new issues. All issues are always in the `GitHub Fork Updater` repository, instead of all over the place. And you can choose when to review the incoming changes and have an easy way to update the fork.
