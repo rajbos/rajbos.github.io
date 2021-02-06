@@ -8,7 +8,7 @@ I've been diving into the security aspects of using [GitHub Actions](https://git
 
 From the beginning, GitHub always indicated that the best way to use GitHub Actions is to fork the repository containing them and take control over the code that you are running. That way you can review what the Action is doing before you start using it. You don't want to run just any random code from the internet, would you?
 
-<div align="center">
+<div align="center" markdown="1">
 
 ![Image of three forks with their shadows on the wall](/images/20210206/anita-jankovic-c1hg-BHe8Uk-unsplash.jpg)
 
