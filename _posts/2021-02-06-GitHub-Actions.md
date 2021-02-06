@@ -12,7 +12,7 @@ From the beginning, GitHub always indicated that the best way to use GitHub Acti
 
 ![Image of three forks with their shadows on the wall](/images/20210206/anita-jankovic-c1hg-BHe8Uk-unsplash.jpg)
 
-</div>
+</div>  
 ##### <span>Photo by <a href="https://unsplash.com/@dslr_newb?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Anita Jankovic</a> on <a href="https://unsplash.com/s/photos/forks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 # Always for the Actions repository and use that!
@@ -120,7 +120,7 @@ For this purpose I created this repository: [github.com/rajbos/github-fork-updat
 * The issue is closed
 * Sit back and wait for new notifications the next time the fork is out of date
 
-You can also watch the demo video I created here:
+You can also watch the demo video I created here:  
   <a href="https://www.youtube.com/watch?v=Jj033ffS1YQE"><img src="https://img.youtube.com/vi/Jj033ffS1YQ/hqdefault.jpg" alt="GitHub Fork Updater"></a>
 
 ## Summary
