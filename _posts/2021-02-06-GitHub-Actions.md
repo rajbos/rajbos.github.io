@@ -15,7 +15,7 @@ From the beginning, GitHub always indicated that the best way to use GitHub Acti
 </div>  
 ##### <span>Photo by <a href="https://unsplash.com/@dslr_newb?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Anita Jankovic</a> on <a href="https://unsplash.com/s/photos/forks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
-# Always for the Actions repository and use that!
+# Always fork the Actions repository and use that!
 These days, most GitHub Actions demos only show you how to use them, straight from the source repository. That is scary as heck! We should **always** mention the best practice of forking them! 
 
 # Contents
