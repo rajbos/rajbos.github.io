@@ -42,7 +42,7 @@ Here is an overview:
 * In Stockholm Sweden [Antariksh Mistry](https://www.linkedin.com/in/antariksh-mistry-50937a129) was at a venue organized by [Soldify](https://solidify.se/).<!-- markdown-link-check-enable --> This was his first GDBC and you can read about his experience [here](https://azurebiztalkread.wordpress.com/2019/06/22/global-devops-bootcamp-2019-stockholm/).
 * Some venues even created a video of their day! [This one](https://vimeo.com/343240341) is from a venue in Bogotá, Colombia and [this one](https://youtu.be/R8-Od8O4BC4) is from Vancouver, Canada. This one is from [Quebec, Canada](https://www.youtube.com/watch?v=3vat8qrWqu0&feature=youtu.be).
 * [Dmitry Larionov](https://twitter.com/@larionov_pro) walked into a venue without really knowing anything about GDBC! Find out [here](https://blog.larionov.pro/2019/06/18/fun-of-being-at-global-devops-bootcamp/) what he thought of it :smile:.
-* In Vancouver, Canada [Willy-Peter](https://twitter.com/wpschaub) wrote down their [feedback](https://agents-of-chaos.org/2019/06/18/global-devops-bootcamp-vancouver-2019-feedback/).
+* In Vancouver, Canada [Willy-Peter](https://twitter.com/wpschaub) wrote down their [feedback](https://wikipedia.org/wiki/Link_rot).
 <!-- markdown-link-check-disable -->
 * [Hannupekka Sormunen](https://www.linkedin.com/in/hannupekka-sormunen/) visited a venue in Helsinki, Finland and posted <!-- markdown-link-check-enable -->his whole dairy [here](https://sorhanp.github.io/programming/2019/06/18/Global-DevOps-Bootcamp.html).
 * In Zaragoza (Spain), [Veronica Rivas](https://dev.to/vronik) helped to organize their second GDBC an wrote about it [here](https://dev.to/dotnetters/global-devops-bootcamp-zaragoza-2019-by-dotnetters-3ah2).

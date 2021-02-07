@@ -33,8 +33,7 @@ The runner will run with the privileges you provided during installation and wil
 * Do not use a runner for more than one repository
 * Never use a private runner for you public repositories
 
-If you want to learn more about hardening your runner environments, you can read the GitHub documentation [here](https://docs.github.com/en/Actions/learn-github-Actions/security-hardening-for-github-Actions). 
-
+If you want to learn more about hardening your runner environments, you can read the GitHub documentation [here](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions). 
 # Limit the access of your private runner
 Limit the access of the private runner to an absolute minimum. Think of all the things the processes the runner itself or the actions it will run for your have access to. **Never** install it with network admin or root rights. Give it just enough rights to only do what it was meant to do.
 
@@ -61,6 +60,6 @@ An even better option is to create a new runner for each run. For example use an
 ##### Note: the options above all use AWS for hosting. I haven't seen any examples for this setup on Azure yet. If you have an Azure Example, let me know: I will add it to the list above. 
 
 # Never use a private runner for you public repositories
-Also mentioned in the [guidance](https://docs.github.com/en/Actions/learn-github-Actions/security-hardening-for-github-Actions) from GitHub is that you should not use private runners for public repositories. Depending on your setup, your workflows will be triggered by new commits being pushed to the repository, or by an incoming pull request. 
+Also mentioned in the [guidance](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions) from GitHub is that you should not use private runners for public repositories. Depending on your setup, your workflows will be triggered by new commits being pushed to the repository, or by an incoming pull request. 
 
 What if someone with ill-contempt forks your repository, adds code or a dependency that will compromise your setup (or even the workflow itself) and create a new Pull Request on your repository? The workflow will be triggered (hey, they can even add the trigger **for** you!) and the malicious setup will run on your machine with all the access the runner has. This is considered very dangerous for obvious reasons.
