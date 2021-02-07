@@ -8,7 +8,7 @@ jobs:
     steps:
       # check all links in the md files to see if they are correct (http 200)
     - uses: actions/checkout@master
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+    - uses: rajbos-actions/github-action-markdown-link-check@v1
       with:
         check-modified-files-only: 'no'
         use-quiet-mode: 'yes'
