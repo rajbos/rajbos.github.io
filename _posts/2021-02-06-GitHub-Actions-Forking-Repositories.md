@@ -8,6 +8,11 @@ I've been diving into the security aspects of using [GitHub Actions](https://git
 
 From the beginning, GitHub always indicated that the best way to use GitHub Actions is to fork the repository containing them and take control over the code that you are running. That way you can review what the Action is doing before you start using it. You don't want to run just any random code from the internet, would you?
 
+This post is part of a series on best practices for using GitHub Actions in a secure way. You can find the other posts here:
+* [Forking action repositories](https://rajbos.github.io/blog/2021/02/06/GitHub-Actions-Forking-Repositories)
+* [Private runners](https://rajbos.github.io/blog/2021/02/07/GitHub-Actions-Security-Private-Runners)
+* [One runner, one workflow](https://rajbos.github.io/blog/2021/03/07/GitHub-Actions-one-workflow-per-runner)
+
 <div align="center" markdown="1">
 
 ![Image of three forks with their shadows on the wall](/images/20210206/anita-jankovic-c1hg-BHe8Uk-unsplash.jpg)
@@ -16,7 +21,7 @@ From the beginning, GitHub always indicated that the best way to use GitHub Acti
 ##### <span>Photo by <a href="https://unsplash.com/@dslr_newb?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Anita Jankovic</a> on <a href="https://unsplash.com/s/photos/forks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 # Always fork the Actions repository and use that!
-These days, most GitHub Actions demos only show you how to use them, straight from the source repository. That is scary as heck! We should **always** mention the best practice of forking them! 
+These days, most GitHub Actions demos **only** show you how to use them, straight from the source repository. That is scary as heck! We should **always** mention the best practice of forking them! 
 
 # Contents
 This post will go over the following ways to add more security when you are using GitHub Actions:
