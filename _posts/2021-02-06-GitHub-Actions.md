@@ -24,3 +24,11 @@ In the post on [Private runners](https://rajbos.github.io/blog/2021/02/07/GitHub
 
 # Do not reuse a runner, ever!
 * [One runner, one workflow](https://rajbos.github.io/blog/2021/03/07/GitHub-Actions-one-workflow-per-runner)
+
+# Untrusted input 
+An overview from GitHub on [untrusted input](https://securitylab.github.com/research/github-actions-untrusted-input), from the issue title to the commit message, if you act upon them (even just echoing them to the output!), they can be misused and therefor are an attack vector.
+
+# Preventing pwn requests
+It used to be the case that you would trigger your workflow by using the `pull_request` in the trigger definition. That scope had to much rights, so GitHub has dialed that down. The scope with more rights (to your access token with some write permissions for example) has now been created to be `pull_request_target`. You need to be really careful with [using that scope](https://securitylab.github.com/research/github-actions-preventing-pwn-requests). Best practice here is to use a label for the pull request so you can manually check the PR and authorize its actual execution.
+
+You need to be very careful with incoming Pull Requests from any fork: potentially they are changing scripts/commands in your workflow or even the workflow itself. There have been examples where a PR was send in that updated the workflow and made good use of the 10 concurrent jobs available for open source projects to generate some bitcoin for the attacker. This is why we can't have nice things 😲!
