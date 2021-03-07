@@ -21,3 +21,6 @@ In the post on [Private runners](https://rajbos.github.io/blog/2021/02/07/GitHub
 * Limit the access of your private runner
 * Do not use a runner for more than one repository
 * Never use a private runner for you public repositories
+
+# Do not reuse a runner, ever!
+* [One runner, one workflow](https://rajbos.github.io/blog/2021/03/07/GitHub-Actions-one-workflow-per-runner)
