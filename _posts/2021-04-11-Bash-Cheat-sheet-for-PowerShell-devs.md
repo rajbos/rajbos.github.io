@@ -44,11 +44,10 @@ echo "this is my value $myVar" # this wil inject the object myVar
 ``` 
 Especially when someone is using the single quotes in a script, this has bitten me once or twice: it took some time to figure out why my value wasn't visible. 
 
-![String interpolation results](images/20210411/20210411_StringInterpolation.png)
+![String interpolation results](/images/20210411/20210411_StringInterpolation.png)
 
 # Fileheaders
-Add a file header (first line) to the file contents to indicate how the shell should run this file.  
-Example:  
+Add a file header (first line) to the file contents to indicate how the shell should run this file. Example:  
 ``` sh
 #!/bin/sh
 ```
@@ -65,7 +64,8 @@ Sending some output to a file is similar to the use in PowerShell:
 "my string value" > myShellScript # this wil always create a new file and set its content
 "my string value" >> myShellScript # this wil add the string to its content
 ```
-The thing that always gets me, is that dang string interpolation setting:  
+The thing that always gets me, is that dang string interpolation difference:  
+
 ![Output of this example](/images/20210411/20210411_NewFile.png)  
 
 # cls command
