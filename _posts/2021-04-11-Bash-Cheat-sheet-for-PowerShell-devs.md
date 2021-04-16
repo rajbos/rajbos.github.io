@@ -70,3 +70,17 @@ The thing that always gets me, is that dang string interpolation difference:
 
 # cls command
 In bash there is no cls command shortcut. Always use `clear` to have the same result. 
+
+# LastExitCode and returning it from a script
+Just like in PowerShell you can use `$?` to check the last exit codes. In the example below I'm deploying a CDK stack to AWS (Infrastructure as code).
+And saving the exit code of the npm command so I can check it, log it and return it to the caller of this shell script.
+
+```
+npm --silent run cdk -- deploy --require-approval never --context env=${env} --context tag=${TAG} ${stack_name}
+exitCode=$?
+if [ $exitCode != "0" ] 
+then
+  echo "NPM deploy cdk step failed: $exitCode"
+  exit $exitCode
+fi
+```
