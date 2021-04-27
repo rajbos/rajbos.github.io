@@ -53,7 +53,7 @@ The steps used are as follows:
 ```
 
 4. Authenticate with the GitHub Container Registry
-Using the recommended by [GitHub](https://xxx)) for safety
+Using the recommended setup from [GitHub](https://docs.github.com/en/packages/guides/pushing-and-pulling-docker-images#authenticating-to-github-container-registry)) for safety  
 ``` yaml
     - name: Setup GitHub Container Registry
       run: echo "${{ secrets.GH_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin

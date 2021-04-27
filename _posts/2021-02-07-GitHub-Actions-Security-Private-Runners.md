@@ -26,7 +26,7 @@ If you add the runner at the organization level, it will be available to all rep
 If you add the runner at the enterprise level, it will be available to all repositories in all organizations in that enterprise. 
 
 Installation consists of executing these steps:
-1. Download the latest zipped version of the runner at https://github.com/actions/runner/releases/download/
+1. Download the latest zipped version of the runner at [https://github.com/actions/runner/releases](https://github.com/actions/runner/releases)
 1. Unzip it
 1. Run the config.cmd script with the url of the level to add the runner and a specific token (note you can also get this token trough the [GitHub API]()). The token will be valid for 1 hour
 1. Start the runner

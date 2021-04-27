@@ -8,18 +8,18 @@ date: 2018-06-16
 On the 16th of June 2018, [Xpirit](https://twitter.com/xpiritbv) and [Solidify](https://twitter.com/molausson) organised a global event around the topic of DevOps and improving your release cadence. It is an 'out of the box' event with a lot of self organisation where people around the global gathered on their free saturdays to learn something new about DevOps.
 
 People interested in hosting a local venue went to the site
-[https://globaldevopsbootcamp.com/](https://globaldevopsbootcamp.com/) and started from there. Anybody, anywhere could host an event. Eventually, 76 venues registered with 8.000 participants!
+[https://globaldevopsbootcamp.com/](https://www.globaldevopsbootcamp.com/) and started from there. Anybody, anywhere could host an event. Eventually, 76 venues registered with 8.000 participants!
 
 The teams from Xpirit and Solidify provided completly configured [VSTS](https://twitter.com/VSTS) accounts, with challenges, webhooks, users and a filled git repository:
 
 ![Challenges](/images/2018_06_16_GDBC_Challenges.png)
 
 ## Showing how we worked
-We got several questions during the event how we organised the leaderboard application and some participants where astonisched we used the same tools for this as they had been working on today!
+We got several questions during the event how we organised the leaderboard application and some participants where astonished we used the same tools for this as they had been working on today!
 That's why I wanted to share some of the stuff we did and what happened during the day!
 
 ## Getting points for work items
-Everytime a workitem's state changed, a preconfigured webhook was triggered. When the team moved a work item to state 'done', they would get points for that work item. Points were depending on the amount of work neccesary to complete the challenge.
+Everytime a workitem's state changed, a preconfigured webhook was triggered. When the team moved a work item to state 'done', they would get points for that work item. Points were depending on the amount of work necessary to complete the challenge.
 The team could also request help, by adding a tag to the work item. Doing so would cost them half of the points for that work item, but also provided a link to a zipfile containing step by step instructions. 
 
 ## Leaderboard application
@@ -28,10 +28,10 @@ To organise all this, [Peter Groenewegen](https://twitter.com/pgroene) and [Geer
 
 We build on that for this years version, where Peter has added the webhook callback so VSTS could tell us when a workitem changed.
 
-Off course, this .NET core application is hosted in Azure on an App Service instance backed by an Azure Sql Database. The code is on GitHub and we created a build and release pipeline in VSTS:  
+Off course, this .NET core application is hosted in Azure on an App Service instance backed by an Azure SQL Database. The code is on GitHub and we created a build and release pipeline in VSTS:  
 ![Build](/images/2018_06_16_GDBC_Build.png)
 
-This build would trigger when a pull request got merged into master and after succesfully running all unit tests would trigger a release.
+This build would trigger when a pull request got merged into master and after successfully running all unit tests would trigger a release.
 ![Build](/images/2018_06_16_GDBC_Release.png)
 
 # DevOps for the leaderboard application

@@ -8,7 +8,7 @@ I am using the [Azure Fluent SDK](https://azure.microsoft.com/en-us/blog/simpler
 searching around didn't reveal any information about it. Finding something that did work (initial testing with a different service principle didn't change the results), so here we are...
 
 ![](/images/2018_08_23_Research.jpg)
-###### Photo by [Osman Rana on Unsplash](https://unsplash.com/photos/Sdk-tXmnplk)
+###### Photo by [Osman Rana on Unsplash](https://unsplash.com/)
 
 ## Expected simple solution
 Because all other information I needed came from a WebApp, retrieved by the default call, I expected that loading the AppSettings from the SiteConfig would deliver all settings:

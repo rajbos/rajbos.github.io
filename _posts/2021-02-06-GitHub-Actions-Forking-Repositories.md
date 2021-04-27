@@ -33,7 +33,7 @@ This post will go over the following ways to add more security when you are usin
 # Why should you verify the code the Action is executing?
 The power of GitHub Actions is that anyone can create a GitHub Action in a public repository for others to use. That also means that there is no real trust between the user that wants to include the Action in their workflow and the maintainer of the Action repository. In the past, there are numerous examples of bad actors taking over respected repositories and changing the code to do something malicious.  
 
-That also means the onus of checking what the Action's code is doing is up to you. GitHub has some methods of limiting the Actions you or your organization can use, but these have some issues as well. Read more on this below. GitHub's security guidance for Actions can be found [here](https://docs.github.com/en/Actions/learn-github-Actions/security-hardening-for-github-Actions#using-third-party-Actions)
+That also means the onus of checking what the Action's code is doing is up to you. GitHub has some methods of limiting the Actions you or your organization can use, but these have some issues as well. Read more on this below. GitHub's security guidance for Actions can be found [here](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#using-third-party-actions)
 
 You can also look at the maintainer of the Action and how many stars, forks and issues the Action has to gauge if the Action is widely used and regularly maintained.
 

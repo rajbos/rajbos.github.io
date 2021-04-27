@@ -18,7 +18,7 @@ title: About
 I do DevOps-y stuff, mostly with C# and Azure/Azure DevOps/GitHub.
 
 ## Community | GDBC :otter:
-I help out with the Global DevOps Bootcamp ([link](https://globaldevopsbootcamp.com)), mostly with automating stuff and setting up the infrastructure we need each year.  
+I help out with the Global DevOps Bootcamp ([link](https://www.globaldevopsbootcamp.com)), mostly with automating stuff and setting up the infrastructure we need each year.  
 In the 2019 edition we had over 10.000 attendees spread out all over the world, spending their free Saturday with our platform getting hands-on experience on DevOps topics.  
 For the 2020 edition I've started vlogging about the relevant information/announcements/background stuff [here](https://www.youtube.com/playlist?list=PLCnpc4jNC9lBWh-oq3aaPfFP5_tUMy7ZJ) and I have spoken about the event and platform for it several times. The session on DevOps Fest 2020 was recorded [here](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=25).
 
