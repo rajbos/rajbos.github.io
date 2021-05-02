@@ -1,3 +1,3 @@
-# rajbos.github.io
+# DevOps Journal
 
-Using GitHub Pages for blogging on [https://rajbos.github.io](https://rajbos.github.io)
+Using GitHub Pages for blogging on [https://devsopsjournal.io](https://devsopsjournal.io) with the things I needed in my DevOps journey.
