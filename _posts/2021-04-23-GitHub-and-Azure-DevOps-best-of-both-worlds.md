@@ -47,21 +47,44 @@ Let's look into what is available in both offerings:
 
 Note: what GitHub doesn't have is the whole formal setup with approvals, adding in extra fields, adding story points (and summarizing them). Some of it can be replicated if you want. Personally I don't like all that extra stuff, it's unnecessary process ceremony in an effort to feel in control over the agile process, while it only brings extra gates to jump through without adding the correct value. That might be a different blog post 😄.
 
-## GitHub's Project Boards
+## GitHub's Projects vs Azure Boards
 GitHub has created [project boards](https://docs.github.com/en/github/managing-your-work-on-github/managing-project-boards) in an effort to give us more control over issues then just the list it is by itself. It basically adds a kanban setup to track the issues through different stages. By default this is just 'To do', 'In progress' and 'Done'. This works great in an [OSS](https://en.wikipedia.org/wiki/Open-source_software) project where you don't operate in regular sprints (who knows when you have the time and energy to work on things). If you are working in an organization that has sprints, you need something to define them. That currently isn't available in GitHub: what they've created for it is [Milestones](https://docs.github.com/en/github/managing-your-work-on-github/about-milestones). 
 
 By adding an issue to a milestone, you can track their state over a longer time period and view how much work is still left before the milestone is reached. The general idea comes again from the OSS where this works great: you create issues for things you find or features you want to add, mark them as part of a milestone and work together towards that goal.
 
-You can use them for sprints as well, where a milestone would be linked to a sprint and (open) issues would be added to a milestone. That way they can be tracked over time and be used for planning. Only thing I don't like about this setup is the naming: a milestone is not a sprint: usually what we see as a milestone can easily take multiple sprints to achieve. 
+You can use them for sprints as well, where a milestone can be seen as a sprint and (open) issues would be added to a milestone. That way they can be tracked over time and be used for planning. Only thing I don't like about this setup is the naming: a milestone is not a sprint: usually what we see as a milestone can easily take multiple sprints to achieve. 
 
 On the other hand: I more and more dislike the idea of sprints: we humans are not meant to keep on sprinting all the time: from that we experience time like a treadmill where we run until we cannot run any longer. I feel like we should be working towards a milestone, with short iterations, delivering updates to production as soon as they are done and then enable the new features to the user when we feel like it is working 'good enough'.
 
-In conclusion: we should be able to work with Milestones if we change the way we work and think about work as a team.
+In conclusion: we should be able to work with Milestones if have a simpler process, skip things like story points and think differently about how we work as a team.
+
+# Azure Pipelines vs GitHub Actions
+Automation for Continuous Integration (CI) and Continuous Delivery (CD) is available in both platforms. Azure DevOps has the benefit of being available for years now, whereas GitHub Actions only went GA for GitHub Enterprise in the beginning of 2021. GitHub Actions is catching up fast, but it is still catching up.  
+
+Azure DevOps has a robust and powerful setup for CI/CD: you can use the classic pipelines or yaml pipelines (preferred) and mix and match after your own preference. You can have a CI pipeline for fast validation on a branch, and a more extensive one for creating the artefact that you want to deploy. There are lots of extensions available on the [marketplace](https://marketplace.visualstudio.com/azuredevops), so you don't have to reinvent the wheel. I just checked my Twitter bot [@AzDoMarketNews](https://twitter.com/azdomarketnews) and there are currently 1630 extensions available, with new ones still being added every once in a while.
+
+Big things that are currently missing on GitHub Actions are:
+
+* Templates
+* Security scans on GitHub Actions
+* Better CI/CD story
 
 
+## Templates
+The ability to use a template to group steps so you don't have to repeat them everywhere. Think of a common template to use for an NPM pipeline for example: often you want to run the same steps in there, like dependency scanning, linting, building and running tests. GitHub already has a setup for [composite actions](https://docs.github.com/en/actions/creating-actions/creating-a-composite-run-steps-action), but you cannot include other actions in them, only shell scripts. Same thing goes for defining something like a 'stage' in a deployment pipeline: I want to deploy my artefact on Dev/Test in the exact same way as to Production, with only some parameter changes targeting the correct cloud environment: currently, you have to repeat the same steps in both stages of the deployment. Adding a step in between means adding them in multiple places, or you risk drift between the environments.
 
-# Pipelines
+## Security scans on GitHub Actions
+Currently there is no real way to trust the actions you use, other then trusting their publisher. In Azure DevOps there was a process to get an action published on the marketplace that at least included some [protective scans](https://docs.microsoft.com/en-us/azure/devops/extend/publish/overview?view=azure-devops#publish-an-extension&?WT.mc_id=DOP-MVP-5003719) before the extension was available. You also had to create a publisher account and only if you had the correct [permissions](https://docs.microsoft.com/en-us/azure/devops/marketplace/how-to/grant-permissions?view=azure-devops&?WT.mc_id=DOP-MVP-5003719) you could install the extension into your tenant, where it would become available for everyone in the organization to use.
+
+For GitHub Actions the story is a lot simpler, which also makes it less secure. The work to verify what the extension is doing, and keeping up to date with them (using the latest version is against the best [practice](https://rajbos.github.io/blog/2021/02/06/GitHub-Actions-Forking-Repositories)) can take up time for your team. **Anyone** with write access to the repository can include new actions in the workflows (the thing that executes your actions). **Anyone** with a public GitHub repo can create an action.yml file in their repository and you can use it in your workflow. Without any validation by GitHub. Therefore it is really important to lock down your organization and think about the actions you want to allow. It is critical to have a [process](https://rajbos.github.io/blog/2021/02/06/GitHub-Actions-Forking-Repositories) around GitHub Actions to still enable the DevOps engineers to run them, but in the safest way possible.
+
+## Better CI/CD story
+With GitHub Actions you have two options for CI/CD: 
+1. Create one yaml file with both CI/CD in them
+1. Create a yaml file for CI and a separate file for CD
+
 
 # Artifacts
+Docker images
 
 # Security features
