@@ -7,7 +7,7 @@ date: 2021-05-13
 I got some questions recently on my office setup at home, so it might be helpful to share it here as well. I am happy to have the means to invest in my setup, even with a supporting employer who helps out with some of the financials. Some time ago I figured we'd be working from home for a while (due to the COVID pandemic) and it seemed like a good idea to invest in the place I work the most in: my home office.
 Even after the pandemic is over (hopefully) and people have more freedom to go into their work offices, the plan is to still work 2 or 3 days from home: I really don't have the wish to go back to the major traffic congestions we have in The Netherlands. That means that these investments will be used for a while and that helps with some of the decisions that where made. Even my partner agreed on that, hence why some of this stuff is over the top awesome 😁.
 
-![Photo of my office setup before and after the investments](/images/20210513/20210513_HowItStarted.jpeg)
+![Photo of my office setup before and after the investments](../images/20210513/20210513_HowItStarted.jpeg)
 
 The image on the left displays my working from home setup somewhere in April 2020: we just moved to a new house and I was not planning to have an office space at all. Then we went into the first lockdown and I was forced to set something up. So, a couple of moving boxes, a piece of board and a tablecloth was what I made my makeshift desk with. Our offices where so kind to lend a good chair and an extra screen if you needed it. 
 
@@ -23,13 +23,13 @@ You can of course just share just a small window, but as a hands-on DevOps consu
 
 ## Lights
 The lights are [Elgato KeyLight Airs](https://www.elgato.com/en/key-light-air). They have options for their brightness and you can set the color from ultrabright white to really yellowish: 
-![Image of the Elgato Control Center](/images/20210513/20210513_Elgato_Light_Strip.png)  
+![Image of the Elgato Control Center](../images/20210513/20210513_Elgato_Light_Strip.png)  
 
 I need them so people can actually see me during a video meeting, usually the brightness is set really low (15%), just good enough to balance out the light coming from the sky light in the roof. The color temperature has been set to 5150 and I usually don't change that.
 
 The photo's below are taken on a cloudy day. When the sun is out (and especially in the mornings are flooding in through the window) I really need an extra light. So from left to right: without any lights (somewhat okay today), with only one light on, and then with both lights on.
 
-![3 different photos with and without lights](/images/20210513/LightsExample.png)
+![3 different photos with and without lights](../images/20210513/LightsExample.png)
 I have them both setup a bit higher on my screen to prevent to much eye strain from having a bright light in my eyes all day. That is also the reason why I have the brightness on 15%: I find that is good enough on most days and still doesn't bother me to much. Keep in mind that I sometimes have them on for hours in a row, with some breaks in between.
 
 ## Camera's
@@ -69,7 +69,7 @@ The reason for this is that the laptop produces a lot of heat and having it flus
 The led strip is mostly for myself and is wrapped around the edges of my desk. It is an [Elgato Light Strip](https://www.elgato.com/en/light-strip). You can set them from ultra-bright to fully dimmable, choose both the lumen and the RGB color you want to use. The control center for it is awesome and works within the boundaries of my WiFi network, which is good from a privacy standpoint. It also has support for a phone app, which I use all the time.
 
 Windows Control Center:  
-![Image of the Elgato Control Center](/images/20210513/20210513_Elgato_Light_Strip.png)  
+![Image of the Elgato Control Center](../images/20210513/20210513_Elgato_Light_Strip.png)  
 
 I bought this one to try it out and light the wall behind me, since it has the flexibility and it can be shortened. I'm a fan of Elgato stuff, since they take good care of designing their products to look smooth, work great and even take a lot of care around packaging of them as well. 
 
@@ -91,4 +91,5 @@ Next I'd like a good docking station, to support both of my laptops in case I ne
 
 The last thing that I'd like is something to light up the wall behind me with different colors. Something like the [Nanoleaf](https://nanoleaf.me/en-US/products/nanoleaf-shapes/#nanoleaf-shop) would be really nice!
 
-![Nanoleaf example on wall](/images/20210513/20210513_Nanoleaf.png)
+Example of the nanoleaf on a wall behind a monitor:  
+![Nanoleaf example on wall](../images/20210513/20210513_Nanoleaf.png)
