@@ -31,7 +31,7 @@ Commit signing is an extra layer of security on top of basic authentication. Wit
 With [commit signing](https://www.gnupg.org/gph/en/manual/x110.html), you need to sign the commit with your private key that only you should have. By default, that key can only be used together with a passphrase (you can create it without a passphrase, but that would defeat its purpose). Adding the passphrase means that when you sign the commit, you have to type in the passphrase. There is no way to automatically fill in the passphrase for you (that I know of). This also means you cannot sign the commits automatically, which means someone cannot spoof your signage on your behalf.
 
 The server side (GitHub in this case) will store the public part of your GPG key that they use to verify the signed commits: those are made by users with GPG signatures AND those signatures have been verified with their accompanying public key. This enables you to lock down the repository or specific branches in the repository to only allow verified commits.  
-![Screenshot of GitHub.com showing a verified commit](/images/20210423/20210423_VerifiedCommit.png). 
+![Screenshot of GitHub.com showing a verified commit](../images/20210423/20210423_VerifiedCommit.png). 
 
 # Work tracking
 Work tracking has always been great in Azure DevOps and I think it still is the better offering. GitHub has several options to enable some of the same setup, with great integration into source control with [issues and pull requests](https://docs.github.com/en/github/writing-on-github/autolinked-references-and-urls#issues-and-pull-requests). You can even add subtasks to an issue with [task lists](https://docs.github.com/en/github/managing-your-work-on-github/about-task-lists), although I like the Epic setup with subtasks better from [Azure Boards](https://azure.microsoft.com/en-us/services/devops/boards?WT.mc_id=DOP-MVP-5003719).
@@ -69,22 +69,59 @@ Big things that are currently missing on GitHub Actions are:
 * Security scans on GitHub Actions
 * Better CI/CD story
 
+## Missing in GitHub Actions: Templates
+The ability to use a template to group steps so you don't have to repeat them everywhere. Think of a common template to use for an NPM pipeline for example: often you want to run the same steps in there, like dependency scanning, linting, building and running tests. GitHub has a setup for [composite actions](https://docs.github.com/en/actions/creating-actions/creating-a-composite-run-steps-action), but you cannot include other actions in them, only shell scripts. Same thing goes for defining something like a 'stage' in a deployment pipeline: I want to deploy my artefact on Dev/Test in the exact same way as to Production, with only some parameter changes targeting the correct cloud environment: currently, you have to repeat the same steps in both stages of the deployment. Adding a step in between means adding them in multiple places, or you risk drift between the environments.
+Azure DevOps has the better story here because they support [templates](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops??WT.mc_id=DOP-MVP-5003719) in your yaml pipelines. This helps you with eliminating duplicate code from your pipeline.
 
-## Templates
-The ability to use a template to group steps so you don't have to repeat them everywhere. Think of a common template to use for an NPM pipeline for example: often you want to run the same steps in there, like dependency scanning, linting, building and running tests. GitHub already has a setup for [composite actions](https://docs.github.com/en/actions/creating-actions/creating-a-composite-run-steps-action), but you cannot include other actions in them, only shell scripts. Same thing goes for defining something like a 'stage' in a deployment pipeline: I want to deploy my artefact on Dev/Test in the exact same way as to Production, with only some parameter changes targeting the correct cloud environment: currently, you have to repeat the same steps in both stages of the deployment. Adding a step in between means adding them in multiple places, or you risk drift between the environments.
-
-## Security scans on GitHub Actions
+## Missing in GitHub Actions: Security scans on GitHub Actions
 Currently there is no real way to trust the actions you use, other then trusting their publisher. In Azure DevOps there was a process to get an action published on the marketplace that at least included some [protective scans](https://docs.microsoft.com/en-us/azure/devops/extend/publish/overview?view=azure-devops#publish-an-extension&?WT.mc_id=DOP-MVP-5003719) before the extension was available. You also had to create a publisher account and only if you had the correct [permissions](https://docs.microsoft.com/en-us/azure/devops/marketplace/how-to/grant-permissions?view=azure-devops&?WT.mc_id=DOP-MVP-5003719) you could install the extension into your tenant, where it would become available for everyone in the organization to use.
 
 For GitHub Actions the story is a lot simpler, which also makes it less secure. The work to verify what the extension is doing, and keeping up to date with them (using the latest version is against the best [practice](https://rajbos.github.io/blog/2021/02/06/GitHub-Actions-Forking-Repositories)) can take up time for your team. **Anyone** with write access to the repository can include new actions in the workflows (the thing that executes your actions). **Anyone** with a public GitHub repo can create an action.yml file in their repository and you can use it in your workflow. Without any validation by GitHub. Therefore it is really important to lock down your organization and think about the actions you want to allow. It is critical to have a [process](https://rajbos.github.io/blog/2021/02/06/GitHub-Actions-Forking-Repositories) around GitHub Actions to still enable the DevOps engineers to run them, but in the safest way possible.
+##### Note: I'm still looking for a way to leverage a CodeQL scan on the action repository with all the incoming changes included as a check on the issue. I've seen that GitHub can run them on all actions in their system and then send in Pull Requests fixing any issues it found. I would really want to run that as an extra security scan as well.
 
-## Better CI/CD story
+## Missing in GitHub Actions: Better CI/CD story
 With GitHub Actions you have two options for CI/CD: 
 1. Create one yaml file with both CI/CD in them
 1. Create a yaml file for CI and a separate file for CD
-
+Both options have the same issue: especially on the CD part: I want to use the same steps to deploy to all my environments. Maybe insert something additionally in a specific test environment, or have an option to run a load test separately, but mostly I want to use the same deployment. Currently this cannot be done in a straightforward manner. You have the option to add an extra workflow for a new environment, and you could clone an existing one, but that is mostly it. I'd want something like [Azure DevOps templates](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/templates?view=azure-devops?WT.mc_id=DOP-MVP-5003719) or what GitLab has. In GitLab you can [include](https://docs.gitlab.com/ee/ci/yaml/includes.html) a separate yml file as a template, or use [anchors](https://docs.gitlab.com/ee/ci/yaml/README.html#yaml-anchors-for-scripts) to reference complete scripts and have a better way to reuse them between multiple stages.
 
 # Artifacts
-Docker images
+In terms of artefacts I'm somewhat split:Azure DevOps has a great story around [artefacts](https://docs.microsoft.com/en-us/azure/devops/artifacts/?view=azure-devops?WT.mc_id=DOP-MVP-5003719): the support for having different feeds and even different [views](https://docs.microsoft.com/en-us/azure/devops/artifacts/concepts/feeds?view=azure-devops?WT.mc_id=DOP-MVP-5003719) on a feed, where you can upload a package to a Beta feed and then promote them to production is really great. GitHub doesn't have something like that. 
+
+Same story around [Universal packages](https://docs.microsoft.com/en-us/azure/devops/artifacts/quickstarts/universal-packages?view=azure-devops&WT.mc_id=DOP-MVP-5003719): you can story any file in them, even publish a build script in them for later reuse outside of Azure DevOps for example. GitHub doesn't have something like that. There is the concept of [Releases](https://docs.github.com/en/github/administering-a-repository/about-releases) but that will always download the release as either a zip file or an exe or msi file. Sometimes you need to download the files themselves, without any additional wrapping. There is an item on the roadmap to [support this](https://github.com/github/roadmap/issues/118), but it is not there just yet.
+
+## Docker images
+Where GitHub currently shines, is the option to have your Docker images stored in [GitHub Packages](https://github.com/features/packages). This works out of the box (note: I've only used this to publish public container images, not sure if you can lock that down easy enough): if someone pulls an image from this feed, it will just work. The automation flow to push images is simple as well: you can do it from a workflow, as I am doing [here](https://github.com/rajbos/dependency-updates/blob/main/.github/workflows/pipeline.yml) where I am pushing my images into `ghcr.io/rajbos/local-dependency-updates`. It's using the GitHub Container Registry for it, with my GitHub user tag as the image publisher.
+
 
 # Security features
+This is the killer feature for GitHub at the moment: I really recommend checking this one out and start moving over your code into GitHub as soon as you can. You can still use Azure Boards and Azure Pipelines if you want to: the [integration](https://docs.microsoft.com/en-us/azure/developer/github/?&WT.mc_id=DOP-MVP-5003719) between the products is wonderful and just works™️. You can still commit your code and tag issues on either platform: through the integration it knows where to look and will render the correct links in the UI so your users can seamlessly switch to where they need to work. 
+
+Some parts of the security features in [GitHub Advanced Security](https://docs.github.com/en/github/getting-started-with-github/about-github-advanced-security) can be replicated inside of Azure DevOps, but only with a lot of elbow grease. GitHub has them available in the product itself.
+
+## Dependabot
+First off is [Dependabot](https://docs.github.com/en/code-security/supply-chain-security/enabling-and-disabling-version-updates). This a tool that can scan your code and the third party dependencies that you are using. It has support for [a lot of package managers](https://docs.github.com/en/code-security/supply-chain-security/configuration-options-for-dependency-updates#package-ecosystem) and even can update the Action versions you use in your workflows! You can set it up to run periodically and it will scan your repository for you. If it finds any updates it will gather the release notes from them and create a new Pull Request for every package. If there already is an open Pull Request for the package, it will update that PR with the latest version, or close the old one and create a new PR. This is a very easy way to keep your dependencies up to date (and believe me it is: I've created my own setup [here](https://github.com/rajbos/dependency-updates)). If you have good checks in your pipelines, you can even enable [auto merge](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/automatically-merging-a-pull-request) on your repository and automatically close the PR when all checks are passing. This way you're always up to date with the latest versions of your dependencies, saving you a lot of update and security headaches in the process.
+
+## Security scanning
+When you have Dependabot enabled, you can also enable [vulnerability scanning](https://docs.github.com/en/code-security/supply-chain-security/about-managing-vulnerable-dependencies). With this feature, Dependabot keeps track of your dependencies and the versions that you are using. If there is a new vulnerability found and published on their own [advisory](https://docs.github.com/en/code-security/supply-chain-security/browsing-security-vulnerabilities-in-the-github-advisory-database), Dependabot will alert you of the vulnerability and create a Pull Request on the repo with the issue. It will even tell you if there are multiple repositories with the same vulnerability in them.
+
+![Security advisory example](../images/20210423/20210423_SecurityAdivsory.png)
+
+## Secret scanning
+Another great feature that GitHub launched in March 2021 (GA) is [Secret Scanning](https://docs.github.com/en/code-security/secret-security/about-secret-scanning). They have a long list of partners for which they can find secrets (think passwords or access codes) from in your repository **and even automatically revoke those secrets**. How awesome is that?! You still need to be aware of secrets and could include a process in your pipelines to detect them. This feature automates that and helps you with the biggest issue of committing your secrets into your repository: they should be considered as leaked: you can use [Git BFG](https://rtyley.github.io/bfg-repo-cleaner/) to clean the secrets from your repository, but someone might still have an old copy of the repository somewhere and still have the old secrets available. It's considered much better to revoke those secrets immediately and create new ones.
+
+## Code scanning with CodeQL 
+[Code Scanning with CodeQL](https://docs.github.com/en/code-security/secure-coding/about-code-scanning) is a recent addition to the GitHub offering as well. It only supports a couple of languages right now (see below). It can do very powerful things, like finding user input that is not sanitized before you use it in your code, even if it's only used three layers deep in your codebase!
+
+* C/C++
+* C#
+* Go
+* Java
+* JavaScript/TypeScript
+* Python
+
+There are a lot of CodeQL queries available in the [public repository](https://github.com/github/codeql) that you can run on your code. There is even one that checks you code for traces of [Solorigate and other backdoors](https://github.blog/2021-03-16-using-github-code-scanning-and-codeql-to-detect-traces-of-solorigate-and-other-backdoors/). You set it up by adding a [CodeQL Analysis workflow](https://docs.github.com/en/code-security/secure-coding/setting-up-code-scanning-for-a-repository) in your repository.
+
+By running it in your workflows, you get notified if it finds problems in your repository. Those notifications are added as additional checks and they can be found as [annotations](https://docs.github.com/en/code-security/secure-coding/triaging-code-scanning-alerts-in-pull-requests) on incoming Pull Requests as well. 
+
+Al in all, very powerful stuff!
