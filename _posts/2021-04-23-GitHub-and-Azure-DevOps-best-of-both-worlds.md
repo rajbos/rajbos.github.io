@@ -131,4 +131,4 @@ There are a lot of CodeQL queries available in the [public repository](https://g
 
 By running it in your workflows, you get notified if it finds problems in your repository. Those notifications are added as additional checks and they can be found as [annotations](https://docs.github.com/en/code-security/secure-coding/triaging-code-scanning-alerts-in-pull-requests) on incoming Pull Requests as well. 
 
-Al in all, very powerful stuff!
+All in all, very powerful stuff!
