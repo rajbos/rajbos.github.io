@@ -8,8 +8,10 @@ Ever since Microsoft acquired GitHub we have been looking at how this will play 
 
 GitHub on the other hand is the largest dev-community in the world, with some [56 million plus](https://octoverse.github.com/) developers on it. If you want to entice developers to work at your company, doing so with the tools they already know and love is an excellent selling point. GitHub is made by developers, for developers. This also gives them a lot of information from open source communities into their activity, languages used and even a great host of information they can pull from the open source code stored on the platform. Their now even hosting [security advisories](https://github.blog/changelog/2019-05-23-maintainer-security-advisories/) and enable scanning for vulnerability patterns in your codebase with [CodeQL](https://github.blog/2021-03-16-using-github-code-scanning-and-codeql-to-detect-traces-of-solorigate-and-other-backdoors/). 
 
+![Azure DevOps and GitHub logos together](../images/20210423/20210423AzDo_and_GitHub.png)
+
 # Exploring best of both worlds
-In this post I wanted to share what are the strengths of both offerings and explain what parts I'd use of each of them and why. In my opinion both products have some unique features that the other doesn't have (yet), so using the right tool for the right job is only logical from that.
+In this post I want to share what are the strengths of both offerings and explain what parts I'd use of each of them and why. In my opinion both products have some unique features that the other doesn't have (yet), so using the right tool for the right job is only logical from that. Luckily the integration between both is very good, so mixing and matching is a great option here.
 
 I've split things up in the following sections:
 * Source control
@@ -63,7 +65,10 @@ Automation for Continuous Integration (CI) and Continuous Delivery (CD) is avail
 
 Azure DevOps has a robust and powerful setup for CI/CD: you can use the classic pipelines or yaml pipelines (preferred) and mix and match after your own preference. You can have a CI pipeline for fast validation on a branch, and a more extensive one for creating the artefact that you want to deploy. There are lots of extensions available on the [marketplace](https://marketplace.visualstudio.com/azuredevops), so you don't have to reinvent the wheel. I just checked my Twitter bot [@AzDoMarketNews](https://twitter.com/azdomarketnews) and there are currently 1630 extensions available, with new ones still being added every once in a while.
 
-Big things that are currently missing on GitHub Actions are:
+![Image of watch gears](../images/20210423/danil-shostak-AChwtt3tBPU-unsplash.jpg)
+##### Photo by <a href="https://unsplash.com/@max010?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Danil Shostak</a> on <a href="https://unsplash.com/s/photos/gears?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  
+
+### Big things that are currently missing on GitHub Actions are:
 
 * Templates
 * Security scans on GitHub Actions
@@ -97,7 +102,9 @@ Where GitHub currently shines, is the option to have your Docker images stored i
 # Security features
 This is the killer feature for GitHub at the moment: I really recommend checking this one out and start moving over your code into GitHub as soon as you can. You can still use Azure Boards and Azure Pipelines if you want to: the [integration](https://docs.microsoft.com/en-us/azure/developer/github/?&WT.mc_id=DOP-MVP-5003719) between the products is wonderful and just works™️. You can still commit your code and tag issues on either platform: through the integration it knows where to look and will render the correct links in the UI so your users can seamlessly switch to where they need to work. 
 
-Some parts of the security features in [GitHub Advanced Security](https://docs.github.com/en/github/getting-started-with-github/about-github-advanced-security) can be replicated inside of Azure DevOps, but only with a lot of elbow grease. GitHub has them available in the product itself.
+Some parts of the security features in GitHub can be replicated inside of Azure DevOps, but only with a lot of elbow grease. GitHub has them available in the product itself. Some of these are free for public repos and not for private repos. You can find more information on that on the [pricing page](https://github.com/pricing). If you are running GitHub Enterprise server, then some of these are available through [GitHub Advanced Security](https://docs.github.com/en/github/getting-started-with-github/about-github-advanced-security).
+
+![Image of the Octocat as a detective](../images/20210423/GitHub_octocat_detective.jpg)
 
 ## Dependabot
 First off is [Dependabot](https://docs.github.com/en/code-security/supply-chain-security/enabling-and-disabling-version-updates). This a tool that can scan your code and the third party dependencies that you are using. It has support for [a lot of package managers](https://docs.github.com/en/code-security/supply-chain-security/configuration-options-for-dependency-updates#package-ecosystem) and even can update the Action versions you use in your workflows! You can set it up to run periodically and it will scan your repository for you. If it finds any updates it will gather the release notes from them and create a new Pull Request for every package. If there already is an open Pull Request for the package, it will update that PR with the latest version, or close the old one and create a new PR. This is a very easy way to keep your dependencies up to date (and believe me it is: I've created my own setup [here](https://github.com/rajbos/dependency-updates)). If you have good checks in your pipelines, you can even enable [auto merge](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/automatically-merging-a-pull-request) on your repository and automatically close the PR when all checks are passing. This way you're always up to date with the latest versions of your dependencies, saving you a lot of update and security headaches in the process.
