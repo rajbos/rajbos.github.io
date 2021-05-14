@@ -7,7 +7,7 @@ date: 2021-05-13
 I got some questions recently on my office setup at home, so it might be helpful to share it here as well. I am lucky to have the means to invest in my setup, even with a supporting employer who helps out with some of the financials since we all need to work from home these days instead of being at the customer's office. Some time ago I figured we'd be working this way for a while (due to the COVID pandemic) and it seemed like a good idea to invest in the place I work the most in: my home office.
 Even after the pandemic is over (hopefully) and people have more freedom to go into their work offices, the plan is to still work 2 or 3 days from home: I really don't have the wish to go back to the major traffic congestions we have in The Netherlands. That means that these investments will be used for a while and that helps with some of the decisions that where made. Even my partner agreed on that, hence why some of this stuff is over the top awesome 😁.
 
-![Photo of my office setup before and after the investments](../images/20210513/20210513_HowItStarted.jpeg)
+![Photo of my office setup before and after the investments](/images/20210513/20210513_HowItStarted.jpeg)
 
 The image on the left displays my working from home setup somewhere in April 2020: we just moved to a new house and I was not planning to have an office space at all. Then we went into the first lockdown and I was forced to set something up. So, a couple of moving boxes, a piece of board and a tablecloth was what I made my makeshift desk with. Our offices where so kind to lend a good chair and an extra screen if you needed it. 
 
@@ -15,7 +15,7 @@ The image on the left displays my working from home setup somewhere in April 202
 Let's talk about the gear you see in the image 😄.
 
 ## Monitor
-![Close up of the monitor](../images/20210513/20210513_Screen.jpg)
+![Close up of the monitor](/images/20210513/20210513_Screen.jpg)
 The monitor is a [Dell U3419W](https://www.coolblue.nl/product/825247/dell-ultrasharp-u3419w.html). It's a 34 inch ultrawide curved screen with Quad HD (1440p). This is one of the more expensive items: I was searching for a better solution then my laptop on a stand and an extra screen. When I was a developer I remembered being very fond of having 3 21 inch monitors side to side, and having the different resolutions of my laptop and an extra screen from the office weren't good enough. I researched monitors and found an option of around €500, since that was the amount of money I felt comfortable spending. When talking things over with my wife of the extra stuff I wanted, she told me to get something good since that is what you are looking at for over eight hours a day. I still felt a little uncomfortable spending this much on a monitor. After setting it up I am very happy with it! Really glad I could spend the extra money on it and have an awesome setup. You don't notice the curve and the resolution is excellent (3440 x 1440). 
 ##### Sidenote: couldn't find a link on the Dell site itself so I used this Dutch web shop that I like.
 
@@ -23,28 +23,28 @@ I am using this monitor with a Picture-By-Picture (PBP) setup: that means that I
 You can of course just share just a small window, but as a hands-on DevOps consultant I often share my entire screen so I can use different windows on it. Having this PBP option enables me to have two screens available with each a resolution of 1720 x 1440. It is a rather strange resolution because of the height. Luckily this works well enough to not be a real hassle in my day to day usage.
 
 ## Lights
-![Close up of the lights](../images/20210513/20210513_Light.jpg)
+![Close up of the lights](/images/20210513/20210513_Light.jpg)
 The lights are [Elgato KeyLight Airs](https://www.elgato.com/en/key-light-air). They have options for their brightness and you can set the color from ultrabright white to really yellowish: 
-![Image of the Elgato Control Center](../images/20210513/20210513_Elgato_Light_Strip.png)  
+![Image of the Elgato Control Center](/images/20210513/20210513_Elgato_Light_Strip.png)  
 
 I need them so people can actually see me during a video meeting, usually the brightness is set really low (15%), just good enough to balance out the light coming from the sky light in the roof. The color temperature has been set to 5150 and I usually don't change that.
 
 The photo's below are taken on a cloudy day. When the sun is out (and especially in the mornings are flooding in through the window) I really need an extra light. So from left to right: without any lights (somewhat okay today), with only one light on, and then with both lights on.
 
-![3 different photos with and without lights](../images/20210513/LightsExample.png)
+![3 different photos with and without lights](/images/20210513/LightsExample.png)
 I have them both setup a bit higher on my screen to prevent to much eye strain from having a bright light in my eyes all day. That is also the reason why I have the brightness on 15%: I find that is good enough on most days and still doesn't bother me to much. Keep in mind that I sometimes have them on for hours in a row, with some breaks in between.
 
 ## Camera's
-![Close up of the Logitech C922](../images/20210513/20210513_C922.jpg)
+![Close up of the Logitech C922](/images/20210513/20210513_C922.jpg)
 During the start and summer of 2020 good webcams where very hard to find, since there was a lot going on with production (of both chips and camera's) being stalled due to the pandemic. When I finally was able to grab on, I picked the [Logitech C922 Pro](https://www.logitech.com/en-us/products/webcams/c922-pro-stream-webcam.960-001087.html) both for it's price and the fact that it did 1080p at 60fps. Additional benefit was that it has a great microphone. Since the only thing I had available at that time was the one on my headsets ([Sony WH-1000XM2](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/wh-1000xm2)) or the standard iPhone headset) or 🤢 the build in one on my laptop (Dell XPS9500), this was a very welcome addition at the time. 
 
-![Close up of the Logitech Brio](../images/20210513/20210513_Brio.jpg)
+![Close up of the Logitech Brio](/images/20210513/20210513_Brio.jpg)
 Later on I got a [Logitech Brio](https://www.logitech.com/en-us/products/webcams/brio-4k-hdr-webcam.960-001105.html). This one is a full 4K webcam, has HDR, can be zoomed (with the right tools) and even has [Windows Hello](https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/windows-hello-face-authentication?WT.mc_id=DOP-MVP-5003719) support! 
 ##### Do note that the Brio has a worse microphone then the C922: the later has an awesome stereo microphone that really performs better then the simple one on the Brio. Since I am not using either at the moment, it doesn't matter for me right now.
 
 The cool thing I have now, is that I can use two different viewpoints by leveraging the dual camera's that I have: the Brio sits on top of my monitor for normal video conferencing, the C922 is to my left and shows off the microphone better, together with my cool GitHub Popfilter 😍. I use the [OBS Virtual Camera](https://obsproject.com/forum/resources/obs-virtualcam.949/) setup to switch between camera's.
 
-![Photo from the Logitech C922](../images/20210513/20210513_C922Photo.jpg)
+![Photo from the Logitech C922](/images/20210513/20210513_C922Photo.jpg)
 
 ## Headset
 Music is very important for me. Often I've got something playing during the day, in meetings and even presentations. I really can get a lot of energy from music.  
@@ -64,7 +64,7 @@ For the last few weeks I have been using the build-in speakers of my monitor mor
 Together with a great microphone I can still communicate without to much interference being picked up from the speakers. The speakers do a well enough job, although the sound on my Sony is a lot better 😀.
 
 ## Microphone
-![Close up of the Yeticaster](../images/20210513/20210513_Microphone.jpg)
+![Close up of the Yeticaster](/images/20210513/20210513_Microphone.jpg)
 As mentioned before, I used the microphone on my C922 for a couple off months. During that period I really wanted a better one that I could move closer to my mouth for that deeper radio voice 🎤. I had to wait for some months to actually be able to order the one I wanted, since that happened to be out of stock at the time as well 😱. I finally landed on a set of both microphone and flexible arm in one: the [yeticaster](https://www.bluemic.com/en-us/products/yeticaster/). It is the yeti microphone, the Radius III (shockmount) and Compass (flexible arm). The arm is what drew me in the most: a lot of flexible arms have an open construction with the springs visible. I don't like the look of that and I've read that those springs can wear out (which can then still be replaced). This arm uses internal springs with friction control on the parts where it bends. It looks very slick and smooth and even adjusts really well. 
 
 ## Desk
@@ -76,7 +76,7 @@ The reason for this is that the laptop produces a lot of heat and having it flus
 The led strip is mostly for myself and is wrapped around the edges of my desk. It is an [Elgato Light Strip](https://www.elgato.com/en/light-strip). You can set them from ultra-bright to fully dimmable, choose both the lumen and the RGB color you want to use. The control center for it is awesome and works within the boundaries of my WiFi network, which is good from a privacy standpoint. It also has support for a phone app, which I use all the time.
 
 Windows Control Center:  
-![Image of the Elgato Control Center](../images/20210513/20210513_Elgato_Light_Strip.png)  
+![Image of the Elgato Control Center](/images/20210513/20210513_Elgato_Light_Strip.png)  
 
 I bought this one to try it out and light the wall behind me, since it has the flexibility and it can be shortened. I'm a fan of Elgato stuff, since they take good care of designing their products to look smooth, work great and even take a lot of care around packaging of them as well. 
 
@@ -99,4 +99,4 @@ Next I'd like a good docking station, to support both of my laptops in case I ne
 The last thing that I'd like is something to light up the wall behind me with different colors. Something like the [Nanoleaf](https://nanoleaf.me/en-US/products/nanoleaf-shapes/#nanoleaf-shop) would be really nice!
 
 Example of the nanoleaf on a wall behind a monitor:  
-![Nanoleaf example on wall](../images/20210513/20210513_Nanoleaf.png)
+![Nanoleaf example on wall](/images/20210513/20210513_Nanoleaf.png)

@@ -8,7 +8,7 @@ Ever since Microsoft acquired GitHub we have been looking at how this will play 
 
 GitHub on the other hand is the largest dev-community in the world, with some [56 million plus](https://octoverse.github.com/) developers on it. If you want to entice developers to work at your company, doing so with the tools they already know and love is an excellent selling point. GitHub is made by developers, for developers. This also gives them a lot of information from open source communities into their activity, languages used and even a great host of information they can pull from the open source code stored on the platform. They are now even hosting [security advisories](https://github.blog/changelog/2019-05-23-maintainer-security-advisories/) and enable scanning for vulnerability patterns in your codebase with [CodeQL](https://github.blog/2021-03-16-using-github-code-scanning-and-codeql-to-detect-traces-of-solorigate-and-other-backdoors/). 
 
-![Azure DevOps and GitHub logos together](../images/20210423/20210423AzDo_and_GitHub.png)
+![Azure DevOps and GitHub logos together](/images/20210423/20210423AzDo_and_GitHub.png)
 
 # Exploring best of both worlds
 In this post I want to share what are the strengths of both offerings and explain what parts I'd use of each of them and why. In my opinion both products have some unique features that the other doesn't have (yet), so using the right tool for the right job is only logical from that. Luckily the integration between both is very good, so mixing and matching is a great option here.
@@ -33,7 +33,7 @@ Commit signing is an extra layer of security on top of basic authentication. Wit
 With [commit signing](https://www.gnupg.org/gph/en/manual/x110.html), you need to sign the commit with your private key that only you should have. By default, that key can only be used together with a passphrase (you can create it without a passphrase, but that would defeat its purpose). Adding the passphrase means that when you sign the commit, you have to type in the passphrase. There is no way to automatically fill in the passphrase for you (that I know of). This also means you cannot sign the commits automatically, which means someone cannot spoof your signage on your behalf.
 
 The server side (GitHub in this case) will store the public part of your GPG key that they use to verify the signed commits: those are made by users with GPG signatures AND those signatures have been verified with their accompanying public key. This enables you to lock down the repository or specific branches in the repository to only allow verified commits.  
-![Screenshot of GitHub.com showing a verified commit](../images/20210423/20210423_VerifiedCommit.png). 
+![Screenshot of GitHub.com showing a verified commit](/images/20210423/20210423_VerifiedCommit.png). 
 
 # Work tracking
 Work tracking has always been great in Azure DevOps and I think it still is the better offering. GitHub has several options to enable some of the same setup, with great integration into source control with [issues and pull requests](https://docs.github.com/en/github/writing-on-github/autolinked-references-and-urls#issues-and-pull-requests). You can even add subtasks to an issue with [task lists](https://docs.github.com/en/github/managing-your-work-on-github/about-task-lists), although I like the Epic setup with subtasks better from [Azure Boards](https://azure.microsoft.com/en-us/services/devops/boards?WT.mc_id=DOP-MVP-5003719).
@@ -65,7 +65,7 @@ Automation for Continuous Integration (CI) and Continuous Delivery (CD) is avail
 
 Azure DevOps has a robust and powerful setup for CI/CD: you can use the classic pipelines or yaml pipelines (preferred) and mix and match after your own preference. You can have a CI pipeline for fast validation on a branch, and a more extensive one for creating the artefact that you want to deploy. There are lots of extensions available on the [marketplace](https://marketplace.visualstudio.com/azuredevops), so you don't have to reinvent the wheel. I just checked my Twitter bot [@AzDoMarketNews](https://twitter.com/azdomarketnews) and there are currently 1630 extensions available, with new ones still being added every once in a while.
 
-![Image of watch gears](../images/20210423/danil-shostak-AChwtt3tBPU-unsplash.jpg)
+![Image of watch gears](/images/20210423/danil-shostak-AChwtt3tBPU-unsplash.jpg)
 ##### Photo by <a href="https://unsplash.com/@max010?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Danil Shostak</a> on <a href="https://unsplash.com/s/photos/gears?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  
 
 ### Big things that are currently missing on GitHub Actions are:
@@ -104,7 +104,7 @@ This is the killer feature for GitHub at the moment: I really recommend checking
 
 Some parts of the security features in GitHub can be replicated inside of Azure DevOps, but only with a lot of elbow grease. GitHub has them available in the product itself. Some of these are free for public repos and not for private repos. You can find more information on that on the [pricing page](https://github.com/pricing). If you are running GitHub Enterprise server, then some of these are available through [GitHub Advanced Security](https://docs.github.com/en/github/getting-started-with-github/about-github-advanced-security).
 
-![Image of the Octocat as a detective](../images/20210423/GitHub_octocat_detective.jpg)
+![Image of the Octocat as a detective](/images/20210423/GitHub_octocat_detective.jpg)
 
 ## Dependabot
 First off is [Dependabot](https://docs.github.com/en/code-security/supply-chain-security/enabling-and-disabling-version-updates). This a tool that can scan your code and the third party dependencies that you are using. It has support for [a lot of package managers](https://docs.github.com/en/code-security/supply-chain-security/configuration-options-for-dependency-updates#package-ecosystem) and even can update the Action versions you use in your workflows! You can set it up to run periodically and it will scan your repository for you. If it finds any updates it will gather the release notes from them and create a new Pull Request for every package. If there already is an open Pull Request for the package, it will update that PR with the latest version, or close the old one and create a new PR. This is a very easy way to keep your dependencies up to date (and believe me it is: I've created my own setup [here](https://github.com/rajbos/dependency-updates)). If you have good checks in your pipelines, you can even enable [auto merge](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/automatically-merging-a-pull-request) on your repository and automatically close the PR when all checks are passing. This way you're always up to date with the latest versions of your dependencies, saving you a lot of update and security headaches in the process.
@@ -112,7 +112,7 @@ First off is [Dependabot](https://docs.github.com/en/code-security/supply-chain-
 ## Security scanning
 When you have Dependabot enabled, you can also enable [vulnerability scanning](https://docs.github.com/en/code-security/supply-chain-security/about-managing-vulnerable-dependencies). With this feature, Dependabot keeps track of your dependencies and the versions that you are using. If there is a new vulnerability found and published on their own [advisory](https://docs.github.com/en/code-security/supply-chain-security/browsing-security-vulnerabilities-in-the-github-advisory-database), Dependabot will alert you of the vulnerability and create a Pull Request on the repo with the issue. It will even tell you if there are multiple repositories with the same vulnerability in them.
 
-![Security advisory example](../images/20210423/20210423_SecurityAdivsory.png)
+![Security advisory example](/images/20210423/20210423_SecurityAdivsory.png)
 
 ## Secret scanning
 Another great feature that GitHub launched in March 2021 (GA) is [Secret Scanning](https://docs.github.com/en/code-security/secret-security/about-secret-scanning). They have a long list of partners for which they can find secrets (think passwords or access codes) from in your repository **and even automatically revoke those secrets**. How awesome is that?! You still need to be aware of secrets and could include a process in your pipelines to detect them. This feature automates that and helps you with the biggest issue of committing your secrets into your repository: they should be considered as leaked: you can use [Git BFG](https://rtyley.github.io/bfg-repo-cleaner/) to clean the secrets from your repository, but someone might still have an old copy of the repository somewhere and still have the old secrets available. It's considered much better to revoke those secrets immediately and create new ones.
