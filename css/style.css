@@ -1,5 +1,5 @@
 body{
-    background-color: bisque;
+    background-color: beige;
     background-origin: content-box;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -42,6 +42,7 @@ body{
 .panel-default>.panel-heading{
     border-color: bisque;
     background-color: white;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 5%);
 }
 
 img{
