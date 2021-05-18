@@ -8,19 +8,19 @@ Today I got to deliver my [session](https://techorama.nl/speakers/session/how-to
 
 I think I had some viewers (wasn't visible to me) and I got a couple of questions during the session that I wanted to dive deeper into and address them here. 
 
-![](../images/20210518/20210518_MyOctocat.png)
+![Image of myoctocat.com](/images/20210518/20210518_MyOctocat.png)
 
 I think the sessions have been recorded, but will only be shared with the attendees of the conference. So if you weren't there...
 
 # Slidedeck
 I you want to look up some things from the slides or visit one of the many links in there, you can look at the slide deck here:
-[here](../slides/20210518%20GitHub%20Actions%20security%20Techorama.pdf).
+[here](/slides/20210518%20GitHub%20Actions%20security%20Techorama.pdf).
 
 # Question: Running SAST tools on pull requests from forks
 Full question: Secrets are not shared with forks and Action runs from forks cannot use secrets from your repo. How do you run SAST (SonarCloud) on pull requests from forks?
 **Answer:**
 This was around the part where I was talking about the dangers of running a workflow on a Fork from a Pull Request on a public repository.  
-![Image of workflow triggers as play: pull_request_target most importantly](../images/20210518/20210518_ForkTriggers.png)  
+![Image of workflow triggers as play: pull_request_target most importantly](/images/20210518/20210518_ForkTriggers.png)  
 If you want to know more about this topic, follow that link to [https://xpir.it/gh-pwn-request](https://xpir.it/gh-pwn-request).
 
 You can still run a SAST tool on a pull request. Just don't blindly run it on a pull request from a forked repo: you don't now what changes someone made before creating the PR. 
