@@ -4,7 +4,8 @@ title: "Pester tests: moving from v4 to v5"
 date: 2021-05-25
 ---
 
-This one took me way to many trials and searches to figure out, so I wanted to store it here in case I need it later on. Maybe someone else will find this useful as well 😄.
+This one took me way to many trials and searches to figure out, so I wanted to store it here in case I need it later on.  
+Maybe someone else will find this useful as well 😄.
 
 ![Pester site header image](/images/20210525/20210525_PesterHeader.png)
 
@@ -12,7 +13,7 @@ This one took me way to many trials and searches to figure out, so I wanted to s
 We have a pipeline for [GDBC](https://globaldevopsbootcamp.com) from June 2019 that uses [Pester](https://pester.dev) tests written in PowerShell to verify the outcome of our pipeline: we create (a lot of) resources in Azure and Azure DevOps and want to check if they actually exists.
 
 We run the tests inside a PowerShell task in Azure DevOps and install the Pester module with this:
-``` PowerShell
+``` powershell
 Install-Module -Name Pester -Force -SkipPublisherCheck
 Import-Module Pester
 ```
@@ -21,17 +22,16 @@ This of course installs the latest version. After moving things to a different e
 The tricky part was getting things to work with a Pester file that holds parameters that we need to pass into it.
 
 ## Pester file has parameters
-``` PowerShell
+``` powershell
 param (
     [string] $region,
     [string] $pathToJson,
     [string] $runDirectory
 )
 ```
-
 # Parameters we need:
 To set things up, we need to set the parameters with some values to use:
-``` PowerShell
+``` powershell
 $region="LocalDevOpsBootcamp"
 $dataFilePath="c:\temp"
 $datafilename="data-999.json"
@@ -40,7 +40,7 @@ $datafilename="data-999.json"
 # Pester 4.0
 With the previous version of Pester we called Pester and added a `Data` object to pass in the variable values.
 
-``` PowerShell
+``` powershell
 Invoke-Pester
  -Script 'GDBC-AzureDevopsProvisioning.Tests.ps1'
  -Data = @{
@@ -64,7 +64,10 @@ System.Management.Automation.RuntimeException: No test files were found and no s
 ```
 
 # Pester 5.*
-This is the part that took me way to long to figure out. You can run Pester with a container by calling `Invoke-Pester -Container $container` and add the parameters to pass along to the test. That is step 1. If you also want to add settings, you need to **wrap the container in a configuration**!
+This is the part that took me way to long to figure out. You can run Pester with a container by calling `Invoke-Pester -Container $container` and add the parameters to pass along to the test.  
+That is step 1. 
+
+If you also want to add settings, you need to **wrap the container in a configuration**!
 
 So the steps are:
 1. Create a container
@@ -76,7 +79,7 @@ So the steps are:
 
 ## Example
 
-``` PowerShell
+``` powershell
 # create a new container that will be executed
 $container = New-PesterContainer 
  -Path './gdbc2019-provisioning/AzureDevOps-provisioning/GDBC-AzureDevopsProvisioning.Tests.ps1' 
@@ -99,7 +102,6 @@ $config.Run.Container = $container
 # actually call Pester
 Invoke-Pester -Configuration $config 
 ```
-
 
 More information can be found here: 
 * [PesterConfiguration](https://pester-docs.netlify.app/docs/commands/New-PesterConfiguration)
