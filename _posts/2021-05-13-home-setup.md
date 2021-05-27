@@ -31,18 +31,18 @@ I need them so people can actually see me during a video meeting, usually the br
 
 The photo's below are taken on a cloudy day. When the sun is out (and especially in the mornings are flooding in through the window) I really need an extra light. So from left to right: without any lights (somewhat okay today), with only one light on, and then with both lights on.
 
-![3 different photos with and without lights](/images/20210513/LightsExample.png)
+![3 different photos with and without lights](/images/20210513/LightsExample.png)  
 I have them both setup a bit higher on my screen to prevent to much eye strain from having a bright light in my eyes all day. That is also the reason why I have the brightness on 15%: I find that is good enough on most days and still doesn't bother me to much. Keep in mind that I sometimes have them on for hours in a row, with some breaks in between.
 
 ## Camera's
-![Close up of the Logitech C922](/images/20210513/20210513_C922.jpg)
+![Close up of the Logitech C922](/images/20210513/20210513_C922.jpg)  
 During the start and summer of 2020 good webcams where very hard to find, since there was a lot going on with production (of both chips and camera's) being stalled due to the pandemic. When I finally was able to grab on, I picked the [Logitech C922 Pro](https://www.logitech.com/en-us/products/webcams/c922-pro-stream-webcam.960-001087.html) both for it's price and the fact that it did 1080p at 60fps. Additional benefit was that it has a great microphone. Since the only thing I had available at that time was the one on my headsets ([Sony WH-1000XM2](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/wh-1000xm2)) or the standard iPhone headset) or 🤢 the build in one on my laptop (Dell XPS9500), this was a very welcome addition at the time. 
 
-![Close up of the Logitech Brio](/images/20210513/20210513_Brio.jpg)
+![Close up of the Logitech Brio](/images/20210513/20210513_Brio.jpg)  
 Later on I got a [Logitech Brio](https://www.logitech.com/en-us/products/webcams/brio-4k-hdr-webcam.960-001105.html). This one is a full 4K webcam, has HDR, can be zoomed (with the right tools) and even has [Windows Hello](https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/windows-hello-face-authentication?WT.mc_id=DOP-MVP-5003719) support! 
 ##### Do note that the Brio has a worse microphone then the C922: the later has an awesome stereo microphone that really performs better then the simple one on the Brio. Since I am not using either at the moment, it doesn't matter for me right now.
 
-The cool thing I have now, is that I can use two different viewpoints by leveraging the dual camera's that I have: the Brio sits on top of my monitor for normal video conferencing, the C922 is to my left and shows off the microphone better, together with my cool GitHub Popfilter 😍. I use the [OBS Virtual Camera](https://obsproject.com/forum/resources/obs-virtualcam.949/) setup to switch between camera's.
+The cool thing I have now, is that I can use two different viewpoints by leveraging the dual camera's that I have: the Brio sits on top of my monitor for normal video conferencing, the C922 is to my left and shows off the microphone better, together with my cool GitHub Popfilter 😍 (was a gift). I use the [OBS Virtual Camera](https://obsproject.com/forum/resources/obs-virtualcam.949/) setup to switch between camera's.
 
 ![Photo from the Logitech C922](/images/20210513/20210513_C922Photo.jpg)
 
@@ -65,7 +65,7 @@ For the last few weeks I have been using the build-in speakers of my monitor mor
 Together with a great microphone I can still communicate without to much interference being picked up from the speakers. The speakers do a well enough job, although the sound on my Sony is a lot better 😀.
 
 ## Microphone
-![Close up of the Yeticaster](/images/20210513/20210513_Microphone.jpg)
+![Close up of the Yeticaster](/images/20210513/20210513_Microphone.jpg)  
 As mentioned before, I used the microphone on my C922 for a couple off months. During that period I really wanted a better one that I could move closer to my mouth for that deeper radio voice 🎤. I had to wait for some months to actually be able to order the one I wanted, since that happened to be out of stock at the time as well 😱. I finally landed on a set of both microphone and flexible arm in one: the [yeticaster](https://www.bluemic.com/en-us/products/yeticaster/). It is the yeti microphone, the Radius III (shockmount) and Compass (flexible arm). The arm is what drew me in the most: a lot of flexible arms have an open construction with the springs visible. I don't like the look of that and I've read that those springs can wear out (which can then still be replaced). This arm uses internal springs with friction control on the parts where it bends. It looks very slick and smooth and even adjusts really well. 
 
 ## Desk
@@ -91,6 +91,9 @@ For my keyboard and mouse I use the same one I got 3 years ago for my consultanc
 As a laptop I use the one our company provides us with. They let us choose a new one every 2 - 2,5 years and you have all options with a couple of manufacturers. When I got started at [Xpirit](https://xpirit.com) I choose a Dell XPS 9500, with 32 gigs of RAM and a 1 Terabyte SSD. This was one with the up-your-nose-camera at the bottom of the screen. Always fun during video meetings 😄.
 
 Just recently I got to order a new one and now I have a [Dell XPS 9700](https://www.dell.com/nl-nl/work/shop/dell-laptops-en-notebooks/nieuw-xps-17/spd/xps-17-9700-laptop/bnx79708), again with 32 gigs of RAM and a Terabyte SSD. Luckily this one has the camera on the top of the screen and even has [Windows Hello](https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/windows-hello-face-authentication?WT.mc_id=DOP-MVP-5003719) support, both with the camera and a fingerprint reader.
+
+## Headset stand
+I was doubting between a wireless charger to place my phone on and a separate headset stand to place my headset on. I didn't want a separate charging pad on my desk and wanted to stop laying the headset flat on the desk everyday. So this seemed like a good compromise. It works really great! It's a [URGOODS](https://www.bol.com/nl/p/urgoods-headset-stand-koptelefoon-standaard-houder-met-draadloze-oplaad-functie-kabel-organizer/9300000023772597/?s2a=) headset stand.
 
 # What is next?
 What I still really want is a good way to have the laptop running somewhere, with enough air to breathe. As long as it is not **on** the desk but hidden somewhere, preferably with a remote boot option, so I don't need to physically press the power button. 
