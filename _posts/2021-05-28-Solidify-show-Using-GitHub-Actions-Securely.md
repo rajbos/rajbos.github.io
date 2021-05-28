@@ -21,7 +21,10 @@ Full question: "I would like to enforce that at least two people are involved wi
 GitHub by default allows a reviewer to approve their own changes to a PR, which makes it possible to use any open PR to merge changes possibly for making an attack on the production environment. 
 Do you have any guidance how to avoid such a scenario?"
 
-You can use branch policies ![Screenshot of branch protection rules](/images/20210528/20210528_BranchProtectionRules.png) to set up rules that need to be met before a Pull Request be merged. With the default setup people with higher access levels can still merge the pull request:  
+You can use branch policies to set up rules that need to be met before a Pull Request be merged:  
+![Screenshot of branch protection rules](/images/20210528/20210528_BranchProtectionRules.png)  
+
+With the default setup people with higher access levels can still merge the pull request:  
 ![Example of the result of the previous branch protection rule](/images/20210528/20210528_BranchProtectionRules2.png)  
 I see two options to still enforce that someone else needs to review the PR: 
 1. Add a minimum of 2 reviewers: then the PR author always needs to review the PR their self as well as an extra reviewer.
