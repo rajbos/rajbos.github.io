@@ -4,11 +4,11 @@ title: "Solidify: Using GitHub Actions Securely"
 date: 2021-05-18
 ---
 
-Today I got to deliver my session "Using GitHub Actions Securely" at the Solidify show, hosted by our friends at [Solidify](https://solidify.dev). A nice virtual community session during lunch in my timezone with people joining in, even from Kuala Lumpur!
+Today I got to deliver my session "Using GitHub Actions Securely" at the Solidify show, hosted by our friends at [Solidify](https://solidify.dev). A nice virtual community session during lunch in my time zone (CEST) with people joining in, even from Kuala Lumpur!
 
 I got a couple of questions during the session that I wanted to dive deeper into and address them here, as well as sharing the slides and the recording of it. 
 
-![Image of myoctocat.com](/images/20210518/20210518_MyOctocat.png)  
+![Image of myoctocat.com](/images/20210528/20210528_MyOctocat.png)  
 
 The session has been recorded and you can re-watch it on [YouTube](https://www.youtube.com/watch?v=C58DSezZFR8).
 
@@ -22,7 +22,7 @@ GitHub by default allows a reviewer to approve their own changes to a PR, which 
 Do you have any guidance how to avoid such a scenario?"
 
 You can use branch policies ![Screenshot of branch protection rules](/images/20210528/20210528_BranchProtectionRules.png) to set up rules that need to be met before a Pull Request be merged. With the default setup people with higher access levels can still merge the pull request:  
-![](/images/20210528/20210528_BranchProtectionRules2.png)  
+![Example of the result of the previous branch protection rule](/images/20210528/20210528_BranchProtectionRules2.png)  
 I see two options to still enforce that someone else needs to review the PR: 
 1. Add a minimum of 2 reviewers: then the PR author always needs to review the PR their self as well as an extra reviewer.
 1. Add a check that verifies that there was an extra reviewer, next to the PR author. You can create that check with a workflow that posts back the status after a reviewer has approved the PR.
