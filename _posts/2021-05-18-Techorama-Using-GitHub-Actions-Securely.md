@@ -12,7 +12,7 @@ I think I had some viewers (wasn't visible to me) and I got a couple of question
 
 I think the sessions have been recorded, but will only be shared with the attendees of the conference. So if you weren't there...
 
-# Slidedeck
+# Slide deck
 I you want to look up some things from the slides or visit one of the many links in there, you can look at the slide deck here:
 [here](/slides/20210518%20GitHub%20Actions%20security%20Techorama.pdf).
 
