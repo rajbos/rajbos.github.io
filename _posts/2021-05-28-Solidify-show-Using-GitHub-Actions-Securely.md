@@ -10,7 +10,9 @@ I got a couple of questions during the session that I wanted to dive deeper into
 
 ![Image of myoctocat.com](/images/20210528/20210528_MyOctocat.png)  
 
-The session has been recorded and you can re-watch it on [YouTube](https://www.youtube.com/watch?v=C58DSezZFR8).
+The session has been recorded and you can re-watch it on [YouTube](https://www.youtube.com/watch?v=C58DSezZFR8) or here:
+
+<iframe width="900" height="508" src="https://www.youtube.com/embed/C58DSezZFR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Slide deck
 I you want to look up some things from the slides or visit one of the many links in there, you can look at the slide deck here:
