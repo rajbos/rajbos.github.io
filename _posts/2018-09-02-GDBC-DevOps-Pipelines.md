@@ -5,7 +5,7 @@ date: 2018-09-02
 ---
 
 ## Global DevOps BootCamp
-In June 2018 I was part of the team behind [Global DevOps BootCamp](https://globaldevopsbootcamp.com/) (or GDBC in short). The goal of the boot camp is to create a world wide event where everyone could get a taste of DevOps on the Microsoft Stack. It is an amazing combination between getting your hands dirty and sharing experience and knowledge around VSTS, Azure, DevOps with other community members. This years edition was great, with 75 registered venues worldwide and 8.000 registered attendees! The feedback we've got was wonderful: a true community event where everybody was asking for more!
+In June 2018 I was part of the team behind [Global DevOps BootCamp](https://www.globaldevopsbootcamp.com/) (or GDBC in short). The goal of the boot camp is to create a world wide event where everyone could get a taste of DevOps on the Microsoft Stack. It is an amazing combination between getting your hands dirty and sharing experience and knowledge around VSTS, Azure, DevOps with other community members. This years edition was great, with 75 registered venues worldwide and 8.000 registered attendees! The feedback we've got was wonderful: a true community event where everybody was asking for more!
 
 ![](/images/2018_08_31_Unsplash.jpg)
 #### Photo by [rawpixel on Unsplash](https://unsplash.com/)

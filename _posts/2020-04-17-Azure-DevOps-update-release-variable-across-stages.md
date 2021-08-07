@@ -69,7 +69,7 @@ Write-Output ('Updated Release Pipeline variables output: {0}' -f $($Release.var
 ![OAuth Setting](/images/20200417/20200417_01_OAuthToken.png)  
 
 ## Even easier, download the Task Group definition
-Making implementing this even easier, you can download my exported Task Group [here](https://rajbos.github.io\images\20200417\rajbos%20-%20Update%20Release%20Variable%20value%20across%20stages.json) and import it (after reviewing it for security issues of course!) into your own environment.
+Making implementing this even easier, you can download my exported Task Group [here](https://devopsjournal.io\images\20200417\rajbos%20-%20Update%20Release%20Variable%20value%20across%20stages.json) and import it (after reviewing it for security issues of course!) into your own environment.
 
 ### Authorization for the Service account you are using
 Good to note that you need `Manage Releases` with the service you are running the deployment pipeline with, otherwise you will run into an error like this:
