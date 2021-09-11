@@ -5,43 +5,43 @@ date: 2018-06-16
 ---
 
 ## Global DevOps Bootcamp
-On the 16th of June 2018, [Xpirit](https://twitter.com/xpiritbv) and [Solidify](https://twitter.com/molausson) organised a global event around the topic of DevOps and improving your release cadence. It is an 'out of the box' event with a lot of self organisation where people around the global gathered on their free saturdays to learn something new about DevOps.
+On the 16th of June 2018, [Xpirit](https://twitter.com/xpiritbv) and [Solidify](https://twitter.com/molausson) organized a global event around the topic of DevOps and improving your release cadence. It is an 'out of the box' event with a lot of self organization where people around the global gathered on their free Saturdays to learn something new about DevOps.
 
 People interested in hosting a local venue went to the site
 [https://globaldevopsbootcamp.com/](https://www.globaldevopsbootcamp.com/) and started from there. Anybody, anywhere could host an event. Eventually, 76 venues registered with 8.000 participants!
 
-The teams from Xpirit and Solidify provided completly configured [VSTS](https://twitter.com/VSTS) accounts, with challenges, webhooks, users and a filled git repository:
+The teams from Xpirit and Solidify provided completely configured [VSTS](https://twitter.com/VSTS) accounts, with challenges, webhooks, users and a filled git repository:
 
-![Challenges](/images/2018_06_16_GDBC_Challenges.png)
+![Challenges](/images/20180616/2018_06_16_GDBC_Challenges.png)
 
 ## Showing how we worked
-We got several questions during the event how we organised the leaderboard application and some participants where astonished we used the same tools for this as they had been working on today!
+We got several questions during the event how we organized the leaderboard application and some participants where astonished we used the same tools for this as they had been working on today!
 That's why I wanted to share some of the stuff we did and what happened during the day!
 
 ## Getting points for work items
-Everytime a workitem's state changed, a preconfigured webhook was triggered. When the team moved a work item to state 'done', they would get points for that work item. Points were depending on the amount of work necessary to complete the challenge.
+Every time a workitem's state changed, a preconfigured webhook was triggered. When the team moved a work item to state 'done', they would get points for that work item. Points were depending on the amount of work necessary to complete the challenge.
 The team could also request help, by adding a tag to the work item. Doing so would cost them half of the points for that work item, but also provided a link to a zipfile containing step by step instructions. 
 
 ## Leaderboard application
-To organise all this, [Peter Groenewegen](https://twitter.com/pgroene) and [Geert van de Cruijsen](https://twitter.com/GeertvdC) created a leaderboard application for last years event. You can find the source for it on GitHub:  
+To organize all this, [Peter Groenewegen](https://twitter.com/pgroene) and [Geert van de Cruijsen](https://twitter.com/GeertvdC) created a leaderboard application for last years event. You can find the source for it on GitHub:  
 [github.com/xpiritbv](https://github.com/XpiritBV/LeaderboardsGlobalDevopsBootcamp)
 
 We build on that for this years version, where Peter has added the webhook callback so VSTS could tell us when a workitem changed.
 
 Off course, this .NET core application is hosted in Azure on an App Service instance backed by an Azure SQL Database. The code is on GitHub and we created a build and release pipeline in VSTS:  
-![Build](/images/2018_06_16_GDBC_Build.png)
+![Build](/images/20180616/2018_06_16_GDBC_Build.png)
 
 This build would trigger when a pull request got merged into master and after successfully running all unit tests would trigger a release.
-![Build](/images/2018_06_16_GDBC_Release.png)
+![Build](/images/20180616/2018_06_16_GDBC_Release.png)
 
 # DevOps for the leaderboard application
 To check the application during the event, we created a dashboard to monitor the performance of the application and the database.
-![Dashboard](/images/2018_06_16_GDBC_Dashboard.png)
+![Dashboard](/images/20180616/2018_06_16_GDBC_Dashboard.png)
 
 ## During the event
 The event started everywhere at 10:00 AM local time, so New Zealand and Australia got to be the first to use the application. We were a sleep during most of that timeframe, but we checked during the start to see if there where no errors. Luckily, that wasn't the case!
 
-![DevOps with Geert van der Cruijsen by Jesse Houwing](/images/2018_06_16_GDBC_By_Jesse_Houwing.jpg)  
+![DevOps with Geert van der Cruijsen by Jesse Houwing](/images/20180616/2018_06_16_GDBC_By_Jesse_Houwing.jpg)  
 *Checking issues together with Geert, image by [Jesse Houwing](https://twitter.com/jessehouwing/).*
 
 ### EMEA region starting with the challenges
@@ -61,11 +61,11 @@ A commit, push, pull request, review and merge later, the CI/CD pipeline we crea
 Somehow, some teams managed to trigger the webhook in such a way that we got a duplicate record in the database. We found out about this, again through Application Insights, and fixed the issue quickly. How they managed to trigger this, is something we will look into before using the application again.
 
 ## Can you spot where we scaled the database?
-![WebApp](/images/2018_06_16_GDBC_WebApp.png)
+![WebApp](/images/20180616/2018_06_16_GDBC_WebApp.png)
 
 ## Usage throughout the day
 There was a noticeable bump for the period EMEA region was live:
-![Users](/images/2018_06_16_GDBC_Users.png)
+![Users](/images/20180616/2018_06_16_GDBC_Users.png)
 
 
 ## Closing
