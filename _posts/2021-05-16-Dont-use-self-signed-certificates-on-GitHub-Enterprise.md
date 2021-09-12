@@ -34,7 +34,7 @@ Or use the node settings to load a specific cert if the action is build on node:
 The downside of this is that you need to add these workaround into each and every workflow that users create (and tell them they need to).
 
 ## GitHub Actions running Docker containers
-A good security practice to protect your runners, is to use Docker containers to run Actions you don't (want to) trust: run them inside a container as an extra security boundary to [limit the access](https://devopsjournal.io/blog/2021/02/07/GitHub-Actions-Security-Private-Runners) the runner user has on your VM. If you have setup the runner with least-privileges then the container boundary is hard to break out of.
+A good security practice to protect your runners, is to use Docker containers to run Actions you don't (want to) trust: run them inside a container as an extra security boundary to [limit the access](/blog/2021/02/07/GitHub-Actions-Security-Private-Runners) the runner user has on your VM. If you have setup the runner with least-privileges then the container boundary is hard to break out of.
 
 If you start running Actions or jobs in a container, you are now bound to the certificate trust chain **of the container** and you are no longer running in the context of the runner that reads it's certificate trust chain from the host. That means you will find it hard to use the self signed certificate. From something like a call to an internal NPM endpoint (with a self signed certificate as well), you could go all-in and just ignore the full SSL certificate completely by adding `NODE_TLS_REJECT_UNAUTHORIZED = 0` to your environment. This is highly insecure and will open up your environment to a person-in-the-middle attack. I'm sure that is not what you want?
 
