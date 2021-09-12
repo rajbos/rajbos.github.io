@@ -22,7 +22,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args: 
-    - '${{ {{ inputs.organization }}}}' 
+    - '${{{{{{ inputs.organization }}}}' 
     - '${{~{{ inputs.PAT }}}}' 
 ```
 
