@@ -42,7 +42,7 @@ The PowerShell script is in the `entrypoint.ps1` file. I declare the parameters 
 
 You can leverage that feature like I do below. I test for the values to see if they are empty and if so, I use a default environment variable to run in the current GitHub context (a user account or an organization). If not all minimal values have been set, I still fail the action.
 
-``` PowerShell
+``` powershell
 param (
     [string] $organization,
     [string] $PAT
@@ -63,7 +63,7 @@ $actions = (.\load-used-actions.ps1 -orgName $organization -PAT $PAT)
 
 Note: failing the action can be done by exiting the entrypoint script with a non-zero exit code. 
 I use this setup for it:
-``` PowerShell
+``` powershell
 try {
     # always run in the correct location, where our scripts are located:
     Set-Location $PSScriptRoot
@@ -85,7 +85,7 @@ catch {
 
 # PowerShell container image
 For full reference you can find the Dockerfile I used below:
-``` Docker
+``` shell
 FROM ubuntu:20.04
 
 # install powershell for Ubuntu 20.04
