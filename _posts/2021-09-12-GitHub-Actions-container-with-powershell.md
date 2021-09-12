@@ -23,7 +23,9 @@ runs:
   image: 'Dockerfile'
   args: 
     - '${{{{{{ inputs.organization }}}}' 
-    - '${{~{{ inputs.PAT }}}}' 
+    - '$\\{{{{ inputs.PAT }}}}' 
+    - '${{{{ inputs.PAT }}}}' 
+    - '${ { { { inputs.PAT }}}}' 
 ```
 
 ## Dockerfile
