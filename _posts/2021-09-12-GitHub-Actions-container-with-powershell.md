@@ -17,16 +17,7 @@ The moving parts of the template are as follows:
 The `action.yml` contains the setup for your action repository when it is used in a GitHub Actions workflow as well as the listing of it on the GitHub Actions Marketplace. In it are the description of the action, the author, the version, and the list of inputs and outputs.
 
 It also tells the workflow runner (the thing that executes the action), how to run the action. In this case we use the `using` property to tell the engine to use a Docker image to run in. The `image` property tells the engine which Docker image to use. If you use `Dockerfile` as its value, it will use the Docker file in the root of the current repository. In the `args` section you tell it the arguments to pass into the container when it starts. These are then added **in the order the are added to this list**. So the array has index 0 for the first argument, 1 for the second, and so on. That will also be the order in which the arguments are passed to the entrypoint file in the container.
-``` yaml
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args: 
-    - '${{{{{{ inputs.organization }}}}' 
-    - '$\\{{{{ inputs.PAT }}}}' 
-    - '${{{{ inputs.PAT }}}}' 
-    - '${ { { { inputs.PAT }}}}' 
-```
+![image of the args being passed in as an array: ${{ inputs.organization }} and ${{ inputs.PAT }}](/images/20210912/20210912_ActionYML.png)
 
 ## Dockerfile
 The 'Dockerfile' will be build on the spot when the action is executed. With the `ENTRYPOINT` you tell it what script to run when the container starts. This is the point where you can put your PowerShell script. Remember that the parameters are injected into the script as variables.
