@@ -163,8 +163,9 @@ In this post I've given you a way to get started with an Internal Marketplace fo
 
 Got any feedback or more questions on how to set things up? Please let me know!
 
-#### Note: the [github-actions-requests](https://github.com/rajbos/github-actions-requests) example repository that I am setting up currently only does the first few steps. I'm still building the rest of the workflow 😄.
+###### Note: the [github-actions-requests](https://github.com/rajbos/github-actions-requests) example repository that I am setting up currently only does the first few steps. I'm still building the rest of the workflow 😄.
 
+## Current status:
 Currently the `github-actions-request`:
 * is triggered by labeling the issue
 * searches for a uses statement in the last comment of the issue
