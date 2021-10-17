@@ -17,13 +17,13 @@ I wanted to create an overview of all blogposts that I could find about the even
 
 ## Azure Learnings
 A post by myself about all the stuff I learned while creating the automation to roll out all the resources we needed in Azure: 
-[link](https://rajbos.github.io/blog/2019/06/23/GDBC-Azure-learnings).  
+[link](https://devopsjournal.io/blog/2019/06/23/GDBC-Azure-learnings).  
 
 ## Monitoring the event
 Posted by [Michiel van Oudheusden](https://twitter.com/mivano) on the things he did for all the [monitoring](https://mindbyte.nl/2019/06/28/how-to-monitor-a-24-hour-global-event.html) of the infrastructure for the event.
 
 ## 48 hours running the global event
-A post by myself about the day leading up to the event and during the day itself. We ran all the infrastructure we needed as a team. You can read it [here](https://rajbos.github.io/blog/2019/06/18/GDBC-48-hours-in-the-life-of-a-team-member).
+A post by myself about the day leading up to the event and during the day itself. We ran all the infrastructure we needed as a team. You can read it [here](https://devopsjournal.io/blog/2019/06/18/GDBC-48-hours-in-the-life-of-a-team-member).
 
 ## Application Insights
 [Michiel van Oudheusden](https://twitter.com/mivano) shares how he enabled Application Insights to track dependecies in our infrastructure [here](https://mindbyte.nl/2019/06/28/use-application-insights-over-multiple-systems-to-track-dependencies.html).

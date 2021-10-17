@@ -15,7 +15,7 @@ dotnet tool install dotnet-stryker -g
 ```
 And the tool would install. This is correct if you run it once.
 
-In Azure DevOps you would call the command from a .NET Core task, as I previously described [here](https://rajbos.github.io/blog/2019/09/03/Running-dotnet-tools-in-azure-devops).
+In Azure DevOps you would call the command from a .NET Core task, as I previously described [here](https://devopsjournal.io/blog/2019/09/03/Running-dotnet-tools-in-azure-devops).
 
 ![Install command in Azure Pipelines](/images/20190925/2019-09-25_InstallCommand.png)
 

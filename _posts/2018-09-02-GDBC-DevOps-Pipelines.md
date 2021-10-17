@@ -13,7 +13,7 @@ In June 2018 I was part of the team behind [Global DevOps BootCamp](https://www.
 ## Challenges
 During the GDBC participants could try to complete 60+ challenges that the GDBC team had created. Those challenges where created by a team of more than 15 people (global organizers and venue organizers helped out), so they had quite a lot of changes during the preparation period. If you want to see and dive into the challenges, you can! The challenges have been open sourced for the community and can be found here: [GitHub/XpiritBV/GDBC2018-Challenges](https://github.com/XpiritBV/GDBC2018-Challenges).
   
-The challenges would be created as work items inside a VSTS team, where participants would be assigned to, so they could collaborate on the challenges there. By dragging the work items to the "done" column, they'd indicated that they finished the challenge and received points for it, which they could follow on a leaderboard (more info in this [post](https://rajbos.github.io/blog/2018/06/16/GDBC-DevOps-on-the-Leaderboard)).  
+The challenges would be created as work items inside a VSTS team, where participants would be assigned to, so they could collaborate on the challenges there. By dragging the work items to the "done" column, they'd indicated that they finished the challenge and received points for it, which they could follow on a leaderboard (more info in this [post](https://devopsjournal.io/blog/2018/06/16/GDBC-DevOps-on-the-Leaderboard)).  
 
 ## Pipelines for the Challenges
 Early on, it was decided to save all the challenges in a git repository in VSTS, practicing what we wanted the participants to use (and because we are nerds!).

@@ -4,7 +4,7 @@ title: "DevOps Principles series - Recording setup "
 date: 2019-07-10
 ---
 
-Read more on why I created short video's wherein I explain some of the DevOps principles and practices [here](https://rajbos.github.io/blog/2019/07/10/DevOps-Principles-series).
+Read more on why I created short video's wherein I explain some of the DevOps principles and practices [here](https://devopsjournal.io/blog/2019/07/10/DevOps-Principles-series).
 
 ![DevOps Continues Cycle](/images/20190710/20190710_01_DevOps.png)
 

@@ -9,9 +9,9 @@ I've been diving into the security aspects of using [GitHub Actions](https://git
 From the beginning, GitHub always indicated that the best way to use GitHub Actions is to fork the repository containing them and take control over the code that you are running. That way you can review what the Action is doing before you start using it. You don't want to run just any random code from the internet, would you?
 
 This post is part of a series on best practices for using GitHub Actions in a secure way. You can find the other posts here:
-* [Forking action repositories](https://rajbos.github.io/blog/2021/02/06/GitHub-Actions-Forking-Repositories)
-* [Private runners](https://rajbos.github.io/blog/2021/02/07/GitHub-Actions-Security-Private-Runners)
-* [One runner, one workflow](https://rajbos.github.io/blog/2021/03/07/GitHub-Actions-one-workflow-per-runner)
+* [Forking action repositories](https://devopsjournal.io/blog/2021/02/06/GitHub-Actions-Forking-Repositories)
+* [Private runners](https://devopsjournal.io/blog/2021/02/07/GitHub-Actions-Security-Private-Runners)
+* [One runner, one workflow](https://devopsjournal.io/blog/2021/03/07/GitHub-Actions-one-workflow-per-runner)
 
 <div align="center" markdown="1">
 

@@ -44,7 +44,7 @@ After rolling new version out automatically, it is good to add a step in the CD 
 
 At first it could be a basic test: if I navigate to the web-application, do I get a HTTP 200 Ok response back:
 ```
-url="https://rajbos.github.io"
+url="https://devopsjournal.io"
 status=`curl --silent --head $url | head -1 | cut -f 2 -d' '`
 
 if [ "$status" != "200" ]

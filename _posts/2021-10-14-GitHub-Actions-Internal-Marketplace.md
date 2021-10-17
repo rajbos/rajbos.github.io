@@ -4,20 +4,20 @@ title: "Setup an internal GitHub Actions Marketplace"
 date: 2021-10-14
 ---
 
-One of the best practices of using GitHub Actions is to [fork all actions](blog/2021/02/06/GitHub-Actions-Forking-Repositories) that you want to use to your internal actions organization. If often use `organizationname-actions` for that, just like I am doing for my own personal setup here: [rajbos-actions](https://github.com/rajbos-actions). After forking the repositories I always get the question: what now? How do we handle internal discovery? How can we have a process that gives our engineers control over the actions that we use? How can we do all this in a secure way? Can we automate this process? How do I stay up to date with the parent repository?
+One of the best practices of using GitHub Actions is to [fork all actions](/blog/2021/02/06/GitHub-Actions-Forking-Repositories) that you want to use to your internal actions organization. If often use `organizationname-actions` for that, just like I am doing for my own personal setup here: [rajbos-actions](https://github.com/rajbos-actions). After forking the repositories I always get the question: what now? How do we handle internal discovery? How can we have a process that gives our engineers control over the actions that we use? How can we do all this in a secure way? Can we automate this process? How do I stay up to date with the parent repository?
 
 This post describes my way of working, and how I set up a GitHub Actions Marketplace.
 
 
 ![Image of the Actions Marketplace](/images/20211014/20211014_Marketplace.png)    
 
-The reasons for forking are [plentiful](blog/2021/02/06/GitHub-Actions-Forking-Repositories)), for example:
+The reasons for forking are [plentiful](/blog/2021/02/06/GitHub-Actions-Forking-Repositories)), for example:
 - Take control over the Actions as a backup for your production organization (since they are downloaded just-in-time by the runner)
 - Have a formal moment in your organization that marks the end of a security check on the actions' source code (very important!)
 - Have a central location for all the actions that can be used inside your production organization (combines nicely with the next item)
 - Block actions from the marketplace from being used in your production organization (see item above)
 
-Want to know more? Check out a previous user group session on it [here](blog/2021/05/28/Solidify-show-Using-GitHub-Actions-Securely) or my upcoming session on [GitHub Universe 2021](https://www.githubuniverse.com/2021/session/689487/how-to-use-github-actions-with-security-in-mind)!
+Want to know more? Check out a previous user group session on it [here](/blog/2021/05/28/Solidify-show-Using-GitHub-Actions-Securely) or my upcoming session on [GitHub Universe 2021](https://www.githubuniverse.com/2021/session/689487/how-to-use-github-actions-with-security-in-mind)!
 
 After setting the internal marketplace up (see below) that will host the 'blessed' actions, we also need to prevent any other actions from being used in our production organization. You have control over this in the organization settings:
 
@@ -133,7 +133,7 @@ When you have done all the security checks, we can do a formal approval of the a
 - Closes the issue since the request has been fulfilled
 
 ## Fork it and own the maintenance
-Now that we have forked the action, it's up to us to maintain it, update it with the latest changes from the parent repo and fix any issues that might arise (and send those back to the parent repo!). Keeping everything up to date with incoming changes from the parent repo is something that I blogged about earlier [here](blog/2021/02/06/GitHub-Actions-Forking-Repositories).
+Now that we have forked the action, it's up to us to maintain it, update it with the latest changes from the parent repo and fix any issues that might arise (and send those back to the parent repo!). Keeping everything up to date with incoming changes from the parent repo is something that I blogged about earlier [here](/blog/2021/02/06/GitHub-Actions-Forking-Repositories).
 
 ##### Note: We also need a process to handle new code scanning alerts on the repository, and a way to keep the CodeQL workflow running, since it is automatically stopped after 90 days of no new code changes in the repository. Then we also need to handle any new security alerts from CodeQL as well.
 
