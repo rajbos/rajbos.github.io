@@ -4,10 +4,17 @@ title: "Setup an internal GitHub Actions Marketplace"
 date: 2021-10-14
 ---
 
-One of the best practices of using GitHub Actions is to [fork all actions](/blog/2021/02/06/GitHub-Actions-Forking-Repositories) that you want to use to your internal actions organization. If often use `organizationname-actions` for that, just like I am doing for my own personal setup here: [rajbos-actions](https://github.com/rajbos-actions). After forking the repositories I always get the question: what now? How do we handle internal discovery? How can we have a process that gives our engineers control over the actions that we use? How can we do all this in a secure way? Can we automate this process? How do I stay up to date with the parent repository?
+One of the best practices of using GitHub Actions is to [fork all actions](/blog/2021/02/06/GitHub-Actions-Forking-Repositories) that you want to use to your internal actions organization. If often use `organizationname-actions` for that, just like I am doing for my own personal setup here: [rajbos-actions](https://github.com/rajbos-actions). 
+
+After forking the repositories I always get the question: 
+
+* What now? 
+* How do we handle internal discovery? 
+* How can we have a process that gives our engineers control over the actions that we use? 
+* How can we do all this in a secure way?
+* Can we automate this process? How do I stay up to date with the parent repository?
 
 This post describes my way of working, and how I set up a GitHub Actions Marketplace.
-
 
 ![Image of the Actions Marketplace](/images/20211014/20211014_Marketplace.png)    
 
