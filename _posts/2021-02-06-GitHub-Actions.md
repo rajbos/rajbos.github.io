@@ -15,6 +15,7 @@ In the post on [Forking action repositories](https://rajbos.github.io/blog/2021/
 * Pinning versions
 * Forking repositories
 * Keeping your forks up to date
+Additionally (and especially in an enterprise setting), you'll want to create your own internal market place for actions. How to set it up and have a good security process around it can be found [here](/blog/2021/10/14/GitHub-Actions-Internal-Marketplace)
 
 # Secure your private runners
 In the post on [Private runners](https://rajbos.github.io/blog/2021/02/07/GitHub-Actions-Security-Private-Runners) I explain these best practices:
