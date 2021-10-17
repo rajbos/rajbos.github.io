@@ -69,7 +69,7 @@ Write-Output ('Updated Release Pipeline variables output: {0}' -f $($Release.var
 ![OAuth Setting](/images/20200417/20200417_01_OAuthToken.png)  
 
 ## Even easier, download the Task Group definition
-Making implementing this even easier, you can download my exported Task Group [here](https://devopsjournal.io\images\20200417\rajbos%20-%20Update%20Release%20Variable%20value%20across%20stages.json) and import it (after reviewing it for security issues of course!) into your own environment.
+Making implementing this even easier, you can download my exported Task Group [here](/images/20200417/rajbos%20-%20Update%20Release%20Variable%20value%20across%20stages.json) and import it (after reviewing it for security issues of course!) into your own environment.
 
 ### Authorization for the Service account you are using
 Good to note that you need `Manage Releases` with the service you are running the deployment pipeline with, otherwise you will run into an error like this:
@@ -81,7 +81,7 @@ VS402904: Access denied: User Project Collection Build Service (AzDoServiceAccou
 There is a new update for Azure DevOps on its way to make this even easier as noted by the Azure DevOps team [here](https://github.com/microsoft/azure-pipelines-tasks/issues/4743#issuecomment-614721900). You can see that the initial issues was created in 2017 and the solution is rolling out in 2020 😄.
 
 # Update for yaml pipelines
-After reading this blog post, Sebastian Schütze new about another way to fix this issue in a yaml pipeline: you have the option there to upload an artefact from the pipeline that can be downloaded in any subsequent stage/job. 
+After reading this blog post, Sebastian Schütze knew about another way to fix this issue in a yaml pipeline: you have the option there to upload an artefact from the pipeline that can be downloaded in any subsequent stage/job. 
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just created a new blog post: Variables Cross Stage in Azure DevOps with YAML <a href="https://twitter.com/hashtag/AzureDevOps?src=hash&amp;ref_src=twsrc%5Etfw">#AzureDevOps</a> <a href="https://twitter.com/hashtag/DevOps?src=hash&amp;ref_src=twsrc%5Etfw">#DevOps</a> <a href="https://twitter.com/hashtag/AzurePipelines?src=hash&amp;ref_src=twsrc%5Etfw">#AzurePipelines</a> <a href="https://twitter.com/hashtag/AzureDevOps?src=hash&amp;ref_src=twsrc%5Etfw">#AzureDevOps</a> <a href="https://twitter.com/hashtag/Cross?src=hash&amp;ref_src=twsrc%5Etfw">#Cross</a>-Stage <a href="https://twitter.com/hashtag/Variables?src=hash&amp;ref_src=twsrc%5Etfw">#Variables</a> <a href="https://twitter.com/hashtag/YAML?src=hash&amp;ref_src=twsrc%5Etfw">#YAML</a> AzureDevOps AzureDevOps <a href="https://t.co/CI94l1K8yG">https://t.co/CI94l1K8yG</a></p>&mdash; Sebastian Schütze 🚀☁️ (@RazorSPoint) <a href="https://twitter.com/RazorSPoint/status/1251537984366743553?ref_src=twsrc%5Etfw">April 18, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

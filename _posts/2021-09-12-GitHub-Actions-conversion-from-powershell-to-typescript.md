@@ -45,7 +45,7 @@ The [Octokit](https://octokit.github.io/) library is very useful to make the Git
 In PowerShell I had to wrap all calls to use my own authentication setup and convert the PAT to a Base64 encoded header. It's working, but Octokit saves me all that trouble 😄.
 Similarly handling API rate-limiting is handled for you, so you don't have to worry about it.
 
-## Ocktokit and inputs
+## Octokit and inputs
 You can declare inputs in your action that the workflow can inject as parameters for your action. Getting the values of the parameters at runtime is build into Octokit, but injecting them during debugging is not. You can use the environment variables from the NodeJS process to still load them.
 
 ![Image of using process.env.PAT on top of core.getInput](/images/20210912_1/20210912_Inputs.png)
