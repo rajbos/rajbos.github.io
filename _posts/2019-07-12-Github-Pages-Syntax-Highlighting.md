@@ -6,7 +6,7 @@ date: 2019-07-12
 
 Today I noticed that my syntax highlighting was not working on this blog. Here is how I fixed it!  
 
-I am using Jekyll on GitHub pages as I wrote [before](https://devopsjournal.io/blog/2017/12/17/trying-out-jekyll-on-github-pages).
+I am using Jekyll on GitHub pages as I wrote [before](/blog/2017/12/17/trying-out-jekyll-on-github-pages).
 
 ![](/images/20190712.02/zach-reiner-unsplash.jpg)
 

@@ -119,7 +119,7 @@ I started out with a Git repo, pushed that to [GitHub](https://github.com/rajbos
 |Release/Run status|![Release status](https://vsrm.dev.azure.com/raj-bos/_apis/public/Release/badge/301c7ef0-13c9-491b-b16d-cd07a6ec02ef/1/1)|
 
 
-By the way, I am using [Azure Pipelines from the GitHub marketplace](https://devopsjournal.io/blog/2018/09/10/GitHub-Azure-DevOps-Pipeline) to run the CI/CD triggers for the project.
+By the way, I am using [Azure Pipelines from the GitHub marketplace](/blog/2018/09/10/GitHub-Azure-DevOps-Pipeline) to run the CI/CD triggers for the project.
 
 For the scheduling part I am using a scheduled trigger that will run the release definition every three hours. Somewhat irksome to add so many (no cron notation), but if it works....
 

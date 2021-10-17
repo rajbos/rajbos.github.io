@@ -12,7 +12,7 @@ They are working at making this part easier, so I checked out their code to see 
 ![Stryker logo](/images/20191004/20191004_Stryker_Logo.png)
 
 ## Using Stryker in .NET code
-I previously posted about using Stryker for .NET in your Azure Pipeline (find it [here](https://devopsjournal.io/blog/2019/09/04/Use-Stryker-Azure-DevOps)). After running it for one project, I now want to run it for a lot of projects, in the same solution. Currently, this is not available in the Stryker tooling. After [reaching](https://github.com/stryker-mutator/stryker-net/issues/740) out to Stryker team, I had confirmation that the way I wanted to do things, seemed like the correct way to go:
+I previously posted about using Stryker for .NET in your Azure Pipeline (find it [here](/blog/2019/09/04/Use-Stryker-Azure-DevOps)). After running it for one project, I now want to run it for a lot of projects, in the same solution. Currently, this is not available in the Stryker tooling. After [reaching](https://github.com/stryker-mutator/stryker-net/issues/740) out to Stryker team, I had confirmation that the way I wanted to do things, seemed like the correct way to go:
 
 1. Run Stryker on each project
 1. Gather the output files from each run
@@ -37,4 +37,4 @@ The next step is to update the code in the repo so I can do things like running 
 For now, this is already a working solution, so: Happy mutating!
 
 ## Update:
-For the final setup with all steps running in parallel in Azure DevOps you can find the end result [here](https://devopsjournal.io/blog/2019/10/11/Parallelizing-a-long-Stryker-Run-in-Azure-DevOps).
+For the final setup with all steps running in parallel in Azure DevOps you can find the end result [here](/blog/2019/10/11/Parallelizing-a-long-Stryker-Run-in-Azure-DevOps).

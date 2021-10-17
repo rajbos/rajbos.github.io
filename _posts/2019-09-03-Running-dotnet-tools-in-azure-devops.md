@@ -19,7 +19,7 @@ Do note that the `custom command` to run is just `tool` and the parameter input 
 In this case I am installing [Stryker](https://stryker-mutator.io/stryker-net/) to start with mutation testing.
 
 ### Error: 'Cannot find any manifests file'
-Just running the installation in the work folder will give the error below. .NET Core wants a config file for local tools. Find more information about that [here](https://devopsjournal.io/blog/2019/09/03/fixing-error-.NET-core-dotnet-new-tool-manifest).
+Just running the installation in the work folder will give the error below. .NET Core wants a config file for local tools. Find more information about that [here](/blog/2019/09/03/fixing-error-.NET-core-dotnet-new-tool-manifest).
 
 ``` powershell
 Cannot find any manifests file. Searched:

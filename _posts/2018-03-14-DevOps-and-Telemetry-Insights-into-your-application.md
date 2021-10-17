@@ -17,9 +17,9 @@ As we followed the adagio: 'You build it, you run it', I made sure it was possib
 
 
 ## Series
-* [Part 1](https://devopsjournal.io/blog/2018/02/23/DevOps-and-Telemetry-Insights-into-your-application) - My journey with telemetry and starting with logging
-* [Part 2](https://devopsjournal.io/blog/2018/03/22/DevOps-and-Telemetry-Insights-supporting-systems) - Supporting systems and how to gather that information (this post)
-* [Part 3](https://devopsjournal.io/blog/2018/04/02/DevOps-and-Telemetry-support-the-support-systems) - Supporting the support systems
+* [Part 1](/blog/2018/02/23/DevOps-and-Telemetry-Insights-into-your-application) - My journey with telemetry and starting with logging
+* [Part 2](/blog/2018/03/22/DevOps-and-Telemetry-Insights-supporting-systems) - Supporting systems and how to gather that information (this post)
+* [Part 3](/blog/2018/04/02/DevOps-and-Telemetry-support-the-support-systems) - Supporting the support systems
 
 ### Part 1 in the series
 In this first post I'm exploring the information I found necessary to have and will follow this up in another post with several methods to gather that information. The closing part of this series will be an overview of tools that could be use to gather the necessary information and display inside of a dashboard.
@@ -71,4 +71,4 @@ A way to do so into Power BI is described [here](https://www.patrickvankleef.com
 
 
 ## Next up:
-The next post in this series will be: 'Part 2 - Supporting systems and how to gather that information'. I think it could be helpful to have a (start of) a list of items I started tracking about supporting systems. What parts of your infrastructure does an 'Ops' team really care about? I'll dive into that in the next post, which you can find [here](https://devopsjournal.io/blog/2018/03/22/DevOps-and-Telemetry-Insights-supporting-systems)
+The next post in this series will be: 'Part 2 - Supporting systems and how to gather that information'. I think it could be helpful to have a (start of) a list of items I started tracking about supporting systems. What parts of your infrastructure does an 'Ops' team really care about? I'll dive into that in the next post, which you can find [here](/blog/2018/03/22/DevOps-and-Telemetry-Insights-supporting-systems)

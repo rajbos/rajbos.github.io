@@ -35,7 +35,7 @@ Using [Stryker for .NET](https://stryker-mutator.io/stryker-net/quickstart) can 
 ``` powershell
 dotnet tool install -g dotnet-stryker
 ```
-I've ran into some configuration issues and an older version of .NET Core that I have documented [here](https://devopsjournal.io/blog/2019/09/03/fixing-error-.NET-core-dotnet-new-tool-manifest). 
+I've ran into some configuration issues and an older version of .NET Core that I have documented [here](/blog/2019/09/03/fixing-error-.NET-core-dotnet-new-tool-manifest). 
 
 When you run the tool from the CLI, you can see the results immediately and also see the changes Stryker has made to your code. 
 
@@ -69,7 +69,7 @@ Adding a html report parameter to the Stryker command will write a html file to 
 ![Stryker detailed report for the tests](/images/20190829/2019-08-29StrykerReportDetails.png)  
 
 ## Adding Stryker to your Azure DevOps pipeline
-Now you are ready to include a Stryker run into your Azure DevOps build pipeline. To do so, you can include calls to the dotnet tool commands using the normal .NET Core task. If you need help figuring out how to set up the custom commands, read my blogpost about [Running dotnet tools in Azure DevOps](https://devopsjournal.io/blog/2019/09/03/Running-dotnet-tools-in-azure-devops).  
+Now you are ready to include a Stryker run into your Azure DevOps build pipeline. To do so, you can include calls to the dotnet tool commands using the normal .NET Core task. If you need help figuring out how to set up the custom commands, read my blogpost about [Running dotnet tools in Azure DevOps](/blog/2019/09/03/Running-dotnet-tools-in-azure-devops).  
 Do note the specific arguments I pass into the Stryker command here: my mutation tests where scoring on 54%, so I needed custom thresholds to actually fail the build. 
 
 ![Azure DevOps Steps to run Stryker in the build pipeline](/images/20190829/2019-09-04_StrykerAzureDevOpsConfig.png)  
@@ -87,6 +87,6 @@ The next step is to include the html report in you build pipeline and upload it 
 The Stryker team seems to be working on an extension for Azure DevOps to enable the build results to show an extra tab that would open that artefact file, but it seems that this is not yet ready. Keep up to date on this by watching this [repository](https://github.com/stryker-mutator/azure-devops-mutationreport-publisher).
 
 # Update
-Read more information about the setup in Azure DevOps in my follow up post [here](https://devopsjournal.io/blog/2019/09/04/Use-Stryker-Azure-DevOps). 
+Read more information about the setup in Azure DevOps in my follow up post [here](/blog/2019/09/04/Use-Stryker-Azure-DevOps). 
 
-For the final setup with all steps running in parallel in Azure DevOps you can find the end result [here](https://devopsjournal.io/blog/2019/10/11/Parallelizing-a-long-Stryker-Run-in-Azure-DevOps).
+For the final setup with all steps running in parallel in Azure DevOps you can find the end result [here](/blog/2019/10/11/Parallelizing-a-long-Stryker-Run-in-Azure-DevOps).
