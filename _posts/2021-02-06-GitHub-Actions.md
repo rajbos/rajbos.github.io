@@ -16,7 +16,10 @@ In the post on [Forking action repositories](/blog/2021/02/06/GitHub-Actions-For
 * Forking repositories
 * Keeping your forks up to date
 
-Additionally (and especially in an enterprise setting), you'll want to create your own internal market place for actions. How to set it up and have a good security process around it can be found [here](/blog/2021/10/14/GitHub-Actions-Internal-Marketplace)
+Additionally (and especially in an enterprise setting), you'll want to create your own internal market place for actions. How to set it up and have a good security process around it can be found [here](/blog/2021/10/14/GitHub-Actions-Internal-Marketplace).
+
+# Keeping your forks up to date
+After forking all the actions you want to use, you also have to own the maintenance. I've described a good way of keeping your forks up to date [here](/blog/2021/02/06/GitHub-Actions-Forking-Repositories#keeping-your-forks-up-to-date), by making sure you review the incoming changes before you merge them.
 
 # Secure your private runners
 In the post on [Private runners](/blog/2021/02/07/GitHub-Actions-Security-Private-Runners) I explain these best practices:
@@ -26,6 +29,12 @@ In the post on [Private runners](/blog/2021/02/07/GitHub-Actions-Security-Privat
 
 # Do not reuse a runner, ever!
 * [One runner, one workflow](/blog/2021/03/07/GitHub-Actions-one-workflow-per-runner)
+
+# Run your own action in a container
+To have an additional boundary for your action you can run it inside a container. This also enables you to use something in your container that doesn't have to be installed on the runner itself: [Run your action in a container](/blog/2021/09/12/GitHub-Actions-container-with-powershell).
+
+# Run you runners in a Kubernetes cluster
+To mitigate a lot of attack vectors from running your runners on a virtual machine (e.g. disk / network access), you can host your self-hosted runners in a [Kubernetes](/blog/2021/08/06/GitHub-runners-on-kubernetes) cluster. Then you have 'ephemeral' runners that only exist during the execution of your workflow and then are cleaned up.
 
 # Untrusted input 
 An overview from GitHub on [untrusted input](https://securitylab.github.com/research/github-actions-untrusted-input), from the issue title to the commit message, if you act upon them (even just echoing them to the output!), they can be misused and therefor are an attack vector.
