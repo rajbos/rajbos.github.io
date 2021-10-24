@@ -9,6 +9,9 @@ I've been diving into the security aspects of using [GitHub Actions](https://git
 ![Image of locks on a fence](/images/20210206/jon-moore-bBavss4ZQcA-unsplash.jpg)
 ##### <span>Photo by <a href="https://unsplash.com/@thejmoore?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jon Moore</a> on <a href="https://unsplash.com/s/photos/security?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
+# Setting up an internal marketplace for GitHub Actions
+All posts eventually lead up to setting up an internal marketplace for GitHub Actions: something that your team can control, prevents random actions from being used and gives you the process to run actual security checks on the actions in use. Learn how to set one up in your organization [here](/blog/2021/10/14/GitHub-Actions-Internal-Marketplace).
+
 # Forking action repositories
 In the post on [Forking action repositories](/blog/2021/02/06/GitHub-Actions-Forking-Repositories) I show these best practices:
 * Verify the code the Action is executing
