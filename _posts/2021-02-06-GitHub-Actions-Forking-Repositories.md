@@ -4,11 +4,11 @@ title: "GitHub Actions & Security: Best practices - Forking Action repositories"
 date: 2021-02-06
 ---
 
-I've been diving into the security aspects of using [GitHub Actions](https://github.com/features/actions) and wanted to share some best practices in one place.  
+I've been diving into the security aspects of using [GitHub Actions](https://github.com/features/actions) and wanted to share some best practices in one place. If you want to have an overview how and why you need this, you check checkout a session I have on this topic from a user group recording [here](/blog/2021/05/28/Solidify-show-Using-GitHub-Actions-Securely).
 
 From the beginning, GitHub always indicated that the best way to use GitHub Actions is to fork the repository containing them and take control over the code that you are running. That way you can review what the Action is doing before you start using it. You don't want to run just any random code from the internet, would you?
 
-This post is part of a series on best practices for using GitHub Actions in a secure way. You can find the other posts here:
+This post is part of a [series](/blog/2021/02/06/GitHub-Actions) on best practices for using GitHub Actions in a secure way. You can find the other posts here:
 * [Forking action repositories](/blog/2021/02/06/GitHub-Actions-Forking-Repositories)
 * [Private runners](/blog/2021/02/07/GitHub-Actions-Security-Private-Runners)
 * [One runner, one workflow](/blog/2021/03/07/GitHub-Actions-one-workflow-per-runner)
