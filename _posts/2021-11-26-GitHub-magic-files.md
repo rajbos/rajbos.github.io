@@ -14,6 +14,7 @@ A list of all the magic files that I came across in GitHub.
 
 |Filename|Location|.github repo support|Description|Docs|
 |---|---|---|---|---|
+|CNAME|root||Alias for the GitHub Pages site||
 |CONTRIBUTING.md|root, /docs or .github|yes|How to contribute to a project|[guidelines](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors)|
 |CODE_OF_CONDUCT.md||yes|Code of conduct||
 |CODEOWNERS|||List of people who can make changes to the files or folders|
