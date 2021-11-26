@@ -15,7 +15,7 @@ The image on the left displays my working from home setup somewhere in April 202
 Let's talk about the gear you see in the image 😄.
 
 ## Monitor
-![Close up of the monitor](/images/20210513/20210513_Screen.jpg)
+![Close up of the monitor](/images/20210513/20210513_Screen.jpg) 
 The monitor is a [Dell U3419W](https://www.coolblue.nl/product/825247/dell-ultrasharp-u3419w.html). It's a 34 inch ultrawide curved screen with Quad HD (1440p). This is one of the more expensive items: I was searching for a better solution then my laptop on a stand and an extra screen. When I was a developer I remembered being very fond of having 3 21 inch monitors side to side, and having the different resolutions of my laptop and an extra screen from the office weren't good enough. I researched monitors and found an option of around €500, since that was the amount of money I felt comfortable spending. When talking things over with my wife of the extra stuff I wanted, she told me to get something good since that is what you are looking at for over eight hours a day. I still felt a little uncomfortable spending this much on a monitor. After setting it up I am very happy with it! Really glad I could spend the extra money on it and have an awesome setup. You don't notice the curve and the resolution is excellent (3440 x 1440). 
 ##### Sidenote: couldn't find a link on the Dell site itself so I used this Dutch web shop that I like.
 
@@ -23,7 +23,7 @@ I am using this monitor with a Picture-By-Picture (PBP) setup: that means that I
 You can of course just share just a small window, but as a hands-on DevOps consultant I often share my entire screen so I can use different windows on it. Having this PBP option enables me to have two screens available with each a resolution of 1720 x 1440. It is a rather strange resolution because of the height. Luckily this works well enough to not be a real hassle in my day to day usage.
 
 ## Lights
-![Close up of the lights](/images/20210513/20210513_Light.jpg)
+![Close up of the lights](/images/20210513/20210513_Light.jpg)  
 The lights are [Elgato KeyLight Airs](https://www.elgato.com/en/key-light-air). They have options for their brightness and you can set the color from ultrabright white to really yellowish: 
 ![Image of the Elgato Control Center](/images/20210513/20210513_Elgato_Light_Strip.png)  
 
