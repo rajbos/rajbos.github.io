@@ -28,7 +28,11 @@ A list of all the magic files that I came across in GitHub.
 ||.github/?||Dependabot configuration file||
 ||.github/?||CodeQL configuration file||
 |README.md|root / ? ||Project readme, also used on marketplace if the repo is published to the marketplace|
-|README.md|.github/user/||Profile readme||
-|README.md|.github/organization/||Organization readme||
+|README.md|.github/username/username||Profile readme|[About readme's](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)|
+|README.md|organizations .github **repo**: profile/README.md||Organization readme|[Organization readme](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/customizing-your-organizations-profile)|
 |workflow.yml|.github/workflows/|||[workflows](https://docs.github.com/en/github/automating-your-workflow/automating-workflows-with-github-actions)|
 |action.yml/action.yaml|root||Configuration file for an actions repository||
+
+Some of these are extra tricky, like for example the organization profile lives in a different directory and repo then the user profile readme: `.github` repo in the org and then in a folder named `profile`: README.md.
+
+![Screenshot of creating the .github repo](/images/20211126/20211126-org-profile.jpg.png)
