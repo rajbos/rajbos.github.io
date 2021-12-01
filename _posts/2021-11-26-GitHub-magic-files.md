@@ -25,7 +25,7 @@ A list of all the magic files that I came across in GitHub.
 |SUPPORT.md||yes|||
 |FORM-NAME.yml|.github/ISSUE_TEMPLATE/||Issue templates|[templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)|
 |config.yml|.github/ISSUE_TEMPLATE/||Issue templates configuration settings|[template chooser](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template-chooser)|
-||.github/?||Dependabot configuration file||
+|dependabot.yml|.github/||Dependabot configuration file||
 |codeql-config.yml|.github/codeql/codeql-config.yml (convention, not required)|sort of|CodeQL configuration file. Can also be stored in an external repository (hence .gthub repo works). If using external repo, referencing can by done by using `owner/repository/filename@branch` |[CodeQL config](https://docs.github.com/en/code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/configuring-codeql-runner-in-your-ci-system#using-a-custom-configuration-file)|
 |secret_scanning.yml|.github/secret_scanning.yml||Secret scanning configuration file|[secret scanning](https://docs.github.com/en/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories)|
 |README.md|root / ? ||Project readme, also used on marketplace if the repo is published to the marketplace|
