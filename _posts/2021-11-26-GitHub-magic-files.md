@@ -27,6 +27,7 @@ A list of all the magic files that I came across in GitHub.
 |config.yml|.github/ISSUE_TEMPLATE/||Issue templates configuration settings|[template chooser](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template-chooser)|
 ||.github/?||Dependabot configuration file||
 ||.github/?||CodeQL configuration file||
+|secret_scanning.yml|.github/secret_scanning.yml||Secret scanning configuration file|[secret scanning](https://docs.github.com/en/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories)|
 |README.md|root / ? ||Project readme, also used on marketplace if the repo is published to the marketplace|
 |README.md|.github/username/username||Profile readme|[About readme's](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)|
 |README.md|organizations .github **repo**: profile/README.md||Organization readme|[Organization readme](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/customizing-your-organizations-profile)|
