@@ -5,6 +5,7 @@ on: push
 jobs:
   markdown-link-check:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       # check all links in the md files to see if they are correct (http 200)
     - uses: actions/checkout@master
