@@ -14,3 +14,9 @@ Developer / DevOps	    ?WT.mc_id=DOP-MVP-5003719
 
 Disable link checking in this section. Ignore this [Bad Link](https://exampleexample.cox)
 <!-- markdown-link-check-enable -->
+
+## To escape ${{ }} setups like from GitHub Action examples
+Wrap the lines you want to escape in the following tags:
+
+{% raw  %}
+{% endraw  %}
