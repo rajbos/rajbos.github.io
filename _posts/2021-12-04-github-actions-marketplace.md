@@ -13,6 +13,7 @@ This post is for sharing my dev.to entry for the [2021 GitHub Actions Hackathon]
 The starting workflow for this setup can be found [here](https://github.com/rajbos/actions-marketplace/blob/main/.github/workflows/get-action-data.yml). This workflow goes through all repositories in a user or organization and checks if they contain action definitions. If so, it adds the information about the action and the repository it lives in to a data file that then can be used. In this case the data is used to display an Internal GitHub Action Marketplace so our organization users. We lock our main organization down so that only the actions in our internal marketplace can be used as is a common [best practice](/blog/2021/02/06/GitHub-Actions-Best-Practices.html).
 
 ```yaml
+{% raw  %}
 jobs:
   get-action-data:
     runs-on: ubuntu-latest
@@ -22,8 +23,8 @@ jobs:
       name: Load available actions
       id: load-actions
       with: 
-        PAT: {% raw  %} ${{ secrets.PAT }} {% endraw  %}
-        user: ${{{ github.repository_owner }}}
+        PAT: ${{ secrets.PAT }}
+        user: ${{ github.repository_owner }}
         
     - name: Store json file
       run: echo '${{ steps.load-actions.outputs.actions }}' > 'actions-data.json'
@@ -42,6 +43,7 @@ jobs:
         owner: ${{ github.repository_owner }}
         repo: actions-marketplace
         branch-name: gh-pages
+{% endraw  %}
 ```
 
 ## Workflow steps
