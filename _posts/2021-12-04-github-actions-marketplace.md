@@ -22,8 +22,12 @@ jobs:
       name: Load available actions
       id: load-actions
       with: 
-        PAT: ${ { secrets.PAT } }
+        PAT: ${{ secrets.PAT } }
         user: ${{{ github.repository_owner }}}
+
+        
+        PAT: $${{ secrets.PAT } }
+        user: $${{{ github.repository_owner }}}
 
     - name: Store json file
       run: echo '${{ steps.load-actions.outputs.actions }}' > 'actions-data.json'
