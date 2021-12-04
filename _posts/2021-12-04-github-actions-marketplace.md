@@ -22,7 +22,7 @@ jobs:
       name: Load available actions
       id: load-actions
       with: 
-        PAT: {% ${{ secrets.PAT }} %}
+        PAT: {% raw  %} ${{ secrets.PAT }} {% endraw  %}
         user: ${{{ github.repository_owner }}}
 
         
