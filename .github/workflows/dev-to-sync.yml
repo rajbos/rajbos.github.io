@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+    
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install axios
+
+      - name: Sync to dev-to
+        uses: actions/github-script@v5
+        with:
+          script: |
+             const devtoToken = "${{ secrets.DEVTO_API_TOKEN }}"
+             const script = require('./dev-to-script.js')
+             const axios = require('axios');
+
+             await script(devtoToken, axios)
+
+            
