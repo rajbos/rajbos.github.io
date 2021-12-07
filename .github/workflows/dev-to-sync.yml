@@ -16,7 +16,7 @@ jobs:
         with:
           script: |
              const devtoToken = "${{ secrets.DEVTO_API_TOKEN }}"
-             const script = require('./dev-to-script.js')
+             const script = require('.github/workflows/dev-to-script.js')
              const axios = require('axios');
 
              await script(devtoToken, axios)
