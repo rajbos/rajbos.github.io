@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: npm install axios
+      - uses: actions/checkout@v2
 
       - name: Sync to dev-to
         uses: actions/github-script@v5
