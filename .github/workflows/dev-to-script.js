@@ -15,7 +15,7 @@ module.exports = ({devtoToken, axios}) => {
   function handleUnpublished(data) {
       console.log(`Unpublished articles: ${data.length}`);
       let filtered = data.filter(article => {
-        if (article.title.includes('github')) {
+        if (article.title.toLowerCase.indexOf('github') > -1) {
           return true;
         }
         return false;
