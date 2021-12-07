@@ -3,7 +3,7 @@ module.exports = ({devtoToken, axios}) => {
 
   const instance = axios.create({
     baseURL: 'https://dev.to/api',
-    timeout: 1000,
+    timeout: 10000,
     headers: {'api-key': `${devtoToken}`},
   });
 
@@ -24,7 +24,7 @@ module.exports = ({devtoToken, axios}) => {
       console.log(`Filtered articles: ${filtered.length}`);
       filtered.forEach(element => {
           console.log(`Found article: [${element.title}]`)
-          // replace the `published: false``
+          // replace the `published: false` to `true`
           let updated_markdown = element.body_markdown.replace(/published: false/, "published: true");          
 
           // update the article to published
