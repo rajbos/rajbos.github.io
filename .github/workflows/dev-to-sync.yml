@@ -1,8 +1,8 @@
 on:
   workflow_dispatch:
 
-  push: 
-    branches: [dev-to]
+  schedule:
+    - cron: "0 3 * * *"
     
 jobs:
   sync:
