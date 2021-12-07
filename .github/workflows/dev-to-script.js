@@ -1,4 +1,4 @@
-module.exports = async ({devtoToken, axios}) => {
+module.exports = ({devtoToken, axios}) => {
   console.log(`devtoToken: ${devtoToken}`);
 
   const instance = axios.create({
