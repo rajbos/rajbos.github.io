@@ -26,7 +26,10 @@ module.exports = ({devtoToken, axios}) => {
           console.log(`Found article: [${element.title}]`)
 
           // update the article to published
-          instance.put(`/articles/${element.id}`, {published: true})
+          instance.put(`/articles/${element.id}`, {
+              article: 
+                { published: true }
+        })
       });
   }
 }
