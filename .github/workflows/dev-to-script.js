@@ -24,6 +24,9 @@ module.exports = ({devtoToken, axios}) => {
       console.log(`Filtered articles: ${filtered.length}`);
       filtered.forEach(element => {
           console.log(`Found article: [${element.title}]`)
+
+          // update the article to published
+          instance.put(`/articles/${element.id}`, {published: true})
       });
   }
 }
