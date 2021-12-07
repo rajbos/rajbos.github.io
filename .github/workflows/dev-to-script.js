@@ -8,8 +8,19 @@ module.exports = ({devtoToken, axios}) => {
   });
 
   instance.get('/articles/me/unpublished')
-  .then(function (response) {
-    // handle success
-    console.log(response);
+  .then(function (response) {    
+    handleUnpublished(response.data);    
   })
+
+  function handleUnpublished(data) {
+      console.log(`Unpublished articles: ${data.length}`);
+      let filtered = data.filter(article => {
+        if (article.title.includes('github')) {
+          return true;
+        }
+        return false;
+      })
+
+      console.log(`Filtered articles: ${filtered.length}`);
+  }
 }
