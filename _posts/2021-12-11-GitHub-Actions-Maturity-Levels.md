@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Maturity levels of using GitHub Actions"
+title: "Maturity levels of using GitHub Actions Securely"
 date: 2021-12-11
 ---
 
