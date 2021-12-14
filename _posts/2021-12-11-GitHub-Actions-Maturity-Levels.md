@@ -37,12 +37,12 @@ The second line references a specific branch in the actions' repository.
 
 For both options, the runners will download the entire repository by calling either git checkout (if git is installed on the runner) or downloading the status of the repository as a tarball. The [runner is open source](https://github.com/actions/runner), so you can follow along with the steps it is taking.
 
-The issue with using both, is that you are pulling in arbitrary code from the internet! Even if you follow [best practices](/blog/2021/02/06/GitHub-Actions), you should look at what the action is doing for you. GitHub as no documented process for publishing an action or a security check on them: anyone can set up a public repository with the right content and then everyone can use it. Very helpful to get started fast, but security is not part of that picture!
+The issue with using both, is that you are pulling in arbitrary code from the internet! Even if you follow [best practices](/blog/2021/02/06/GitHub-Actions), you should look at what the action is doing for you. GitHub has no documented process for publishing an action or a security check on them: anyone can set up a public repository with the right content and then everyone can use it. Very helpful to get started fast, but security is not part of that picture!
 
 ### Why is this first level so bad?
 As I said, the methods above always use a version of the action as is. The branching method uses whatever was pushed last to that branch. So even if you have just reviewed it and start using it, a newer version might just have been pushed to that branch. This happens **without you knowing of** it at all! Anything can happen between you reviewing it and you using it. A vulnerability in a package the action is using might be found, or the maintainer decides to export all environment variables to their own server. Or maybe even the maintainer hands over the code to a third party so they can do the maintenance. You never know, but might be using an action in production that is not what you intended.
 
-For version pinning the same principle applies: you might even pin a specific version, say v2.1.4 and think you're now safe: you are not! The version of a release comes from a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging). Git tags can be reused! They are flexible by design, so the maintainer cant tag code and push that as v2.1.4. Then, even months later decide to add some code, maybe introduce a vulnerability and reuse the same tag! Then the runner will download the version of the repository **as it is with that tag** linked to it and you are running code in your workflow that you never intended.
+For version pinning the same principle applies: you might even pin a specific version, say v2.1.4 and think you're now safe: you are not! The version of a release comes from a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging). Git tags can be reused! They are flexible by design, so the maintainer can tag code and push that as v2.1.4. Then, even months later decide to add some code, maybe introduce a vulnerability and reuse the same tag! Then the runner will download the version of the repository **as it is with that tag** linked to it and you are running code in your workflow that you never intended.
 
 ## 2) Review the source code and trust the publisher / action
 The first step in being better at using actions in a secure way is to review the source code: know what the action will be doing on your behalf! The repo is open source, so go to the repo:
@@ -62,7 +62,7 @@ runs:
 
 The `using` indicates that this action runs under node, so it is JavaScript based. This can be compiled TypeScript, so the next step is to look for the entry point and how it got there. Often you find a `src` folder and the TypeScript files in there (*.ts). Usually the starting file is then `main.ts` or `index.ts`.
 
-In this case we see a `main` property that indicates the starting point when this action starts, so `index.js` in the `dist` folder. This already is a good change this action is build with TypeScript. You often can find where it actually starts by checking the `packages.json` file. For this action we find `"main": "lib/main.js" in there, so we can find where it actually starts 😄. For TypeScript the file names just have the `.ts` extension.
+In this case we see a `main` property that indicates the starting point when this action starts, so `index.js` in the `dist` folder. This already is a good chance this action is build with TypeScript. You often can find where it actually starts by checking the `packages.json` file. For this action we find `"main": "lib/main.js" in there, so we can find where it actually starts 😄. For TypeScript the file names just have the `.ts` extension.
 
 We also have a `post` definition here, which means that part of the action will also run at the end of a run:
 
@@ -143,7 +143,7 @@ The internal marketplace groups all your (internal/private or public) actions in
 #### Note: this is still work in progress, one of the things I still want to add is adding links to the internal usages of the actions in case a vulnerability is found or for implementation examples. 
 
 ## 8) Request actions process
-The last maturity level is setting up a good governance process to add actions to the internal marketplace. More information can be found in my blogpost on it [here](/blog/2021/10/14/GitHub-Actions-Internal-Marketplace). We have create a [repo](https://github.com/rajbos/github-actions-requests) for it where we can go and:
+The last maturity level is setting up a good governance process to add actions to the internal marketplace. More information can be found in my blogpost on it [here](/blog/2021/10/14/GitHub-Actions-Internal-Marketplace). We have created a [repo](https://github.com/rajbos/github-actions-requests) for it where we can go and:
 
 1. Users create an issue to request a public action to be added to the internal marketplace
 1. An engineer with a security mindset (and training!) does a preliminary manual check on the actions' source code.
