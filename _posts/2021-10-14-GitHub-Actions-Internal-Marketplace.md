@@ -18,7 +18,7 @@ This post describes my way of working, and how I set up a GitHub Actions Marketp
 
 ![Image of the Actions Marketplace](/images/20211014/20211014_Marketplace.png)    
 
-The reasons for forking are [plentiful](/blog/2021/02/06/GitHub-Actions-Forking-Repositories)), for example:
+The reasons for forking are [plentiful](/blog/2021/02/06/GitHub-Actions-Forking-Repositories), for example:
 - Take control over the Actions as a backup for your production organization (since they are downloaded just-in-time by the runner)
 - Have a formal moment in your organization that marks the end of a security check on the actions' source code (very important!)
 - Have a central location for all the actions that can be used inside your production organization (combines nicely with the next item)
@@ -79,7 +79,7 @@ For the security validation you can use your own internal setup. You need someth
 
 There are lots of tools available for this, for example [Black Duck](https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html) or [White Source](https://www.whitesourcesoftware.com/resources/blog/software-composition-analysis/). GitHub already has [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/#stop-using-vulnerable-dependencies-dependabot-alerts-and-security-updates) available that can be used for free on public repos. Since a fork is already a public repo, you can use it to scan the actions source code as well.
 
-For our final setup I want to have it automated as much as we can, so I'll be describing that process here. After the initial validation is completed and satisfies internal requirements, I want to label the repository with `security-validation` and run automated security validation on it. More on that below, but I am setting that up as well in the [example repo here]([github-actions-requests](https://github.com/rajbos/github-actions-requests)).
+For our final setup I want to have it automated as much as we can, so I'll be describing that process here. After the initial validation is completed and satisfies internal requirements, I want to label the repository with `security-validation` and run automated security validation on it. More on that below, but I am setting that up as well in the [example repo here](https://github.com/rajbos/github-actions-requests).
 The results from the checks will be added to the issue as badges from the different systems, with deep links into those systems to check the analysis. That can then be used for the final checks.
 
 ### Dependabot
