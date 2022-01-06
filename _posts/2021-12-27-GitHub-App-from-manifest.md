@@ -10,7 +10,7 @@ At my customer we have the need to create a lot of GitHub Apps. In this specific
 ###### Photo by <a href="https://unsplash.com/@helloimnik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hello I'm Nik</a> on <a href="https://unsplash.com/collections/3589562/robot-like-figures?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 
-I consider it a bad practice to use Personal Access Tokens (they have way to much scope, which should improve [in the future](https://github.com/github/roadmap/issues/184)). Instead we use a GitHub App: we can create and install the GitHub App the organization level and give it access to certain repositories. This way we can use the GitHub App to trigger our Jenkins jobs and give it only access to the repositories it need access to.
+I consider it a [bad practice](/blog/2022/01/03/GitHub-Tokens) to use Personal Access Tokens (they have way to much scope, which should improve [in the future](https://github.com/github/roadmap/issues/184)). Instead we use a GitHub App: we can create and install the GitHub App the organization level and give it access to certain repositories. This way we can use the GitHub App to trigger our Jenkins jobs and give it only access to the repositories it need access to.
 
 At the moment there are no API's in GitHub to handle this situation for you: you have to create the App manually, get the credentials and install it in the organization for the repositories that you need the App to have access to. Creating the App has quite a few steps, like setting up a name and a description, adding webhook to trigger, configuring all the permissions you need and the events that belong to those permissions.
 
