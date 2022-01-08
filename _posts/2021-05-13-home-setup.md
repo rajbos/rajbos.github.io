@@ -95,6 +95,19 @@ Just recently I got to order a new one and now I have a [Dell XPS 9700](https://
 ## Headset stand
 I was doubting between a wireless charger to place my phone on and a separate headset stand to place my headset on. I didn't want a separate charging pad on my desk and wanted to stop laying the headset flat on the desk everyday. So this seemed like a good compromise. It works really great! It's a [URGOODS](https://www.bol.com/nl/p/urgoods-headset-stand-koptelefoon-standaard-houder-met-draadloze-oplaad-functie-kabel-organizer/9300000023772597/?s2a=) headset stand.
 
+# Update 2022
+In the beginning of 2022 I started automating some things in my office to have less things to turn on and off 😁. Writing the [repo readme](https://github.com/rajbos/home-automation) with all the setup triggered me to update this post with the new stuff. (Yes, lot's of stuff will turn on and off 'by itself' now). 
+
+![Photo of the current desk setup](/images/20210513/SetupUpdate2022.jpg)
+
+## Speakers
+In December of 2021 I've added a set of speakers to the setup: I didn't like the ones from the monitor, especially on calls there was something annoying with the base from it. It supports Bluetooth, dual RCA and a normal headphone jack (which I use for my laptop). After looking around (and asking colleagues who had opinions 😁) I settled on the [Edifier R1700BT 2.0 Pc Speaker](https://www.coolblue.nl/product/814826/edifier-r1700bt-2-0-pc-speaker.html). It is a really nice set for this price, and is not to big on the desk as well. I also like that they are very forgiving for shutting on and off by just switching off the power through the power cable (instead of the switch on the back). That helped with turning them on and off from some [home automation](https://github.com/rajbos/home-automation) scripts!
+
+## Do Epic Shit signal
+We have an internal motto at [Xpirit](https://xpirit.com) that tells us go do out and 'Do Epic Shit' (which is whatever you deem epic), with a logo, T-shirts and since the last holidays an 'Do Epic Shit' signal as well! This is linked to an Azure IOT setup with a service bus that can push messages to us (by using the light as [morse code](https://en.wikipedia.org/wiki/Morse_code) signals). Fun thing to have, and it lights up the place! 
+
+![Photo of the Do Epic Shit signal: a light in the form of a turd that spells out the words 'Do epic shit'](/images/20210513/DoEpicShit.jpg)
+
 # What is next?
 What I still really want is a good way to have the laptop running somewhere, with enough air to breathe. As long as it is not **on** the desk but hidden somewhere, preferably with a remote boot option, so I don't need to physically press the power button. 
 
