@@ -85,6 +85,7 @@ Below you can find an example of the output of the script. You can see that it f
 - the internal camera is in the list twice, no idea why
 - I have two USB camera's connected
 - The Elgato Facecam is the camera from our office space
+
 After scanning I wait for the remainder of the minute to not continue check for cameras in use and make the fans fly off 😀.
 
 ```
