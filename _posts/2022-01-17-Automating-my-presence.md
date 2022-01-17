@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "My working / presenting from home setup"
-date: 2021-05-13
+title: "Automating my home setup: turning on the lights when the camera is in use"
+date: 2022-01-17
 ---
 
 I have a nice working from [home setup](/blog/2021/05/13/home-setup) that allows me to use a great camera, lights and microphone. I have so many stuff, that I wanted to automate some of it to detect if I am working or not and then toggle them all on or of. 
