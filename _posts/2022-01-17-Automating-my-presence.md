@@ -8,11 +8,12 @@ I have a nice working from [home setup](/blog/2021/05/13/home-setup) that allows
 
 I already use [Home Assistant](https://www.home-assistant.io/) to remotely toggle loads of stuff in the house, so why not integrate everything? 
 
-![Photo of home office setup](/images/20210513/SetupUpdate2022.jpg)
+![Photo of home office setup](/images/20210513/SetupUpdate2022.jpg)  
 
 # Home Assistant Scenes
-For this I have create some Home assistant scenes and a script to automate these actions. Next I want to toggle based on the state of things on my laptop.
-![Screenshot of home assistant scenes](/images/2022/20220117/20220117_homeassistant.png)  
+For this I have create some Home assistant scenes and a script to automate these actions. Next I want to toggle based on the state of things on my laptop.  
+
+![Screenshot of home assistant scenes](/images/2022/20220117/20220117_homeassistant.png)   
 
 ## Scene 1 - Office lights
 When this one is triggered, my office lights (small desk lamp), my 'Do Epic Shit' signal and my speakers will turn on: everything I need to start working (laptop and monitor have their own flow and can be considered as 'Always on'). I've set this up as with Shelly Plug S and an extension cord that powers all three devices. Wrapped it in a scene in Home Assistant together with my Elgato Light Strip for easy switching it on and off.
