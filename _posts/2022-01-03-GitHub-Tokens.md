@@ -46,27 +46,43 @@ This way, the token cannot be used for creating an issue for example, so even if
 If you want to learn more on the GITHUB_TOKEN, I have explained its use and how to limit what it can do in this short [video](https://www.youtube.com/watch?v=RIkqaPKuNFw).
 
 # 3. An access token created from a GitHub App
-You can use a GitHub App to have very specific access to one or more repositories. I use this for example for setting up a (lot of) Jenkins connections: each team at my customer has their own set of Jenkins jobs that should trigger when someone pushes a new commit to their GitHub repository. By giving each team their own GitHub App, I can limit the access the App has to only the repos that are relevant to them.
+You can use a GitHub App to have very specific access to one or more repositories. I use this for example for setting up a (lot of) Jenkins connections: each team at my customer has their own set of Jenkins jobs that should trigger when someone pushes a new commit to their GitHub repository. By giving each team their own GitHub App, I can limit the access the App has to only the repos that are relevant to them. Since this token is tied to the installation of the App, we call this an [installation token](https://docs.github.com/en/rest/reference/apps#create-an-installation-access-token-for-an-app).
 
 ###### Note: on github.com you can only create 100 apps per organization. On GitHub Enterprise Server this restriction does not apply.
 
-With a GitHub App, you get an AppId and a private key. You can create a GitHub App on [website](https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app) and then install it on the repositories (or organizations) you want to use it for. You can then use the AppId and the private key to create an access token that can be used to access the repositories. I have a [GitHub Gist](https://gist.github.com/rajbos/8581083586b537029fe8ab796506bec3) that shows you how to get an access token from a GitHub App. The steps are:
+With a GitHub App, you get an AppId and a private key in the PEM format. You can create a GitHub App on [website](https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app) and then install it on the repositories (or organizations) you want to use it for. You can then use the AppId and the private key to create an access token that can be used to access the repositories. 
+
+There are multiple options to get the token, depending where you want to use it:
+* Normal shell scripts
+* Use an action
+* Use a library (can be included as an extension to the GitHub CLI)
+
+##### Note: this token is only valid for 1 hour, after that you need to refresh it or your calls will fail
+
+## Get an access token for an App with shell scripts
+I have a [GitHub Gist](https://gist.github.com/rajbos/8581083586b537029fe8ab796506bec3) that shows you how to get an access token from a GitHub App. The steps are:
 1. Get the AppId and the private key from the GitHub App you created
 1. Generate a signed JWT token with the AppId and the private key
 1. With the JWT toke, get the installations of the app (you need the installation id to create the token)
 1. Create a token for the installation
 1. Use the token to access the repositories
 
-##### Note: this token is only valid for 1 hour, after that you need to refresh it or your calls will fail
+## Get an access token for an App with an action in a workflow
+Inside of a workflow I always use the [action from Peter Murray](https://github.com/peter-murray/workflow-application-token-action). It takes an application_id and an application_private_key and generates a token that can be used to access the repositories. You can even give the token it creates a scope by sending in the `permissions` parameter.
+
+## Get an access token for an App with a library
+My buddy [Bassem Dghaidi](https://github.com/Link-/) has created a bash library that does the work for you, and can be included in the [GitHub CLI](https://github.com/cli/cli). You can find it in this [repo](https://github.com/Link-/gh-token) with all the setup needed. You can for example use this easily in a Docker container when you are automating things. 
+
+##### Note: for installation as an extension in the CLI you need an authenticated CLI session first, so that is not helpful for automation purposes.
 
 ## The downside of using GitHub Apps
 GitHub Apps are great for automating things: they have more access then the GITHUB_TOKEN (across repositories for example) and do not have the issue that they operate from a user account and have access to **everything** the user has access to. There are some downsides as well: 
-* only 100 apps per organization on github.com (so public repos or GitHub Enterprise Cloud: GHEC)
-* you cannot use this token to create repositories, users or teams
-* only minimal options to automate the setup of the apps themselves: you can use a [manifest](/blog/2021/12/27/GitHub-App-from-manifest) to create them, but installing them on repositories (even the ones you own), is not possible with an API.
-* little to no support on external tools: most of them want to have the token and cannot generate that token from the AppId and the private key, so you need to do that yourself (and be aware of the 1 hour expiration!)
+* 'Only 100 apps' per organization on github.com (so public repos or GitHub Enterprise Cloud: GHEC).
+* Only minimal options to automate the setup of the apps themselves: you can use a [manifest](/blog/2021/12/27/GitHub-App-from-manifest) to create them, but installing them on repositories (even the ones you own), is not possible with an API.
+* Little to no support on external tools: most of them want to have the token and cannot generate that token from the AppId and the private key, so you need to do that yourself (and be aware of the 1 hour expiration!).
 
 ## Some things I have used GitHub Apps for:
 * Installing and configuring self hosted runners.
 * Configuring access from Jenkins pipelines to GitHub repos.
 * Inside workflows everywhere: I like the limited access the App has and do not want to give anything my PAT as it has way to much access!
+* Automating creation of repos with defined content for Global DevOps Bootcamp.
