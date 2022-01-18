@@ -46,7 +46,7 @@ This way, the token cannot be used for creating an issue for example, so even if
 If you want to learn more on the GITHUB_TOKEN, I have explained its use and how to limit what it can do in this short [video](https://www.youtube.com/watch?v=RIkqaPKuNFw).
 
 # 3. An access token created from a GitHub App
-You can use a GitHub App to have very specific access to one or more repositories. I use this for example for setting up a (lot of) Jenkins connections: each team at my customer has their own set of Jenkins jobs that should trigger when someone pushes a new commit to their GitHub repository. By giving each team their own GitHub App, I can limit the access the App has to only the repos that are relevant to them. Since this token is tied to the installation of the App, we call this an [installation token](https://docs.github.com/en/rest/reference/apps#create-an-installation-access-token-for-an-app).
+You can use a GitHub App to have very specific access to one or more repositories. I use this for example for setting up a (lot of) Jenkins connections: each team at my customer has their own set of Jenkins jobs that should trigger when someone pushes a new commit to their GitHub repository. By giving each team their own GitHub App, I can limit the access the App has to only the repos that are relevant to them (by installing the App on only their repositories and not all repos in the organization). Since this token is tied to the installation of the App, we call this an [installation token](https://docs.github.com/en/rest/reference/apps#create-an-installation-access-token-for-an-app).
 
 ###### Note: on github.com you can only create 100 apps per organization. On GitHub Enterprise Server this restriction does not apply.
 
