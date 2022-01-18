@@ -76,7 +76,9 @@ My buddy [Bassem Dghaidi](https://github.com/Link-/) has created a bash library 
 ##### Note: for installation as an extension in the CLI you need an authenticated CLI session first, so that is not helpful for automation purposes.
 
 ## The downside of using GitHub Apps
-GitHub Apps are great for automating things: they have more access then the GITHUB_TOKEN (across repositories for example) and do not have the issue that they operate from a user account and have access to **everything** the user has access to. There are some downsides as well: 
+GitHub Apps are great for automating things: they have more access then the GITHUB_TOKEN (across repositories for example) and do not have the issue that they operate from a user account and have access to **everything** the user has access to (like a PAT). 
+
+There are some downsides as well: 
 * 'Only 100 apps' per organization on github.com (so public repos or GitHub Enterprise Cloud: GHEC).
 * Only minimal options to automate the setup of the apps themselves: you can use a [manifest](/blog/2021/12/27/GitHub-App-from-manifest) to create them, but installing them on repositories (even the ones you own), is not possible with an API.
 * Little to no support on external tools: most of them want to have the token and cannot generate that token from the AppId and the private key, so you need to do that yourself (and be aware of the 1 hour expiration!).
