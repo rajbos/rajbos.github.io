@@ -40,7 +40,17 @@ Whether it's training, finding out some obscure issues, setting up their CI/CD p
 * Work: [xpirit.com/Rob](https://xpirit.com/rob)
 * Blog: [devopsjournal.io](http://devopsjournal.io)
 * DevOps Principles series: [YouTube](https://www.youtube.com/playlist?list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT). 
+
+## Recorded conferences :microphone: 
+Here are some of the recordings for conference sessions I have done:
+| Year | Topic |Conference | Recording|
+|:----:|:-----:|:----------:|:-------:|
+|2020|DevOps Fest|How to run a global, cloud scale event for 10.000 people (GDBC)|[YouTube](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=26)|
+|2021|GitHub Universe|How to use GitHub Actions with security in mind|[YouTube](https://www.youtube.com/watch?v=Ers-LcA7Nmc]|
+
 </div>
+
+
 <div class="col-md-3" markdown="1">
 
 ![Rob](/images/rob_photo.png)
