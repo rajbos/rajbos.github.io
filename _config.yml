@@ -1,7 +1,7 @@
 # Build settings
 name: Rob Bos
 markdown: kramdown
-site.baseurl: "rajbos.github.io"
+site.baseurl: "devopsjournal.io"
 permalink: /blog/:year/:month/:day/:title
 theme: jekyll-theme-cayman
 plugins:
