@@ -60,12 +60,18 @@ There are multiple options to get the token, depending where you want to use it:
 ##### Note: this token is only valid for 1 hour, after that you need to refresh it or your calls will fail
 
 ## Get an access token for an App with shell scripts
-I have a [GitHub Gist](https://gist.github.com/rajbos/8581083586b537029fe8ab796506bec3) that shows you how to get an access token from a GitHub App. The steps are:
+I have a [GitHub Gist](https://gist.github.com/rajbos/8581083586b537029fe8ab796506bec3) that shows you how to get an access token from a GitHub App from shell scripts (I have an example how to call the shell script from PowerShell as well). 
+
+The steps are:
 1. Get the AppId and the private key from the GitHub App you created
 1. Generate a signed JWT token with the AppId and the private key
 1. With the JWT toke, get the installations of the app (you need the installation id to create the token)
 1. Create a token for the installation
 1. Use the token to access the repositories
+
+You can then use this token for any API call you want to make (and that is accessible for an App. Creating codespaces is not for example, since you can only create a codespace for your own user account).
+
+In the [gist](https://gist.github.com/rajbos/8581083586b537029fe8ab796506bec3#file-ssh-overwrite-sh) you also find an example of using git config rewriting to overwrite the global git config with a rule that maps a SSH setup to a HTTPS setup that includes the access token. This can be helpful to help custom scripts / tools that can are preconfigured with only SSH support.
 
 ## Get an access token for an App with an action in a workflow
 Inside of a workflow I always use the [action from Peter Murray](https://github.com/peter-murray/workflow-application-token-action). It takes an application_id and an application_private_key and generates a token that can be used to access the repositories. You can even give the token it creates a scope by sending in the `permissions` parameter.
