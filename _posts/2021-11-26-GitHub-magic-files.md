@@ -17,7 +17,7 @@ A list of all the magic files that I came across in GitHub.
 |CNAME|root||Alias for the GitHub Pages site||
 |CONTRIBUTING.md|root, /docs or .github|yes|How to contribute to a project|[guidelines](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors)|
 |CODE_OF_CONDUCT.md||yes|Code of conduct||
-|CODEOWNERS|||List of people who can make changes to the files or folders|
+|CODEOWNERS|root, /docs or /.github||List of people who can make changes to the files or folders|[code owners info](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)|
 |CITATION.cff|root|no|Let others know how to citate your work|[cff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files)|
 |LICENSE.md or LICENSE.txt or LICENSE.md or LICENSE.rst|root|no||[license](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)|
 |FUNDING.md||yes|||
