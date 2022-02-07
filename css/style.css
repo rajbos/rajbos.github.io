@@ -107,3 +107,7 @@ tr:nth-child(odd) td { background: #FEFEFE; }
     width: 113px;
     height: 84px;
 }
+
+.panel-giscus {
+    margin: 18px;
+}
