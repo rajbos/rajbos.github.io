@@ -15,7 +15,7 @@ A list of all the magic files that I came across in GitHub.
 |Filename|Location|.github repo support|Description|Docs|
 |---|---|---|---|---|
 |CNAME|root||Alias for the GitHub Pages site||
-|CONTRIBUTING.md|root, /docs or .github|yes|How to contribute to a project|[guidelines](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors)|
+|CONTRIBUTING.md|root, /docs or /.github|yes|How to contribute to a project|[guidelines](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors)|
 |CODE_OF_CONDUCT.md||yes|Code of conduct||
 |CODEOWNERS|root, /docs or /.github||List of people who can make changes to the files or folders|[code owners info](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)|
 |CITATION.cff|root|no|Let others know how to citate your work|[cff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files)|
@@ -25,8 +25,9 @@ A list of all the magic files that I came across in GitHub.
 |SUPPORT.md||yes|||
 |FORM-NAME.yml|.github/ISSUE_TEMPLATE/||Issue templates|[templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)|
 |config.yml|.github/ISSUE_TEMPLATE/||Issue templates configuration settings|[template chooser](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template-chooser)|
+|pull_request_template.md|root, /docs, /.github or in a PULL_REQUEST_TEMPLATE directory||Create the default body for a Pull Request|https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository|
 |dependabot.yml|.github/||Dependabot configuration file|[dependabot configuration](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates#open-pull-requests-limit)|
-|codeql-config.yml|.github/codeql/codeql-config.yml (convention, not required)|sort of|CodeQL configuration file. Can also be stored in an external repository (hence .gthub repo works). If using external repo, referencing can by done by using `owner/repository/filename@branch` |[CodeQL config](https://docs.github.com/en/code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/configuring-codeql-runner-in-your-ci-system#using-a-custom-configuration-file)|
+|codeql-config.yml|.github/codeql/codeql-config.yml (convention, not required)|sort of|CodeQL configuration file. Can also be stored in an external repository (hence .github repo works). If using external repo, referencing can by done by using `owner/repository/filename@branch` |[CodeQL config](https://docs.github.com/en/code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/configuring-codeql-runner-in-your-ci-system#using-a-custom-configuration-file)|
 |secret_scanning.yml|.github/secret_scanning.yml||Secret scanning configuration file|[secret scanning](https://docs.github.com/en/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories)|
 |README.md|root / ? ||Project readme, also used on marketplace if the repo is published to the marketplace|
 |README.md|.github/username/username||Profile readme|[About readme's](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)|
