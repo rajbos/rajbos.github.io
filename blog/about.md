@@ -15,16 +15,10 @@ title: About
 <div class="col-md-9" markdown="1">
 
 ## Hi, I am Rob 👋
-I do DevOps-y stuff, mostly with C# and Azure/Azure DevOps/GitHub.
-
-## Community | GDBC 🦦
-I help out with the Global DevOps Bootcamp ([link](https://www.globaldevopsbootcamp.com)), mostly with automating stuff and setting up the infrastructure we need each year.  
-In the 2019 edition we had over 10.000 attendees spread out all over the world, spending their free Saturday with our platform getting hands-on experience on DevOps topics.  
-For the 2020 edition I've started vlogging about the relevant information/announcements/background stuff [here](https://www.youtube.com/playlist?list=PLCnpc4jNC9lBWh-oq3aaPfFP5_tUMy7ZJ) and I have spoken about the event and platform for it several times. The session on DevOps Fest 2020 was recorded [here](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=25).
+I do DevOps-y stuff, mostly with C# and GitHub/Azure/Azure DevOps.
 
 ## Work | Xpirit 🔨
-In my day job I work for Xpirit [link](https://www.xpirit.com/rob) as a DevOps consultant, helping our customers with whatever they need regarding development. 
-Whether it's training, finding out some obscure issues, setting up their CI/CD pipelines, or helping them on their way to implement more DevOps patterns and practices, I help them with it.
+In my day job I work for Xpirit [link](https://www.xpirit.com/rob) as a DevOps consultant, helping our customers with whatever they need regarding DevOps. Whether it's training, finding out some obscure issues, setting up their CI/CD pipelines, or helping them on their way to implement more DevOps patterns and practices, I help them with it. Often I find myself helping teams with modern agile and DevOps practices in more of a coaching role.
 
 ## Twitter Bots 🤖
 * AzDo Marketplace updates: I created a Twitter bot named [AzDoMarketNews](https://twitter.com/azdomarketnews) to keep up to date on new and improved extensions on the Azure DevOps marketplace.
@@ -34,12 +28,33 @@ Whether it's training, finding out some obscure issues, setting up their CI/CD p
 * Name: Rob Bos
 * Pronouns: He/Him
 * Locale: The Netherlands
+* GitHub: [rajbos](https://github.com/rajbos)
 * Twitter: [@robbos81](https://twitter.com/robbos81)
 * LinkedIn: [linkedin.com/in/bosrob](https://linkedin.com/in/bosrob)
 * Sessionize: [sessionize.com/RobBos/](https://sessionize.com/RobBos/)
 * Work: [xpirit.com/Rob](https://xpirit.com/rob)
 * Blog: [devopsjournal.io](http://devopsjournal.io)
-* DevOps Principles series: [YouTube](https://www.youtube.com/playlist?list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT). 
+
+## Video content 🎥:
+* DevOps Principles video series: [YouTube](https://www.youtube.com/playlist?list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT)
+* GitHub videos: [YouTube](https://www.youtube.com/playlist?list=PLXVVwOM8uv2z62qt4xnZuIV2vv-6Gdz2f)
+* GitHub Action videos: [YouTube](https://www.youtube.com/playlist?list=PLXVVwOM8uv2zAPFx1Na4x09XKx2etYXpt)
+
+## Community | GDBC 🦦
+I help out with the Global DevOps Bootcamp ([link](https://www.globaldevopsbootcamp.com)), mostly with automating stuff and setting up the infrastructure we need each year.  
+In the 2019 edition we had over 10.000 attendees spread out all over the world, spending their free Saturday with our platform getting hands-on experience on DevOps topics.  
+For the 2020 edition I've started vlogging about the relevant information/announcements/background stuff [here](https://www.youtube.com/playlist?list=PLCnpc4jNC9lBWh-oq3aaPfFP5_tUMy7ZJ) and I have spoken about the event and platform for it several times. The session on DevOps Fest 2020 was recorded [here](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=25).
+
+## Upcoming conferences 🎤 
+Here are some of the conference I will be speaking at:
+
+|Date|Location|Topic|Conference|Session link|
+|---|---|---|---|---|
+|4-7 April 2022|Oslo|Protect yourself against supply chain attacks through your pipeline|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
+|4-7 April 2022|Oslo|Protect your code with GitHub security features|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
+|23-25 May 2022|Antwerp|How to use GitHub Actions with security in mind|Techorama BE|[link](https://techorama.be/speakers/speaker/rob-bos/)|
+|8-10 June 2022|Virtual|I can hack your DevOps Pipeline|DevTalks Romania|[link](https://www.devtalks.ro/speakers/14-Rob+Bos/)|
+
 
 ## Recorded conferences 🎤 
 Here are some of the recordings for conference sessions I have done:
