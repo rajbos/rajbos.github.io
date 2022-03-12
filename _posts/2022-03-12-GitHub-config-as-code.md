@@ -4,8 +4,6 @@ title: "Configuration as Code for the GitHub platform"
 date: 2022-03-12
 ---
 
-# THIS POST IS CURRENTLY UNDER CONSTRUCTION
-
 I am slowly diving into 'Configuration as code' for the GitHub Platform: all the things you want to automate with as few steps as possible, making big impact. Some of these things also fall under 'GitOps' in my opinion: if you store it into a repo and on changes you make, the automation will make it happen.
 
 The plan is to have this post as a central starting point for people searching to achieve a similar setup. There are loads of people who blog on how to make this happen and what works for them, but often there is no actual implementation they can share. I want to give the you the examples and give you (a copy of) the code used as well.  
@@ -55,27 +53,79 @@ In the [PR workflow](https://github.com/robs-tests/user-test-repo/blob/main/.git
 * the yaml file is valid yaml
 * the handles in the file are valid GitHub handles (we sometimes get e-mail addresses or typos in the handles)
 
-<div id="code-element"></div>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-      axios({
-      method: 'get',
-      url: 'https://github.com/robs-tests/user-test-repo/blob/e9bfc0ccf936a71b35b6825ff85930df5cc4b9ed/.github/workflows/pull_request.yml#L10-L32'
-       })
-      .then(function (response) {
-         document.getElementById("code-element").innerHTML = response.data;
-      });
-</script>
+```yaml
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          
+      #- run: npm ci
+      - run: npm install yaml
+      - uses: actions/github-script@v5
+        name: Run scripts
+        with: 
+          github-token: ${{ secrets.GH_PAT }}
+          script: |  
+            const yaml = require('yaml')
+            
+            const repo = "${{ github.repository }}".split('/')[1]
+            const owner = "${{ github.repository_owner }}"
+            const userFile = "users.yml"
+            
+            const script = require('${{ github.workspace }}/src/check-pr.js')
+            const result = await script({github, context, owner, repo, userFile, yaml})
+            console.log(``)
+            console.log(`End of workflow step`)
+```
 
-Second test:
-<div id="code-element2"></div>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-      axios({
-      method: 'get',
-      url: 'https://github.com/robs-tests/user-test-repo/blob/main/.github/workflows/pull_request.yml#L10-L32'
-       })
-      .then(function (response) {
-         document.getElementById("code-element").innerHTML = response.data;
-      });
-</script>
+In this example you see that we are:
+* checking out the repository
+* setup node 
+* so that we can install a node package that can parse the yaml
+* then we use the `github-script` action to execute the script
+* load the file `check-pr.js` that will do the work
+* we pass in the info needed for the script to have all the context it needs
+
+In the `check-pr.js` file you can see that we are:
+* loading the contents of the yaml file in the current branch: `github.rest.repos.getContents({owner, repo, path, ref})`
+* get the list of current teams: `let existingTeams = await getExistingTeams(owner)`
+* parse the content of the yaml file: `const parsed = yaml.parse(content)`
+
+And then we can loop through each element in the arrays:
+```
+  for each team:
+    for each user in team:
+       check if user exists 
+```
+
+Verifying if a user exists can be done with a call to this API: https://api.github.com/users/${userHandle}
+Checking if that user then already is a member of the org can be done with a call to this API: https://api.github.com/orgs/${orgName}/members/${userHandle.login}
+
+## Step 4: the user-management workflow
+When the PR is merged to main, another workflow executes: `user-management.yml`. This has the same setup: install the npm packages, load the script and run it.
+
+From `load-users.js`:
+``` js
+// send an invite to the user on the org level:
+await addUserToOrganization(user, organization)
+
+// create a new repository for this user:
+const repoName = `attendee-${user.login}`
+await createUserRepo(organization, repoName)
+
+// give the user admin acccess to the repo:
+await addUserToRepo(user, organization, repoName)
+
+// add the user to the team for the day of the training:
+await addUserToTeam(user, organization, team)
+
+// add the team to the repo (so that the rest of the team can help with PR's):
+await addTeamToRepo( organization, repoName, team)
+```
+
+# Final thoughts
+With this setup, you now have a complete example how you can use GitHub Actions to automate the process of adding users to an organization and preparing things like teams and repositories for them. You can build on top of this with for example:
+* a setup that has a folder structure that defines the hierarchy of teams and users
+* each folder could then have different code owners that defines who needs to approve the PR (give the team itself self-service on who to add)
+* add more properties to the `users.yml` in case you need it
