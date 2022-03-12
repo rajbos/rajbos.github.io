@@ -77,11 +77,12 @@ In the [PR workflow](https://github.com/robs-tests/user-test-repo/blob/main/.git
             const result = await script({github, context, owner, repo, userFile, yaml})
             console.log(``)
             console.log(`End of workflow step`)
+{% endraw  %}
 ```
 
 In this example you see that we are:
 * checking out the repository
-* setup node 
+* setup node
 * so that we can install a node package that can parse the yaml
 * then we use the `github-script` action to execute the script
 * load the file `check-pr.js` that will do the work
@@ -96,7 +97,7 @@ And then we can loop through each element in the arrays:
 ```
   for each team:
     for each user in team:
-       check if user exists 
+       check if user exists
 ```
 
 Verifying if a user exists can be done with a call to this API: https://api.github.com/users/${userHandle}

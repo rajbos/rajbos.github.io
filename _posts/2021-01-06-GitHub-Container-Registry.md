@@ -58,19 +58,20 @@ Using the recommended setup from [GitHub](https://docs.github.com/en/packages/gu
 {% raw  %}
     - name: Setup GitHub Container Registry
       run: echo "${{ secrets.GH_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
+{% endraw  %}
 ```
 
 5. The normal `docker push` step to push the container
 ``` yaml
     - name: push to GitHub Container Registry
       run:  docker push ghcr.io/<<ACCOUNT NAME>>/<<IMAGE NAME>>:<<VERSION>>
-``` 
+```
 
 ## Full workflow example
 ``` yaml
 name: Build and Push Docker container
 
-on: 
+on:
   push:
     branches:
       - main
