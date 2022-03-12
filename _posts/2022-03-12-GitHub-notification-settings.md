@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GitHub Notification Settings"
-date: 2021-03-12
+date: 2022-03-12
 ---
 
 I notice a lot of people getting lost in their GitHub notifications. Here is what you can do to get some control back! The default settings send you emails for everything. A lot of people then create an email rule to move all those emails to a specific folder, which means they will never look at those emails again! With some tweaking you can make the notifications work _for_ you.
