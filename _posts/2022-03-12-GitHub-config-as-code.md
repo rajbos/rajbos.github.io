@@ -39,7 +39,7 @@ teams:
   - name: team01
     users: 
       - rajbos
-      - Maxine-Chambers	
+      - Maxine-Chambers
 ```
 Reading that from parsing the yaml gives me two loops to create: for each team and then for each user, do 'x'.
 
@@ -54,13 +54,13 @@ In the [PR workflow](https://github.com/robs-tests/user-test-repo/blob/main/.git
 * the handles in the file are valid GitHub handles (we sometimes get e-mail addresses or typos in the handles)
 
 ```yaml
+{% raw  %}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 14
           
-      #- run: npm ci
       - run: npm install yaml
       - uses: actions/github-script@v5
         name: Run scripts
