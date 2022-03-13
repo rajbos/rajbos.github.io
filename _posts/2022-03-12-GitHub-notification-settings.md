@@ -9,6 +9,12 @@ I notice a lot of people getting lost in their GitHub notifications. Here is wha
 If you want to see this in action, watch the video I created:  
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eIWzKR465M0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Intro
+There are a couple of things at play when using notifications:
+* settings for how and where you want to receive the notifications (email, web, etc.)
+* reasons for getting a notification
+
+Telling GitHub to send you a notification can happen in a few different ways. You can subscribe to updates, either at the organization level (bad idea: way to noisy), at the repository level or for a specific issue, pull request, discussion. People can also @mention you or a team that you are in, which can then trigger a notification for you.
 ## Step 1: check you settings on _where_ you want to receive the notifications
 Go to [github.com/settings/notifications](https://github.com/settings/notifications)  
 
@@ -64,5 +70,9 @@ Go through the list of repositories and figure out if you really need to be watc
 The power option here is the 'Custom' setting:  
 ![Custom watch options](/images/2022/20220312/20220312_11_Watching_custom.png)  
 Now you can really configure for what things you want to be notified. So this is somewhere between the 'All activity' and 'Participating and watching' settings in.
+
+# Why did I get this notification?
+You can go to the notification and click on it. That will bring you to PR / issue / discussion that was the reason the notification was sent. The UI tries to help you figure out why you are receiving it:  
+![Notification reason screenshot](/images/2022/20220312/20220312_12_NotificationReason.png)  
 
 Hope this helps making your GitHub notifications more manageable. If you have any follow up questions, leave them in the comments below!
