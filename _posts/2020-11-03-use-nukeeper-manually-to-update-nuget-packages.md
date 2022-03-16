@@ -4,12 +4,11 @@ title: "Use NuKeeper 'manually' to update NuGet packages"
 date: 2020-11-03
 ---
 
-While building up a scheduled pipeline for updating our [NuGet](https://docs.microsoft.com/en-us/nuget?WT.mc_id=DOP-MVP-5003719) dependencies I found [NuKeeper](https://nukeeper.com/) to help with automatically updating the packages we use. If you don't know [NuKeeper](https://nukeeper.com/), it is an open source project that will go through your .NET solution and check with the configured NuGet sources to see if there are any packages that have available updates. If there are updates, it can update your project (or solution) and even generate a Pull Request for you. 
+While building up a scheduled pipeline for updating our [NuGet](https://docs.microsoft.com/en-us/nuget?WT.mc_id=DOP-MVP-5003719) dependencies I found [NuKeeper](https://github.com/NuKeeperDotNet/NuKeeper/) to help with automatically updating the packages we use. If you don't know [NuKeeper](https://github.com/NuKeeperDotNet/NuKeeper/), it is an open source project that will go through your .NET solution and check with the configured NuGet sources to see if there are any packages that have available updates. If there are updates, it can update your project (or solution) and even generate a Pull Request for you.
 
 With the DevOps mindset of handling these updates as technical debt, I wanted to run this check automatically each day, get any updates if possible and start our build pipeline to verify if it works.
 
-##### Side note: it uses the normal NuGet flow to check for updates and uses that flow for authenticated/private package sources as well.  
-
+##### Side note: it uses the normal NuGet flow to check for updates and uses that flow for authenticated/private package sources as well.
 
 NuKeeper can handle multiple platforms as you can see below. Currently I was running this on GitLab, so the examples given here might need some small tweaks to push the Pull Request for a different platform. The manual check with NuKeeper will work regardless of the platform.
 ![NuKeeper supported platforms](/images/20201103/20201103NuKeeperSupport.png)  
@@ -21,7 +20,7 @@ nukeeper repo <repo url> <token>
 ```
 
 ## The issue
-The setup I'm working with has an on-premises [GitLab](https://gitlab.com) instance. Even thought NuKeepers [documentation](https://nukeeper.com/platform/gitlab/) states that they support GitLab, it is only the cloud version hosted by GitLab.com. When you use the [nukeeper repo](https://nukeeper.com/commands/repository/) commands, you'll get an error that the url is not a known platform. After adding a parameter indicating it is a GitLab environment, it will tell you that it cannot execute against that url.
+The setup I'm working with has an on-premises [GitLab](https://gitlab.com) instance. Even thought NuKeepers [documentation](https://nukeeper.com/platform/gitlab/) states that they support GitLab, it is only the cloud version hosted by GitLab.com. When you use the [nukeeper repo](https://github.com/NuKeeperDotNet/NuKeeper/) commands, you'll get an error that the url is not a known platform. After adding a parameter indicating it is a GitLab environment, it will tell you that it cannot execute against that url.
 
 ## Solution
 To still get everything working, I needed to set things up manually with this flow:

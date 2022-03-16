@@ -41,7 +41,7 @@ When you run the tool from the CLI, you can see the results immediately and also
 
 ![Commands to install and run Stryker](/images/20190829/2019-08-29WindowsTerminalInstallStryker.png)
 
-In the screenshot above you can see that by default, running Stryker in your solution folder will not work. Stryker wants to be run from the folder containing the UnitTests project and will pick it up automatically. It will also find the solution and the project containing the code it needs to mutate. If you need, you can help Stryker find all this by adding some parameters that have been documented [here](https://github.com/stryker-mutator/stryker-net/blob/master/docs/Configuration.md#unary-operators).
+In the screenshot above you can see that by default, running Stryker in your solution folder will not work. Stryker wants to be run from the folder containing the UnitTests project and will pick it up automatically. It will also find the solution and the project containing the code it needs to mutate. If you need, you can help Stryker find all this by adding some parameters that have been documented [here](https://stryker-mutator.io/docs/stryker-net/mutations#unary-operators-unary).
 
 ## Running Stryker in the CLI
 Running Stryker from the unit test project directory will start mutating your code and running the unit tests on it again. It will try out all the mutations it can find and then track if it survived all the unit tests (meaning that there was at least one unit test that failed when running against the mutation). The results are visible inline.
@@ -53,7 +53,7 @@ dotnet stryker --reporters "['cleartext', 'html']"
 ![Executing Stryker](/images/20190829/2019-08-29_TerminalStrykerRun.png) 
 
 ## Mutations
-As you can see in the screenshot above, Stryker searches the original code for boolean expressions, strings and other things it can '[mutate](https://github.com/stryker-mutator/stryker-net/blob/master/docs/Mutators.md)'. 
+As you can see in the screenshot above, Stryker searches the original code for boolean expressions, strings and other things it can '[mutate](https://stryker-mutator.io/docs/stryker-net/mutations)'. 
 
 The first mutation in this run was changing the line `if (isOpen == "true")` into `if (isOpen == "")` (a string mutation). This mutation is caught by the first unit test and therefore marked as 'killed'.
 
