@@ -8,9 +8,13 @@ module.exports = ({devtoToken, axios}) => {
   });
 
   instance.get('/articles/me/unpublished')
-  .then(function (response) {    
-    handleUnpublished(response.data);    
+  .then(function (response) {
+    handleUnpublished(response.data);
   })
+
+  function sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+  }
 
   function handleUnpublished(data) {
       console.log(`Unpublished articles: ${data.length}`);
@@ -25,15 +29,17 @@ module.exports = ({devtoToken, axios}) => {
       filtered.forEach(element => {
           console.log(`Publishing article: [${element.title}]`)
           // replace the `published: false` to `true`
-          let updated_markdown = element.body_markdown.replace(/published: false/, "published: true");          
+          let updated_markdown = element.body_markdown.replace(/published: false/, "published: true");
 
           // update the article to published
           instance.put(`/articles/${element.id}`, {
-              article: 
-                {                     
+              article:
+                {
                     body_markdown: `${updated_markdown}`
                 }
         })
+        // give the api some time to prevent ratelimiting:
+        await sleep(2500);
       });
   }
 }
