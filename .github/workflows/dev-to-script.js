@@ -26,7 +26,7 @@ module.exports = async ({devtoToken, axios}) => {
       })
 
       console.log(`Filtered articles: ${filtered.length}`);
-      filtered.forEach(element => {
+      filtered.forEach(element => async function(element) {
           console.log(`Publishing article: [${element.title}]`)
           // replace the `published: false` to `true`
           let updated_markdown = element.body_markdown.replace(/published: false/, "published: true");
