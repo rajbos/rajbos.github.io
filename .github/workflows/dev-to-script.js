@@ -1,4 +1,4 @@
-module.exports = ({devtoToken, axios}) => {
+module.exports = async ({devtoToken, axios}) => {
   console.log(`devtoToken: ${devtoToken}`);
 
   const instance = axios.create({
@@ -9,14 +9,14 @@ module.exports = ({devtoToken, axios}) => {
 
   instance.get('/articles/me/unpublished')
   .then(function (response) {
-    handleUnpublished(response.data);
+    await handleUnpublished(response.data);
   })
 
-  function sleep(milliseconds) {
+  async function sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
   }
 
-  function handleUnpublished(data) {
+  async function handleUnpublished(data) {
       console.log(`Unpublished articles: ${data.length}`);
       let filtered = data.filter(article => {
         if (article.title.toLowerCase().indexOf('github') > -1) {

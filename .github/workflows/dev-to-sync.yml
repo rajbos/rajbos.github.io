@@ -19,6 +19,6 @@ jobs:
              const script = require('.github/workflows/dev-to-script.js')
              const axios = require('axios');
 
-             script({devtoToken, axios})
+             await script({devtoToken, axios})
 
             
