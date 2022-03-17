@@ -8,7 +8,7 @@ module.exports = async ({devtoToken, axios}) => {
   });
 
   instance.get('/articles/me/unpublished')
-  .then(function (response) {
+  .then(async function (response) {
     await handleUnpublished(response.data);
   })
 
