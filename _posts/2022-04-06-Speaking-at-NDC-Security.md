@@ -24,6 +24,6 @@ The sessions where also recorded for people attending at home and the recordings
 
 |Session & Slides|Link|
 |---|---|
-|![Protect your code with GitHub Security features](/slides/20220406%20Protect%20your%20code%20with%20GitHub%20security%20features.pdf)|[Link](https://ndc-security.com/agenda/protect-your-code-with-github-security-features-0dhc/0kibw07zdja)|
-|![Protect yourself against supply chain attacks through your pipeline](/slides/20220406%20Protect%20yourself%20against%20supply%20chain%20attacks%20through%20your%20pipeline.pdf)|[Link](https://ndc-security.com/agenda/protect-yourself-against-supply-chain-attacks-through-your-pipeline-0adx/0p76cipnoha)
-|![](/slides/20220407%20How%20to%20use%20GitHub%20Actions%20with%20Security%20in%20Mind.pdf)|[Link](https://ndc-security.com/agenda/how-to-use-github-actions-with-security-in-mind/888f3d8bf8fe)|
+|[Protect your code with GitHub Security features](/slides/20220406%20Protect%20your%20code%20with%20GitHub%20security%20features.pdf)|[Link](https://ndc-security.com/agenda/protect-your-code-with-github-security-features-0dhc/0kibw07zdja)|
+|[Protect yourself against supply chain attacks through your pipeline](/slides/20220406%20Protect%20yourself%20against%20supply%20chain%20attacks%20through%20your%20pipeline.pdf)|[Link](https://ndc-security.com/agenda/protect-yourself-against-supply-chain-attacks-through-your-pipeline-0adx/0p76cipnoha)
+|[Using GitHub Actions with Security in Mind](/slides/20220407%20How%20to%20use%20GitHub%20Actions%20with%20Security%20in%20Mind.pdf)|[Link](https://ndc-security.com/agenda/how-to-use-github-actions-with-security-in-mind/888f3d8bf8fe)|
