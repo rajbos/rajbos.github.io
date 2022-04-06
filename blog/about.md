@@ -52,6 +52,7 @@ Here are some of the conference I will be speaking at:
 |---|---|---|---|---|
 |4-7 April 2022|Oslo|Protect yourself against supply chain attacks through your pipeline|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
 |4-7 April 2022|Oslo|Protect your code with GitHub security features|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
+|4-7 April 2022|Oslo|How to use GitHub Actions with security in mind|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
 |23-25 May 2022|Antwerp|How to use GitHub Actions with security in mind|Techorama BE|[link](https://techorama.be/speakers/speaker/rob-bos/)|
 |8-10 June 2022|Virtual|I can hack your DevOps Pipeline|DevTalks Romania|[link](https://www.devtalks.ro/speakers/14-Rob+Bos/)|
 
