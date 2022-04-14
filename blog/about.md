@@ -68,6 +68,8 @@ Here are some of the recordings for conference sessions I have done:
 <br />
 <br />
 <hr />
+
+## Website stats 📈
 For visitor numbers I use [Plausible.io](https://plausible.io/) and those numbers are publicly available [here](https://plausible.io/devopsjournal.io). A few of the numbers can be found below: 
 
 <iframe plausible-embed src="https://plausible.io/share/devopsjournal.io?auth=K5_P8Ud8iwNKboadStl1N&embed=true&theme=light" scrolling="no" frameborder="0" loading="lazy" style="width: 1px; min-width: 100%; height: 1600px;"></iframe>
