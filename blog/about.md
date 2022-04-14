@@ -65,6 +65,15 @@ Here are some of the recordings for conference sessions I have done:
 |2020|DevOps Fest|How to run a global, cloud scale event for 10.000 people (GDBC)|[YouTube](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=26)|
 |2021|GitHub Universe|How to use GitHub Actions with security in mind|[YouTube](https://www.youtube.com/watch?v=Ers-LcA7Nmc)|
 
+<br />
+<br />
+<hr />
+For visitor numbers I use [Plausible.io](https://plausible.io/) and those numbers are publicly available [here](https://plausible.io/devopsjournal.io). A few of the numbers can be found below: 
+
+<iframe plausible-embed src="https://plausible.io/share/devopsjournal.io?auth=K5_P8Ud8iwNKboadStl1N&embed=true&theme=light" scrolling="no" frameborder="0" loading="lazy" style="width: 1px; min-width: 100%; height: 1600px;"></iframe>
+<div style="font-size: 14px; padding-bottom: 14px;">Stats powered by <a target="_blank" style="color: #4F46E5; text-decoration: underline;" href="https://plausible.io">Plausible Analytics</a></div>
+<script async src="https://plausible.io/js/embed.host.js"></script>
+
 </div>
 
 
