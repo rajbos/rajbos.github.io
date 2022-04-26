@@ -31,7 +31,7 @@ A list of all the magic files that I came across in GitHub.
 |secret_scanning.yml|.github/secret_scanning.yml||Secret scanning configuration file|[Secret scanning](https://docs.github.com/en/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories)|
 |README.md|root / ? ||Project readme, also used on marketplace if the repo is published to the marketplace|
 |README.md|.github/username/username||Profile readme|[About readme's](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)|
-|README.md|organizations .github **repo**: profile/README.md||Organization readme|[Organization readme](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/customizing-your-organizations-profile)|
+|README.md|organizations .github **repo** or .github-private **repo**: profile/README.md||Organization readme|[Organization readme](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/customizing-your-organizations-profile)|
 |workflow.yml|.github/workflows/|||[Workflows](https://docs.github.com/en/github/automating-your-workflow/automating-workflows-with-github-actions)|
 |action.yml/action.yaml|root||Configuration file for an actions repository||
 
