@@ -10,7 +10,7 @@ I keep coming across files in GitHub that have some mystic magic feeling to them
 ###### Photo by <a href="https://unsplash.com/@art_maltsev?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Artem Maltsev</a> on <a href="https://unsplash.com/s/photos/magic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 # Overview
-A list of all the magic files that I came across in GitHub.
+A list of all the magic files / links that I came across in GitHub.
 
 |Filename|Location|.github repo support|Description|Docs|
 |---|---|---|---|---|
@@ -39,6 +39,7 @@ using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-req
 |workflow.yml|.github/workflows/|||[Workflows](https://docs.github.com/en/github/automating-your-workflow/automating-workflows-with-github-actions)|
 |action.yml/action.yaml|root||Configuration file for an actions repository||
 |$GITHUB_STEP_SUMMARY|workflow||Job summary output in markdown|[Job summary](https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables)|
+|{{repo}}/releases/latest|link||To permalink to the latest release as any time.|[Permalink to latest release](https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases)|
 
 Some of these are extra tricky, like for example the organization profile lives in a different directory and repo then the user profile readme: `.github` or in `.github-private` repo in the org and then in a folder named `profile`: README.md.
 
