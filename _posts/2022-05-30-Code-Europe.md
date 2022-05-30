@@ -18,6 +18,6 @@ Topics:
 - Secret scanning (and revoking) out of the box
 - Using CodeQL
 
-You can download the slides [here](slides\20220530%20Code%20Europe%20Protect%20your%20code%20with%20GitHub%20security%20features.pdf)
+You can download the slides [here](slides\20220530%20Code%20Europe%20Protect%20your%20code%20with%20GitHub%20security%20features.pdf).
 
-![Opening slide of the presentation](/images/20220530/20220530_Opening.png)
+[![Opening slide of the presentation](/images/20220530/20220530_Opening.png)](slides\20220530%20Code%20Europe%20Protect%20your%20code%20with%20GitHub%20security%20features.pdf)
