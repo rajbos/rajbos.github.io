@@ -54,7 +54,9 @@ Here are some of the conference I will be speaking at:
 |4-7 April 2022|Oslo|Protect your code with GitHub security features|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
 |4-7 April 2022|Oslo|How to use GitHub Actions with security in mind|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
 |23-25 May 2022|Antwerp|How to use GitHub Actions with security in mind|Techorama BE|[link](https://techorama.be/speakers/speaker/rob-bos/)|
+|May 30th - June 2nd|Code Europe - Poland|3x Protect your code with GitHub security features|[link](https://www.codeeurope.pl/en/speakers/rob-bos)
 |8-10 June 2022|Virtual|I can hack your DevOps Pipeline|DevTalks Romania|[link](https://www.devtalks.ro/speakers/14-Rob+Bos/)|
+|10-12 October 2022|Utrecht, NL|Protect yourself against supply chain attacks through your pipeline|DevOps Days Utrecht|[link](https://techorama.nl/speakers/session/protect-yourself-against-supply-chain-attacks/)|
 
 
 ## Recorded conferences 🎤 
@@ -64,6 +66,8 @@ Here are some of the recordings for conference sessions I have done:
 |---|---|---|---|
 |2020|DevOps Fest|How to run a global, cloud scale event for 10.000 people (GDBC)|[YouTube](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=26)|
 |2021|GitHub Universe|How to use GitHub Actions with security in mind|[YouTube](https://www.youtube.com/watch?v=Ers-LcA7Nmc)|
+|2022|NDC Security|Protect yourself against supply chain attacks through your pipeline|[YouTube](https://www.youtube.com/watch?v=00R1JGBQEJg)|
+|2022|NDC Security|Protect your code with GitHub security features|[YouTube](https://www.youtube.com/watch?v=dZYiveyMWXg)|
 
 <br />
 <br />
