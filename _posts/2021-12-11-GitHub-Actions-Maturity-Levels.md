@@ -4,7 +4,7 @@ title: "Maturity levels of using GitHub Actions Securely"
 date: 2021-12-11
 ---
 
-I've been discussing using GitHub Actions in a secure way for a while now, and I got a question on how to improve your usage of actions. I wanted to capture that info in an easy to follow set of steps, so here we go:
+I've been discussing using GitHub Actions in a secure way for a while now (see [here](/blog/2021/10/27/GitHub-Universe-Session)), and I got a question on how to improve your usage of actions. I wanted to capture that info in an easy to follow set of steps, so here we go:
 
 1. Default demo examples: version pinning or by branch
 2. Review the source code and trust the publisher / action
