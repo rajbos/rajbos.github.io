@@ -59,7 +59,7 @@ My tool of choice for this is [Postman](https://www.postman.com/product/rest-cli
 ![Screenshot of Postman with a push to the dispatch api](/images/20220812/20220812_Postman.png)
 
 ## On: push then?
-The last option you have is to just trigger the workflow whenever someone pushed data into the repository. You can decide if that should happen on certain branches but the best tip here is to include a path filter (see the docs [here](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push))
+The last option you have is to just trigger the workflow whenever someone pushed data into the repository. You can decide if that should happen on certain branches but the best tip here is to include a path filter (see the docs [here](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push)).
 
 ``` yaml	
 on:
