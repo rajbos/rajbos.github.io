@@ -7,10 +7,10 @@ date: 2022-08-12
 Some default cave-ats that new GitHub Actions users run into is that their workflows are not being triggered or that the UI to do so is missing. In the beginning everyone starts with the `on: push` trigger but there will come a time that you only want to execute some workflows on the default (main) branch. So you limit the `on: push` trigger to that branch:
 
 ``` yaml
-    on:
-      push:
-        branches:
-          - main
+on:
+  push:
+    branches:
+      - main
 ```
 
 When you follow [best practices](blog/2019/07/10/DevOps-Principles-series) you want to implement a Pull Request based process to prevent a single person from making changes to a repository. That means that you are making your changes to workflows in a feature branch and not in your main branch.
@@ -53,7 +53,6 @@ The workflows actually have an ID under the covers, but you can also use the fil
 `https://api.github.com/repos/rajbos/actions-marketplace/actions/workflows/get-action-data.yml/dispatches`
 ##### Note: do not include a slash at the end of the url, GitHub's API's do not accept that and will return errors.  
 
-
 My tool of choice for this is [Postman](https://www.postman.com/product/rest-client/), because I can store my requests in it and it lives in its own window. This makes it super easy to navigate to and hit CTRL+ENTER to trigger the call, which is helpful when you are creating the workflows.
 
 ![Screenshot of Postman with a push to the dispatch api](/images/20220812/20220812_Postman.png)
@@ -70,7 +69,7 @@ on:
     paths:
       - 'src/**'
       - '.github/workflows/my-workflow-file.yml'
-```  
+```
 
 I often run the workflow on at least my test branch, but then **only** when the relevant files for that workflow have been edited. That usually is the workflow file itself and maybe certain source files in the repo that are used: whenever there is a change in those files: execute the workflow. This is especially helpful during the development of the workflow: if you push a change in it, it is a good change that you want to trigger the workflow 😄.
 
