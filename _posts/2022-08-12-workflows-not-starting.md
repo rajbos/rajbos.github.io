@@ -17,7 +17,7 @@ When you follow [best practices](/blog/2019/07/10/DevOps-Principles-series) you 
 
 What happens next? See in the steps below. You can start at the top (scheduled run not starting) and then work your way down to the more specific examples. This also represents the order in which a lot of times these questions will occur.
 
-![Photo of a street crossing, taken from above so it is upside down](/images/20220812/sora-sagano-MKE7NKsaBZM-unsplash.jpg)
+![Photo of a street crossing, taken from above so it is upside down](/images/2022/20220812/sora-sagano-MKE7NKsaBZM-unsplash.jpg)
 ##### Photo by <a href="https://unsplash.com/@sorasagano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sora Sagano</a> on <a href="https://unsplash.com/s/photos/up-side-down?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 
@@ -38,14 +38,14 @@ There are other reasons why a schedule might not trigger:
 1. The schedule event can be delayed during periods of high loads of GitHub Actions workflow runs. High load times include the start of every hour. To decrease the chance of delay, schedule your workflow to run at a different time of the hour.
 1. The workflow might have been disabled. On forks all workflows get disabled and you need to manually enabled them (makes sense of course). Additionally: in a public repository, scheduled workflows are automatically disabled when no repository activity has occurred in 60 days. The account that last changed the workflow will get an email notification after around 23 days of inactivity in a repository:
 
-![](/images/20220812/20220812_EmailNotification.png)
+![Screenshot of the mail message being send that the workflow will be disabled soon](/images/2022/20220812/20220812_EmailNotification.png)
 
 ## Manual runs (workflow_dispatch) UI is not visible
 This is the common next step when the schedule does not start: you just add a workflow dispatch trigger to the workflow to trigger it manually. But since this is a new workflow that has not existed yet, the UI for it to trigger is not visible! This is the same as creating a new workflow file with this trigger in one go. 
 
 For a manual trigger, *the UI is only available from the default branch*. You can choose which branch to trigger the run from then, and have the inputs available from the default branch. But the file and the trigger has to be on the default branch for the UI to be visible.
 
-![Screenshot of the workflow dispatch UI with the branch selector open](/images/20220812/20220812_Workflow_dispatch.png)
+![Screenshot of the workflow dispatch UI with the branch selector open](/images/2022/20220812/20220812_Workflow_dispatch.png)
 
 You have two options to proceed and trigger the workflow:
 1. Go to the next step and use 'on: push'
@@ -62,7 +62,7 @@ The workflows actually have an ID under the covers, but you can also use the fil
 
 My tool of choice for this is [Postman](https://www.postman.com/product/rest-client/), because I can store my requests in it and it lives in its own window. This makes it super easy to navigate to and hit CTRL+ENTER to trigger the call, which is helpful when you are creating the workflows.
 
-![Screenshot of Postman with a push to the dispatch api](/images/20220812/20220812_Postman.png)
+![Screenshot of Postman with a push to the dispatch api](/images/2022/20220812/20220812_Postman.png)
 
 You can also use the [GitHub CLI](https://cli.github.com/manual/gh_workflow_run) to trigger the workflow, by running the following command from the repository folder:
 ``` bash
