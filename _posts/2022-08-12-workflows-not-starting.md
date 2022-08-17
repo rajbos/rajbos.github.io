@@ -57,7 +57,7 @@ You can trigger a workflow dispatch (as well as a [repository dispatch](https://
 You need to make an (authenticated) call to the url for your workflow:  
 'https://api.github.com/repos/{OWNER}/{REPO}/actions/workflows/{WORKFLOW_ID}/dispatches'  
 The workflows actually have an ID under the covers, but you can also use the filename, which is easier to read. So when the workflow is named `get-action-data.yml` and it lives in the repo `rajbos/actions-marketplace` it becomes this url:
-`https://api.github.com/repos/rajbos/actions-marketplace/actions/workflows/get-action-data.yml/dispatches`
+`https://api.github.com/repos/rajbos/actions-marketplace/actions/workflows/get-action-data.yml/dispatches`. Include a JSON payload with the branch you are referencing in a "ref" property (see Postman screenshot below).
 ##### Note: do not include a slash at the end of the url, GitHub's API's do not accept that and will return errors.  
 
 My tool of choice for this is [Postman](https://www.postman.com/product/rest-client/), because I can store my requests in it and it lives in its own window. This makes it super easy to navigate to and hit CTRL+ENTER to trigger the call, which is helpful when you are creating the workflows.
@@ -66,9 +66,9 @@ My tool of choice for this is [Postman](https://www.postman.com/product/rest-cli
 
 You can also use the [GitHub CLI](https://cli.github.com/manual/gh_workflow_run) to trigger the workflow, by running the following command from the repository folder:
 ``` bash
-  gh workflow run get-action-data.yml
+  gh workflow run get-action-data.yml --ref rajbos-patch-1
 ```
-Since the GitHub CLI knows which repository you are in and which branch is currently checked out, it will do the right thing and trigger the workflow from the current branch.
+Do not forget to include the `ref` here if you want to run from a branch. Otherwise it will run from the default branch. Also be aware that this will execute in the context of the repo content that is '**on GitHub**, so not your local content!
 
 ## On: push then?
 The last option you have is to just trigger the workflow whenever someone pushed data into the repository. You can decide if that should happen on certain branches but the best tip here is to include a path filter (see the docs [here](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push)).
