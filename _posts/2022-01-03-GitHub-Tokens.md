@@ -11,7 +11,7 @@ There is a lot of confusion of what GitHub tokens are and how you should use the
 
 You can use these tokens to authenticate to GitHub and perform actions with it, like cloning repositories, making API calls, etc.
 
-![Photo of an old lock](/images/20220103/james-sutton-FqaybX9ZiOU-unsplash.jpg)
+![Photo of an old lock](/images/2022/20220103/james-sutton-FqaybX9ZiOU-unsplash.jpg)
 ###### Photo by <a href="https://unsplash.com/@jamessutton_photography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">James Sutton</a> on <a href="https://unsplash.com/s/photos/secure?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 
@@ -28,7 +28,7 @@ You can use the PAT to do **anything** the user account that created them can do
 ## The downsides of Personal Access Tokens
 This token can actually do `anything` the user can do, but for **`anything`** the user has access to! If the user has access to repos, organizations or enterprises that have internal/private repos, the PAT has access to it! The only thing you can do is limit the scope it has, but not organizations or repos. (note: this is planned on the [roadmap](https://github.com/github/roadmap/issues/184) and very needed). 
 
-Because of this, using a PAT poses a big security risk. Do not hand them out to any random [action](https://devopsjournal.io/blog/2021/02/06/GitHub-Actions) in your workflows: if they store the PAT somewhere, they can read all your private repos (and more!). I recommend to stay away from using PATs if you can help it. 
+Because of this, using a PAT poses a big security risk. Do not hand them out to any random [action](/blog/2021/02/06/GitHub-Actions) in your workflows: if they store the PAT somewhere, they can read all your private repos (and more!). I recommend to stay away from using PATs if you can help it. 
 
 Additionally, they are linked to a user, so when that user leaves the company (and the user account is disabled): all automations using their PAT will stop working!
 
@@ -52,7 +52,7 @@ You can use a GitHub App to have very specific access to one or more repositorie
 
 ###### Note: on github.com you can only create 100 apps per organization. On GitHub Enterprise Server this restriction does not apply.
 
-With a GitHub App, you get an AppId and a private key in the PEM format. You can create a GitHub App on [website](https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app) and then install it on the repositories (or organizations) you want to use it for. You can then use the AppId and the private key to create an access token that can be used to access the repositories. 
+With a GitHub App, you get an AppId and a private key in the PEM format. You can create a GitHub App on a [website](https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app) and then install it on the repositories (or organizations) you want to use it for. You can then use the AppId and the private key to create an access token that can be used to access the repositories. 
 
 There are multiple options to get the token, depending where you want to use it:
 * Normal shell scripts

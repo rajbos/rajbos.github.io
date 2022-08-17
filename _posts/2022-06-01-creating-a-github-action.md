@@ -17,7 +17,7 @@ I wanted to describe how my flow usually works for creating a [GitHub Actions](h
 1. Publish the action
 
 
-![Photo of a sign that says: Turn ideas into reality](/images/20220601/mika-baumeister-Y_LgXwQEx2c-unsplash.jpg)
+![Photo of a sign that says: Turn ideas into reality](/images/2022/20220601/mika-baumeister-Y_LgXwQEx2c-unsplash.jpg)
 <span class="rTNyH RZQOk">Photo by <a href="https://unsplash.com/@mbaumi?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mika Baumeister</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>.
   </span>
 
