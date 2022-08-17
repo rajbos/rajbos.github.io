@@ -13,7 +13,7 @@ on:
       - main
 ```
 
-When you follow [best practices](blog/2019/07/10/DevOps-Principles-series) you want to implement a Pull Request based process to prevent a single person from making changes to a repository. That means that you are making your changes to workflows in a feature branch and not in your main branch.
+When you follow [best practices](/blog/2019/07/10/DevOps-Principles-series) you want to implement a Pull Request based process to prevent a single person from making changes to a repository. That means that you are making your changes to workflows in a feature branch and not in your main branch.
 
 What happens next? See in the steps below. You can start at the top (scheduled run not starting) and then work your way down to the more specific examples. This also represents the order in which a lot of times these questions will occur.
 
