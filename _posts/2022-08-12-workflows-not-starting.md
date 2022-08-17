@@ -33,6 +33,13 @@ The cause of this is that scheduled runs *only* trigger from the default branch 
 
 So if you have a schedule in your workflow and you are not on the default branch, the workflow will not start. This is a security measure to prevent someone from creating a workflow that runs on a schedule and then creating a pull request to a repository that has a scheduled workflow. The scheduled workflow would then run on the pull request and the attacker could do something malicious. This is a good thing, but it can be confusing when you are just starting out. The solution is to make sure that you are on the default branch when you create your scheduled workflow, so that means that you need to merge in your changes for it to start based on your schedule.
 
+### Other reasons for schedules to not trigger
+There are other reasons why a schedule might not trigger: 
+1. The schedule event can be delayed during periods of high loads of GitHub Actions workflow runs. High load times include the start of every hour. To decrease the chance of delay, schedule your workflow to run at a different time of the hour.
+1. The workflow might have been disabled. On forks all workflows get disabled and you need to manually enabled them (makes sense of course). Additionally: in a public repository, scheduled workflows are automatically disabled when no repository activity has occurred in 60 days. The account that last changed the workflow will get an email notification after around 23 days of inactivity in a repository:
+
+![](/images/20220812/20220812_EmailNotification.png)
+
 ## Manual runs (workflow_dispatch) UI is not visible
 This is the common next step when the schedule does not start: you just add a workflow dispatch trigger to the workflow to trigger it manually. But since this is a new workflow that has not existed yet, the UI for it to trigger is not visible! This is the same as creating a new workflow file with this trigger in one go. 
 
@@ -56,6 +63,12 @@ The workflows actually have an ID under the covers, but you can also use the fil
 My tool of choice for this is [Postman](https://www.postman.com/product/rest-client/), because I can store my requests in it and it lives in its own window. This makes it super easy to navigate to and hit CTRL+ENTER to trigger the call, which is helpful when you are creating the workflows.
 
 ![Screenshot of Postman with a push to the dispatch api](/images/20220812/20220812_Postman.png)
+
+You can also use the [GitHub CLI](https://cli.github.com/manual/gh_workflow_run) to trigger the workflow, by running the following command from the repository folder:
+``` bash
+  gh workflow run get-action-data.yml
+```
+Since the GitHub CLI knows which repository you are in and which branch is currently checked out, it will do the right thing and trigger the workflow from the current branch.
 
 ## On: push then?
 The last option you have is to just trigger the workflow whenever someone pushed data into the repository. You can decide if that should happen on certain branches but the best tip here is to include a path filter (see the docs [here](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push)).
