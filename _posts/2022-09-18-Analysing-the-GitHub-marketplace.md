@@ -76,7 +76,7 @@ I've also forked over the action repos to my own organization and enabled Depend
 I'm planning to add something like a Trivy container scan to the setup so that we get some insights from this as well.
 
 ### Security results
-Of the 10488 scanned actions, 3130 of them have a high or critical alert 😱. And that is with only scanning the Node based and Composite actions, since the Docker based actions are not scanned yet. This is a way higher than I even expected and very scary! If your dependencies already are not up to date and thus have security issues in them, how can we expect your action to be secure? That calculates to 66% of the actions that have one or more high or critical alert on their Dependencies.
+Of the 10488 scanned actions, 3130 of them have a high or critical alert 😱. And that is with only scanning the Node based and Composite actions, since the Docker based actions are not scanned yet. This is a way higher than I even expected and very scary! If your dependencies already are not up to date and thus have security issues in them, how can we expect your action to be secure? That calculates to 30s% of the actions that have one or more high or critical alert on their Dependencies.
 
 To be complete: I have not filtered down the alerts to a specific ecosystem. Since GitHub Actions is one of the ecosystems Dependabot alerts on, there is a change these alerts come from a dependency on a vulnerable action for example, which would be unfair (since these will not end up in the action I am checking). Since there are only 3 actions in the [GitHub Advisories Database](https://github.com/advisories?query=type%3Areviewed+ecosystem%3Aactions), I expect this to be of zero significance, but still: good to mention.
 
