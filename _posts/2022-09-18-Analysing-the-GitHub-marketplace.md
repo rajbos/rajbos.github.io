@@ -3,12 +3,11 @@ layout: post
 title: "Analyzing the GitHub marketplace"
 date: 2022-09-18
 ---
-I have been a fan of GitHub Actions since the beta in the end of 2019. And the more I use them and create my own, I've had this growing itch to see how these things have been created, how active the community is and what we can do to improve this ecosystem. So I decided to do some research and see what I could find out. I already have a [Twitter bot](https://twitter.com/githubactions) that scrapes the [GitHub Actions Marketplace](https://github.com/marketplace?category=&query=&type=actions&verification=) and stores that info for later use (unfortunately, the marketplace has no API to use for this).  
+I have been a fan of GitHub Actions since the beta in the end of 2019. And the more I use them and create my own, the more I have this growing itch to see how these actions are made, how active the community is, and what we can do to improve this ecosystem. So I decided to do some research and see what I could find out. I already have a [Twitter bot](https://twitter.com/githubactions) that scrapes the [GitHub Actions Marketplace](https://github.com/marketplace?category=&query=&type=actions&verification=) and stores that info for later use (unfortunately, the marketplace has no API to use for this).  
 ![Photo of a lightbulb on the grass](/images/2022/20220918/ashes-sitoula-UfEyDdXlRp8-unsplash.jpg)
-##### Photo by <a href="https://unsplash.com/@awesome?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ashes Sitoula</a> on <a href="https://unsplash.com/s/photos/bulb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+##### Photo by <a href="https://unsplash.com/@awesome?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ashes Sitoula</a> on <a href="https://unsplash.com/s/photos/bulb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  
 
-I've also been fascinated with the security aspects of using GitHub Actions for my workloads. My first conference session on this topic was at [NDC London in January, 2021](https://devopsjournal.io/blog/2021/01/28/GitHub-Actions-NDC-London) and I have been advocating on these learnings ever since.  
+I am also fascinated with the security aspects of using GitHub Actions for my workloads. My first conference session on this topic was at [NDC London in January, 2021](https://devopsjournal.io/blog/2021/01/28/GitHub-Actions-NDC-London) and I have been advocating on these learnings ever since. That is why I also decided to run my usual security checks on the entire marketplace, starting with forking them so I can enable Dependabot on the forked repositories. 
 
 The Marketplace shows us almost **15 thousand** actions that are available for us to use 😱. That means there is lots of community engagement for creating these actions for us, but also lots of potential for malicious actors to create actions that can be used to compromise our systems. Do be aware that in this post I'll only be taking actions into account that have been published to the marketplace. Since any public repo with an `action.yml` in the root directory can be used inside of a workflow, there are many more actions that are available to us that are not part of this research.
 
@@ -34,7 +33,7 @@ My first interest was analyzing the overall makeup of the actions. For example, 
 By the ecosystem they use: Node based (Typescript or JavaScript), Docker based or it can be a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action).
 
 | Type of Action | Count | Percentage |
-| --- | --- | --- |
+|---|---|---|
 | Node based | 4,7k | 45% |
 | Docker based | 3.7k | 35% |
 | Composite | 1.6k | 16% |
@@ -78,12 +77,12 @@ I'm planning to add something like a Trivy container scan to the setup so that w
 ### Security results
 Of the 4738 Node based actions, 3130 of them have a high or critical alert 😱. This is a way higher than I even expected and very scary! If your dependencies already are not up to date and thus have security issues in them, how can we expect your action to be secure? That calculates to 66% of the actions that have one or more high or critical alert on their Dependencies.
 
-For full disclosure: I have not filtered down the alerts to a specific ecosystem, so there is a change these alerts come from a dependency on a vulnerable action for example, which would be unfair. Since there are only 3 actions in the [GitHub Advisories Database](https://github.com/advisories?query=type%3Areviewed+ecosystem%3Aactions), I expect this to be of zero significance, but still: good to mention.
+To be complete: I have not filtered down the alerts to a specific ecosystem. Since GitHub Actions is one of the ecosystems Dependabot alerts on, there is a change these alerts come from a dependency on a vulnerable action for example, which would be unfair (since these will not end up in the action I am checking). Since there are only 3 actions in the [GitHub Advisories Database](https://github.com/advisories?query=type%3Areviewed+ecosystem%3Aactions), I expect this to be of zero significance, but still: good to mention.
 
 ### Diving into the security results
 I've also logged the repos with more 10 (high + critical) alerts to a separate report file and that file contains more than 600 actions!
 
-The highest number of high alerts in one singe action, is 58. Since that repo happens to be Archived, it should not be in the actions marketplace at all as well as the fact that this should not be used at all. Luckily it is only used by a small number of workflows. I'd rather see that the runner would at least add warnings to the logs for calling actions that are archived.
+The highest number of high alerts in one singe action, is 58. Since that repo happens to be Archived, it should not be in the actions marketplace at all, as well as the fact that this should not be used at all. Luckily it is only used by a small number of workflows. I'd rather see that the runner would at least add warnings to the logs for calling actions that are archived.
 
 The highest number of critical alerts in one singe action, is 16. This repo is also only used by less then 10 other repos, so it is not a big impact. Since there is no API for finding the dependents that Dependabot finds, I cannot easily find out how many workflows are impacted by this. 
 
@@ -101,7 +100,7 @@ Filtering this down to only the Node action types, this becomes a lot scarier:
 ![Screenshot of the actions filtered to the Node only actions: 2752 actions potentially vulnerable, 1986 actions not vulnerable](/images/2022/20220918/20220918_NodeActions.png)  
 That is 58% of the Node actions that have at least 1 vulnerability alert with a severity of high or critical! And all demos and docs still indicate you can just use the actions as is and only hint at the security implications of that!
 
-Want to learn how to improve your security stance fur using actions? Check out this guide I made: [GitHub Actions Maturity Levels](https://devopsjournal.io/blog/2021/12/11/GitHub-Actions-Maturity-Levels)
+Want to learn how to improve your security stance fur using actions? Check out this guide I made: [GitHub Actions Maturity Levels](https://devopsjournal.io/blog/2021/12/11/GitHub-Actions-Maturity-Levels).
 
 ## Conclusion
 There is **a lot** of improvement for the actions ecosystem to be made. I would like to see GitHub take a more active role in this, by for example:
