@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Analyzing the GitHub marketplace"
+title: "Analyzing the GitHub marketplace - Dependency security is a big issue"
 date: 2022-09-18
 ---
 I have been a fan of GitHub Actions since the beta in the end of 2019. And the more I use them and create my own, the more I have this growing itch to see how these actions are made, how active the community is, and what we can do to improve this ecosystem. So I decided to do some research and see what I could find out. I already have a [Twitter bot](https://twitter.com/githubactions) that scrapes the [GitHub Actions Marketplace](https://github.com/marketplace?category=&query=&type=actions&verification=) and stores that info for later use (unfortunately, the marketplace has no API to use for this).  
