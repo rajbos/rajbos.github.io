@@ -62,6 +62,7 @@ For the Docker based actions I was interested to see how many actions use a pre-
 | --- | --- | --- |
 | Remote image | 550 | 15% |
 | Local Dockerfile | 3.1k | 85% |
+
 From that we learn that on-boarding and validating these Docker based actions will likely be a lot of work and will have significant impact on your runner setup: each time it is used, the base image will be downloaded and then the action will be build on top of that. This is a lot of overhead for the runner and will slow down the execution of the workflow. It also costs unnecessary bandwidth on the runner as well as extra compute power, which has an impact on the environment. All this is rather unnecessary if the maintainer would use a remote image, where the runner host can cache that image locally. Be extra aware of this if you are hosting ephemeral runners, that get deleted after they have executed a workflow job.
 
 One of the next steps here is to [analyze the remotely hosted images](https://github.com/rajbos/actions-marketplace-checks/issues/6) on *where* these are hosted.
