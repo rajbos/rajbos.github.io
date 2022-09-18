@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Analyzing the GitHub marketplace"
-date: 2022-00-18
+date: 2022-09-18
 ---
 I have been a fan of GitHub Actions since the beta in the end of 2019. And the more I use them and create my own, I've had this growing itch to see how these things have been created, how active the community is and what we can do to improve this ecosystem. So I decided to do some research and see what I could find out. I already have a [Twitter bot](https://twitter.com/githubactions) that scrapes the [GitHub Actions Marketplace](https://github.com/marketplace?category=&query=&type=actions&verification=) and stores that info for later use (unfortunately, the marketplace has no API to use for this).  
 ![Photo of a lightbulb on the grass](/images/2022/20220918/ashes-sitoula-UfEyDdXlRp8-unsplash.jpg)
