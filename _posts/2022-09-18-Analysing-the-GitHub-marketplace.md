@@ -44,7 +44,7 @@ This tells us that there is **a lot** of use for Docker based actions! That mean
 Next up was analyzing the setup of the action itself. You can define it in multiple ways in the root of your repository:
 - `action.yml` - This is the default way to define an action. It is a YAML file that contains all the information about the action.
 - `action.yaml` - This is an alternate way to define an action that was available at the beginning of GitHub Actions and is therefor still supported.
-- `Dockerfile` - This is the another way to define a Docker based action. If you don't provide an `action.yml` or `action.yaml` file, this one will be picked up. This Dockerfile is used by the runner and will be build on the execution environment when the action is used. An alternative way is to define the Dockerfile link in the `action.yml` (or yaml) file. I've not made a specific overview that indicates how many Docker based actions where defined in the `action.yml` file and how many have a separate Dockerfile.
+- `Dockerfile` - This is another way to define a Docker based action. If you don't provide an `action.yml` or `action.yaml` file, this one will be picked up. This Dockerfile is used by the runner and will be build on the execution environment when the action is used. An alternative way is to define the Dockerfile link in the `action.yml` (or yaml) file. I've not made a specific overview that indicates how many Docker based actions where defined in the `action.yml` file and how many have a separate Dockerfile.
 
 | Definition of the Action | Count | Percentage |
 | --- | --- | --- |
