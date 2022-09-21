@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Presentation dotnetsheff - Protect your code with GitHub security features"
