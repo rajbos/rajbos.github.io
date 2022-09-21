@@ -22,3 +22,12 @@ Topics:
 You can download the slides [here](https://devopsjournal.io/slides/20220921%20dotnetsheff%20-%20Protect%20your%20code%20with%20GitHub%20security%20features.pdf).
 
 [![Opening slide of the presentation](/images/2022/20220921/20220921_OpeningSlide.png)](https://devopsjournal.io/slides/20220921%20dotnetsheff%20-%20Protect%20your%20code%20with%20GitHub%20security%20features.pdf)
+
+
+## Questions:
+Some questions that came up during the presentation:
+Q: Can we configure Dependabot to use conventional commits?
+A: No you can't. There are several issues on the repo that ask for this, but they have not included it. What you can do, is work with prefixes in the commit message. Read more on this from the [docs](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#commit-message)
+
+Q: Can you run Dependabot locally?
+A: You can through a local install or from a Docker container, for example using this [project](https://github.com/dependabot/dependabot-script). But for a feature rich experience, you should use the GitHub setup.
