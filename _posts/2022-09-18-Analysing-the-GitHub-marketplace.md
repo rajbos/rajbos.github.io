@@ -67,6 +67,15 @@ From that we learn that on-boarding and validating these Docker based actions wi
 
 One of the next steps here is to [analyze the remotely hosted images](https://github.com/rajbos/actions-marketplace-checks/issues/6) on *where* these are hosted.
 
+## Repo age
+The next thing I wanted to know was the repository age: what can we tell about the last time the repo had seen (any!) updates? If the action is not maintained at all, there is a good chance there might be something wrong with it (either in functionality, security or adding in new features).
+![Screenshot of the repo age. Highlights: oldest repo: 1121 days old. Average age: 221.6 days. Archived: 267 repos!](/images/2022/20220918/20220929_01_RepoAge.png).
+
+I need to dive deeper to see if there are any patterns in the repo age:
+* Do the 267!!! archived repos bring down the average age a lot? 
+* Do the most vulnerable repos match with the oldest repos? 
+* What about the last release that was made? All demos show that you need to include the version in the `uses` statements, so the last time the action has seen a release might be significant as well.
+
 ## Security alerts for dependencies of the Actions
 I've also forked over the action repos to my own organization and enabled Dependabot on them to get a sense of the vulnerable dependencies they have in use. Some caveats to this analysis are:
 - Not every dependency will end up in the action itself, so a high alert from Dependabot will point to a 'possibly' vulnerable action. Since this is not something you can track automatically and see if this would be the case, we cannot be sure that the action itself is vulnerable. 
