@@ -36,6 +36,7 @@ using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-req
 |README.md|root / ? ||Project readme, also used on marketplace if the repo is published to the marketplace|
 |README.md|.github/username/username||Profile readme|[About readme's](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)|
 |README.md|organizations .github **repo** or .github-private **repo**: profile/README.md||Organization readme|[Organization readme](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/customizing-your-organizations-profile)|
+|release.yml|.github|Automatically generated release notes||[Automatically generated release notes](https://docs.github.com/en/enterprise-server@3.5/repositories/releasing-projects-on-github/automatically-generated-release-notes)|
 |workflow.yml|.github/workflows/|||[Workflows](https://docs.github.com/en/github/automating-your-workflow/automating-workflows-with-github-actions)|
 |action.yml/action.yaml|root||Configuration file for an actions repository||
 |$GITHUB_STEP_SUMMARY|workflow||Job summary output in markdown|[Job summary](https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables)|
