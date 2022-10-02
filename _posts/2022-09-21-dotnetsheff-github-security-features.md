@@ -32,8 +32,9 @@ A: No you can't. There are several issues on the repo that ask for this, but the
 Q: Can you run Dependabot locally?
 A: You can through a local install or from a Docker container, for example using this [project](https://github.com/dependabot/dependabot-script). But for a feature rich experience, you should use the GitHub setup.
 
-# GitHub Advanced Security
+------------------------------------------
+## GitHub Advanced Security
 Want to learn more about these GitHub Advanced Security features?  
 Check out the LinkedIn Learning course I made for it:  
 [![Image of my GitHub Advanced Security course at LinkedIn Learning](/images/LinkedIn_Learning/GitHub_Advanced_Security_02_900x505.png)](https://www.linkedin.com/learning/github-advanced-security)  
-##### Click the image to go to LinkedIn Learning
+#### Click the image to go to LinkedIn Learning
