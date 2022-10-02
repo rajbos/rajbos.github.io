@@ -23,6 +23,7 @@ You can download the slides [here](https://devopsjournal.io/slides/20220530%20Co
 [![Opening slide of the presentation](/images/2022/20220530/20220530_Opening.png)](https://devopsjournal.io/slides/20220530%20Code%20Europe%20Protect%20your%20code%20with%20GitHub%20security%20features.pdf)
 
 ## GitHub Advanced Security
-Want to learn more about these GitHub Advanced Security features? Check out the LinkedIn Learning course I made for it:  
-[![Image of my GitHub Advanced Security course at LinkedIn Learning](/images/LinkedIn_Learning/GitHub_Advanced_Security_02_500x281.png)](https://www.linkedin.com/learning/github-advanced-security)
-##### Click the image to go to LinkedIn Learning
+Want to learn more about these GitHub Advanced Security features?  
+Check out the LinkedIn Learning course I made for it:  
+[![Image of my GitHub Advanced Security course at LinkedIn Learning](/images/LinkedIn_Learning/GitHub_Advanced_Security_02_900x505.png)](https://www.linkedin.com/learning/github-advanced-security)
+#### Click the image to go to LinkedIn Learning
