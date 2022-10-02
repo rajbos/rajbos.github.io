@@ -37,4 +37,4 @@ A: You can through a local install or from a Docker container, for example using
 Want to learn more about these GitHub Advanced Security features?  
 Check out the LinkedIn Learning course I made for it:  
 [![Image of my GitHub Advanced Security course at LinkedIn Learning](/images/LinkedIn_Learning/GitHub_Advanced_Security_02_900x505.png)](https://www.linkedin.com/learning/github-advanced-security)  
-#### Click the image to go to LinkedIn Learning
+##### Click the image to go to LinkedIn Learning
