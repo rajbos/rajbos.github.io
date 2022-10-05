@@ -56,7 +56,7 @@ Here are some of the conference I will be speaking at:
 |23-25 May 2022|Antwerp|How to use GitHub Actions with security in mind|Techorama BE|[link](https://techorama.be/speakers/speaker/rob-bos/)|
 |May 30th - June 2nd|Poland|3x Protect your code with GitHub security features|Code Europe|[link](https://www.codeeurope.pl/en/speakers/rob-bos)
 |8-10 June 2022|Virtual|I can hack your DevOps Pipeline|DevTalks Romania|[link](https://www.devtalks.ro/speakers/14-Rob+Bos/)|
-|10-12 October 2022|Utrecht, NL|Protect yourself against supply chain attacks through your pipeline|DevOps Days Utrecht|[link](https://techorama.nl/speakers/session/protect-yourself-against-supply-chain-attacks/)|
+|10-12 October 2022|Utrecht, NL|Protect yourself against supply chain attacks through your pipeline|Techorama Utrecht|[link](https://techorama.nl/speakers/session/protect-yourself-against-supply-chain-attacks/)|
 
 
 ## Recorded conferences 🎤 
