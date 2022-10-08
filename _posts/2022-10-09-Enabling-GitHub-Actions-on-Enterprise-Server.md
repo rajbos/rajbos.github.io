@@ -7,7 +7,7 @@ date: 2022-10-08
 When customers start using GitHub Enterprise with Actions and private runners, there are some common gotcha's you can run into. In this post I'm sharing the ones I have encountered so far. Even Dependabot comes along, since that runs on Actions as well for GitHub Enterprise Server.
 
 List of topics:
-* First of all: [Don't use self signed certificates on GitHub Enterprise](/2021/05/16/Dont-use-self-signed-certificates-on-GitHub-Enterprise)
+* First of all: [Don't use self signed certificates on GitHub Enterprise](/blog/2021/05/16/Dont-use-self-signed-certificates-on-GitHub-Enterprise)
 * The default actions in will download the binaries from github.com
 * Actions org will be cleaned up with each major/minor update
 * Mismatches in the settings UI (harder for admins)
