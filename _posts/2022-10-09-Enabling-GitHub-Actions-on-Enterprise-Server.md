@@ -14,6 +14,7 @@ List of topics:
 * Dependabot runners need to be created
 * Log storage is external to the server
 * GitHub Connect is mandatory
+* Think about GitHub Actions and using them securely
 
 ![Image with the logos of Dependabot and GitHub Actions](/images/2022/20221008/Dependabot-Actions.png)
 
@@ -31,7 +32,8 @@ There are 2 different idioms in the settings, and if you have admin rights (eith
 1. UI where any changes trigger a post back to the server and are stored (and in effect immediately)!
 
 For the second one, here is an example. There is a save button in here, so.... what do you thing will happen if you change the `All repositories` setting in the drop down?
-![Screenshot of the 'General actions permissions' on the organization level](/images/2022/20221009/20221009_Settings.png)  
+
+![Screenshot of the 'General actions permissions' on the organization level](/images/2022/20221008/20221008_Settings.png)  
 This setting posts back to the server immediately, so the change is stored and in effect immediately! There is a small page reload, but if you are not paying attention, you could miss it. Guess how I turned of GitHub Actions for all users in our Production Environment? I took a bit more then half an hour before users started calling us (my team maintains it), and a check on this page to learn that the setting was changed.... That was not the intention, because I didn't press the save button!
 
 # Dependabot runners need to be created
@@ -61,3 +63,8 @@ GitHub Actions on the SaaS version (github.com) has been created with running on
 
 # GitHub Connect is mandatory
 To be able to use GitHub Actions, you need to have GitHub Connect enabled. This is a feature that allows you to connect your GitHub Enterprise Server instance to GitHub.com. This is needed to be able to use the GitHub Marketplace. I'm not really sure why this is the case, because the runners will use their own internet connection to download the actions from github.com. The only reason I see would be the UI in the workflow editor, that allows you to search the public marketplace for actions. 
+
+# Think about GitHub Actions and using them securely
+I written about how to use GitHub Actions with a secure setup [here](/blog/2021/12/11/GitHub-Actions-Maturity-Levels) and you can view a recording of my conference session at Code Europe 2022 [here](/blog/2022/05/30/Code-Europe). 
+
+You really need to check the actions and vet them, since the security model is based on trust. Read more on the state of the GitHub Actions Marketplace [here](/blog/2022/09/18/Analysing-the-GitHub-marketplace).
