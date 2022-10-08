@@ -34,7 +34,7 @@ There are 2 different idioms in the settings, and if you have admin rights (eith
 For the second one, here is an example. There is a save button in here, so.... what do you thing will happen if you change the `All repositories` setting in the drop down?
 
 ![Screenshot of the 'General actions permissions' on the organization level](/images/2022/20221008/20221008_Settings.png)  
-This setting posts back to the server immediately, so the change is stored and in effect immediately! There is a small page reload, but if you are not paying attention, you could miss it. Guess how I turned of GitHub Actions for all users in our Production Environment? I took a bit more then half an hour before users started calling us (my team maintains it), and a check on this page to learn that the setting was changed.... That was not the intention, because I didn't press the save button!
+This setting posts back to the server immediately, so the change is stored and in effect immediately! There is a small page reload, but if you are not paying attention, you could miss it. Guess how I turned off GitHub Actions for all users in our Production Environment? I took a bit more then half an hour before users started calling us (my team maintains it), and a check on this page to learn that the setting was changed.... That was not the intention, because I didn't press the save button!
 
 # Dependabot runners need to be created
 When you want to enable Dependabot, and it's version updates, you need to do this at several levels: first enable it on the appliance. Then change the settings for the Organization level to allow it to be used. 
