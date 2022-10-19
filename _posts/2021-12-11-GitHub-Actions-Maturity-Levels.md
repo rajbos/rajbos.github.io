@@ -113,13 +113,13 @@ The nice thing is that you now can enforce that the users in your organization c
 You can now enter the actions you want to allow for the selected repositories in your organization (you can also do this on the repo level). If someone triggers a workflow that does not adhere to these limitations, it will give an error and **will not start**. No action repos will even be downloaded on a runner.
 
 You can go completely crazy in this list:
-|Setting|Description|
-|---|---|
+| Setting | Description |
+| --- | --- |
 |owner/*|All actions from this owner are allowed|
 |owner/action@*|The action in the repo 'action' from this owner are allowed for all versions and all branches|
 |owner/action@main|The main branch of this action is allowed|
 |owner/action@v2|All versions for v2 are allowed for this action of this owner|
-|owner/action@SHA|Only this version is allowed for this action of this owner| 
+|owner/action@SHA|Only this version is allowed for this action of this owner|  
 #### Note: 'owner' can be either an organization or a user account here.
 
 ## 6) github-fork-updater
