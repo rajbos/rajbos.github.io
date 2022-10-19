@@ -4,6 +4,12 @@ title: "How GitHub Actions versioning system works"
 date: 2022-10-19
 ---
 
+## TL;DR
+* The runner just downloads what you specified, by getting it from the tag
+* The runner does not do SemVer at all. It's up to the maintainer
+* Even GitHub does not update (or create) all SemVer versions, so @v3 is not necessarily the latest thing for v3!
+* The marketplace shows releases, not tags. If the maintainer does not actually release, it's not visible
+
 ## Semantic versioning
 
 When using GitHub Actions, the default is to use the Semantic Versions for which the actions where released. Semantic versioning (SemVer) is an industry wide standard of giving meaning to the version number. SemVer always follows this setup:  
