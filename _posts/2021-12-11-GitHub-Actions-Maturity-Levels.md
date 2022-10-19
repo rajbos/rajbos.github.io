@@ -121,6 +121,7 @@ You can go completely crazy in this list:
 |`owner/action@main`|The main branch of this action is allowed|
 |`owner/action@v2`|All versions for v2 are allowed for this action of this owner|
 |`owner/action@SHA`|Only this version is allowed for this action of this owner|  
+
 #### Note: 'owner' can be either an organization or a user account here.
 
 ## 6) github-fork-updater
