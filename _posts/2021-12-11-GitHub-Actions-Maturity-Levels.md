@@ -116,8 +116,8 @@ You can go completely crazy in this list:
 
 |Setting|Description|
 |---|---|
-|owner/\*|All actions from this owner are allowed|
-|owner/action@\*|The action in the repo 'action' from this owner are allowed for all versions and all branches|
+|owner/\\*|All actions from this owner are allowed|
+|owner/action@\\*|The action in the repo 'action' from this owner are allowed for all versions and all branches|
 |owner/action@main|The main branch of this action is allowed|
 |owner/action@v2|All versions for v2 are allowed for this action of this owner|
 |owner/action@SHA|Only this version is allowed for this action of this owner|  
