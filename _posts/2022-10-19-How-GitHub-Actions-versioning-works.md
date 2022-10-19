@@ -5,10 +5,15 @@ date: 2022-10-19
 ---
 
 ## Semantic versioning
-When using GitHub Actions, the default is to use the Semantic Versions for which the actions where released. Semantic versioning (SemVer) is an industry wide standard of giving meaning to the version number. SemVer always follows this setup:
+
+When using GitHub Actions, the default is to use the Semantic Versions for which the actions where released. Semantic versioning (SemVer) is an industry wide standard of giving meaning to the version number. SemVer always follows this setup:  
+
 ----------------
+
 MAJOR.MINOR.PATCH
+
 ----------------
+
 Given a version number you increment the:
 * MAJOR version when you make incompatible API changes
 * MINOR version when you add functionality in a backwards compatible manner
