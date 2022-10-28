@@ -95,6 +95,7 @@ $container = New-PesterContainer
 $config = New-PesterConfiguration
 $config.TestResult.OutputFormat = "NUnitXML"
 $config.TestResult.OutputPath = "Test-Pester.XML"
+$config.TestResult.Enabled = $True
 
 # configure the run with the new container from step 1
 $config.Run.Container = $container
