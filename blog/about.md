@@ -20,6 +20,13 @@ I do DevOps-y stuff, mostly with C# and GitHub/Azure/Azure DevOps.
 ## Work | Xpirit 🔨
 In my day job I work for Xpirit [link](https://www.xpirit.com/rob) as a DevOps consultant, helping our customers with whatever they need regarding DevOps. Whether it's training, finding out some obscure issues, setting up their CI/CD pipelines, or helping them on their way to implement more DevOps patterns and practices, I help them with it. Often I find myself helping teams with modern agile and DevOps practices in more of a coaching role.
 
+## Trainer: GitHub Accredited and Microsoft Certified
+I am a GitHub trainer for the GitHub (non-)developer and GitHub Actions trainings. I also give several Bootcamps including a GitHub Advanced Security Bootcamp.  
+
+Next to that I am a Microsoft Certified Trainer for AZ-900, AZ-204, and AZ-400 ( DevOps on Azure track). 
+
+I'm also a LinkedIn Learning Instructor. My first course is on [GitHub Advanced Security](/blog/2022/10/19/LinkedIn-Learning-GHAS).
+
 ## Twitter Bots 🤖
 * AzDo Marketplace updates: I created a Twitter bot named [AzDoMarketNews](https://twitter.com/azdomarketnews) to keep up to date on new and improved extensions on the Azure DevOps marketplace.
 * GitHub Action updates: I created a Twitter bot named [GitHubActions](https://twitter.com/GitHubActions) to keep up to date on new and improved actions on the GitHub marketplace.
