@@ -50,7 +50,7 @@ There are also some magic links that can be super useful.
 
 |Link setup|Description|Documentation|
 | --- | --- | --- |
-|{{repo}}/releases/latest|To permalink to the latest release as any time.|[Permalink to latest release](https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases)|
+|{{repo}}/releases/latest|Permalink to the latest release|[Permalink to latest release](https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases)|
 |github.com/userhandle.keys|Get the public part of a users SSH key|
 |github.com/userhandle.gpg|Get the public part of a users GPG key|
 |github.com/userhandle.png|Get the profile picture of a user|
