@@ -38,6 +38,7 @@ A list of all the magic files / links that I came across in GitHub.
 |release.yml|.github|Automatically generated release notes||[Automatically generated release notes](https://docs.github.com/en/enterprise-server@3.5/repositories/releasing-projects-on-github/automatically-generated-release-notes)|
 |workflow.yml|.github/workflows/|||[Workflows](https://docs.github.com/en/github/automating-your-workflow/automating-workflows-with-github-actions)|
 |action.yml/action.yaml|root||Configuration file for an actions repository||
+|dependency-review-config.yml|.github/|no|Dependency review configuration file|[Dependency review](https://github.com/actions/dependency-review-action#configuration-options)|
 |$GITHUB_STEP_SUMMARY|workflow||Job summary output in markdown|[Job summary](https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables)|
 
 Some of these are extra tricky, like for example the organization profile lives in a different directory and repo then the user profile readme: `.github` or in `.github-private` repo in the org and then in a folder named `profile`: README.md.  
