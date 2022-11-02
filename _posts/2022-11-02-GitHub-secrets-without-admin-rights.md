@@ -5,7 +5,7 @@ date: 2022-11-02
 ---
 
 
-I was giving a training today on [GitHub Actions]()https://github.com/features/actions and learned something new! One of the attendees asked about being able to read and write to Repository Secrets without having admin rights. I had never tried this before, but it turns out it is possible!
+I was giving a training today on [GitHub Actions](https://github.com/features/actions) and learned something new! One of the attendees asked about being able to read and write to Repository Secrets without having admin rights. I had never tried this before, but it turns out it is possible!
 
 ## The premise:
 To be able to create actions on the repository you need to have Admin access to the repository: otherwise the UI will not be visible, since it is under the repository settings. For organization level secrets you need Admin access to the _organization_ level.
