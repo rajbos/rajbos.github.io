@@ -12,6 +12,10 @@ To be able to create actions on the repository you need to have Admin access to 
 
 That also means that team members that do not have Admin access, cannot SEE the repository secrets in the UI. They always had to rely on the examples in other workflow files to see what type of secrets were available. Today I learned that any user with **write** access to the repository can also create, update, and delete a secret. Even if they cannot see it in the UI, they can use the API to manage the secrets. It would be great if GitHub updates the UI to make these kinds of information available to all users that need it (write and maintain). Something similar happens with available GitHub Self-hosted Runners.
 
+![Photo of a smart phone with the thinking emoji displayed on it](/images/2022/20221102/markus-winkler-wpOa2i3MUrY-unsplash.jpg) 
+##### Photo by <a href="https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Winkler</a> on <a href="https://unsplash.com/s/photos/think?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
 ## The solution:
 If you have **write** access to the repository, you can use the API to create, update, and delete secrets. You can use the [GitHub CLI](https://cli.github.com/) to do this, or you can use the [GitHub REST API](https://docs.github.com/en/rest/actions/secrets#list-repository-secrets). 
 
@@ -35,7 +39,7 @@ For environment secrets there is no native call in the CLI, but you can use the 
     gh api repos/<OWNER>/<REPO>/environments/<ENVIRONMENT>/secrets
 ```
 
-Output of the CLI calls:
+Output of the CLI calls:  
 ![Screenshot of the output of the CLI calls](/images/2022/20221102/20221102_Secret_Listing.png)  
 
 From then you get options to set (create), delete or update the value of the secret. Retrieving the value of the secret is not possible, since there are no API calls for that, which makes sense since they are _secrets_.
@@ -66,7 +70,7 @@ For creating environments in your own user space, you have Admin access so you c
  gh api -X PUT /repos/<OWNER>/<REPO>/environments/NEW_ENVIRONMENT
 ```
 
-Results:
+Results:  
 ![Screenshot of the output of 'gh api -X PUT' call to create the environment](/images/2022/20221102/20221102_CreateEnvironment.png)  
 
 If you are invited as a Collaborator to another user's repo, you cannot create environments with the API. Trying to make the call you can get two results:
