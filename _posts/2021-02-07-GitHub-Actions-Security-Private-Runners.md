@@ -28,7 +28,7 @@ If you add the runner at the enterprise level, it will be available to all repos
 Installation consists of executing these steps:
 1. Download the latest zipped version of the runner at [https://github.com/actions/runner/releases](https://github.com/actions/runner/releases)
 1. Unzip it
-1. Run the config.cmd script with the url of the level to add the runner and a specific token (note you can also get this token trough the [GitHub API]()). The token will be valid for 1 hour
+1. Run the config.cmd script with the url of the level to add the runner and a specific token (note you can also get this token trough the GitHub API). The token will be valid for 1 hour
 1. Start the runner
 
 The runner will run with the privileges you provided during installation and will start a long polling outgoing connection over HTTPS to GitHub. It's an outgoing connection for safety reasons (e.g. corporate firewalls) and goes out over HTTPS to make it as secure as possible. The runner will periodically ask GitHub (I think every minute) if there is work to do, and if not, back off for another minute.
@@ -50,8 +50,10 @@ What happens if the action breaks the runner sandbox? Could it elevate itself to
 
 Best practice: give the runner the absolute least amount of access it needs to the machine it runs on.
 
-# Do not use a runner for more than one repository
-This best practice comes from the same practice as before and mostly comes from the methods used in supply chain attacks like for example the recent [Solorigate](https://xpir.it/Solorigate) attack. Both the action that is being executed and the third party dependencies it uses (NPM or NuGet packages or all the layers in the Docker image it uses) can store things on the runner machine. Even the runner itself could store these things, although a compromise of the runner is less likely, it could still happen (we're all humans after all).
+# Do not use a persistent runner for more than one repository
+This best practice comes from the same practice as before and mostly comes from the methods used in supply chain attacks like for example the recent [Solorigate](https://xpir.it/Solorigate) attack. Both the action that is being executed and the third party dependencies it uses (NPM or NuGet packages or all the layers in the Docker image it uses) can store things on the runner machine. Even the runner itself could store these things, although a compromise of the runner is less likely, it could still happen (we're all humans after all). Context here matters: this is not so relevant for what we call an ephemeral runner: a runner that only exists for the duration of one job (not workflow!). Having data persisted on an ephemeral runner is not possible, since the runner will be deleted afterwards.
+
+> This topic is of course super important for persistent runners: think of a Virtual Machine that is constantly running. 
 
 What if a first run downloads a compromised package and stores that in your local package cache? A second run that needs that package, finds it in the package cache and uses that version instead of retrieving the correct one? As in the [Solorigate](https://xpir.it/Solorigate) attack, only 1 assembly was overwritten as a starting point of the compromise.
 
