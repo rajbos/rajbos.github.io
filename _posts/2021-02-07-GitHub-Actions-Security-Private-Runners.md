@@ -35,8 +35,8 @@ The runner will run with the privileges you provided during installation and wil
 
 # Best practices in this post:
 * Limit the access of your private runner
-* Do not use a runner for more than one repository
-* Never use a private runner for you public repositories
+* Do not use a runner for more than one repository (on an persistent runner)
+* Never use a private runner for your public repositories
 
 If you want to learn more about hardening your runner environments, you can read the GitHub documentation [here](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions). 
 # Limit the access of your private runner
@@ -66,7 +66,7 @@ So as a best practice: if you really need a runner, create at least a new runner
 An even better option is to create a new runner for each run. For example use an [Action](https://github.com/machulav/ec2-github-runner) that creates a new runner just for that specific run, or host your runner on [AWS Fargate](https://dev.to/jimmydqv/github-self-hosted-runners-in-aws-part-1-fargate-39hi) or even setup auto-scaling [yourself](https://040code.github.io/2020/05/25/scaling-selfhosted-action-runners).
 ##### Note: the options above all use AWS for hosting. I haven't seen any examples for this setup on Azure yet. If you have an Azure Example, let me know: I will add it to the list above. 
 
-# Never use a private runner for you public repositories
+# Never use a private runner for your public repositories
 Also mentioned in the [guidance](https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions) from GitHub is that you should not use private runners for public repositories. Depending on your setup, your workflows will be triggered by new commits being pushed to the repository, or by an incoming pull request. 
 
 What if someone with ill-contempt forks your repository, adds code or a dependency that will compromise your setup (or even the workflow itself) and create a new Pull Request on your repository? The workflow will be triggered (hey, they can even add the trigger **for** you!) and the malicious setup will run on your machine with all the access the runner has. This is considered very dangerous for obvious reasons.
