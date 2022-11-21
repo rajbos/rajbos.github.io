@@ -54,10 +54,11 @@ There are also some magic links that can be super useful.
 |github.com/userhandle.keys|Get the public part of a users SSH key||
 |github.com/userhandle.gpg|Get the public part of a users GPG key||
 |github.com/userhandle.png|Get the profile picture of a user||
-|avatars.githubusercontent.com/rajbos?s=32|Easy method to show user profile pictures anywhere. The `s` parameter is the size. Example output: ![Rob's avatar, which is a face only photo of his dog: Flynn](https://avatars.githubusercontent.com/rajbos?s=32)||
+|avatars.githubusercontent.com/userhandle?s=32|Easy method to show user profile pictures anywhere. The `s` parameter is the size. Example output: ![Rob's avatar, which is a face only photo of his dog: Flynn](https://avatars.githubusercontent.com/rajbos?s=32)||
 
 ## Atom feeds
 A lot of things have atom feeds enabled. The things in all caps need to be configured:  
+
 |Link setup|Description|
 |---|---|
 |github.com/OWNER/REPO/commits.atom|Get an RSS feed for the commits in that repo|
