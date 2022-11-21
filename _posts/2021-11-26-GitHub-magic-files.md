@@ -51,7 +51,21 @@ There are also some magic links that can be super useful.
 |Link setup|Description|Documentation|
 | --- | --- | --- |
 |{{repo}}/releases/latest|Permalink to the latest release|[Permalink to latest release](https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases)|
-|github.com/userhandle.keys|Get the public part of a users SSH key|
-|github.com/userhandle.gpg|Get the public part of a users GPG key|
-|github.com/userhandle.png|Get the profile picture of a user|
-|avatars.githubusercontent.com/rajbos?s=32|Easy method to show user profile pictures anywhere. The `s` parameter is the size. Example output: ![Rob's avatar, which is a face only photo of his dog: Flynn](https://avatars.githubusercontent.com/rajbos?s=32)
+|github.com/userhandle.keys|Get the public part of a users SSH key||
+|github.com/userhandle.gpg|Get the public part of a users GPG key||
+|github.com/userhandle.png|Get the profile picture of a user||
+|avatars.githubusercontent.com/rajbos?s=32|Easy method to show user profile pictures anywhere. The `s` parameter is the size. Example output: ![Rob's avatar, which is a face only photo of his dog: Flynn](https://avatars.githubusercontent.com/rajbos?s=32)||
+
+## Atom feeds
+A lot of things have atom feeds enabled. The things in all caps need to be configured:
+|Link setup|Description|
+|---|---|
+|github.com/OWNER/REPO/commits.atom|Get an RSS feed for the commits in that repo|
+|github.com/OWNER/REPO/commits/BRANCH.atom|Get an RSS feed for all the commits in that branch|
+|github.com/OWNER/REPO/wiki.atom| Feed for the wiki in that repo|
+|github.com/OWNER/REPO/discussions.atom|Get an RSS feed for the discussions in that repo|
+|github.com/OWNER/REPO/releases.atom|Get an RSS feed for the releases in that repo|
+|github.com/USER.atom|Get an RSS feed for the user's public activity|
+
+
+There should also be a feed for issues, but I continuously get HTTP:406 errors on github.com/OWNER/REPO/issues.atom.
