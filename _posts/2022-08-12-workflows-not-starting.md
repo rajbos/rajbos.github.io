@@ -88,5 +88,7 @@ I often run the workflow on at least my test branch, but then **only** when the 
 
 ## Targeting a wrong label
 If you target a runner that you do not have access to (check the runner group permissions) or a label for which no runner exists, your job will hang around until the timeout of 24 hours has passed. Then it will get a timeout error and the job will be cancelled. Double check the label you are using (this typo in the screenshot always gets me!) and fix it, or check the permissions on the runner group.  
-![Screenshot of the logs that indicate we are targeting the label 'ubununtu-latest', which does not exists](/images/2022/20220812/20220812_RunnerLabel.png)  
-##### Note that this will not help when you have specific use cases you want to test, like when someone creates a comment, a pull request. There are other ways to deal with that, but that is for another post.
+![Screenshot of the logs that indicate we are targeting the label 'ubununtu-latest', which does not exists](/images/2022/20220812/20220812_RunnerLabel.png) 
+
+# Final remark
+Note that this all will not help when you have specific use cases you want to test, like when someone creates a comment, a pull request. There are other ways to deal with that, but that is for another post.
