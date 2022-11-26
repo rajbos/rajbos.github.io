@@ -9,6 +9,8 @@ module.exports = async ({devtoToken, axios}) => {
 
   instance.get('/articles/me/unpublished')
   .then(async function (response) {
+    console.log("API Response");
+    console.log(response);
     await handleUnpublished(response.data);
   })
 
