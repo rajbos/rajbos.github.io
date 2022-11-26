@@ -4,7 +4,10 @@ module.exports = async ({devtoToken, axios}) => {
   const instance = axios.create({
     baseURL: 'https://dev.to/api',
     timeout: 10000,
-    headers: {'api-key': `${devtoToken}`},
+    headers: {
+                'api-key': `${devtoToken}`,
+                'accept': `application/vnd.forem.api-v1+json`
+             },
   });
 
   instance.get('/articles/me/unpublished')
