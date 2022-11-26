@@ -8,6 +8,7 @@ module.exports = async ({devtoToken, axios}) => {
                 'api-key': `${devtoToken}`,
                 'Accept': `application/vnd.forem.api-v1+json`
              },
+    responseEncoding: 'utf8'
   });
 
   instance.get('/articles/me/unpublished')
