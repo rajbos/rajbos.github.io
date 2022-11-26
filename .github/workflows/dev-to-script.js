@@ -6,7 +6,8 @@ module.exports = async ({devtoToken, axios}) => {
     timeout: 10000,
     headers: {
                 'api-key': `${devtoToken}`,
-                'Accept': `application/vnd.forem.api-v1+json`
+                'Accept': `application/vnd.forem.api-v1+json`,
+                'User-Agent': `rajbos`
              },
     responseEncoding: 'utf8'
   });
