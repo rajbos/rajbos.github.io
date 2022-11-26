@@ -15,6 +15,9 @@ module.exports = async ({devtoToken, axios}) => {
   .then(async function (response) {
     console.log("API Response:");
     console.log(response);
+    console.log('-------------------------------------------------------');
+    console.log(response.data);
+    console.log('-------------------------------------------------------');
     await handleUnpublished(response.data);
   })
 
