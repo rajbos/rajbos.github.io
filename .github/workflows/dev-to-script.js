@@ -6,13 +6,13 @@ module.exports = async ({devtoToken, axios}) => {
     timeout: 10000,
     headers: {
                 'api-key': `${devtoToken}`,
-                'accept': `application/vnd.forem.api-v1+json`
+                'Accept': `application/vnd.forem.api-v1+json`
              },
   });
 
   instance.get('/articles/me/unpublished')
   .then(async function (response) {
-    console.log("API Response");
+    console.log("API Response:");
     console.log(response);
     await handleUnpublished(response.data);
   })
