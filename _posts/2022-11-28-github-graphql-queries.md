@@ -20,31 +20,31 @@ gh auth login --scopes "project"
 Now we can start making the calls to the GraphQL API. Since this API with ProjectsV2 needs the new ID's, make all calls like this to get the new ID's:
 
 ``` powershell
-    # powershell:
-    $response = $(gh api graphql -H "X-Github-Next-Global-ID: 1" -F query=$query | ConvertFrom-Json)
+# powershell:
+$response = $(gh api graphql -H "X-Github-Next-Global-ID: 1" -F query=$query | ConvertFrom-Json)
 ```
 
 Now we can call the API with the current login to get the new ID for this login:
     
 ``` powershell
-    $query = "query { viewer { login, id } }"
-    $response = $(gh api graphql -H "X-Github-Next-Global-ID: 1" -F query=$query | ConvertFrom-Json)
+$query = "query { viewer { login, id } }"
+$response = $(gh api graphql -H "X-Github-Next-Global-ID: 1" -F query=$query | ConvertFrom-Json)
 ```
 
 Need to get the ID from an organization? Use this query:
 ``` powershell
-    $query="query { organization(login: ""$organizationName"") { id, name } }"
+$query="query { organization(login: ""$organizationName"") { id, name } }"
 ```
 
 ## Working with ProjectsV2
 Now we can start loading the existing projects for an organization:
 ``` powershell	
-    $query="query { organization(login: ""$organizationName"") { projectsV2(first: 100) { edges { node { id } } } } }"
+$query="query { organization(login: ""$organizationName"") { projectsV2(first: 100) { edges { node { id } } } } }"
 ```
 
 And we can create a new project:
 ``` powershell
-    $query="mutation (`$ownerId: ID!, `$title: String!) { createProjectV2(input: { ownerId: `$ownerId, title: `$title }) { projectV2 { id } } }"    
+$query="mutation (`$ownerId: ID!, `$title: String!) { createProjectV2(input: { ownerId: `$ownerId, title: `$title }) { projectV2 { id } } }"    
 ```
 
 If you want to see the full script, you can find it [here](https://github.com/rajbos/github-graphql-examples).
