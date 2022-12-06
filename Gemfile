@@ -1,4 +1,10 @@
 source "https://rubygems.org"
 
-gems:
-  - jekyll-archives
+gem "jekyll"
+gem "jekyll-archives"
+gem "jekyll-theme-cayman"
+gem "jemoji"
+gem "jekyll-feed"
+gem "jekyll-seo-tag"
+gem "jekyll-sitemap"
+gem "jekyll-paginate"
