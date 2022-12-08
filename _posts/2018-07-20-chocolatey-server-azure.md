@@ -8,9 +8,9 @@ Recently I wanted to demo an example of how you can rollout [Chocolatey](https:/
 
 Since that worked out an I now have a local document with the necessary steps to do so, I wanted to share that for later reuse.
 
-![chocolatey](/images/chocolatey.png)
+![chocolatey](/images/2018/20180720/chocolatey.png)
 
-Ofcourse, Microsoft just announced that they started working on a different artifact server in VSTS (called [Universal Package Management](https://blogs.msdn.microsoft.com/devops/2018/07/09/universal-packages-bring-large-generic-artifact-management-to-vsts/?WT.mc_id=AZ-MVP-5003719)), next to the already available NuGet / npm / Maven [package management](https://visualstudio.microsoft.com/team-services/package-management/?WT.mc_id=AZ-MVP-5003719).
+Of course, Microsoft just announced that they started working on a different artifact server in VSTS (called [Universal Package Management](https://blogs.msdn.microsoft.com/devops/2018/07/09/universal-packages-bring-large-generic-artifact-management-to-vsts/?WT.mc_id=AZ-MVP-5003719)), next to the already available NuGet / npm / Maven [package management](https://visualstudio.microsoft.com/team-services/package-management/?WT.mc_id=AZ-MVP-5003719).
 
 Since I needed something to show, I started researching how you can do this with your own Chocoserver. Unfortunately, the installation for Choco.Server on Windows consists of [multiple steps](https://chocolatey.org/docs/how-to-set-up-chocolatey-server#setup-normally) that can take up some time. That just doesn't feel right, so I wanted to see if I could wrap that inside of a PowerShell script being triggered from an [ARM template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authoring-templates?WT.mc_id=AZ-MVP-5003719) and Azure Automation DSC. I couldn't seem to find the time to really start on it, but fortunately enough, my colleague [Reinier van Maanen](http://rvanmaanen.github.io) needed a bit of a challenge and picked this up. You can find his ARM template [here](https://github.com/rvanmaanen/arm.chocolateyserver), together with the necessary PowerShell script.
 
@@ -33,7 +33,7 @@ To check it, you can navigate to [http://localhost/](http://localhost/).
 <!-- markdown-link-check-enable -->
 We are aware of the use of http, we need still to add that step to the script. We decided we could live with it for a small demo and blocking it from your own IP-address.
 
-![Chocopackagelisting](/images/2018_07_20_Choco_Server_packagelistexample.png)
+![Chocopackagelisting](/images/2018/20180720/2018_07_20_Choco_Server_packagelistexample.png)
 
 # Create package on different machine
 Install choco (elevated PowerShell) with this command:
