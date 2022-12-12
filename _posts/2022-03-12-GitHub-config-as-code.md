@@ -2,6 +2,7 @@
 layout: post
 title: "Configuration as Code for the GitHub platform"
 date: 2022-03-12
+tags: [Configuration as Code, CaC, GitHub, Platform, User configuration, Teams configuration]
 ---
 
 I am slowly diving into 'Configuration as code' for the GitHub Platform: all the things you want to automate with as few steps as possible, making big impact. Some of these things also fall under 'GitOps' in my opinion: if you store it into a repo and on changes you make, the automation will make it happen.

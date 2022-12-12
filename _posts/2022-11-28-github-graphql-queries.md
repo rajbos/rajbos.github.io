@@ -2,6 +2,7 @@
 layout: post
 title: "Examples for calling the GitHub GraphQL API (with ProjectsV2)"
 date: 2022-11-28
+tags: [GitHub, GraphQL, PowerShell, Graphql API, ProjectsV2, GitHub Projects] 
 ---
 
 Recently we had to call the GitHub GraphQL API for creating a new GitHub Project (with V2). Since this can only be done with the GraphQL API, we had to figure out how to do this. We found little bits and pieces of information, but no complete example. So we decided to write one ourselves. I hope this helps you as well.

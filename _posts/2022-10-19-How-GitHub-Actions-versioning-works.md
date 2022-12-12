@@ -2,6 +2,7 @@
 layout: post
 title: "How GitHub Actions versioning system works"
 date: 2022-10-19
+tags: [GitHub Actions, versioning, SemVer, GitHub, Actions]
 ---
 
 ## TL;DR

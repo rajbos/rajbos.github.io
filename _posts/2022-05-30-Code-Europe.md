@@ -2,6 +2,7 @@
 layout: post
 title: "Code Europe: Protect your code with GitHub's security features"
 date: 2022-05-30
+tags: [GitHub, Advanced Security, Code Europe, GitHub Advanced Security, GHAS, Supply Chain Attacks, Pipeline, CI/CD, DevSecOps]
 ---
 
 I have the pleasure of speaking at [Code Europe](https://www.codeeurope.pl/en/speakers/rob-bos) and these are the slides for it:

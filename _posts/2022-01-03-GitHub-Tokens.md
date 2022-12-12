@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub Tokens explained"
 date: 2022-01-03
+tags: [GitHub, Tokens, Personal Access Tokens, GITHUB_TOKEN, GitHub Apps, GitHub App Tokens]
 ---
 
 There is a lot of confusion of what GitHub tokens are and how you should use them for automating things inside of GitHub. There are three main types of tokens:

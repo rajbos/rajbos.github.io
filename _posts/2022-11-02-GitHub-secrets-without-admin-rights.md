@@ -2,6 +2,7 @@
 layout: post
 title: "Working with GitHub secrets without admin rights"
 date: 2022-11-02
+tags: [GitHub, GitHub Actions, GitHub Secrets, GitHub REST API, GitHub CLI]
 ---
 
 

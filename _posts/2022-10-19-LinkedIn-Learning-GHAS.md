@@ -2,6 +2,7 @@
 layout: post
 title: "LinkedIn Learning: GitHub Advanced Security"
 date: 2022-10-19
+tags: [GitHub, Advanced Security, LinkedIn Learning, Training, Course, GitHub Advanced Security, GHAS]
 ---
 
 My LinkedIn Learning course on GitHub Advanced Security (GHAS) has been released!

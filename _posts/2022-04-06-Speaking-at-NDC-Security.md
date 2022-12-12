@@ -2,6 +2,7 @@
 layout: post
 title: "Speaking at NDC Security (Oslo)"
 date: 2022-04-06
+tags: [GitHub, Advanced Security, NDC Security, GitHub Advanced Security, GHAS, Supply Chain Attacks, Pipeline, CI/CD, DevSecOps, NDC]
 ---
 
 I had the pleasure of giving 3 sessions at NDC Security in Oslo on April 6th and 7th. After 2,5 years of not being at a conference in real person, this was the first time speaking in front of an audience and sitting in on sessions in real life! Super weird to do in this time of turmoil in the world, but when you sign up to speak, the conference organizers are relying on you to show up of course!

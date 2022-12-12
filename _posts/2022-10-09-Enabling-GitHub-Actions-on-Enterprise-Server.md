@@ -2,6 +2,7 @@
 layout: post
 title: "Enabling GitHub Actions on Enterprise Server: Common gotcha's"
 date: 2022-10-08
+tags: [GitHub, Actions, Enterprise, Runner, Dependabot, GitHub Actions, GitHub Enterprise Server, GHES, Gotcha's]
 ---
 
 When customers start using GitHub Enterprise with Actions and private runners, there are some common gotcha's you can run into. In this post I'm sharing the ones I have encountered so far. Even Dependabot comes along, since that runs on Actions as well for GitHub Enterprise Server.

@@ -2,6 +2,7 @@
 layout: post
 title: "My GitHub Actions workflows are not starting"
 date: 2022-08-12
+tags: [GitHub, Actions, Workflows, CI/CD, DevOps, GitHub Actions, GitHub Workflows, GitHub CI/CD, GitHub DevOps, Workflows not starting]
 ---
 
 Some default cave-ats that new GitHub Actions users run into is that their workflows are not being triggered or that the UI to do so is missing. In the beginning everyone starts with the `on: push` trigger but there will come a time that you only want to execute some workflows on the default (main) branch. So you limit the `on: push` trigger to that branch:
