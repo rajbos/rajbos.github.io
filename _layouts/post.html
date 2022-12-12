@@ -15,7 +15,7 @@ layout: default
     {{ content }}
 
     <br />
-    {% if page.tags != [] %}
+    {% if page.tags.size > 0 %}
     <div id="tagList">      
           <span style="vertical-align:middle;font-weight: 600;">Tags:
           {% for tag in page.tags %}

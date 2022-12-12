@@ -3,16 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="{{ page.title }}">
 	<meta name="author" content="Rob Bos">
-    <meta name="keywords" content="
-	{% if page.tags != [] %}
-		{% for tag in page.tags %}
-			{{ tag }},
-		{% endfor %} 
-	{% else %}
-	  Azure DevOps, Azure, GitHub, GitHub Actions, Security, DevOps, C#, Development, CI, CD, CI/CD, Continuos Deployment, Continuos Integration, Continuos Improvement
-	{% endif %}
-	"
-    >
+    <meta name="keywords" content="{% if page.tags != [] %}{% for tag in page.tags %}{{ tag }},{% endfor %} {% else %}Azure DevOps, Azure, GitHub, GitHub Actions, Security, DevOps, C#, Development, CI, CD, CI/CD, Continuos Deployment, Continuos Integration, Continuous Improvement{% endif %}">
     <meta name="robots" content="INDEX, FOLLOW">
 
 	<link rel="shortcut icon" type="image/png" href="/images/rob_pixel.png">
