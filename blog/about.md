@@ -6,7 +6,7 @@ title: About
  .pnl{float:left;margin-right:7px;}
 </style>
 
-<h1>{{ page.title }}</h1>
+<h1>Xpirit</h1>
 
 <div class="panel panel-default well-sm">
 
@@ -79,11 +79,10 @@ Here are some of the recordings for conference sessions I have done:
 For visitor numbers I use [Plausible.io](https://plausible.io/) and those numbers are publicly available [here](https://plausible.io/devopsjournal.io). A few of the numbers can be found below: 
 
 <iframe plausible-embed src="https://plausible.io/share/devopsjournal.io?auth=K5_P8Ud8iwNKboadStl1N&embed=true&theme=light" scrolling="no" frameborder="0" loading="lazy" style="width: 1px; min-width: 100%; height: 1600px;"></iframe>
-<div style="font-size: 14px; padding-bottom: 14px;">Stats powered by <a target="_blank" style="color: #4F46E5; text-decoration: underline;" href="https://plausible.io">Plausible Analytics</a></div>
-<script async src="https://plausible.io/js/embed.host.js"></script>
-
+<div style="font-size: 14px; padding-bottom: 14px;">
+    Stats powered by <a target="_blank" style="color: #4F46E5; text-decoration: underline;" href="https://plausible.io">Plausible Analytics</a></div>
+    <script async src="https://plausible.io/js/embed.host.js"></script>
 </div>
-
 
 <div class="col-md-3" markdown="1">
 

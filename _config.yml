@@ -10,6 +10,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll/mastodon_webfinger
 tag_archive:
   type: liquid
   path: /tags/
@@ -28,3 +29,6 @@ jekyll-archives:
 tag_archive:
   type: liquid
   path: /tags/
+mastodon:
+  username: https://mstdn.social/@Rob_Bos
+  instance: rob@devopsjournal.io
