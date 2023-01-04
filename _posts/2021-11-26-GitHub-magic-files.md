@@ -36,6 +36,7 @@ A list of all the magic files / links that I came across in GitHub.
 |dependency-review-config.yml|.github|no|Dependency review configuration file|[Dependency review](https://github.com/actions/dependency-review-action#configuration-options)|
 |$GITHUB_STEP_SUMMARY|workflow||Job summary output in markdown|[Job summary](https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables)|
 
+Then there is a whole list of templates you can configure for issues / pull requests / discussion:  
 
 |Filename|Location|.github repo support|Description|Docs|
 |---|---|---|---|---|
