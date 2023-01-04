@@ -67,6 +67,7 @@ A lot of things have atom feeds enabled. The things in all caps need to be confi
 |github.com/OWNER/REPO/discussions.atom|Get an RSS feed for the discussions in that repo|
 |github.com/OWNER/REPO/releases.atom|Get an RSS feed for the releases in that repo|
 |github.com/USER.atom|Get an RSS feed for the user's public activity|
-
+|github.com/security-advisories|Get an RSS feed for ALL the security advisories|
 
 There should also be a feed for issues, but I continuously get HTTP:406 errors on github.com/OWNER/REPO/issues.atom.
+Other user specific feeds can be loaded by making an authenticated call to `https://api.github.com/feeds`.
