@@ -23,11 +23,6 @@ A list of all the magic files / links that I came across in GitHub.
 |FUNDING.yml|.github folder|yes|Display a Sponsor button in your repo and send people to platforms where they can fund your development|[Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository)|
 |SECURITY.md|root, .github or docs folder|yes|Instructions for how to report a security vulnerability|[Security policy](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository)|
 |SUPPORT.md|root, .github or docs folder|yes|Tell people how to get help for the code in the repo|[Docs](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-support-resources-to-your-project)|
-|FORM-NAME.yml|.github/ISSUE_TEMPLATE/||Issue templates with forms (in Beta for github.com, not available for GHES)|[Templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)|
-|config.yml|.github/ISSUE_TEMPLATE/||Issue templates configuration settings|[Template chooser](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template-chooser)|
-|issue_template.md|.github/ISSUE_TEMPLATE/|yes|Issue template|[Template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template)|
-|Url query|In the url link||Create an issue with certain fields filled in with values|[Create issue with url query](https://docs.github.com/en/enterprise-server@3.4/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-url-query)|
-|pull_request_template.md|root, /docs, /.github or in the PULL_REQUEST_TEMPLATE directory|yes|Create the default body for a Pull Request|[Using a PR template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository)|
 |workflow.yml|workflow-templates|only available in .github repo|Store starter workflows for your organizations|[Starter workflow templates](https://docs.github.com/en/enterprise-cloud@latest/actions/using-workflows/creating-starter-workflows-for-your-organization)|
 |dependabot.yml|.github/||Dependabot configuration file|[Dependabot configuration](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates#open-pull-requests-limit)|
 |codeql-config.yml|.github/codeql/codeql-config.yml (convention, not required)|sort of|CodeQL configuration file. Can also be stored in an external repository (hence .github repo works). If using external repo, referencing can by done by using `owner/repository/filename@branch` |[CodeQL config](https://docs.github.com/en/code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/configuring-codeql-runner-in-your-ci-system#using-a-custom-configuration-file)|
@@ -40,6 +35,16 @@ A list of all the magic files / links that I came across in GitHub.
 |action.yml/action.yaml|root||Configuration file for an actions repository||
 |dependency-review-config.yml|.github|no|Dependency review configuration file|[Dependency review](https://github.com/actions/dependency-review-action#configuration-options)|
 |$GITHUB_STEP_SUMMARY|workflow||Job summary output in markdown|[Job summary](https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables)|
+
+
+|Filename|Location|.github repo support|Description|Docs|
+|---|---|---|---|---|
+|FORM-NAME.yml|.github/ISSUE_TEMPLATE/||Issue templates with forms (in Beta for github.com, not available for GHES)|[Templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)|
+|config.yml|.github/ISSUE_TEMPLATE/||Issue templates configuration settings|[Template chooser](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template-chooser)|
+|issue_template.md|.github/ISSUE_TEMPLATE/|yes|Issue template|[Template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#configuring-the-template)|
+|Url query|In the url link||Create an issue with certain fields filled in with values|[Create issue with url query](https://docs.github.com/en/enterprise-server@3.4/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-url-query)|
+|pull_request_template.md|root, /docs, /.github or in the PULL_REQUEST_TEMPLATE directory|yes|Create the default body for a Pull Request|[Using a PR template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository)|
+|Discussion category templates|/.github/DISCUSSION_CATEGORY_TEMPLATES|?|Create discussion category templates|[Create discussion category forms](https://docs.github.com/en/discussions/managing-discussions-for-your-community/creating-discussion-category-forms)|
 
 Some of these are extra tricky, like for example the organization profile lives in a different directory and repo then the user profile readme: `.github` or in `.github-private` repo in the org and then in a folder named `profile`: README.md.  
 
