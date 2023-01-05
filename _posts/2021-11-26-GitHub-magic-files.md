@@ -2,6 +2,7 @@
 layout: post
 title: "GitHubs magic files"
 date: 2021-11-26
+tags: [GitHub, magic, files, configuration, pull request templates, issue forms templates, dependabot configuration]
 ---
 
 I keep coming across files in GitHub that have some mystic magic feeling to them. There's always a small incantation to come with them: the have to have the right name, the right extension *and* have to be stored in the right directory. I wanted to have an overview of all these spells for myself, so here we are 😉.

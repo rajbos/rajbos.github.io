@@ -2,7 +2,7 @@
 layout: post
 title: "My GitHub Actions workflows are not starting"
 date: 2022-08-12
-tags: [GitHub, Actions, Workflows, CI/CD, DevOps, GitHub Actions, GitHub Workflows, GitHub CI/CD, GitHub DevOps, Workflows not starting]
+tags: [GitHub, Actions, Workflows, CI/CD, DevOps, GitHub Actions, GitHub Workflows, GitHub CI/CD, GitHub DevOps, Workflows not starting, actions not starting]
 ---
 
 Some default cave-ats that new GitHub Actions users run into is that their workflows are not being triggered or that the UI to do so is missing. In the beginning everyone starts with the `on: push` trigger but there will come a time that you only want to execute some workflows on the default (main) branch. So you limit the `on: push` trigger to that branch:
@@ -21,6 +21,10 @@ What happens next? See in the steps below. You can start at the top (scheduled r
 ![Photo of a street crossing, taken from above so it is upside down](/images/2022/20220812/sora-sagano-MKE7NKsaBZM-unsplash.jpg)
 ##### Photo by <a href="https://unsplash.com/@sorasagano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sora Sagano</a> on <a href="https://unsplash.com/s/photos/up-side-down?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
+## First things first: file location
+I have ran into this myself and looked for 15 minutes before I saw what was wrong: check the location of your workflow file! When you are creating the first workflow in a repo, you might learn you have configured the wrong directory because the UI does not show the workflow file if it is in the wrong folder. That can be a hint 😉.
+
+It needs to be stored in the following folder: `/.github/workflows/`. And that folder is `workflows` (plural) and **not** `workflow` (singular). 
 
 ## Scheduled runs not starting
 When you add your first schedule for a daily run, you might be surprised that it does not start at the schedule you have set. You might scratch you head and wait for a couple of days, and nothing will happen.
