@@ -2,6 +2,7 @@
 layout: post
 title: "Don't use self signed certificates on GitHub Enterprise"
 date: 2021-05-16
+tags: [GitHub, GitHub Enterprise, self signed, certificates, Security]
 ---
 
 Often you come across an organization that has a policy to use self signed certificates on internal services: as long as you control the workstations used to connect to them, that is a solution that might work. Sometime you still run into issues from them and they usually have a workaround available. Maybe IT-services likes to be in control who can create and hand out certificates that way. In a real DevOps environment I'd want the team to have control over them, and even automate their deployment and refresh them automatically in a regular interval.

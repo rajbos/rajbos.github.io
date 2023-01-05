@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub Actions & Security: Best practices - Forking Action repositories"
 date: 2021-02-06
+tags: [GitHub, GitHub Actions, Security, Best Practices, Forking, Actions]
 ---
 
 I've been diving into the security aspects of using [GitHub Actions](https://github.com/features/actions) and wanted to share some best practices in one place. If you want to have an overview how and why you need this, you check checkout a session I have on this topic from a user group recording [here](/blog/2021/05/28/Solidify-show-Using-GitHub-Actions-Securely).

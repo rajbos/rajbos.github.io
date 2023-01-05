@@ -2,12 +2,13 @@
 layout: post
 title: "Azure DevOps: enable project functionality"
 date: 2021-05-31
+tags: [Azure DevOps, REST, REST API, project]
 ---
 
 Sometimes you spot interesting things online that you *have* to figure out 😎.  
 This time it was a tweet from Martin Ehrnst:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/AzureDevOps?ref_src=twsrc%5Etfw">@AzureDevOps</a> i&#39;m using your API to create new projects. However, I would like to provision these without services like boards. I cannot find any way to to do this. Doesent the API support this?</p>&mdash; Martin Ehrnst ☁️ (@ehrnst) <a href="https://twitter.com/ehrnst/status/1395638309515313154?ref_src=twsrc%5Etfw">May 21, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/AzureDevOps?ref_src=twsrc%5Etfw">@AzureDevOps</a> i&#39;m using your API to create new projects. However, I would like to provision these without services like boards. I cannot find any way to to do this. Doesn't the API support this?</p>&mdash; Martin Ehrnst ☁️ (@ehrnst) <a href="https://twitter.com/ehrnst/status/1395638309515313154?ref_src=twsrc%5Etfw">May 21, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 In Azure DevOps you can enable or disable features on a per-project basis:  
 

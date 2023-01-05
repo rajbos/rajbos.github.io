@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub Actions & Security: Best practices - Private Runners"
 date: 2021-02-07
+tags: [GitHub, GitHub Actions, Security, Securely, Best Practices, Private Runners]	
 ---
 
 In this post I want to look into Private Runners for your GitHub Workflows and show you some best practices for them.

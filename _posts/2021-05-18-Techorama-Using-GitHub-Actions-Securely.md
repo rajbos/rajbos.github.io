@@ -2,6 +2,7 @@
 layout: post
 title: "Techorama: Using GitHub Actions Securely"
 date: 2021-05-18
+tags: [GitHub, GitHub Actions, Security, Securely, Techorama, Techorama 2021, Techorama Session]
 ---
 
 Today I got to deliver my [session](https://techorama.nl/speakers/session/how-to-secure-your-github-actions/) "Using GitHub Actions Securely" at Techorama, my favorite conference. I could feel the pressure at the start of the session: this is Techorama, so you need to deliver this one top notch!

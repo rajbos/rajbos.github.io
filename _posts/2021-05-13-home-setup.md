@@ -2,6 +2,7 @@
 layout: post
 title: "My working / presenting from home setup"
 date: 2021-05-13
+tags: [Working from home, setup, remote, house, improvement, home]
 ---
 
 I got some questions recently on my office setup at home, so it might be helpful to share it here as well. I am lucky to have the means to invest in my setup, even with a supporting employer who helps out with some of the financials since we all need to work from home these days instead of being at the customer's office. Some time ago I figured we'd be working this way for a while (due to the COVID pandemic) and it seemed like a good idea to invest in the place I work the most in: my home office.

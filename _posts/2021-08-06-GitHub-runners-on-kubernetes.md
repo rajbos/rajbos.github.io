@@ -2,6 +2,7 @@
 layout: post
 title: "Hosting GitHub runners on Kubernetes"
 date: 2021-08-06
+tags: [GitHub, GitHub Actions, GitHub runner, runners, kubernetes, k8s, self-hosted, hosting]
 ---
 
 If you need to host your own [GitHub Actions](https://github.com/features/actions) runners that will execute your workflow, you have multiple options: you can go the traditional route and host them on your own VM's. You can even host multiple runners on the same VM, if you want to increase the density and reuse your CPU or RAM capacity on your VM. The first downside of this is that VM's are harder to scale and often a bit more costly to run then other options. Even more important reason not to use VM's because it is not a great option for having an environment that is clean for every run: GitHub Actions will leave several files on disk for both reuse (the actions downloaded and used for example, or the docker images you run on). Even the [checkout](https://github.com/actions/checkout) action will only cleanup the source code when it is executed, to make sure that the latest changes are checked out. You can include a cleanup action at the end, but often that is not added.

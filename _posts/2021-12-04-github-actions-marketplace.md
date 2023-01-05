@@ -2,6 +2,7 @@
 layout: post
 title: "dev.to entry: Using GitHub Actions to setup a Marketplace"
 date: 2021-12-04
+tags: [GitHub, GitHub Actions, dev.to, dev.to hackathon, Marketplace]
 ---
 
 This post is for sharing my dev.to entry for the [2021 GitHub Actions Hackathon](https://dev.to/devteam/join-us-for-the-2021-github-actions-hackathon-on-dev-4hn4). This entry shows how I have setup the workflow(s) for the [GitHub Actions Marketplace](https://devopsjournal.io/actions-marketplace/). I wanted to have a long form post detailing the steps and reasoning behind each the setup as an entry point for people building these automations.

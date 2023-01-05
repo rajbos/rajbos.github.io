@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub Actions & Security: Best practices - One workflow per runner"
 date: 2021-03-07
+tags: [GitHub, GitHub Actions, Security, Securely, Best Practices, runner, workflow]
 ---
 
 One important best practice for any Continuous Integration / Continuous Deployment setup is thinking about attack vectors for your setup. One of those vectors is the way you download your third party dependencies. Whether you are using Docker containers or libraries to build your code upon, these dependencies are external to your system. Usually these are pulled in either through a Container Registry (for Docker images) or through a Package Manager. You are downloading those dependencies at build or deploy time from an external source, usually from the internet. 

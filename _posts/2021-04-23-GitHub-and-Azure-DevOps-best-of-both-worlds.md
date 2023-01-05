@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub and Azure DevOps: best of both worlds"
 date: 2021-04-23
+tags: [GitHub, GitHub Actions, Azure DevOps]
 ---
 
 Ever since Microsoft acquired GitHub we have been looking at how this will play out in the long run with their Azure DevOps offering. We've seen a lot of people move from the Azure DevOps team to GitHub by looking at their LinkedIn or other social network updates, so it only makes sense to wonder about the future. We know that several **very large** teams inside Microsoft are using Azure DevOps, together with some really large customers, which means Azure DevOps will stick around for a long time and will still receive regular updates to its functionality. Azure DevOps has a very strong offering, from 'everything in one suite' to mix and match with third party tools, to a good hosting model (data sovereignty is a big thing for us Europeans) and excellent Azure support with even integrated billing on the marketplace. 

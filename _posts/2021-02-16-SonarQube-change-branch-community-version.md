@@ -2,6 +2,7 @@
 layout: post
 title: "SonarQube Community Edition - Change default branch name"
 date: 2021-02-12
+tags: [SonarQube, Community, Default branch]
 ---
 
 

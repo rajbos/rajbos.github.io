@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub Actions & Security: Best practices"
 date: 2021-02-06
+tags: [GitHub, GitHub Actions, Security, Securely, Best practices]
 ---
 
 I've been diving into the security aspects of using [GitHub Actions](https://github.com/features/actions) and wanted to share some best practices in one place. If you like to get an overview through a presentation setting instead of a blog, you can also find one of my conference sessions on it [here](/blog/2021/05/28/Solidify-show-Using-GitHub-Actions-Securely). 

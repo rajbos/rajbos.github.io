@@ -2,6 +2,7 @@
 layout: post
 title: "Create a GitHub App from a manifest"
 date: 2021-12-27
+tags: [GitHub, GitHub App, Manifest]
 ---
 
 At my customer we have the need to create a lot of GitHub Apps. In this specific case we use [GitHub Apps](https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app) as an integration point between GitHub and Jenkins: the code is moving to GitHub, and we still want to trigger our existing Jenkins jobs on code changes. We have over a 100 teams in Jenkins, all with their own pipelines. We have a security requirement that teams that connect to their code in a Jenkins pipeline only can see their own code, and not the repos from other teams. That means that each team has to have its own GitHub credential set up for them.

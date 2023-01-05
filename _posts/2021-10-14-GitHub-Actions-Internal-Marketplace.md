@@ -2,6 +2,7 @@
 layout: post
 title: "Setup an internal GitHub Actions Marketplace"
 date: 2021-10-14
+tags: [GitHub, GitHub Actions, Marketplace, Governance, Internal, Security]
 ---
 
 One of the best practices of using GitHub Actions is to [fork all actions](/blog/2021/02/06/GitHub-Actions-Forking-Repositories) that you want to use to your internal actions organization. If often use `organizationname-actions` for that, just like I am doing for my own personal setup here: [rajbos-actions](https://github.com/rajbos-actions). 

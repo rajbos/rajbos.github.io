@@ -2,6 +2,7 @@
 layout: post
 title: "Solidify: Using GitHub Actions Securely"
 date: 2021-05-28
+tags: [GitHub, GitHub Actions, Security, Securely, Solidify, Solidify show]
 ---
 
 Today I got to deliver my session "Using GitHub Actions Securely" at the Solidify show, hosted by our friends at [Solidify](https://solidify.dev). A nice virtual community session during lunch in my time zone (CEST) with people joining in, even from Kuala Lumpur!

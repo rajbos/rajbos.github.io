@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub Actions: Convert from PowerShell to Typescript"
 date: 2021-09-12
+tags: [GitHub, GitHub Actions, PowerShell, Typescript, Convert, Conversion]
 ---
 
 I am an avid PowerShell user and have been using it for a while now. Together with C# it is my main development experience these days. That is why I created my first GitHub Actions in PowerShell. Using PowerShell in you actions is possible by running the scripts in a container with PowerShell installed. 

@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub Actions Create: Dockerfile symlinks error"
 date: 2021-04-09
+tags: [GitHub, GitHub Actions, Docker, symlinks]
 ---
 
 I was building a new [GitHub Action](https://docs.github.com/en/actions/creating-actions/about-actions) today with a Dockerfile and got a strange error... `unable to prepare context: path "/action" not found.

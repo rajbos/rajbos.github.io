@@ -2,6 +2,7 @@
 layout: post
 title: "Bash cheat-sheet for PowerShell devs"
 date: 2021-04-11
+tags: [PowerShell, Bash, cheat, sheet, developers]
 ---
 
 Coming from years of Windows dev experience to using a Bash shell took a while to know some of the differences between the two. Since I often still run into these things, I thought it would help me and perhaps other people as well if I wrote some of it down. I suspect this will be a work in progress, so this page will receive some updates over time 😁.
