@@ -10,7 +10,7 @@ I was testing with our Azure Function and had set the cron expression on the tim
 
 ## Missing logs ??
 I added a red line were I noticed some of the logs missing.
-![](/images/20190113_01_Every_2_hours.png)
+![](/images/2019/20190113/20190113_01_Every_2_hours.png)
 
 At first, I thought that the trigger wasn't firing, or maybe something was wrong with my cron expression. I tested several other expressions and redeployed the function, but to no avail. 
 

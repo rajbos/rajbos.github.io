@@ -21,11 +21,11 @@ Unfortunately, you cannot run the change commands in witadmin against VSTS, only
 
 Making changes to the process template isn't available (yet?), although there is a strange method available named 'UpdateWorkItemTypeDefinitionAsync' in the 'WorkItemTrackingClient'. The only info I can find about this is [here](https://en.wikipedia.org/wiki/Wikipedia:Link_rot), which seems to indicate that you can only update (maybe add) a specific Work Item Type.   Since I also needed to update the tree structure in the ProcessConfiguration.xml file, I still need to export the process, make the necessary changes in the xml files, zip it back up and upload the file back into VSTS.
 
-![VSTS screenshot](/images/20180226_01.png)
+![VSTS screenshot](/images/2018/20180223/20180226_01.png)
 
 ## Updating work items to the new type
 After doing so, the request was to convert **all** the old Epics to the new Features. Off course, you can do this by using a query on the Epic work item type and using the UI to change them to Features, but this would take a lot of manual actions to do.
 
-Luckily  you can do this with the [TeamFoundationServer.Client](https://www.nuget.org/packages/Microsoft.TeamFoundationServer.Client/) NuGet package! When you start looking into this, I can highly recommend using Microsofts GitHub repo containing a lot of samples [here](https://github.com/Microsoft/vsts-dotnet-samples).  
+Luckily  you can do this with the [TeamFoundationServer.Client](https://www.nuget.org/packages/Microsoft.TeamFoundationServer.Client/) NuGet package! When you start looking into this, I can highly recommend using Microsoft's GitHub repo containing a lot of samples [here](https://github.com/Microsoft/vsts-dotnet-samples).  
 
-It took me some figuring out to get a good workflow in an application, so I have made the tools source available on my [github account](https://github.com/rajbos/VSTSClient).      
+It took me some figuring out to get a good workflow in an application, so I have made the tools source available on my [GitHub account](https://github.com/rajbos/VSTSClient).      
