@@ -11,7 +11,7 @@ I ran into some issues with the ARM template at first and then tried to use the 
 ## TL;DR
 I didn't manage to get the SonarQube VSTS Tasks working with the self-signed certificate. I think it's probably possible, but you'll be much easier off 
 
-![SonarQube logo](/images/2018_08_12_SonarQube.png)
+![SonarQube logo](/images/2018/20180812/2018_08_12_SonarQube.png)
 
 # ARM template issues
 At my first go with it, it took some time to figure out that the reason we couldn't connect to it came from the way the self-signed certificate was created: the template didn't create the certificate with a [fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name). A couple of years ago that would've worked, but with the tighter security rules in browsers that doesn't work anymore. Luckily I changed that with a small adjustment in the script and a [pull request](https://github.com/Azure/azure-quickstart-templates/pull/4692) later that problem has been fixed.
@@ -26,12 +26,12 @@ For this step you'll need to RDP into the server and install the JDK by hand.
 
 After that you'll find out that the template provisions an IIS installation to host the SSL certificate and then be the proxy for the SonarQube server. 
 
-![SonarQube project page](/images/2018_08_12_SonarQube_Project_page.png)
+![SonarQube project page](/images/2018/20180812/2018_08_12_SonarQube_Project_page.png)
 
 # Using the SonarQube server in VSTS / TFS
 When you have the server up and running, you'll want to use it in VSTS. If you start adding the necessary steps to your build (find out more about it [here](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Extension+for+VSTS-TFS), you'll find out that the builds will fail with some obscure messages connecting to the SonarQube server. If you are using a [private agent](https://docs.microsoft.com/en-us/vsts/pipelines/agents/agents?view=vsts#install?WT.mc_id=DOP-MVP-5003719), you can log into the server and try to remediate these issues.
 
-![SonarQube Tasks](/images/2018_08_12_SonarQube_VSTS.png)
+![SonarQube Tasks](/images/2018/20180812/2018_08_12_SonarQube_VSTS.png)
 
 First, you'll hit it in the "Prepare analysis on SonarQube" step. Thinking it runs on the agent server on Windows, you can trust the server's certificate in your local certificate store, using the [certificate snap-in](https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in?WT.mc_id=AZ-MVP-5003719). Double check the user the agent is running on or trust the certificate machine-wide.
 Don't forget to check your proxy configuration if you have one in between!
