@@ -62,6 +62,7 @@ There are also some magic links that can be super useful.
 |github.com/userhandle.gpg|Get the public part of a users GPG key||
 |github.com/userhandle.png|Get the profile picture of a user||
 |avatars.githubusercontent.com/userhandle?s=32|Easy method to show user profile pictures anywhere. The `s` parameter is the size. Example output: ![Rob's avatar, which is a face only photo of his dog: Flynn](https://avatars.githubusercontent.com/rajbos?s=32)||
+|github.com/owner/repo#readme|Scroll the repo link to open up with the README text on the page. Since GitHub shows the file content of the repo first, this can be helpful to push you users down the page into the README section. This works because the README is based on a header in the page, so this is just normal HTML behaviour. |
 
 ## Atom feeds
 A lot of things have atom feeds enabled. The things in all caps need to be configured:  
