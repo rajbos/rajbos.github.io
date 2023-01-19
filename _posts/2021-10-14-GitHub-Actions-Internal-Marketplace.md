@@ -25,7 +25,7 @@ The reasons for forking are [plentiful](/blog/2021/02/06/GitHub-Actions-Forking-
 - Have a central location for all the actions that can be used inside your production organization (combines nicely with the next item)
 - Block actions from the marketplace from being used in your production organization (see item above)
 
-Want to know more? Check out a previous user group session on it [here](/blog/2021/05/28/Solidify-show-Using-GitHub-Actions-Securely) or my upcoming session on [GitHub Universe 2021](https://www.githubuniverse.com/2021/session/689487/how-to-use-github-actions-with-security-in-mind)!
+Want to know more? Check out a previous user group session on it [here](/blog/2021/05/28/Solidify-show-Using-GitHub-Actions-Securely) or my 2021 session on [GitHub Universe 2021](/blog/2021/10/27/GitHub-Universe-Session)!
 
 After setting the internal marketplace up (see below) that will host the 'blessed' actions, we also need to prevent any other actions from being used in our production organization. You have control over this in the organization settings:
 
