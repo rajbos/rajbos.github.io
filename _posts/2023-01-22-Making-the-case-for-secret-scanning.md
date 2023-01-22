@@ -22,8 +22,8 @@ In my GitHub Actions marketplace scan, I have the repositories of 14k actions fo
 Overall results: Found [1353] secrets for the organization in [1110] repositories (out of 13954 repos scanned). Here is a top 15 of most found secrets to see what is being found:  
 
 ## Secret scanning alerts
-|Alert type| Count |
-|---| ---: |
+|Alert type|Count|
+|---|---:|
 | GitHub App Installation Access Token | 692 |
 | Azure Storage Account Access Key | 155 |
 | GitHub Personal Access Token | 120 |
