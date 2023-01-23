@@ -23,8 +23,8 @@ Overall results: Found [1353] secrets for the organization in [1110] repositorie
 
 ## Secret scanning alerts
 
-|Alert type|Count:|
-|---|---|
+|Alert type|Count|
+|---|---:|
 |GitHub App Installation Access Token | 692 |
 |Azure Storage Account Access Key | 155 |
 |GitHub Personal Access Token | 120 |
