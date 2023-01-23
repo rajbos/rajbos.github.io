@@ -22,23 +22,24 @@ In my GitHub Actions marketplace scan, I have the repositories of 14k actions fo
 Overall results: Found [1353] secrets for the organization in [1110] repositories (out of 13954 repos scanned). Here is a top 15 of most found secrets to see what is being found:  
 
 ## Secret scanning alerts
-|Alert type|Count|
+
+|Alert type|Count:|
 |---|---|
-| GitHub App Installation Access Token | 692 |
-| Azure Storage Account Access Key | 155 |
-| GitHub Personal Access Token | 120 |
-| Amazon AWS Secret Access Key | 50 |
-| Plivo Auth ID | 40 |
-| Amazon AWS Access Key ID | 40 |
-| Google API Key | 34 |
-| Slack API Token | 31 |
-| Slack Incoming Webhook URL | 27 |
-| Atlassian API Token | 22 |
-| Plivo Auth Token | 16 |
-| GitHub SSH Private Key | 12 |
-| Amazon AWS Session Token | 12 |
-| HashiCorp Vault Service Token | 11 |
-| PyPI API Token | 10 |
+|GitHub App Installation Access Token | 692 |
+|Azure Storage Account Access Key | 155 |
+|GitHub Personal Access Token | 120 |
+|Amazon AWS Secret Access Key | 50 |
+|Plivo Auth ID | 40 |
+|Amazon AWS Access Key ID | 40 |
+|Google API Key | 34 |
+|Slack API Token | 31 |
+|Slack Incoming Webhook URL | 27 |
+|Atlassian API Token | 22 |
+|Plivo Auth Token | 16 |
+|GitHub SSH Private Key | 12 |
+|Amazon AWS Session Token | 12 |
+|HashiCorp Vault Service Token | 11 |
+|PyPI API Token | 10 |
 
 With all the news recently about credential leaking and malicious actors using these secrets to do bad things, I think it is very important to enable secret scanning on your repositories! Having this data really shows the power of GitHub and its secret scanning partners.
 
