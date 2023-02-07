@@ -42,7 +42,7 @@ Now that we have the CodeQL bundle on the appliance, we can start using it. The 
 
 ![Screenshot showing the different sizes of the release assets, with the Linux tar file being 500Mb](/images/2023/20230207/codeql-action.png)
 
-The action follows the normal setup for GitHub Actions to check for the well known folder `${{runner.tool_cache}}`, which is stored in '/opt/hostedtoolcache/'. If it can find the bundle in that folder, it will use that. If it cannot find it, it will download the appropriate release asset.
+The action follows the normal setup for GitHub Actions to check for the well known folder `runner.tool_cache`, which is stored in '/opt/hostedtoolcache/'. If it can find the bundle in that folder, it will use that. If it cannot find it, it will download the appropriate release asset.
 
 That means that we can prep our runners by copying the CodeQL bundle to this location. This will prevent the bundle from being downloaded for each run. The folder is used by including the CodeQL bundle release version and date: `/opt/hostedtoolcache/CodeQL/2.12.1-20230120/x64/codeql/codeql`.
 
