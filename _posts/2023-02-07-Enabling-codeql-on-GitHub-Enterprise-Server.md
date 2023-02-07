@@ -38,11 +38,12 @@ codeql-action-sync-tool sync --force \
 Of course, the machine that is running this will need to have access to github.com, as well as the Enterprise Server. The `--source-token` is optional, but it will prevent you from hitting the rate limit on github.com. 
 
 # Running CodeQL efficiently
-Now that we have the CodeQL bundle on the appliance, we can start using it. The first thing you'll notice is that the CodeQL bundle is quite large. The Linux zip file alone is 500Mb, which is quite a lot for a GitHub Action. The release asset appropriate for the OS of the runner is downloaded for each run. If you are using ephemeral runners (which you should!), this means that the CodeQL bundle is downloaded for each and every run. Given that this workflow is configured by default to run on every push, pull request as well as on a schedule (one a week), it can take up quite the bandwidth and thus hammer your appliance. 
+Now that we have the CodeQL bundle on the appliance, we can start using it. The first thing you'll notice is that the CodeQL bundle is quite large. The Linux zip file alone is 500Mb, which is quite a lot for a GitHub Action. The release asset appropriate for the OS of the runner is downloaded for each run. If you are using ephemeral runners (which you should!), this means that the CodeQL bundle is downloaded for each and every run. Given that this workflow is configured by default to run on every push, pull request as well as on a schedule (once a week), it can take up quite the bandwidth and thus hammer your appliance. 
+
 ![Screenshot showing the different sizes of the release assets, with the Linux tar file being 500Mb](/images/2023/20230207/codeql-action.png)
 
-The action follows the normal setup for GitHub Actions to check for the well known folder '${{runner.tool_cache}}', which is stored in '/opt/hostedtoolcache/'. If it can find the bundle in that folder, it will use that. If it cannot find it, it will download the appropriate release asset.
+The action follows the normal setup for GitHub Actions to check for the well known folder `${{runner.tool_cache}}`, which is stored in '/opt/hostedtoolcache/'. If it can find the bundle in that folder, it will use that. If it cannot find it, it will download the appropriate release asset.
 
-That means that we can prep our runners by copying the CodeQL bundle to this location. This will prevent the bundle from being downloaded for each run. The folder is used by including the CodeQL bundle release version and date ` /opt/hostedtoolcache/CodeQL/2.12.1-20230120/x64/codeql/codeql`.
+That means that we can prep our runners by copying the CodeQL bundle to this location. This will prevent the bundle from being downloaded for each run. The folder is used by including the CodeQL bundle release version and date: `/opt/hostedtoolcache/CodeQL/2.12.1-20230120/x64/codeql/codeql`.
 
 Priming that location will significantly lower the download pressure on your appliance, and speed up the execution of the CodeQL workflow. 
