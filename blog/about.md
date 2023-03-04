@@ -85,11 +85,14 @@ Me:<br />
 
 ![Rob](/images/rob_photo.png)
 
-I work at Xpirit<br />
+I work at Xpirit <br />
 [![Xpirit Expert Blog](/images/xpirit_export_blog.png)](https://xpirit.com/team/rob-bos/)  
 
-Microsoft MVP since 2020<br />
+Microsoft MVP since 2020 <br />
 [![MVP](/images/MVP.svg)](https://mvp.microsoft.com/en-us/PublicProfile/5003719)
+
+LinkedIn Learning Instructor <br />
+[![LinkedIn Learning Logo](/images/LinkedIn_Learning/LinkedIn_Learning_Logo.png)](https://www.linkedin.com/learning/instructors/rob-bos)
 </div> <!-- closing the col 3 div -->
 </div> <!-- Closing the row div-->
 
