@@ -79,9 +79,8 @@ Here are some of the recordings for conference sessions I have done:
 <br />
 
 </div> <!-- closing the col 9 div -->
-<hr />
 
-<div class="col-md-3" markdown="1">
+<div class="col-md-3" markdown="1" style="font-weight: 600;">
 Me:<br />
 
 ![Rob](/images/rob_photo.png)
