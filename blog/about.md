@@ -6,8 +6,6 @@ title: About
  .pnl{float:left;margin-right:7px;}
 </style>
 
-<h1>Xpirit</h1>
-
 <div class="panel panel-default well-sm">
 
 <div class="row">
@@ -51,11 +49,13 @@ I help out with the Global DevOps Bootcamp ([link](https://www.globaldevopsbootc
 Here are some of the conference I will be speaking at:
 
 ### Conferences in 2023
+
 |Date|Location|Topic|Conference|Session link|
 |---|---|---|---|---|
 |May 15-19|Nashville, TN, United States|GitHub Actions beyond CI/CD, GitHub security Features, Supply chain attacks|Visual Studio Live!|[link](https://vslive.com/events/nashville-2023/)| 
 
 ### Conferences in 2022
+
 |Date|Location|Topic|Conference|Session link|
 |---|---|---|---|---|
 |4-7 April 2022|Oslo|Protect yourself against supply chain attacks through your pipeline|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
@@ -77,30 +77,39 @@ Here are some of the recordings for conference sessions I have done:
 |2022|NDC Security|Protect your code with GitHub security features|[YouTube](https://www.youtube.com/watch?v=dZYiveyMWXg)|
 
 <br />
+
+</div> <!-- closing the col 9 div -->
 <hr />
 
+<div class="col-md-3" markdown="1">
+Me:<br />
+
+![Rob](/images/rob_photo.png)
+
+I work at Xpirit<br />
+[![Xpirit Expert Blog](/images/xpirit_export_blog.png)](https://xpirit.com/team/rob-bos/)  
+
+Microsoft MVP since 2020<br />
+[![MVP](/images/MVP.svg)](https://mvp.microsoft.com/en-us/PublicProfile/5003719)
+</div> <!-- closing the col 3 div -->
+</div> <!-- Closing the row div-->
+
+<div class="row"> <!-- new row -->
+<div class="col-md-12" markdown="1">
 ## Website stats 📈
-For visitor numbers I use [Plausible.io](https://plausible.io/) and those numbers are publicly available [here](https://plausible.io/devopsjournal.io). A few of the numbers can be found below: 
+For visitor numbers I use [Plausible.io](https://plausible.io/) and those numbers are publicly available [here](https://plausible.io/devopsjournal.io).  
+A few of the numbers can be found below: 
 
 <iframe plausible-embed src="https://plausible.io/share/devopsjournal.io?auth=K5_P8Ud8iwNKboadStl1N&embed=true&theme=light" scrolling="no" frameborder="0" loading="lazy" style="width: 1px; min-width: 100%; height: 1600px;">
 </iframe>
 
-<div style="font-size: 14px; padding-bottom: 14px;">
-    Stats powered by <a target="_blank" style="color: #4F46E5; text-decoration: underline;" href="https://plausible.io">Plausible Analytics</a></div>
-    <script async src="https://plausible.io/js/embed.host.js"></script>
+<div style="font-size: 14px; padding-bottom: 14px;" markdown="0">
+    Stats powered by <a target="_blank" style="color: #4F46E5; text-decoration: underline;" href="https://plausible.io">Plausible Analytics</a>
 </div>
-<br />
-</div> <!-- closing the col 9 div -->
+<script async src="https://plausible.io/js/embed.host.js"></script>
 
-<div class="col-md-3" markdown="1">
-  ![Rob](/images/rob_photo.png)
 
-  ![Xpirit Expert Blog](/images/xpirit_export_blog.png)  
+</div> <!-- closing the col 12 div -->
 
-  Microsoft MVP since 2020 <br />
-  ([![MVP](/images/MVP.svg)](https://mvp.microsoft.com/en-us/PublicProfile/5003719))
-  
-</div>
-
-</div>
-</div>
+</div> <!-- Closing the row div-->
+</div> <!-- Closing the panel-->
