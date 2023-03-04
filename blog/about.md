@@ -97,8 +97,9 @@ For visitor numbers I use [Plausible.io](https://plausible.io/) and those number
 
   ![Xpirit Expert Blog](/images/xpirit_export_blog.png)  
 
-  Microsoft MVP ([Profile here](https://mvp.microsoft.com/en-us/PublicProfile/5003719))
-  ![MVP](/images/MVP.svg)
+  Microsoft MVP since 2020 <br />
+  ([![MVP](/images/MVP.svg)](https://mvp.microsoft.com/en-us/PublicProfile/5003719))
+  
 </div>
 
 </div>
