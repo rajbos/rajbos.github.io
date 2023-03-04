@@ -77,7 +77,6 @@ Here are some of the recordings for conference sessions I have done:
 |2022|NDC Security|Protect your code with GitHub security features|[YouTube](https://www.youtube.com/watch?v=dZYiveyMWXg)|
 
 <br />
-<br />
 <hr />
 
 ## Website stats 📈
@@ -90,16 +89,16 @@ For visitor numbers I use [Plausible.io](https://plausible.io/) and those number
     Stats powered by <a target="_blank" style="color: #4F46E5; text-decoration: underline;" href="https://plausible.io">Plausible Analytics</a></div>
     <script async src="https://plausible.io/js/embed.host.js"></script>
 </div>
+<br />
 </div> <!-- closing the col 9 div -->
 
 <div class="col-md-3" markdown="1">
+  ![Rob](/images/rob_photo.png)
 
-![Rob](/images/rob_photo.png)
+  ![Xpirit Expert Blog](/images/xpirit_export_blog.png)  
 
-![Xpirit Expert Blog](/images/xpirit_export_blog.png)  
-
-Microsoft MVP ([Profile here](https://mvp.microsoft.com/en-us/PublicProfile/5003719))
-![MVP](/images/MVP.svg)
+  Microsoft MVP ([Profile here](https://mvp.microsoft.com/en-us/PublicProfile/5003719))
+  ![MVP](/images/MVP.svg)
 </div>
 
 </div>
