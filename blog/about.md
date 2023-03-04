@@ -50,6 +50,12 @@ I help out with the Global DevOps Bootcamp ([link](https://www.globaldevopsbootc
 ## Upcoming conferences 🎤 
 Here are some of the conference I will be speaking at:
 
+### Conferences in 2023
+|Date|Location|Topic|Conference|Session link|
+|---|---|---|---|---|
+|May 15-19|Nashville, TN, United States|GitHub Actions beyond CI/CD, GitHub security Features, Supply chain attacks|Visual Studio Live!|[link](https://vslive.com/events/nashville-2023/)| 
+
+### Conferences in 2022
 |Date|Location|Topic|Conference|Session link|
 |---|---|---|---|---|
 |4-7 April 2022|Oslo|Protect yourself against supply chain attacks through your pipeline|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
