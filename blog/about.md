@@ -60,7 +60,6 @@ Here are some of the conference I will be speaking at:
 |8-10 June 2022|Virtual|I can hack your DevOps Pipeline|DevTalks Romania|[link](https://www.devtalks.ro/speakers/14-Rob+Bos/)|
 |10-12 October 2022|Utrecht, NL|Protect yourself against supply chain attacks through your pipeline|Techorama Utrecht|[link](https://techorama.nl/speakers/session/protect-yourself-against-supply-chain-attacks/)|
 
-
 ## Recorded conferences 🎤 
 Here are some of the recordings for conference sessions I have done:
 
@@ -78,11 +77,14 @@ Here are some of the recordings for conference sessions I have done:
 ## Website stats 📈
 For visitor numbers I use [Plausible.io](https://plausible.io/) and those numbers are publicly available [here](https://plausible.io/devopsjournal.io). A few of the numbers can be found below: 
 
-<iframe plausible-embed src="https://plausible.io/share/devopsjournal.io?auth=K5_P8Ud8iwNKboadStl1N&embed=true&theme=light" scrolling="no" frameborder="0" loading="lazy" style="width: 1px; min-width: 100%; height: 1600px;"></iframe>
+<iframe plausible-embed src="https://plausible.io/share/devopsjournal.io?auth=K5_P8Ud8iwNKboadStl1N&embed=true&theme=light" scrolling="no" frameborder="0" loading="lazy" style="width: 1px; min-width: 100%; height: 1600px;">
+</iframe>
+
 <div style="font-size: 14px; padding-bottom: 14px;">
     Stats powered by <a target="_blank" style="color: #4F46E5; text-decoration: underline;" href="https://plausible.io">Plausible Analytics</a></div>
     <script async src="https://plausible.io/js/embed.host.js"></script>
 </div>
+</div> <!-- closing the col 9 div -->
 
 <div class="col-md-3" markdown="1">
 
