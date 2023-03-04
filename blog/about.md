@@ -58,6 +58,7 @@ Here are some of the conference I will be speaking at:
 
 |Date|Location|Topic|Conference|Session link|
 |---|---|---|---|---|
+|21 September 2022|Online|Protect your code with GitHub security features|User group: DotNetSheff UK|[link](https://dotnetsheff.co.uk/)|
 |4-7 April 2022|Oslo|Protect yourself against supply chain attacks through your pipeline|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
 |4-7 April 2022|Oslo|Protect your code with GitHub security features|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
 |4-7 April 2022|Oslo|How to use GitHub Actions with security in mind|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
