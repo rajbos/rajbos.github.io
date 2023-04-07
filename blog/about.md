@@ -54,6 +54,7 @@ Here are some of the conference I will be speaking at:
 |---|---|---|---|---|
 |May 15-19|Nashville, TN, United States|GitHub Actions beyond CI/CD, GitHub security Features, Supply chain attacks|Visual Studio Live!|[link](https://vslive.com/events/nashville-2023/)| 
 |May 22-26|Aarhus, Denmark|Protect your code with GitHub security features, workshop "Secure and Compliant Cloud Delivery Embracing DevOps with GitHub"|GOTO Aarhus|[link](https://gotoaarhus.com/2023/speakers/2712/rob-bos)|
+|June 26-30|Nurnberg, DE|Protect your code with GitHub security features|Developer Week 2023|[link](https://www.developer-week.de/speaker/#/speaker/19526-rob-bos)|
 
 ### Conferences in 2022
 
