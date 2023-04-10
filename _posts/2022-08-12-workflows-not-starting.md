@@ -9,7 +9,7 @@ tags: [GitHub, Actions, Workflows, CI/CD, DevOps, GitHub Actions, GitHub Workflo
 Every once in a while there is an outage on e.g. GitHub Actions, and I see a lot of influx of users on this blogpost. So before you start reading this, check the [GitHub status page](https://www.githubstatus.com/) to see if there is an outage. If there is, you can wait until it is resolved. If there is not, you can continue reading this post to see if you can find the cause of your issue. Outages can always happen in any SaaS (Software as a Service) environment and keeping a large scale environment in a healthy state is not an easy task. So if you are experiencing an outage, be empathic with the engineers who are solving the issue 🤗. 
 
 ## Caveats, some triggers only work on the default branch
-Some default cave-ats that new GitHub Actions users run into is that their workflows are not being triggered or that the UI to do so is missing. In the beginning everyone starts with the `on: push` trigger but there will come a time that you only want to execute some workflows on the default (main) branch. So you limit the `on: push` trigger to that branch:
+Some default caveats that new GitHub Actions users run into is that their workflows are not being triggered or that the UI to do so is missing. In the beginning everyone starts with the `on: push` trigger but there will come a time that you only want to execute some workflows on the default (main) branch. So you limit the `on: push` trigger to that branch:
 
 ``` yaml
 on:
