@@ -10,6 +10,7 @@ tags: [GitHub Actions, versioning, SemVer, GitHub, Actions]
 * The runner does not do SemVer at all. It's up to the maintainer
 * Even GitHub does not update (or create) all SemVer versions, so @v3 is not necessarily the latest thing for v3!
 * The marketplace shows releases, not tags. If the maintainer does not actually release, it's not visible
+* It's more secure to use a SHA hash instead of a tag: read more info [here](/blog/2021/12/11/GitHub-Actions-Maturity-Levels) 
 
 ## Semantic versioning
 
@@ -67,6 +68,9 @@ Even better, the [GitHub Actions Marketplace](https://github.com/marketplace) ac
 
 Check the tag list versus the release list shown in the marketplace:
 ![Tag v3 is missing in the marketplace](/images/2022/20221019/20221019_actions_checkout.png)
+
+# Make your GitHub Actions usage more secure by using SHA hashes instead of tags
+I've been telling people that tags are not secure: the maintainer of the action can update the tag to point to a different commit. That means that your workflow could be using a commit you verified (that should always be step 1!), but all of a sudden the maintainer of the action updates the tag to point to a different commit. That means that your workflow is now using different code, which you did not verify! Read more on becoming more secure with your Actions usage in [this blogpost](/blog/2021/12/11/GitHub-Actions-Maturity-Levels).
 
 ## Summary
 We keep telling people to follow SemVer for a reason, but for GitHub Actions the honus is on the maintainer of the action to actually re-tag all matching versions of their action with the correct SemVer version. And apparently, even GitHub doesn't follow along with this.
