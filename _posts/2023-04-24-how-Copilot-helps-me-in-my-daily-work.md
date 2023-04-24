@@ -21,7 +21,7 @@ Normally I would start with searching for the things I need: some documentation 
 # Step 1: Create a new Azure Function
 I knew I needed an HttpTrigger and was about to search for it's declaration, when I remembered I was already testing out GitHub Copilot for Chat, which is in [technical preview](https://github.com/features/preview/copilot-x) so I cannot say to much about it. I asked Copilot to write the function definition for me and sure it enough: it proposed the right code, including logging of the incoming payload. Using that code I could publish the function and configure it as a webhook from a new GitHub App.
 
-![Screenshot of the Azure function log, showing the deployment_callback_url](/images/2023/20230421/20230424_FunctionLog.png) 
+![Screenshot of the Azure function log, showing the deployment_callback_url](/images/2023/20230421/20230424_FunctionLog.png)  
 The logs show that payload sends in the normal information you would expect, like the context for the trigger (in this case `workflow_dispatch` was triggered by my user account) and the callback URL that can be used to report back the status of the check. The callback has the following form: `https://api.github.com/repos/{OWNER}/{REPO}/actions/runs/{RUNID}/deployment_protection_rule`.
 
 That means it uses a well defined url, so I can just call that as the GitHub App for testing to see if it works. I've configured the Deployment Protection Rule with my new GitHub App based on an existing workflow (Copilot still helped here left and right), and tested it in a workflow to call the callback url.
