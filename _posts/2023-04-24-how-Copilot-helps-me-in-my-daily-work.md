@@ -15,7 +15,8 @@ To get started I needed a new GitHub App that can receive the webhook from GitHu
 ![AI generated code with the prompt](/images/2023/20230421/craiyon_generating_code.png)  
 ###### Image generated with [Craiyon.ai](https://www.craiyon.com/) using the following prompt: `sketched photo with some realism of an AI generating code`.  
 
-
+# Usual flow
+Normally I would start with searching for the things I need: some documentation for hosting an endpoint to receive the webhook payload, search for creating an app to handle the user login, etc. This can easily take days tinkering around to get things to where it is good enough for a POC. Instead, I used AI tools to help me, and had things up and running in a few hours.
 
 # Step 1: Create a new Azure Function
 I knew I needed an HttpTrigger and was about to search for it's declaration, when I remembered I was already testing out GitHub Copilot for Chat, which is in [technical preview](https://github.com/features/preview/copilot-x) so I cannot say to much about it. I asked Copilot to write the function definition for me and sure it enough: it proposed the right code, including logging of the incoming payload. Using that code I could publish the function and configure it as a webhook from a new GitHub App.
