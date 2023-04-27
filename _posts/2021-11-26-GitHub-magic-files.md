@@ -11,7 +11,7 @@ I keep coming across files in GitHub that have some mystic magic feeling to them
 ###### Photo by <a href="https://unsplash.com/@art_maltsev?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Artem Maltsev</a> on <a href="https://unsplash.com/s/photos/magic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 # Overview
-A list of all the magic files / links that I came across in GitHub.
+A list of all the magic files / links that I came across in GitHub. I also created a LinkedIn Learning Course for ~25 of these files, with more detail how to use them. You can find that course on [LinkedIn Learning](https://www.linkedin.com/learning/25-github-configuration-files-you-should-be-using).
 
 |Filename|Location|.github repo support|Description|Docs|
 |---|---|---|---|---|
@@ -28,7 +28,7 @@ A list of all the magic files / links that I came across in GitHub.
 |dependabot.yml|.github/||Dependabot configuration file|[Dependabot configuration](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates#open-pull-requests-limit)|
 |codeql-config.yml|.github/codeql/codeql-config.yml (convention, not required)|sort of|CodeQL configuration file. Can also be stored in an external repository (hence .github repo works). If using external repo, referencing can by done by using `owner/repository/filename@branch` |[CodeQL config](https://docs.github.com/en/code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/configuring-codeql-runner-in-your-ci-system#using-a-custom-configuration-file)|
 |secret_scanning.yml|.github/secret_scanning.yml||Secret scanning configuration file|[Secret scanning](https://docs.github.com/en/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories)|
-|README.md|root|yes, see below|Project readme, also used on marketplace if the repo is published to the marketplace|[About readme's](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)|
+|README.md|.github, root, or docs directory|yes, see below|Project readme, also used on marketplace if the repo is published to the marketplace|[About readme's](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)|
 |README.md|.github/username/username||Profile readme|[About readme's](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)|
 |README.md|organizations .github **repo** or .github-private **repo**: profile/README.md||Organization readme|[Organization readme](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/customizing-your-organizations-profile)|
 |release.yml|.github|Automatically generated release notes||[Automatically generated release notes](https://docs.github.com/en/enterprise-server@3.5/repositories/releasing-projects-on-github/automatically-generated-release-notes)|
