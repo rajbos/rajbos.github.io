@@ -5,7 +5,6 @@ date: 2023-04-24
 tags: [GitHub, Copilot, AI, Generative AI, Code Generation]
 ---
 
-# How Copilot and AI helps me in my daily work
 During an innovation day at work, I needed to generate extra code and a new application. I wanted to check out the newly released [Deployment Protection Rules](https://github.blog/2023-04-20-announcing-github-actions-deployment-protection-rules-now-in-public-beta/) that can help you with protecting when a job in GitHub Actions can roll out your application to an environment.
 
 Deployment protection rules need a new GitHub App that can be triggered when an environment is targeted. That App can then run its own checks and report back the status to GitHub with a callback webhook. 
