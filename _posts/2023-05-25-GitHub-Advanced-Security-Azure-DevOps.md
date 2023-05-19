@@ -120,3 +120,5 @@ To get rid of a dependency scanning alert you will need to create a pull request
 ## Addressing code scanning alerts
 Fixing Code Scanning alerts is a bit more involved, as you will need to actually fix the code that is causing the alert. After fixing the issue, the next scan will close the alert and will link back to the scan that closed the alert. From it, you can find the commit that fixed the issue as well, so you have that end-to-end traceability.
 
+Note that currently you cannot exclude code from the CodeQL scanning (on GitHub you can). That also means that your unit test suite for example, will get scanned as well, with a good change it finds some issues there as well (I had the same issue with my test project).
+
