@@ -92,7 +92,7 @@ Me:<br />
 ![Rob](/images/rob_photo.png)
 
 I work at Xpirit <br />
-[![Xpirit Expert Blog](/images/xpirit_export_blog.png)](https://xpirit.com/team/rob-bos/)  
+[![Xpirit Expert Blog](/images/XPRT.BLOG.png)](https://xpirit.com/team/rob-bos/)  
 
 Microsoft MVP since 2020 <br />
 [![MVP](/images/MVP.svg)](https://mvp.microsoft.com/en-us/PublicProfile/5003719)
