@@ -2,7 +2,7 @@
 layout: post
 title: "GitHub Advanced Security for Azure DevOps"
 date: 2023-05-23
-tags: [GitHub Advanced Security, Supply Chain, Security, DevOps, Azure DevOps]
+tags: [GitHub Advanced Security, Supply Chain, Security, DevOps, Azure DevOps, GHAS, GHAzDo, Advanced Security]
 ---
 
 Microsoft is bringing some of the GitHub Advanced Security tools to Azure DevOps. I have been playing with it for a while and they have presented the latest state at Microsoft Build 2023, which includes a  [Public Preview!](https://analyticsindiamag.com/microsoft-makes-github-advanced-security-for-azure-devops-available-in-public-preview/). That means you can try it out yourself, and I can finally share my experiences with you! Since I teach a lot people on how to use this on GitHub, you can find some of the differences between the two implementations in this post as well 😉.
