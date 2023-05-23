@@ -112,8 +112,8 @@ From here you can again learn more about the vulnerability found, with links bac
 To fix the alerts you will need to actually fix the finding it self. There is not yet a way to dismiss the alerts in Azure DevOps (something we do have on the GitHub side). 
 
 ## Fixing secret scanning alerts
-For secret scanning the UI currently shows the warning that you need to treat this secret as a leaked value, and fixing can only be done by revoking the secret. 
-![Screenshot of a secret scanning alert showing you need to revoke the secret](/images/2023/20230523/20230518%20Secret%20scanning%20alert.png)  
+For secret scanning the UI currently shows the warning that you need to treat this secret as a leaked value, and fixing can only be done by revoking the secret.  
+![Screenshot of a secret scanning alert showing you need to revoke the secret](/images/2023/20230523/20230518%20Secret%20scanning%20alert.png)   
 Since there is no way to dismiss this alert through the UI yet, the only way to get rid of this alert is to rewrite the history of the repository so that the commit is no longer in the history. I expect that dismissing alerts will be added in the future, but for now this is the only way to get rid of the alert.
 
 ## Fixing dependency scanning alerts
