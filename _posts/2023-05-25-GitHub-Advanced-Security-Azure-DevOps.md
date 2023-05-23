@@ -34,7 +34,11 @@ You can see the synergy here as well as of course: any known secret scanning pat
 
 ## How to get started with GitHub Advanced Security for Azure DevOps
 
-After enabling the feature (can be done on a repo by repo basis), you will get a new 'Advanced Security' tab in your repository menu. This will show you the results of the scans that have been done on your repository.
+First you will need to enable Advanced Security on the repository level, for which you will need Project Admin level access of course:  
+
+![Screenshot of getting to the repository settings, where you can find a new setting 'Advanced Security' that can be toggled on/off](/images/2023/20230523/20230518_EnablingGHAS.png)  
+
+After enabling the feature (on a repo by repo basis, since it will cost you license seats in the future), you will get a new 'Advanced Security' tab in your repository menu. This will show you the results of the scans that have been done on your repository.
 
 ![Overview of the Advanced Security alerts for a repo in Azure DevOps](/images/2023/20230523/20230518%20GHAZDo%20overview.png)
 
