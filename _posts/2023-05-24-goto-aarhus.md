@@ -21,4 +21,7 @@ You will learn:
 - Secret scanning
 - Code scanning using CodeQL
 
-Download the slides from this link (to be published after the presentation)
+Download the slides from [this link here](/slides/20230524_GOTO_Aarhus_Protect_your_code_with_GitHub_security_features.pdf).
+
+# Pictures
+![Rob on stage in Aarhus](/images/2023/20230524/Rob_OnStage.jpg)
