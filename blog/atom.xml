@@ -11,7 +11,7 @@ layout: feed
 	<id>{{ "/blog/" | absolute_url }}</id>
 	<author>
 		<name>Rob Bos</name>
-		<email>raj.bos@gmail.com</email>
+		<email>raj.bos+devopsjournal_io@gmail.com</email>
 	</author>
 
 	{% for post in site.posts %}
