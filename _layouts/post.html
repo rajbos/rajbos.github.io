@@ -35,7 +35,7 @@ layout: default
 
   <div class="panel-footer">
     <!-- share on Mastodon -->
-    <div class="linked-share">
+    <div class="linkedin-share">
       <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ baseurl }}/{{ page.url }}&title=${{ page.title }}&source=${{ site.baseurl }}" onclick="window.open(this.href, 'Share to LinkedIn', 'left=200,top=200,width=500,height=500,toolbar=1,resizable=0'); return false;">
         <img src="/images/Linkedin-Share-buttons.png" alt="LinkedIn Share button" class="linkedin-share-image"/>
       </a>
@@ -58,36 +58,19 @@ layout: default
    </div>
 
 </div>
-<script>
-window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));
-
-twttr.widgets.createMentionButton(
-  "TwitterDev",
-  document.getElementById("container"),
-  {
-    size:"large"
-  }
-);
-</script>
 
 <style>
     .linkedin-share {
-      margin-left: 16px;
+      margin-left: 22px;
+      float: left;
+      width: 203px;
+      height: 28px;
+      border-width: thin;
+      border-style: none;
+      border-radius: 9px;
+      padding-left: 9px;
+      padding-right: 9px;
+      vertical-align: middle;
     } 
 
     .linkedin-share-image{
