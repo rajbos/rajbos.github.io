@@ -2,10 +2,10 @@
 layout: post
 title: "Writing to the $GITHUB_STEP_SUMMARY with the core"
 date: 2023-06-08
-tags: [GitHub, GITHUB_STEP_SUMMARY, GitHub Actions, Summary]
+tags: [GitHub, GITHUB_STEP_SUMMARY, GitHub Actions, Summary, Typescript]
 ---
 
-Every time I need to write to the GITHUB_STEP_SUMMARY in GitHub Actions from the [actions/github-script](https://github.com/actions/github-script) action I need to search for the [blogpost that announced](https://github.blog/2022-05-09-supercharging-github-actions-with-job-summaries/) it's existence. So I'm writing this blogpost to make it easier for myself to find it a lot easier, including some working examples.
+Every time I need to write to the GITHUB_STEP_SUMMARY in GitHub Actions from the [actions/github-script](https://github.com/actions/github-script) action (or from Typescript), I need to search for the [blogpost that announced](https://github.blog/2022-05-09-supercharging-github-actions-with-job-summaries/) it's existence. So I'm writing this blogpost to make it easier for myself to find it a lot easier, including some working examples.
 
 ![Photo of around 20 white puzzle pieces against a white background](/images/2023/20230608/markus-winkler-aYPtEknQmXE-unsplash.jpg)  
 ##### Photo by <a href="https://unsplash.com/@markuswinkler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Winkler</a> on <a href="https://unsplash.com/photos/aYPtEknQmXE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
