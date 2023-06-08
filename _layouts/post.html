@@ -36,8 +36,8 @@ layout: default
   <div class="panel-footer">
     <!-- share on Mastodon -->
     <div class="mast-share mast-share-lg">
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url }}&title=${{ page.title }}&source=${{ site.baseurl }}" onclick="window.open(this.href, 'Share to LinkedIn', 'left=200,top=200,width=500,height=500,toolbar=1,resizable=0'); return false;">
-        <img src="/images/Linkedin-Share-buttons.png" alt="LinkedIn Share button" />
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ baseurl }}/{{ page.url }}&title=${{ page.title }}&source=${{ site.baseurl }}" onclick="window.open(this.href, 'Share to LinkedIn', 'left=200,top=200,width=500,height=500,toolbar=1,resizable=0'); return false;">
+        <img src="/images/Linkedin-Share-buttons.png" alt="LinkedIn Share button" class="linkedin-share"/>
       </a>
     </div>
     <!-- share on Mastodon -->
@@ -86,6 +86,9 @@ twttr.widgets.createMentionButton(
 </script>
 
 <style>
+    .linkedin-share {
+      max-height: 49px;
+    }
     #twitter-widget-0 {
       vertical-align: middle;
     }
