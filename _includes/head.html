@@ -10,6 +10,11 @@
 	
 	<title>{{ page.title }}</title>
 
+	<meta property='og:title' content='{{ page.title }}'/>
+	<meta property='og:image' content='/images/rob_photo.png'/>
+	<meta property='og:description' content='{{ page.title }}'/>
+	<meta property='og:url' content='{{ page.url | absolute_url }}' />
+
 	<script defer data-domain="devopsjournal.io" src="https://plausible.io/js/plausible.js"></script>
 	
 	<!-- jQuery -->
