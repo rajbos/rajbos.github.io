@@ -69,7 +69,10 @@ The next step is to join the two arrays (header + summary) and pass that to the 
     env:
     summaryFile: ${{ steps.get-repo-info.outputs.summary-file }}
     with: 
-    script: |
+    script: see below in other markup for better readability
+```
+
+``` typescript
         const fs = require('fs')
         const summary = fs.readFileSync(process.env.summaryFile, 'utf8')
 
