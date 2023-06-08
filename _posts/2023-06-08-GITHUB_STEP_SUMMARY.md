@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Writing to the $GITHUB_STEP_SUMMARY with the core"
+title: "Writing to the $GITHUB_STEP_SUMMARY with the core npm package"
 date: 2023-06-08
 tags: [GitHub, GITHUB_STEP_SUMMARY, GitHub Actions, Summary, Typescript]
 ---
