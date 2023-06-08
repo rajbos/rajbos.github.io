@@ -36,7 +36,7 @@ layout: default
   <div class="panel-footer">
     <!-- share on Mastodon -->
     <div class="linkedin-share">
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ baseurl }}/{{ page.url }}&title=${{ page.title }}&source=${{ site.baseurl }}" onclick="window.open(this.href, 'Share to LinkedIn', 'left=200,top=200,width=500,height=500,toolbar=1,resizable=0'); return false;">
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ baseurl }}/{{ page.url }}&title=${{ page.title }}&source=${{ page.url | absolute_url }}" onclick="window.open(this.href, 'Share to LinkedIn', 'left=200,top=200,width=500,height=500,toolbar=1,resizable=0'); return false;">
         <img src="/images/Linkedin-Share-buttons.png" alt="LinkedIn Share button" class="linkedin-share-image"/>
       </a>
     </div>
@@ -53,7 +53,7 @@ layout: default
     </div>
 
     <div class="logo">
-      <a href="https://www.xpirit.com/xpiriter/rob"><img src="/images/xpirit_export_blog.png" alt="Xpirit logo" style="align-self: flex-end;" /></a>
+      <a href="https://www.xpirit.com/xpiriter/rob"><img src="/images/XPRT.BLOG.png" alt="Xpirit logo" style="align-self: flex-end;" /></a>
     </div>
    </div>
 
@@ -65,9 +65,6 @@ layout: default
       float: left;
       width: 203px;
       height: 28px;
-      border-width: thin;
-      border-style: none;
-      border-radius: 9px;
       padding-left: 9px;
       padding-right: 9px;
       vertical-align: middle;
@@ -75,6 +72,7 @@ layout: default
 
     .linkedin-share-image{
       max-height: 49px;
+      border-style: none;
     }
     #twitter-widget-0 {
       vertical-align: middle;
@@ -108,5 +106,6 @@ layout: default
   
   .mast-share {
     margin-left: 16px;
+    float: left;
   }
 </style>
