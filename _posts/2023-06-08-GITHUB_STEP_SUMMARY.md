@@ -39,20 +39,22 @@ And at the end you need to write the summary itself, which will be added to the 
 There are no methods to break the table into chunks, like:
 1. Add a header
 1. Add a row
+
 The only method there is, is adding the table in one go, with each row as an array of objects, and some configuration in the first row as that will define if the cell is a header or not. So assuming you have an array of results that you want to show, you can convert that array with properties into an array of rows, with each property value being an item in the row array.
 
-The interesting thing I ran into, is that the row cells **must be a string**. Sending in integers for example does not work, Take the following example:
+The interesting thing I ran into, is that the row cells **must be a string**. Sending in integers for example does not work.
+Take the following example:
 
 ``` typescript
 await core.summary
             .addHeading('Example')
             .addTable([
-                        [{data: 'Topic', header: true}, {data: 'Count', header: true}, {data: 'Public', header: true}, {data: 'Internal', header: true},{data: 'Private', header: true}],
-                        ['foo.js' , "1","2","3","4"],
-                        ['bar.js' , '1','2','3','4'],
-                        ['test.js', 100,200,300,400]
-                        ])
-            .write() 
+                        [{data: 'Topic', header: true}, {data: 'Count', header: true}, {data: 'Public', header: true}],
+                        ['foo.js' , "1", "2"],
+                        ['bar.js' , '3', '4'],
+                        ['test.js', 100, 200]
+                      ])
+            .write()
 ```
 In this example, all rows will be added to the summary, and as long as the content is a valid string, it will be shown in the table as well. In this example, the values in the last row are integers, and they will be not visible in the table.
 
