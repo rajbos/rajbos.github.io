@@ -1,4 +1,3 @@
-2023-06-21-GitHub-container-based-Actions-cleanup.md
 ---
 layout: post
 title: "Cleaning up files changed by a GitHub Action that runs in a container"
