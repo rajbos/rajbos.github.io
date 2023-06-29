@@ -21,3 +21,5 @@ The solution is updating your csproj file with a (new) item group that indicates
 With this you tell Visual Studio how you want this file to be displayed!
 
 ![Fixed layout](/images/20200405/20200405_02_Fixed.png)
+
+Note: unfortunately this will __not__ work for Visual Studio code! 
