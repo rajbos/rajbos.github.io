@@ -7,8 +7,8 @@ tags: [GitHub, Tokens, Personal Access Tokens, GITHUB_TOKEN, GitHub Apps, GitHub
 
 There is a lot of confusion of what GitHub tokens are and how you should use them for automating things inside of GitHub. There are three main types of tokens:
 1. Personal Access Tokens (PATs)
-1. The GITHUB_TOKEN environment variable
-1. An access token created from a GitHub App
+1. The GITHUB_TOKEN environment variable (explainer [here](https://youtu.be/RIkqaPKuNFw))
+1. An access token created from a GitHub App (explainer [here](https://youtu.be/xtXnIV20XQw))
 
 You can use these tokens to authenticate to GitHub and perform actions with it, like cloning repositories, making API calls, etc.
 
@@ -61,6 +61,9 @@ There are multiple options to get the token, depending where you want to use it:
 * Use a library (can be included as an extension to the GitHub CLI)
 
 ##### Note: this token is only valid for 1 hour, after that you need to refresh it or your calls will fail
+
+For an explainer of how to create a GitHub App and then use it in for example a GitHub workflow, check my video on it here:  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xtXnIV20XQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Get an access token for an App with shell scripts
 I have a [GitHub Gist](https://gist.github.com/rajbos/8581083586b537029fe8ab796506bec3) that shows you how to get an access token from a GitHub App from shell scripts (I have an example how to call the shell script from PowerShell as well). 
