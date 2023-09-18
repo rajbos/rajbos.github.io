@@ -13,7 +13,7 @@ GitHub Advanced Security for Azure DevOps (GHAzDo) builds on top of the function
 Before starting with the Advanced Security API's you'll need to get the ID for the repository you are working with. You'll need to have the project name and the repository name itself. With that you can make this API call:
 
 ``` 
-https://dev.azure.com/<PROJECT NAME>//_apis/git/repositories?api-version=7.1-preview.1
+https://dev.azure.com/<PROJECT NAME>/_apis/git/repositories?api-version=7.1-preview.1
 ```
 
 It will return you the list of repos the token you are using has access to. The repo object will look like this:
@@ -53,9 +53,9 @@ The filtering options determine the response you will get back:
 |---|---|
 |top|The number of alerts you want to get back.|
 |orderBy|The field you want to order the results by.|
-|alertType|The type of alert you want to get back. 1 = Dependency, 2 = Secrets, 3 = Code scanning|
-|ref|The branch you want to get the alerts for, only needed when looking at code scanning alerts|
-|states|The state of the alerts you want to get back. 1 = Open, 2 = Closed|
+|criteria.alertType|The type of alert you want to get back. 1 = Dependency, 2 = Secrets, 3 = Code scanning|
+|criteria.ref|The branch you want to get the alerts for, only needed when looking at code scanning alerts|
+|criteria.states|The state of the alerts you want to get back. 1 = Open, 2 = Closed|
 
 You can also leave the `alertType` away from the url to get all alerts in one go. Do be aware that it will result in a different value for the `alertType` in the response, instead of the numbers listed in the table above:
 
