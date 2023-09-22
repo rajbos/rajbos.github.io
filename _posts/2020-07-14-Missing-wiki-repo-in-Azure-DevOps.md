@@ -20,8 +20,7 @@ Short version: it is not available anywhere, but you can 'guess' the correct URL
 ## Wiki types
 In Azure DevOps there is a distinction between two ways to setup your wiki:
 1. The default (old) way of creating a wiki. It is a Git repo under the covers
-1. Publish one or more repositories as a wiki
-You can find more documentation [here](https://docs.microsoft.com/en-us/azure/devops/project/wiki/provisioned-vs-published-wiki?view=azure-devops?WT.mc_id=DOP-MVP-5003719)
+1. Publish one or more repositories as a wiki. You can find more documentation [here](https://docs.microsoft.com/en-us/azure/devops/project/wiki/provisioned-vs-published-wiki?view=azure-devops?WT.mc_id=DOP-MVP-5003719)
 
 ## History
 If you created a wiki a couple of years ago, you have the first wiki type. You could get the git URL to clone the repo and when you made changes to it, the repository would become visible on the Repos overview. This is no longer the case.
@@ -50,8 +49,9 @@ Even the dropdown or extra button (the three dots) doesn't some more information
 ### REST API
 Azure DevOps has an awesome REST API you can use to automate almost everything in Azure DevOps, so let's see what it returns.
 
-If you update the URL in your browser, you can test the API with normal GET request without setting up to much stuff. Go to `https://dev.azure.com/raj-bos/Demo/_apis/git/repositories` (so organization/project/_apis/git/repositories) and you get a list of repositories.
+If you update the URL in your browser, you can test the API with normal GET request without setting up to much stuff. Go to `https://dev.azure.com/raj-bos/Demo/_apis/git/repositories` (so _organization_/_project_/_apis/git/repositories) and you get a list of repositories.
 ![](/images/20200714/20200714_05_API_ReposCall.png)  
+
 ##### Note this does not include the wiki repo, only the default empty repo with the same name as the project.
 
 ### Include Hidden repositories
