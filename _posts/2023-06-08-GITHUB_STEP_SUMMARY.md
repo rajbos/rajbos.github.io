@@ -90,3 +90,17 @@ The next step is to join the two arrays (header + summary) and pass that to the 
                 .addTable(tableArray)
                 .write()
 ```
+
+# Writing raw text to the summary
+If you want to add some lines of text to the summary with this, then let me save you some time on figuring this out (writing this for a friend 🙈):  
+You are writing the raw text as **Markdown**, which I often forget. That means that everything has a meaning, especially after a header! 
+
+Here is an example of some of my logging:. The end of lines are also needed!
+``` typescript
+    await core.summary.addHeading("Repo info")
+                      .addRaw(``).addEOL()
+                      .addRaw(`Total repos: ${repos.length}  `).addEOL()
+                      .addRaw(`Large repos: ${largerRepoCount}  `).addEOL()
+                      .addRaw(`Gitattributes: ${largerRepoHasGitAttributes}  `).addEOL()
+                      .write()
+``` 
