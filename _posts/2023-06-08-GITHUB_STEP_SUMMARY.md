@@ -104,3 +104,15 @@ Here is an example of some of my logging:. The end of lines are also needed!
                       .addRaw(`Gitattributes: ${largerRepoHasGitAttributes}  `).addEOL()
                       .write()
 ``` 
+
+## Need to add a mermaid diagram? 
+Notice the quotes in the exampe below, that's where I went wrong the first few times:
+``` typescript
+await core.summary.addHeading("Repo info")
+                  .addRaw("```mermaid").addEOL()
+                  .addRaw(`pie title Repo size overview`).addEOL()
+                  .addRaw(`"Large (${largerRepoCount})": ${largerRepoCount}`).addEOL()
+                  .addRaw(`"Small (${normalRepoCount)": ${normalRepoCount}`).addEOL()                          
+                  .addRaw("```").addEOL()
+                  .write()
+```
