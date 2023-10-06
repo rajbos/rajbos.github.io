@@ -79,3 +79,8 @@ A lot of things have atom feeds enabled. The things in all caps need to be confi
 
 There should also be a feed for issues, but I continuously get HTTP:406 errors on github.com/OWNER/REPO/issues.atom.
 Other user specific feeds can be loaded by making an authenticated call to `https://api.github.com/feeds`.
+
+## Using separate git configurations with SSH for the same user
+You can add a `-` to the ssh url, to have different ssh configs on you machine and use the right one for the right repo.
+Exampe: `git@github.com-myworkaccount:devops-actions/load-used-actions`.
+This boils down to using a separate hostname (github.com-myworkaccount) to use for the configured repo (devops-actions/load-used-actions).
