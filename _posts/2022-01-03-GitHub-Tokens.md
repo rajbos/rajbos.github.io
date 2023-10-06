@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "GitHub Tokens explained"
+title: "GitHub Access Tokens explained"
 date: 2022-01-03
 tags: [GitHub, Tokens, Personal Access Tokens, GITHUB_TOKEN, GitHub Apps, GitHub App Tokens]
 ---
 
-There is a lot of confusion of what GitHub tokens are and how you should use them for automating things inside of GitHub. There are three main types of tokens:
+There is a lot of confusion of what GitHub (access) tokens are and how you should use them for automating things inside of GitHub. There are three main types of tokens:
 1. Personal Access Tokens (PATs)
 1. The GITHUB_TOKEN environment variable (explainer [here](https://youtu.be/RIkqaPKuNFw))
 1. An access token created from a GitHub App (explainer [here](https://youtu.be/xtXnIV20XQw))
