@@ -6,10 +6,10 @@ date: 2020-04-23
 
 I want to target .NET Standard so I can always use my libraries in any project later on, independently of its target framework (as long as it supports the .NET Standard version I'm targeting).
 
-![](/images/20200429/hans-vivek-NMv5zwS3fVA-unsplash.jpg)
+![](/images/2020/20200429/hans-vivek-NMv5zwS3fVA-unsplash.jpg)
 ###### <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@oneshotespresso?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Photo from Hans Vivek"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Photo by Hans Vivek</span></a>
 
-Today I had an issue with using the Entity Framework Core tools in a .NET Standard Library: the EF Core tools don't support the .NET Standard framework: they can only target .NET Core or .NET Classic (Full framework). 
+Today I had an issue with using the Entity Framework Core tools in a .NET Standard Library: the EF Core tools don't support the .NET Standard framework: they can only target .NET Core or .NET Classic (Full framework).
 
 This means that when you use a .NET Standard project to host your database setup in, you will get a nice error message when you run `dotnet ef migrations add InitialCreate`:
 
@@ -23,7 +23,7 @@ The documentation [link](https://docs.microsoft.com/en-us/ef/core/miscellaneous/
 ## Solution setup
 The docs already indicate to create a dummy project with a dependency on the .NET Standard Library. What they don't clearly explain, is that you then need to do some extra steps to get the EF Core tooling (like migrations) working.
 
-![Screenshot of the solution folders](/images/20200429/20200429_SolutionSetup.png)  
+![Screenshot of the solution folders](/images/2020/20200429/2020/20200429_SolutionSetup.png)
 I've setup my solution like above:
 * Provisioning.DataLibrary holds the DbContext with all of its models and targets .NET Standard 2.0 in this case.
 * Provisioning.ConsoleApp is the dummy project with a dependency on the DataLibrary and targets .NET Core 3.1.
@@ -40,8 +40,8 @@ I usually open the `Package Manager Console` to execute actions like calling the
 
 ```powershell
 cd Provisioning.DataLibrary
-dotnet ef migrations add InitialCreate 
-``` 
+dotnet ef migrations add InitialCreate
+```
 
 This will give you the error above: `Provisioning.DataLibrary` is a .NET Standard library and the tools cannot analyze this.
 
@@ -50,7 +50,7 @@ To get the EF Core tools to work, you can stay in the main (solution) folder and
 
 ```powershell
 dotnet ef migrations add InitialCreate --project Provisioning.DataLibrary --startup-project Provisioning.ConsoleApp
-``` 
+```
 
 So, with `--project Provisioning.DataLibrary` it knows where it needs to create the migrations + folders for it.
 And with `--project Provisioning.ConsoleApp` it can find a .NET Core project to target.

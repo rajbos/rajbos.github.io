@@ -5,19 +5,19 @@ date: 2021-10-14
 tags: [GitHub, GitHub Actions, Marketplace, Governance, Internal, Security]
 ---
 
-One of the best practices of using GitHub Actions is to [fork all actions](/blog/2021/02/06/GitHub-Actions-Forking-Repositories) that you want to use to your internal actions organization. If often use `organizationname-actions` for that, just like I am doing for my own personal setup here: [rajbos-actions](https://github.com/rajbos-actions). 
+One of the best practices of using GitHub Actions is to [fork all actions](/blog/2021/02/06/GitHub-Actions-Forking-Repositories) that you want to use to your internal actions organization. If often use `organizationname-actions` for that, just like I am doing for my own personal setup here: [rajbos-actions](https://github.com/rajbos-actions).
 
-After forking the repositories I always get the question: 
+After forking the repositories I always get the question:
 
-* What now? 
-* How do we handle internal discovery? 
-* How can we have a process that gives our engineers control over the actions that we use? 
+* What now?
+* How do we handle internal discovery?
+* How can we have a process that gives our engineers control over the actions that we use?
 * How can we do all this in a secure way?
 * Can we automate this process? How do I stay up to date with the parent repository?
 
 This post describes my way of working, and how I set up a GitHub Actions Marketplace.
 
-![Image of the Actions Marketplace](/images/20211014/20211014_Marketplace.png)    
+![Image of the Actions Marketplace](/images/20211014/20211014_Marketplace.png)
 
 The reasons for forking are [plentiful](/blog/2021/02/06/GitHub-Actions-Forking-Repositories), for example:
 - Take control over the Actions as a backup for your production organization (since they are downloaded just-in-time by the runner)
@@ -29,7 +29,7 @@ Want to know more? Check out a previous user group session on it [here](/blog/20
 
 After setting the internal marketplace up (see below) that will host the 'blessed' actions, we also need to prevent any other actions from being used in our production organization. You have control over this in the organization settings:
 
-![Screenshot of actions permissions in GitHub](/images/20211014/20211014_Limit.png)  
+![Screenshot of actions permissions in GitHub](/images/20211014/20211014_Limit.png)
 
 # Internal Actions Marketplace
 The reason for having an internal actions marketplace is to have a central location for all the actions that can be used inside our production organization. This is to prevent any actions from the public marketplace from being used in our production organization, without being checked for security risks first.
@@ -57,7 +57,7 @@ The process for adding actions to the marketplace is as follows:
 1. Share fixes back to the parent repo
 
 ## Request through an issue to include it
-I've setup a (start of a) example project [github-actions-requests](https://github.com/rajbos/github-actions-requests) that is used to request actions to be added to the internal marketplace. 
+I've setup a (start of a) example project [github-actions-requests](https://github.com/rajbos/github-actions-requests) that is used to request actions to be added to the internal marketplace.
 
 To do so:
 * a user needs to create an issue in a specifically setup repository, describing the action and the reason for requesting it. It helps if they already have an example repo for which they would like to use it.
@@ -76,9 +76,9 @@ A DevOps engineer can check out the actions repository and review the code. This
 - does it support GitHub Enterprise Server (GHES) if you need it? (e.g. does it use the `github.com` domain for anything, or does it use the `GITHUB_API_URL` environment variable?)
 
 ## Security validation
-For the security validation you can use your own internal setup. You need something that runs a [Software Composition Analysis (SCA)](https://wiki.owasp.org/images/b/bd/Software_Composition_Analysis_OWASP_Stammtisch_-_Stanislav_Sivak.pdf) scan and from that get security alerts for any dependencies that have them. 
+For the security validation you can use your own internal setup. You need something that runs a [Software Composition Analysis (SCA)](https://wiki.owasp.org/images/b/bd/Software_Composition_Analysis_OWASP_Stammtisch_-_Stanislav_Sivak.pdf) scan and from that get security alerts for any dependencies that have them.
 
-There are lots of tools available for this, for example [Black Duck](https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html) or [White Source](https://www.whitesourcesoftware.com/resources/blog/software-composition-analysis/). GitHub already has [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/#stop-using-vulnerable-dependencies-dependabot-alerts-and-security-updates) available that can be used for free on public repos. Since a fork is already a public repo, you can use it to scan the actions source code as well.
+There are lots of tools available for this, for example [Black Duck](https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html) or [White Source](https://www.whitesourcesoftware.com/resources/blog/software-composition-analysis/). GitHub already has [Dependabot](https://github.blog/2020/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/#stop-using-vulnerable-dependencies-dependabot-alerts-and-security-updates) available that can be used for free on public repos. Since a fork is already a public repo, you can use it to scan the actions source code as well.
 
 For our final setup I want to have it automated as much as we can, so I'll be describing that process here. After the initial validation is completed and satisfies internal requirements, I want to label the repository with `security-validation` and run automated security validation on it. More on that below, but I am setting that up as well in the [example repo here](https://github.com/rajbos/github-actions-requests).
 The results from the checks will be added to the issue as badges from the different systems, with deep links into those systems to check the analysis. That can then be used for the final checks.
@@ -86,13 +86,13 @@ The results from the checks will be added to the issue as badges from the differ
 ### Dependabot
 For Software Composition Analysis, we can use Dependabot to scan the actions source code for the packages that it uses. You can see the results of one of my actions in the repositories [Dependency Graph](https://github.com/rajbos/github-action-load-available-actions/network/dependencies):
 
-![Screenshot of the dependency graph](/images/20211014/20211014_DependencyGraph.png)  
+![Screenshot of the dependency graph](/images/20211014/20211014_DependencyGraph.png)
 
 Here you find the direct dependencies (in this case from the `packages.json` file of the repository) and all the 'transient' dependencies. A transient dependency is a dependency used by one of your direct dependencies. And since the transient dependency can have its own dependencies... it can be a long list. This is why some research shows that 70% of the code you deploy, was never created by you, but pulled in through a dependency. This is of course why a Software Composition Analysis (SCA) is so important to know about the dependencies that you have and match them to a known vulnerability database, also called a 'Common Vulnerabilities and Exposures' or 'CVE'. Some examples of these databases are the [National Vulnerability Database from NIST](https://nvd.nist.gov/) or the [CVE database from Mitre](https://cve.mitre.org/).
 
 GitHub has its own [GitHub Advisory Database](https://github.com/advisories) as well, with lots of vulnerabilities listed in it:
 
-![Screenshot of GitHub Advisory Database](/images/20211014/20211014_GH_Advisories.png)  
+![Screenshot of GitHub Advisory Database](/images/20211014/20211014_GH_Advisories.png)
 
 ### Security Advisories
 After Dependabot has scanned the actions source code, it knows which dependencies are being used. Next, it will generate a list of security advisories for the packages that it found. It can even generate pull requests to the repository to update the vulnerable packages to a non-vulnerable version. Since we're using it here on a public fork, we don't use it ourselves. The action publisher should use it on their end to fix the issues found. You could of course use it on your fork and then send a Pull Request to the parent repo to fix the issues, and let the publisher know that they can use these features as well.
@@ -102,10 +102,10 @@ In this setup we can use the findings from the Dependabot scan to validate if we
 ### CodeQL
 [CodeQL](https://codeql.github.com/) is a tool that can be used to scan the actions source code for vulnerabilities and available for free on public repositories, which our forks are. You configure it as a workflow like I've done [here](https://github.com/rajbos/github-action-load-available-actions/blob/main/.github/workflows/codeql-analysis.yml). It will use action minutes for its execution.
 
-Be aware that it by default scans the entire repository. In my case, I have a Typescript based action. That means that the Typescript is transpiled to JavaScript and then uploaded to the repository. So CodeQL will then scan everything. This meant that I found an [issue](https://github.com/moment/moment/issues/5946) in `moment.js` through the JavaScript in the repository. Only checking the Typescript code doesn't find that for example of course, since it is not in that part of the code. 
+Be aware that it by default scans the entire repository. In my case, I have a Typescript based action. That means that the Typescript is transpiled to JavaScript and then uploaded to the repository. So CodeQL will then scan everything. This meant that I found an [issue](https://github.com/moment/moment/issues/5946) in `moment.js` through the JavaScript in the repository. Only checking the Typescript code doesn't find that for example of course, since it is not in that part of the code.
 
-The CodeQL workflow will upload its scan results to GitHub, that can be found by going to 'Security' and then 'Code scanning alerts':  
-![Screenshot of the scanning alert on the JavaScript code](/images/20211014/20211014_SecurityAlert.png)  
+The CodeQL workflow will upload its scan results to GitHub, that can be found by going to 'Security' and then 'Code scanning alerts':
+![Screenshot of the scanning alert on the JavaScript code](/images/20211014/20211014_SecurityAlert.png)
 
 You can then review the vulnerability listed and check the recommendation.
 ##### Note: finding the source of the code vulnerability in the JavaScript code can be very hard. Transpile your Typescript with the [inlineSourceMap](https://www.typescriptlang.org/tsconfig#inlineSourceMap) setting to make it easier to find the actual Typescript / dependency source.
@@ -148,7 +148,7 @@ Now that we have forked the action, it's up to us to maintain it, update it with
 # Internal marketplace
 Now that we have all that setup, we need to have a good way to discover the actions that are available within our actions organization. We can use the default repo overview page, but that doesn't feel very user friendly. We want a searchable list of actions, with more information then the default repository description. Since there is nothing available out of the box, I created something myself.
 
-![Screen shot of internal marketplace at https://rajbos-actions.github.io/actions-marketplace/](/images/20211014/20211014_Marketplace.png)  
+![Screen shot of internal marketplace at https://rajbos-actions.github.io/actions-marketplace/](/images/20211014/20211014_Marketplace.png)
 
 With the setup from [actions-marketplace](https://github.com/rajbos/actions-marketplace) I've created an actions marketplace out of the box: you can fork it, configure it and use [GitHub Pages](https://guides.github.com/features/pages/) to host your website. With it your internal users have a central place to search for internal actions. I also want to include links in it to the internal workflows that use the actions, so you can find examples easily. For the Marketplace maintainers, this will also give them a way to track the actions internal usage: if the action is no longer used in any workflow, you might want to remove it from the Marketplace and save you some maintenance work.
 
@@ -180,4 +180,4 @@ Currently the `github-actions-request`:
 * if found, it forks the repository to the `organization-actions` organization (hardcoded in the workflow at the moment)
 * adds a CodeQL workflow file to the forked repository
 
-Since the 'organization-actions' organization has been setup to enable the Dependency Graph and Dependabot alerts, I don't need to do that in the workflow. I just need a way (after a certain amount of time) to check if there are any alerts and included that back into the issue information.  
+Since the 'organization-actions' organization has been setup to enable the Dependency Graph and Dependabot alerts, I don't need to do that in the workflow. I just need a way (after a certain amount of time) to check if there are any alerts and included that back into the issue information.

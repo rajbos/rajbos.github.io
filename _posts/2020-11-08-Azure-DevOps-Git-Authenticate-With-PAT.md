@@ -6,11 +6,11 @@ date: 2020-11-08
 
 Sometimes you have these weird things you run into, and I'm sure I will not be able to find this one if I don't store it here.
 
-![Image of frozen binoculars](/images/20201108/hakan-aldrin-NSnXEpIl6xs-unsplash.jpg)
+![Image of frozen binoculars](/images/2020/20201108/hakan-aldrin-NSnXEpIl6xs-unsplash.jpg)
 ###### Photo by <a href="https://unsplash.com/@greystoke?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Hakan Aldrin</a>
 
 # Configuring Git with a PAT token with Azure DevOps
-Usually in Windows I use the Windows Credential Manager for storing authentication against remote Git repositories. You can also use the SSH setup that [Azure DevOps](https://dev.azure.com?WT.mc_id=DOP-MVP-5003719) supports as a widely used alternative. 
+Usually in Windows I use the Windows Credential Manager for storing authentication against remote Git repositories. You can also use the SSH setup that [Azure DevOps](https://dev.azure.com?WT.mc_id=DOP-MVP-5003719) supports as a widely used alternative.
 
 This time I was setting things up for a user with a Docker container and didn't want to setup any of those options: I was already using a [Personal Access Token](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops?WT.mc_id=DOP-MVP-5003719) for accessing the [REST API](https://docs.microsoft.com/en-us/rest/api/azure/devops/?WT.mc_id=DOP-MVP-5003719) and wanted to reuse that for the Git repository as well.
 
@@ -26,7 +26,7 @@ function SetupAuthentication {
         [string] $project
         [string] $repoName,
         [string] $userName,
-        [string] $PAT        
+        [string] $PAT
     )
 
     # convert the Personal Access Token to a Base64 encoded string

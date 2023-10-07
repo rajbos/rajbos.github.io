@@ -11,7 +11,7 @@ fatal: cannot create directory at 'src/Modules/<long path here>': Filename too l
 warning: Clone succeeded, but checkout failed.
 ```
 
-![Photo of windy road with car lights in long exposure](/images/20200923/federico-beccari-cyg3DD6Y69A-unsplash.jpg)
+![Photo of windy road with car lights in long exposure](/images/2020/20200923/federico-beccari-cyg3DD6Y69A-unsplash.jpg)
 
 The folder path display was only 195 characters long, but adding my root folder with 38 characters got awfully close to the known [260 characters limit in Windows](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?WT.mc_id=DOP-MVP-5003719).
 
@@ -37,7 +37,7 @@ Or by using the [registry editor](https://support.microsoft.com/en-us/help/40275
 Key name: LongPathsEnabled
 Value: 1
 ```
-After updating this setting you either need to Sign Out and back on, or reboot the machine. 
+After updating this setting you either need to Sign Out and back on, or reboot the machine.
 
 ## Configure Git for long file paths
 Git doesn't know about the changes in Windows and is installed by default without the LongPath setup we need. Enable it from the command line:

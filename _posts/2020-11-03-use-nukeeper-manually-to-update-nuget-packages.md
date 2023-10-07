@@ -11,7 +11,7 @@ With the DevOps mindset of handling these updates as technical debt, I wanted to
 ##### Side note: it uses the normal NuGet flow to check for updates and uses that flow for authenticated/private package sources as well.
 
 NuKeeper can handle multiple platforms as you can see below. Currently I was running this on GitLab, so the examples given here might need some small tweaks to push the Pull Request for a different platform. The manual check with NuKeeper will work regardless of the platform.
-![NuKeeper supported platforms](/images/20201103/20201103NuKeeperSupport.png)  
+![NuKeeper supported platforms](/images/2020/20201103/2020/20201103NuKeeperSupport.png)
 
 ## Flow
 With NuKeeper the normal flow is usually just a one line command:
@@ -50,7 +50,7 @@ Then you can do a (most ugly) search through the results to see if there are any
     $updatesFound = $false
     foreach ($row in $updates) {
         if ($row.IndexOf("possible updates") -gt -1) {
-            Write-Host "Found updates row [$row]"; 
+            Write-Host "Found updates row [$row]";
             if ($row.IndexOf("0 possible updates") -gt -1) {
                 Write-Host "There are no updates"
             }

@@ -12,7 +12,7 @@ az extension show --name azure-devops --output table
 ```
 
 In the result you can find out the version that you have installed:
-![Powershell output of the command showing the version number](/images/20200109/20200109_01_ExtensionShowVersion.png)
+![Powershell output of the command showing the version number](/images/2020/20200109/2020/20200109_01_ExtensionShowVersion.png)
 
 If you don't know the name of the extension you can list ALL extensions and try to find it.
 For example I didn't know the name of the Azure DevOps extension: the command always is `az devops ***`, but the extension **name** is `azure-devops`. I understand why they kept the command name short, but you need to know how to look and where to figure out what is going on.

@@ -8,7 +8,7 @@ Sometimes you need to deploy an application on a machine, but there is no option
 
 These are the steps to deploy an application with Azure DevOps on the localhost of the agent. As an example I'm using IIS to deploy a web application to for this.
 
-![Image of a light bulb](/images/20200329/alex-holyoake-PmzdQjCCPws-unsplash.jpg)
+![Image of a light bulb](/images/2020/20200329/alex-holyoake-PmzdQjCCPws-unsplash.jpg)
 ##### <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@stairhopper?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Photo by Alex Holyoake"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Alex Holyoake</span></a>
 
 ## Local Windows User
@@ -23,7 +23,7 @@ First, create a local windows user to run the agent with. We need to give the ac
 The user needs to be added to the local Administrator group to be able to execute **AppExec** commands, used for administrative tasks in IIS, like creating a website. I've checked, but couldn't find better ways to do this with a less privileged account.
 
 ## Windows Remote Management (WinRM)
-The default [deploy task](https://github.com/microsoft/azure-pipelines-extensions/blob/master/Extensions/IISWebAppDeploy/Src/Tasks/IISWebAppMgmt/IISWebAppMgmtV1/README_IISAppMgmt.md) in Azure DevOps use PowerShell with remote management to do the administrative tasks through [AppCmd](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe?WT.mc_id=DOP-MVP-5003719). You can enable to use this from a remote host, but you can also use this on the local host! 
+The default [deploy task](https://github.com/microsoft/azure-pipelines-extensions/blob/master/Extensions/IISWebAppDeploy/Src/Tasks/IISWebAppMgmt/IISWebAppMgmtV1/README_IISAppMgmt.md) in Azure DevOps use PowerShell with remote management to do the administrative tasks through [AppCmd](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe?WT.mc_id=DOP-MVP-5003719). You can enable to use this from a remote host, but you can also use this on the local host!
 
 #### Check locally trusted hosts:
 Check the existing trusted hosts to see if the local host is already in the list:
