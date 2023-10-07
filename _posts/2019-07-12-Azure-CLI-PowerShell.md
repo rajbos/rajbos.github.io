@@ -23,7 +23,7 @@ az storage account create -n $StorageAccountName -g $ResourceGroup -l $location 
 ```
 
 Result:
-![Error displayed in PowerShell](/images/2019/20190712/2019/20190712_02_Error.png)
+![Error displayed in PowerShell](/images/2019/20190712/20190712_02_Error.png)
 
 Seems like an error, what's the issue then?
 Well, adding error handling like you'd expect from PowerShell will not work!
@@ -42,7 +42,7 @@ catch {
 ```
 
 You can see that PowerShell doesn't notice the error and just continues:
-![Error handling will not do anything with the error](/images/2019/20190712/2019/20190712_03_ErrorHandling.png)
+![Error handling will not do anything with the error](/images/2019/20190712/20190712_03_ErrorHandling.png)
 
 Even adding -ErrorAction will not work.
 
@@ -66,7 +66,7 @@ Writing the error to the output helps with:
 1. Displaying the error correctly
 1. Blocking the release in Azure DevOps, which is were I needed this the most.
 
-![](/images/2019/20190712/2019/20190712_04_ErrorHandlingCorrectly.png)
+![](/images/2019/20190712/20190712_04_ErrorHandlingCorrectly.png)
 
 ### Shorthand
 There is a shorthand version of this code that you can use, if you don't care about the information in the output (Thanks [Rasťo](https://twitter.com/duracellko) !). You can use PowerShells [about automatic variable](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1): `$?` to just check if the result was successful or not.
