@@ -61,7 +61,6 @@ if ($Command -eq "check-image-links") {
         # find the links that have the format ![alt text](/images/2020/20200101/image.png)
         $linkMatches = $content | Select-String -Pattern "!\[.*\]\(/images/.*\)"
         $foundLinks += $linkMatches.Count
-        $location = Get-Location
         foreach ($match in $linkMatches) {
             # get everything between the parentheses
             $link = $match -replace ".*\((.*)\).*", '$1'
