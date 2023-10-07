@@ -4,11 +4,11 @@ title: "DevOps Principles series"
 date: 2019-07-10
 ---
 
-I have started recording a series of video's explaining some of the principles and sayings I use when I talk about DevOps. There are teams that I meet that have no idea what DevOps is and why we are doing some of these things for it. I've found myself referencing something like 'Shift Left' and then having to explain it to the teams and their management that I am helping with something that for me, is related to something in the DevOps culture.  
+I have started recording a series of video's explaining some of the principles and sayings I use when I talk about DevOps. There are teams that I meet that have no idea what DevOps is and why we are doing some of these things for it. I've found myself referencing something like 'Shift Left' and then having to explain it to the teams and their management that I am helping with something that for me, is related to something in the DevOps culture.
 
-I also want share that information with the rest of the team members that weren't there at that time. So for these cases, I thought it would be nice to have a set of small video's available that I can share and explain those things to everyone. 
+I also want share that information with the rest of the team members that weren't there at that time. So for these cases, I thought it would be nice to have a set of small video's available that I can share and explain those things to everyone.
 
-![DevOps Continues Cycle](/images/20190710/20190710_01_DevOps.png)
+![DevOps Continues Cycle](/images/2019/20190710/2019/20190710_01_DevOps.png)
 
 Creating these video's helps me getting a little more comfortable speaking to an audience, even if it is through a camera lens and with the ability to stop and do it again 😄. It also helps that I have some time to think through the message I'm trying to explain to the team. From there I am trying to get my intonation and articulation under control. This stuff is all new to me, so I am figuring this all out live on the job. I'm learning tons of stuff I didn't really think about before. This will be explained below. Somehow I like to challenge myself and do this stuff out in the open 😁.
 

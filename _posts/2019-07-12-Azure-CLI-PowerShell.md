@@ -11,7 +11,7 @@ I found myself searching the internet again on how to use the Azure CLI from Pow
 
 I've fixed it before, but it took a while to find it again. That is why I am documenting it here, to save me some yak shaving in the future.
 
-![Yak to shave](/images/20190712/Yak.jpg)
+![Yak to shave](/images/2019/20190712/Yak.jpg)
 
 ## The issue in PowerShell
 Running this Azure CLI command in PowerShell will result in an error, because storage accounts cannot have a dash or capitals in the name:
@@ -22,11 +22,11 @@ $location = "westeurope"
 az storage account create -n $StorageAccountName -g $ResourceGroup -l $location --sku Standard_LRS
 ```
 
-Result:  
-![Error displayed in PowerShell](/images/20190712/20190712_02_Error.png)  
+Result:
+![Error displayed in PowerShell](/images/2019/20190712/2019/20190712_02_Error.png)
 
-Seems like an error, what's the issue then?  
-Well, adding error handling like you'd expect from PowerShell will not work!  
+Seems like an error, what's the issue then?
+Well, adding error handling like you'd expect from PowerShell will not work!
 
 ```powershell
 $StorageAccountName = "testRb-001"
@@ -41,14 +41,14 @@ catch {
 }
 ```
 
-You can see that PowerShell doesn't notice the error and just continues:  
-![Error handling will not do anything with the error](/images/20190712/20190712_03_ErrorHandling.png)  
+You can see that PowerShell doesn't notice the error and just continues:
+![Error handling will not do anything with the error](/images/2019/20190712/2019/20190712_03_ErrorHandling.png)
 
-Even adding -ErrorAction will not work.   
+Even adding -ErrorAction will not work.
 
 ## How to add error handling yourself
-The Azure CLI runs on JSON: it will try to give you JSON results on every call, so we can use that to see if we got any data back from the call. After converting the result, we can test to see if it has data:  
-  
+The Azure CLI runs on JSON: it will try to give you JSON results on every call, so we can use that to see if we got any data back from the call. After converting the result, we can test to see if it has data:
+
 ```powershell
 $StorageAccountName = "testRb-001"
 $ResourceGroup = "myResourceGroup"
@@ -60,13 +60,13 @@ if (!$output) {
 }
 ```
 
-Do remember to wrap **every** call you need to run with this setup, and return to prevent PowerShell to continue with the next statement.  
+Do remember to wrap **every** call you need to run with this setup, and return to prevent PowerShell to continue with the next statement.
 
 Writing the error to the output helps with:
 1. Displaying the error correctly
 1. Blocking the release in Azure DevOps, which is were I needed this the most.
 
-![](/images/20190712/20190712_04_ErrorHandlingCorrectly.png)  
+![](/images/2019/20190712/2019/20190712_04_ErrorHandlingCorrectly.png)
 
 ### Shorthand
 There is a shorthand version of this code that you can use, if you don't care about the information in the output (Thanks [Rasťo](https://twitter.com/duracellko) !). You can use PowerShells [about automatic variable](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1): `$?` to just check if the result was successful or not.
@@ -105,7 +105,7 @@ Here is why:
 1. Azure PowerShell is not idempotent, so not so great to use in Azure Pipelines.
 1. CLI is much terser than ARM, although it feels like you need to do a little more work, linking resources together.
 1. Read [Pascal Naber](https://twitter.com/pascalnaber) 's post: [Stop using ARM templates! Use the Azure CLI instead](https://pascalnaber.wordpress.com/2018/11/11/stop-using-arm-templates-use-the-azure-cli-instead/).
-1. I am looking into doing this with [Terraform](https://www.terraform.io/), because the declaration is a lot shorter as well. It is a new paradigm to learn, and needs installation in your Azure Pipeline. The CLI was already available. 
+1. I am looking into doing this with [Terraform](https://www.terraform.io/), because the declaration is a lot shorter as well. It is a new paradigm to learn, and needs installation in your Azure Pipeline. The CLI was already available.
 
 ## Why not use bash?
 The reasons for not using bash is that:

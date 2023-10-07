@@ -6,7 +6,7 @@ date: 2019-07-07
 
 Last month we got the opportunity to organize the Global DevOps Bootcamp ([link](https://www.globaldevopsbootcamp.com)) and it was a blast!
 
-![GDBC Logo](/images/20190618/2019-06-18_01_GDBC_Logo.png)
+![GDBC Logo](/images/2019/20190618/2019-06-18_01_GDBC_Logo.png)
 
 I wanted to create an overview of all blogposts that I could find about the event, so here it is.
 
@@ -16,8 +16,8 @@ I wanted to create an overview of all blogposts that I could find about the even
 [Jasper Gilhuis]() wrote down how he handled the pre-event registration of venues and enable them to register the attendees. Read about it [here](https://jaspergilhuis.nl/2019/06/18/global-devops-bootcamp-write-up-registration-process/).
 
 ## Azure Learnings
-A post by myself about all the stuff I learned while creating the automation to roll out all the resources we needed in Azure: 
-[link](/blog/2019/06/23/GDBC-Azure-learnings).  
+A post by myself about all the stuff I learned while creating the automation to roll out all the resources we needed in Azure:
+[link](/blog/2019/06/23/GDBC-Azure-learnings).
 
 ## Monitoring the event
 Posted by [Michiel van Oudheusden](https://twitter.com/mivano) on the things he did for all the [monitoring](https://mindbyte.nl/2019/06/28/how-to-monitor-a-24-hour-global-event.html) of the infrastructure for the event.
@@ -32,11 +32,11 @@ A post by myself about the day leading up to the event and during the day itself
 The GDBC team has opened up the challenges website we used during the event itself so everyone can go through the challenges (and behind the scenes videos) to keep on learning! Available under the creative commons (non-commercial) license on [gdbc-challenges.com](https://www.gdbc-challenges.com/)
 
 ## Looking back at the event day
-There are a lot of people who blogged about their day at the event, how they found out about it at all and those posts are awesome to read. 
+There are a lot of people who blogged about their day at the event, how they found out about it at all and those posts are awesome to read.
 
-Here is an overview:  
+Here is an overview:
 
-![Donovan Brown in Sweden for GDBC](/images/20190707/20190707_01_DonovanBrown.jpeg) 
+![Donovan Brown in Sweden for GDBC](/images/2019/20190707/2019/20190707_01_DonovanBrown.jpeg)
 * [Thomas Rümmler](https://twitter.com/thomas_ruemmler) helped organize an event in Stuttgart, Germany and wrote about the experience [here](https://www.aitgmbh.de/blog/tfs-devops/rueckblick-global-devops-bootcamp-2019/).
 <!-- markdown-link-check-disable -->
 * In Stockholm Sweden [Antariksh Mistry](https://www.linkedin.com/in/antariksh-mistry-50937a129) was at a venue organized by [Soldify](https://solidify.se/).<!-- markdown-link-check-enable --> This was his first GDBC and you can read about his experience [here](https://azurebiztalkread.wordpress.com/2019/06/22/global-devops-bootcamp-2019-stockholm/).
@@ -54,7 +54,7 @@ Here is an overview:
 If you want to see what the team created to run the event, you can find all the behind the scenes video's here: [https://xpir.it/GDBC2019](https://xpir.it/GDBC2019).
 
 ## Keynotes
-Here are some of the keynotes that have been published online.  
+Here are some of the keynotes that have been published online.
 
 |Year|Speaker|Topic|Link|
 |---|---|---|---|
