@@ -4,7 +4,7 @@ title: "Installing .NET Core tools: Preventing errors in your Azure Pipelines"
 date: 2019-09-25
 ---
 
-I ran into a weird thing in .NET Core Global tools: If you try to install the tools while they are already installed on that system, .NET Core will throw an error and exit with a non-zero exit code. 
+I ran into a weird thing in .NET Core Global tools: If you try to install the tools while they are already installed on that system, .NET Core will throw an error and exit with a non-zero exit code.
 
 **This is not helpful in a Continuous Integration (CI) scenario!**
 
@@ -17,12 +17,12 @@ And the tool would install. This is correct if you run it once.
 
 In Azure DevOps you would call the command from a .NET Core task, as I previously described [here](/blog/2019/09/03/Running-dotnet-tools-in-azure-devops).
 
-![Install command in Azure Pipelines](/images/20190925/2019-09-25_InstallCommand.png)
+![Install command in Azure Pipelines](/images/2019/20190925/2019-09-25_InstallCommand.png)
 
-If you run the pipeline again, or the command locally, you get an error indicating that the tool is already installed!  
-![](/images/20190925/2019-09-25_InstallFails.png)  
+If you run the pipeline again, or the command locally, you get an error indicating that the tool is already installed!
+![](/images/2019/20190925/2019-09-25_InstallFails.png)
 
-This behavior seems rather odd to me: if the tool is already installed, then great. Perform a no-op (no operation) and go ahead with the next command. 
+This behavior seems rather odd to me: if the tool is already installed, then great. Perform a no-op (no operation) and go ahead with the next command.
 
 In [this issue](https://github.com/dotnet/cli/issues/9482) on GitHub this behavior is described. The team has made a choice about doing it this way, even though they are not sure that this was the [right choice](https://github.com/dotnet/cli/issues/11494#issuecomment-499716465). The current debate seems to be if the decision can be reverted (that would mean a breaking change from the old behavior) or adding a new parameter that would enforce the expected behavior.
 
@@ -39,9 +39,9 @@ Outcome:
 Seems strange behavior to me, but ok... At least it will return an exit code of 0 and we can move along.
 
 If you run the command again, the tool will try to upgrade to the latest version, which is what I would expect.
-The logs do seem to indicate an interesting story... It seems to  reinstall that same version (given there is no newer version available)...! 
+The logs do seem to indicate an interesting story... It seems to  reinstall that same version (given there is no newer version available)...!
 
-![Result of dotnet update](/images/20190925/2019-09-25_UpdateCommandResult.png)  
+![Result of dotnet update](/images/2019/20190925/2019-09-25_UpdateCommandResult.png)
 
 Strange way of implementing this functionality, at least there is a work around to prevent the CI build from failing.
 

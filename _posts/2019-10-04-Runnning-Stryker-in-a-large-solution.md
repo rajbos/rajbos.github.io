@@ -6,10 +6,10 @@ date: 2019-10-04
 
 
 ## TL;DR
-[Stryker](https://stryker-mutator.io/stryker-net/) cannot run for an entire solution with multiple test projects (YET), so we need to help it a little and run each project by itself and then join the results. Finding a way to do so started by checking in with the Stryker team on [GitHub](https://github.com/stryker-mutator/stryker-net/issues/740). I ❤️ OSS! 
+[Stryker](https://stryker-mutator.io/stryker-net/) cannot run for an entire solution with multiple test projects (YET), so we need to help it a little and run each project by itself and then join the results. Finding a way to do so started by checking in with the Stryker team on [GitHub](https://github.com/stryker-mutator/stryker-net/issues/740). I ❤️ OSS!
 They are working at making this part easier, so I checked out their code to see if I could help with that. That proved to be rather hard! There is a lot going on under the covers. Still want to help, but first I tried to get a quick fix that I can bring back to the team that wants to run Stryker for their entire solution file, with 112 projects in it (and only growing 😱). Yes, they should see what else needs fixing 😁.
 
-![Stryker logo](/images/20191004/20191004_Stryker_Logo.png)
+![Stryker logo](/images/2019/20191004/2019/20191004_Stryker_Logo.png)
 
 ## Using Stryker in .NET code
 I previously posted about using Stryker for .NET in your Azure Pipeline (find it [here](/blog/2019/09/04/Use-Stryker-Azure-DevOps)). After running it for one project, I now want to run it for a lot of projects, in the same solution. Currently, this is not available in the Stryker tooling. After [reaching](https://github.com/stryker-mutator/stryker-net/issues/740) out to Stryker team, I had confirmation that the way I wanted to do things, seemed like the correct way to go:
