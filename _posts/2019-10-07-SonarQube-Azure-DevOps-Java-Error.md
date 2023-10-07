@@ -14,7 +14,7 @@ Given the error message says it is an error for the project `prefix-project` I g
 Running another build resulted in the same error.
 Running a build on the master branch, just to make sure it wasn't related to a different branch and I need to run it first on on the master branch: same error.
 
-![Build Error](/images/2019/20191007/2019/20191007_BuildError.png)
+![Build Error](/images/2019/20191007/20191007_BuildError.png)
 
 In the pom file I noticed that there was an extra `groupId` added:
 ``` xml
@@ -31,7 +31,7 @@ And running the build in debug mode showed that it was using that combination as
 Using that project key with the default tasks now works.
 
 1. Prepare step before running with Maven:
-![Prepare before maven](/images/2019/20191007/2019/20191007_BuildDefPrepare.png)
+![Prepare before maven](/images/2019/20191007/20191007_BuildDefPrepare.png)
 
 2. Update Maven build tasks to push to SonarQube:
-![Prepare before maven](/images/2019/20191007/2019/20191007_BuildDefMaven.png)
+![Prepare before maven](/images/2019/20191007/20191007_BuildDefMaven.png)

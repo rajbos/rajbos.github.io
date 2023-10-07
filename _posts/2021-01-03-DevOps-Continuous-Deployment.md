@@ -13,13 +13,13 @@ Note: in this case I specifically mention an **environment**: any place you can 
 #### Note: Environment in this case will then be a hosting environment to run the application, so something of a webserver in this example
 #### Note: I'll use the application as running in the cloud as an example, some points can be made about other platforms
 
-![Displaying the different States of Enlightenment](/images/2020/20201231/2020/20201231_01_StatesOfEnlightenment.png)
+![Displaying the different States of Enlightenment](/images/2020/20201231/20201231_01_StatesOfEnlightenment.png)
 
 
 # Continuous Deployment (CD)
 There are some differentiation one can make about a difference between Continuous Delivery (deliver the artefact to a server) and Continuous Deployment (enabling the changes to an end-user). I'm not making that distinction in this post: the goal is to roll out a new version of the application to our test environment. As far as DevOps enlightenment goes I think the following steps can be separated out:
 
-![Stages of Continuous Deployment flow](/images/2021/20210103/2021/20210103_01_ContinuousDeployment.png)
+![Stages of Continuous Deployment flow](/images/2021/20210103/20210103_01_ContinuousDeployment.png)
 
 ## Deploy to an existing environment
 When you start here, you'll probably start with an existing environment. Perhaps you are already using a tool to deploy to that environment manually: time to step up your game and deliver the updates automatically. With DevOps tooling you can automate this process to deploy the update with each new artefact being created: you want to automatically trigger the start of your deployment when this happens and the CD pipeline should do the rest. In the cloud example you'd use these steps:

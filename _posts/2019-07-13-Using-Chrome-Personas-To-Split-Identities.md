@@ -38,27 +38,27 @@ Some note's to this:
 
 ## Cool! Now how do you do this?
 To get started, click on the User circle on the top right. You get a flyout with all you persona's. Mine is quite long:
-![Persona's fly out in Chrome](/images/2019/20190713/2019/20190713_01_MyPersonas.png)
+![Persona's fly out in Chrome](/images/2019/20190713/20190713_01_MyPersonas.png)
 
 Noticed the persona `Faebook`? I wanted a persona with my FaceBook account in it, to prevent my personal account leaking around everywhere when I don't want to. I use that product only on my phone for family stuff, so I did not want to login to it on any of my persona's. Unfortunately **you cannot renamed** them (can't find it in the UI anyway)!
 
 ### Manage people
 
 Click on 'manage people' to open a window where you can create new accounts and delete existing ones:
-![](/images/2019/20190713/2019/20190713_03_PersonasAdmin.png)
+![](/images/2019/20190713/20190713_03_PersonasAdmin.png)
 
 Notice that you can use a lot of different icons and images to link to your persona. I usually use the companies color for my customers persona and something else for personal stuff.
 
 Now you can use the new persona. Notice how it opens a new Chrome window that's also separated on the taskbar? That means you can pin it!
 
 My most active accounts are always within reach.
-![Windows Taskbar with the different personas](/images/2019/20190713/2019/20190713_02_Taskbar.png)
+![Windows Taskbar with the different personas](/images/2019/20190713/20190713_02_Taskbar.png)
 
 ## Edge Dev
 You can do the same thing in [Edge Dev](https://developer.microsoft.com/en-us/microsoft-edge/?WT.mc_id=DOP-MVP-5003719), since the functionality is in the [Chromium](https://www.chromium.org/Home) underpinnings that both Edge Dev and Chrome build on top off.
 
 I wanted to use Edge Dev for this because of one big benefit:
-![Open link in different personas in Edge Dev](/images/2019/20190713/2019/20190713_04_OpenAsInChrEdge.png)
+![Open link in different personas in Edge Dev](/images/2019/20190713/20190713_04_OpenAsInChrEdge.png)
 This means that you no longer have to copy and paste links into a different browser/persona window to use a link! You can just use the build in functionality.
 
 The main reason I haven't started moving my personas there is listed below in the Downside section below. I was a little disappointed by this and got sidetracked with other stuff. Writing about this is getting me to think about doing it again...
@@ -71,10 +71,10 @@ The main persona seems to be the one that you logged in with to Chrome: I use th
 
 ### The issue with the main persona
 The main persona is attached to the first Chrome pin on the taskbar. When you switch to that persona in Chrome, suddenly it is updated with the image for that persona:
-![Taskbar with main persona icon filled in](/images/2019/20190713/2019/20190713_05_Taskbar2.png)
+![Taskbar with main persona icon filled in](/images/2019/20190713/20190713_05_Taskbar2.png)
 
 Note the difference with the screenshot before, when that persona was not loaded. Notice the 6th icon here? It was empty before:
-![](/images/2019/20190713/2019/20190713_02_Taskbar.png)
+![](/images/2019/20190713/20190713_02_Taskbar.png)
 
 When you try to pin that persona, it's pinned as the default process! There is no way to have that persona pinned on the taskbar. If you close that session, the icon is clear again. If you click on it **it will open the last opened persona**!
 
@@ -91,7 +91,7 @@ Maybe this can be included in a shortcut and launch it that way?
 To see how Chrome names the personas, you can check your user directory here: `C:\Users\RobBos\AppData\Local\Google\Chrome\User Data\Guest Profile`
 
 Or look in the registry editor:
-![Registry editor window with Chrome settings open](/images/2019/20190713/2019/20190713_06_ChromeManually.png)
+![Registry editor window with Chrome settings open](/images/2019/20190713/20190713_06_ChromeManually.png)
 
 I've tried them all before finding that the Default profile is indeed called.... the Default profile! Unfortunately does the same thing.
 I also found to extra personas that might have been deleted at some point. After launching them, they are also visible again in the Chrome UI!

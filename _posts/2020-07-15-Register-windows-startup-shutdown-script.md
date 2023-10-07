@@ -15,7 +15,7 @@ Searching the web revealed some bits and pieces, so I'm logging it here for futu
 ## Gist
 I've created this [gist](https://gist.github.com/rajbos/49f70f4e2b9765da05f0526225de2450) with the registration script and an example file with a script to execute on Startup or Shutdown of the VM. It will then log the date/time to a text file for easy testing:
 
-![Log messages in output text file](/images/2020/20200715/2020/20200715_01_Output.png)
+![Log messages in output text file](/images/2020/20200715/20200715_01_Output.png)
 
 The trick is to set up (quite a lot of registry keys) and a windows folder that has to be present to get things working.
 

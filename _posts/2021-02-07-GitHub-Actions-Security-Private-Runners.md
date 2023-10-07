@@ -21,7 +21,7 @@ Some organizations have a policy that their builds (or deploys) always need to r
 
 The runner itself is [open source](https://github.com/actions/runner) so you can look at the way it works and contribute updates to it. Installation is made very easy: you can go to your repository or organization or enterprise. Go to Settings --> Actions and at the bottom you can find a button to add a new runner.
 
-![Example page of adding a runner](/images/2021/20210207/2021/20210207_AddRunner.png)
+![Example page of adding a runner](/images/2021/20210207/20210207_AddRunner.png)
 
 If you add the runner at the organization level, it will be available to all repositories in that organization.
 If you add the runner at the enterprise level, it will be available to all repositories in all organizations in that enterprise.

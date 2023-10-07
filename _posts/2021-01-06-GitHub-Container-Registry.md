@@ -16,7 +16,7 @@ During the beta, the container registry will be free to use. Open-source and pub
 ## Enable GitHub Container Registry
 Currently, the registry is in Beta, so you'll need to enable the beta feature on your profile or on the organization level you want to use it on. To do so, go to your profile (or organization) and go to `Feature preview` where you can toggle the feature. You'll notice a new 'Packages' tab on you profile page as well.
 
-![Location to find the preview settings](/images/2021/20210106/2021/20210106_01_EnablePackages.png)
+![Location to find the preview settings](/images/2021/20210106/20210106_01_EnablePackages.png)
 
 ## Preparing to push image to the registry
 Currently the only way to authenticate with GitHub Container Registry is to use a GitHub [Personal Access Token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token). GitHub already knows this is an issue because the PAT can be used in the entire account it is created and will change that later.
@@ -29,7 +29,7 @@ These are the scopes you need to enable for the PAT:
 If you want to delete the packages, also use this scope:
 - delete:packages scope to delete container images.
 
-![Personal Access Token Creation](/images/2021/20210106/2021/20210106_02_PAT.png)
+![Personal Access Token Creation](/images/2021/20210106/20210106_02_PAT.png)
 
 # Using a GitHub workflow to build and push an image
 To push a new image from a workflow, use the complete example below.
@@ -111,7 +111,7 @@ echo "$env:GH_PAT" | docker login https://ghcr.io -u USERNAME --password-stdin
 #### Note: this is a one way trip: it cannot be made private after making it publicly available
 
 To change this setting: go to the package and to its settings:
-![Package settings](/images/2021/20210106/2021/20210106_03_MakePackagePublic.png)
+![Package settings](/images/2021/20210106/20210106_03_MakePackagePublic.png)
 
 And make the image publicly available:
-![Make the image public](/images/2021/20210106/2021/20210106_04_MakePackagePublic.png)
+![Make the image public](/images/2021/20210106/20210106_04_MakePackagePublic.png)

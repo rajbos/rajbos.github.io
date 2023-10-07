@@ -12,7 +12,7 @@ This time it was a tweet from Martin Ehrnst:
 
 In Azure DevOps you can enable or disable features on a per-project basis:
 
-![Screenshot of Azure DevOps Settings Overview page on the project level](/images/2021/20210531/2021/20210531_SettingsOverview.png)
+![Screenshot of Azure DevOps Settings Overview page on the project level](/images/2021/20210531/20210531_SettingsOverview.png)
 
 After some reverse engineering I found out that you can request and set the state of these features by calling into the API.
 

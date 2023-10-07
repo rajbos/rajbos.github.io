@@ -42,14 +42,14 @@ Running at a scale like this means we where going to hit some weird stuff in the
 I found out that Azure has limits on the amount of available resources you can create in each [region](https://azure.microsoft.com/en-us/global-infrastructure/regions/?WT.mc_id=AZ-MVP-5003719). I already experienced that when I was attending Microsoft's AI Bootcamp in January, when the proctors there indicated limited amounts of DataScience VM's in each region. I figured this was a limitation based on the compute resources needed and the usual 'standard' resources would not have this limitation.
 
 Imaging my surprise when I tested with creating SQL Servers in India:
-![SQL Servers not available in India](/images/2019/20190623/2019/20190623_01_SQL_Server_India.png)
+![SQL Servers not available in India](/images/2019/20190623/20190623_01_SQL_Server_India.png)
 
 Even switching to one of the other two regions in India didn't help! Apparently some quota is set on Azure's backend and you cannot create those resources 😲. Even testing a couple of weeks later still indicated it wasn't possible! Eventually we moved those teams to [Southeast Asia](https://azure.microsoft.com/en-us/global-infrastructure/regions/?WT.mc_id=AZ-MVP-5003719).
 
 ## Azure learning: Portal search is not great
 When you have a large Azure Subscription with a lot of resources in it, the search just is not that great. Searching for a wildcard in the beginning of a name isn't possible, so searching for `%brisbane%` was not possible. That meant a lot of copy and pasting if I needed to find the teams resources to check them for something.
 
-![Azure Portal](/images/2019/20190623/2019/20190623_05_PortalSearch.png)
+![Azure Portal](/images/2019/20190623/20190623_05_PortalSearch.png)
 
 ## Azure learning: Azure SQL server limits
 As I always want to segment users and teams from each other as much as possible, I wanted to create an Azure SQL Server per team at first. I knew there are soft limits and hard limits in Azure for some resource providers, like for example the amount of [CPU cores](https://docs.microsoft.com/en-us/azure/azure-supportability/resource-manager-core-quotas-request?WT.mc_id=AZ-MVP-5003719) you can allocate. There is a support process around it where you can ask to increase those quotas.
@@ -70,7 +70,7 @@ If you get the error message "No more role assignments can be created (code: Rol
 ## Azure learning: portal only shows the first 2000 resources in any pane
 This only makes sense and is also present in the REST API, but the portal 'only' shows 2000 resources in the listings. This is at least the case in the `All resources` view.
 
-![Azure Portal showing only 2000 resources](/images/2019/20190623/2019/20190623_04_AzurePortalLimits.png)
+![Azure Portal showing only 2000 resources](/images/2019/20190623/20190623_04_AzurePortalLimits.png)
 
 ## Azure learning: always check the defaults or pick your own
 This one was something I had not thought of for a long time: I was creating the Azure SQL databases with the default during testing. This meant that the teams got a S0 database which would cost us €0.0171/hour/database (remember that we needed 1350 databases!). Right in the period that we ran the full set of resources, **the default changed**!! Azure now picked a `Gen 5 with 4 vCores` that costed €0.9021/hour/hour/database! I ran through € 5.000 in less than a day, because of this!! 😱😱😱😱. Lucky that I found this, I ran an updated on all of them to resize them back to an S0. Also updated the code so I picked my own default and set that to an S0 as well.
@@ -101,15 +101,15 @@ We knew that we needed to setup 1200+ team projects and the GDBC team has excell
 ## DOSsing the Azure DevOps service
 Since we had 7 different organizations, [René](https://xpirit.com/rene) created a nice pipeline to start all the CI/CD pipelines after we created all the other setup (Git repo's, Service connections, etc.).
 
-![Azure DevOps Full pipeline](/images/2019/20190623/2019/20190619_07_MassivePipeline.png)
+![Azure DevOps Full pipeline](/images/2019/20190623/20190619_07_MassivePipeline.png)
 
 Getting the sponsoring from Microsoft also meant an increase in available [Microsoft Hosted Pipelines](https://marketplace.visualstudio.com/items?itemName=ms.build-release-hosted-pipelines). I learned later that you cannot even buy these numbers of pipelines as a regular customer! This meant that we either had 100 0r 160 hosted pipelines available (depending on the estimated size of the organization we would set up), so we could kick off all +/- 400 pipelines in each organization when needed.
 
-![Azure DevOps concurrent pipelines](/images/2019/20190623/2019/20190623_02_AzureDevOps_Pipelines.png)
+![Azure DevOps concurrent pipelines](/images/2019/20190623/20190623_02_AzureDevOps_Pipelines.png)
 
 This would mean scheduling **all 400 CI builds** when we wanted, witch would all kick off their CD release on completion. This eventually meant rapid scaling of the pipelines in the region the Azure DevOps organization was linked to. Two off these regions had some serious issues handling that load!
 
-![Azure DevOps outage in Brazil and Australia](/images/2019/20190623/2019/20190623_03_AzureDevOpsOutage.png)
+![Azure DevOps outage in Brazil and Australia](/images/2019/20190623/20190623_03_AzureDevOpsOutage.png)
 
 Eventually this was all sorted out by SRE's in the Azure DevOps team, with great, direct support for us. I think the learned something about their own service in the end!
 

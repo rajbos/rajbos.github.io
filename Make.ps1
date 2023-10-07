@@ -65,13 +65,37 @@ if ($Command -eq "check-image-links") {
         foreach ($match in $linkMatches) {
             # get everything between the parentheses
             $link = $match -replace ".*\((.*)\).*", '$1'
-            if ($link.StartsWith("/")) {
+            if ($link.StartsWith("/images/")) {
                 # it's a local link
                 # check if the file exists in that path
-                if (-not (Test-Path ".$link")) {
+                $windowsFileLink = $link -replace "%20", " "
+                if (-not (Test-Path ".$windowsFileLink")) {
                     $fileLineAddress = "$($file.FullName):$($match.LineNumber)"
                     Write-Host "File link not found: [$link] in [$fileLineAddress]"
                     $notFoundLinks++
+
+                    # split the string on slashes and see if the second item is a year
+                    $linkParts = $link -split "/"
+                    if ($linkParts[2] -match "^[0-9]{4}$") {
+                        # it's a year, check if that is once more in the linkParts
+                        if ($linkParts[4] -eq $linkParts[2]) {
+                            # remove the second year from the linkParts
+                            $linkParts = $linkParts[0..3] + $linkParts[5..($linkParts.Count - 1)]
+                            # show the new link
+                            Write-Host "New link: [$($linkParts -join "/")]"
+                            if (-not (Test-Path ".$($linkParts -join "/")")) {
+                                Write-Host "Double Year replacement failed"
+                            }
+                            else {
+                                # the link is valid, replace it in the file
+                                $content = $content -replace $link, ($linkParts -join "/")
+                                Set-Content -Path $file.FullName -Value $content
+                                # break out of the loop for this link
+                                continue
+                            }
+                        }
+                    }
+
                     if ($itemsOpened -lt 10) {
                         $itemsOpened++
                         # open up the first 10 items to fix

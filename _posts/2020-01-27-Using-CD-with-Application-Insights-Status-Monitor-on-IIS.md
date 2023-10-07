@@ -22,7 +22,7 @@ Figuring out what was happening took some time and meticulously checking before 
 After taking care of the default settings in the `ApplicationInsights.config` (instrumentation key) and `web.config` (handlers),
 we found out that we needed to include the binaries in the bin folder that the Status Monitor sneakily added to our application directory:
 
-![](/images/2020/20200127/2020/20200122_binaries.png)
+![](/images/2020/20200127/20200122_binaries.png)
 
 After adding these files (for example in an internal NuGet package) and including them during our deployment, the Status Monitor now stays
 connected and sending telemetry to you Application Insights instance.

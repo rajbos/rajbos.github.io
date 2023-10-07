@@ -52,10 +52,10 @@ To enable the deployment of the application on a Windows box, you'll have to use
 The runner runs on demand or as a Windows Service and will periodically open a long polling connection to GitHub, asking if there is work to do. The connection is always outgoing and on port 443.
 
 Installing a runner can be done from a repository, team or organization level from the website. Go to "Settings" --> Actions and scroll down to Self-hosted runners:
-![Screenshot of the self-hosted runners view](/images/2020/20201124/2020/20201124_01_SelfHostedRunners.png)
+![Screenshot of the self-hosted runners view](/images/2020/20201124/20201124_01_SelfHostedRunners.png)
 
 Adding a runner is made very easy, all the steps are listed right in the screen, even including the temporary token it uses for a one time authentication process:
-![Screenshot of the steps to add a self-hosted runner](/images/2020/20201124/2020/20201124_02_AddingARunner.png)
+![Screenshot of the steps to add a self-hosted runner](/images/2020/20201124/20201124_02_AddingARunner.png)
 
 
 ## Bonus
@@ -63,4 +63,4 @@ The next question that came up was if you could run a Selenium WebTest (as I cal
 
 In both [workflows](https://github.com/rajbos/dotnetcore-webapp/blob/main/.github/workflows/) I've added the last step 'Run Web Test' that runs the unit tests in the [WebTest](https://github.com/rajbos/dotnetcore-webapp/blob/main/dotnet-core-webapp.webtests/UnitTest1.cs) project that use a Selenium Driver to talk to the installed Chrome instance on the runner. You can find all the preinstalled software on the hosted runner [here](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-software).
 
-![Screenshot of webtest output](/images/2020/20201124/2020/20201124_03_WebTest.png)
+![Screenshot of webtest output](/images/2020/20201124/20201124_03_WebTest.png)

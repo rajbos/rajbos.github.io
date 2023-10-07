@@ -21,13 +21,13 @@ See the screenshot below for the final setup. Jobs 1 & 2 will run in parallel si
 
 Task 3 **does** have a dependency on the other tasks, so it will run when task 1 and 2 are completed successfully.
 
-![Build overview](/images/2019/20191011/2019/20191011_01_Overview.png)
+![Build overview](/images/2019/20191011/20191011_01_Overview.png)
 
 
 ## Running Stryker on a set of projects
 Job 1 and 2 have the same taskgroup that will run.
 ##### Note: read my previous [post](/blog/2019/10/04/Runnning-Stryker-in-a-large-solution) on the set up I use to run Stryker on a set of projects. This job runs Stryker on all projects in a given folder by creating a specific configuration file for that part of the solution. The next task then uploads all the json files back into Azure DevOps so they will be available for downloading in a later step. This is needed because each agent job will/can run on a different agent and therefore the json files will be generated in a different folder.
-![Build overview](/images/2019/20191011/2019/20191011_02_RunStrykerfromSettingsfile.png)
+![Build overview](/images/2019/20191011/20191011_02_RunStrykerfromSettingsfile.png)
 Because each job can run on a different agent, we need to build the solution on each agent to make sure that Stryker can run. I've asked the Stryker team why they need this method and to see if we can do that once instead of in each job [here](https://github.com/stryker-mutator/stryker-net/issues/762). Still, the tradeoff with the ability to run on different agents is worth it. If I can change this setup, I will update this post.
 
 After building the solution I need to make sure that the agent has the Stryker tooling installed. I don't like to do that on an agent by hand or by baking tools like this into an agent image. I'd rather have the tool installation available in the build itself. That enables us to add new agents to the pool when needed, without us having to do something to make sure all our tooling works. Checking for a .NET Core tools on a server can be done with the code in this [GitHub Gist](https://gist.github.com/rajbos/b148e9833a5d08165188dbe00cc32301).
@@ -36,7 +36,7 @@ Using PowerShell I then download the files from my [GitHub repository](https://g
 I update the settingsfile here to correct the hard-coded paths in the configuration.json so the tools can find them in the agents source code directory.
 
 ## Joining the Stryker results
-![Build overview](/images/2019/20191011/2019/20191011_03_CreateStrykerReport.png)
+![Build overview](/images/2019/20191011/20191011_03_CreateStrykerReport.png)
 This job will first download all the artifacts from the other jobs so we have them available. By using the same code in my [GitHub repository](https://github.com/rajbos/Stryker.MultipleProjectRunner), I can now join those json files and create a new report from it.
 
 As a final step I upload the generated HTML file (self contained btw, very nice) to the artifacts for the build so they can be downloaded and analyzed.

@@ -48,7 +48,7 @@ For version pinning the same principle applies: you might even pin a specific ve
 ## 2) Review the source code and trust the publisher / action
 The first step in being better at using actions in a secure way is to review the source code: know what the action will be doing on your behalf! The repo is open source, so go to the repo:
 
-![Screenshot of where to find the action repository link](/images/2021/20211211/2021/20211211_Marketplace.png)
+![Screenshot of where to find the action repository link](/images/2021/20211211/20211211_Marketplace.png)
 
 Did you know you can even use the action call it self to find the repo? The uses statement can be partially copied behind github.com to have the direct link to the repo! So this `uses: actions/checkout@v1` becomes this `github.com/actions/checkout`!
 
@@ -67,7 +67,7 @@ In this case we see a `main` property that indicates the starting point when thi
 
 We also have a `post` definition here, which means that part of the action will also run at the end of a run:
 
-![Screenshot of the post step execution](/images/2021/20211211/2021/20211211_PostStep.png)
+![Screenshot of the post step execution](/images/2021/20211211/20211211_PostStep.png)
 
 To summarize, there is no verification or security label before someone can use an action, so you need to do your own due diligence!
 Check what the action is doing and make an informed decision if you can trust the action.
@@ -77,10 +77,10 @@ Now that you have reviewed the actions' source code, you need to make sure you a
 That means we can use the SHA hash to indicate a specific version of the action we will use. The runner will detect the SHA hash and use that to checkout the actions repository at runtime. Since adding or changing the code in the repo will mean a new SHA hash, you will always use the version you have reviewed.
 
 You can find the SHA hashes in the history of the repo, by going to the commit history. Don't use the short version of the hash, that was insecure (collisions more likely) and does no longer work.
-![Screenshot of the GitHub UI on the repo page, highlighting the last commit SHA in the update banner](/images/2021/20211211/2021/20211211_SHA_short.png)
+![Screenshot of the GitHub UI on the repo page, highlighting the last commit SHA in the update banner](/images/2021/20211211/20211211_SHA_short.png)
 
 You can then find the full SHA hash here:
-![Screenshot of the GitHub UI highlighting the entire commit SHA on the commit information page](/images/2021/20211211/2021/20211211_SHA_complete.png)
+![Screenshot of the GitHub UI highlighting the entire commit SHA on the commit information page](/images/2021/20211211/20211211_SHA_complete.png)
 
 ## 4) Dependabot for actions
 Dependabot also supports actions as an ecosystem. It can run on a schedule and check all workflows in your repository for the actions you use. If you use version 2.1.5 of an action and the publisher has released version 2.1.6, Dependabot will create a Pull Request for you that updates the action to the latest version (major/minor updates configurable).
@@ -100,7 +100,7 @@ updates:
 ```
 The only downside is that in the Dependabot Pull Request, you only see the version number (or SHA hash) change in the PR. If the publisher has added commits or release notes, that will be available on the 'Conversation' tab of the PR. It's up to you to check the actual code changes!
 
-![Screenshot of dependabot PR](/images/2021/20211211/2021/20211211_DependabotPR.png)
+![Screenshot of dependabot PR](/images/2021/20211211/20211211_DependabotPR.png)
 
 ## 5) Fork the repo and take control
 Now that you have at least a safer way of using actions (by reviewing their code and pinning it to the version you have reviewed), you are ready for the next step: taking full control over the action and any updates to them. This is one of the [best practices](/blog/2021/2021/02/06/GitHub-Actions-Forking-Repositories) for using actions and was always the initial guidance for using them: fork the repo!
@@ -109,7 +109,7 @@ By forking the action you have a full copy of it, so in case something happens (
 
 The nice thing is that you now can enforce that the users in your organization can **only** use the actions under your control. Go to your organization --> permissions --> actions permissions and select 'Allow select actions':
 
-![Screenshot of the settings](/images/2021/20211211/2021/20211211_Settings.png)
+![Screenshot of the settings](/images/2021/20211211/20211211_Settings.png)
 
 You can now enter the actions you want to allow for the selected repositories in your organization (you can also do this on the repo level). If someone triggers a workflow that does not adhere to these limitations, it will give an error and **will not start**. No action repos will even be downloaded on a runner.
 
@@ -139,7 +139,7 @@ To scale this process, I have created the [github-fork-updater](https://github.c
 ## 7) Internal marketplace
 The next maturity level is having a setup to let the users in your GitHub organization find the actions you have available in your actions-org. They can search the organization of course with the normal search options, but that means searching in all code in the repos, trying to find something that the action should do. You only want to search in the action.yml and the readme. Having a better search experience therefor is a nice way to send your users to a central location: the [internal marketplace](https://github.com/rajbos/actions-marketplace). Having all that data in a single location also has additional benefits. More on that later.
 
-![Screenshot of the internal marketplace website](/images/2021/20211014/2021/20211014_Marketplace.png)
+![Screenshot of the internal marketplace website](/images/2021/20211014/20211014_Marketplace.png)
 
 The internal marketplace groups all your (internal/private or public) actions in one place, with the information from the action.yml and the readme for users to search on. That way you can send your users here to find the actions already approved within your organization. Read more on the internal marketplace [here](/blog/2021/2021/10/14/GitHub-Actions-Internal-Marketplace).
 

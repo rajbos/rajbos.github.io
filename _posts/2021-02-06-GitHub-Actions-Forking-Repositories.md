@@ -40,15 +40,15 @@ You can also look at the maintainer of the Action and how many stars, forks and 
 
 ## Only allow Actions from GitHub
 Your first option to limit Actions being used is to use the setting to only allow Actions made by GitHub. That means that you put your trust into GitHub that the maintainers of the Actions repositories have setup sufficient repository security (limiting who can make changes to the Actions) and always verify incoming changes before publishing new versions of the Actions.
-![Only allow Actions made by GitHub](/images/2021/20210206/2021/20210206_OnlyAllowFromGitHub.png)
+![Only allow Actions made by GitHub](/images/2021/20210206/20210206_OnlyAllowFromGitHub.png)
 
 ## Only allow Actions from Verified Creators
 The second option is to limit Actions from verified creators. Unfortunately there is no process (that I could find) to become a verified creator. GitHub only states that the maintainer is `a partner that GitHub has worked closely with`.
-![Only allow Actions made by verified creators](/images/2021/20210206/2021/20210206_OnlyAllowFromVerifiedCreators.png)
+![Only allow Actions made by verified creators](/images/2021/20210206/20210206_OnlyAllowFromVerifiedCreators.png)
 
 ## Only allow specific Actions
 The third option you have is to limit Actions to the specific ones you list, either directly with the full path to the Action repository, of by using a minimatch filter that limits the Actions to a specific organization.
-![Only allow specific Actions](/images/2021/20210206/2021/20210206_OnlyAllowSpecificActions.png)
+![Only allow specific Actions](/images/2021/20210206/20210206_OnlyAllowSpecificActions.png)
 ##### Note that you can also use specific commit SHA's here as well, more on that later
 
 # Pinning versions
@@ -72,7 +72,7 @@ The best practice for pinning Action to the version you have reviewed, is by pin
 uses: gaurav-nelson/github-Action-markdown-link-check@f0656de48f62c1777d073db4a5816eba1dcc1364
 ```
 In the example you see a full length commit SHA that will run for this Action. You can find the commit SHA from the source repository by going to the commit itself with this link:
-![Example of finding the commit SHA](/images/2021/20210206/2021/20210206_FindCommitSHA.png)
+![Example of finding the commit SHA](/images/2021/20210206/20210206_FindCommitSHA.png)
 ##### Note: don't use the short 8 character SHA: this is much less secure and will be deprecated as of February the 15th, 2021 ([announcement](https://github.blog/changelog/2021/2021-01-21-github-Actions-short-sha-deprecation/)). Always use the full SHA.
 
 # Forking repositories
@@ -80,7 +80,7 @@ The **best** best practice is to completely limit your organization to only use 
 
 I recommend creating a specific organization that only has Actions repositories in them. That way I have a central location to manage all my Actions and I can limit the Actions that are allowed in any other organization I have.
 
-![Only allow specific Actions](/images/2021/20210206/2021/20210206_OnlyAllowSpecificActions.png)
+![Only allow specific Actions](/images/2021/20210206/20210206_OnlyAllowSpecificActions.png)
 
 # Benefits of forking
 An overview of the benefits of forking the Actions repositories:
@@ -100,7 +100,7 @@ To unblock them I recommend documenting the process and having a separate organi
 # Keeping your forks up to date
 If you are following the **best** best practice of forking the Actions you want to use, the you find another problem: how do you keep your forked repositories up to date? You can be on the lookout in the GitHub user interface for messages that your fork is a number of commits behind the parent repository, but when (if ever) will you come to that specific page?
 
-![GitHub UI Message that the repository is 2 commits behind the parent repository](/images/2021/20210206/2021/20210206_ForkIsBehindParent.png)
+![GitHub UI Message that the repository is 2 commits behind the parent repository](/images/2021/20210206/20210206_ForkIsBehindParent.png)
 
 Looking around I could not find a great way of keeping all Actions in your organization up to date AND giving you an option to review the incoming changes before you start using them, so I created my own 😁.
 

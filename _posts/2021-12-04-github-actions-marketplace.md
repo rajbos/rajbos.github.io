@@ -7,7 +7,7 @@ tags: [GitHub, GitHub Actions, dev.to, dev.to hackathon, Marketplace]
 
 This post is for sharing my dev.to entry for the [2021 GitHub Actions Hackathon](https://dev.to/devteam/join-us-for-the-2021-github-actions-hackathon-on-dev-4hn4). This entry shows how I have setup the workflow(s) for the [GitHub Actions Marketplace](https://devopsjournal.io/actions-marketplace/). I wanted to have a long form post detailing the steps and reasoning behind each the setup as an entry point for people building these automations.
 
-![GitHub + dev hackathon banner](/images/2021/20211204/2021/20211204_dev_to_hackathon.jpg)
+![GitHub + dev hackathon banner](/images/2021/20211204/20211204_dev_to_hackathon.jpg)
 
 
 ## Workflow:
@@ -70,7 +70,7 @@ Actions have to be Open Source to be able to use them by default (you can use pr
 
 # Internal GitHub Actions Marketplace
 You can read more information about the Internal GitHub Actions Marketplace I created in this [blog post](/blog/2021/2021/10/14/GitHub-Actions-Internal-Marketplace.html). The goal is to give our users a place where they can find the supported actions internally, since we block the use of public actions in our production organization.
-![Image of the Actions Marketplace](/images/2021/20211014/2021/20211014_Marketplace.png)
+![Image of the Actions Marketplace](/images/2021/20211014/20211014_Marketplace.png)
 
 ## Next steps:
 Next to prettifying the marketplace and adding search, I want to add more information about the actions being used inside of our production environment. This way my users can see examples of their usages and I can easily find the implementations in case there is something wrong with the action, like a security vulnerability or newer features being implemented.

@@ -17,14 +17,14 @@ You can just call `dotnet path-to-assembly`, but the .NET core tasks in Azure De
 
 ## Option 1: Publish the application to self-contained
 Here's how to go around that limitation: publish the application for the platform(s) you want to run: that way you'll have an executable that can be executed with a PowerShell task. I choose the Windows platform as a target and published the files to a separate `publish` folder.
-![Azure Build Pipeline overview](/images/2019/20190816/2019/20190816_06_AzureDevOpsBuild.png).
+![Azure Build Pipeline overview](/images/2019/20190816/20190816_06_AzureDevOpsBuild.png).
 
 You can then run it in a release.
 The release just consists of extracting the build artefact, overwriting the application settings with an [Azure DevOps Extension](https://marketplace.visualstudio.com/items?itemName=sergeyzwezdin.magic-chunks) and running the executable.
 
-![Azure Release Pipeline Task running the executable](/images/2019/20190816/2019/20190816_06_AzureDevOpsRelease.png)
+![Azure Release Pipeline Task running the executable](/images/2019/20190816/20190816_06_AzureDevOpsRelease.png)
 
 ## Option 2: Run the assembly
 An even easier way to run the assembly is to call the dotnet command on the assembly itself, just do it in a PowerShell task:
 
-![Azure Release Pipeline with Task calling the assembly](/images/2019/20190817/2019/20190817_01_AzDo-Run-dll.png)
+![Azure Release Pipeline with Task calling the assembly](/images/2019/20190817/20190817_01_AzDo-Run-dll.png)

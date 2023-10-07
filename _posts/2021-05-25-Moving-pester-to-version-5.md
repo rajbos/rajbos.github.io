@@ -8,7 +8,7 @@ tags: [PowerShell, pester, testing, v4, v5]
 This one took me way to many trials and searches to figure out, so I wanted to store it here in case I need it later on.
 Maybe someone else will find this useful as well 😄.
 
-![Pester site header image](/images/2021/20210525/2021/20210525_PesterHeader.png)
+![Pester site header image](/images/2021/20210525/20210525_PesterHeader.png)
 
 # The premise
 We have a pipeline for [GDBC](https://www.globaldevopsbootcamp.com) from June 2019 that uses [Pester](https://pester.dev) tests written in PowerShell to verify the outcome of our pipeline: we create (a lot of) resources in Azure and Azure DevOps and want to check if they actually exists.

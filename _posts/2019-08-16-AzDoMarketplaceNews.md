@@ -30,7 +30,7 @@ Seems straightforward and not that hard!
 ## Research
 To check if this is even possible with the API, I opened up the developer tools in Chrome and checked the calls that the marketplace page makes to the back-end. After finding the call that seemed to response with actual JSON data that listed all the extensions, I checked that I could make the same call in [Postman](https://www.getpostman.com/products) and actually get some results: that way I knew that I didn't need to login to an API or send in some magic cookies or something.
 
-![Postman example result](/images/2019/20190816/2019/20190816_05_Postman.png)
+![Postman example result](/images/2019/20190816/20190816_05_Postman.png)
 
 Seeing results in Postman meant that this whole idea is feasible at all an convinced me to get started. I needed a tool around the calls, somewhere to store the current data, diff any changes and then tweet about new or updated extensions. So just a couple of components 😄.
 
@@ -45,11 +45,11 @@ Starting in Visual Studio with File --> New --> .NET Core Console Application af
 
 In the [first commit](https://github.com/rajbos/azure-devops-marketplace-extension-news/commit/16fc389e6f86ad822dc0d42b326e7f4fb45446fd) you can see the thinking process and coding style that I use when building a MVP (minimal viable product).
 
-![](/images/2019/20190816/2019/20190816_02_FirstRealCommit.png)
+![](/images/2019/20190816/20190816_02_FirstRealCommit.png)
 
 Everything is still in the Program class with a lot of to-do's in it. Some data classes like `ExtensionDataResult.cs` are separated and just filled with the awesome Visual Studio feature "Paste JSON as Classes".
 
-![Paste JSON as Classes](/images/2019/20190816/2019/20190816_03_PasteSpecial.png)
+![Paste JSON as Classes](/images/2019/20190816/20190816_03_PasteSpecial.png)
 
 At this point I was mostly trying to get the download working and store the results in a list so I could easily start a diff method next.
 
@@ -68,7 +68,7 @@ To give a feel for the amount of searching around I did to actually create a too
 ## Flow
 After getting the JSON results and de-serializing them, I wanted to see what overall information was in the dataset, if there where any duplicates and other stuff that stood out. One of the quickest ways to do this for me is in good old Excel: just export a [CSV](https://github.com/rajbos/azure-devops-marketplace-extension-news/blob/main/AzDoExtensionNews/AzDoExtensionNews/Helpers/CSV.cs) and load it in, create a pivot table on it and go to town. From that I learned that I did need to deduplicate the list and that there are tags that could mean that the extension was pushed to the marketplace but was not made public yet. Good checks to add to the application.
 
-![GitHub commit history](/images/2019/20190816/2019/20190816_01_Commits.png)
+![GitHub commit history](/images/2019/20190816/20190816_01_Commits.png)
 
 ### Running locally
 This is still a console application that I run in debug mode to see if everything works. Next step was storing the data to disk, so I could create a method to diff the lists between the previous check and the current one. When I found changes in the next day (remember that this took two weeks to complete?), I searched around for some code on how to create tweets from the changes. I found an example on Stack Overflow that looked okay and just worked, so I've included that in a separate [class](https://github.com/rajbos/azure-devops-marketplace-extension-news/blob/main/AzDoExtensionNews/News.Library/Twitter.cs). I haven't even added a real secret store yet: I am just running it from appSettings.json with an optional load of appSettings.secrets.json! Yes, quick and dirty 😛. I did make sure to add that file to the .gitignore before committing, so that is fine for my single developer use case.
@@ -81,7 +81,7 @@ I also thought it would be nice to add the publishers to the tweet themselves if
 
 See how gradually this has progressed? Everything has been added when I actually had a need, and refactored into separate classes when those parts felt ready.
 
-![Visual Studio Explorer pane of the current solution](/images/2019/20190816/2019/20190816_04_VisualStudioExplorer.png)
+![Visual Studio Explorer pane of the current solution](/images/2019/20190816/20190816_04_VisualStudioExplorer.png)
 
 ## Unit tests
 Only recently I added my first unit test to the project, because I wanted to test if the Azure DevOps publish tags would work correctly: that is a comma separated string in the JSON object and I created some [tests](https://github.com/rajbos/azure-devops-marketplace-extension-news/blob/main/AzDoExtensionNews/AzDoExtensionNews.UnitTests/Helpers/TagsUnitTests.cs) to make sure those would work.
@@ -100,14 +100,14 @@ The first step is building the solution. I could run it from the build but that 
 
 I started with the default ASP.NET core web template. That uses the flag `Publish Web Projects` to publish a zip file with a WebDeploy package in it. Since we cannot use that I changed the publish step.
 
-![Azure Build Pipeline overview](/images/2019/20190816/2019/20190816_06_AzureDevOpsBuild.png)
+![Azure Build Pipeline overview](/images/2019/20190816/20190816_06_AzureDevOpsBuild.png)
 
 Later on I found out that the release cannot handle the normal .NET core DLL that is generated instead of a .NET executable: the .NET core tasks do not support executing the dll with the .NET `run` command: it wants the .NET core project folder to first build and then run the solution. I had to work around it by publishing a full .NET core app targeting the Windows platform. That way I have an executable that I can trigger with a PowerShell task.
 
 ## Release or run pipeline
 The release just consists of extracting the build artefact, overwriting the application settings with an [Azure DevOps Extension](https://marketplace.visualstudio.com/items?itemName=sergeyzwezdin.magic-chunks).
 
-![Azure Release Pipeline](/images/2019/20190816/2019/20190816_06_AzureDevOpsRelease.png)
+![Azure Release Pipeline](/images/2019/20190816/20190816_06_AzureDevOpsRelease.png)
 
 
 ## Full circle

@@ -36,7 +36,7 @@ There are a lot of people who blogged about their day at the event, how they fou
 
 Here is an overview:
 
-![Donovan Brown in Sweden for GDBC](/images/2019/20190707/2019/20190707_01_DonovanBrown.jpeg)
+![Donovan Brown in Sweden for GDBC](/images/2019/20190707/20190707_01_DonovanBrown.jpeg)
 * [Thomas Rümmler](https://twitter.com/thomas_ruemmler) helped organize an event in Stuttgart, Germany and wrote about the experience [here](https://www.aitgmbh.de/blog/tfs-devops/rueckblick-global-devops-bootcamp-2019/).
 <!-- markdown-link-check-disable -->
 * In Stockholm Sweden [Antariksh Mistry](https://www.linkedin.com/in/antariksh-mistry-50937a129) was at a venue organized by [Soldify](https://solidify.se/).<!-- markdown-link-check-enable --> This was his first GDBC and you can read about his experience [here](https://azurebiztalkread.wordpress.com/2019/06/22/global-devops-bootcamp-2019-stockholm/).

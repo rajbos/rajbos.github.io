@@ -66,7 +66,7 @@ Write-Output ('Updated Release Pipeline variables output: {0}' -f $($Release.var
 
 *Note*: you will need to set the Job you are running this in to have access to the OAuth Access Token:
 
-![OAuth Setting](/images/2020/20200417/2020/20200417_01_OAuthToken.png)
+![OAuth Setting](/images/2020/20200417/20200417_01_OAuthToken.png)
 
 ## Even easier, download the Task Group definition
 Making implementing this even easier, you can download my exported Task Group [here](/images/2020/20200417/rajbos%20-%20Update%20Release%20Variable%20value%20across%20stages.json) and import it (after reviewing it for security issues of course!) into your own environment.
@@ -90,16 +90,16 @@ You can read his post here: [www.razorspoint.com](https://www.razorspoint.com/20
 ## Recreation in Classic Pipeline
 I wanted to check to see if I could replicate the behavior in a classic pipeline and it all seemed good: there is a Publish Pipeline Artifact task available that is meant just for cases like this.
 
-![Screenshot of Publish pipeline artifact](/images/2020/20200417/2020/20200417_02_PublishPipelineArtefact.png)
+![Screenshot of Publish pipeline artifact](/images/2020/20200417/20200417_02_PublishPipelineArtefact.png)
 
 [docs](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/publish-pipeline-artifact?view=azure-devops&viewFallbackFrom=vsts)
 
 You can then retrieve the file in the next stage/job and read it back in.... Or so was the plan:
 
-![Screenshot of Publish pipeline artifact](/images/2020/20200417/2020/20200417_03_ReadPublishedPipelineArtefact.png)
+![Screenshot of Publish pipeline artifact](/images/2020/20200417/20200417_03_ReadPublishedPipelineArtefact.png)
 
 
-![Screenshot of Publish pipeline artifact](/images/2020/20200417/2020/20200417_04_ErrorReadingPublishedPipelineArtefact.png)
+![Screenshot of Publish pipeline artifact](/images/2020/20200417/20200417_04_ErrorReadingPublishedPipelineArtefact.png)
 
 The Upload Artifact task cannot be run in a release pipeline! 😠💩
 It has been added to the [documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/publish-pipeline-artifact?view=azure-devops&viewFallbackFrom=vsts), but why they then show the task as being available and all, is beyond me. There have been more people who want this to work, as you can find in this [GitHub issue](https://github.com/Microsoft/azure-pipelines-tasks/issues/8812).

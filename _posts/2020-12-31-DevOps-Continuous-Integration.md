@@ -6,7 +6,7 @@ date: 2020-12-31
 
 If you have proper source control in place, you have a central location that holds the source code. From that location you can start with Continuous Integration as a next [state of enlightenment](/blog/2020/2020/12/31/DevOps-Maturity-Levels) in your DevOps way of working. Check that link for posts on the other topics.
 
-![Displaying the different States of Enlightenment](/images/2020/20201231/2020/20201231_01_StatesOfEnlightenment.png)
+![Displaying the different States of Enlightenment](/images/2020/20201231/20201231_01_StatesOfEnlightenment.png)
 
 
 # Continuous Integration (CI)
@@ -16,7 +16,7 @@ By having a central location (or server) that starts doing things to verify code
 
 There are multiple aspects of Continuous Integration that can be viewed as different maturity levels for a teams way of working. For me, the logical process to add them is listed below:
 
-![Displaying the different stages to improve your continuous integration process](/images/2020/20201231/2020/20201231_02_ContinuousIntegration.png)
+![Displaying the different stages to improve your continuous integration process](/images/2020/20201231/20201231_02_ContinuousIntegration.png)
 
 ## Create a build on changes
 The first thing to create when improving your DevOps way of working is to create a CI build: the idea of a build is to create an artefact: this can be a zip file that can be deployed onto a webserver for example.

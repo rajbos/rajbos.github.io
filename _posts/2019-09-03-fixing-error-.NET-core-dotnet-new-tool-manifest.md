@@ -31,7 +31,7 @@ C:\.config\dotnet-tools.json
 C:\dotnet-tools.json
 ```
 
-![.NET Core logo](/images/2019/20190903/2019/20190903-dotnet-core-logo.png)
+![.NET Core logo](/images/2019/20190903/20190903-dotnet-core-logo.png)
 
 Searching around on the internet for the file it is searched (throughout the whole folder tree), I found that you need to run this command to create a local manifest:
 

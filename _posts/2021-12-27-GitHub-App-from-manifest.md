@@ -21,7 +21,7 @@ Given that we have a lot of teams, this is a repeating task and prone to errors 
 ## Flow
 With a manifest, we can use a flow in an internal webapplication that will create the App with all the default settings, get the credentials and store the credentials somewhere safe. Since this flow requires a user to be logged in, we need to give them a webpage that set things up (the manifest) and then redirect to the page on our GitHub environment (Can be Enterprise Cloud or Enterprise Server), that will do the authentication and authorization to check if the user has the rights to setup the App. Unfortunately that is also as far as we can go, since there are no API's to install the App into repositories.
 
-![Overview of the steps in the creation flow](/images/2021/20211227/2021/20211227_Flow.png)
+![Overview of the steps in the creation flow](/images/2021/20211227/20211227_Flow.png)
 
 In the overview above we can see that there are six steps to create the App with a manifest:
 1. Send the user to our index page where we setup the manifest (we let them pick the environment this app needs to be created in) and redirect to the GitHub App creation page with the manifest.

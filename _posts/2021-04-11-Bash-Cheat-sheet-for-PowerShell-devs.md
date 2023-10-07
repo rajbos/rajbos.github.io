@@ -31,7 +31,7 @@ myVar=12
 echo "$myVar" # handle the value as a string and output it
 ```
 
-![Variables example results](/images/2021/20210411/2021/20210411_Variables.png)
+![Variables example results](/images/2021/20210411/20210411_Variables.png)
 
 # String interpolation in Bash
 String interpolation works differently as well. Injecting the variable into a string using double quotes will interpret it and inject the value in to the string:
@@ -45,7 +45,7 @@ echo "this is my value $myVar" # this wil inject the object myVar
 ```
 Especially when someone is using the single quotes in a script, this has bitten me once or twice: it took some time to figure out why my value wasn't visible.
 
-![String interpolation results](/images/2021/20210411/2021/20210411_StringInterpolation.png)
+![String interpolation results](/images/2021/20210411/20210411_StringInterpolation.png)
 
 # Fileheaders
 Add a file header (first line) to the file contents to indicate how the shell should run this file. Example:
@@ -67,7 +67,7 @@ Sending some output to a file is similar to the use in PowerShell:
 ```
 The thing that always gets me, is that dang string interpolation difference:
 
-![Output of this example](/images/2021/20210411/2021/20210411_NewFile.png)
+![Output of this example](/images/2021/20210411/20210411_NewFile.png)
 
 # cls command
 In bash there is no cls command shortcut. Always use `clear` to have the same result.

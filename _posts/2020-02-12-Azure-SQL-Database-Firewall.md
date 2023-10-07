@@ -6,10 +6,10 @@ date: 2020-02-12
 
 Did you know you have more than one option to set the SQL firewall settings on an Azure SQL Database? Most people know you can set firewall rules on the **server** level:
 
-![Firewall rules on the database level](/images/2020/20200212/2020/20200212_01_ServerFirewallRules.png)
+![Firewall rules on the database level](/images/2020/20200212/20200212_01_ServerFirewallRules.png)
 
 ## Example settings
-![Example of Firewall rules on the server level](/images/2020/20200212/2020/20200212_01_ServerFirewallRulesExample.png)
+![Example of Firewall rules on the server level](/images/2020/20200212/20200212_01_ServerFirewallRulesExample.png)
 
 ##### Do note that toggling the setting for `Allow Azure services and resources to access this server` opens up connection from **anywhere** inside of the Azure Cloud: this is not limited to your own subscription!
 
@@ -21,7 +21,7 @@ You can set the firewall rules on the database level as well! These will be chec
 Do note that the server level settings are evaluated **after** the database level settings have been checked. So if you have deleted an IP-address from the database level but it is still active on the server level, the IP-address can still access the database. See the docs [here](https://docs.microsoft.com/en-us/azure/azure-sql/database/firewall-configure#server-level-versus-database-level-ip-firewall-rules?WT.mc_id=AZ-MVP-5003719) for more information.
 
 There is no editor available, you'll need to edit the settings in the database itself, for example with the Query editor or through a query or table editor with the SQL Server Management Studio or Azure Data Studio
-![Firewall rules on the database level](/images/2020/20200212/2020/20200212_02_DatabaseFirewallRules.png)
+![Firewall rules on the database level](/images/2020/20200212/20200212_02_DatabaseFirewallRules.png)
 
 You can use the table `sys.database_firewall_rules` to find the current settings and then use the stored procedures
 [sp_set_database_firewall_rule](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database?view=azuresqldb-current&WT.mc_id=AZ-MVP-5003719) to set a rule or [sp_delete_database_firewall_rule](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-delete-database-firewall-rule-azure-sql-database?view=azuresqldb-current?WT.mc_id=AZ-MVP-5003719) to delete them.

@@ -22,7 +22,7 @@ This post will be about my learnings moving from PowerShell to Typescript.
 # Getting started
 To get started I recommend looking at the example repository [actions/typescript-action](https://github.com/actions/typescript-action). It has been setup as a template, which means you can click on the `use this template` button and you are good to go.
 
-![Screenshot of the template repository](/images/2021/20210912_1/2021/20210912_Template.png)
+![Screenshot of the template repository](/images/2021/20210912_1/20210912_Template.png)
 
 # Learnings: Typescript
 Converting to Typescript definitely took some time for me. The language is locked down regarding types and usages of things you declare:
@@ -36,12 +36,12 @@ The template also has ESLint configured, which I think is a good thing. It is a 
 ## Typescript needs compilation to run
 GitHub Actions in the end runs a NodeJS script. To enable Typescript to run, you need to compile the script to a JavaScript file for things to work. For this you can use [@vercel/ncc](https://github.com/vercel/ncc) to compile the script into the `dist` folder. Then you need to add the `dist` folder to the repository and push it to GitHub for things to work. Adding compiled code to the repository off course goes against my DevOps heart, but this is how it works for Actions: it could directly be checked out (by adding a commit SHA or the branch name to your uses statement, as you [should](/blog/2021/2021/02/06/GitHub-Actions-Forking-Repositories)) and then it is expected to still work.
 
-![Screenshot of the dist folder with index.js, index.js.map, licenses.txt and a sourcemap file in it](/images/2021/20210912_1/2021/20210912_Dist.png)
+![Screenshot of the dist folder with index.js, index.js.map, licenses.txt and a sourcemap file in it](/images/2021/20210912_1/20210912_Dist.png)
 
 ## Octokit
 The [Octokit](https://octokit.github.io/) library is very useful to make the GitHub API calls. It wraps the GitHub API by leveraging the official [REST API Description](https://github.com/github/rest-api-description) for GitHub. For example connecting to the API with authentication is very straight forward:
 
-![Code showing new Octokit with a PAT to make an authenticated call to the rest API](/images/2021/20210912_1/2021/20210912_OctokitAuthenticated.png)
+![Code showing new Octokit with a PAT to make an authenticated call to the rest API](/images/2021/20210912_1/20210912_OctokitAuthenticated.png)
 
 In PowerShell I had to wrap all calls to use my own authentication setup and convert the PAT to a Base64 encoded header. It's working, but Octokit saves me all that trouble 😄.
 Similarly handling API rate-limiting is handled for you, so you don't have to worry about it.
@@ -49,13 +49,13 @@ Similarly handling API rate-limiting is handled for you, so you don't have to wo
 ## Octokit and inputs
 You can declare inputs in your action that the workflow can inject as parameters for your action. Getting the values of the parameters at runtime is build into Octokit, but injecting them during debugging is not. You can use the environment variables from the NodeJS process to still load them.
 
-![Image of using process.env.PAT on top of core.getInput](/images/2021/20210912_1/2021/20210912_Inputs.png)
+![Image of using process.env.PAT on top of core.getInput](/images/2021/20210912_1/20210912_Inputs.png)
 
 ## Octokit and pagination
 I already have more than 30 repositories in my user account, which means I have to make calls to `getRepos` already implementing pagination to get all the results. In PowerShell this meant wrapping my calls, check for the pagination headers and handling them properly. Then I needed to stitch all the results into one list and return that to the caller.
 
 In Octokit this is done by added `octokit.paginate()` around your call and you are done!
-![example of wrapping your call](/images/2021/20210912_1/2021/20210912_Pagination.png)
+![example of wrapping your call](/images/2021/20210912_1/20210912_Pagination.png)
 
 
 ## Octokit and debugging/logging
@@ -75,4 +75,4 @@ Iterating through 36 repos (at the time), checking all repos for an `action.yml`
 
 Using the Typescript template also had unit tests installed, which I could do in PowerShell as well, but never did. Let's see if I'll use them now 😄. Still, the ultimate test is including a workflow in your repository that will run your local action and check if it works.
 
-![Image of 'uses ./' to run the local action in a workflow](/images/2021/20210912_1/2021/20210912_Testing.png)
+![Image of 'uses ./' to run the local action in a workflow](/images/2021/20210912_1/20210912_Testing.png)

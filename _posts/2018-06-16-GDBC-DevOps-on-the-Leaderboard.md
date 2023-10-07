@@ -20,15 +20,15 @@ That's why I wanted to share some of the stuff we did and what happened during t
 
 ## Getting points for work items
 Every time a workitem's state changed, a preconfigured webhook was triggered. When the team moved a work item to state 'done', they would get points for that work item. Points were depending on the amount of work necessary to complete the challenge.
-The team could also request help, by adding a tag to the work item. Doing so would cost them half of the points for that work item, but also provided a link to a zipfile containing step by step instructions. 
+The team could also request help, by adding a tag to the work item. Doing so would cost them half of the points for that work item, but also provided a link to a zipfile containing step by step instructions.
 
 ## Leaderboard application
-To organize all this, [Peter Groenewegen](https://twitter.com/pgroene) and [Geert van de Cruijsen](https://twitter.com/GeertvdC) created a leaderboard application for last years event. You can find the source for it on GitHub:  
+To organize all this, [Peter Groenewegen](https://twitter.com/pgroene) and [Geert van de Cruijsen](https://twitter.com/GeertvdC) created a leaderboard application for last years event. You can find the source for it on GitHub:
 [github.com/xpiritbv](https://github.com/XpiritBV/LeaderboardsGlobalDevopsBootcamp)
 
 We build on that for this years version, where Peter has added the webhook callback so VSTS could tell us when a workitem changed.
 
-Off course, this .NET core application is hosted in Azure on an App Service instance backed by an Azure SQL Database. The code is on GitHub and we created a build and release pipeline in VSTS:  
+Off course, this .NET core application is hosted in Azure on an App Service instance backed by an Azure SQL Database. The code is on GitHub and we created a build and release pipeline in VSTS:
 ![Build](/images/2018/20180816/2018_06_16_GDBC_Build.png)
 
 This build would trigger when a pull request got merged into master and after successfully running all unit tests would trigger a release.
@@ -41,7 +41,7 @@ To check the application during the event, we created a dashboard to monitor the
 ## During the event
 The event started everywhere at 10:00 AM local time, so New Zealand and Australia got to be the first to use the application. We were a sleep during most of that timeframe, but we checked during the start to see if there where no errors. Luckily, that wasn't the case!
 
-![DevOps with Geert van der Cruijsen by Jesse Houwing](/images/20180816/2018_06_16_GDBC_By_Jesse_Houwing.jpg)  
+![DevOps with Geert van der Cruijsen by Jesse Houwing](/images/2018/20180816/2018_06_16_GDBC_By_Jesse_Houwing.jpg)
 *Checking issues together with Geert, image by [Jesse Houwing](https://twitter.com/jessehouwing/).*
 
 ### EMEA region starting with the challenges
@@ -69,6 +69,6 @@ There was a noticeable bump for the period EMEA region was live:
 
 
 ## Closing
-All in all, I think we managed to keep the leaderboard and the webhooks in the air without our users noticing much of these issues. Great to see what a team can do when the have control over their entire pipeline, even into production! 
+All in all, I think we managed to keep the leaderboard and the webhooks in the air without our users noticing much of these issues. Great to see what a team can do when the have control over their entire pipeline, even into production!
 
 That's why we need to keep repeating the message: empower your teams!

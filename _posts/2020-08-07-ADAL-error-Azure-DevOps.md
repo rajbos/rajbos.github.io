@@ -46,7 +46,7 @@ From the error there seems to be something wrong with the user we are using for 
 #### Finding the user
 I'm not sure how to find back the user from the PAT token or that error: searching around in the AAD and Azure DevOps (even using the users API) didn't track back the specific user. If you happen to know a way to do this, please let me know! I've only found that specific Id in the network log of the 'Manage User' functionality in Azure DevOps:
 
-![Manage users pane with network tab open in browser](/images/2020/20200807/2020/20200807_ManageUsers.png)
+![Manage users pane with network tab open in browser](/images/2020/20200807/20200807_ManageUsers.png)
 
 Luckily it happened to be that I could be using the PAT from two users in this project: either my own, or the one from the service user we created for all the automation. I also happened to have logged the specific PAT Token in my local [KeePass](https://keepass.info/) file that I use for these things. I've even learned to note down the creation or 'valid until' date for them, so I have something to cross reference in case of things like this!
 

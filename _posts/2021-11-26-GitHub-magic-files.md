@@ -7,7 +7,7 @@ tags: [GitHub, magic, files, configuration, pull request templates, issue forms 
 
 I keep coming across files in GitHub that have some mystic magic feeling to them. There's always a small incantation to come with them: the have to have the right name, the right extension *and* have to be stored in the right directory. I wanted to have an overview of all these spells for myself, so here we are 😉.
 
-![Photo of a cauldron with a person pointing a want to it, mist coming out of the cauldron](/images/2021/20211126/2021/20211126-github-magic-files.jpg)
+![Photo of a cauldron with a person pointing a want to it, mist coming out of the cauldron](/images/2021/20211126/20211126-github-magic-files.jpg)
 ###### Photo by <a href="https://unsplash.com/@art_maltsev?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Artem Maltsev</a> on <a href="https://unsplash.com/s/photos/magic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # Overview
@@ -50,7 +50,7 @@ Then there is a whole list of templates you can configure for issues / pull requ
 
 Some of these are extra tricky, like for example the organization profile lives in a different directory and repo then the user profile readme: `.github` or in `.github-private` repo in the org and then in a folder named `profile`: README.md.
 
-![Screenshot of creating the .github repo](/images/2021/20211126/2021/20211126-org-profile.jpg.png)
+![Screenshot of creating the .github repo](/images/2021/20211126/20211126-org-profile.jpg.png)
 
 ## Magic links
 There are also some magic links that can be super useful.

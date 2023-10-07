@@ -23,7 +23,7 @@ The documentation [link](https://docs.microsoft.com/en-us/ef/core/miscellaneous/
 ## Solution setup
 The docs already indicate to create a dummy project with a dependency on the .NET Standard Library. What they don't clearly explain, is that you then need to do some extra steps to get the EF Core tooling (like migrations) working.
 
-![Screenshot of the solution folders](/images/2020/20200429/2020/20200429_SolutionSetup.png)
+![Screenshot of the solution folders](/images/2020/20200429/20200429_SolutionSetup.png)
 I've setup my solution like above:
 * Provisioning.DataLibrary holds the DbContext with all of its models and targets .NET Standard 2.0 in this case.
 * Provisioning.ConsoleApp is the dummy project with a dependency on the DataLibrary and targets .NET Core 3.1.

@@ -14,7 +14,7 @@ You can find the presentation on [SlideShare](https://www.slideshare.net/RobBos1
 
 Keep note of this page, as I will start adding new blogpost discussion security measures when using GitHub Actions here with the learnings from this session.
 
-![SlideShare image of the presentation](/images/2021/20210128/2021/20210128_01_SlideShare.png)
+![SlideShare image of the presentation](/images/2021/20210128/20210128_01_SlideShare.png)
 
 # How to secure your GitHub Actions
 
