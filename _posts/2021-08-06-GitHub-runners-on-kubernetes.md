@@ -7,21 +7,21 @@ tags: [GitHub, GitHub Actions, GitHub runner, runners, kubernetes, k8s, self-hos
 
 If you need to host your own [GitHub Actions](https://github.com/features/actions) runners that will execute your workflow, you have multiple options: you can go the traditional route and host them on your own VM's. You can even host multiple runners on the same VM, if you want to increase the density and reuse your CPU or RAM capacity on your VM. The first downside of this is that VM's are harder to scale and often a bit more costly to run then other options. Even more important reason not to use VM's because it is not a great option for having an environment that is clean for every run: GitHub Actions will leave several files on disk for both reuse (the actions downloaded and used for example, or the docker images you run on). Even the [checkout](https://github.com/actions/checkout) action will only cleanup the source code when it is executed, to make sure that the latest changes are checked out. You can include a cleanup action at the end, but often that is not added.
 
-Even worse are the [potential security pitfalls](/blog/2021/03/07/GitHub-Actions-one-workflow-per-runner) that come from reusing an environment between runs of a workflow, or different workflows in different repositories: the first run could leave some files behind, like from a package manager you use, or overwrite a local docker image for example. Subsequent runs on that machine will look in the local cache first, and use the (potentially) compromised files. These are some of the examples of supply chain attacks that are [more and more](https://xpir.it/Solorigate) common these days.
+Even worse are the [potential security pitfalls](/blog/2021/2021/03/07/GitHub-Actions-one-workflow-per-runner) that come from reusing an environment between runs of a workflow, or different workflows in different repositories: the first run could leave some files behind, like from a package manager you use, or overwrite a local docker image for example. Subsequent runs on that machine will look in the local cache first, and use the (potentially) compromised files. These are some of the examples of supply chain attacks that are [more and more](https://xpir.it/Solorigate) common these days.
 
 To combat those risks, you want to have ephemeral runners: the environment only exists during the execution of the workflow: after it is done, everything is cleaned up. The does mean that caching things becomes a little harder. There are ways to combat that with for example a proxy close by your environment that can do the caching for your (note: this is still a potential risk!).
 
-![Photo of air balloons against a blue sky](/images/20210806/ian-dooley-DuBNA1QMpPA-unsplash.jpg)
+![Photo of air balloons against a blue sky](/images/2021/20210806/ian-dooley-DuBNA1QMpPA-unsplash.jpg)
 ###### Photo by <a href="https://unsplash.com/@sadswim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ian dooley</a> on <a href="https://unsplash.com/s/photos/launch?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+
 
 # Ephemeral runners
 GitHub does not have any support for hosting your runner inside a container with some 'bring your own compute' options. It uses that setup on the GitHub hosted runners, where a runner environment is created just for your run and destroyed afterwards, but hasn't released anything for their customers. When you start looking for options, you will find a community curated lists of [awesome runners](https://github.com/jonico/awesome-runners) that have been made by the community to host your runners inside k8s, AWS EC2, AWS Lambda's, Docker, GKE, OpenShift or Azure VM's (at the time of writing 😄).
 
 # Actions runner controller
-The one that got recommended to me was the [actions-runner-controller](https://github.com/actions-runner-controller/actions-runner-controller): it had an active community (82 contributors, including me now! lots of stars) with a lot of communication on the issues and discussions list. 
+The one that got recommended to me was the [actions-runner-controller](https://github.com/actions-runner-controller/actions-runner-controller): it had an active community (82 contributors, including me now! lots of stars) with a lot of communication on the issues and discussions list.
 
-# Hosting in Azure Kubernetes Service 
+# Hosting in Azure Kubernetes Service
 For testing to see if I could get things to working with my bare minimum of k8s knowledge, I created an [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service?WT.mc_id=AZ-MVP-5003719) cluster with all the defaults and installed the actions runner controller in it, with all the information in the [readme]((https://github.com/actions-runner-controller/actions-runner-controller)) of the project. Even used a GitHub app for authentication and things worked straight out of the box. You can just run one runner for quick testing, or use the build in scaling options to scale up and down between your limits (for example 0 runners when there is nothing to run and 100 runners as a maximum), or scale up and down based on time windows you define (so scale up to 30 runners at 7AM on workdays, if your company still folows tradditional time slots people are working on).
 
 ## A remark on scaling
@@ -40,11 +40,11 @@ The first thing I ran into was that our Rancher setup sat behind an internal pro
 The only image that could not be pulled transparently with our setup was the one from `quay.io`: this registry was not mirrored transparently, which meant that the label was different in Artifactory. As an initial fix I choose to override the image name **manually** after it has been deployed, using this command:
 ``` shell
 kubectl set image deployment/controller-manager kube-rbac-proxy=registry.artifactory.mydomain.com/brancz/kube-rbac-proxy:v0.8.0 -n actions-runner-system
-``` 
-This means that the controller-manager deployment gets a new image assigned that has the name kube-rbac-proxy and it will reload that container. After that, things actually started running and I could the runner to be available on either the organization or repository level. 
+```
+This means that the controller-manager deployment gets a new image assigned that has the name kube-rbac-proxy and it will reload that container. After that, things actually started running and I could the runner to be available on either the organization or repository level.
 
 # Docker in docker (DinD) with internal certs
-Our Rancher setup used an internal proxy to pull our images from an Artifactory server that was signed with an internal certificate (without a full trust chain). This meant that the Docker client used to pull the images had to be configured to trust the internal certificate as well or you only got pull errors with an untrusted cert. To accomplish this I build a new DinD container on our runners that where running on a VM and had the certificates installed locally. 
+Our Rancher setup used an internal proxy to pull our images from an Artifactory server that was signed with an internal certificate (without a full trust chain). This meant that the Docker client used to pull the images had to be configured to trust the internal certificate as well or you only got pull errors with an untrusted cert. To accomplish this I build a new DinD container on our runners that where running on a VM and had the certificates installed locally.
 
 Action.yml that build the image:
 ``` yaml
@@ -62,7 +62,7 @@ So that we could load the local `certificates` folder into the image (note that 
 ``` shell
 FROM docker:dind
 
-# Add the certs from the VM we are running on to this container for secured communication with Artifactory 
+# Add the certs from the VM we are running on to this container for secured communication with Artifactory
 COPY /certificates /etc/ssl/certs/
 
 # add the crt to the local certs in the image and call system update on it:
@@ -72,7 +72,7 @@ RUN update-ca-certificates
 
 ## Note: tested with `$DOCKER_TLS_CERTDIR` as well: didn't work
 ``` shell
-# Add the certs to this image for secured communication with Artifactory 
+# Add the certs to this image for secured communication with Artifactory
 COPY docker_registry.crt $DOCKER_TLS_CERTDIR # Docker should load the certs from here, didn't work
 ```
 
@@ -180,10 +180,10 @@ spec:
       - name: controller-manager
         secret:
           secretName: controller-manager
-```	
+```
 
 After that, we could deploy our own Single-runner.yaml, which has an option to specify the image to use for the runner:
-```	
+```
 # runner.yaml
 apiVersion: actions.summerwind.dev/v1alpha1
 kind: Runner
@@ -199,13 +199,12 @@ I actually had to patch the runner image as well, because our setup had a tmp fo
 
 # Other observations
 
-## Namespace 
+## Namespace
 Something that took me a while to figure out: the namespace `actions-runner-system` is hardcoded in all deployment files, so you cannot change it (easily). Keep that in mind if you want to land in a pre existing namespace with internal pod security policies for example.
 
-## Community 
+## Community
 The community creating these runner setups is active on both creating the solutions and helping people out. Given that the used setup is actively maintained and they supported me with my questions is a great sign of a good community. Without the community, I would not have been able to get this done, so thanks a lot!
 
 
-![Drawing of two hands held up next to each other in lots of colors](/images/20210806/tim-mossholder-bo3SHP58C3g-unsplash.jpg)
+![Drawing of two hands held up next to each other in lots of colors](/images/2021/20210806/tim-mossholder-bo3SHP58C3g-unsplash.jpg)
 ###### Photo by <a href="https://unsplash.com/@timmossholder?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tim Mossholder</a> on <a href="https://unsplash.com/s/photos/team?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  

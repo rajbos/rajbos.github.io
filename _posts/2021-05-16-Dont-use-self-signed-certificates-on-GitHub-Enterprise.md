@@ -29,17 +29,17 @@ Or use the node settings to load a specific cert if the action is build on node:
 ``` yaml
 - name: Checkout
     uses: actions/checkout@v2
-    env: 
+    env:
       NODE_EXTRA_CA_CERTS: /etc/ssl/certs/ca-bundle.crt
 ```
 The downside of this is that you need to add these workaround into each and every workflow that users create (and tell them they need to).
 
 ## GitHub Actions running Docker containers
-A good security practice to protect your runners, is to use Docker containers to run Actions you don't (want to) trust: run them inside a container as an extra security boundary to [limit the access](/blog/2021/02/07/GitHub-Actions-Security-Private-Runners) the runner user has on your VM. If you have setup the runner with least-privileges then the container boundary is hard to break out of.
+A good security practice to protect your runners, is to use Docker containers to run Actions you don't (want to) trust: run them inside a container as an extra security boundary to [limit the access](/blog/2021/2021/02/07/GitHub-Actions-Security-Private-Runners) the runner user has on your VM. If you have setup the runner with least-privileges then the container boundary is hard to break out of.
 
 If you start running Actions or jobs in a container, you are now bound to the certificate trust chain **of the container** and you are no longer running in the context of the runner that reads it's certificate trust chain from the host. That means you will find it hard to use the self signed certificate. From something like a call to an internal NPM endpoint (with a self signed certificate as well), you could go all-in and just ignore the full SSL certificate completely by adding `NODE_TLS_REJECT_UNAUTHORIZED = 0` to your environment. This is highly insecure and will open up your environment to a person-in-the-middle attack. I'm sure that is not what you want?
 
-You could also add the file onto the container (volume mount it or download it as an artefact) and add it to NPM so it can find it: 
+You could also add the file onto the container (volume mount it or download it as an artefact) and add it to NPM so it can find it:
 ``` shell
 npm config set cafile "<path to your certificate file>"
 ```
@@ -50,13 +50,13 @@ What you now have accomplished is that each and every developer who wants to use
 You can also start the workflow runner with `--sslskipcertvalidation` which is another bad practice opening you up to a person-in-the-middle attack. Please don't use it!
 
 ## Mount the certificate store:
-Another option is to mount the cert store in the job that is running the container: 
+Another option is to mount the cert store in the job that is running the container:
 
 ``` yaml
 jobs:
   build:
     runs-on: self-hosted
-    container: 
+    container:
       image: node:10.16-jessie
       volumes:
         - /etc/ssl/

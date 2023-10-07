@@ -21,7 +21,7 @@ The action checks your repository against [several checks](https://github.com/os
 
 Some of the checks that are executed are:
 * Branch-Protection: Is branch protection enabled for the default branch?
-* Are GitHub Action versions pinned to SHA hashes, following [best practices](/blog/2021/02/06/GitHub-Actions)?
+* Are GitHub Action versions pinned to SHA hashes, following [best practices](/blog/2021/2021/02/06/GitHub-Actions)?
 * Is the repository using a code scanning tool? Note that this check currently only supports CodeQL and SonarCloud
 * Is there a security policy defined?
 * Is there a definition file for Dependabot?
@@ -29,13 +29,13 @@ Some of the checks that are executed are:
 ## Setting it up
 Setting is up is as easy as going to the [OSSF scorecard action](https://github.com/ossf/scorecard-action#workflow-example) repo and copy the workflow example. Add that to you a new workflow file in your repo and run it from the default branch (usually `main`). After the first run, you can add a link to your README.md file to show the badge.
 
-The result will be a badge showing the latest score:  
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/devops-actions/load-runner-info/badge)](https://api.securityscorecards.dev/projects/github.com/devops-actions/load-runner-info)  
+The result will be a badge showing the latest score:
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/devops-actions/load-runner-info/badge)](https://api.securityscorecards.dev/projects/github.com/devops-actions/load-runner-info)
 
 ## Code scanning alerts
 The [default workflow](https://github.com/ossf/scorecard-action#workflow-example) also uploads the check results as a SARIF file to the Code Scanning Alerts that you can find on the Security tab of your repository. Each check can give one or more results, so you will get an alert for each result. That way you can fix the issues one by one.
 
-![Screenshot of an alert about dependency pinning that is not followed](/images/2022/20221208/20221208_01_Code_scanning_alert.png)  
+![Screenshot of an alert about dependency pinning that is not followed](/images/2022/20221208/20221208_01_Code_scanning_alert.png)
 
 Even better is that most of these alerts will give you actionable suggestions on how to fix the issue. For example, the alert above will give you a link to the [Step Security](https://app.stepsecurity.io/securerepo/) Application that can analyze your repository and give you a pull request with the changes to fix the issue. They focus on three things:
 
@@ -43,10 +43,10 @@ Even better is that most of these alerts will give you actionable suggestions on
 * Add security agent for GitHub hosted runner (Ubuntu only)
 * Pin actions to a full SHA hash
 
-![Screenshot of the three options Step Security gives you to improve your workflow](/images/2022/20221208/20221208_02_ImproveWorkflow.png)  
+![Screenshot of the three options Step Security gives you to improve your workflow](/images/2022/20221208/20221208_02_ImproveWorkflow.png)
 
 ### Restrict permission for the GITHUB_TOKEN
-One of the best practices is to always indicate what permissions you want to allow for the GitHub token that will be used in your workflow. The default setting is to permissive: it is `read` and `write` for everything in your repo. I've been advocating that people always make this read-only at the organization level. 
+One of the best practices is to always indicate what permissions you want to allow for the GitHub token that will be used in your workflow. The default setting is to permissive: it is `read` and `write` for everything in your repo. I've been advocating that people always make this read-only at the organization level.
 
 Since you cannot see what the organization permissions are, it's a best practice to always specify the rights. You can add it to the top of your workflow file:
 
@@ -72,4 +72,4 @@ This setting is something I want to look into more. It seems that you can add a 
 Definitely something to look into more!
 
 ### Pin actions to a full SHA hash
-The last option is to pin your actions to a full SHA hash. This is a best practice that I've been [advocating for a while](/blog/2021/02/06/GitHub-Actions). It's a bit more work, but it will make sure that your workflow will not be affected by a malicious actor pushing a new version of an action. What I really like is that this setting will analyze your workflow file (either pasted in or just all workflows in your public repo) and then suggest the SHA hashes of the actions, by looking at their latest version! Even better, they store the latest version in the comment next to the SHA hash, so you can understand where the hash comes from. Even Dependabot understands that comment and will update it in their version update PRs!
+The last option is to pin your actions to a full SHA hash. This is a best practice that I've been [advocating for a while](/blog/2021/2021/02/06/GitHub-Actions). It's a bit more work, but it will make sure that your workflow will not be affected by a malicious actor pushing a new version of an action. What I really like is that this setting will analyze your workflow file (either pasted in or just all workflows in your public repo) and then suggest the SHA hashes of the actions, by looking at their latest version! Even better, they store the latest version in the comment next to the SHA hash, so you can understand where the hash comes from. Even Dependabot understands that comment and will update it in their version update PRs!

@@ -5,19 +5,19 @@ date: 2021-05-31
 tags: [Azure DevOps, REST, REST API, project]
 ---
 
-Sometimes you spot interesting things online that you *have* to figure out 😎.  
+Sometimes you spot interesting things online that you *have* to figure out 😎.
 This time it was a tweet from Martin Ehrnst:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/AzureDevOps?ref_src=twsrc%5Etfw">@AzureDevOps</a> i&#39;m using your API to create new projects. However, I would like to provision these without services like boards. I cannot find any way to to do this. Doesn't the API support this?</p>&mdash; Martin Ehrnst ☁️ (@ehrnst) <a href="https://twitter.com/ehrnst/status/1395638309515313154?ref_src=twsrc%5Etfw">May 21, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-In Azure DevOps you can enable or disable features on a per-project basis:  
+In Azure DevOps you can enable or disable features on a per-project basis:
 
-![Screenshot of Azure DevOps Settings Overview page on the project level](/images/20210531/20210531_SettingsOverview.png)  
+![Screenshot of Azure DevOps Settings Overview page on the project level](/images/2021/20210531/2021/20210531_SettingsOverview.png)
 
 After some reverse engineering I found out that you can request and set the state of these features by calling into the API.
 
 # Getting the feature state
-`POST: https://dev.azure.com/{ORGANIZATION}/_apis/FeatureManagement/FeatureStatesQuery/host/project/{PROJECTID}?api-version=4.1-preview.1`  
+`POST: https://dev.azure.com/{ORGANIZATION}/_apis/FeatureManagement/FeatureStatesQuery/host/project/{PROJECTID}?api-version=4.1-preview.1`
 Indicating in the body what you want to know. If you only pass in 1 featureId, you only get the state for that single feature.
 ``` json
 {

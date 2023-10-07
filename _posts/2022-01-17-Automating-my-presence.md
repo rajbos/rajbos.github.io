@@ -5,16 +5,16 @@ date: 2022-01-17
 tags: [Home Office, Setup, Automating, Home Assistant]
 ---
 
-I have a nice working from [home setup](/blog/2021/05/13/home-setup) that allows me to use a great camera, lights and microphone. I have so many stuff, that I wanted to automate some of it to detect if I am working or not and then toggle them all on or of. 
+I have a nice working from [home setup](/blog/2021/2021/05/13/home-setup) that allows me to use a great camera, lights and microphone. I have so many stuff, that I wanted to automate some of it to detect if I am working or not and then toggle them all on or of.
 
-I already use [Home Assistant](https://www.home-assistant.io/) to remotely toggle loads of stuff in the house, so why not integrate everything? 
+I already use [Home Assistant](https://www.home-assistant.io/) to remotely toggle loads of stuff in the house, so why not integrate everything?
 
-![Photo of home office setup](/images/20210513/SetupUpdate2022.jpg)  
+![Photo of home office setup](/images/2021/20210513/SetupUpdate2022.jpg)
 
 # Home Assistant Scenes
-For this I have create some Home assistant scenes and a script to automate these actions. Next I want to toggle based on the state of things on my laptop.  
+For this I have create some Home assistant scenes and a script to automate these actions. Next I want to toggle based on the state of things on my laptop.
 
-![Screenshot of home assistant scenes](/images/2022/20220117/20220117_homeassistant.png)   
+![Screenshot of home assistant scenes](/images/2022/20220117/20220117_homeassistant.png)
 
 ## Scene 1 - Office lights
 When this one is triggered, my office lights (small desk lamp), my 'Do Epic Shit' signal and my speakers will turn on: everything I need to start working (laptop and monitor have their own flow and can be considered as 'Always on'). I've set this up as with Shelly Plug S and an extension cord that powers all three devices. Wrapped it in a scene in Home Assistant together with my Elgato Light Strip for easy switching it on and off.
@@ -49,7 +49,7 @@ Since I am running on a Windows Laptop, I can leverage the Windows Task Schedule
 To make sure this only runs when I am at home, I configured the Windows Task to only run when the network connection from home is available.
 
 To make sure this only runs when I am at my office space (that means that my peripherals are plugged in), I have a check in the script to verify if there are more than one monitors available by making this call:
-``` powershell 
+``` powershell
 Get-CimInstance -Namespace root\wmi -ClassName WmiMonitorBasicDisplayParams
 ```
 This prevents the lights from turning on while I am using the laptop at the couch 😁.
@@ -57,9 +57,9 @@ This prevents the lights from turning on while I am using the laptop at the couc
 # Camera on/off
 I also want to toggle the lights on or off depending if I am using the camera or not. Since I have multiple camera's setup and LOADS of video conference applications in use (I always think I have them all, until something obscure pops up), I want to do this automatically **by detecting if a camera is in use**.
 
-Looking around you can find solutions like [Presence Light](https://github.com/isaacrlevin/PresenceLight), that only look at the status in the Office365 API. Since I also use different tools, I needed something more. 
+Looking around you can find solutions like [Presence Light](https://github.com/isaacrlevin/PresenceLight), that only look at the status in the Office365 API. Since I also use different tools, I needed something more.
 
-Searching around I had to put some things together and I created [this PowerShell script](https://github.com/rajbos/home-automation/blob/main/camera-check.ps1) that checks ALL cameras that are connected to the machine and then checks if any process is using them. 
+Searching around I had to put some things together and I created [this PowerShell script](https://github.com/rajbos/home-automation/blob/main/camera-check.ps1) that checks ALL cameras that are connected to the machine and then checks if any process is using them.
 
 ## Step 1: Find all camera's on the machine
 You can get all the connected devices from the `Get-PnpDevice` (plug and play) commandlet. Give it the classes 'camera' and 'image' to get all devices that can be used as a camera.
@@ -70,7 +70,7 @@ If you have ever used a camera at a different location (I connect to a standalon
 
 ## Step 2: For each camera, see if they are connected
 Only for connected camera's, you get a `Physical Device Object Name` (PDON) back from the call below that you can use to check if the camera is in use. If the result is empty, the device is not connected so you don't need to check if it is use.
-``` powershell	
+``` powershell
 Get-PnpDeviceProperty -InstanceId $device.InstanceId -KeyName "DEVPKEY_Device_PDOName"
 ```
 This call also returns the **current** file that can be used to see if a process has a handle on that file. It will look  something like this: '\Device\000000ac'. See the logs below for more examples.
@@ -82,7 +82,7 @@ That file can be used to check if any process is using the camera by checking th
 For starting a loop that checks all camera's and sees if they are in use, I use a Windows Scheduled Task again: If connected to the home wi-fi, when I unlock my laptop, start running a PowerShell script that continuously checks if any camera is in use. If so, turn on the lights. If not, turn them off. I run this check every minute, since finding **all** handles is a bit of a computational expensive operation.
 
 ## Output example
-Below you can find an example of the output of the script. You can see that it found 5 camera devices: 
+Below you can find an example of the output of the script. You can see that it found 5 camera devices:
 - the internal camera is in the list twice, no idea why
 - I have two USB camera's connected
 - The Elgato Facecam is the camera from our office space

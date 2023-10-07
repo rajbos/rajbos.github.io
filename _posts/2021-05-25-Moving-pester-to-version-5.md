@@ -5,10 +5,10 @@ date: 2021-05-25
 tags: [PowerShell, pester, testing, v4, v5]
 ---
 
-This one took me way to many trials and searches to figure out, so I wanted to store it here in case I need it later on.  
+This one took me way to many trials and searches to figure out, so I wanted to store it here in case I need it later on.
 Maybe someone else will find this useful as well 😄.
 
-![Pester site header image](/images/20210525/20210525_PesterHeader.png)
+![Pester site header image](/images/2021/20210525/2021/20210525_PesterHeader.png)
 
 # The premise
 We have a pipeline for [GDBC](https://www.globaldevopsbootcamp.com) from June 2019 that uses [Pester](https://pester.dev) tests written in PowerShell to verify the outcome of our pipeline: we create (a lot of) resources in Azure and Azure DevOps and want to check if they actually exists.
@@ -18,7 +18,7 @@ We run the tests inside a PowerShell task in Azure DevOps and install the Pester
 Install-Module -Name Pester -Force -SkipPublisherCheck
 Import-Module Pester
 ```
-This of course installs the latest version. After moving things to a different environment, I skipped the tests for a while (booh!) and yesterday decided to add them back. And lo and behold: things where not working anymore. 
+This of course installs the latest version. After moving things to a different environment, I skipped the tests for a while (booh!) and yesterday decided to add them back. And lo and behold: things where not working anymore.
 
 The tricky part was getting things to work with a Pester file that holds parameters that we need to pass into it.
 
@@ -45,9 +45,9 @@ With the previous version of Pester we called Pester and added a `Data` object t
 Invoke-Pester
  -Script 'GDBC-AzureDevopsProvisioning.Tests.ps1'
  -Data = @{
-     region = '$region'; 
-     pathToJson = '$dataFilePath/$datafilename'; 
-     runDirectory = 'AzureDevOps-provisioning' } 
+     region = '$region';
+     pathToJson = '$dataFilePath/$datafilename';
+     runDirectory = 'AzureDevOps-provisioning' }
  -OutputFile Test-Pester.XML
  -OutputFormat NUnitXML
 ```
@@ -65,8 +65,8 @@ System.Management.Automation.RuntimeException: No test files were found and no s
 ```
 
 # Pester 5.*
-This is the part that took me way to long to figure out. You can run Pester with a container by calling `Invoke-Pester -Container $container` and add the parameters to pass along to the test.  
-That is step 1. 
+This is the part that took me way to long to figure out. You can run Pester with a container by calling `Invoke-Pester -Container $container` and add the parameters to pass along to the test.
+That is step 1.
 
 If you also want to add settings, you need to **wrap the container in a configuration**!
 
@@ -82,15 +82,15 @@ So the steps are:
 
 ``` powershell
 # create a new container that will be executed
-$container = New-PesterContainer 
- -Path './gdbc2019-provisioning/AzureDevOps-provisioning/GDBC-AzureDevopsProvisioning.Tests.ps1' 
+$container = New-PesterContainer
+ -Path './gdbc2019-provisioning/AzureDevOps-provisioning/GDBC-AzureDevopsProvisioning.Tests.ps1'
  # include the parameters to pass into the Pester file
  -Data @{
-     region = '$region'; 
-     pathToJson = 
-     "$dataFilePath/$datafilename"; 
-     runDirectory = './gdbc2019-provisioning/AzureDevOps-provisioning' 
-     } 
+     region = '$region';
+     pathToJson =
+     "$dataFilePath/$datafilename";
+     runDirectory = './gdbc2019-provisioning/AzureDevOps-provisioning'
+     }
 
 # create a new configuration with our settings
 $config = New-PesterConfiguration
@@ -102,9 +102,9 @@ $config.TestResult.Enabled = $True
 $config.Run.Container = $container
 
 # actually call Pester
-Invoke-Pester -Configuration $config 
+Invoke-Pester -Configuration $config
 ```
 
-More information can be found here: 
+More information can be found here:
 * [PesterConfiguration](https://pester-docs.netlify.app/docs/commands/New-PesterConfiguration)
 * [Data driven tests with Pester](https://pester.dev/docs/usage/data-driven-tests)

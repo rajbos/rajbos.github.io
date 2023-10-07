@@ -10,11 +10,11 @@ tags: [GitHub Actions, versioning, SemVer, GitHub, Actions]
 * The runner does not do SemVer at all. It's up to the maintainer
 * Even GitHub does not update (or create) all SemVer versions, so @v3 is not necessarily the latest thing for v3!
 * The marketplace shows releases, not tags. If the maintainer does not actually release, it's not visible
-* It's more secure to use a SHA hash instead of a tag: read more info [here](/blog/2021/12/11/GitHub-Actions-Maturity-Levels) 
+* It's more secure to use a SHA hash instead of a tag: read more info [here](/blog/2021/2021/12/11/GitHub-Actions-Maturity-Levels)
 
 ## Semantic versioning
 
-When using GitHub Actions, the default is to use the Semantic Versions for which the actions where released. Semantic versioning (SemVer) is an industry wide standard of giving meaning to the version number. SemVer always follows this setup:  
+When using GitHub Actions, the default is to use the Semantic Versions for which the actions where released. Semantic versioning (SemVer) is an industry wide standard of giving meaning to the version number. SemVer always follows this setup:
 
 ----------------
 
@@ -54,7 +54,7 @@ Now the interesting thing is what happens if you specify a semantic versioning p
 - uses: actions/checkout@v3.1
 ```
 
-Following semantic versioning, you'd expect that this example would work. Configuring actions with a version (or tag, or hash) is required these days so the runner can find the correct reference to download. That means that the maintainer of the action MUST follow SemVer when releasing their actions, as also described in the [GitHub Actions documentation](https://docs.github.com/en/actions/creating-actions/releasing-and-maintaining-actions#setting-up-github-actions-workflows). If the maintainer does not follow SemVer, the runner will not be able to find the correct version to download. 
+Following semantic versioning, you'd expect that this example would work. Configuring actions with a version (or tag, or hash) is required these days so the runner can find the correct reference to download. That means that the maintainer of the action MUST follow SemVer when releasing their actions, as also described in the [GitHub Actions documentation](https://docs.github.com/en/actions/creating-actions/releasing-and-maintaining-actions#setting-up-github-actions-workflows). If the maintainer does not follow SemVer, the runner will not be able to find the correct version to download.
 
 Now guess again what happens when you specify version `v3.1` for the checkout action. The runner will try to download the repo with TAG = `v3.1`. But that tag does not exist! The runner will then give an error saying it cannot find that version. So the runner does not check for matching versions by itself!
 ``` yaml
@@ -70,16 +70,16 @@ Check the tag list versus the release list shown in the marketplace:
 ![Tag v3 is missing in the marketplace](/images/2022/20221019/20221019_actions_checkout.png)
 
 # Make your GitHub Actions usage more secure
-I've been telling people that tags are not secure: the maintainer of the action can update the tag to point to a different commit. That means that your workflow could be using a commit you verified (that should always be step 1!), but all of a sudden the maintainer of the action updates the tag to point to a different commit. That means that your workflow is now using different code, which you did not verify! Read more on becoming more secure with your Actions usage in [this blogpost](/blog/2021/12/11/GitHub-Actions-Maturity-Levels).  
+I've been telling people that tags are not secure: the maintainer of the action can update the tag to point to a different commit. That means that your workflow could be using a commit you verified (that should always be step 1!), but all of a sudden the maintainer of the action updates the tag to point to a different commit. That means that your workflow is now using different code, which you did not verify! Read more on becoming more secure with your Actions usage in [this blogpost](/blog/2021/2021/12/11/GitHub-Actions-Maturity-Levels).
 
 The way to fix this and make your setup more secure, is to use the SHA hash of the commit you want to use. That way you can verify the code yourself and you know that the code you're using is the code you verified. Incoming changes can be send as notifications by setting up Dependabot for the `github-actions` ecosystem.
 
 ## Summary
 We keep telling people to follow SemVer for a reason, but for GitHub Actions the honus is on the maintainer of the action to actually re-tag all matching versions of their action with the correct SemVer version. And apparently, even GitHub doesn't follow along with this.
 
-So when you have a current release `v4.2.5`, you also need to re-tag that commit with the `v4.2` tag, as well as the `v4` tag. This way the runner can find the correct version to download. 
+So when you have a current release `v4.2.5`, you also need to re-tag that commit with the `v4.2` tag, as well as the `v4` tag. This way the runner can find the correct version to download.
 
-Example: 
+Example:
 ``` yaml
 jobs:
   job1:
@@ -87,13 +87,13 @@ jobs:
     steps:
     # works, as this is an actual tag in the repo
     - uses: actions/checkout@v3
-    
+
   job2:
     runs-on: ubuntu-latest
     steps:
     # works, as this is an actual tag in the repo
     - uses: actions/checkout@v3.1.0
-    
+
   job3:
     runs-on: ubuntu-latest
     steps:

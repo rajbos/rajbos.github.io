@@ -8,19 +8,19 @@ tags: [GitHub, GitHub Actions, Docker, symlinks]
 I was building a new [GitHub Action](https://docs.github.com/en/actions/creating-actions/about-actions) today with a Dockerfile and got a strange error... `unable to prepare context: path "/action" not found.
 
 
-![GitHub execution error message](/images/20210409/20210409_01_ErrorMessage.png)
+![GitHub execution error message](/images/2021/20210409/2021/20210409_01_ErrorMessage.png)
 
 
-I was using a Dockerfile in a sub directory, but the [documentation](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-docker-actions) indicates this is supported. So, what gives? Is it a mix-up of the file path? I'm testing it on Windows and can build the Dockerfile itself just fine 🤔. Tested with a backslash instead of a slash, but still an error:  
-`unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /path/to/Dockerfile`  
-![GitHub execution error message with symlinks](/images/20210409/20210409_02_ErrorMessage.png)
+I was using a Dockerfile in a sub directory, but the [documentation](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runs-for-docker-actions) indicates this is supported. So, what gives? Is it a mix-up of the file path? I'm testing it on Windows and can build the Dockerfile itself just fine 🤔. Tested with a backslash instead of a slash, but still an error:
+`unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /path/to/Dockerfile`
+![GitHub execution error message with symlinks](/images/2021/20210409/2021/20210409_02_ErrorMessage.png)
 
 # The fix
 
 On a hunch (this has happened before!), I changed the file ending of the Dockerfile from CRLF into LF (created the file on Windows of-course!) and... 🎉.
 
 
-![Working result with a successful Docker build](/images/20210409/20210409_03_Working.png)
+![Working result with a successful Docker build](/images/2021/20210409/2021/20210409_03_Working.png)
 
 
 # For future reference

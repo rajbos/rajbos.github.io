@@ -4,27 +4,27 @@ title: "Analyzing the GitHub marketplace - Dependency security is a big issue"
 date: 2022-09-18
 tags: [GitHub, GitHub Actions, Marketplace, Dependency Security, Security, Supply Chain Attacks, Pipeline, CI/CD, DevSecOps]
 ---
-I have been a fan of GitHub Actions since the beta in the end of 2019. And the more I use them and create my own, the more I have this growing itch to see how these actions are made, how active the community is, and what we can do to improve this ecosystem. So I decided to do some research and see what I could find out. I already have a (now inactive) [Twitter bot](https://twitter.com/githubactions) that scrapes the [GitHub Actions Marketplace](https://github.com/marketplace?category=&query=&type=actions&verification=) and stores that info for later use (unfortunately, the marketplace has no API to use for this).  
+I have been a fan of GitHub Actions since the beta in the end of 2019. And the more I use them and create my own, the more I have this growing itch to see how these actions are made, how active the community is, and what we can do to improve this ecosystem. So I decided to do some research and see what I could find out. I already have a (now inactive) [Twitter bot](https://twitter.com/githubactions) that scrapes the [GitHub Actions Marketplace](https://github.com/marketplace?category=&query=&type=actions&verification=) and stores that info for later use (unfortunately, the marketplace has no API to use for this).
 ![Photo of a lightbulb on the grass](/images/2022/20220918/ashes-sitoula-UfEyDdXlRp8-unsplash.jpg)
-##### Photo by <a href="https://unsplash.com/@awesome?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ashes Sitoula</a> on <a href="https://unsplash.com/s/photos/bulb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  
+##### Photo by <a href="https://unsplash.com/@awesome?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ashes Sitoula</a> on <a href="https://unsplash.com/s/photos/bulb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-I am also fascinated with the security aspects of using GitHub Actions for my workloads. My first conference session on this topic was at [NDC London in January, 2021](https://devopsjournal.io/blog/2021/01/28/GitHub-Actions-NDC-London) and I have been advocating on these learnings ever since. That is why I also decided to run my usual security checks on the entire marketplace, starting with forking them so I can enable Dependabot on the forked repositories. 
+I am also fascinated with the security aspects of using GitHub Actions for my workloads. My first conference session on this topic was at [NDC London in January, 2021](https://devopsjournal.io/blog/2021/2021/01/28/GitHub-Actions-NDC-London) and I have been advocating on these learnings ever since. That is why I also decided to run my usual security checks on the entire marketplace, starting with forking them so I can enable Dependabot on the forked repositories.
 
 The Marketplace shows us almost **15 thousand** actions that are available for us to use 😱. That means there is lots of community engagement for creating these actions for us, but also lots of potential for malicious actors to create actions that can be used to compromise our systems. Do be aware that in this post I'll only be taking actions into account that have been published to the marketplace. Since any public repo with an `action.yml` in the root directory (and a bit more options) can be used inside of a workflow, there are many more actions that are available to us that are not part of this research.
 
-![Screenshot of the GitHub Actions Marketplace showing 14955 actions available](/images/2022/20220918/20220918_GitHubMarketplace.png)  
+![Screenshot of the GitHub Actions Marketplace showing 14955 actions available](/images/2022/20220918/20220918_GitHubMarketplace.png)
 
-> Note: I've updated the analysis to disregard the DevDependencies after that information was added to the API. This means that the numbers are lower than the ones in the original post: a large portion of the alerts where coming from DevDependencies. 
+> Note: I've updated the analysis to disregard the DevDependencies after that information was added to the API. This means that the numbers are lower than the ones in the original post: a large portion of the alerts where coming from DevDependencies.
 
 ## Analysis of the actions from the GitHub Actions Marketplace
 I created a new [repo](https://github.com/rajbos/actions-marketplace-checks) to run these checks using GitHub Actions by scheduling a workflow that runs every hour and checks the dataset for new actions that have not been forked to my validation organization yet. If you have more checks or type of information you would like to see, definitely [let me know](https://github.com/rajbos/actions-marketplace-checks/issues) and I'll add them to the workflow.
 
-Some caveats up front: 
-- I could only load the information for 10.5 thousand actions. All the others have issues that makes it that I cannot find them anywhere. These are not included in the dataset for this analysis. 
-- Some have been archived by their maintainer, but still show up in the Marketplace. These are of course older and have more security issues in them. The actions are included in this analysis. I'm planning to remove these when the Marketplace doesn't show them anymore. 
+Some caveats up front:
+- I could only load the information for 10.5 thousand actions. All the others have issues that makes it that I cannot find them anywhere. These are not included in the dataset for this analysis.
+- Some have been archived by their maintainer, but still show up in the Marketplace. These are of course older and have more security issues in them. The actions are included in this analysis. I'm planning to remove these when the Marketplace doesn't show them anymore.
 - There are some actions where I could not parse the definition file (if used), often because of duplicate keys in their definition file. I've reached out to some of the maintainers to get those fixed, but also want to improve my method of loading these kinds of files. Currently the library I use for this does not support duplicate keys and throws unrecoverable errors when it finds them.
 
-I've reported this information back to GitHub and they are planning to improve the freshness of the data in the Marketplace. Still, this is a good two thirds of the actions that are available in the marketplace, so this is a representable dataset to look at.  
+I've reported this information back to GitHub and they are planning to improve the freshness of the data in the Marketplace. Still, this is a good two thirds of the actions that are available in the marketplace, so this is a representable dataset to look at.
 Examples of actions that show up in the marketplace but will 404 when you want to load the detail information for them:
 - [c-documentation-generator](https://github.com/marketplace?type=actions&query=c-documentation-generator+)
 - [cross-commit+](https://github.com/marketplace?type=actions&query=cross-commit+)
@@ -71,18 +71,18 @@ From that we learn that on-boarding and validating these Docker based actions wi
 One of the next steps here is to [analyze the remotely hosted images](https://github.com/rajbos/actions-marketplace-checks/issues/6) on *where* these are hosted.
 
 ## Repo age
-The next thing I wanted to know was the repository age: what can we tell about the last time the repo had seen (any!) updates? If the action is not maintained at all, there is a good chance there might be something wrong with it (either in functionality, security or adding in new features).  
+The next thing I wanted to know was the repository age: what can we tell about the last time the repo had seen (any!) updates? If the action is not maintained at all, there is a good chance there might be something wrong with it (either in functionality, security or adding in new features).
 
 ![Screenshot of the repo age. Highlights: oldest repo: 1121 days old. Average age: 221.6 days. Archived: 267 repos!](/images/2022/20220918/20220929_01_RepoAge.png)
 
 I need to dive deeper to see if there are any patterns in the repo age:
-* Do the 267!!! archived repos bring down the average age a lot? 
-* Do the most vulnerable repos match with the oldest repos? 
+* Do the 267!!! archived repos bring down the average age a lot?
+* Do the most vulnerable repos match with the oldest repos?
 * What about the last release that was made? All demos show that you need to include the version in the `uses` statements, so the last time the action has seen a release might be significant as well.
 
 ## Security alerts for dependencies of the Actions
 I've also forked over the action repos to my own organization and enabled Dependabot on them to get a sense of the vulnerable dependencies they have in use. Some caveats to this analysis are:
-- Not every dependency will end up in the action itself, so a high alert from Dependabot will point to a 'possibly' vulnerable action. Since this is not something you can track automatically and see if this would be the case, we cannot be sure that the action itself is vulnerable. 
+- Not every dependency will end up in the action itself, so a high alert from Dependabot will point to a 'possibly' vulnerable action. Since this is not something you can track automatically and see if this would be the case, we cannot be sure that the action itself is vulnerable.
 - This only works for the Node based actions, which is 4.7k, so almost 50% of the analyzed actions. Dependabot does not support Docker at the moment.
 - I'm only loading the vulnerable alerts back from Dependabot that have a severity of `High` or `Critical`.
 
@@ -98,7 +98,7 @@ I've also logged the repos with more 10 (high + critical) alerts to a separate r
 
 The highest number of high alerts in one singe action, is 58. Since that repo happens to be Archived, it should not be in the actions marketplace at all, as well as the fact that this should not be used at all. Luckily it is only used by a small number of workflows. I'd rather see that the runner would at least add warnings to the logs for calling actions that are archived.
 
-The highest number of critical alerts in one singe action, is 16. This repo is also only used by less then 10 other repos, so it is not a big impact. Since there is no API for finding the dependents that Dependabot finds, I cannot easily find out how many workflows are impacted by this. 
+The highest number of critical alerts in one singe action, is 16. This repo is also only used by less then 10 other repos, so it is not a big impact. Since there is no API for finding the dependents that Dependabot finds, I cannot easily find out how many workflows are impacted by this.
 
 I've checked some of the repos with a lot of alerts and found one example, that has 14 high severity alerts and 2 critical alerts. This action is used by 34 different public repos (so private could even be more!). One of these dependents is a repo with 425 stars and another has 6015 stars. That last one is producing a serverless CMS that will be delivered as 48 different packages into the NPM ecosystem. One of those packages sees more than a 1000 downloads a week! This is a lot of impact for a single action that could be prevented by enabling Dependabot. Of course, more analysis is needed for this case to see if the alerts are actually relevant for the action. This depends on what the action does and how it uses the dependencies.
 
@@ -106,15 +106,15 @@ I've checked some of the repos with a lot of alerts and found one example, that 
 
 ### Overview
 In short, this is a top level overview of the security results:
-![Screenshot of the workflow summary, with 30% potentially vulnerable actions of the scanned actions (which is the total of scanned actions, not filtered to a specific type)](/images/2022/20220918/20220918_AllActions.png)  
+![Screenshot of the workflow summary, with 30% potentially vulnerable actions of the scanned actions (which is the total of scanned actions, not filtered to a specific type)](/images/2022/20220918/20220918_AllActions.png)
 So for **all** action repos I could scan, 30% have at least 1 vulnerability alert with a severity of high or critical.
 
 #### Node based actions
-Filtering this down to only the Node action types, this becomes a lot scarier:   
-![Screenshot of the actions filtered to the Node only actions: 2752 actions potentially vulnerable, 1986 actions not vulnerable](/images/2022/20220918/20220918_NodeActions.png)  
+Filtering this down to only the Node action types, this becomes a lot scarier:
+![Screenshot of the actions filtered to the Node only actions: 2752 actions potentially vulnerable, 1986 actions not vulnerable](/images/2022/20220918/20220918_NodeActions.png)
 That is 58% of the Node actions that have at least 1 vulnerability alert with a severity of high or critical! And all demos and docs still indicate you can just use the actions as is and only hint at the security implications of that!
 
-Want to learn how to improve your security stance fur using actions? Check out this guide I made: [GitHub Actions Maturity Levels](https://devopsjournal.io/blog/2021/12/11/GitHub-Actions-Maturity-Levels).
+Want to learn how to improve your security stance fur using actions? Check out this guide I made: [GitHub Actions Maturity Levels](https://devopsjournal.io/blog/2021/2021/12/11/GitHub-Actions-Maturity-Levels).
 
 ## Conclusion
 There is **a lot** of improvement for the actions ecosystem to be made. I would like to see GitHub take a more active role in this, by for example:

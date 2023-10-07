@@ -2,12 +2,12 @@
 layout: post
 title: "GitHub Container Registry"
 date: 2021-01-06
-tags: [GitHub, Container, Registry, ghcr.io] 
+tags: [GitHub, Container, Registry, ghcr.io]
 ---
 
 I wanted to use the [GitHub Container Registry](https://docs.github.com/en/free-pro-team@latest/packages/guides/about-github-container-registry) to host an image for me and had some issues setting things up. To save me some time the next time I need this, and hopefully for someone else as well, I wanted to document how this process works.
 
-![Image of a lighthouse at night](/images/20210106/evgeni-tcherkasski-SHA85I0G8K4-unsplash.jpg)
+![Image of a lighthouse at night](/images/2021/20210106/evgeni-tcherkasski-SHA85I0G8K4-unsplash.jpg)
 ##### <span>Photo by <a href="https://unsplash.com/@evgenit?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Evgeni Tcherkasski</a> on <a href="https://unsplash.com/s/photos/lighthouse?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 ## Beta period
@@ -16,10 +16,10 @@ During the beta, the container registry will be free to use. Open-source and pub
 ## Enable GitHub Container Registry
 Currently, the registry is in Beta, so you'll need to enable the beta feature on your profile or on the organization level you want to use it on. To do so, go to your profile (or organization) and go to `Feature preview` where you can toggle the feature. You'll notice a new 'Packages' tab on you profile page as well.
 
-![Location to find the preview settings](/images/20210106/20210106_01_EnablePackages.png)  
+![Location to find the preview settings](/images/2021/20210106/2021/20210106_01_EnablePackages.png)
 
 ## Preparing to push image to the registry
-Currently the only way to authenticate with GitHub Container Registry is to use a GitHub [Personal Access Token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token). GitHub already knows this is an issue because the PAT can be used in the entire account it is created and will change that later.  
+Currently the only way to authenticate with GitHub Container Registry is to use a GitHub [Personal Access Token (PAT)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token). GitHub already knows this is an issue because the PAT can be used in the entire account it is created and will change that later.
 For now the advisory is to create a specific PAT with only rights to the registry and use that.
 
 These are the scopes you need to enable for the PAT:
@@ -29,7 +29,7 @@ These are the scopes you need to enable for the PAT:
 If you want to delete the packages, also use this scope:
 - delete:packages scope to delete container images.
 
-![Personal Access Token Creation](/images/20210106/20210106_02_PAT.png)
+![Personal Access Token Creation](/images/2021/20210106/2021/20210106_02_PAT.png)
 
 # Using a GitHub workflow to build and push an image
 To push a new image from a workflow, use the complete example below.
@@ -54,7 +54,7 @@ The steps used are as follows:
 ```
 
 4. Authenticate with the GitHub Container Registry
-Using the recommended setup from [GitHub](https://docs.github.com/en/packages/guides/pushing-and-pulling-docker-images#authenticating-to-github-container-registry)) for safety  
+Using the recommended setup from [GitHub](https://docs.github.com/en/packages/guides/pushing-and-pulling-docker-images#authenticating-to-github-container-registry)) for safety
 ``` yaml
 {% raw  %}
     - name: Setup GitHub Container Registry
@@ -99,9 +99,9 @@ jobs:
 Do note that I am using `secrets.GH_PAT` to inject the PAT token I'm using into the workflow. You cannot use `GITHUB` as a prefix for the secret name, so you need to change that. The secrets user interface doesn't tell you about that in a great way, which I have sent GitHub feedback on through the [GitHub Community](https://github.community/t/add-a-warning-or-explanation-when-saving-a-secret-with-a-wrong-name/154018).
 
 # Consuming the new image
-By default the images are kept behind a login, so if you want to make the image publicly available you need to do that for each package. 
+By default the images are kept behind a login, so if you want to make the image publicly available you need to do that for each package.
 
-## Keep the image behind a login 
+## Keep the image behind a login
 To use the image behind the login, you'll need to authenticate with the registry first:
 ``` powershell
 echo "$env:GH_PAT" | docker login https://ghcr.io -u USERNAME --password-stdin
@@ -111,7 +111,7 @@ echo "$env:GH_PAT" | docker login https://ghcr.io -u USERNAME --password-stdin
 #### Note: this is a one way trip: it cannot be made private after making it publicly available
 
 To change this setting: go to the package and to its settings:
-![Package settings](/images/20210106/20210106_03_MakePackagePublic.png)  
+![Package settings](/images/2021/20210106/2021/20210106_03_MakePackagePublic.png)
 
 And make the image publicly available:
-![Make the image public](/images/20210106/20210106_04_MakePackagePublic.png)
+![Make the image public](/images/2021/20210106/2021/20210106_04_MakePackagePublic.png)

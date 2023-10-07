@@ -5,7 +5,7 @@ date: 2021-01-28
 tags: [GitHub, GitHub Actions, Security, Securely, NDC London, NDC London 2021, NDC London Session]
 ---
 
-Today I delivered my GitHub Actions & Security session at [NDC London](https://ndc-london.com/agenda/how-to-secure-your-github-actions-0vd4/0gnrspzjdmb) for the first time (both for the session and NDC London 😁). 
+Today I delivered my GitHub Actions & Security session at [NDC London](https://ndc-london.com/agenda/how-to-secure-your-github-actions-0vd4/0gnrspzjdmb) for the first time (both for the session and NDC London 😁).
 
 NDC London was a lot of fun! The organizers really went out of their way to enable speakers to even see the attendees, welcome you into the room and guide you through things.
 
@@ -14,7 +14,7 @@ You can find the presentation on [SlideShare](https://www.slideshare.net/RobBos1
 
 Keep note of this page, as I will start adding new blogpost discussion security measures when using GitHub Actions here with the learnings from this session.
 
-![SlideShare image of the presentation](/images/20210128/20210128_01_SlideShare.png)
+![SlideShare image of the presentation](/images/2021/20210128/2021/20210128_01_SlideShare.png)
 
 # How to secure your GitHub Actions
 

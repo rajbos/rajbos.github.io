@@ -7,9 +7,9 @@ tags: [GitHub, magic, files, configuration, pull request templates, issue forms 
 
 I keep coming across files in GitHub that have some mystic magic feeling to them. There's always a small incantation to come with them: the have to have the right name, the right extension *and* have to be stored in the right directory. I wanted to have an overview of all these spells for myself, so here we are 😉.
 
-![Photo of a cauldron with a person pointing a want to it, mist coming out of the cauldron](/images/20211126/20211126-github-magic-files.jpg)
+![Photo of a cauldron with a person pointing a want to it, mist coming out of the cauldron](/images/2021/20211126/2021/20211126-github-magic-files.jpg)
 ###### Photo by <a href="https://unsplash.com/@art_maltsev?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Artem Maltsev</a> on <a href="https://unsplash.com/s/photos/magic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+
 # Overview
 A list of all the magic files / links that I came across in GitHub. I also created a LinkedIn Learning Course for ~25 of these files, with more detail how to use them. You can find that course on [LinkedIn Learning](https://www.linkedin.com/learning/25-github-configuration-files-you-should-be-using).
 
@@ -37,7 +37,7 @@ A list of all the magic files / links that I came across in GitHub. I also creat
 |dependency-review-config.yml|.github|no|Dependency review configuration file|[Dependency review](https://github.com/actions/dependency-review-action#configuration-options)|
 |$GITHUB_STEP_SUMMARY|workflow||Job summary output in markdown|[Job summary](https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables)|
 
-Then there is a whole list of templates you can configure for issues / pull requests / discussion:  
+Then there is a whole list of templates you can configure for issues / pull requests / discussion:
 
 |Filename|Location|.github repo support|Description|Docs|
 |---|---|---|---|---|
@@ -48,9 +48,9 @@ Then there is a whole list of templates you can configure for issues / pull requ
 |pull_request_template.md|root, /docs, /.github or in the PULL_REQUEST_TEMPLATE directory|yes|Create the default body for a Pull Request|[Using a PR template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository)|
 |Discussion category templates|/.github/DISCUSSION_CATEGORY_TEMPLATES|?|Create discussion category templates|[Create discussion category forms](https://docs.github.com/en/discussions/managing-discussions-for-your-community/creating-discussion-category-forms)|
 
-Some of these are extra tricky, like for example the organization profile lives in a different directory and repo then the user profile readme: `.github` or in `.github-private` repo in the org and then in a folder named `profile`: README.md.  
+Some of these are extra tricky, like for example the organization profile lives in a different directory and repo then the user profile readme: `.github` or in `.github-private` repo in the org and then in a folder named `profile`: README.md.
 
-![Screenshot of creating the .github repo](/images/20211126/20211126-org-profile.jpg.png)
+![Screenshot of creating the .github repo](/images/2021/20211126/2021/20211126-org-profile.jpg.png)
 
 ## Magic links
 There are also some magic links that can be super useful.
@@ -65,7 +65,7 @@ There are also some magic links that can be super useful.
 |github.com/owner/repo#readme|Scroll the repo link to open up with the README text on the page. Since GitHub shows the file content of the repo first, this can be helpful to push you users down the page into the README section. This works because the README is based on a header in the page, so this is just normal HTML behaviour. |
 
 ## Atom feeds
-A lot of things have atom feeds enabled. The things in all caps need to be configured:  
+A lot of things have atom feeds enabled. The things in all caps need to be configured:
 
 |Link setup|Description|
 |---|---|
