@@ -58,6 +58,8 @@ Here are some of the conferences I will be speaking at:
 |May 15-19|Nashville, TN, United States|GitHub Actions beyond CI/CD, GitHub security Features, Supply chain attacks|Visual Studio Live!|[link](https://vslive.com/events/nashville-2023/)| 
 |May 22-26|Aarhus, Denmark|Protect your code with GitHub security features, workshop "Secure and Compliant Cloud Delivery Embracing DevOps with GitHub"|GOTO Aarhus|[link](https://gotoaarhus.com/2023/speakers/2712/rob-bos)|
 |June 26-30|Nurnberg, DE|Protect your code with GitHub security features|Developer Week 2023|[link](https://www.developer-week.de/speaker/#/speaker/19526-rob-bos)|
+|October 9-11|Utrecht, NL|Protect your code with GitHub security features|Techorama NL|[link](https://techorama.nl/speakers/session/protect-your-code-with-github-security-features/)|
+|November 8-9|San Francisco, US|Collaborating effectively using GitHub [DEV1210G]|GitHub Universe|[link](https://reg.githubuniverse.com/flow/github/universe23/sessioncatalog/page/sessioncatalog?search=xebia)|
 
 ### Conferences in 2022
 
@@ -89,7 +91,7 @@ Here are some of the recordings for conference sessions I have done:
 <div class="col-md-3" markdown="1" style="font-weight: 600;">
 Me:<br />
 
-![Rob](/images/rob_photo.png)
+![Rob](/images/Rob_OnStage.png)
 
 I work at Xpirit <br />
 [![Xpirit Expert Blog](/images/XPRT.BLOG.png)](https://xpirit.com/team/rob-bos/)  
