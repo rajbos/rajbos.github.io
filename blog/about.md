@@ -25,9 +25,9 @@ I'm also a LinkedIn Learning Instructor. My courses are:
  - [GitHub Advanced Security](/blog/2022/10/19/LinkedIn-Learning-GHAS)
  - [25 GitHub configuration files you should be using](https://www.linkedin.com/learning/25-github-configuration-files-you-should-be-using)
 
-## Twitter Bots 🤖
-* AzDo Marketplace updates: I created a Twitter bot named [AzDoMarketNews](https://twitter.com/azdomarketnews) to keep up to date on new and improved extensions on the Azure DevOps marketplace.
-* GitHub Action updates: I created a Twitter bot named [GitHubActions](https://twitter.com/GitHubActions) to keep up to date on new and improved actions on the GitHub marketplace.
+## Bots 🤖
+* Discontinued! AzDo Marketplace updates: I created a Twitter bot named [AzDoMarketNews](https://twitter.com/azdomarketnews) to keep up to date on new and improved extensions on the Azure DevOps marketplace.
+* GitHub Action updates: I created a bot to keep you up to date on new and improved actions on the GitHub marketplace. Follow the link here [GitHub Actions Marketplace News](https://devops-actions.github.io/github-actions-marketplace-news/) and subscribe to the RSS feed for updates!
 
 ## About ⚙️
 * Name: Rob Bos
