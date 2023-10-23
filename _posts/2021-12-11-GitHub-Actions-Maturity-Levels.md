@@ -5,7 +5,7 @@ date: 2021-12-11
 tags: [GitHub, GitHub Actions, Security, Securely, Risks, Maturity Levels]
 ---
 
-I've been discussing using GitHub Actions in a secure way for a while now (see [here](/blog/2021/2021/10/27/GitHub-Universe-Session)), and I got a question on how to improve your usage of actions. I wanted to capture that info in an easy to follow set of steps, so here we go:
+I've been discussing using GitHub Actions in a secure way for a while now (see [here](/blog/2021/10/27/GitHub-Universe-Session), and I got a question on how to improve your usage of actions. I wanted to capture that info in an easy to follow set of steps, so here we go:
 
 1. Default demo examples: version pinning or by branch
 2. Review the source code and trust the publisher / action
@@ -38,7 +38,7 @@ The second line references a specific branch in the actions' repository.
 
 For both options, the runners will download the entire repository by calling either git checkout (if git is installed on the runner) or downloading the status of the repository as a tarball. The [runner is open source](https://github.com/actions/runner), so you can follow along with the steps it is taking.
 
-The issue with using both, is that you are pulling in arbitrary code from the internet! Even if you follow [best practices](/blog/2021/2021/02/06/GitHub-Actions), you should look at what the action is doing for you. GitHub has no documented process for publishing an action or a security check on them: anyone can set up a public repository with the right content and then everyone can use it. Very helpful to get started fast, but security is not part of that picture!
+The issue with using both, is that you are pulling in arbitrary code from the internet! Even if you follow [best practices](/blog/2021/02/06/GitHub-Actions), you should look at what the action is doing for you. GitHub has no documented process for publishing an action or a security check on them: anyone can set up a public repository with the right content and then everyone can use it. Very helpful to get started fast, but security is not part of that picture!
 
 ### Why is this first level so bad?
 As I said, the methods above always use a version of the action as is. The branching method uses whatever was pushed last to that branch. So even if you have just reviewed it and start using it, a newer version might just have been pushed to that branch. This happens **without you knowing of** it at all! Anything can happen between you reviewing it and you using it. A vulnerability in a package the action is using might be found, or the maintainer decides to export all environment variables to their own server. Or maybe even the maintainer hands over the code to a third party so they can do the maintenance. You never know, but might be using an action in production that is not what you intended.
@@ -103,7 +103,7 @@ The only downside is that in the Dependabot Pull Request, you only see the versi
 ![Screenshot of dependabot PR](/images/2021/20211211/20211211_DependabotPR.png)
 
 ## 5) Fork the repo and take control
-Now that you have at least a safer way of using actions (by reviewing their code and pinning it to the version you have reviewed), you are ready for the next step: taking full control over the action and any updates to them. This is one of the [best practices](/blog/2021/2021/02/06/GitHub-Actions-Forking-Repositories) for using actions and was always the initial guidance for using them: fork the repo!
+Now that you have at least a safer way of using actions (by reviewing their code and pinning it to the version you have reviewed), you are ready for the next step: taking full control over the action and any updates to them. This is one of the [best practices](/blog/2021/02/06/GitHub-Actions-Forking-Repositories) for using actions and was always the initial guidance for using them: fork the repo!
 
 By forking the action you have a full copy of it, so in case something happens (newer versions, or the maintainer deletes the repo), you workflows will continue to do their work happily. You are now also in control of any incoming updates. More on that in the next level. I always use an organization called `org-name-actions` for this, so that I have a single location for all the actions we use and an easy way to limit the use of ALL public actions (see next paragraph). Especially in an work setting, you do not want your GitHub users to just run _any_ action from the public internet, you need to check these things first!
 
@@ -134,14 +134,14 @@ You also want to incorporate incoming changes from the publisher back into the f
 
 You'd be blindly pulling all the changes from the parent repo! I think the explanation from level 2 where clear: review what the action is doing for you! That means you need to check the incoming changes!
 
-To scale this process, I have created the [github-fork-updater](https://github.com/rajbos/github-fork-updater) repository that centralizes the process for you. It checks all forks on a schedule and will create an issue for you when there are updates. You can then review the incoming changes and decide to update the fork. More is explained in this [blogpost](/blog/2021/2021/02/06/GitHub-Actions-Forking-Repositories).
+To scale this process, I have created the [github-fork-updater](https://github.com/rajbos/github-fork-updater) repository that centralizes the process for you. It checks all forks on a schedule and will create an issue for you when there are updates. You can then review the incoming changes and decide to update the fork. More is explained in this [blogpost](/blog/2021/02/06/GitHub-Actions-Forking-Repositories).
 
 ## 7) Internal marketplace
 The next maturity level is having a setup to let the users in your GitHub organization find the actions you have available in your actions-org. They can search the organization of course with the normal search options, but that means searching in all code in the repos, trying to find something that the action should do. You only want to search in the action.yml and the readme. Having a better search experience therefor is a nice way to send your users to a central location: the [internal marketplace](https://github.com/rajbos/actions-marketplace). Having all that data in a single location also has additional benefits. More on that later.
 
 ![Screenshot of the internal marketplace website](/images/2021/20211014/20211014_Marketplace.png)
 
-The internal marketplace groups all your (internal/private or public) actions in one place, with the information from the action.yml and the readme for users to search on. That way you can send your users here to find the actions already approved within your organization. Read more on the internal marketplace [here](/blog/2021/2021/10/14/GitHub-Actions-Internal-Marketplace).
+The internal marketplace groups all your (internal/private or public) actions in one place, with the information from the action.yml and the readme for users to search on. That way you can send your users here to find the actions already approved within your organization. Read more on the internal marketplace [here](/blog/2021/10/14/GitHub-Actions-Internal-Marketplace).
 
 #### Note: this is still work in progress, one of the things I still want to add is adding links to the internal usages of the actions in case a vulnerability is found or for implementation examples.
 
@@ -160,6 +160,6 @@ The last maturity level is setting up a good governance process to add actions t
 1. On approval, the action gets automatically forked over to the org-actions organizations, where it will be useable and be picked up by the internal marketplace
 
 # Summary
-The eight maturity levels is something that each action user hopefully goes through when they are told about the risks of using actions out of the box. For more insights on using actions with security in mind you can watch my [GitHub Universe session](/blog/2021/2021/10/27/GitHub-Universe-Session) on this exact topic.
+The eight maturity levels is something that each action user hopefully goes through when they are told about the risks of using actions out of the box. For more insights on using actions with security in mind you can watch my [GitHub Universe session](/blog/2021/10/27/GitHub-Universe-Session) on this exact topic.
 
 I'd love to hear where you are on the maturity scale and how you intent to improve you security: let me know on Twitter or LinkedIn!

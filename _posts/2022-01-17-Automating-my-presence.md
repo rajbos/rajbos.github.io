@@ -5,7 +5,7 @@ date: 2022-01-17
 tags: [Home Office, Setup, Automating, Home Assistant]
 ---
 
-I have a nice working from [home setup](/blog/2021/2021/05/13/home-setup) that allows me to use a great camera, lights and microphone. I have so many stuff, that I wanted to automate some of it to detect if I am working or not and then toggle them all on or of.
+I have a nice working from [home setup](/blog/2021/05/13/home-setup) that allows me to use a great camera, lights and microphone. I have so many stuff, that I wanted to automate some of it to detect if I am working or not and then toggle them all on or of.
 
 I already use [Home Assistant](https://www.home-assistant.io/) to remotely toggle loads of stuff in the house, so why not integrate everything?
 

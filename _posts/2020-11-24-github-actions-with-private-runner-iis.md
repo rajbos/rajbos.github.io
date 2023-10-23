@@ -33,7 +33,7 @@ For running the IIS commands I've used the most simple example, other command li
 1. Stop the website (or the entire webserver in this case)
 1. Overwrite all files
 1. Start the website again
-Using WebDeploy or a [remote PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7.1&WT.mc_id=DOP-MVP-5003719) session will work as well. Find more explanation on remoting in this [blogpost](/blog/2020/2020/03/29/Deploy-locally-on-Windows-Azure-DevOps) as well.
+Using WebDeploy or a [remote PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7.1&WT.mc_id=DOP-MVP-5003719) session will work as well. Find more explanation on remoting in this [blogpost](/blog/2020/03/29/Deploy-locally-on-Windows-Azure-DevOps) as well.
 
 ### Action
 The actual actions that 'deploy' the application are as follows.
@@ -47,7 +47,7 @@ The actual actions that 'deploy' the application are as follows.
 ##### Note: running these steps requires Admin level access rights, so you'll need to run the self-hosted runner with that access level. This stems from the **AppExec** commands that it fires that require that level of access (still an unfortunate thing).
 
 ### Private GitHub Action Runner
-To enable the deployment of the application on a Windows box, you'll have to use a [private GitHub action runner](https://docs.github.com/en/free-pro-team@latest/actions/hosting-your-own-runners/about-self-hosted-runners) since the cloud hosted runners will not have access to that machine (they shouldn't!). You can install them like a normal runner like for example Azure DevOps. Luckily the list of URL's you need to add to your proxy/allow list is a lot shorter than the [Azure DevOps](/blog/2020/2020/04/16/Run-Azure-DevOps-Agent-Behind-a-proxy) list.
+To enable the deployment of the application on a Windows box, you'll have to use a [private GitHub action runner](https://docs.github.com/en/free-pro-team@latest/actions/hosting-your-own-runners/about-self-hosted-runners) since the cloud hosted runners will not have access to that machine (they shouldn't!). You can install them like a normal runner like for example Azure DevOps. Luckily the list of URL's you need to add to your proxy/allow list is a lot shorter than the [Azure DevOps](/blog/2020/04/16/Run-Azure-DevOps-Agent-Behind-a-proxy) list.
 
 The runner runs on demand or as a Windows Service and will periodically open a long polling connection to GitHub, asking if there is work to do. The connection is always outgoing and on port 443.
 

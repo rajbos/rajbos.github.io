@@ -9,9 +9,9 @@ In this post I want to look into Private Runners for your GitHub Workflows and s
 GitHub Workflows can run on either a GitHub Hosted runner or on your own private runner. For the private runner you can install it on a machine of your choice and you maintain everything on that machine: the tools that you pre-install, the network stack the runner has access too and any storage it is using during its runs.
 
 This post is part of a series on best practices for using GitHub Actions in a secure way. You can find the other posts here:
-* [Forking action repositories](/blog/2021/2021/02/06/GitHub-Actions-Forking-Repositories)
-* [Private runners](/blog/2021/2021/02/07/GitHub-Actions-Security-Private-Runners)
-* [One runner, one workflow](/blog/2021/2021/03/07/GitHub-Actions-one-workflow-per-runner)
+* [Forking action repositories](/blog/2021/02/06/GitHub-Actions-Forking-Repositories)
+* [Private runners](/blog/2021/02/07/GitHub-Actions-Security-Private-Runners)
+* [One runner, one workflow](/blog/2021/03/07/GitHub-Actions-one-workflow-per-runner)
 
 ![Image of human and dog 'runners'](/images/2021/20210207/sherise-vd-nS3HSEBrcik-unsplash.jpg)
 ##### <span>Photo by <a href="https://unsplash.com/@iamsherise?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sherise VD</a> on <a href="https://unsplash.com/s/photos/running-dogs?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>

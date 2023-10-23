@@ -5,7 +5,7 @@ date: 2020-12-31
 tags: [DevOps, Maturity, Level, Continuous Deployment]
 ---
 
-If you have a good [Continuous Integration](/blog/2020/2020/12/31/DevOps-Continuous-Integration) process in place, you can start using the generated artefact to deploy that to an environment as the next [state of enlightenment](/blog/2020/2020/12/31/DevOps-Maturity-Levels) in your DevOps way of working. Check that link for posts on the other topics.
+If you have a good [Continuous Integration](/blog/2020/12/31/DevOps-Continuous-Integration) process in place, you can start using the generated artefact to deploy that to an environment as the next [state of enlightenment](/blog/2020/12/31/DevOps-Maturity-Levels) in your DevOps way of working. Check that link for posts on the other topics.
 
 Note: in this case I specifically mention an **environment**: any place you can roll out your artefact is part of your Continuous Deployment strategy. Where specifically is part of forming your strategy and there are plentiful ways of doing so. Different strategies will be discussed further down in this post. For now, lets take rolling your application out onto a test environment as a starting point: the goal is to roll out the application so you can verify if things are working as expected. You typically do so on a test environment: something that is not production 😄.
 

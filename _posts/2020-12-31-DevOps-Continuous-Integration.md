@@ -4,7 +4,7 @@ title: "DevOps Maturity Levels - Continuous Integration"
 date: 2020-12-31
 ---
 
-If you have proper source control in place, you have a central location that holds the source code. From that location you can start with Continuous Integration as a next [state of enlightenment](/blog/2020/2020/12/31/DevOps-Maturity-Levels) in your DevOps way of working. Check that link for posts on the other topics.
+If you have proper source control in place, you have a central location that holds the source code. From that location you can start with Continuous Integration as a next [state of enlightenment](/blog/2020/12/31/DevOps-Maturity-Levels) in your DevOps way of working. Check that link for posts on the other topics.
 
 ![Displaying the different States of Enlightenment](/images/2020/20201231/20201231_01_StatesOfEnlightenment.png)
 

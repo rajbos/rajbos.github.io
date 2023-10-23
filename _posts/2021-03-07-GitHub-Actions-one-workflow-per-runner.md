@@ -10,10 +10,9 @@ One important best practice for any Continuous Integration / Continuous Deployme
 There are several ways that a malicious actor can try to leverage these dependencies in an effort to compromise your system.
 
 This post is part of a series on best practices for using GitHub Actions in a secure way. You can find the other posts here:
-* [Forking action repositories](/blog/2021/2021/02/06/GitHub-Actions-Forking-Repositories)
-* [Private runners](/blog/2021/2021/02/07/
-GitHub-Actions-Security-Private-Runners)
-* [One runner, one workflow](/blog/2021/2021/03/07/GitHub-Actions-one-workflow-per-runner)
+* [Forking action repositories](/blog/2021/02/06/GitHub-Actions-Forking-Repositories)
+* [Private runners](/blog/2021/02/07/GitHub-Actions-Security-Private-Runners)
+* [One runner, one workflow](/blog/2021/03/07/GitHub-Actions-one-workflow-per-runner)
 
 ![image of locks on a chain](/images/2021/20210307/georg-bommeli-ybtUqjybcjE-unsplash.jpg)
 ###### <span>Photo by <a href="https://unsplash.com/@calina?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Georg Bommeli</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>

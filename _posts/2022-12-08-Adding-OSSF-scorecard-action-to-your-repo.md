@@ -21,7 +21,7 @@ The action checks your repository against [several checks](https://github.com/os
 
 Some of the checks that are executed are:
 * Branch-Protection: Is branch protection enabled for the default branch?
-* Are GitHub Action versions pinned to SHA hashes, following [best practices](/blog/2021/2021/02/06/GitHub-Actions)?
+* Are GitHub Action versions pinned to SHA hashes, following [best practices](/blog/2021/02/06/GitHub-Actions)?
 * Is the repository using a code scanning tool? Note that this check currently only supports CodeQL and SonarCloud
 * Is there a security policy defined?
 * Is there a definition file for Dependabot?

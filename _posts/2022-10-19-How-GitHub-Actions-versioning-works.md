@@ -10,7 +10,7 @@ tags: [GitHub Actions, versioning, SemVer, GitHub, Actions]
 * The runner does not do SemVer at all. It's up to the maintainer
 * Even GitHub does not update (or create) all SemVer versions, so @v3 is not necessarily the latest thing for v3!
 * The marketplace shows releases, not tags. If the maintainer does not actually release, it's not visible
-* It's more secure to use a SHA hash instead of a tag: read more info [here](/blog/2021/2021/12/11/GitHub-Actions-Maturity-Levels)
+* It's more secure to use a SHA hash instead of a tag: read more info [here](/blog/2021/12/11/GitHub-Actions-Maturity-Levels)
 
 ## Semantic versioning
 
@@ -70,7 +70,7 @@ Check the tag list versus the release list shown in the marketplace:
 ![Tag v3 is missing in the marketplace](/images/2022/20221019/20221019_actions_checkout.png)
 
 # Make your GitHub Actions usage more secure
-I've been telling people that tags are not secure: the maintainer of the action can update the tag to point to a different commit. That means that your workflow could be using a commit you verified (that should always be step 1!), but all of a sudden the maintainer of the action updates the tag to point to a different commit. That means that your workflow is now using different code, which you did not verify! Read more on becoming more secure with your Actions usage in [this blogpost](/blog/2021/2021/12/11/GitHub-Actions-Maturity-Levels).
+I've been telling people that tags are not secure: the maintainer of the action can update the tag to point to a different commit. That means that your workflow could be using a commit you verified (that should always be step 1!), but all of a sudden the maintainer of the action updates the tag to point to a different commit. That means that your workflow is now using different code, which you did not verify! Read more on becoming more secure with your Actions usage in [this blogpost](/blog/2021/12/11/GitHub-Actions-Maturity-Levels).
 
 The way to fix this and make your setup more secure, is to use the SHA hash of the commit you want to use. That way you can verify the code yourself and you know that the code you're using is the code you verified. Incoming changes can be send as notifications by setting up Dependabot for the `github-actions` ecosystem.
 

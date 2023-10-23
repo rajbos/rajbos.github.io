@@ -29,15 +29,15 @@ I've color coded the states indicating their main point of view and if this is D
 
 ## Dev - Source control in order
 From a developer perspective you need to have your source control in order. I still come across code that is not version controlled at all 🙀, sometimes it just sits on a user machine, a share or even worse: on the shared server used for CI/CD (continuous integration and deployment)!
-Link 👉 [DevOps - Source control in order](/blog/2020/2020/12/31/DevOps-Source-Control).
+Link 👉 [DevOps - Source control in order](/blog/2020/12/31/DevOps-Source-Control).
 
 ## Dev - CI (continuous integration) pipelines
 From a developer driven wish they usually start implementing something of a continuous pipeline, that at least builds the code on a different machine then the developer who wrote that code. This state will be split up into different maturity levels since there are a lot of different improvements to be made.
-Link 👉 [DevOps - Continuous Integration](/blog/2020/2020/12/31/DevOps-Continuous-Integration).
+Link 👉 [DevOps - Continuous Integration](/blog/2020/12/31/DevOps-Continuous-Integration).
 
 ## Ops - CD (continuous deployment / delivery) pipelines
 Often times the people who are deploying the application to an environment have the need to automate these actions into a repeatable process that can be executed without manual interactions. I've still seen teams that where orchestrating this process with six designated team members, each having to wait for someone else was done to start the next step in the deployment by running their own batch file (non versioned of course!) with custom settings for that environment. This state also can be split up into multiple maturity levels.
-Link 👉 [DevOps - Continuous Deployment](/blog/2020/2020/12/31/DevOps-Continuous-Deployment)
+Link 👉 [DevOps - Continuous Deployment](/blog/2021/01/03/DevOps-Continuous-Deployment)
 
 ## DevOps - Pre and post deployment gates with actual checks
 This is the first common scenario where both dev and ops have a stake to get things done: operations usually has an interest in checking if things are still working after a deployment and this often is the last step for the developers when they thing their work is complete.

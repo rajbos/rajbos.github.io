@@ -11,7 +11,7 @@ This post is for sharing my dev.to entry for the [2021 GitHub Actions Hackathon]
 
 
 ## Workflow:
-The starting workflow for this setup can be found [here](https://github.com/rajbos/actions-marketplace/blob/main/.github/workflows/get-action-data.yml). This workflow goes through all repositories in a user or organization and checks if they contain action definitions. If so, it adds the information about the action and the repository it lives in to a data file that then can be used. In this case the data is used to display an Internal GitHub Action Marketplace so our organization users. We lock our main organization down so that only the actions in our internal marketplace can be used as is a common [best practice](/blog/2021/2021/02/06/GitHub-Actions-Best-Practices.html).
+The starting workflow for this setup can be found [here](https://github.com/rajbos/actions-marketplace/blob/main/.github/workflows/get-action-data.yml). This workflow goes through all repositories in a user or organization and checks if they contain action definitions. If so, it adds the information about the action and the repository it lives in to a data file that then can be used. In this case the data is used to display an Internal GitHub Action Marketplace so our organization users. We lock our main organization down so that only the actions in our internal marketplace can be used as is a common [best practice](/blog/2021/02/06/GitHub-Actions).
 
 ```yaml
 {% raw  %}
@@ -69,7 +69,7 @@ Actions have to be Open Source to be able to use them by default (you can use pr
 * [Support GHES](https://github.com/LasyIsLazy/github-upload-action/issues/3)
 
 # Internal GitHub Actions Marketplace
-You can read more information about the Internal GitHub Actions Marketplace I created in this [blog post](/blog/2021/2021/10/14/GitHub-Actions-Internal-Marketplace.html). The goal is to give our users a place where they can find the supported actions internally, since we block the use of public actions in our production organization.
+You can read more information about the Internal GitHub Actions Marketplace I created in this [blog post](/blog/2021/10/14/GitHub-Actions-Internal-Marketplace). The goal is to give our users a place where they can find the supported actions internally, since we block the use of public actions in our production organization.
 ![Image of the Actions Marketplace](/images/2021/20211014/20211014_Marketplace.png)
 
 ## Next steps:

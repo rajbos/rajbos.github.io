@@ -7,7 +7,7 @@ while ($null -eq $Command -or $Command -eq "") {
     Write-Host "Enter a command to run:"
     Write-Host " - new-post"
     Write-Host " - new-images"
-    Write-Host " - check-image-links"
+    Write-Host " - check-links"
     Write-Host " - quit"
     $Command = Read-Host "Enter command to run"
 }
@@ -48,7 +48,7 @@ if ($Command -eq "new-images") {
     Code $folderpath
 }
 
-if ($Command -eq "check-image-links") {
+if ($Command -eq "check-links") {
     # loop over all md files
     $files = Get-ChildItem -Path _posts -Filter *.md -Recurse
     $foundLinks = 0
@@ -59,17 +59,17 @@ if ($Command -eq "check-image-links") {
         $content = Get-Content $file.FullName
         # check if the image links are valid
         # find the links that have the format ![alt text](/images/2020/20200101/image.png)
-        $linkMatches = $content | Select-String -Pattern "!\[.*\]\(/images/.*\)"
+        $linkMatches = $content | Select-String -Pattern "!\[.*\]\(/images|blog/.*\)"
         $foundLinks += $linkMatches.Count
         foreach ($match in $linkMatches) {
             # get everything between the parentheses
             $link = $match -replace ".*\((.*)\).*", '$1'
+            $fileLineAddress = "$($file.FullName):$($match.LineNumber)"
             if ($link.StartsWith("/images/")) {
                 # it's a local link
                 # check if the file exists in that path
                 $windowsFileLink = $link -replace "%20", " "
                 if (-not (Test-Path ".$windowsFileLink")) {
-                    $fileLineAddress = "$($file.FullName):$($match.LineNumber)"
                     Write-Host "File link not found: [$link] in [$fileLineAddress]"
                     $notFoundLinks++
 
@@ -95,6 +95,7 @@ if ($Command -eq "check-image-links") {
                         }
                     }
 
+                    # open the file in an editor
                     if ($itemsOpened -lt 10) {
                         $itemsOpened++
                         # open up the first 10 items to fix
@@ -104,6 +105,46 @@ if ($Command -eq "check-image-links") {
                         # can be used for testing
                         #break
                     }
+                }
+            }
+
+            # do the same for internal links
+            if ($link.StartsWith("/blog/")) {
+                # check if the link matches /year/month/day/title and if that file exists
+                # /blog/2021/2021/05/28/Solidify-show-Using-GitHub-Actions-Securely
+                $linkParts = $link -split "/"
+                # check if the first $linkParts[0] is a valid year between 2014 and now
+                if ($linkParts.Length -eq 6) {
+                    # it's a year, check if the next item is a month
+                    # file _posts/yyyy-MM-dd-title.md
+
+                    # handle full links to any headers on the page
+                    $lastPart = $linkParts[5] -split "#"
+                    # convert the link to a file path
+                    $fileLink = "$PSScriptRoot/_posts/$($linkParts[2])-$($linkParts[3])-$($linkParts[4])-$($lastPart[0]).md"
+                    # check if the file exists
+                    if (-not (Test-Path "$fileLink")) {
+                        Write-Host "Post link not found: [$link] in [$fileLineAddress]. File link= [$fileLink]"
+                        $notFoundLinks++
+                    }
+                    else {
+                        continue
+                    }
+                }
+                else {
+                    Write-Host "Post link not found: [$link] in [$fileLineAddress]"
+                    $notFoundLinks++
+                }
+
+                # open the file in an editor
+                if ($itemsOpened -lt 10) {
+                    $itemsOpened++
+                    # open up the first 10 items to fix
+                    Code --reuse-window -g "$fileLineAddress"
+                }
+                else {
+                    # can be used for testing
+                    #break
                 }
             }
         }

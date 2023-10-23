@@ -6,7 +6,7 @@ date: 2019-10-11
 
 I've been working on a [Stryker](https://stryker-mutator.io/stryker-net/) run for a larger .NET solution (115 projects and counting) and wanted to document on the final setup in Azure DevOps.
 
-You can find more information on what Stryker is and how this can be used on a .NET project with an example on this previous [blog post](/blog/2019/09/04/Use-Stryker-Azure-DevOps).
+You can find more information on what Stryker is and how this can be used on a .NET project with an example on this previous [blog post](/blog/2019/08/29/Use-Stryker-Azure-DevOps).
 
 In this post you can find how I got to this point: [link](/blog/2019/10/04/Runnning-Stryker-in-a-large-solution).
 
