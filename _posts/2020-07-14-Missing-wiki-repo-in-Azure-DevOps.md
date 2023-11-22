@@ -14,8 +14,8 @@ Of course, I was intrigued and started to search: this functionality was always 
 ##### <span>Photo by <a href="https://unsplash.com/@matthewhenry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Matthew Henry</a></span>)
 
 ## TL;DR
-Short version: it is not available anywhere, but you can 'guess' the correct URL and navigate to it:
-`https://dev.azure.com/<organization>/<project>_git/<name of wiki>.wiki`
+Short version: it is not available anywhere, but you can 'guess' the correct URL and clone it:
+`git clone https://dev.azure.com/<organization>/<project>/_git/<name of wiki>.wiki`
 
 ## Wiki types
 In Azure DevOps there is a distinction between two ways to setup your wiki:
@@ -32,7 +32,7 @@ Currently when you create a new team project, you get the option to choose betwe
 When you create a new project and navigate to the wiki page, you are now greeted with this screen. Already confusing and the [Learn more](https://docs.microsoft.com/en-us/azure/devops/project/wiki/provisioned-vs-published-wiki?view=azure-devops?WT.mc_id=DOP-MVP-5003719) link tries to make the difference more clear, but doesn't really make it clear it will always be a repo underneath.
 ![New project screen](/images/2020/20200714/20200714_01_NewProject.png)
 
-I mean, if you need this large a matrix to try and make the differences clear, while under the covers it is the same setup, why not make your product easier to use?
+I mean, if you need this large a matrix to try and make the differences clear, while under the covers it is the same setup, why not make your product easier to use?  
 ![Difference matrix screenshot from the docs](/images/2020/20200714/20200714_02_Docs.png)
 
 ## Searching for the repo
@@ -41,7 +41,7 @@ Then I started searching for the wiki in the repos overview, but it only shows t
 
 ![Azure Repos dropdown that doesn't show the wiki repo, only the default](/images/2020/20200714/20200714_04_ReposDropdown.png)
 
-If you go to the wiki, it shows the name of the wiki:
+If you go to the wiki, it shows the name of the wiki:  
 ![New wiki created with wiki name highlighted](/images/2020/20200714/20200714_03_ProjectWiki.png)
 
 Even the dropdown or extra button (the three dots) doesn't some more information. You **can** find the git URL for cloning you need, but not how to get to the repository to set up branch policies for example...
@@ -67,7 +67,7 @@ Finding some really old posts and a GitHub issue that requested the hidden repo 
 
 # The fix
 If you check the name of your wiki repository, you can enter it in the URL of a normal repository (use the repo selection dropdown first for the correct URL to appear for easy changing):
-`https://dev.azure.com/<organization>/<project>_git/<name of wiki>.wiki`
+`https://dev.azure.com/<organization>/<project>/_git/<name of wiki>.wiki`
 
 ![Wiki repo visible](/images/2020/20200714/20200714_07_WikiRepo.png)
 ##### Note that the dropdown still doesn't show the wiki repo: it never will currently
