@@ -49,7 +49,7 @@ Even the dropdown or extra button (the three dots) doesn't some more information
 ### REST API
 Azure DevOps has an awesome REST API you can use to automate almost everything in Azure DevOps, so let's see what it returns.
 
-If you update the URL in your browser, you can test the API with normal GET request without setting up to much stuff. Go to `https://dev.azure.com/raj-bos/Demo/_apis/git/repositories` (so _organization_/_project_/_apis/git/repositories) and you get a list of repositories.
+If you update the URL in your browser, you can test the API with normal GET request without setting up to much stuff. Go to `https://dev.azure.com/raj-bos/Demo/_apis/git/repositories` (so _organization_/_project_/_apis/git/repositories) and you get a list of repositories.  
 ![](/images/2020/20200714/20200714_05_API_ReposCall.png)
 
 ##### Note this does not include the wiki repo, only the default empty repo with the same name as the project.
