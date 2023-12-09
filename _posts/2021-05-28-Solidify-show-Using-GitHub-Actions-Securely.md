@@ -17,7 +17,7 @@ The session has been recorded and you can re-watch it on [YouTube](https://www.y
 
 # Slide deck
 I you want to look up some things from the slides or visit one of the many links in there, you can look at the slide deck here:
-[here](/slides/2021/20210528%20GitHub%20Actions%20security%20Solidify.pdf).
+[here](/slides/20210528%20GitHub%20Actions%20security%20Solidify.pdf).
 
 # Question: Can you prevent a reviewer to approve their own changes on a Pull Request?
 Full question: "I would like to enforce that at least two people are involved with every change made to a protected branch.
