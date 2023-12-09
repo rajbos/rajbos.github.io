@@ -16,8 +16,7 @@ The session has been recorded and you can re-watch it on [YouTube](https://www.y
 <iframe width="900" height="508" src="https://www.youtube.com/embed/C58DSezZFR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Slide deck
-I you want to look up some things from the slides or visit one of the many links in there, you can look at the slide deck here:
-[here](/slides/20210528%20GitHub%20Actions%20security%20Solidify.pdf).
+I you want to look up some things from the slides or visit one of the many links in there, you can look at the slide deck [here](/slides/20210528%20GitHub%20Actions%20security%20Solidify.pdf).
 
 # Question: Can you prevent a reviewer to approve their own changes on a Pull Request?
 Full question: "I would like to enforce that at least two people are involved with every change made to a protected branch.
