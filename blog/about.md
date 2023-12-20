@@ -15,10 +15,10 @@ title: About
 ## Hi, I am Rob 👋
 I do DevOps-y stuff, mostly with C# and GitHub/Azure/Azure DevOps.
 
-## Work | Xpirit 🔨
-In my day job I work for Xpirit [link](https://www.xpirit.com/rob) as a DevOps consultant & GitHub Trainer, helping our customers with whatever they need regarding DevOps. Whether it's training, finding out some obscure issues, setting up their CI/CD pipelines, or helping them on their way to implement more DevOps patterns and practices, I help them with it. A lot of focus these days goes into improving their security setup, and looking at supply chain issues. Often I find myself helping teams with modern agile and DevOps practices in more of a coaching role. Focused on GitHub!
+## Work | Xebia 🔨
+In my day job I work for [Xebia Microsoft Services](https://website.xebia.com/digital-transformation/microsoft-services/github) as a DevOps consultant & GitHub Trainer, helping our customers with whatever they need regarding DevOps. Whether it's training, finding out some obscure issues, setting up their CI/CD pipelines, or helping them on their way to implement more DevOps patterns and practices, I help them with it. A lot of focus these days goes into improving their security setup, and looking at supply chain issues. Often I find myself helping teams with modern agile and DevOps practices in more of a coaching role. Focused on GitHub!
 
-## Trainer: GitHub Accredited and Microsoft Certified
+## Trainer: GitHub Accredited and Microsoft Certified 🐠
 I am a GitHub trainer for the GitHub (non-)developer, Advanced Security, and GitHub Actions trainings. I also give several Bootcamps including a GitHub Advanced Security Bootcamp and the GitHub Partner Bootcamps that are needed to become a GitHub Accredited Trainer. Next to that I am a Microsoft Certified Trainer for AZ-900, AZ-204, and AZ-400 ( DevOps on Azure track).  
 
 I'm also a LinkedIn Learning Instructor. My courses are:
@@ -26,8 +26,8 @@ I'm also a LinkedIn Learning Instructor. My courses are:
  - [25 GitHub configuration files you should be using](https://www.linkedin.com/learning/25-github-configuration-files-you-should-be-using)
 
 ## Bots 🤖
-* Discontinued! AzDo Marketplace updates: I created a Twitter bot named [AzDoMarketNews](https://twitter.com/azdomarketnews) to keep up to date on new and improved extensions on the Azure DevOps marketplace.
 * GitHub Action updates: I created a bot to keep you up to date on new and improved actions on the GitHub marketplace. Follow the link here [GitHub Actions Marketplace News](https://devops-actions.github.io/github-actions-marketplace-news/) and subscribe to the RSS feed for updates!
+* Discontinued! AzDo Marketplace updates: I created a Twitter bot named [AzDoMarketNews](https://twitter.com/azdomarketnews) to keep up to date on new and improved extensions on the Azure DevOps marketplace.
 
 ## About ⚙️
 * Name: Rob Bos
@@ -77,12 +77,13 @@ Here are some of the conferences I will be speaking at:
 ## Recorded conferences 🎤 
 Here are some of the recordings for conference sessions I have done:
 
-|Year|Topic|Conference|Recording|
+|Year|Conference|Topic|Recording|
 |---|---|---|---|
 |2020|DevOps Fest|How to run a global, cloud scale event for 10.000 people (GDBC)|[YouTube](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=26)|
 |2021|GitHub Universe|How to use GitHub Actions with security in mind|[YouTube](https://www.youtube.com/watch?v=Ers-LcA7Nmc)|
 |2022|NDC Security|Protect yourself against supply chain attacks through your pipeline|[YouTube](https://www.youtube.com/watch?v=00R1JGBQEJg)|
 |2022|NDC Security|Protect your code with GitHub security features|[YouTube](https://www.youtube.com/watch?v=dZYiveyMWXg)|
+|2023|GitHub Universe|How to collaborate effectively using GitHub|[GitHub Universe](https://reg.githubuniverse.com/flow/github/universe23/sessioncatalog/page/sessioncatalog/session/1684691781498001bPSq)
 
 <br />
 
@@ -93,7 +94,7 @@ Me:<br />
 
 ![Rob](/images/Rob_OnStage.png)
 
-I work at Xpirit <br />
+I work at Xebia <br />
 [![Xpirit Expert Blog](/images/XPRT.BLOG.png)](https://xpirit.com/team/rob-bos/)  
 
 Microsoft MVP since 2020 <br />
