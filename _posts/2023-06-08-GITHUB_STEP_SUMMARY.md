@@ -116,3 +116,6 @@ await core.summary.addHeading("Repo info")
                   .addRaw("```").addEOL()
                   .write()
 ```
+
+> Note:
+Keep in mind that the `core.summary.write()` method writes the entire buffer to the summary file, **but does not clean that buffer**. That means that if you use `write()`, then add more info and `write()` again, you will get the first buffer __as well as the second buffer__! I have not found a way to clean the buffer, so make sure you only call the `write()` only once!
