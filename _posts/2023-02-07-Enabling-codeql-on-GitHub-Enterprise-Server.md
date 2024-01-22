@@ -47,3 +47,5 @@ The action follows the normal setup for GitHub Actions to check for the well kno
 That means that we can prep our runners by copying the CodeQL bundle to this location. This will prevent the bundle from being downloaded for each run. The folder is used by including the CodeQL bundle release version and date: `/opt/hostedtoolcache/CodeQL/2.12.1-20230120/x64/codeql/codeql`.
 
 Priming that location will significantly lower the download pressure on your appliance, and speed up the execution of the CodeQL workflow.  
+
+> Note: the version number has changed from calendar versioning to semantic versioning. The version number is now something like `v2.15.0`, so be sure to handle that change as well.
