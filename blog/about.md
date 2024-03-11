@@ -49,6 +49,17 @@ I'm also a LinkedIn Learning Instructor. My courses are:
 ## Community | GDBC 🦦
 I help out with the Global DevOps Bootcamp ([link](https://www.globaldevopsbootcamp.com)), mostly with automating stuff and setting up the infrastructure we need each year. In the 2019 edition we had over 10.000 attendees spread out all over the world, spending their free Saturday with our platform getting hands-on experience on DevOps topics. For the 2020 edition I've started vlogging about the relevant information/announcements/background stuff [here](https://www.youtube.com/playlist?list=PLCnpc4jNC9lBWh-oq3aaPfFP5_tUMy7ZJ) and I have spoken about the event and platform for it several times. The session on DevOps Fest 2020 was recorded [here](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=25).
 
+## Recorded conferences 🎤 
+Here are some of the recordings for conference sessions I have done:
+
+|Year|Conference|Topic|Recording|
+|---|---|---|---|
+|2023|GitHub Universe|How to collaborate effectively using GitHub|[GitHub Universe](https://reg.githubuniverse.com/flow/github/universe23/sessioncatalog/page/sessioncatalog/session/1684691781498001bPSq)|
+|2022|NDC Security|Protect yourself against supply chain attacks through your pipeline|[YouTube](https://www.youtube.com/watch?v=00R1JGBQEJg)|
+|2022|NDC Security|Protect your code with GitHub security features|[YouTube](https://www.youtube.com/watch?v=dZYiveyMWXg)|
+|2021|GitHub Universe|How to use GitHub Actions with security in mind|[YouTube](https://www.youtube.com/watch?v=Ers-LcA7Nmc)|
+|2020|DevOps Fest|How to run a global, cloud scale event for 10.000 people (GDBC)|[YouTube](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=26)|
+
 ## Upcoming conferences 🎤 
 Here are some of the conferences I will be speaking at:
 
@@ -75,17 +86,6 @@ Here are some of the conferences I will be speaking at:
 |8-10 June 2022|Virtual|I can hack your DevOps Pipeline|DevTalks Romania|[link](https://www.devtalks.ro/speakers/14-Rob+Bos/)|
 |10-12 October 2022|Utrecht, NL|Protect yourself against supply chain attacks through your pipeline|Techorama Utrecht|[link](https://techorama.nl/speakers/session/protect-yourself-against-supply-chain-attacks/)|
 
-## Recorded conferences 🎤 
-Here are some of the recordings for conference sessions I have done:
-
-|Year|Conference|Topic|Recording|
-|---|---|---|---|
-|2020|DevOps Fest|How to run a global, cloud scale event for 10.000 people (GDBC)|[YouTube](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=26)|
-|2021|GitHub Universe|How to use GitHub Actions with security in mind|[YouTube](https://www.youtube.com/watch?v=Ers-LcA7Nmc)|
-|2022|NDC Security|Protect yourself against supply chain attacks through your pipeline|[YouTube](https://www.youtube.com/watch?v=00R1JGBQEJg)|
-|2022|NDC Security|Protect your code with GitHub security features|[YouTube](https://www.youtube.com/watch?v=dZYiveyMWXg)|
-|2023|GitHub Universe|How to collaborate effectively using GitHub|[GitHub Universe](https://reg.githubuniverse.com/flow/github/universe23/sessioncatalog/page/sessioncatalog/session/1684691781498001bPSq)
-
 <br />
 
 </div> <!-- closing the col 9 div -->
@@ -96,7 +96,7 @@ Me:<br />
 ![Rob](/images/Rob_OnStage.png)
 
 I work at Xebia <br />
-[![Xpirit Expert Blog](/images/XPRT.BLOG.png)](https://xpirit.com/team/rob-bos/)  
+[![Xpirit Expert Blog](/images/xebia_logo_label_smaller.png)](https://xebia.com)  
 
 Microsoft MVP since 2020 <br />
 [![MVP](/images/MVP.svg)](https://mvp.microsoft.com/en-us/PublicProfile/5003719)
