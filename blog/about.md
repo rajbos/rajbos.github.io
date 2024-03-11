@@ -19,7 +19,7 @@ I do DevOps-y stuff, mostly with C# and GitHub/Azure/Azure DevOps.
 In my day job I work for [Xebia Microsoft Services](https://website.xebia.com/digital-transformation/microsoft-services/github) as a DevOps consultant & GitHub Trainer, helping our customers with whatever they need regarding DevOps. Whether it's training, finding out some obscure issues, setting up their CI/CD pipelines, or helping them on their way to implement more DevOps patterns and practices, I help them with it. A lot of focus these days goes into improving their security setup, and looking at supply chain issues. Often I find myself helping teams with modern agile and DevOps practices in more of a coaching role. Focused on GitHub!
 
 ## Trainer: GitHub Accredited and Microsoft Certified 🐠
-I am a GitHub trainer for the GitHub (non-)developer, Advanced Security, and GitHub Actions trainings. I also give several Bootcamps including a GitHub Advanced Security Bootcamp and the GitHub Partner Bootcamps that are needed to become a GitHub Accredited Trainer. Next to that I am a Microsoft Certified Trainer for AZ-900, AZ-204, and AZ-400 ( DevOps on Azure track).  
+I am a GitHub trainer for the GitHub (non-)developer, Advanced Security, and GitHub Actions trainings. I also give several Bootcamps including a GitHub Advanced Security Bootcamp and the GitHub Partner Bootcamps that are needed to become a GitHub Accredited Trainer. Next to that I am a Microsoft Certified Trainer for AZ-900, AZ-204, and AZ-400 (DevOps on Azure track).  
 
 I'm also a LinkedIn Learning Instructor. My courses are:
  - [GitHub Advanced Security](/blog/2022/10/19/LinkedIn-Learning-GHAS)
@@ -38,7 +38,7 @@ I'm also a LinkedIn Learning Instructor. My courses are:
 * Mastodon: [@Rob_Bos@mstdn.social](https://mstdn.social/@Rob_Bos)
 * LinkedIn: [linkedin.com/in/bosrob](https://linkedin.com/in/bosrob)
 * Sessionize: [sessionize.com/RobBos/](https://sessionize.com/RobBos/)
-* Work: [xpirit.com/Rob](https://xpirit.com/rob)
+* Work: [xebia.com](https://xebia.com)
 * Blog: [devopsjournal.io](http://devopsjournal.io)
 
 ## Video content 🎥:
