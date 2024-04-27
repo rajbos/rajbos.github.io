@@ -60,6 +60,13 @@ Repo level admins can still make changes to their repo settings and even lower t
 
 Do note that the setting "private vulnerability reporting" is not part of the policy settings. It is a feature outside of GHAS so I think that is the reason to not include it. As an admin I would like to see this in the policy settings as well, as it is a security feature that I would like to have enabled by default and promote everywhere. It depends of course on the maturity level of the organization, if they have Enterprise Cloud or Server, or maybe have a different internal process for reporting security vulnerabilities. So far I have seen a lot of companies not even having a policy, so having this on by default makes a lot of sense for them in my opinion.
 
+# Limitations
+There are at the moment some limitations of using the new policies. This makes sense as it is only a beta, so some updates might come in the future. The limitations are:
+- Not available in "User space", so not on your own repos. Which makes sense as this will probably (guessing here) be a paid feature for Teams and higher plans.
+- For free organizations it is only available for public repos, but not for private repos. It's great this is free for public repos, it makes it easier to roll this out on all your repos and up your security game!
+
+![Screenshot showing that the policies only work on public repos on a free organization](/images/2024/20240427/20240427_Limitiations.png)  
+
 # Summary
 Overall I really like the new way to make it faster to rollout defaults in your organization. I can image creating several policies in the form of level 1 to 3 at your company, and graduating teams from level to level:
 
