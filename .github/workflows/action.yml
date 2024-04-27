@@ -10,7 +10,8 @@ jobs:
     continue-on-error: true
     steps:
       # check all links in the md files to see if they are correct (http 200)
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v4
+    
     - uses: rajbos-actions/github-action-markdown-link-check@v1
       with:
         check-modified-files-only: 'no'
