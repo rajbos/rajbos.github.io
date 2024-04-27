@@ -63,8 +63,8 @@ Do note that the setting "private vulnerability reporting" is not part of the po
 # Summary
 Overall I really like the new way to make it faster to rollout defaults in your organization. I can image creating several policies in the form of level 1 to 3 at your company, and graduating teams from level to level:
 
-Level 1: Basic security settings, like secret scanning and push protection, together with the Dependency Graph and Alerts. It makes sense to enable Code Scanning in here to at least get the alerts, but having a communication plan with your engineers is key here to let them know that alerts will be found, and what we expect them to do with them (or not).
-Level 2: Include Dependabot security updates and start blocking on PR's with the [Dependency-Review action](https://github.com/actions/dependency-review-action) (not part of the policy options by the way).
+Level 1: Basic security settings, like secret scanning and push protection, together with the Dependency Graph and Alerts. It makes sense to enable Code Scanning in here to at least get the alerts, but having a communication plan with your engineers is key here to let them know that alerts will be found, and what we expect them to do with them (or not).  
+Level 2: Include Dependabot security updates and start blocking on PR's with the [Dependency-Review action](https://github.com/actions/dependency-review-action) (not part of the policy options by the way).  
 Level 3: Also include version updates as well as the CodeQL analysis with blocking alerts in PR's.
 
 This will really be helpful rolling out GHAS features across an organization, as we can roll this out really easily on a team-by-team basis in one go, instead of having to go repo-by-repo.
