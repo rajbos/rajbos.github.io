@@ -85,6 +85,7 @@ You can get an entire firehose of ALL issues on the GitHub platform if you want 
 # Personal views
 - github.com/issues - get a list of issues that are either created by you, or assigned to you
 - github.com/pulls - get a list of pull requests that are either created by you, or assigned to you
+- github.com/discussions - get a list of discussions that are either created by you, or assigned to you
 
 ## Using separate git configurations with SSH for the same user
 You can add a `-` to the ssh url, to have different ssh configs on you machine and use the right one for the right repo.
