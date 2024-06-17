@@ -78,7 +78,13 @@ A lot of things have atom feeds enabled. The things in all caps need to be confi
 |github.com/security-advisories|Get an RSS feed for ALL the security advisories|
 
 There should also be a feed for issues, but I continuously get HTTP:406 errors on github.com/OWNER/REPO/issues.atom.
-Other user specific feeds can be loaded by making an authenticated call to `https://api.github.com/feeds`.
+Other the user specific feeds can be loaded by making an authenticated call to `https://api.github.com/feeds`.
+
+You can get an entire firehose of ALL issues on the GitHub platform if you want to: `- https://github.com/issues?q=`.
+
+# Personal views
+- github.com/issues - get a list of issues that are either created by you, or assigned to you
+- github.com/pulls - get a list of pull requests that are either created by you, or assigned to you
 
 ## Using separate git configurations with SSH for the same user
 You can add a `-` to the ssh url, to have different ssh configs on you machine and use the right one for the right repo.
