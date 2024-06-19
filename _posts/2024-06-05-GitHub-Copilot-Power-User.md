@@ -11,7 +11,7 @@ I'm showing my prompts and the results, as well where Copilot failed to help me 
 
 # Video
 
-<iframe width="1183" height="665" src="https://www.youtube.com/embed/_DEBSOQC2c0" title="GitHub Copilot -  Power user example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="1183" height="665" src="https://www.youtube.com/embed/_DEBSOQC2c0" title="GitHub Copilot - Power user example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 # Slides
 The slides for this video should be self explanatory if you prefer to read instead of watch. You can find them here: [GitHub Copilot - Power user example](/slides/20240605_GitHub_Copilot_Power_User.pdf).
