@@ -19,11 +19,9 @@ Next to that we are seeing some extensions coming out. There are two types of ex
 
 ## Writing a GitHub Copilot Extension
 
-Get started to write your own Copilot extension by reading the [announcement](https://github.blog/news-insights/product-news/introducing-github-copilot-extensions/) and the [documentation](https://docs.github.com/en/copilot/building-copilot-extensions/about-building-copilot-extensions).
+Get started to write your own Copilot extension by reading the [announcement](https://github.blog/news-insights/product-news/introducing-github-copilot-extensions/) and the [documentation](https://docs.github.com/en/copilot/building-copilot-extensions/about-building-copilot-extensions). From that you can create a GitHub App (public or private to your organization) and go to the Copilot part of the settings (see next screenshot).
 
-Currenly your GitHub Application needs to be flagged in to be able to use the extension. This is a manual process and you can request access with the information in the announcement.
-
-After creating the GitHub App and being flagged in, you need to configure the App with a public endpoint that will be called by Copilot. This endpoint should be able to handle the requests from Copilot and return the results in the correct format. The easies way to get started is to create a [Codespace](https://github.com/features/codespaces) and use the Codespace URL when you run your solution as the endpoint for your extension:
+After creating the GitHub App, you need to configure the App with a _public_ endpoint that will be called by Copilot. This endpoint should be able to handle the requests from Copilot and return the results in the correct format. The easies way to get started is to create a [Codespace](https://github.com/features/codespaces) and use the Codespace URL when you run your solution as the endpoint for your extension:
 
 ![Screenshot of the Codespace URL GitHub App](/images/2024/20240914/app%20settings.png)  
 
