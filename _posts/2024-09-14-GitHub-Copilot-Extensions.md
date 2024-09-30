@@ -10,8 +10,8 @@ GitHub Copilot is a great tool to help you write code. The next phase is startin
 ![Announcement image](/images/2024/20240914/Announcement.png)
 
 Some examples of this way of working with Copilot are:
-- @workspace/@solution - this works inside of your IDE
-- @github - this works with the GitHub API and you can ask questions like "get all issues for this repo" or "get all PRs for this repo"
+- @workspace/#solution - this works inside of your IDE
+- @github - this works with the GitHub API and you can ask questions like "get all issues for this repo" or "get all PRs for this repo". Note, only available for GitHub Copilot Enterprise.
 
 Next to that we are seeing some extensions coming out. There are two types of extensions you can build at the moment;
 1. VS Code extensions for Copilot: this is a way to extend the capabilities of Copilot in your IDE and it has access to information in your IDE, like the files you have open. Do note that this extension will only work in VS Code, and in none of the other supported IDE's for Copilot. An example of this type of extension is the `@azure` extension (see [announcement](https://techcommunity.microsoft.com/t5/microsoft-developer-community/introducing-github-copilot-for-azure-your-cloud-coding-companion/ba-p/4127644)), that allows you to interact with an Azure knowledge base (currently in private preview). Learn from [Matt Olson's post](https://github.com/molson504x/copilot-custom-extension) how to build one of these.
