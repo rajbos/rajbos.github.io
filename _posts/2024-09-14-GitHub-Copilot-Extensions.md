@@ -5,7 +5,7 @@ date: 2024-09-14
 tags: [GitHub, GitHub Copilot, Extensions]
 ---
 
-GitHub Copilot is a great tool to help you write code. The next phase is starting now by enabling you to write your own extensions for Copilot! This is a great way to extend the capabilities of Copilot to your own needs. You can for example look in your own knowledge store for inforation, or even call into an API to get the information you need. All from within GitHub Copilot Chat itself!
+GitHub Copilot is a great tool to help you write code. The next phase is starting now by enabling you to write your own extensions for Copilot! This is a great way to extend the capabilities of Copilot to your own needs. You can for example look in your own knowledge store for information, or even call into an API to get the information you need. All from within GitHub Copilot Chat itself!
 
 ![Announcement image](/images/2024/20240914/Announcement.png)
 
@@ -29,7 +29,7 @@ The url in the screenshot is the same as the one I am using in the 'Callback URL
 
 There are a lot of code examples in the [copilot-extensions](https://github.com/copilot-extensions) organization, like the following:
 - Blackbeard extension (talk like a pirate)
-- RAG extension (impletent 'retrieval augmented generation' to build up your response in several steps)
+- RAG extension (implement 'retrieval augmented generation' to build up your response in several steps)
 - Function calling extension (retrieve a function from the user prompt, like "what is the weather in Amsterdam")
 - GitHub Models extension (use the new models API's to talk to an LLM)
 These are fine to spelunk in, but as soon as you want to do something else then adding a system prompt and stream back the LLM response, you will find some very rough edges.
