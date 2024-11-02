@@ -25,6 +25,7 @@ I'm also a LinkedIn Learning Instructor. My courses are:
  - [GitHub Advanced Security](/blog/2022/10/19/LinkedIn-Learning-GHAS)
  - [25 GitHub configuration files you should be using](https://www.linkedin.com/learning/25-github-configuration-files-you-should-be-using)
  - [GitHub Advanced Security for Azure DevOps](https://www.linkedin.com/learning/learning-github-advanced-security-for-azure-devops/)
+ - [GitHub Models - Enterprise AI Development](https://www.linkedin.com/learning/enterprise-ai-development-with-github-models-and-azure/ai-with-github-models)
 
 ## Bots 🤖
 * GitHub Action updates: I created a bot to keep you up to date on new and improved actions on the GitHub marketplace. Follow the link here [GitHub Actions Marketplace News](https://devops-actions.github.io/github-actions-marketplace-news/) and subscribe to the RSS feed for updates!
@@ -46,8 +47,8 @@ I'm also a LinkedIn Learning Instructor. My courses are:
 * GitHub videos: [YouTube](https://www.youtube.com/playlist?list=PLXVVwOM8uv2z62qt4xnZuIV2vv-6Gdz2f)
 * GitHub Action videos: [YouTube](https://www.youtube.com/playlist?list=PLXVVwOM8uv2zAPFx1Na4x09XKx2etYXpt)
 
-## Community | GDBC 🦦
-I help out with the Global DevOps Bootcamp ([link](https://www.globaldevopsbootcamp.com)), mostly with automating stuff and setting up the infrastructure we need each year. In the 2019 edition we had over 10.000 attendees spread out all over the world, spending their free Saturday with our platform getting hands-on experience on DevOps topics. For the 2020 edition I've started vlogging about the relevant information/announcements/background stuff [here](https://www.youtube.com/playlist?list=PLCnpc4jNC9lBWh-oq3aaPfFP5_tUMy7ZJ) and I have spoken about the event and platform for it several times. The session on DevOps Fest 2020 was recorded [here](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=25).
+## Community | GDEX 🦦
+I help out with the Global DevOps Exprience ([link]([https://www.globaldevopsex.com](https://www.globaldevopsx.com/)), mostly with automating stuff and setting up the infrastructure we need each year. In the 2019 edition of Global DevOps Bootcamp we had over 10.000 attendees spread out all over the world, spending their free Saturday with our platform getting hands-on experience on DevOps topics. For the 2020 edition I've started vlogging about the relevant information/announcements/background stuff [here](https://www.youtube.com/playlist?list=PLCnpc4jNC9lBWh-oq3aaPfFP5_tUMy7ZJ) and I have spoken about the event and platform for it several times. The session on DevOps Fest 2020 was recorded [here](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=25).
 
 ## Recorded conferences 🎤 
 Here are some of the recordings for conference sessions I have done:
@@ -62,6 +63,14 @@ Here are some of the recordings for conference sessions I have done:
 
 ## Upcoming conferences 🎤 
 Here are some of the conferences I will be speaking at:
+
+### Conferences in 2024
+
+|Date|Location|Topic|Conference|Session link|
+|---|---|---|---|---|
+|November|Bucharest, Romania|Protecting yourself from Supply Chain Attacks|DevCon.ro|[link](https://www.dev-con.ro/speakers/32-Rob+Bos)|
+|October|San Francisco, USA|Lessons learned from enabling thousands of developers on GitHub Copilot|GitHub Universe|TBA|
+|March|Antwerp, Belgium|Protecting yourself from Supply Chain Attacks|Techorama Belgium|[link](https://techorama.be)|
 
 ### Conferences in 2023
 
@@ -100,6 +109,9 @@ I work at Xebia <br />
 
 Microsoft MVP since 2020 <br />
 [![MVP](/images/MVP.svg)](https://mvp.microsoft.com/en-us/PublicProfile/5003719)
+
+GitHub Star since 2024 <br />
+[![MVP](/images/Star.svg)](https://stars.github.com/profiles/rajbos)
 
 LinkedIn Learning Instructor <br />
 [![LinkedIn Learning Logo](/images/LinkedIn_Learning/LinkedIn_Learning_Logo.png)](https://www.linkedin.com/learning/instructors/rob-bos)
