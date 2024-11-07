@@ -19,7 +19,7 @@ I do DevOps-y stuff, mostly with C# and GitHub/Azure/Azure DevOps.
 In my day job I work for [Xebia Microsoft Services](https://website.xebia.com/digital-transformation/microsoft-services/github) as a DevOps consultant & GitHub Trainer, helping our customers with whatever they need regarding DevOps. Whether it's training, finding out some obscure issues, setting up their CI/CD pipelines, or helping them on their way to implement more DevOps patterns and practices, I help them with it. A lot of focus these days goes into improving their security setup, and looking at supply chain issues. Often I find myself helping teams with modern agile and DevOps practices in more of a coaching role. Focused on GitHub!
 
 ## Trainer: GitHub Accredited and Microsoft Certified 🐠
-I am a GitHub trainer for the GitHub (non-)developer, Advanced Security, and GitHub Actions trainings. I also give several Bootcamps including a GitHub Advanced Security Bootcamp and the GitHub Partner Bootcamps that are needed to become a GitHub Accredited Trainer. Next to that I am a Microsoft Certified Trainer for AZ-900, AZ-204, and AZ-400 (DevOps on Azure track).  
+I am a GitHub trainer for the GitHub (non-)developer, Copilot, Advanced Security, and GitHub Actions trainings. I also give several Bootcamps including a GitHub Advanced Security Bootcamp and the GitHub Partner Bootcamps that are needed to become a GitHub Accredited Trainer. Next to that I am a Microsoft Certified Trainer for AZ-900, AZ-204, and AZ-400 (DevOps on Azure track) as well as the AI-900 and AI-102 paths.  
 
 I'm also a LinkedIn Learning Instructor. My courses are:
  - [GitHub Advanced Security](/blog/2022/10/19/LinkedIn-Learning-GHAS)
@@ -29,7 +29,7 @@ I'm also a LinkedIn Learning Instructor. My courses are:
 
 ## Bots 🤖
 * GitHub Action updates: I created a bot to keep you up to date on new and improved actions on the GitHub marketplace. Follow the link here [GitHub Actions Marketplace News](https://devops-actions.github.io/github-actions-marketplace-news/) and subscribe to the RSS feed for updates!
-* Discontinued! AzDo Marketplace updates: I created a Twitter bot named [AzDoMarketNews](https://twitter.com/azdomarketnews) to keep up to date on new and improved extensions on the Azure DevOps marketplace.
+* Discontinued! AzDo Marketplace updates: I created a Twitter bot named [AzDoMarketNews](https://twitter.com/azdomarketnews) to keep up to date on new and improved extensions on the Azure DevOps marketplace.  
 
 ## About ⚙️
 * Name: Rob Bos
@@ -48,13 +48,14 @@ I'm also a LinkedIn Learning Instructor. My courses are:
 * GitHub Action videos: [YouTube](https://www.youtube.com/playlist?list=PLXVVwOM8uv2zAPFx1Na4x09XKx2etYXpt)
 
 ## Community | GDEX 🦦
-I help out with the Global DevOps Exprience ([link]([https://www.globaldevopsex.com](https://www.globaldevopsx.com/)), mostly with automating stuff and setting up the infrastructure we need each year. In the 2019 edition of Global DevOps Bootcamp we had over 10.000 attendees spread out all over the world, spending their free Saturday with our platform getting hands-on experience on DevOps topics. For the 2020 edition I've started vlogging about the relevant information/announcements/background stuff [here](https://www.youtube.com/playlist?list=PLCnpc4jNC9lBWh-oq3aaPfFP5_tUMy7ZJ) and I have spoken about the event and platform for it several times. The session on DevOps Fest 2020 was recorded [here](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=25).
+I help out with the Global DevOps Experience ([link]([https://www.globaldevopsex.com](https://www.globaldevopsx.com/)), mostly with automating stuff and setting up the infrastructure we need each year. In the 2019 edition of Global DevOps Bootcamp we had over 10.000 attendees spread out all over the world, spending their free Saturday with our platform getting hands-on experience on DevOps topics. For the 2020 edition I've started vlogging about the relevant information/announcements/background stuff [here](https://www.youtube.com/playlist?list=PLCnpc4jNC9lBWh-oq3aaPfFP5_tUMy7ZJ) and I have spoken about the event and platform for it several times. The session on DevOps Fest 2020 was recorded [here](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=25).
 
 ## Recorded conferences 🎤 
 Here are some of the recordings for conference sessions I have done:
 
 |Year|Conference|Topic|Recording|
 |---|---|---|---|
+|2024|GitHub Universe|Successfully scaling GitHub Copilot to thousands of developers|[YouTube](https://youtu.be/eJRNJwlLFts)| 
 |2023|GitHub Universe|How to collaborate effectively using GitHub|[GitHub Universe](https://reg.githubuniverse.com/flow/github/universe23/sessioncatalog/page/sessioncatalog/session/1684691781498001bPSq)|
 |2022|NDC Security|Protect yourself against supply chain attacks through your pipeline|[YouTube](https://www.youtube.com/watch?v=00R1JGBQEJg)|
 |2022|NDC Security|Protect your code with GitHub security features|[YouTube](https://www.youtube.com/watch?v=dZYiveyMWXg)|
@@ -69,7 +70,7 @@ Here are some of the conferences I will be speaking at:
 |Date|Location|Topic|Conference|Session link|
 |---|---|---|---|---|
 |November|Bucharest, Romania|Protecting yourself from Supply Chain Attacks|DevCon.ro|[link](https://www.dev-con.ro/speakers/32-Rob+Bos)|
-|October|San Francisco, USA|Lessons learned from enabling thousands of developers on GitHub Copilot|GitHub Universe|TBA|
+|October|San Francisco, USA|Lessons learned from enabling thousands of developers on GitHub Copilot|GitHub Universe|[recording](https://youtu.be/eJRNJwlLFts)|
 |March|Antwerp, Belgium|Protecting yourself from Supply Chain Attacks|Techorama Belgium|[link](https://techorama.be)|
 
 ### Conferences in 2023
@@ -80,7 +81,7 @@ Here are some of the conferences I will be speaking at:
 |May 22-26|Aarhus, Denmark|Protect your code with GitHub security features, workshop "Secure and Compliant Cloud Delivery Embracing DevOps with GitHub"|GOTO Aarhus|[link](https://gotoaarhus.com/2023/speakers/2712/rob-bos)|
 |June 26-30|Nurnberg, DE|Protect your code with GitHub security features|Developer Week 2023|[link](https://www.developer-week.de/speaker/#/speaker/19526-rob-bos)|
 |October 9-11|Utrecht, NL|Protect your code with GitHub security features|Techorama NL|[link](https://techorama.nl/speakers/session/protect-your-code-with-github-security-features/)|
-|November 8-9|San Francisco, US|Collaborating effectively using GitHub [DEV1210G]|GitHub Universe|[link](https://reg.githubuniverse.com/flow/github/universe23/sessioncatalog/page/sessioncatalog?search=xebia)|
+|November 8-9|San Francisco, US|Collaborating effectively using GitHub [DEV1210G]|GitHub Universe|[link](https://youtu.be/q6HuWbNeeOA?si=7YoTNWRIXMsgZfGz)|
 
 ### Conferences in 2022
 
