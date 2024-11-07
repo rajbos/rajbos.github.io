@@ -56,7 +56,7 @@ Here are some of the recordings for conference sessions I have done:
 |Year|Conference|Topic|Recording|
 |---|---|---|---|
 |2024|GitHub Universe|Successfully scaling GitHub Copilot to thousands of developers|[YouTube](https://youtu.be/eJRNJwlLFts)| 
-|2023|GitHub Universe|How to collaborate effectively using GitHub|[GitHub Universe](https://reg.githubuniverse.com/flow/github/universe23/sessioncatalog/page/sessioncatalog/session/1684691781498001bPSq)|
+|2023|GitHub Universe|How to collaborate effectively using GitHub|[YouTube](https://www.youtube.com/watch?v=q6HuWbNeeOA&ab_channel=GitHub)|
 |2022|NDC Security|Protect yourself against supply chain attacks through your pipeline|[YouTube](https://www.youtube.com/watch?v=00R1JGBQEJg)|
 |2022|NDC Security|Protect your code with GitHub security features|[YouTube](https://www.youtube.com/watch?v=dZYiveyMWXg)|
 |2021|GitHub Universe|How to use GitHub Actions with security in mind|[YouTube](https://www.youtube.com/watch?v=Ers-LcA7Nmc)|
@@ -81,7 +81,7 @@ Here are some of the conferences I will be speaking at:
 |May 22-26|Aarhus, Denmark|Protect your code with GitHub security features, workshop "Secure and Compliant Cloud Delivery Embracing DevOps with GitHub"|GOTO Aarhus|[link](https://gotoaarhus.com/2023/speakers/2712/rob-bos)|
 |June 26-30|Nurnberg, DE|Protect your code with GitHub security features|Developer Week 2023|[link](https://www.developer-week.de/speaker/#/speaker/19526-rob-bos)|
 |October 9-11|Utrecht, NL|Protect your code with GitHub security features|Techorama NL|[link](https://techorama.nl/speakers/session/protect-your-code-with-github-security-features/)|
-|November 8-9|San Francisco, US|Collaborating effectively using GitHub [DEV1210G]|GitHub Universe|[link](https://youtu.be/q6HuWbNeeOA?si=7YoTNWRIXMsgZfGz)|
+|November 8-9|San Francisco, US|Collaborating effectively using GitHub|GitHub Universe|[recording](https://youtu.be/q6HuWbNeeOA?si=7YoTNWRIXMsgZfGz)|
 
 ### Conferences in 2022
 
