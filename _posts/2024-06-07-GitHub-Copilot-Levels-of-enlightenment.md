@@ -50,3 +50,8 @@ In this video I talk about accepting the fact that Copilot is based on Large Lan
 ## 9. Be smart
 
 In this video I talk about being smart when using GitHub Copilot. Think of novel use cases and how to get more done by Copilot instead of writing the code yourself. Use it for exploration and finding new ways of doing things! View the video on [YouTube](https://youtu.be/FdLHeCxygFQ).
+
+# 10 - 12. Coming soon
+
+# conclusion
+I hope you enjoy the series and learn something new from it. If you have any questions, feel free to reach out to me on [Twitter](https://twitter.com/robertdebock).
