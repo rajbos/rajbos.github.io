@@ -106,12 +106,13 @@ I've checked some of the repos with a lot of alerts and found one example, that 
 
 ### Overview
 In short, this is a top level overview of the security results:
-![Screenshot of the workflow summary, with 30% potentially vulnerable actions of the scanned actions (which is the total of scanned actions, not filtered to a specific type)](/images/2022/20220918/20220918_AllActions.png)
+![Screenshot of the workflow summary, with 30% potentially vulnerable actions of the scanned actions (which is the total of scanned actions, not filtered to a specific type)](/images/2022/20220918/20220918_AllActions.png)  
+
 So for **all** action repos I could scan, 30% have at least 1 vulnerability alert with a severity of high or critical.
 
-#### Node based actions
+### Node based actions
 Filtering this down to only the Node action types, this becomes a lot scarier:
-![Screenshot of the actions filtered to the Node only actions: 2752 actions potentially vulnerable, 1986 actions not vulnerable](/images/2022/20220918/20220918_NodeActions.png)
+![Screenshot of the actions filtered to the Node only actions: 2752 actions potentially vulnerable, 1986 actions not vulnerable](/images/2022/20220918/20220918_NodeActions.png)  
 That is 58% of the Node actions that have at least 1 vulnerability alert with a severity of high or critical! And all demos and docs still indicate you can just use the actions as is and only hint at the security implications of that!
 
 Want to learn how to improve your security stance fur using actions? Check out this guide I made: [GitHub Actions Maturity Levels](https://devopsjournal.io/blog/2021/2021/12/11/GitHub-Actions-Maturity-Levels).
