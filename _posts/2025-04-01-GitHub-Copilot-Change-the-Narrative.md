@@ -7,7 +7,7 @@ tags: [GitHub, GitHub Copilot, Generative AI]
 
 
 TL;DR: 
-1. Chancing the narrative on GitHub Copilot from focus on engineers to focus on a sturdy (DevOps) foundation to be able to go faster.
+1. Changing the narrative on GitHub Copilot from focus on engineers to focus on a sturdy (DevOps) foundation to be able to go faster.
 2. Next frontier: the rest of our organization 
 
 # Premise: current narrative is not helping
