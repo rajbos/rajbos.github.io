@@ -5,7 +5,7 @@ date: 2025-03-16
 tags: [Security, GitHub, GitHub Actions]
 ---
 
-Last Friday what we expected happened: a much used GitHub Action got compromised, read all about it here at the StepSecurity blog where they explain that they detected the issue and jumped into action: https://www.stepsecurity.io/blog/harden-runner-detection-tj-actions-changed-files-action-is-compromised.
+Last Friday what we expected happened: a much used GitHub Action got compromised, read all about it here at the StepSecurity blog where they explain that they detected the issue and jumped into action: [Step Security Blog](https://www.stepsecurity.io/blog/harden-runner-detection-tj-actions-changed-files-action-is-compromised).
 
 ![Photo of a person in a yellow raincoat overlooking a horseshoe bent in a road, watching from above](/images/2025/20250316/20250316-SplashImage.jpg)  
 
