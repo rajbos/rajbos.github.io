@@ -40,14 +40,15 @@ Ever since GitHub Actions became available, I have been advocating to take contr
 This process comes with a couple of steps:
 
 Fork actions to an organization you own. I recommend a completely separate organization so it is clear what information is stored in that location.
-Take ownership over the updates of the actions by using the GitHub Fork Updater. This will give you a process that allows you to review every single update, before you can use the update in your workflows. You can then add extra security checks in that process as well.
-This will lead to setting up an internal marketplace for you organization to use. This will allow you to take inventory over you used actions (and for example easily show you in what workflows a certain actions is used). Additionally you can then setup a request process for actions to be added, so that you can even run all your required security checks up front.
+Take ownership over the updates of the actions by using the GitHub Fork Updater. This will give you a process that allows you to review every single update, before you can use the update in your workflows. You can then add extra security checks in that process as well.  
+
+This will lead to setting up an [internal marketplace](blog/2021/10/14/GitHub-Actions-Internal-Marketplace) for your organization to use. This will allow you to take inventory over you used actions (and for example easily show you in what workflows a certain actions is used). Additionally you can then setup a request process for actions to be added, so that you can even run all your required security checks up front.
 
 Going through these steps is unfortunately something that every user and company needs to go through to secure their pipelines, which is a key action to take when looking at supply chain security with a security framework like [slsa.dev](https://slsa.dev). And do not think your security responsibility stops with taking ownership over the actions repo! When the action pulls in dependencies, you need to secure those dependencies as well! I have seen actions that download binaries or shell scripts on execution and start running them. Or what about docker images that get downloaded just in time? 
 
 ## Next steps
-Want to know more? I have presented a session on Using GitHub Actions with Security in Mind several times. A recording from GitHub Universe 2021 can be found here. 
+Want to know more? I have presented a session on Using GitHub Actions with Security in Mind several times. A recording from GitHub Universe 2021 can be found [here](https://www.youtube.com/watch?v=Ers-LcA7Nmc).   
 
-I have also co-authored a book on GitHub Actions that also includes these security aspects. You can get that book on Manning.com.
+I have also co-authored a book on GitHub Actions that also includes these security aspects. You can get that book on [Manning.com](https://www.manning.com/books/github-actions-in-action).  
 
-If you want to deep dive into the security tools GitHub has available, then find my course on "GitHub Advanced Security" on LinkedIn Learning.
+If you want to deep dive into the security tools GitHub has available, then find my course on [GitHub Advanced Security](https://www.linkedin.com/learning/github-advanced-security) on LinkedIn Learning.
