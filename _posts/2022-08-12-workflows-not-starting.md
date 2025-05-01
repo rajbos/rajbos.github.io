@@ -95,6 +95,11 @@ on:
 
 I often run the workflow on at least my test branch, but then **only** when the relevant files for that workflow have been edited. That usually is the workflow file itself and maybe certain source files in the repo that are used: whenever there is a change in those files: execute the workflow. This is especially helpful during the development of the workflow: if you push a change in it, it is a good change that you want to trigger the workflow 😄.
 
+## Big changes might prevent the workflow from being triggered as well
+Workflows do not start when you push a large amount of files with changes to GitHub. The documentation mentions this on [the diff section](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#git-diff-comparisons): Diffs are limited to 300 files. If there are files changed that aren't matched in the first 300 files returned by the filter, the workflow will not run. You may need to create more specific filters so that the workflow will run automatically.
+
+So if you have a filter setup on the paths of a file, and the first 300 files do not match anything in the filter, the workflow will not trigger. Recommendation is to always make your changeset as small as possible!.
+
 ## Targeting a wrong label
 If you target a runner that you do not have access to (check the runner group permissions) or a label for which no runner exists, your job will hang around until the timeout of 24 hours has passed. Then it will get a timeout error and the job will be cancelled. Double check the label you are using (this typo in the screenshot always gets me!) and fix it, or check the permissions on the runner group.  
 ![Screenshot of the logs that indicate we are targeting the label 'ubununtu-latest', which does not exists](/images/2022/20220812/20220812_RunnerLabel.png) 
