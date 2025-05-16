@@ -95,6 +95,31 @@ on:
 
 I often run the workflow on at least my test branch, but then **only** when the relevant files for that workflow have been edited. That usually is the workflow file itself and maybe certain source files in the repo that are used: whenever there is a change in those files: execute the workflow. This is especially helpful during the development of the workflow: if you push a change in it, it is a good change that you want to trigger the workflow 😄.
 
+## Filtering the trigger with a globbing pattern?
+When you are using for example the `paths`, `tags` or `branches` filter, you can use a globbing pattern to match the files you want to trigger the workflow on. Through a quirk in the yaml spec, when your pattern starts or ends with a star, you have to encapsulate the pattern in quotes. 
+
+So this setup does not work:
+``` yaml
+on:
+  push:
+    branches:
+      - main
+      - my-test-branch
+    paths:
+      - *
+```
+
+And has to be written like this:
+``` yaml
+on:
+  push:
+    branches:
+      - main
+      - my-test-branch
+    paths:
+      - '*'
+```
+
 ## Big changes might prevent the workflow from being triggered as well
 Workflows do not start when you push a large amount of files with changes to GitHub. The documentation mentions this on [the diff section](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#git-diff-comparisons): Diffs are limited to 300 files. If there are files changed that aren't matched in the first 300 files returned by the filter, the workflow will not run. You may need to create more specific filters so that the workflow will run automatically.
 
