@@ -1,0 +1,65 @@
+# DevOps Journal
+
+DevOps Journal is a technical blog focused on DevOps practices, GitHub, Azure, and Microsoft technologies. The blog is hosted at https://devopsjournal.io and covers topics related to DevOps implementation, CI/CD pipelines, GitHub Actions, Azure DevOps, and software development best practices.
+
+## About the Author
+
+**Name:** Rob Bos  
+**Pronouns:** He/Him  
+**Location:** The Netherlands  
+**Role:** DevOps Consultant & GitHub Trainer at Xebia  
+
+## Professional Background
+
+Rob Bos is a DevOps consultant and GitHub trainer working for Xebia Microsoft Services. He specializes in helping organizations implement DevOps practices, CI/CD pipelines, and modern software development workflows with a focus on GitHub and Azure technologies.
+
+### Certifications & Recognition
+- Microsoft MVP since 2020
+- GitHub Star since 2024
+- GitHub Accredited Trainer (GitHub Developer, Copilot, Advanced Security, GitHub Actions)
+- Microsoft Certified Trainer (AZ-900, AZ-204, AZ-400, AI-900, AI-102)
+- LinkedIn Learning Instructor
+
+### Training & Education
+Rob provides training and education through multiple channels:
+- GitHub official training courses
+- LinkedIn Learning courses on GitHub Advanced Security and configuration
+- Microsoft Azure and AI certifications training
+- GitHub Partner Bootcamps
+
+## Blog Content Focus
+
+The DevOps Journal covers:
+- DevOps practices and principles
+- GitHub and GitHub Actions
+- Azure and Azure DevOps
+- CI/CD pipeline implementation
+- Security practices and GitHub Advanced Security
+- Software development workflows
+- DevOps tooling and automation
+- Supply chain security
+
+## Technical Expertise
+
+- **Primary Technologies:** C#, GitHub, Azure, Azure DevOps
+- **Specializations:** DevOps implementation, CI/CD pipelines, GitHub Actions, security practices
+- **Focus Areas:** Modern agile practices, DevOps coaching, supply chain security
+
+## Contact & Social Media
+
+- **Blog:** https://devopsjournal.io
+- **GitHub:** https://github.com/rajbos
+- **LinkedIn:** https://linkedin.com/in/bosrob
+- **Mastodon:** @Rob_Bos@mstdn.social
+- **Sessionize:** https://sessionize.com/RobBos/
+- **Company:** https://xebia.com
+
+## Content License
+
+The blog content is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+## Additional Projects
+
+- GitHub Actions Marketplace News: https://devops-actions.github.io/github-actions-marketplace-news/
+- DevOps Principles video series on YouTube
+- GitHub and GitHub Actions educational video content
