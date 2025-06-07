@@ -15,7 +15,7 @@ In my opinion we need to shift the narrative on enabling engineers to use GitHub
 
 ![Picture of a confused engineer scratching their head surrounded with question marks](/images/2025/20250401/20250607-Confusion.png)  
 
-We also tend to focus on the wrong metrics to see if the use of GitHub Copilot has an impact. I explained more in my follow up blogpost [GitHub Copilot & Productivity](blog/2025/06/07/Copilot-and-productivity) on this topic. Focusing just on productivity is not the right way to go in my opinion. Let alone that we are not able to define what that even is.
+We also tend to focus on the wrong metrics to see if the use of GitHub Copilot has an impact. I explained more in my follow up blogpost [GitHub Copilot & Productivity](/blog/2025/06/07/Copilot-and-productivity) on this topic. Focusing just on productivity is not the right way to go in my opinion. Let alone that we are not able to define what that even is.
 
 # Better narrative: focus on having a sturdy (DevOps) foundation 
 
