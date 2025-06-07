@@ -7,11 +7,15 @@ tags: [GitHub, GitHub Copilot, Generative AI]
 
 
 TL;DR: 
-1. Changing the narrative on GitHub Copilot from focus on engineers to focus on a sturdy (DevOps) foundation to be able to go faster.
+1. Changing the narrative on GitHub Copilot from focus on engineers and productivity to focus on a sturdy (DevOps) foundation to be able to go faster.
 2. Next frontier: the rest of our organization 
 
 # Premise: current narrative is not helping
 In my opinion we need to shift the narrative on enabling engineers to use GitHub Copilot. Currently there is a lot of focus on the engineers that can produce code easier and faster using GitHub Copilot. That leads to companies thinking they finally found a way to create 10x engineers. And even engineers are hyping this up with stories around “vibe coding” with AI: they jump on their keyboards with a prompt and accept every suggestion that is there and then run the application to figure out if their initial problem was solved or not. Eventually this path leads to disappointment: either the code does not work as hoped, or there was crucial information missing and the AI took a wrong turn somewhere. Even worse: we have seen Generative AI following the “scouting rule” where it starts to clean up after itself, changing code that did not need to be changed at all! This can lead to impact in other places in the codebase that can introduce new bugs. Even worse with all the "vibe coding" stories, we see engineers that are not even testing their code before pushing it to production. This is a recipe for disaster and will lead to a lot of frustration and disappointment in the long run.
+
+![Picture of a confused engineer scratching their head surrounded with question marks](/images/2025/20250401/20250607-Confusion.png)  
+
+We also tend to focus on the wrong metrics to see if the use of GitHub Copilot has an impact. I explained more in my follow up blogpost [GitHub Copilot & Productivity](blog/2025/06/07/Copilot-and-productivity) on this topic. Focusing just on productivity is not the right way to go in my opinion. Let alone that we are not able to define what that even is@
 
 # Better narrative: focus on having a sturdy (DevOps) foundation 
 
