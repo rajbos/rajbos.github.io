@@ -8,13 +8,19 @@ tags: [GitHub, GitHub Copilot, Generative AI]
 # What is GitHub Copilot Premium Requests
 Tomorrow the 18th is the date GitHub Copilot [Premium Requests](https://docs.github.com/en/copilot/managing-copilot/monitoring-usage-and-entitlements/about-premium-requests) will be enforced (see the docs [here](https://docs.github.com/en/copilot/managing-copilot/monitoring-usage-and-entitlements/about-premium-requests)).
 
+![Screenshot of the different multipliers per model](/images/2025/20250617/20250617_Multipliers.png)
+
 This post gives you an overview to know what you need to expect. Copilot Premium Requests are any request that is made to any model that is not the default (currently GPT-4o and GPT-4.1). Some features against a model will cost 1 Premium Request, some will cost more then 1 Premium Request (using GPT-4.5 will be x50!) and some are less expensive (Gemini 2.0 Flash is the cheapest at 0.25x).
 
-I previously recorded a video on Premium Requests as well, find it [here](https://github-copilot.xebia.ms/detail?videoId=43) if you prefer to learn things that way.
+I previously recorded a video on Premium Requests as well, find it [here](https://github-copilot.xebia.ms/detail?videoId=43) if you prefer to learn things that way:  
+[![Screenshot of the GitHub Copilot Premium Requests documentation](/images/2025/20250617/20250617_Video.png)](https://github-copilot.xebia.ms/detail?videoId=43)
 
-What is a premium request:
+# What is a premium request
+Here is an overview of the main features that will consume a premium request:
 - Chatting with a non default model: 1 premium request per 'turn' (every question and answer is a turn)
 - Every step in the Coding Agent: 1 premium request. The agent can decide to make multiple steps, and will thus consume a premium request for each step. Note: I hope that the agent will also come with a "max requests" setting, so that you can limit the amount of requests it can make in a single conversation and prevent it from overspending.
+- Requesting a Code Review in a Pull Request: 1 premium request
+- Agent Mode in an editor: 1 premium request per user initiated request
 
 ## Free plan
 If you are on a Free plan, even the base model will consume a premium request if you are using the Chat feature. 
