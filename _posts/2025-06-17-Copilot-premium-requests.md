@@ -44,6 +44,9 @@ To protect yourself or your users, you can configure a [budget](https://docs.git
 
 ![](/images/2025/20250617/20250618_CopilotBudget.png)
 
+This is now finally available inside of the new Coding Agent session panel as well: 
+![Screenshot showing that coding agent ran for 14 minutes and consumed 54 premium request](/images/2025/20250617/20250618_CodingAgent.png)  
+
 # Finding your own usage info as a User
 The changes that where made where showing the multipliers to the different models to the users so they can make decisions on which model to use:  
 ![Screenshot of the different multipliers per model](/images/2025/20250617/20250618_CopilotModelSelection.png)  
