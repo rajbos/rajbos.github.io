@@ -47,7 +47,7 @@ To protect yourself or your users, you can configure a [budget](https://docs.git
 # Finding your own usage info as a User
 The changes that where made where showing the multipliers to the different models to the users so they can make decisions on which model to use:  
 ![Screenshot of the different multipliers per model](/images/2025/20250617/20250618_CopilotModelSelection.png)  
-This is now visible for at least Visual Studio Code and Visual Studio.
+This is now visible for at least Visual Studio Code, Jetbrains IDE's, and Visual Studio.
 These editors also show the setup for your account:  
 ![Screenshot of the setup for your account in Visual Studio Code](/images/2025/20250617/20250618_CopilotOverview.png)  
 If you look closely, you can even see the progress bar in the middle of the screen showing that I have been using some Premium Requests already. Visual Studio shows it in a slightly different way by using the GitHub Copilot icon in the top right corner:
