@@ -38,7 +38,22 @@ This is the table of the different amount of included premium requests per plan:
 | Copilot Business    | 300 per user per month          | Unlimited with base model        | Unlimited                         |
 | Copilot Enterprise  | 1000 per user per month         | Unlimited with base model        | Unlimited                         |
 
-To protect yourself or your users, you can configure a [budget](https://docs.github.com/en/billing/managing-your-billing/preventing-overspending) for premium requests in your user/organization settings.
+To protect yourself or your users, you can configure a [budget](https://docs.github.com/en/billing/managing-your-billing/preventing-overspending) for premium requests in your user/organization settings. The default is $0.00, but you can set it to any amount you want. If you reach this budget, then all premium requests will be blocked until the next month.
+
+![](/images/2025/20250617/20250618_CopilotBudget.png)
+
+# Finding your own usage info as a User
+The changes that where made where showing the multipliers to the different models to the users so they can make decisions on which model to use:  
+![Screenshot of the different multipliers per model](/images/2025/20250617/20250618_CopilotModelSelection.png)  
+This is now visible for at least Visual Studio Code and Visual Studio.
+These editors also show the setup for your account:  
+![Screenshot of the setup for your account in Visual Studio Code](/images/2025/20250617/20250618_CopilotOverview.png)  
+If you look closely, you can even see the progress bar in the middle of the screen showing that I have been using some Premium Requests already. Visual Studio shows it in a slightly different way by using the GitHub Copilot icon in the top right corner:
+![Screenshot of the amount of premium requests used in Visual Studio](/images/2025/20250617/20250618_VisualStudioUsed.png)  
+
+To find your own usage information, you can go to your [User --> Settings --> Billing](https://github.com/settings/billing) and then get an overview like this:  
+
+![Screenshot of user usage information showing the cost of your Copilot and Premium Requests usage in the current period](/images/2025/20250617/20250618_UserUsage.png)  
 
 # Analyzing the GitHub Copilot Premium Requests report in your organization / enterprise
 Do you need to analyze the GitHub Copilot Premium requests CSV now that they will be enforced? I created a single page application (SPA) with GitHub Spark and GitHub Copilot Coding Agent to display an overview of the Premium Requests CSV that you can currently download (no API yet 😓). 
