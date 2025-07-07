@@ -30,6 +30,9 @@ I have ran into this myself and looked for 15 minutes before I saw what was wron
 
 It needs to be stored in the following folder: `/.github/workflows/`. And that folder is `workflows` (plural) and **not** `workflow` (singular). 
 
+## Next, pushing with a user?
+If you make changes within a workflow and did not set any user information (a Personal Access Token or with a GitHub App, more info [in this post](blog/2022/01/03/GitHub-Tokens)), then you are using the GitHub Actions Bot (a GitHub App under the covers), that creates a default GITHUB_TOKEN that can have write access to your repository. GitHub has built in that this token **never triggers a workflow run**, to prevent an endless loop of actions triggering workflows, that write files, create issues, or something else, and then trigger another actions run.
+
 ## Scheduled runs not starting
 When you add your first schedule for a daily run, you might be surprised that it does not start at the schedule you have set. You might scratch you head and wait for a couple of days, and nothing will happen.
 
