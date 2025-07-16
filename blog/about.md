@@ -26,10 +26,10 @@ I'm also a LinkedIn Learning Instructor. My courses are:
  - [25 GitHub configuration files you should be using](https://www.linkedin.com/learning/25-github-configuration-files-you-should-be-using)
  - [GitHub Advanced Security for Azure DevOps](https://www.linkedin.com/learning/learning-github-advanced-security-for-azure-devops/)
  - [GitHub Models - Enterprise AI Development](https://www.linkedin.com/learning/enterprise-ai-development-with-github-models-and-azure/ai-with-github-models)
+ - [Responsible GitHub Copilot: Creating Reliable Code Ethically](https://www.linkedin.com/learning/responsible-github-copilot-creating-reliable-code-ethically-24981582/genai-and-creating-code-responsibly)
 
 ## Bots 🤖
 * GitHub Action updates: I created a bot to keep you up to date on new and improved actions on the GitHub marketplace. Follow the link here [GitHub Actions Marketplace News](https://devops-actions.github.io/github-actions-marketplace-news/) and subscribe to the RSS feed for updates!
-* Discontinued! AzDo Marketplace updates: I created a Twitter bot named [AzDoMarketNews](https://twitter.com/azdomarketnews) to keep up to date on new and improved extensions on the Azure DevOps marketplace.  
 
 ## About ⚙️
 * Name: Rob Bos
@@ -63,7 +63,7 @@ Here are some of the recordings for conference sessions I have done:
 |2020|DevOps Fest|How to run a global, cloud scale event for 10.000 people (GDBC)|[YouTube](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=26)|
 
 ## Upcoming conferences 🎤 
-Here are some of the conferences I will be speaking at:
+
 
 ### Conferences in 2024
 
@@ -112,7 +112,7 @@ Microsoft MVP since 2020 <br />
 [![MVP](/images/MVP.svg)](https://mvp.microsoft.com/en-us/PublicProfile/5003719)
 
 GitHub Star since 2024 <br />
-[![MVP](/images/Star.svg)](https://stars.github.com/profiles/rajbos)
+[![MVP](/images/Star.png)](https://stars.github.com/profiles/rajbos)
 
 LinkedIn Learning Instructor <br />
 [![LinkedIn Learning Logo](/images/LinkedIn_Learning/LinkedIn_Learning_Logo.png)](https://www.linkedin.com/learning/instructors/rob-bos)
