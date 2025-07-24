@@ -2,7 +2,7 @@
 layout: post
 title: "GitHubs magic files"
 date: 2021-11-26
-tags: [GitHub, magic, files, configuration, pull request templates, issue forms templates, dependabot configuration]
+tags: [GitHub, magic, files, configuration, pull request templates, issue forms templates, dependabot configuration, GitHub Copilot]
 ---
 
 I keep coming across files in GitHub that have some mystic magic feeling to them. There's always a small incantation to come with them: the have to have the right name, the right extension *and* have to be stored in the right directory. I wanted to have an overview of all these spells for myself, so here we are 😉.
@@ -36,6 +36,22 @@ A list of all the magic files / links that I came across in GitHub. I also creat
 |action.yml/action.yaml|root||Configuration file for an actions repository||
 |dependency-review-config.yml|.github|no|Dependency review configuration file|[Dependency review](https://github.com/actions/dependency-review-action#configuration-options)|
 |$GITHUB_STEP_SUMMARY|workflow||Job summary output in markdown|[Job summary](https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables)|
+
+## GitHub Copilot Files
+With the rise of AI-powered development tools, GitHub Copilot has introduced its own set of magic files to help customize the AI experience for your specific repository context. These files help Copilot understand your project better and provide more relevant suggestions.
+
+|Filename|Location|.github repo support|Description|Docs|
+|---|---|---|---|---|
+|copilot-instructions.md|root or .github|yes|Custom instructions to provide context and guidance to GitHub Copilot for your repository|[Copilot Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot)|
+|.copilotignore|root||Tell Copilot to ignore certain files or directories when providing context|[Copilot Ignore](https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-in-your-environment)|
+|copilot-chat.md|.github||Custom chat prompts and instructions specifically for Copilot Chat interactions|[Copilot Chat](https://docs.github.com/en/copilot/github-copilot-chat)|
+
+These files help you customize the AI experience by:
+- Providing repository-specific context and coding guidelines through custom instructions
+- Excluding sensitive or irrelevant files from Copilot's context
+- Setting up specialized prompts for common development tasks in your project
+
+Just like the other magic files, these need to be named exactly right and placed in the correct directories to work their magic ✨.
 
 Then there is a whole list of templates you can configure for issues / pull requests / discussion:
 
