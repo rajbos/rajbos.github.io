@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: once
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: npm install axios
       - name: Sync to dev-to
         uses: actions/github-script@v8
