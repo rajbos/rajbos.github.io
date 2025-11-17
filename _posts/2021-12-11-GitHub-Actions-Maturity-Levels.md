@@ -146,7 +146,7 @@ The internal marketplace groups all your (internal/private or public) actions in
 #### Note: this is still work in progress, one of the things I still want to add is adding links to the internal usages of the actions in case a vulnerability is found or for implementation examples.
 
 ## 8) Request actions process
-The last maturity level is setting up a good governance process to add actions to the internal marketplace. More information can be found in my blogpost on it [here](/blog/2021/2021/10/14/GitHub-Actions-Internal-Marketplace). We have created a [repo](https://github.com/rajbos/github-actions-requests) for it where we can go and:
+The last maturity level is setting up a good governance process to add actions to the internal marketplace. More information can be found in my blogpost on it [here](/blog/2021/10/14/GitHub-Actions-Internal-Marketplace). We have created a [repo](https://github.com/rajbos/github-actions-requests) for it where we can go and:
 
 1. Users create an issue to request a public action to be added to the internal marketplace
 1. An engineer with a security mindset (and training!) does a preliminary manual check on the actions' source code.
