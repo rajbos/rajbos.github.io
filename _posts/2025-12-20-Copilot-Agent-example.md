@@ -12,7 +12,8 @@ Places where you can start a Coding Agent session from:
 - Your editor
 - Agent Task panel in a repo context
 - Repository creation through the UI
-- Chat interface in github.com
+- Chat interface in github.
+- GitHub Phone app
 
 I will show some examples of these below.
 
@@ -117,3 +118,7 @@ This will trigger a background call with the conversation of you current session
 Also note that the chat window then often shows a direct button to go to that new agent session, but that is not always the case. Seems to be linked to the place where you trigger this from or the prompt itself.
 
 If you do not see that button, you can always go to the "Agent Tasks" button in the top bar to find your new task, or go to the Copilot/Agents page.
+
+## GitHub Phone app
+The phone app of GitHub Copilot lets you do exactly the same as the web chat interface on github.com. You can have a conversation in the chat, and then hand it off to the Coding Agent to execute your request in the context of the repository you are working with, or just directly start a new Coding Agent session from the Agent Tasks panel on the phone app:  
+![Screenshot of the phone app on iOS](/images/2025/20251220/20251220_06_Phone.jpg)  
