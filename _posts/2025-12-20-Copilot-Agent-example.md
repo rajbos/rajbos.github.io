@@ -17,14 +17,17 @@ Places where you can start a Coding Agent session from:
 I will show some examples of these below.
 
 ## Your editor 
-When you are in a Copilot Chat conversation you can gather all the context you need and then write the next prompt which can then be "hand off to Cloud Agent" in VS Code.
+When you are in a Copilot Chat conversation you can gather all the context you need and then write the next prompt which can then be "hand off to Cloud Agent".
+
+> **Note:** At the end of December 2025 when this post was written, this feature was only available in VS Code.
 
 Here is an example screenshot of that experience when staring in Plan Mode and handing it off to Agent Mode:
 ![Screenshot that shows a "continue in cloud" in the hand off from Plan mode to Agent Mode](/images/2025/20251220/20251220_03_ChatContinueInCloud.png)  
 
 Here is an example from the chat in Agent Mode itself:
 ![Screenshot that shows the same "Continue in cloud" button in the chat in Agent Mode](/images/2025/20251220/20251220_04_ChatContinueInCloud.png)  
-**Note**: The Continue in Background button, which will let you start the same prompt with context in the Copilot CLI, which will execute in the background and notify you when done.
+
+> **Note**: The "Continue in Background" button, which will let you start the same prompt with context in the Copilot CLI, which will execute in the background and notify you when done.
 
 ## Agent Task panel in a repo context 
 On github.com you have an "Agent Tasks" tab in the UI, which allows you to start a Coding Agent session in the context of that repository. This is useful when you want to automate tasks related to that specific codebase. I use this all the time to let it work on for example a failed GitHub Actions workflow, where I can be very specific about what I want it to do.
