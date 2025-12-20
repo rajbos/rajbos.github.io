@@ -25,6 +25,7 @@ Here is an example screenshot of that experience when staring in Plan Mode and h
 ![Screenshot that shows a "continue in cloud" in the hand off from Plan mode to Agent Mode](/images/2025/20251220/20251220_03_ChatContinueInCloud.png)  
 
 Here is an example from the chat in Agent Mode itself:
+
 ![Screenshot that shows the same "Continue in cloud" button in the chat in Agent Mode](/images/2025/20251220/20251220_04_ChatContinueInCloud.png)  
 
 > **Note**: The "Continue in Background" button, which will let you start the same prompt with context in the Copilot CLI, which will execute in the background and notify you when done.
