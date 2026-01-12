@@ -19,7 +19,8 @@ I do DevOps-y stuff, mostly with C# and GitHub/Azure/Azure DevOps.
 In my day job I work for [Xebia Microsoft Services](https://website.xebia.com/digital-transformation/microsoft-services/github) as a DevOps consultant & GitHub Trainer, helping our customers with whatever they need regarding DevOps. Whether it's training, finding out some obscure issues, setting up their CI/CD pipelines, or helping them on their way to implement more DevOps patterns and practices, I help them with it. A lot of focus these days goes into improving their security setup, and looking at supply chain issues. Often I find myself helping teams with modern agile and DevOps practices in more of a coaching role. Focused on GitHub!
 
 ## Trainer: GitHub Accredited and Microsoft Certified 🐠
-I am a GitHub trainer for the GitHub (non-)developer, Copilot, Advanced Security, and GitHub Actions trainings. I also give several Bootcamps including a GitHub Advanced Security Bootcamp and the GitHub Partner Bootcamps that are needed to become a GitHub Accredited Trainer. Next to that I am a Microsoft Certified Trainer for AZ-900, AZ-204, and AZ-400 (DevOps on Azure track) as well as the AI-900 and AI-102 paths.  
+I am a GitHub trainer for the GitHub (non-)developer, Copilot, Advanced Security, and GitHub Actions trainings. I also give several Bootcamps including a GitHub Advanced Security Bootcamp and the GitHub Partner Bootcamps that are needed to become a GitHub Accredited Trainer.  
+Next to that I am a Microsoft Certified Trainer for AZ-900, AZ-204, and AZ-400 (DevOps on Azure track) as well as the AI-900 and AI-102 paths.  
 
 I'm also a LinkedIn Learning Instructor. My courses are:
  - [GitHub Advanced Security](/blog/2022/10/19/LinkedIn-Learning-GHAS)
@@ -29,9 +30,9 @@ I'm also a LinkedIn Learning Instructor. My courses are:
  - [Responsible GitHub Copilot: Creating Reliable Code Ethically](https://www.linkedin.com/learning/responsible-github-copilot-creating-reliable-code-ethically-24981582/genai-and-creating-code-responsibly)
 
 ## Books 📚
-I have co-authored the following books:
+I have co-authored the following books:  
 - GitHub Actions in Action - Continuous integration and delivery for DevOps
-    - The GitHub Copilot Handbook - A practical guide for teams and enterprises
+- The GitHub Copilot Handbook - A practical guide for teams and enterprises
 
 ### GitHub Actions in Action - Continuous integration and delivery for DevOps
 
