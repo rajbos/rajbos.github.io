@@ -42,14 +42,18 @@ With the rise of AI-powered development tools, GitHub Copilot has introduced its
 
 |Filename|Location|.github repo support|Description|Docs|
 |---|---|---|---|---|
-|copilot-instructions.md|root or .github|yes|Custom instructions to provide context and guidance to GitHub Copilot for your repository|[Copilot Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot)|
-|.copilotignore|root||Tell Copilot to ignore certain files or directories when providing context|[Copilot Ignore](https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-in-your-environment)|
-|copilot-chat.md|.github||Custom chat prompts and instructions specifically for Copilot Chat interactions|[Copilot Chat](https://docs.github.com/en/copilot/github-copilot-chat)|
+|copilot-instructions.md|.github/||Repository-wide custom instructions providing context and coding guidelines to GitHub Copilot for all requests in the repository|[Custom Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)|
+|NAME.instructions.md|.github/instructions/||Path-specific custom instructions that apply to files matching the `applyTo` glob pattern defined in the file's YAML frontmatter. Both repository-wide and path-specific instructions are used when both apply|[Custom Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)|
+|AGENTS.md|anywhere in the repository||Agent instructions for Copilot coding agent. The nearest file in the directory tree takes precedence. `CLAUDE.md` and `GEMINI.md` at the repository root are also supported as alternatives for other AI agents|[Custom Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)|
+|NAME.prompt.md|.github/prompts/||Reusable prompts for specific and repetitive tasks that can be invoked in Copilot Chat. Supports YAML frontmatter for metadata like description and which tools to use|[Prompt Files](https://docs.github.com/en/copilot/tutorials/customization-library/prompt-files)|
+
+Note: content exclusion (preventing Copilot from accessing certain files) is **not** configured via a file - it is set up through your repository or organization settings on GitHub.com. See the [content exclusion docs](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot) for more details.
 
 These files help you customize the AI experience by:
 - Providing repository-specific context and coding guidelines through custom instructions
-- Excluding sensitive or irrelevant files from Copilot's context
-- Setting up specialized prompts for common development tasks in your project
+- Applying specific instructions to certain file types or directories
+- Guiding Copilot's coding agents with information about your project conventions
+- Creating reusable prompts for common development tasks in your project
 
 Just like the other magic files, these need to be named exactly right and placed in the correct directories to work their magic ✨.
 
