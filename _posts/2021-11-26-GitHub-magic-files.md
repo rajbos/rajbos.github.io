@@ -2,7 +2,7 @@
 layout: post
 title: "GitHubs magic files"
 date: 2021-11-26
-tags: [GitHub, magic, files, configuration, pull request templates, issue forms templates, dependabot configuration]
+tags: [GitHub, magic, files, configuration, pull request templates, issue forms templates, dependabot configuration, GitHub Copilot]
 ---
 
 I keep coming across files in GitHub that have some mystic magic feeling to them. There's always a small incantation to come with them: the have to have the right name, the right extension *and* have to be stored in the right directory. I wanted to have an overview of all these spells for myself, so here we are 😉.
@@ -36,6 +36,28 @@ A list of all the magic files / links that I came across in GitHub. I also creat
 |action.yml/action.yaml|root||Configuration file for an actions repository||
 |dependency-review-config.yml|.github|no|Dependency review configuration file|[Dependency review](https://github.com/actions/dependency-review-action#configuration-options)|
 |$GITHUB_STEP_SUMMARY|workflow||Job summary output in markdown|[Job summary](https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables)|
+
+## GitHub Copilot Files
+With the rise of AI-powered development tools, GitHub Copilot has introduced its own set of magic files to help customize the AI experience for your specific repository context. These files help Copilot understand your project better and provide more relevant suggestions.
+
+|Filename|Location|.github repo support|Description|Docs|
+|---|---|---|---|---|
+|copilot-instructions.md|.github/|yes|Repository-wide custom instructions providing context and coding guidelines to GitHub Copilot for all requests in the repository|[Custom Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)|
+|NAME.instructions.md|.github/instructions/||Path-specific custom instructions that apply to files matching the `applyTo` glob pattern defined in the file's YAML frontmatter. Both repository-wide and path-specific instructions are used when both apply|[Custom Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)|
+|AGENTS.md|anywhere in the repository||Agent instructions for Copilot coding agent. The nearest file in the directory tree takes precedence. `CLAUDE.md` and `GEMINI.md` at the repository root are also supported as alternatives for other AI agents|[Custom Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)|
+|NAME.prompt.md|.github/prompts/||Reusable prompts for specific and repetitive tasks that can be invoked in Copilot Chat. Supports YAML frontmatter for metadata like description and which tools to use|[Prompt Files](https://docs.github.com/en/copilot/tutorials/customization-library/prompt-files)|
+|NAME.agent.md|.github/agents/|yes|Custom agent profiles with YAML frontmatter defining the agent's name, description, available tools, and MCP server configurations. Allows creating specialized agents with tailored expertise for specific development tasks. Available on GitHub.com, VS Code, JetBrains, Eclipse, and Xcode|[Custom Agents](https://docs.github.com/en/copilot/reference/custom-agents-configuration)|
+
+Note: content exclusion (preventing Copilot from accessing certain files) is **not** configured via a file - it is set up through your repository or organization settings on GitHub.com. See the [content exclusion docs](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot) for more details.
+
+These files help you customize the AI experience by:
+- Providing repository-specific context and coding guidelines through custom instructions
+- Applying specific instructions to certain file types or directories
+- Guiding Copilot's coding agents with information about your project conventions
+- Creating reusable prompts for common development tasks in your project
+- Building specialized custom agents with their own tools and MCP server configurations
+
+Just like the other magic files, these need to be named exactly right and placed in the correct directories to work their magic ✨.
 
 Then there is a whole list of templates you can configure for issues / pull requests / discussion:
 
