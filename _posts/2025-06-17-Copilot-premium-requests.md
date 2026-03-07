@@ -23,7 +23,7 @@ Here is an overview of the main features that will consume a premium request:
 - Every step in the Coding Agent: 1 premium request. The agent can decide to make multiple steps, and will thus consume a premium request for each step. Note: I hope that the agent will also come with a "max requests" setting, so that you can limit the amount of requests it can make in a single conversation and prevent it from overspending.
 - Requesting a Code Review in a Pull Request: 1 premium request
 - Agent Mode in an editor: 1 premium request per user initiated request
-- Copilot Coding Agent: can use multiple premium requests where it sees fit
+- Copilot Coding Agent: use 1 premium requests per time you trigger it. Starting the task is a trigger. Adding a comment afterwards (and thus starting a follow up task) is a trigger and thus an extra premium request.
 - From the docs [here](https://docs.github.com/en/copilot/managing-copilot/understanding-and-managing-copilot-usage/understanding-and-managing-requests-in-copilot), Copilot Spaces and Extensions also consume premium requests, but it is not clear how many requests they consume or for what. I can imagine that a Chat Turn against a Copilot Space will consume a premium request each time, and same for Copilot Extensions. For the latter it is also not clear if that is for both local extensions (like the @Azure extension that runs locally inside of VS Code), or also for the remote extensions that are installed as GitHub Apps in your organization.
 
 ## Free plan

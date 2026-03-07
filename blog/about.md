@@ -19,17 +19,41 @@ I do DevOps-y stuff, mostly with C# and GitHub/Azure/Azure DevOps.
 In my day job I work for [Xebia Microsoft Services](https://website.xebia.com/digital-transformation/microsoft-services/github) as a DevOps consultant & GitHub Trainer, helping our customers with whatever they need regarding DevOps. Whether it's training, finding out some obscure issues, setting up their CI/CD pipelines, or helping them on their way to implement more DevOps patterns and practices, I help them with it. A lot of focus these days goes into improving their security setup, and looking at supply chain issues. Often I find myself helping teams with modern agile and DevOps practices in more of a coaching role. Focused on GitHub!
 
 ## Trainer: GitHub Accredited and Microsoft Certified 🐠
-I am a GitHub trainer for the GitHub (non-)developer, Copilot, Advanced Security, and GitHub Actions trainings. I also give several Bootcamps including a GitHub Advanced Security Bootcamp and the GitHub Partner Bootcamps that are needed to become a GitHub Accredited Trainer. Next to that I am a Microsoft Certified Trainer for AZ-900, AZ-204, and AZ-400 (DevOps on Azure track) as well as the AI-900 and AI-102 paths.  
+I am a GitHub trainer for the GitHub (non-)developer, Copilot, Advanced Security, and GitHub Actions trainings. I also give several Bootcamps including a GitHub Advanced Security Bootcamp and the GitHub Partner Bootcamps that are needed to become a GitHub Accredited Trainer.  
+Next to that I am a Microsoft Certified Trainer for AZ-900, AZ-204, and AZ-400 (DevOps on Azure track) as well as the AI-900 and AI-102 paths.  
 
 I'm also a LinkedIn Learning Instructor. My courses are:
  - [GitHub Advanced Security](/blog/2022/10/19/LinkedIn-Learning-GHAS)
  - [25 GitHub configuration files you should be using](https://www.linkedin.com/learning/25-github-configuration-files-you-should-be-using)
  - [GitHub Advanced Security for Azure DevOps](https://www.linkedin.com/learning/learning-github-advanced-security-for-azure-devops/)
  - [GitHub Models - Enterprise AI Development](https://www.linkedin.com/learning/enterprise-ai-development-with-github-models-and-azure/ai-with-github-models)
+ - [Responsible GitHub Copilot: Creating Reliable Code Ethically](https://www.linkedin.com/learning/responsible-github-copilot-creating-reliable-code-ethically-24981582/genai-and-creating-code-responsibly)
+
+## Books 📚
+I have co-authored the following books:  
+- GitHub Actions in Action - Continuous integration and delivery for DevOps
+- The GitHub Copilot Handbook - A practical guide for teams and enterprises
+
+### GitHub Actions in Action - Continuous integration and delivery for DevOps
+
+|Cover|Description|
+|---|---|
+| ![Cover of the book](/images\Books\2024-GitHubActionsInAction.png) |Continuous delivery (CI/CD) pipelines help you automate the software development process and maximize your team’s efficiency. GitHub Actions in Action teaches you how to build, test, and deploy pipelines in GitHub Actions through hands-on labs and projects. |
+
+Buy at Manning: [Manning.com](https://www.manning.com/books/github-actions-in-action)
+Buy at Amazon: [Amazon.com](https://www.amazon.com/GitHub-Actions-Action-Continuous-integration/dp/1633437302/ref=sr_1_1?crid=HF9LLEOV5HSM&dib=eyJ2IjoiMSJ9.6xOah126Hvy_CO8iRomsWeu9eNHKR_Ou1gUHX32Js5uWA2HM9N-ZZaJzV1P0kvdbZYekPmh5RcqzIZSnb-JzMRIJ8wQv2hC9zRPH4s6wPuEO7pfXw_qgs_fxmEuHLa_JJnfQaqL0ZjYyyZRu9Fg1CJLdxgUMOrxNdSw5xQpDi6auG22hgLZt4QnxdopquYVQtpNj0y_EptvZ5CSItnrqaJ07suH8fqTFmIs__KNQJC0.6aLnWbP5IdaTPWA3e6U6zXuy0R8QNmP442aQeR1f9w8&dib_tag=se&keywords=github+actions+in+action&qid=1766153491&sprefix=github+actions+in+act%2Caps%2C176&sr=8-1)
+
+### The GitHub Copilot Handbook: A practical guide to transforming the software development life cycle with GitHub Copilot
+
+|Cover|Description|
+|---|---|
+|![Cover of the book](/images\Books\2025-TheGitHubCopilotHandBook.png) |Cross-functional product teams are under constant pressure to build and ship faster, but too much time is lost to manual coding, slow reviews, and fragmented workflows. GitHub Copilot streamlines day-to-day coding so your team can focus on delivering value to users while maintaining high quality on real projects. Written by industry experts Rob Bos and Randy Pagels, this book shows how GitHub Copilot supports your work from start to finish. You’ll learn how to turn ideas into tasks, write code with fewer hiccups, spot problems earlier, and understand errors when things go wrong. You’ll also see how Copilot suggests improvements in pull requests and helps fix common build issues, enabling teams to keep moving and ship with confidence. You’ll integrate GitHub Copilot into daily routines, share it across roles, and make it stick with simple checklists and clear examples. You’ll also track what works, set guardrails, and build an internal community. By the end, you’ll know when GitHub Copilot helps – and when it doesn’t – and you’ll be ready to write, review, and ship code with confidence on real projects.
+
+Buy at Packt: [PacktPub.com](https://www.packtpub.com/en-us/product/the-github-copilot-handbook-9781806116638)
+Buy at Amazon: [Amazon.com](https://www.amazon.com/Mastering-GitHub-Copilot-programming-collaboration/dp/1806116634/ref=sr_1_6?crid=2979N62CO6YRI&dib=eyJ2IjoiMSJ9.lDKG-T_IqG-LVZj_iBe21JrAawY72wBP9Z11qx6PFTp62IN19AiF4cPjQMbC52S0Y-G1z6G2Q2DWwLcNBDBZ3OWSBLncYjCuQ79jXYqspaHLRASMrMdI4rcOtiNDHmWTPnmJq2wCYVRW2hDnbPwRZ2Y6GPGc0x8V1-04A1C2_BR5yGxiAxqut8x4KAG5Mgyiug_7QQeYRKosXCzPcJs63w1QycfMuC6utpCN6zeSNDk.h-FK3OH4m89kQcs9n6qJvTXOaqpcMFvHXGoTiGSM7Hg&dib_tag=se&keywords=github+copilot+book&qid=1756548560&sprefix=github+copilot+bookk,aps,166&sr=8-6)
 
 ## Bots 🤖
 * GitHub Action updates: I created a bot to keep you up to date on new and improved actions on the GitHub marketplace. Follow the link here [GitHub Actions Marketplace News](https://devops-actions.github.io/github-actions-marketplace-news/) and subscribe to the RSS feed for updates!
-* Discontinued! AzDo Marketplace updates: I created a Twitter bot named [AzDoMarketNews](https://twitter.com/azdomarketnews) to keep up to date on new and improved extensions on the Azure DevOps marketplace.  
 
 ## About ⚙️
 * Name: Rob Bos
@@ -63,7 +87,7 @@ Here are some of the recordings for conference sessions I have done:
 |2020|DevOps Fest|How to run a global, cloud scale event for 10.000 people (GDBC)|[YouTube](https://www.youtube.com/watch?v=JJOnXj3pbKU&list=PLuOBDBq7MW73LKG7492aCRpSkLqqlJp32&index=26)|
 
 ## Upcoming conferences 🎤 
-Here are some of the conferences I will be speaking at:
+
 
 ### Conferences in 2024
 
@@ -112,7 +136,7 @@ Microsoft MVP since 2020 <br />
 [![MVP](/images/MVP.svg)](https://mvp.microsoft.com/en-us/PublicProfile/5003719)
 
 GitHub Star since 2024 <br />
-[![MVP](/images/Star.svg)](https://stars.github.com/profiles/rajbos)
+[![MVP](/images/Star.png)](https://stars.github.com/profiles/rajbos)
 
 LinkedIn Learning Instructor <br />
 [![LinkedIn Learning Logo](/images/LinkedIn_Learning/LinkedIn_Learning_Logo.png)](https://www.linkedin.com/learning/instructors/rob-bos)
