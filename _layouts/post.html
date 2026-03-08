@@ -21,7 +21,7 @@ layout: default
           {% for tag in page.tags %}
             <span class="btn btn-default">
               <!--a class="post-link" href="{{ tag.url | prepend: site.baseurl }}">{{ tag }}</a-->
-              <a class="post-link">{{ tag }}</a>
+              <a class="post-link" href="{{ site.baseurl }}/tag/{{ tag | slugify }}">{{ tag }}</a>
             </span>
           {% endfor %}
         </span>

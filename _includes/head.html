@@ -1,19 +1,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="{{ page.title }}">
-	<meta name="author" content="Rob Bos">
     <meta name="keywords" content="{% if page.tags != [] %}{% for tag in page.tags %}{{ tag }},{% endfor %} {% else %}Azure DevOps, Azure, GitHub, GitHub Actions, Security, DevOps, C#, Development, CI, CD, CI/CD, Continuos Deployment, Continuos Integration, Continuous Improvement{% endif %}">
     <meta name="robots" content="INDEX, FOLLOW">
 
 	<link rel="shortcut icon" type="image/png" href="/images/rob_pixel.png">
-	
-	<title>{{ page.title }}</title>
 
-	<meta property='og:title' content='{{ page.title }}'/>
-	<meta property='og:image' content='/images/rob_photo.png'/>
-	<meta property='og:description' content='{{ page.title }}'/>
-	<meta property='og:url' content='{{ page.url | absolute_url }}' />
+	{% seo %}
 
 	<script defer data-domain="devopsjournal.io" src="https://plausible.io/js/plausible.js"></script>
 	
