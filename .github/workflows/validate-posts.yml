@@ -1,0 +1,54 @@
+name: Validate blog posts
+
+on:
+  push:
+    paths:
+      - '_posts/**.md'
+  pull_request:
+    paths:
+      - '_posts/**.md'
+
+jobs:
+  validate-description:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check posts have a description field
+        shell: bash
+        run: |
+          # Find all posts added or modified in this push/PR
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- '_posts/*.md')
+          else
+            CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- '_posts/*.md' 2>/dev/null || git diff --name-only HEAD~1 HEAD -- '_posts/*.md')
+          fi
+
+          if [ -z "$CHANGED" ]; then
+            echo "No post files changed."
+            exit 0
+          fi
+
+          MISSING=()
+          for FILE in $CHANGED; do
+            if [ -f "$FILE" ]; then
+              if ! grep -q "^description:" "$FILE"; then
+                MISSING+=("$FILE")
+              fi
+            fi
+          done
+
+          if [ ${#MISSING[@]} -gt 0 ]; then
+            echo "❌ The following posts are missing a 'description:' field in their front matter:"
+            for F in "${MISSING[@]}"; do
+              echo "  - $F"
+            done
+            echo ""
+            echo "Add a 'description: \"...\"' field (150-160 chars) to each post's front matter."
+            echo "This description is used as the meta description tag for SEO and social sharing."
+            exit 1
+          fi
+
+          echo "✅ All changed posts have a description field."
