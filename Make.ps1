@@ -27,6 +27,7 @@ if ($Command -eq "new-post") {
     $content += "date: $date`n"
     $content += "tags: []`n"
     $content += "description: `"`"`n"
+    $content += "image: /images/$((Get-Date).Year)/$date/`n"
     $content += "---`n"
 
     # store the file
