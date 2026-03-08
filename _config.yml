@@ -2,16 +2,12 @@
 name: Rob Bos
 title: DevOps Journal
 url: https://devopsjournal.io
-description: "Blog about GitHub, GitHub Actions, Azure DevOps, and supply chain security by Rob Bos"
+description: "Blog about GitHub and DevOps, including GitHub Copilot and supply chain security by Rob Bos"
 author: Rob Bos
 logo: /images/rob_photo.png
-twitter:
-  username: robbos81
-  card: summary_large_image
 social:
   name: Rob Bos
   links:
-    - https://twitter.com/robbos81
     - https://github.com/rajbos
     - https://mstdn.social/@Rob_Bos
     - https://sessionize.com/RobBos
