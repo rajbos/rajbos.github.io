@@ -2,6 +2,7 @@
 layout: post
 title: "Fixing .NET Core tool update issues"
 date: 2020-09-18
+description: "Resolve the .NET Core global tool update error for dotnet-ef by removing the old tool store folder and executable before running the update command again."
 ---
 
 I had an issue running an  [EntityFramework](https://docs.microsoft.com/en-us/ef/?WT.mc_id=DOP-MVP-5003719) command after updating the NuGet packages to the latest version and searching got me to multiple steps and sites to get things fixed. Grouping them here for future reference.

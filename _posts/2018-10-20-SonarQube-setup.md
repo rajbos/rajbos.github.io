@@ -2,6 +2,7 @@
 layout: post
 title: "SonarQube setup for Azure DevOps"
 date: 2018-10-20
+description: "A practical guide to setting up SonarQube for Azure DevOps, covering certificates, JRE requirements, CSS analysis issues, and running it on Azure App Service."
 ---
 
 During installation and setting up a [SonarQube](https://www.sonarqube.org/) server for usage in an Azure DevOps Build I found some things that I didn't remember from previous installation and wanted to log that in this post, so the next time I have somewhere to find these things in one place.

@@ -2,6 +2,7 @@
 layout: post
 title: "Using Azure CLI with PowerShell: error handling explained"
 date: 2019-07-12
+description: "Learn to handle Azure CLI errors in PowerShell by converting JSON output and using the automatic variable $? to detect command failures in Azure Pipelines."
 ---
 
 I found myself searching the internet again on how to use the Azure CLI from PowerShell so that I can use it in Azure Pipelines to create new Azure resources. The reason I want to do this with PowerShell is twofold:

@@ -2,6 +2,7 @@
 layout: post
 title: "Oops, you've worked on the master branch and cannot push to the remote"
 date: 2020-03-26
+description: "Recover from accidentally committing to a protected Git master branch by moving your changes to a new branch and using git reset --hard to clean it up."
 ---
 
 We've all been there, what happens when you commit changes to the master branch and during the sync to the remote you get an error.

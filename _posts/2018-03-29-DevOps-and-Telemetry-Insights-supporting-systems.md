@@ -2,6 +2,7 @@
 layout: post
 title: "DevOps and Telemetry: Supporting systems"
 date: 2018-03-22
+description: "Learn how to monitor Azure supporting systems including App Service, SQL Database, and Blob Storage using Application Insights and built-in Azure metrics."
 ---
 
 **Note** This is part 2 in a series of posts about DevOps and the role of telemetry in it. In part one I described the reasoning behind the series and explained how I started with logging (usage) telemetry for a SaaS application. You can read part 1 in the series [here](/blog/2018/03/14/DevOps-and-Telemetry-Insights-into-your-application).

@@ -2,6 +2,7 @@
 layout: post
 title: "Fixing Azure Function Error RunResolvePublishAssemblies"
 date: 2019-02-21
+description: "Fix the Azure Functions build error about RunResolvePublishAssemblies by adding a global.json file that pins the .NET Core SDK version to a compatible release."
 ---
 
 I ran into an issue with a new Azure Function I created: when I tried to run it, I got an error message about a `RunResolvePublishAssemblies` setting.

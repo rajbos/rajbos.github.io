@@ -2,6 +2,7 @@
 layout: post
 title: "Missing stages in Azure DevOps YAML Pipelines"
 date: 2020-12-06
+description: "Find out why Azure DevOps YAML pipeline environment approvals block the entire pipeline and how wrapping deployment jobs inside stages is the correct fix."
 ---
 
 # Alt. title: approval to an environment blocks the whole pipeline

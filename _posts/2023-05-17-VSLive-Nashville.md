@@ -3,6 +3,7 @@ layout: post
 title: "Speaking at VSLive! Nashville 2023"
 date: 2023-05-17
 tags: [GitHub, VSLive, Nashville, GitHub Actions, Security, DevOps]
+description: "Slides and session notes from VS Live! Nashville 2023 covering GitHub Actions beyond CI/CD, supply chain attack prevention, and GitHub security features."
 ---
 
 I had the pleasure of speaking at VS LIVE! in Nashville [link](https://vslive.com/events/nashville-2023/home.aspx) this year. Below you can find the slides that go with my sessions that have all the links you've seen in the session.

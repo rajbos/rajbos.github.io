@@ -3,6 +3,7 @@ layout: post
 title: "Speaking at GOTO; Aarhus 2023"
 date: 2023-05-24
 tags: [GitHub, GOTO, Aarhus, GitHub Actions, Security, DevOps]
+description: "Session slides from GOTO; Aarhus 2023 on protecting code with GitHub security features, covering commit signing, Dependabot, secret scanning, and CodeQL."
 ---
 
 I will be speaking at GOTO; Aarhus [link](https://gotoaarhus.com/2023) this year. 

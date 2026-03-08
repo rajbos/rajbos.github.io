@@ -3,6 +3,7 @@ layout: post
 title: "GitHub Container Registry"
 date: 2021-01-06
 tags: [GitHub, Container, Registry, ghcr.io]
+description: "Learn how to push and pull Docker images using the GitHub Container Registry (ghcr.io), including PAT authentication and a complete GitHub Actions workflow."
 ---
 
 I wanted to use the [GitHub Container Registry](https://docs.github.com/en/free-pro-team@latest/packages/guides/about-github-container-registry) to host an image for me and had some issues setting things up. To save me some time the next time I need this, and hopefully for someone else as well, I wanted to document how this process works.

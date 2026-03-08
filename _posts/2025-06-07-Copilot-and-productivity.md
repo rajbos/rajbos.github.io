@@ -3,6 +3,7 @@ layout: post
 title: GitHub Copilot & Productivity
 date: 2025-06-07
 tags: [GitHub, GitHub Copilot, Generative AI, Productivity]
+description: "Find out why measuring GitHub Copilot success by lines of code accepted is flawed and what SDLC metrics and engagement patterns actually matter instead."
 ---
 
 # Where the current focus on productivity is wrong

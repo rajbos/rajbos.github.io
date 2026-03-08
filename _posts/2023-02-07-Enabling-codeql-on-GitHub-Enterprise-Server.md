@@ -3,6 +3,7 @@ layout: post
 title: "Enabling CodeQL on GitHub Enterprise Server"
 date: 2023-02-07
 tags: [GitHub, CodeQL, Security, GitHub Advanced Security, Advanced Security, DevSecOps, GHES, GitHub Enterprise Server]
+description: "Step-by-step guide to enabling CodeQL on GitHub Enterprise Server, including syncing the CodeQL bundle, setting up runners and configuring code scanning."
 ---
 
 To enable CodeQL on GitHub Enterprise Server you need to make sure you have GitHub Actions setup and running, including your own set of self-hosted runners. You can read more about that in my previous post [here](/blog/2022/10/09/Enabling-GitHub-Actions-on-Enterprise-Server).    

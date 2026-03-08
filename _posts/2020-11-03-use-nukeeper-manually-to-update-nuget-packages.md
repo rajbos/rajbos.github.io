@@ -2,6 +2,7 @@
 layout: post
 title: "Use NuKeeper 'manually' to update NuGet packages"
 date: 2020-11-03
+description: "Learn how to use NuKeeper manually via PowerShell to check for NuGet updates, create a new branch, and open a Pull Request on a private GitLab instance."
 ---
 
 While building up a scheduled pipeline for updating our [NuGet](https://docs.microsoft.com/en-us/nuget?WT.mc_id=DOP-MVP-5003719) dependencies I found [NuKeeper](https://github.com/NuKeeperDotNet/NuKeeper/) to help with automatically updating the packages we use. If you don't know [NuKeeper](https://github.com/NuKeeperDotNet/NuKeeper/), it is an open source project that will go through your .NET solution and check with the configured NuGet sources to see if there are any packages that have available updates. If there are updates, it can update your project (or solution) and even generate a Pull Request for you.

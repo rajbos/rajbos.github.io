@@ -3,6 +3,7 @@ layout: post
 title: "Automating my home setup: turning on the lights when the camera is in use"
 date: 2022-01-17
 tags: [Home Office, Setup, Automating, Home Assistant]
+description: "Learn how to automate your home office setup using Home Assistant to turn on key lights and speakers automatically when your camera is detected as active."
 ---
 
 I have a nice working from [home setup](/blog/2021/05/13/home-setup) that allows me to use a great camera, lights and microphone. I have so many stuff, that I wanted to automate some of it to detect if I am working or not and then toggle them all on or of.

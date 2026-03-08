@@ -2,6 +2,7 @@
 layout: post
 title: "Missing Azure Functions Logs"
 date: 2019-01-13
+description: "Find out why Azure Functions run logs appear missing when Application Insights sampling is turned on, and how to disable sampling to restore all log entries."
 ---
 
 I was testing with our Azure Function and had set the cron expression on the timer trigger to `"0 0 */2 * * *"`, based on the example from the Microsoft [documentation](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer#cron-expressions?WT.mc_id=AZ-MVP-5003719). When I went to the logs a day later, I noticed that some of the runs weren't there!

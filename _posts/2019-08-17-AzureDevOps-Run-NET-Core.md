@@ -2,6 +2,7 @@
 layout: post
 title: "Run .NET Core programs in Azure DevOps"
 date: 2019-08-17
+description: "Two ways to run a .NET Core console application in Azure DevOps: publishing a self-contained Windows executable or calling the assembly via a PowerShell task."
 ---
 
 Recently I wanted to build and run a .NET core console application in Azure DevOps and found out you cannot do that with the default .NET core tasks.

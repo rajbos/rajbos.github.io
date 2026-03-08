@@ -3,6 +3,7 @@ layout: post
 title: Dependabot alerts triaging in GitHub
 date: 2023-10-07
 tags: [Dependabot, GitHub, alerts, DevSecOps]
+description: "Improve Dependabot alert triaging in GitHub using hidden UI filters for vulnerable calls, auto-dismissed alerts, runtime dependencies, and patchable issues."
 ---
 
 The GitHub UI displays a couple of helpful tips to use in triaging your Dependabot alerts which are super helpful. Unfortunately the User Interface does not show these filters in the filter bar yet, so I wanted to have a better overview of the filters I could use. I've listed them below:

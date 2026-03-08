@@ -6,6 +6,7 @@ tags:
  - ".NET Core"
  - "GitHub Actions"
  - "Web"
+description: "Walk through deploying a .NET Core web application to Azure App Service using a GitHub Actions workflow, from creating the repo to a successful first run."
 ---
 
 

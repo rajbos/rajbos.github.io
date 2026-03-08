@@ -3,6 +3,7 @@ layout: post
 title: GitHub Copilot - Levels of enlightenment
 date: 2024-06-07
 tags: [GitHub, GitHub Copilot, Power User, Copilot]
+description: "A nine-part YouTube video series on mastering GitHub Copilot, covering prompt tips, context management, top-down coding, and using Copilot Chat effectively."
 ---
 
 I've recorded a video series on the lessons I learned to get the most out of GitHub Copilot. This series is called "Levels of Enlightenment" and can be found in this [YouTube Playlist](https://www.youtube.com/playlist?list=PLXVVwOM8uv2y0Yo6H8qu9giWWWlZLzu8K).

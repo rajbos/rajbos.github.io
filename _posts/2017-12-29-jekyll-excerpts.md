@@ -2,6 +2,7 @@
 layout: post
 title: "Using excerpts in Jekyll"
 date: 2017-12-29
+description: "Learn how to display custom post excerpts on your Jekyll index page using special HTML comment tags to mark the start and end of your post summary text."
 ---
 
 I wanted to include at least some more information in the index page of my blog instead of just the publish date and title, so I searched around for some help to include an excerpt in Jekyll and found some help on <a href="http://frontendcollisionblog.com/jekyll/snippet/2015/03/23/how-to-show-a-summary-of-your-post-with-jekyll.html"> this</a> blog.

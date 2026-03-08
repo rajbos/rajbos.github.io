@@ -2,6 +2,7 @@
 layout: post
 title: "SonarQube analysis on a Java project - fixing error 'Project was never analyzed'"
 date: 2019-10-07
+description: "Fix the SonarQube error 'Project was never analyzed' for a Java project in Azure DevOps by setting the Maven groupId as part of the SonarQube project key."
 ---
 
 Today I was configuring a SonarQube Analysis in [Azure DevOps](https://dev.azure.com) on a Java project. Following the [documentation](https://sonarcloud.io/documentation/analysis/scan/sonarscanner-for-azure-devops/) I still got this error:

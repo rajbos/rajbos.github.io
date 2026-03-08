@@ -3,6 +3,7 @@ layout: post
 title: "Maturity levels of using GitHub Actions Securely"
 date: 2021-12-11
 tags: [GitHub, GitHub Actions, Security, Securely, Risks, Maturity Levels]
+description: "Explore eight maturity levels for using GitHub Actions securely, from version pinning and SHA hashes to Dependabot, forked repos, and an internal marketplace."
 ---
 
 I've been discussing using GitHub Actions in a secure way for a while now (see [here](/blog/2021/10/27/GitHub-Universe-Session), and I got a question on how to improve your usage of actions. I wanted to capture that info in an easy to follow set of steps, so here we go:

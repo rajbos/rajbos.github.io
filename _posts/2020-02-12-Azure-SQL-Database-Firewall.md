@@ -2,6 +2,7 @@
 layout: post
 title: "Azure SQL Database Firewall"
 date: 2020-02-12
+description: "Explore the difference between server-level and database-level firewall rules in Azure SQL Database, and learn how to manage database-level rules using T-SQL."
 ---
 
 Did you know you have more than one option to set the SQL firewall settings on an Azure SQL Database? Most people know you can set firewall rules on the **server** level:

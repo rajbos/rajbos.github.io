@@ -2,6 +2,7 @@
 layout: post
 title: "Install an Azure DevOps Agent behind a proxy"
 date: 2020-04-16
+description: "A complete reference list of all URLs you need in your proxy allow-list to successfully install and run the Azure DevOps Agent behind a corporate proxy."
 ---
 Sometimes you need to run the Azure DevOps Agent behind a proxy. If you search around you can find a lot of posts regarding this, and I wanted to have my own overview of all the things you need to keep in mind. At least I've tested this list myself 😁.
 

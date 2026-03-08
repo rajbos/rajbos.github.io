@@ -2,6 +2,7 @@
 layout: post
 title: "Azure App Service - a quick way to take your app Offline"
 date: 2017-11-19
+description: "Put your Azure App Service into maintenance mode by adding an app_offline.htm file to the webroot via Kudu, serving a custom offline message to all visitors."
 ---
 After searching for the third time on how to do this, I thought it would be time to write about this here 😬. 
 

@@ -2,6 +2,7 @@
 layout: post
 title: "Fixing GitHub Pages Syntax Highlighting"
 date: 2019-07-12
+description: "Fix syntax highlighting on a Jekyll GitHub Pages blog by configuring the rouge highlighter in _config.yml and adding a CSS file to your head.html include."
 ---
 
 Today I noticed that my syntax highlighting was not working on this blog. Here is how I fixed it!

@@ -2,6 +2,7 @@
 layout: post
 title: "DotNetCore: Adding HTTPS to your MVC webapp"
 date: 2016-08-20
+description: "Add HTTPS support to your ASP.NET Core MVC application using custom redirect middleware that enforces HTTPS for GET requests and returns 403 for all others."
 ---
 <p>
 I wanted to use https in my dotnetcore application (v. 1.0.0-rc2-final) and had to dig around the web quite a bit to find the most recent

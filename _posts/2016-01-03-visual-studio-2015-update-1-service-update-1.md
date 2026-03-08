@@ -2,6 +2,7 @@
 layout: post
 title: "Visual Studio 2015 update 1 - Service update 1"
 date: 2016-01-03
+description: "Visual Studio 2015 Update 1 received a service update that fixes a critical error related to T4MVC; find the knowledge base article and download link here."
 ---
 
 Just putting this out here for future reference: there is a service update for VS2015 update 1 to fix some issues. I needed this update to fix an error in VS with **T4MVC**. 

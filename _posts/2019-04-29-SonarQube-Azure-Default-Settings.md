@@ -2,6 +2,7 @@
 layout: post
 title: "SonarQube setup on Azure App Service"
 date: 2019-04-29
+description: "Set up SonarQube on Azure App Service with ARM template, configure Azure SQL with contained users, enable Azure AD authentication, and block anonymous access."
 ---
 
 As noted in a [previous post](/blog/2018/10/20/SonarQube-setup), you can host a [SonarQube](https://www.sonarqube.org/) on an Azure App Service, thanks to <!-- markdown-link-check-disable --> [Nathan Vanderby](https://www.linkedin.com/in/nathan-vanderby-92a19814/), a Premier Field Engineer from Microsoft. <!-- markdown-link-check-enable -->He created an ARM template to run the SonarQube installation behind an Azure App Service with a Java host. This saves you a lot of steps mentioned above! You can find the scripts for it on [GitHub](https://github.com/vanderby/SonarQube-AzureAppService) or deploy it from the big `deploy on Azure` button.

@@ -2,6 +2,7 @@
 layout: post
 title: "DevOps and Telemetry: Insights into your application"
 date: 2018-02-23
+description: "Discover how to build DevOps telemetry for an Azure SaaS application using Application Insights, table storage logging, and operational dashboards for the team."
 ---
 
 I like to make work and performance visible for teams by giving them the necessary information to gauge the performance of a system, both on a daily basis as well as over time. This will help them to find less performant parts of the system, or checking engagement statistics. Sometimes I feel this part of the process is forgotten when talking about DevOps these days. People will focus on bringing the different teams together, create vertically oriented teams and changing the static mindset into 'the DevOps mindset'.  

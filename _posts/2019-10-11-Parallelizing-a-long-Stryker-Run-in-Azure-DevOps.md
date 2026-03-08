@@ -2,6 +2,7 @@
 layout: post
 title: "Parallelizing a long Stryker Run in Azure DevOps"
 date: 2019-10-11
+description: "See how to parallelize Stryker mutation testing across a large .NET solution in Azure DevOps by splitting projects into separate jobs and merging results."
 ---
 
 I've been working on a [Stryker](https://stryker-mutator.io/stryker-net/) run for a larger .NET solution (115 projects and counting) and wanted to document on the final setup in Azure DevOps.

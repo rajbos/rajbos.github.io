@@ -3,6 +3,7 @@ layout: post
 title: "How GitHub Actions versioning system works"
 date: 2022-10-19
 tags: [GitHub Actions, versioning, SemVer, GitHub, Actions]
+description: "How GitHub Actions versioning and SemVer work under the hood, why the runner does not enforce SemVer, and why pinning actions to a SHA hash is more secure."
 ---
 
 ## TL;DR

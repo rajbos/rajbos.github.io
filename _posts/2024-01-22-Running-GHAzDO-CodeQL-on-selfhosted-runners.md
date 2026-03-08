@@ -3,6 +3,7 @@ layout: post
 title: Running GHAzDo CodeQL on self-hosted runners
 date: 2024-01-22
 tags: [GitHub Advanced Security for Azure DevOps, Azure DevOps, GHAZDo]
+description: "Configure CodeQL for GHAzDo on Azure DevOps self-hosted runners by correctly downloading, placing the bundle, and creating the required .complete marker file."
 ---
 
 When you start running CodeQL scans on your Azure DevOps environment on self-hosted runners, you'll learn that you have to do one extra step and that is install (and keep up to date!) the CodeQL bundle on your self-hosted runners. 

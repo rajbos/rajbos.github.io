@@ -3,6 +3,7 @@ layout: post
 title: GitHub Copilot - Change the Narrative
 date: 2025-04-01
 tags: [GitHub, GitHub Copilot, Generative AI]
+description: "Explore why the focus on GitHub Copilot productivity is misplaced and how shifting to a sturdy DevOps foundation leads to faster, more trustworthy delivery."
 ---
 
 

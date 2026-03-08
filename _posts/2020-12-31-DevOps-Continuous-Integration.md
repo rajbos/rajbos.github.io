@@ -2,6 +2,7 @@
 layout: post
 title: "DevOps Maturity Levels - Continuous Integration"
 date: 2020-12-31
+description: "Explore the DevOps maturity levels for Continuous Integration, from a basic CI build and test automation to dependency scanning and static code analysis."
 ---
 
 If you have proper source control in place, you have a central location that holds the source code. From that location you can start with Continuous Integration as a next [state of enlightenment](/blog/2020/12/31/DevOps-Maturity-Levels) in your DevOps way of working. Check that link for posts on the other topics.

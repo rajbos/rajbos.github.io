@@ -2,6 +2,7 @@
 layout: post
 title: "Integrate SonarQube with TFS 2015 update 1"
 date: 2016-01-23
+description: "Learn how to integrate SonarQube with TFS 2015 Update 1 build tasks using OpenCover for code coverage, removing the need for Visual Studio Enterprise license."
 ---
 While migrating CI stuff from Jenkins into TFS 2015 SP1 I ran into [this](https://devblogs.microsoft.com/devops/build-tasks-for-sonarqube-analysis/?WT.mc_id=DOP-MVP-5003719) blog post from Microsoft explaining how to include [SonarQube](http://www.sonarqube.org/) runs information in the TFS Build Tasks. We have been running SonarQube on our projects for about a year now to gain some insights into Code Coverage and basic code smells. I sure don't want to lose the information Sonar gives us.
 

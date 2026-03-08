@@ -2,6 +2,7 @@
 layout: post
 title: "Using a self signed certificate on a SonarQube server with VSTS/TFS"
 date: 2018-08-12
+description: "Explore the challenges of using a self-signed certificate on a SonarQube server with VSTS build tasks, including Java and Node.js certificate trust issues."
 ---
 
 Recently I got a customer request to help them with provisioning a [SonarQube](https://www.sonarqube.org/) server hosted in Azure. Fortunately there is an [ARM template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-authoring-templates?WT.mc_id=AZ-MVP-5003719) available for it: [link](https://github.com/Azure/azure-quickstart-templates/tree/master/sonarqube-azuresql). 

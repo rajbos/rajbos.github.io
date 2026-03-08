@@ -3,6 +3,7 @@ layout: post
 title: "LinkedIn Learning: GitHub Advanced Security"
 date: 2022-10-19
 tags: [GitHub, Advanced Security, LinkedIn Learning, Training, Course, GitHub Advanced Security, GHAS]
+description: "Overview of the GitHub Advanced Security LinkedIn Learning course covering Dependabot, code scanning with CodeQL and secret scanning for enterprise teams."
 ---
 
 My LinkedIn Learning course on GitHub Advanced Security (GHAS) has been released!

@@ -2,6 +2,7 @@
 layout: post
 title: "Webservice Plan Scaling in Azure Machine Learning Studio"
 date: 2019-02-25
+description: "Learn how to find and scale your Azure Machine Learning Studio web service plan using the services.azureml.net portal, including downgrading to the free tier."
 ---
 
 I recently found that I had a web service plan running for my Machine Learning Studio (MLS) workspace in Azure. I was hosting some test webservices on it from a research session earlier on. The web service plan was not doing anything for me, but I did incur some costs running it. Since the default tier it picks during is already an S1, this can build up if you are paying the subscription yourself.

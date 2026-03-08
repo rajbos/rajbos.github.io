@@ -2,6 +2,7 @@
 layout: post
 title: "Azure Repos Policy Settings Issue"
 date: 2020-01-21
+description: "Understand why Azure Repos policy settings became uneditable and how a Deny permission on the Contributors group blocks Project Administrators from editing."
 ---
 
 I ran into an issue where I could not change Azure Repositories Policy settings, even while my account was in the the Project Administrator group. Somehow I could set the policy, but not change it later on! This posts explains how I got here and how I finally found out why this happened. In the end it was a simple fix, only rather difficult to find the reason behind this 😄.

@@ -2,6 +2,7 @@
 layout: post
 title: "Missing wiki repo in Azure DevOps"
 date: 2020-07-14
+description: "Discover how to access the hidden Azure DevOps wiki Git repository to configure branch policies by crafting a direct URL when the Repos UI doesn't show it."
 ---
 
 Today someone in the Azure DevOps Club [slack](https://teamservices.club/) asked a question about finding the repo from the default wiki in Azure DevOps.

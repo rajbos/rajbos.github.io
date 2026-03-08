@@ -2,6 +2,7 @@
 layout: post
 title: "Azure error setting up export from Activity Log to Event Hub"
 date: 2018-09-05
+description: "Find out how to fix the silent error when exporting Azure Activity Log to an Event Hub by registering the missing microsoft.insights resource provider."
 ---
 
 While working to setup an export from Activity Log to an Event Hub I got no response on a save action. This took some time to figure out why this happened, so I thought it could be helpful for someone else.

@@ -3,6 +3,7 @@ layout: post
 title: "GitHub Actions: Run PowerShell in Container"
 date: 2021-09-12
 tags: [GitHub, GitHub Actions, PowerShell, Container, Docker]
+description: "Learn how to build a GitHub Action running PowerShell in a Docker container, covering the action.yml, Dockerfile, and how inputs are passed to the entrypoint."
 ---
 
 You can create GitHub Actions running in a container, which allows you to execute 'anything' in an action that can be run inside a container, including PowerShell, my favorite scripting language. To get started, you can use the available [template repo](https://github.com/actions/container-action) to create a new repository filled with the contents of the template.

@@ -2,6 +2,7 @@
 layout: post
 title: "Running Stryker on a large .NET / core solution"
 date: 2019-10-04
+description: "Find out how to run Stryker mutation testing across a large .NET solution with multiple projects using PowerShell to merge individual JSON result files."
 ---
 
 

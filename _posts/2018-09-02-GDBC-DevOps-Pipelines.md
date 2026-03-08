@@ -2,6 +2,7 @@
 layout: post
 title: "GDBC DevOps pipelines in VSTS"
 date: 2018-09-02
+description: "See how VSTS CI/CD pipelines automated validation and deployment of Global DevOps Bootcamp challenges, from pull request quality checks to work item creation."
 ---
 
 ## Global DevOps BootCamp

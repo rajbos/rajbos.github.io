@@ -3,6 +3,7 @@ layout: post
 title: "GitHub Codespaces creation with the CLI"
 date: 2022-01-26
 tags: [GitHub, Codespaces, CLI]
+description: "Discover how to create GitHub Codespaces using the GitHub CLI, including the correct machine type values and required parameters for automation scripts."
 ---
 
 This one took me some time to figure out, so I wanted to have something for the next time I need it :-).

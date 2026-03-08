@@ -2,6 +2,7 @@
 layout: post
 title: "Before you know, it is in production"
 date: 2019-06-19
+description: "Explore how a simple Selenium proof-of-concept for GDBC Eventbrite automation grew step by step into a full Azure provisioning pipeline used in production."
 ---
 
 When I am working on something, usually software, I know from experience that a simple tool to test something out (e.g. a POC, Proof of Concept), can be in production in no-time.

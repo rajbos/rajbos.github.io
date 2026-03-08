@@ -2,6 +2,7 @@
 layout: post
 title: "Links to Visual Studio Extensions"
 date: 2016-06-04
+description: "A curated list of useful Visual Studio extensions including WakaTime, SonarLint, SlowCheetah, and T4MVC, saved here for quick reference and discovery."
 ---
 
 Some links to important Visual Studio extensions for later reference:

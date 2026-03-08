@@ -3,6 +3,7 @@ layout: post
 title: Really keeping your GitHub Actions usage secure
 date: 2025-03-16
 tags: [Security, GitHub, GitHub Actions]
+description: "Learn how to protect your GitHub Actions pipelines from supply chain attacks by forking actions, using internal marketplaces, and enabling Dependency Alerts."
 ---
 
 Last Friday what we expected happened: a much used GitHub Action got compromised, read all about it here at the StepSecurity blog where they explain that they detected the issue and jumped into action: [Step Security Blog](https://www.stepsecurity.io/blog/harden-runner-detection-tj-actions-changed-files-action-is-compromised).

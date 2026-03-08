@@ -3,6 +3,7 @@ layout: post
 title: Show you Microsoft Certification badges in Credly
 date: 2026-02-02
 tags: [Microsoft, Certification, Credly, Badges, Learning, Microsoft Learn]
+description: "Learn how to manually upload your Microsoft Certification badges from Microsoft Learn to Credly after Microsoft ended their direct Credly partnership."
 ---
 
 Microsoft has stopped their partnership with Credly for hosting certification badges and instead centralized everything to the Microsoft Learn platform. However, if you still want to showcase your Microsoft Certification badges in Credly, you can do so by following these steps:

@@ -2,6 +2,7 @@
 layout: post
 title: "Register a Startup or Shutdown script on Windows with PowerShell"
 date: 2020-07-15
+description: "Find out how to register a startup or shutdown script on a Windows 10 VM using PowerShell by configuring the right registry keys and system folder structure."
 ---
 
 Today I got asked how you could register a Startup and/or Shutdown script on Windows through PowerShell.

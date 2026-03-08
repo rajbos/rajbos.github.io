@@ -2,6 +2,7 @@
 layout: post
 title: "ASP.NET Demoproject started"
 date: 2015-05-19
+description: "Starting a new ASP.NET MVC 6 demo project in Visual Studio 2015 to explore new features, with the source code published on GitHub for future reference."
 ---
 
 Tonight, I had the idea of starting a new project to test and demo new area's and features of ASP.NET. Initially it will be a project to test ASP.NET MVC 6 from Visual Studio 2015. I'll set the project on GitHub for future reference and to get more familiar with git.

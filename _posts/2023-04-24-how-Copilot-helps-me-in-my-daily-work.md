@@ -3,6 +3,7 @@ layout: post
 title: "How Copilot/AI helps me in my daily work"
 date: 2023-04-24
 tags: [GitHub, Copilot, AI, Generative AI, Code Generation]
+description: "Discover how GitHub Copilot and AI tools helped create an Azure Function and Node.js app in hours, while CodeQL caught security issues in generated code."
 ---
 
 During an innovation day at work, I needed to generate extra code and a new application. I wanted to check out the newly released [Deployment Protection Rules](https://github.blog/2023-04-20-announcing-github-actions-deployment-protection-rules-now-in-public-beta/) that can help you with protecting when a job in GitHub Actions can roll out your application to an environment.

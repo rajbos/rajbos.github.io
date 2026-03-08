@@ -3,6 +3,7 @@ layout: post
 title: GitHub Copilot - Coding Agent Examples Walkthrough
 date: 2025-12-20
 tags: [GitHub, GitHub Copilot, Generative AI, GitHub Copilot Coding Agent]
+description: "Walk through five ways to use the GitHub Copilot Coding Agent, from the editor and Agent Task panel to repository creation, web chat, and the GitHub mobile app."
 ---
 
 In this post, I will walk you through an example of different ways to use the GitHub Copilot Coding Agent to automate a coding task. The Coding Agent is a powerful feature that leverages AI to help you write, review, and refactor code more efficiently. It uses a prompt coming from one of the locations below and will then have a runtime inside of a secured GitHub Actions environment to execute the steps it needs to take to complete your request, with for example a locked down network configuration to prevent it from doing weird things in your name. If you want to know more about the architecture and security model, check out the official documentation: [GitHub Copilot Coding Agent](https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent#built-in-security-protections).

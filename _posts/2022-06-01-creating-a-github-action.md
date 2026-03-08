@@ -3,6 +3,7 @@ layout: post
 title: "Creating a GitHub Action"
 date: 2022-06-01
 tags: [GitHub Actions, GitHub, Creating, Action, Workflow, Script, GitHub Script, GitHub App, Token, API, Octokit, JavaScript, Node, Unit Tests, Workflow, CI/CD, DevSecOps]
+description: "Learn the step-by-step workflow for creating a GitHub Action: from inline github-script to a standalone JavaScript action complete with unit tests and CI/CD."
 ---
 
 I wanted to describe how my flow usually works for creating a [GitHub Actions](https://docs.github.com/en/actions). People often struggle to think of something to build because they start with an empty canvas: the action itself. That is not how I build up the action. For me the process is as follows:

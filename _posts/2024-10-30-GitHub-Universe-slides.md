@@ -3,6 +3,7 @@ layout: post
 title: GitHub Universe 2024 - Successfully scaling GitHub Copilot to thousands of developers
 date: 2024-10-30
 tags: [GitHub, Copilot, Conference, Slides]
+description: "Watch and download slides from the GitHub Universe 2024 session on successfully scaling GitHub Copilot adoption to thousands of developers in your org."
 ---
 
 This year I got to share my story on how I think you can successfully scale GitHub Copilot to thousands of developers. This talk was part of the GitHub Universe 2024 conference in San Francisco, one of my favorite conferences to go to every year. The vibe of the GitHub community is always so welcoming and inspiring! Every one is very open and approachable, and you never know who you might bump into!

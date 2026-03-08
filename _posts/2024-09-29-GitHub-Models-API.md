@@ -3,6 +3,7 @@ layout: post
 title: "GitHub Models and Inference API"
 date: 2024-09-29
 tags: [GitHub, GitHub Models, Azure OpenAI]
+description: "Discover how to configure the Azure AI Inference SDK in Python to target both GitHub Models and Azure OpenAI endpoints with the correct credential setup."
 ---
 
 Need to use the Azure Inference AI SDK in Python against Azure OpenAI? Then this tip is for you! I ran into an issue converting the default examples to not run against GitHub's Model endpoint but against an Azure OpenAI endpoint. 

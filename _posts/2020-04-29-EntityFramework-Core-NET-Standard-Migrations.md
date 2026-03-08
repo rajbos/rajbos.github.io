@@ -2,6 +2,7 @@
 layout: post
 title: "Using EntityFramework Core tooling with .NET Standard"
 date: 2020-04-23
+description: "Learn how to run EntityFramework Core migrations on a .NET Standard library by using a companion .NET Core startup project with the correct CLI commands."
 ---
 
 I want to target .NET Standard so I can always use my libraries in any project later on, independently of its target framework (as long as it supports the .NET Standard version I'm targeting).

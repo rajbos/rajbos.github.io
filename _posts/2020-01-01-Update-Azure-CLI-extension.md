@@ -2,6 +2,7 @@
 layout: post
 title: "Update Azure CLI Extensions"
 date: 2020-01-09
+description: "Learn how to check, list, and update Azure CLI extensions like azure-devops, including why the update command gives no feedback unless you add --verbose."
 ---
 
 After getting a message that a command I wanted to use was not available in my local installation, I needed to update an Azure CLI extension. Finding that information was scattered around the internet, and took me to long to find. So for future reference, I'll document it here 😄. Should be way easier to find next time 🙈.

@@ -3,6 +3,7 @@ layout: post
 title: "Get alerts from GitHub Advanced Security for Azure DevOps"
 date: 2023-09-02
 tags: [GitHub Advanced Security, Azure DevOps, GHAzDo, API, alerts]
+description: "Learn how to retrieve GitHub Advanced Security alerts from the GHAzDo REST API, including filtering by alert type, severity, branch reference, and alert state."
 ---
 
 GitHub Advanced Security for Azure DevOps (GHAzDo) builds on top of the functionality for GitHub Advanced Security and is giving you extra security tools to embed into your developer way of working. It's a great way to get started with security in your Azure Pipelines and Azure repos and I've written about it before in [this blogpost](/blog/2023/05/25/GitHub-Advanced-Security-Azure-DevOps).

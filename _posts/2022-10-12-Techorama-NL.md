@@ -3,6 +3,7 @@ layout: post
 title: "Techorama NL: Protect yourself against supply chain attacks"
 date: 2022-10-05
 tags: [GitHub, Advanced Security, Techorama, GitHub Advanced Security, GHAS, Supply Chain Attacks, Pipeline, CI/CD, DevSecOps]
+description: "Slides and abstract from Techorama NL on defending CI/CD pipelines against supply chain attacks, covering typosquatting, package hijacking and pipeline risks."
 ---
 
 Placeholder for sharing the slide deck for Techorama: [session link](https://techorama.nl/speakers/session/protect-yourself-against-supply-chain-attacks)

@@ -2,6 +2,7 @@
 layout: post
 title: "Running .NET Core tools in Azure DevOps"
 date: 2019-09-03
+description: "Learn how to install and run .NET Core local tools in Azure DevOps pipelines, including how to create a dotnet tool manifest and execute custom commands."
 ---
 
 I wanted to run .NET Core tools in Azure DevOps and ran into some installation issues. I tried installing the tool I needed globally, yet the agent could not find it.

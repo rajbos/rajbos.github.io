@@ -2,6 +2,7 @@
 layout: post
 title: "Windows 10: Enable 8.1 fly-out style WiFi / VPN menu"
 date: 2016-01-09
+description: "Restore the Windows 8.1 fly-out WiFi and VPN menu in Windows 10 by changing a single registry key value; administrator rights are required to apply it."
 ---
 I'm not the only one who is annoyed by the new Windows 10 way to connect to VPN connections. The new route takes a lot of new clicks, just to connect to a VPN! The old Windows 8 style was a lot faster. Since I frequently change connections at work, It's a recurring annoyance everyday :-(.
 

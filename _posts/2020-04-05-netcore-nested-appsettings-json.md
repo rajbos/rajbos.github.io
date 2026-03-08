@@ -3,6 +3,7 @@ layout: post
 title: "Nesting .NET Core appsettings.json"
 date: 2020-04-05
 tags: [Visual Studio, Visual Studio Code, .NET Core, appsettings.json, VSCode, nesting]
+description: "Learn how to nest appsettings.Development.json beneath appsettings.json in Visual Studio using csproj ItemGroup, and the equivalent setup for VS Code."
 ---
 
 I was working on a new .NET Core Unit/Integration Test project in a solution using Visual Studio and need to load some setting from the configuration. Naturally I wanted to use the same setup for retrieving those settings as in the real project, so I added a new file `appsettings.json`. Next up I wanted to add `appsettings.Development.json` just like we use in normal projects. Somehow I expected it to be nested beneath `appsettings.json`, like in the normal project. Of course, it didn't 😄. While searching for a solution I noticed a lot of screenshots with the same issue: the files where not nested. Here is how to fix it.

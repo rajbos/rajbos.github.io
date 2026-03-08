@@ -2,6 +2,7 @@
 layout: post
 title: "Git clone error: Filename too long on Windows 10"
 date: 2020-09-23
+description: "Fix the Git clone 'Filename too long' error on Windows 10 by enabling long file path support in both the Windows Group Policy settings and Git configuration."
 ---
 
 Today I ran into an issue that I tried to clone a Git repository with large filenames/folder paths in it.

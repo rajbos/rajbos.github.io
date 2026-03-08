@@ -3,6 +3,7 @@ layout: post
 title: Best viewed blogposts of 2023
 date: 2023-12-20
 tags: [Blog, GitHub, Azure DevOps]
+description: "A look back at the most-viewed blog posts of 2023, featuring top topics like GitHub workflows, access tokens, and GitHub Advanced Security for Azure DevOps."
 ---
 
 

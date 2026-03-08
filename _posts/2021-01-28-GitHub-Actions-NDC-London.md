@@ -3,6 +3,7 @@ layout: post
 title: "GitHub Actions & Security - NDC London"
 date: 2021-01-28
 tags: [GitHub, GitHub Actions, Security, Securely, NDC London, NDC London 2021, NDC London Session]
+description: "Find out how to secure your GitHub Actions workflows as presented at NDC London 2021, covering pipeline access, secrets, and third-party action trust."
 ---
 
 Today I delivered my GitHub Actions & Security session at [NDC London](https://ndc-london.com/agenda/how-to-secure-your-github-actions-0vd4/0gnrspzjdmb) for the first time (both for the session and NDC London 😁).

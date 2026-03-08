@@ -2,6 +2,7 @@
 layout: post
 title: "DevOps Maturity Levels"
 date: 2020-12-31
+description: "Get an overview of the DevOps maturity stages teams progress through, from source control and CI/CD pipelines to monitoring, observability, and feature flags."
 ---
 
 I was thinking about the teams I've been helping out in my professional work life and suddenly noticed that there seem to be different stages that each team goes through in an effort to improve something in their day-to-day work. Usually I start at a new assignment with a specific question and together we evolve my assignment from there.

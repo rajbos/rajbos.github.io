@@ -2,6 +2,7 @@
 layout: post
 title: "Installing .NET Core tools: Preventing errors in your Azure Pipelines"
 date: 2019-09-25
+description: "Discover the workaround for .NET Core global tool install errors in Azure Pipelines when a tool is already installed, using dotnet tool update instead."
 ---
 
 I ran into a weird thing in .NET Core Global tools: If you try to install the tools while they are already installed on that system, .NET Core will throw an error and exit with a non-zero exit code.
