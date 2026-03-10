@@ -4,9 +4,17 @@ title: About
 ---
 <style>
  .pnl{float:left;margin-right:7px;}
+ .main-panel{padding:12px}
+ .row{display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;}
+ .col-md-9{flex:0 0 75%;max-width:75%;padding-right:15px;padding-left:15px;}
+ .col-md-3{flex:0 0 25%;max-width:25%;padding-right:15px;padding-left:15px;}
+ .col-md-12{flex:0 0 100%;max-width:100%;padding-right:15px;padding-left:15px;}
+ @media(max-width:768px){
+   .col-md-9,.col-md-3,.col-md-12{flex:0 0 100%;max-width:100%;}
+ }
 </style>
 
-<div class="panel panel-default well-sm">
+<div class="panel panel-default well-sm main-panel">
 
 <div class="row">
 
