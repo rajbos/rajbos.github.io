@@ -3,6 +3,7 @@ layout: post
 title: GitHub Copilot Chat - Power User example
 date: 2024-06-19
 tags: [GitHub, GitHub Copilot, Power User, Copilot, Chat]
+description: "See how GitHub Copilot Chat can write an entire API-calling script for you, with real prompts, results, and lessons learned from improving prompt quality."
 ---
 
 Learn how I use GitHub Copilot Chat to my benefit and see the end to end flow on creating a script to call into the GitHub API.

@@ -3,6 +3,7 @@ layout: post
 title: DevCon Romania 2024 - Protect yourself against supply chain attacks
 date: 2024-11-07
 tags: [GitHub, GitHub Advanced Security, GHAS, Conference, Slides]
+description: "Access the DevCon Romania 2024 slides on protecting yourself against software supply chain attacks and learn how to secure your GitHub Actions pipelines."
 ---
 
 

@@ -3,6 +3,7 @@ layout: post
 title: "GitHub Universe session: How to use GitHub Actions with security in mind"
 date: 2021-10-27
 tags: [GitHub, GitHub Actions, Security, Securely, GitHub Universe, GitHub Universe 2021, GitHub Universe Session]
+description: "Watch the GitHub Universe 2021 session on securing GitHub Actions, and find follow-up resources such as the slide deck and the internal marketplace blog post."
 ---
 
 My session on GitHub Universe is now available [here](https://www.youtube.com/watch?v=Ers-LcA7Nmc&list=PLXVVwOM8uv2zyhtF-aHwsyDbqsm_RGOGY&index=5). You can watch it for free!

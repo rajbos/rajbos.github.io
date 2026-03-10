@@ -2,6 +2,7 @@
 layout: post
 title: "Deploy local IIS application on Windows with Azure DevOps"
 date: 2020-03-29
+description: "Set up an Azure DevOps agent on a local Windows machine to deploy an IIS web application without PowerShell remoting, including WinRM configuration steps."
 ---
 
 Sometimes you need to deploy an application on a machine, but there is no option to use [PowerShell remoting](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7.1&WT.mc_id=DOP-MVP-5003719) from the outside. In that case, you can deploy an Azure DevOps agent on that machine and use that for local deployments.

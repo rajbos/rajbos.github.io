@@ -2,6 +2,7 @@
 layout: post
 title: "Azure DevOps Pipeline for GitHub Open Source Projects"
 date: 2018-09-10
+description: "Walk through setting up a free Azure DevOps Pipeline for a GitHub open source project, including YAML configuration, status badges, and email notifications."
 ---
 
 Microsoft [announced](https://azure.microsoft.com/en-us/blog/introducing-azure-devops/?WT.mc_id=DOP-MVP-5003719) today that they have a 'new' product: Azure DevOps! With that announcement came another one: Azure DevOps pipelines for GitHub open source projects with unlimited minutes! I wanted to see what the integration with GitHub would look like, so I tried it out.

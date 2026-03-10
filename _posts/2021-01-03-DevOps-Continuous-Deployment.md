@@ -3,6 +3,7 @@ layout: post
 title: "DevOps Maturity Levels - Continuous Deployment"
 date: 2020-12-31
 tags: [DevOps, Maturity, Level, Continuous Deployment]
+description: "Explore Continuous Deployment strategies from basic auto-deploys to canary releases, rollback options, Infrastructure as Code, and zero-downtime deployments."
 ---
 
 If you have a good [Continuous Integration](/blog/2020/12/31/DevOps-Continuous-Integration) process in place, you can start using the generated artefact to deploy that to an environment as the next [state of enlightenment](/blog/2020/12/31/DevOps-Maturity-Levels) in your DevOps way of working. Check that link for posts on the other topics.

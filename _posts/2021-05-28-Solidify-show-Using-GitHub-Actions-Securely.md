@@ -3,6 +3,7 @@ layout: post
 title: "Solidify: Using GitHub Actions Securely"
 date: 2021-05-28
 tags: [GitHub, GitHub Actions, Security, Securely, Solidify, Solidify show]
+description: "Watch the recording of a GitHub Actions security session at the Solidify show, plus answers to common questions about branch protection and self-hosted runners."
 ---
 
 Today I got to deliver my session "Using GitHub Actions Securely" at the Solidify show, hosted by our friends at [Solidify](https://solidify.dev). A nice virtual community session during lunch in my time zone (CEST) with people joining in, even from Kuala Lumpur!

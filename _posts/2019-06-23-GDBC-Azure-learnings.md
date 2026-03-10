@@ -2,6 +2,7 @@
 layout: post
 title: "GDBC: Azure learnings from running at scale"
 date: 2019-06-23
+description: "Discover the Azure scaling challenges encountered while provisioning 1340 App Services and SQL databases for Global DevOps Bootcamp 2019 across 4 subscriptions."
 ---
 
 On the 15th of June we got the opportunity to organize the Global DevOps Bootcamp edition of 2019 (see [link](https://www.globaldevopsbootcamp.com)) and we had a blast!

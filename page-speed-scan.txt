@@ -1,0 +1,1118 @@
+PageSpeed Insights logo
+PageSpeed Insights
+Report from Mar 8, 2026, 11:18:56 AM
+https://devopsjournal.io/
+Enter a valid URL
+
+
+smartphone
+Mobile
+
+computer
+Desktop
+
+Discover what your real users are experiencing
+No Data
+
+Diagnose performance issues
+97
+Performance
+93
+Accessibility
+100
+Best Practices
+100
+SEO
+97
+FCP
++8
+LCP
++24
+TBT
++30
+CLS
++25
+SI
++10
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+2.0 s
+Largest Contentful Paint
+2.2 s
+Total Blocking Time
+0 ms
+Cumulative Layout Shift
+0
+Speed Index
+2.0 s
+Captured at Mar 8, 2026, 11:19 AM GMT+1
+Emulated Moto G Power with Lighthouse 13.0.1
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 145.0.7632.116 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+Insights
+Render blocking requests Est savings of 1,230 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+Bootstrap CDN cdn 
+31.6 KiB	1,940 ms
+…js/bootstrap.min.js(maxcdn.bootstrapcdn.com)
+10.9 KiB
+880 ms
+…css/bootstrap.min.css(maxcdn.bootstrapcdn.com)
+20.6 KiB
+1,050 ms
+devopsjournal.io 1st party
+3.0 KiB	620 ms
+/css/style.css(devopsjournal.io)
+1.4 KiB
+160 ms
+/css/syntax.css(devopsjournal.io)
+1.7 KiB
+470 ms
+jQuery CDN cdn 
+30.0 KiB	1,200 ms
+/jquery-3.2.1.min.js(code.jquery.com)
+30.0 KiB
+1,200 ms
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 531 ms
+Initial Navigation
+https://devopsjournal.io - 72 ms, 31.93 KiB
+/jquery-3.2.1.min.js(code.jquery.com) - 87 ms, 29.97 KiB
+/api/event(plausible.io) - 531 ms, 0.68 KiB
+…css/bootstrap.min.css(maxcdn.bootstrapcdn.com) - 116 ms, 20.63 KiB
+…js/bootstrap.min.js(maxcdn.bootstrapcdn.com) - 118 ms, 10.95 KiB
+/css/style.css(devopsjournal.io) - 117 ms, 1.35 KiB
+/css/syntax.css(devopsjournal.io) - 116 ms, 1.67 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+no origins were preconnected
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Use efficient cache lifetimes Est savings of 7 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.LCPFCPUnscored
+Request
+Cache TTL
+Transfer Size
+githubassets.com
+4 KiB
+…unicode/1f601.png(github.githubassets.com)
+None
+4 KiB
+devopsjournal.io 1st party
+3 KiB
+/css/syntax.css(devopsjournal.io)
+10m
+2 KiB
+/css/style.css(devopsjournal.io)
+10m
+1 KiB
+Mailchimp marketing 
+1 KiB
+…4422477…/499cb60….js(chimpstatic.com)
+5m
+1 KiB
+Optimize DOM size
+LCP breakdown
+3rd parties
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused CSS Est savings of 19 KiB
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.LCPFCPUnscored
+URL
+Transfer Size
+Est Savings
+Bootstrap CDN cdn 
+19.7 KiB	19.0 KiB
+…css/bootstrap.min.css(maxcdn.bootstrapcdn.com)
+19.7 KiB
+19.0 KiB
+Avoid long main-thread tasks 1 long task found
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits (19)
+Show
+93
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+Contrast
+Background and foreground colors do not have a sufficient contrast ratio.
+Low-contrast text is difficult or impossible for many users to read. Learn how to provide sufficient color contrast.
+Failing Elements
+20 Dec 2025 - GitHub Copilot - Coding Agent Examples Walkthrough
+<span>
+20 Dec 2025 - GitHub Copilot - Coding Agent Examples Walkthrough
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+17 Jun 2025 - GitHub Copilot Premium Requests
+<span>
+17 Jun 2025 - GitHub Copilot Premium Requests
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+07 Jun 2025 - GitHub Copilot & Productivity
+<span>
+07 Jun 2025 - GitHub Copilot & Productivity
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+01 Apr 2025 - GitHub Copilot - Change the Narrative
+<span>
+01 Apr 2025 - GitHub Copilot - Change the Narrative
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+16 Mar 2025 - Really keeping your GitHub Actions usage secure
+<span>
+16 Mar 2025 - Really keeping your GitHub Actions usage secure
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+07 Nov 2024 - DevCon Romania 2024 - Protect yourself against supply chain attac…
+<span>
+07 Nov 2024 - DevCon Romania 2024 - Protect yourself against supply chain attac…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+30 Oct 2024 - GitHub Universe 2024 - Successfully scaling GitHub Copilot to tho…
+<span>
+30 Oct 2024 - GitHub Universe 2024 - Successfully scaling GitHub Copilot to tho…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+29 Sep 2024 - GitHub Models and Inference API
+<span>
+29 Sep 2024 - GitHub Models and Inference API
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+14 Sep 2024 - GitHub Copilot Extensions
+<span>
+14 Sep 2024 - GitHub Copilot Extensions
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+19 Jun 2024 - GitHub Copilot Chat - Power User example
+<span>
+19 Jun 2024 - GitHub Copilot Chat - Power User example
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+07 Jun 2024 - GitHub Copilot - Levels of enlightenment
+<span>
+07 Jun 2024 - GitHub Copilot - Levels of enlightenment
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+05 Jun 2024 - GitHub Copilot Power User example
+<span>
+05 Jun 2024 - GitHub Copilot Power User example
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+27 Apr 2024 - GHAS Code Security Configuration
+<span>
+27 Apr 2024 - GHAS Code Security Configuration
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+22 Jan 2024 - Running GHAzDo CodeQL on self-hosted runners
+<span>
+22 Jan 2024 - Running GHAzDo CodeQL on self-hosted runners
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+20 Dec 2023 - Best viewed blogposts of 2023
+<span>
+20 Dec 2023 - Best viewed blogposts of 2023
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+20 Dec 2023 - New LinkedIn Learning course! GitHub Advanced Security for Azure …
+<span>
+20 Dec 2023 - New LinkedIn Learning course! GitHub Advanced Security for Azure …
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+07 Oct 2023 - Dependabot alerts triaging in GitHub
+<span>
+07 Oct 2023 - Dependabot alerts triaging in GitHub
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+02 Sep 2023 - Get alerts from GitHub Advanced Security for Azure DevOps
+<span>
+02 Sep 2023 - Get alerts from GitHub Advanced Security for Azure DevOps
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+29 Jun 2023 - Slides for Developer Week '23
+<span>
+29 Jun 2023 - Slides for Developer Week '23
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+21 Jun 2023 - Cleaning up files changed by a GitHub Action that runs in a conta…
+<span>
+21 Jun 2023 - Cleaning up files changed by a GitHub Action that runs in a conta…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+08 Jun 2023 - Writing to the $GITHUB_STEP_SUMMARY with the core npm package
+<span>
+08 Jun 2023 - Writing to the $GITHUB_STEP_SUMMARY with the core npm package
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+24 May 2023 - Speaking at GOTO; Aarhus 2023
+<span>
+24 May 2023 - Speaking at GOTO; Aarhus 2023
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 May 2023 - GitHub Advanced Security for Azure DevOps
+<span>
+23 May 2023 - GitHub Advanced Security for Azure DevOps
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+17 May 2023 - Speaking at VSLive! Nashville 2023
+<span>
+17 May 2023 - Speaking at VSLive! Nashville 2023
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+24 Apr 2023 - How Copilot/AI helps me in my daily work
+<span>
+24 Apr 2023 - How Copilot/AI helps me in my daily work
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+07 Feb 2023 - Enabling CodeQL on GitHub Enterprise Server
+<span>
+07 Feb 2023 - Enabling CodeQL on GitHub Enterprise Server
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+22 Jan 2023 - Making the case for GitHub's Secret scanning
+<span>
+22 Jan 2023 - Making the case for GitHub's Secret scanning
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+08 Dec 2022 - Improving your GitHub repositories security setup by adding the O…
+<span>
+08 Dec 2022 - Improving your GitHub repositories security setup by adding the O…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+28 Nov 2022 - Examples for calling the GitHub GraphQL API (with ProjectsV2)
+<span>
+28 Nov 2022 - Examples for calling the GitHub GraphQL API (with ProjectsV2)
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+02 Nov 2022 - Working with GitHub secrets without admin rights
+<span>
+02 Nov 2022 - Working with GitHub secrets without admin rights
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+19 Oct 2022 - LinkedIn Learning: GitHub Advanced Security
+<span>
+19 Oct 2022 - LinkedIn Learning: GitHub Advanced Security
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+19 Oct 2022 - How GitHub Actions versioning system works
+<span>
+19 Oct 2022 - How GitHub Actions versioning system works
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+08 Oct 2022 - Enabling GitHub Actions on Enterprise Server: Common gotcha's
+<span>
+08 Oct 2022 - Enabling GitHub Actions on Enterprise Server: Common gotcha's
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+05 Oct 2022 - Techorama NL: Protect yourself against supply chain attacks
+<span>
+05 Oct 2022 - Techorama NL: Protect yourself against supply chain attacks
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+21 Sep 2022 - Presentation dotnetsheff - Protect your code with GitHub security…
+<span>
+21 Sep 2022 - Presentation dotnetsheff - Protect your code with GitHub security…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+18 Sep 2022 - Analyzing the GitHub marketplace - Dependency security is a big i…
+<span>
+18 Sep 2022 - Analyzing the GitHub marketplace - Dependency security is a big i…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+12 Aug 2022 - My GitHub Actions workflows are not starting
+<span>
+12 Aug 2022 - My GitHub Actions workflows are not starting
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+01 Jun 2022 - Creating a GitHub Action
+<span>
+01 Jun 2022 - Creating a GitHub Action
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+30 May 2022 - Code Europe: Protect your code with GitHub's security features
+<span>
+30 May 2022 - Code Europe: Protect your code with GitHub's security features
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+06 Apr 2022 - Speaking at NDC Security (Oslo)
+<span>
+06 Apr 2022 - Speaking at NDC Security (Oslo)
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+12 Mar 2022 - GitHub Notification Settings
+<span>
+12 Mar 2022 - GitHub Notification Settings
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+12 Mar 2022 - Configuration as Code for the GitHub platform
+<span>
+12 Mar 2022 - Configuration as Code for the GitHub platform
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+26 Jan 2022 - GitHub Codespaces creation with the CLI
+<span>
+26 Jan 2022 - GitHub Codespaces creation with the CLI
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+17 Jan 2022 - Automating my home setup: turning on the lights when the camera i…
+<span>
+17 Jan 2022 - Automating my home setup: turning on the lights when the camera i…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+03 Jan 2022 - GitHub Access Tokens explained
+<span>
+03 Jan 2022 - GitHub Access Tokens explained
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+27 Dec 2021 - Create a GitHub App from a manifest
+<span>
+27 Dec 2021 - Create a GitHub App from a manifest
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+11 Dec 2021 - Maturity levels of using GitHub Actions Securely
+<span>
+11 Dec 2021 - Maturity levels of using GitHub Actions Securely
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+04 Dec 2021 - dev.to entry: Using GitHub Actions to setup a Marketplace
+<span>
+04 Dec 2021 - dev.to entry: Using GitHub Actions to setup a Marketplace
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+26 Nov 2021 - GitHubs magic files
+<span>
+26 Nov 2021 - GitHubs magic files
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+27 Oct 2021 - GitHub Universe session: How to use GitHub Actions with security …
+<span>
+27 Oct 2021 - GitHub Universe session: How to use GitHub Actions with security …
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+14 Oct 2021 - Setup an internal GitHub Actions Marketplace
+<span>
+14 Oct 2021 - Setup an internal GitHub Actions Marketplace
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+12 Sep 2021 - GitHub Actions: Convert from PowerShell to Typescript
+<span>
+12 Sep 2021 - GitHub Actions: Convert from PowerShell to Typescript
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+12 Sep 2021 - GitHub Actions: Run PowerShell in Container
+<span>
+12 Sep 2021 - GitHub Actions: Run PowerShell in Container
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+06 Aug 2021 - Hosting GitHub runners on Kubernetes
+<span>
+06 Aug 2021 - Hosting GitHub runners on Kubernetes
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+31 May 2021 - Azure DevOps: enable project functionality
+<span>
+31 May 2021 - Azure DevOps: enable project functionality
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+28 May 2021 - Solidify: Using GitHub Actions Securely
+<span>
+28 May 2021 - Solidify: Using GitHub Actions Securely
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+25 May 2021 - Pester tests: moving from v4 to v5
+<span>
+25 May 2021 - Pester tests: moving from v4 to v5
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+18 May 2021 - Techorama: Using GitHub Actions Securely
+<span>
+18 May 2021 - Techorama: Using GitHub Actions Securely
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+16 May 2021 - Don't use self signed certificates on GitHub Enterprise
+<span>
+16 May 2021 - Don't use self signed certificates on GitHub Enterprise
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+13 May 2021 - My working / presenting from home setup
+<span>
+13 May 2021 - My working / presenting from home setup
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 Apr 2021 - GitHub and Azure DevOps: best of both worlds
+<span>
+23 Apr 2021 - GitHub and Azure DevOps: best of both worlds
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+11 Apr 2021 - Bash cheat-sheet for PowerShell devs
+<span>
+11 Apr 2021 - Bash cheat-sheet for PowerShell devs
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+09 Apr 2021 - GitHub Actions Create: Dockerfile symlinks error
+<span>
+09 Apr 2021 - GitHub Actions Create: Dockerfile symlinks error
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+07 Mar 2021 - GitHub Actions & Security: Best practices - One workflow per runn…
+<span>
+07 Mar 2021 - GitHub Actions & Security: Best practices - One workflow per runn…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+12 Feb 2021 - SonarQube Community Edition - Change default branch name
+<span>
+12 Feb 2021 - SonarQube Community Edition - Change default branch name
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+07 Feb 2021 - GitHub Actions & Security: Best practices - Private Runners
+<span>
+07 Feb 2021 - GitHub Actions & Security: Best practices - Private Runners
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+06 Feb 2021 - GitHub Actions & Security: Best practices
+<span>
+06 Feb 2021 - GitHub Actions & Security: Best practices
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+06 Feb 2021 - GitHub Actions & Security: Best practices - Forking Action reposi…
+<span>
+06 Feb 2021 - GitHub Actions & Security: Best practices - Forking Action reposi…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+28 Jan 2021 - GitHub Actions & Security - NDC London
+<span>
+28 Jan 2021 - GitHub Actions & Security - NDC London
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+06 Jan 2021 - GitHub Container Registry
+<span>
+06 Jan 2021 - GitHub Container Registry
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+31 Dec 2020 - DevOps Maturity Levels - Continuous Deployment
+<span>
+31 Dec 2020 - DevOps Maturity Levels - Continuous Deployment
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+31 Dec 2020 - DevOps Maturity Levels - Source control
+<span>
+31 Dec 2020 - DevOps Maturity Levels - Source control
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+31 Dec 2020 - DevOps Maturity Levels
+<span>
+31 Dec 2020 - DevOps Maturity Levels
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+31 Dec 2020 - DevOps Maturity Levels - Continuous Integration
+<span>
+31 Dec 2020 - DevOps Maturity Levels - Continuous Integration
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+06 Dec 2020 - Missing stages in Azure DevOps YAML Pipelines
+<span>
+06 Dec 2020 - Missing stages in Azure DevOps YAML Pipelines
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+24 Nov 2020 - Use GitHub Actions with a private runner to deploy to IIS
+<span>
+24 Nov 2020 - Use GitHub Actions with a private runner to deploy to IIS
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+08 Nov 2020 - Azure Repos: Authenticate Git with a PAT
+<span>
+08 Nov 2020 - Azure Repos: Authenticate Git with a PAT
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+03 Nov 2020 - Use NuKeeper 'manually' to update NuGet packages
+<span>
+03 Nov 2020 - Use NuKeeper 'manually' to update NuGet packages
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 Sep 2020 - Git clone error: Filename too long on Windows 10
+<span>
+23 Sep 2020 - Git clone error: Filename too long on Windows 10
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+18 Sep 2020 - Fixing .NET Core tool update issues
+<span>
+18 Sep 2020 - Fixing .NET Core tool update issues
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+07 Aug 2020 - ADAL error in Azure DevOps API interaction
+<span>
+07 Aug 2020 - ADAL error in Azure DevOps API interaction
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+15 Jul 2020 - Register a Startup or Shutdown script on Windows with PowerShell
+<span>
+15 Jul 2020 - Register a Startup or Shutdown script on Windows with PowerShell
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+14 Jul 2020 - Missing wiki repo in Azure DevOps
+<span>
+14 Jul 2020 - Missing wiki repo in Azure DevOps
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 Apr 2020 - Using EntityFramework Core tooling with .NET Standard
+<span>
+23 Apr 2020 - Using EntityFramework Core tooling with .NET Standard
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 Apr 2020 - Azure Active Directory Authentication Issue with .NET Core
+<span>
+23 Apr 2020 - Azure Active Directory Authentication Issue with .NET Core
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+17 Apr 2020 - Azure DevOps: Update release variables across stages
+<span>
+17 Apr 2020 - Azure DevOps: Update release variables across stages
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+16 Apr 2020 - Install an Azure DevOps Agent behind a proxy
+<span>
+16 Apr 2020 - Install an Azure DevOps Agent behind a proxy
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+16 Apr 2020 - .NET Core: logging the configured URLs during starting of the app…
+<span>
+16 Apr 2020 - .NET Core: logging the configured URLs during starting of the app…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+05 Apr 2020 - Nesting .NET Core appsettings.json
+<span>
+05 Apr 2020 - Nesting .NET Core appsettings.json
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+29 Mar 2020 - Deploy local IIS application on Windows with Azure DevOps
+<span>
+29 Mar 2020 - Deploy local IIS application on Windows with Azure DevOps
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+26 Mar 2020 - Oops, you've worked on the master branch and cannot push to the r…
+<span>
+26 Mar 2020 - Oops, you've worked on the master branch and cannot push to the r…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+12 Feb 2020 - Azure SQL Database Firewall
+<span>
+12 Feb 2020 - Azure SQL Database Firewall
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+27 Jan 2020 - Using CD with Application Insights Status Monitor on IIS
+<span>
+27 Jan 2020 - Using CD with Application Insights Status Monitor on IIS
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+21 Jan 2020 - Azure Repos Policy Settings Issue
+<span>
+21 Jan 2020 - Azure Repos Policy Settings Issue
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+09 Jan 2020 - Update Azure CLI Extensions
+<span>
+09 Jan 2020 - Update Azure CLI Extensions
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+26 Oct 2019 - Deploy .NET Core web application using GitHub Actions
+<span>
+26 Oct 2019 - Deploy .NET Core web application using GitHub Actions
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 Oct 2019 - Deploy Windows Service using Azure DevOps
+<span>
+23 Oct 2019 - Deploy Windows Service using Azure DevOps
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+11 Oct 2019 - Parallelizing a long Stryker Run in Azure DevOps
+<span>
+11 Oct 2019 - Parallelizing a long Stryker Run in Azure DevOps
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+07 Oct 2019 - SonarQube analysis on a Java project - fixing error 'Project was …
+<span>
+07 Oct 2019 - SonarQube analysis on a Java project - fixing error 'Project was …
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+04 Oct 2019 - Running Stryker on a large .NET / core solution
+<span>
+04 Oct 2019 - Running Stryker on a large .NET / core solution
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+25 Sep 2019 - Installing .NET Core tools: Preventing errors in your Azure Pipel…
+<span>
+25 Sep 2019 - Installing .NET Core tools: Preventing errors in your Azure Pipel…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+04 Sep 2019 - Use Stryker for .NET code in Azure DevOps
+<span>
+04 Sep 2019 - Use Stryker for .NET code in Azure DevOps
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+03 Sep 2019 - Fixing error in .NET Core tool installation
+<span>
+03 Sep 2019 - Fixing error in .NET Core tool installation
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+03 Sep 2019 - Running .NET Core tools in Azure DevOps
+<span>
+03 Sep 2019 - Running .NET Core tools in Azure DevOps
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+27 Aug 2019 - Lets Encrypt: Manually get a certificate on Windows for an Azure …
+<span>
+27 Aug 2019 - Lets Encrypt: Manually get a certificate on Windows for an Azure …
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+17 Aug 2019 - Run .NET Core programs in Azure DevOps
+<span>
+17 Aug 2019 - Run .NET Core programs in Azure DevOps
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+16 Aug 2019 - Azure DevOps Marketplace News - Or Imposter Syndrome for develope…
+<span>
+16 Aug 2019 - Azure DevOps Marketplace News - Or Imposter Syndrome for develope…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+13 Jul 2019 - Using Chrome Personas to split identities
+<span>
+13 Jul 2019 - Using Chrome Personas to split identities
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+12 Jul 2019 - Fixing GitHub Pages Syntax Highlighting
+<span>
+12 Jul 2019 - Fixing GitHub Pages Syntax Highlighting
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+12 Jul 2019 - Using Azure CLI with PowerShell: error handling explained
+<span>
+12 Jul 2019 - Using Azure CLI with PowerShell: error handling explained
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+10 Jul 2019 - DevOps Principles series
+<span>
+10 Jul 2019 - DevOps Principles series
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+10 Jul 2019 - DevOps Principles series - Recording setup
+<span>
+10 Jul 2019 - DevOps Principles series - Recording setup
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+07 Jul 2019 - GDBC: Link overview
+<span>
+07 Jul 2019 - GDBC: Link overview
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 Jun 2019 - GDBC: Azure learnings from running at scale
+<span>
+23 Jun 2019 - GDBC: Azure learnings from running at scale
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+19 Jun 2019 - Before you know, it is in production
+<span>
+19 Jun 2019 - Before you know, it is in production
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+18 Jun 2019 - GDBC: 48 hours in the life of a team member
+<span>
+18 Jun 2019 - GDBC: 48 hours in the life of a team member
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+29 Apr 2019 - SonarQube setup on Azure App Service
+<span>
+29 Apr 2019 - SonarQube setup on Azure App Service
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+25 Feb 2019 - Webservice Plan Scaling in Azure Machine Learning Studio
+<span>
+25 Feb 2019 - Webservice Plan Scaling in Azure Machine Learning Studio
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+21 Feb 2019 - Fixing Azure Function Error RunResolvePublishAssemblies
+<span>
+21 Feb 2019 - Fixing Azure Function Error RunResolvePublishAssemblies
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+21 Jan 2019 - Setting up Azure Monitor to trigger your Azure Function
+<span>
+21 Jan 2019 - Setting up Azure Monitor to trigger your Azure Function
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+16 Jan 2019 - Docker for Windows: fix unauthorized errors
+<span>
+16 Jan 2019 - Docker for Windows: fix unauthorized errors
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+13 Jan 2019 - Missing Azure Functions Logs
+<span>
+13 Jan 2019 - Missing Azure Functions Logs
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+24 Oct 2018 - Azure Functions Connection Monitoring
+<span>
+24 Oct 2018 - Azure Functions Connection Monitoring
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+20 Oct 2018 - SonarQube setup for Azure DevOps
+<span>
+20 Oct 2018 - SonarQube setup for Azure DevOps
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+10 Sep 2018 - Azure DevOps Pipeline for GitHub Open Source Projects
+<span>
+10 Sep 2018 - Azure DevOps Pipeline for GitHub Open Source Projects
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+05 Sep 2018 - Azure error setting up export from Activity Log to Event Hub
+<span>
+05 Sep 2018 - Azure error setting up export from Activity Log to Event Hub
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+02 Sep 2018 - GDBC DevOps pipelines in VSTS
+<span>
+02 Sep 2018 - GDBC DevOps pipelines in VSTS
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 Aug 2018 - Retrieving AppSettings for an App Service with the Fluent SDK
+<span>
+23 Aug 2018 - Retrieving AppSettings for an App Service with the Fluent SDK
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+12 Aug 2018 - Using a self signed certificate on a SonarQube server with VSTS/T…
+<span>
+12 Aug 2018 - Using a self signed certificate on a SonarQube server with VSTS/T…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+03 Aug 2018 - VSTS Personal Access Token for an Agent: Revoke after use
+<span>
+03 Aug 2018 - VSTS Personal Access Token for an Agent: Revoke after use
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+20 Jul 2018 - Chocolatey Server in Azure
+<span>
+20 Jul 2018 - Chocolatey Server in Azure
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+16 Jun 2018 - GDBC DevOps on the Leaderboard
+<span>
+16 Jun 2018 - GDBC DevOps on the Leaderboard
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+02 Apr 2018 - DevOps and Telemetry: Support on the supporting systems
+<span>
+02 Apr 2018 - DevOps and Telemetry: Support on the supporting systems
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+22 Mar 2018 - DevOps and Telemetry: Supporting systems
+<span>
+22 Mar 2018 - DevOps and Telemetry: Supporting systems
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 Feb 2018 - DevOps and Telemetry: Insights into your application
+<span>
+23 Feb 2018 - DevOps and Telemetry: Insights into your application
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 Feb 2018 - VSTS Bulk Change WorkItemType
+<span>
+23 Feb 2018 - VSTS Bulk Change WorkItemType
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+29 Dec 2017 - Using excerpts in Jekyll
+<span>
+29 Dec 2017 - Using excerpts in Jekyll
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+17 Dec 2017 - Trying out Jekyll
+<span>
+17 Dec 2017 - Trying out Jekyll
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+19 Nov 2017 - Azure App Service - a quick way to take your app Offline
+<span>
+19 Nov 2017 - Azure App Service - a quick way to take your app Offline
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+20 Aug 2016 - DotNetCore: Adding HTTPS to your MVC webapp
+<span>
+20 Aug 2016 - DotNetCore: Adding HTTPS to your MVC webapp
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+04 Jun 2016 - Links to Visual Studio Extensions
+<span>
+04 Jun 2016 - Links to Visual Studio Extensions
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+03 Mar 2016 - Not geting new windows 10 preview builds after reverting to an ol…
+<span>
+03 Mar 2016 - Not geting new windows 10 preview builds after reverting to an ol…
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+23 Jan 2016 - Integrate SonarQube with TFS 2015 update 1
+<span>
+23 Jan 2016 - Integrate SonarQube with TFS 2015 update 1
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+09 Jan 2016 - Windows 10: Enable 8.1 fly-out style WiFi / VPN menu
+<span>
+09 Jan 2016 - Windows 10: Enable 8.1 fly-out style WiFi / VPN menu
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+03 Jan 2016 - Visual Studio 2015 update 1 - Service update 1
+<span>
+03 Jan 2016 - Visual Studio 2015 update 1 - Service update 1
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+19 May 2015 - WakaTime
+<span>
+19 May 2015 - WakaTime
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+19 May 2015 - ASP.NET Demoproject started
+<span>
+19 May 2015 - ASP.NET Demoproject started
+<div class="panel-heading viewPost">
+View post
+<div class="btn btn-default viewPost">
+These are opportunities to improve the legibility of your content.
+Best practices
+Document does not have a main landmark.
+One main landmark helps screen reader users navigate a web page. Learn more about landmarks.
+Failing Elements
+html
+<html lang="en">
+Identical links have the same purpose.
+These items highlight common accessibility best practices.
+Navigation
+The page contains a heading, skip link, or landmark region
+These are opportunities to improve keyboard navigation in your application.
+Additional items to manually check (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+Passed audits (15)
+Show
+Not applicable (41)
+Show
+100
+Best Practices
+Trust and Safety
+Ensure CSP is effective against XSS attacks
+Use a strong HSTS policy
+Ensure proper origin isolation with COOP
+Mitigate clickjacking with XFO or CSP
+Mitigate DOM-based XSS with Trusted Types
+General
+Detected JavaScript libraries
+Passed audits (13)
+Show
+Not applicable (1)
+Show
+100
+SEO
+These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.
+Additional items to manually check (1)
+Hide
+Structured data is valid
+Run these additional validators on your site to check additional SEO best practices.
+Passed audits (9)
+Show
+Not applicable (1)
+Show
+More on PageSpeed Insights
+What's new
+Documentation
+Learn about Web Performance
+Ask questions on Stack Overflow
+Mailing list
+Related Content
+Updates
+Web Fundamentals
+Case Studies
+Podcasts
+Connect
+Twitter
+Youtube
+Google Developers Logo
+Chrome
+Firebase
+All products
+Terms and Privacy Policy
+For details, see the Google Developers Site Policies.

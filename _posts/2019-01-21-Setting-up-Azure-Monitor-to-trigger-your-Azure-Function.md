@@ -2,6 +2,7 @@
 layout: post
 title: "Setting up Azure Monitor to trigger your Azure Function"
 date: 2019-01-21
+description: "Learn how to connect Azure Monitor Activity Log to an Event Hub and trigger an Azure Function, with step-by-step guidance using the Azure Portal and Azure CLI."
 ---
 
 I wanted to trigger an Azure Function based on changes in the Azure Subscription(s) we where monitoring. The incoming data can than be used to do interesting things with: keeping track of who does what, see new resources being deployed or old ones being deleted, etc. Back when I started working on this, there was no [Event Grid](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-grid?WT.mc_id=AZ-MVP-5003719) option to use in Azure Functions, so I started with linking it to [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview?WT.mc_id=AZ-MVP-5003719) events. I haven't checked the current options, so I cannot compare them yet.

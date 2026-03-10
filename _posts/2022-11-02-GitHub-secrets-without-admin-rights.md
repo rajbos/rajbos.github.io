@@ -3,6 +3,7 @@ layout: post
 title: "Working with GitHub secrets without admin rights"
 date: 2022-11-02
 tags: [GitHub, GitHub Actions, GitHub Secrets, GitHub REST API, GitHub CLI]
+description: "Discover how users with write access can manage GitHub Actions secrets via the REST API and GitHub CLI without needing admin rights or visibility in the UI."
 ---
 
 

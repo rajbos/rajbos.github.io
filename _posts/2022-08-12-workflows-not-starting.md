@@ -3,6 +3,7 @@ layout: post
 title: "My GitHub Actions workflows are not starting"
 date: 2022-08-12
 tags: [GitHub, Actions, Workflows, CI/CD, DevOps, GitHub Actions, GitHub Workflows, GitHub CI/CD, GitHub DevOps, Workflows not starting, actions not starting]
+description: "Troubleshooting guide for GitHub Actions workflows that are not starting, covering file location, branch triggers and scheduled workflow configuration issues."
 ---
 
 ## Check the GitHub status!

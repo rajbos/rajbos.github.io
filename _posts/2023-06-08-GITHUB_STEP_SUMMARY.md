@@ -3,6 +3,7 @@ layout: post
 title: "Writing to the $GITHUB_STEP_SUMMARY with the core npm package"
 date: 2023-06-08
 tags: [GitHub, GITHUB_STEP_SUMMARY, GitHub Actions, Summary, Typescript]
+description: "Learn how to write job summaries to GITHUB_STEP_SUMMARY in GitHub Actions using the actions/core npm package, with table and Mermaid diagram examples."
 ---
 
 Every time I need to write to the GITHUB_STEP_SUMMARY in GitHub Actions from the [actions/github-script](https://github.com/actions/github-script) action (or from Typescript), I need to search for the [blogpost that announced](https://github.blog/2022-05-09-supercharging-github-actions-with-job-summaries/) it's existence. So I'm writing this blogpost to make it easier for myself to find it a lot easier, including some working examples.

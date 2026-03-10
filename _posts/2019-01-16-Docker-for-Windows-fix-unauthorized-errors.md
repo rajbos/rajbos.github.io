@@ -2,6 +2,7 @@
 layout: post
 title: "Docker for Windows: fix unauthorized errors"
 date: 2019-01-16
+description: "Solve the Docker for Windows unauthorized error when running docker commands by switching from your email address to your Docker Hub username for login."
 ---
 
 After installing [Docker for Windows](https://docs.docker.com/docker-for-windows/) (recently renamed to Docker Desktop) I could not get the basic command `docker run hello-world` working. I checked my install, read more docs, got confused if it was in my Hyper-V setup, the networking stack in it, or something else. Finally a light bulb went off and I found the solution!

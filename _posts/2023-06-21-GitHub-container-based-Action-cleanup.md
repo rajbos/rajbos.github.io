@@ -3,6 +3,7 @@ layout: post
 title: "Cleaning up files changed by a GitHub Action that runs in a container"
 date: 2023-06-21
 tags: [GitHub, GitHub Actions, Container, Container based, Action, Cleanup, self-hosted runners]
+description: "Fix file permission errors caused by container-based GitHub Actions on self-hosted runners using runner environment hooks or ephemeral runner strategies."
 ---
 
 A common issue we see with self-hosted runners is that they can leave behind files that were created or modified by the action. This is because the action runs in a container and the container is using a `root` user to do its work. 

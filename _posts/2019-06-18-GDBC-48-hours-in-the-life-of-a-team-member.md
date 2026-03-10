@@ -2,6 +2,7 @@
 layout: post
 title: "GDBC: 48 hours in the life of a team member"
 date: 2019-06-18
+description: "A first-person account of the 48 hours organising Global DevOps Bootcamp 2019, from provisioning Azure infrastructure to monitoring the live event worldwide."
 ---
 
 Last weekend we got the opportunity to organize the Global DevOps Bootcamp ([link](https://www.globaldevopsbootcamp.com)) and it was a blast!

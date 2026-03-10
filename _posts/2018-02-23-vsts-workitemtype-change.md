@@ -2,6 +2,7 @@
 layout: post
 title: "VSTS Bulk Change WorkItemType"
 date: 2018-02-23
+description: "Bulk-change VSTS work item types from Epics to Features using the TeamFoundationServer.Client NuGet package and C# to automate process template updates."
 ---
 
 

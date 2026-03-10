@@ -2,6 +2,7 @@
 layout: post
 title: "Deploy Windows Service using Azure DevOps"
 date: 2019-10-23
+description: "Deploy a Windows Service to a remote machine using Azure DevOps with the Manage Remote Windows Service extension, covering WinRM setup and known caveats."
 ---
 
 Ever needed to deploy a Windows Service onto a machine with Azure DevOps? It turns out this is really easy (some caveat's apply 😄, see section at the bottom)!

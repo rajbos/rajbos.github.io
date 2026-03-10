@@ -2,6 +2,7 @@
 layout: post
 title: "Using CD with Application Insights Status Monitor on IIS"
 date: 2020-01-27
+description: "Fix Application Insights Status Monitor losing its IIS connection during CD deployments by including the required Status Monitor binaries in your package."
 ---
 
 Recently I found an IIS hosted web application that we couldn't instrument with Application Insights. As it is running in IIS,

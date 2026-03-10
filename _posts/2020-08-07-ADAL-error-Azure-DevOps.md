@@ -2,6 +2,7 @@
 layout: post
 title: "ADAL error in Azure DevOps API interaction"
 date: 2020-08-07
+description: "Understand why the Azure DevOps REST API throws an ADAL error about an expired AAD refresh token when a service account hasn't been active for 90 days."
 ---
 
 Today I encountered an issue while interacting with the [Azure DevOps API](https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-6.1&WT.mc_id=DOP-MVP-5003719). In the end this is not an issue with the API but with the user authentication and verification of tokens.

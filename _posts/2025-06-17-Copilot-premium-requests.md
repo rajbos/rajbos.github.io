@@ -3,6 +3,7 @@ layout: post
 title: GitHub Copilot Premium Requests
 date: 2025-06-17
 tags: [GitHub, GitHub Copilot, Generative AI]
+description: "Get a complete overview of GitHub Copilot Premium Requests, including model multipliers, per-plan allowances, budget controls, and usage analysis tools."
 ---
 
 Some important changes are happening, which means you will need to start paying for the amount of Generative AI you use with GitHub Copilot. This will finally make the end-user think about the monetary cost of executing a request with a Large Language Model, so they realize this stuff is not running for free. In that sense we have been spoiled, so it is time to take up some ownership here for the end-users. This post will give you an overview of what you need to expect and how you can protect yourself from overspending.

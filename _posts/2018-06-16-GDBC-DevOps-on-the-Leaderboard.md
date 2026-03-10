@@ -2,6 +2,7 @@
 layout: post
 title: "GDBC DevOps on the Leaderboard"
 date: 2018-06-16
+description: "Discover how the Global DevOps Bootcamp leaderboard ran on Azure with VSTS CI/CD pipelines, and how the team scaled and fixed live incidents during the event."
 ---
 
 ## Global DevOps Bootcamp

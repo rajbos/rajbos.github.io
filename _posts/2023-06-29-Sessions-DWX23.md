@@ -3,6 +3,7 @@ layout: post
 title: "Slides for Developer Week '23"
 date: 2023-06-29
 tags: [GitHub, GitHub Actions, DWX, Developer week, supply chain security]
+description: "Slides from Developer Week '23 in Nuremberg on GitHub Actions beyond CI/CD, preventing supply chain attacks, and using GitHub security features like CodeQL."
 ---
 
 I had the pleasure of speaking at Developer Week '23 in Nuremberg, Germany ([link](https://www.developer-week.de/speaker/#/speaker/19526-rob-bos)) this year. Below you can find the slides that go with my sessions that have all the links you've seen in the session.

@@ -1,64 +1,300 @@
-body{
-    background-color: beige;
-    background-origin: content-box;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;    
-    background-size: cover;   
-
-    padding-top:75px;
-    font-size: 18px;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-/* bootstrap navbar overrides */
+/* ============================================================
+   Typography (Bootstrap-like base)
+   ============================================================ */
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+h5 { font-size: 14px; }
+h6 { font-size: 12px; }
+
+p {
+    margin: 0 0 10px;
+}
+
+a {
+    color: #B35800;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #8a4400;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.container-fluid {
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 50px;
+}
+.navbar-header {
+    display: flex;
+    align-items: center;
+}
+.navbar-brand {
+    display: block;
+    padding: 15px;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.navbar-toggle {
+    display: none;
+    padding: 9px 10px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+}
+.icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: white;
+    margin: 4px 0;
+}
+.navbar-collapse {
+    flex: 1;
+}
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar-nav > li > a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+@media (max-width: 767px) {
+    .navbar-toggle { display: block; }
+    .navbar-collapse {
+        width: 100%;
+        flex-basis: 100%;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.2s ease;
+    }
+    .navbar-collapse.in { max-height: 500px; }
+    .navbar-nav { flex-direction: column; }
+}
+
+/* Navbar theme */
 .navbar-inverse {
-    background-color: darkslategray; 
-    border-color: darkslategray;
+    background-color: darkslategray;
     border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,.26);
 }
 .navbar-inverse .navbar-brand {
-    color:white;
+    color: white;
 }
-.navbar-inverse .navbar-brand:focus
-.navbar-inverse .navbar-brand:hover {
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    color: darkorange;
+    background-color: transparent;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
     color: darkorange;
     background-color: transparent;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: white;
+/* ============================================================
+   Panels
+   ============================================================ */
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
-
-.navbar-inverse .navbar-nav > li > a:hover,
-.navbar-inverse .navbar-nav > li > a:focus {
-  color: darkorange;
-  background-color: transparent;
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-radius: 3px 3px 0 0;
 }
-
-.navbar-inverse {
-    box-shadow: 0 2px 5px rgba(0,0,0,.26);
-}
-
-.panel-default>.panel-heading{
+.panel-default > .panel-heading {
     border-color: bisque;
     background-color: white;
     box-shadow: 0 2px 2px rgb(0 0 0 / 5%);
 }
+.panel-body {
+    padding: 15px;
+}
+.panel-footer {
+    padding: 10px 15px;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 3px 3px;
+    background-color: #f5f5f5;
+}
 
-img{
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.btn:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+    color: #333;
+    text-decoration: none;
+}
+.btn a {
+    text-decoration: none;
+}
+
+body {
+    background-color: beige;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-top: 75px;
+    font-size: 18px;
+}
+
+img {
     max-width: 100%;
     border-color: silver;
     border-style: solid;
     border-width: thin;
+    border-radius: 4px;
+}
+
+code {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+pre code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    border-left: 5px solid #eee;
+    font-size: 17px;
+    color: #555;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 30px;
 }
 
 .viewPost{
-    color: darkorange;
+    color: #B35800;
     font-weight: 800;
 }
 
 .viewPost a {
-    color: darkorange;
+    color: #B35800;
 }
 
 /* custom table styling */

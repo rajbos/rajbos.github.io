@@ -3,6 +3,7 @@ layout: post
 title: "Making the case for GitHub's Secret scanning"
 date: 2023-01-22
 tags: [GitHub, GitHub Actions, Secrets, Secret scanning, Security, GitHub Advanced Security, Advanced Security, DevSecOps]
+description: "An analysis of GitHub secret scanning across 14,000 forked Marketplace repositories, revealing 1,300+ exposed secrets and making the case for enabling it."
 ---
 
 After scanning the GitHub Actions Marketplace for the security of those actions (read that post [here](/blog/2022/09/18/Analysing-the-GitHub-marketplace)) I was curious to see what happens if I'd enable [Secret Scanning](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning) on the forked repositories. I regularly teach classes on using GitHub Advanced Security (where secret scanning is part of) and I always tell my students that they should enable secret scanning on their repositories. I even have a [course on LinkedIn Learning about GitHub Advanced Security](https://www.linkedin.com/learning/github-advanced-security/github-advanced-security?autoplay=true) in case you want to learn more about it.

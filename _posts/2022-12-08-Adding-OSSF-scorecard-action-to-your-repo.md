@@ -3,6 +3,7 @@ layout: post
 title: "Improving your GitHub repositories security setup by adding the OSSF scorecard action"
 date: 2022-12-08
 tags: [GitHub, GitHub Actions, OSSF, Security, Open Source Security Foundation]
+description: "Learn how to add the OSSF scorecard GitHub Action to your repo to automatically assess open source security best practices and display a public score badge."
 ---
 
 Recently I've started to add the [OSSF scorecard action](https://github.com/ossf/scorecard-action) to my (action) repositories. This is a GitHub action that will run the [OSSF scorecard](https://github.com/ossf/scorecard) checks against your repository to see if you are following best practices, like having a security policy, using a code scanning tool, etc. Using this badge can give your users a quick overview of the security of your repository. OSSF stands for 'Open Source Security Foundation' and is an initiative to improve the security of open source repositories.

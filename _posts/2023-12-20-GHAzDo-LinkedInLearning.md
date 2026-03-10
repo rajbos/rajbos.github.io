@@ -3,6 +3,7 @@ layout: post
 title: New LinkedIn Learning course! GitHub Advanced Security for Azure DevOps
 date: 2023-12-20
 tags: [GitHub Advanced Security, Azure DevOps, GHAZDo]
+description: "Announcing a new LinkedIn Learning course on GitHub Advanced Security for Azure DevOps, covering dependency scanning, secret scanning, and CodeQL analysis."
 ---
 
 # GitHub Advanced Security for Azure DevOps

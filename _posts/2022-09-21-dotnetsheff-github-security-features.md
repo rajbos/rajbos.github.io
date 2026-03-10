@@ -3,6 +3,7 @@ layout: post
 title: "Presentation dotnetsheff - Protect your code with GitHub security features"
 date: 2022-09-21
 tags: [GitHub, Advanced Security, dotnetsheff, GitHub Advanced Security, GHAS, Supply Chain Attacks, Pipeline, CI/CD, DevSecOps]
+description: "Slides and abstract from the dotnetsheff virtual talk on protecting code using GitHub Advanced Security features with Dependabot, CodeQL and secret scanning."
 ---
 
 

@@ -2,6 +2,7 @@
 layout: post
 title: "Lets Encrypt: Manually get a certificate on Windows for an Azure App Service"
 date: 2019-08-27
+description: "Step-by-step guide to manually renewing a Let's Encrypt certificate for Azure App Service on Windows using WSL Certbot and OpenSSL to convert PEM to PFX."
 ---
 
 Recently I had to refresh a [Let's Encrypt](https://letsencrypt.org/) certificate for an Azure App Service after the first certificate had expired. Of course, refreshing a certificate should be done by some tooling, either in a CI/CD pipeline or another service. I tried setting up the [Lets Encrypt Extension](https://github.com/sjkp/letsencrypt-siteextension/wiki/How-to-install) on the App Service, but could not get it to work. Eventually I even ran into the Let's Encrypt rule that you can only try to get a certificate 5 times a week for a production environment, after which they blocked me. Therefor I decided to update the certificate by hand, because that should not be too hard at all.... Unfortunately this was not as straight forward as I wanted it, so I decided to document the process here for later referral when I run into this again. Hopefully I've remembered to have automated this the next time!

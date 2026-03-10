@@ -2,6 +2,7 @@
 layout: post
 title: "Azure Active Directory Authentication Issue with .NET Core"
 date: 2020-04-23
+description: "Find out how to resolve the Azure Active Directory error AADSTS50011 by exactly matching the reply URL in .NET Core OpenIdConnect middleware settings."
 ---
 
 Today I faced an issue with Azure Active Directory authentication that was interesting enough to not this down for later reference 😁.

@@ -25,8 +25,10 @@ if ($Command -eq "new-post") {
     $content += "---`nlayout: post`n"
     $content += "title: `n"
     $content += "date: $date`n"
-    $content += "tags: []"
-    $content += "`n---`n"
+    $content += "tags: []`n"
+    $content += "description: `"`"`n"
+    $content += "image: /images/$((Get-Date).Year)/$date/`n"
+    $content += "---`n"
 
     # store the file
     New-Item -Path $filepath -ItemType File -Force

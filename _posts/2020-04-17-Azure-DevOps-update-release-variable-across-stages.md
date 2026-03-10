@@ -2,6 +2,7 @@
 layout: post
 title: "Azure DevOps: Update release variables across stages"
 date: 2020-04-17
+description: "Discover how to propagate Azure DevOps release variable values across deployment stages using the REST API, with a downloadable PowerShell Task Group."
 ---
 
 In Azure DevOps I needed to determine a variable in one deployment stage, and use it in another. I remember finding and implementing this solution before but couldn't figure out how I did things, so this post is for me to find it easier next time 😉.

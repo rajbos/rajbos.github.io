@@ -2,6 +2,7 @@
 layout: post
 title: "DevOps and Telemetry: Support on the supporting systems"
 date: 2018-04-02
+description: "Part 3 of the DevOps telemetry series covers monitoring SSL certificate validity and security headers using SSLLabs and SecurityHeaders.com in your pipeline."
 ---
 
 **Note** This is part 3 in a series of posts about DevOps and the role of telemetry in it. In part one I described the reasoning behind the series and explained how I started with logging (usage) telemetry for a SaaS application. You can read part 1 in the series [here](/blog/2018/03/14/DevOps-and-Telemetry-Insights-into-your-application).

@@ -2,6 +2,7 @@
 layout: post
 title: "GDBC: Link overview"
 date: 2019-07-07
+description: "A curated link overview of all Global DevOps Bootcamp 2019 blog posts, covering Azure learnings, monitoring, registration, and attendee experiences worldwide."
 ---
 
 Last month we got the opportunity to organize the Global DevOps Bootcamp ([link](https://www.globaldevopsbootcamp.com)) and it was a blast!

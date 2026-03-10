@@ -1,7 +1,7 @@
 ---
 title: "Posts"
 permalink: /tags/
-layout: tags
+layout: default
 author_profile: true
 ---
 

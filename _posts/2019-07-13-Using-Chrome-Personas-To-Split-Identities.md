@@ -2,6 +2,7 @@
 layout: post
 title: "Using Chrome Personas to split identities"
 date: 2019-07-13
+description: "Keep customer identities separate as a consultant using Chrome personas to isolate browsing history, stored passwords, and Azure Active Directory accounts."
 ---
 
 As a consultant, I get to work at a lot of different settings and environments. For most of my customers these days, that means working on my own laptop and in the cloud with SaaS application.

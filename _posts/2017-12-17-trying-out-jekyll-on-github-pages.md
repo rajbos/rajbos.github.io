@@ -2,6 +2,7 @@
 layout: post
 title: "Trying out Jekyll"
 date: 2017-12-17
+description: "A first look at setting up a Jekyll blog on GitHub Pages, exploring its easy setup, static page generation, and comparison to other blogging platforms."
 ---
 
 Trying out Jekyll on top of GitHub pages as a new blogging platform.

@@ -2,6 +2,7 @@
 layout: post
 title: "Use GitHub Actions with a private runner to deploy to IIS"
 date: 2020-11-24
+description: "See how to use GitHub Actions with a self-hosted Windows runner to build and deploy a .NET Core application to IIS, including Selenium end-to-end web tests."
 ---
 
 Recently I got asked if you could use GitHub Actions to deploy to an IIS web application which of course I had to test :grin:.

@@ -3,6 +3,7 @@ layout: post
 title: "SonarQube Community Edition - Change default branch name"
 date: 2021-02-12
 tags: [SonarQube, Community, Default branch]
+description: "Find out how to change the default branch name in SonarQube Community Edition using a direct URL, since no UI option is available in the free version."
 ---
 
 

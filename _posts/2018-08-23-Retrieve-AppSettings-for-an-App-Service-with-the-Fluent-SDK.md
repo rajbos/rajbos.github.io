@@ -2,6 +2,7 @@
 layout: post
 title: "Retrieving AppSettings for an App Service with the Fluent SDK"
 date: 2018-08-23
+description: "Learn how to correctly retrieve AppSettings from an Azure App Service using the Fluent SDK by using WebSiteManagementClient instead of SiteConfig properties."
 ---
 
 I am using the [Azure Fluent SDK](https://azure.microsoft.com/en-us/blog/simpler-azure-management-libraries-for-net/?WT.mc_id=AZ-MVP-5003719) to retrieve information about the Azure setup and I wanted to retrieve the AppSettings from an App Service (or function app, or logic app). The simple solution didn't work and 

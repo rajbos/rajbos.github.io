@@ -2,6 +2,7 @@
 layout: post
 title: "Azure DevOps Marketplace News - Or Imposter Syndrome for developers?"
 date: 2019-08-16
+description: "Follow the development journey of an Azure DevOps marketplace news bot, a .NET Core C# tool that monitors extensions and tweets updates via Azure Pipelines."
 ---
 
 I've been developing software for over 16 years now and every now and then I come across someone who thinks developers do something magic that they can never learn to do. Maybe they are even afraid to ask us something because they don't understand something. As a consultant my role has often meant that I could take the time and explain to someone more functional oriented the reasoning behind some decisions a developer could make.

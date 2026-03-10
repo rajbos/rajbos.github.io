@@ -2,6 +2,7 @@
 layout: post
 title: "DevOps Principles series - Recording setup "
 date: 2019-07-10
+description: "Explore the recording setup for a DevOps Principles video series, covering PowerPoint screen recording, Streamlabs OBS, microphone selection, and lighting tips."
 ---
 
 Read more on why I created short video's wherein I explain some of the DevOps principles and practices [here](/blog/2019/07/10/DevOps-Principles-series).

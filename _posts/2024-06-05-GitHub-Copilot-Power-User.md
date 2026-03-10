@@ -3,6 +3,7 @@ layout: post
 title: GitHub Copilot Power User example
 date: 2024-06-05
 tags: [GitHub, GitHub Copilot, Power User, Copilot]
+description: "Watch a GitHub Copilot power user workflow refactoring a GitHub Actions YAML pipeline into a script file, including prompt examples and follow-up interactions."
 ---
 
 Learn how I use GitHub Copilot to my benefit and see the end to end flow on a code refactoring example where I extract a script from a yaml pipeline (GitHub Actions) into a separate file. 

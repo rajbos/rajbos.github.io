@@ -3,6 +3,7 @@ layout: post
 title: GHAS Code Security Configuration
 date: 2024-04-27
 tags: [GitHub Advanced Security, GHAS, Code Security, Configuration]
+description: "Learn about GitHub Advanced Security code security configurations in public beta, enabling easy GHAS policy rollout for repositories across an organization."
 ---
 
 GitHub Advanced security has gotten quite a big update in public beta at the moment that helps with the rollout of Advanced Security features across your organization. It is called "Code security configurations" and it allows you to set up a default configuration for some or all repositories in your organization.

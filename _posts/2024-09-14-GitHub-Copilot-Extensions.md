@@ -3,6 +3,7 @@ layout: post
 title: "GitHub Copilot Extensions"
 date: 2024-09-14
 tags: [GitHub, GitHub Copilot, Extensions]
+description: "Learn how to build GitHub Copilot Extensions using the preview SDK, host them in a Codespace, and extend Copilot Chat with your own knowledge and APIs."
 ---
 
 GitHub Copilot is a great tool to help you write code. The next phase is starting now by enabling you to write your own extensions for Copilot! This is a great way to extend the capabilities of Copilot to your own needs. You can for example look in your own knowledge store for information, or even call into an API to get the information you need. All from within GitHub Copilot Chat itself!

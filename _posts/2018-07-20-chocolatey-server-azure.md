@@ -2,6 +2,7 @@
 layout: post
 title: "Chocolatey Server in Azure"
 date: 2018-07-20
+description: "Learn how to set up a Chocolatey package server in Azure using an ARM template, create NuGet-wrapped packages, and install them on a Windows client machine."
 ---
 
 Recently I wanted to demo an example of how you can rollout [Chocolatey](https://chocolatey.org/) packages via your own choco server. Sometimes we cannot save every binary in VSTS to use it in a pipeline as an artifact and therefor I needed a different artifact server. Chocolatey provides a NuGet wrapper around binaries that you can easily track different versions with.

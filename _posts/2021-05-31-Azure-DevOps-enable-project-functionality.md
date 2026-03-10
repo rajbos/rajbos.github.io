@@ -3,6 +3,7 @@ layout: post
 title: "Azure DevOps: enable project functionality"
 date: 2021-05-31
 tags: [Azure DevOps, REST, REST API, project]
+description: "Discover how to use the Azure DevOps REST API to programmatically enable or disable project features like Boards, Pipelines, and Repos on a per-project basis."
 ---
 
 Sometimes you spot interesting things online that you *have* to figure out 😎.

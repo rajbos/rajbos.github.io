@@ -10,21 +10,20 @@
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<button type="button" class="navbar-toggle collapsed" onclick="var el=document.getElementById('bs-example-navbar-collapse-1');el.classList.toggle('in');" aria-expanded="false">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand active" href="{{ "" | absolute_url }}">Robs blog</a>
+					<a class="navbar-brand active" href="{{ "" | absolute_url }}">{{ site.title }}</a>
 					</div>
 				
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li><a href="https://github.com/rajbos/" target="_blank">GitHub</a></li>
-						<li><a href="https://twitter.com/robbos81/" target="_blank">Twitter</a></li>
 						<li><a href="https://sessionize.com/RobBos/" target="_blank">Sessionize</a></li>
 						<li><a href="https://www.youtube.com/playlist?list=PLXVVwOM8uv2wQyhQ7mB_Nv_iXyMuXf-GT target="_blank">YouTube</a></li>
 						<li><a href="{{ "/blog/tools" | absolute_url }}" target="_blank">Tools</a></li>

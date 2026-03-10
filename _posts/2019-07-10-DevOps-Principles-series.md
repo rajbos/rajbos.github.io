@@ -2,6 +2,7 @@
 layout: post
 title: "DevOps Principles series"
 date: 2019-07-10
+description: "A DevOps Principles video series covering Shift Left, T-Shaped engineers, the four eyes principle, and automating everything to improve your team's delivery."
 ---
 
 I have started recording a series of video's explaining some of the principles and sayings I use when I talk about DevOps. There are teams that I meet that have no idea what DevOps is and why we are doing some of these things for it. I've found myself referencing something like 'Shift Left' and then having to explain it to the teams and their management that I am helping with something that for me, is related to something in the DevOps culture.

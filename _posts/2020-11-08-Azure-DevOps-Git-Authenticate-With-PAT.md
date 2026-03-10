@@ -2,6 +2,7 @@
 layout: post
 title: "Azure Repos: Authenticate Git with a PAT"
 date: 2020-11-08
+description: "Learn how to authenticate Git against Azure DevOps using a Personal Access Token by adding an extra authorization header at repo, project, or org level."
 ---
 
 Sometimes you have these weird things you run into, and I'm sure I will not be able to find this one if I don't store it here.

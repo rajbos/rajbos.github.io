@@ -3,6 +3,7 @@ layout: post
 title: "Pester tests: moving from v4 to v5"
 date: 2021-05-25
 tags: [PowerShell, pester, testing, v4, v5]
+description: "Learn how to migrate Pester v4 tests to v5 in PowerShell, including the correct syntax for passing parameters into your test files from Azure DevOps pipelines."
 ---
 
 This one took me way to many trials and searches to figure out, so I wanted to store it here in case I need it later on.

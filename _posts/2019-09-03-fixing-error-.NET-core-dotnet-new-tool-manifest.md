@@ -2,6 +2,7 @@
 layout: post
 title: "Fixing error in .NET Core tool installation"
 date: 2019-09-03
+description: "Fix the 'Cannot find manifests file' error when installing a local .NET Core tool by running dotnet new tool-manifest, which requires .NET Core 3.0 or later."
 ---
 
 Last week I was testing some .NET tooling and wanted to install a tool locally instead of globally. To do so you run this command:
