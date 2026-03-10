@@ -6,7 +6,7 @@ tags: [GitHub, GitHub Actions, Security, Securely, Risks, Maturity Levels]
 description: "Explore eight maturity levels for using GitHub Actions securely, from version pinning and SHA hashes to Dependabot, forked repos, and an internal marketplace."
 ---
 
-I've been discussing using GitHub Actions in a secure way for a while now (see [here](/blog/2021/10/27/GitHub-Universe-Session), and I got a question on how to improve your usage of actions. I wanted to capture that info in an easy to follow set of steps, so here we go:
+I've been discussing using GitHub Actions in a secure way for a while now (see [here](/blog/2021/10/27/GitHub-Universe-Session)), and I got a question on how to improve your usage of actions. I wanted to capture that info in an easy to follow set of steps, so here we go:
 
 1. Default demo examples: version pinning or by branch
 2. Review the source code and trust the publisher / action
@@ -22,7 +22,7 @@ I've been discussing using GitHub Actions in a secure way for a while now (see [
 
 
 
-I'll go over each of these below and give some more context. With that you should be able to determine where you or your company is at this scale. I'd love to what your next step will be, so please let me know on [Twitter](https://twitter.com/RobBos81)!
+I'll go over each of these below and give some more context. With that you should be able to determine where you or your company is at this scale. I'd love to what your next step will be, so please let me know on [LinkedIn](https://www.linkedin.com/in/bosrob)!
 
 ## 1) Default demo examples: version pinning or by branch
 This is currently where all the demos start: use version pinning (now required) or by branch:

@@ -21,6 +21,3 @@ In this post I want to explain about the next step: logging information about th
 
 ### Security headers
 [https://securityheaders.com/](https://securityheaders.com/)
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hi <a href="https://twitter.com/Scott_Helme?ref_src=twsrc%5Etfw">@Scott_Helme</a> , was looking for an API on SecurityHeaders and found: <a href="https://t.co/RtmQezOLEm">https://t.co/RtmQezOLEm</a> But it is returning 500&#39;s. Any info on that?</p>&mdash; Rob Bos (@RobBos81) <a href="https://twitter.com/RobBos81/status/981811874265288704?ref_src=twsrc%5Etfw">April 5, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
