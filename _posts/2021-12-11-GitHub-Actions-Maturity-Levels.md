@@ -21,7 +21,7 @@ I've been discussing using GitHub Actions in a secure way for a while now (see [
 
 
 
-I'll go over each of these below and give some more context. With that you should be able to determine where you or your company is at this scale. I'd love to what your next step will be, so please let me know on [Twitter](https://twitter.com/RobBos81)!
+I'll go over each of these below and give some more context. With that you should be able to determine where you or your company is at this scale. I'd love to what your next step will be, so please let me know on [LinkedIn](https://www.linkedin.com/in/bosrob)!
 
 ## 1) Default demo examples: version pinning or by branch
 This is currently where all the demos start: use version pinning (now required) or by branch:
