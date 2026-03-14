@@ -118,12 +118,12 @@ And additionally you can also use the [MCP Gateway](https://github.com/microsoft
 ### Known limitations
 APIM does have a couple of limitations to be aware of when hosting MCP servers. None of them re ally block the core use case of hosting remote MCP servers with Entra ID auth, but they are good to be aware of when designing your architecture:
 
-- **APIM is stateless**: It does not maintain MCP session affinity. Each HTTP call flows independently[^18]
+- **APIM is stateless**: It does not maintain MCP session affinity. Each HTTP call flows independently[^3]
 - **No session-aware routing**: Cannot pin `Mcp-Session-Id` to a specific backend pod (unlike MCP Gateway)
-- **MCP tools only**: Currently supports MCP tools, not MCP resources or prompts[^19]
-- **Not available on Consumption tier**[^20]
-- **Response body access prohibited**: Don't use `context.Response.Body` in MCP server policies—it breaks streaming[^21]
-- **Workspace support**: MCP server capabilities not yet supported in APIM workspaces[^22]
+- **MCP tools only**: Currently supports MCP tools, not MCP resources or prompts[^4]
+- **Not available on Consumption tier**[^5]
+- **Response body access prohibited**: Don't use `context.Response.Body` in MCP server policies—it breaks streaming[^6]
+- **Workspace support**: MCP server capabilities not yet supported in APIM workspaces[^7]
 
 ### APIM Pricing Consideration
 Something to keep in mind is that APIM is billed per instance/tier, not per request. The Developer tier is cheapest (~$50/month) but has no SLA. Standard v2 starts around $170/month. This is significantly more expensive than just running MCP Gateway on an existing AKS cluster. If you already have an APIM instance running, then it does make sense to add this capability to it, as it is available out of the box. The value add of APIM is the security/routing/monitoring/rate-limiting features, so if you need those, it can be worth the cost. If you just want to host some MCP servers without those features, it might be overkill.
