@@ -14,7 +14,7 @@ There are several issues at play when you want to work with MCP Servers:
 1. Security concerns with executing them and the access they have
 2. Discovery and governance of which MCP servers are approved for use
 
-I've been researching the different hosting options to work in a more secure manner with MPC serers, and this is the state of the research so far. The core question is: how can we host MCP servers in a way that allows us to use them effectively while minimizing security risks and ensuring proper governance?
+I've been researching the different hosting options to work in a more secure manner with MPC servers, and this is the state of the research so far. The core question is: how can we host MCP servers in a way that allows us to use them effectively while minimizing security risks and ensuring proper governance?
 
 ## Security concerns
 MCP servers are powerful but potentially risky. They often need access to sensitive data, credentials, or internal systems. If a server is compromised, it could be a major attack vector. Running MCP servers locally on each developer's machine means they inherit all the security context of that machine — which is a big risk. That includes 3rd party libraries directly installed on the developer's OS. Running these MCP servers in a containerized environment with strict access controls could significantly reduce the attack surface, but a lot of MCP servers are not configured that way and run locally through `npx` (npm executable), `uvx` (PyPi executable), Docker or similar tools.
@@ -24,7 +24,7 @@ Research from EndorLabs about the [State of Dependency Management 2025](https://
 Since MCP servers are a very effective man in the middle in your AI workflow, they can be used to exfiltrate data, access internal systems, or perform malicious actions if compromised. An MCP server can expose prompts, agent definitions, and tools. All these places allow for manipulation of both data and your prompts (prompt injection attacks). if an attacker can compromise an MCP server, they could potentially manipulate the prompts being sent to the AI model, leading to unintended actions or leak data to a 3rd party system. This is especially concerning if the MCP server has access to sensitive data or internal systems (which is a high level of probability on an engineers development environment these days). 
 
 ## Running local server concerns
-Running MCP servers locally on developers' machines is the most common setup. Unfortunately most MCP Clients (for example: your code editor) host the MCP server only for themselves. That means there is no great way to expose these servers to all tools that support MCP Server in one go. So if you hop between editors: each editor will have to startup a process to communicate with the MCP servers you want to use. I'd expect that MCP tools become so prevelant that you'd run a centrally goverened instance of a server on your machine as a service, and then each tool that wants to use them can find them, with a security layer on top that lets you allow list which MCP server is allowed to be used by which tools. 
+Running MCP servers locally on developers' machines is the most common setup. Unfortunately most MCP Clients (for example: your code editor) host the MCP server only for themselves. That means there is no great way to expose these servers to all tools that support MCP Server in one go. So if you hop between editors: each editor will have to startup a process to communicate with the MCP servers you want to use. I'd expect that MCP tools become so prevalent that you'd run a centrally governed instance of a server on your machine as a service, and then each tool that wants to use them can find them, with a security layer on top that lets you allow list which MCP server is allowed to be used by which tools. 
 
 Let's take an example with an engineer that runs both VS Code and IntelliJ. They switch between those editors when they work on different parts of their normal work, for example backend work in Java in IntelliJ and front end work in Typescript in VS Code. Next to that they have a todo application where they plan their work. If they manage their work for a part in something like Jira (user stories and tasks), Azure Boards (work items), or GitHub Issues, they might need to plan things across all those environments. If they want to use an MCP server that can read and write to their issue tracker, they would need to run a separate instance of that MCP server for each editor, and then keep those in sync with each other. Each instance also would have to be set up with the correct credentials. 
 
@@ -73,7 +73,7 @@ So in short:
 
 The MCP Gateway can run in a k8s setup and can be exposed through APIM, so that is a nice way to tackle problems at the same time, at least for remote/local servers that do not require per-user OAuth. 
 
-So lets see how far we can get combininng these two solutions, and where the gaps are that we need to fill with custom code or configuration.
+So lets see how far we can get combining these two solutions, and where the gaps are that we need to fill with custom code or configuration.
 
 ## The central MCP Gateway approach
 
@@ -83,7 +83,7 @@ Developers connect to a central endpoint and get all the MCP tools they need —
 
 This also improves **security**. When an MCP server runs locally, it inherits the developer's environment: their filesystem access, their local credentials, their OS context. A containerized server running in a cluster is isolated — it only has access to what you explicitly give it. This is a meaningful reduction in the blast radius if an MCP server is compromised or behaves unexpectedly.
 
-The MCP Gateway repo lets you configre the gateway with a couple of services:
+The MCP Gateway repo lets you configure the gateway with a couple of services:
 - MCP Server gateway: register and retrieve listed MCP servers
 - tool gateway: a tool gateway that routes tool calls to the correct backend MCP server in a container
 - Redis: for session state management and routing
@@ -113,17 +113,17 @@ There are four primary Azure native hosting options for running MCP servers:
 - Azure App Service (REST based MCP servers)
 - Azure Functions (REST based MCP servers)
 
-And additionally you can also use the [MCP Gateway](https://github.com/microsoft/mcp-gateway) as another backend and expose those MCP servers with shared state through APIM as well, so that you have one shared front end. APIM and MCP Gateway are complementary, not interchangeable: APIM handles north-south concerns (OAuth, rate limiting, monitoring) while MCP Gateway handles east-west session-aware routing[^1][^2]. The user's core concern—that MCP Gateway doesn't support per-user OAuth for remote servers like the GitHub MCP server—is valid. APIM can help by fronting MCP servers with Entra ID auth. 
+And additionally you can also use the [MCP Gateway](https://github.com/microsoft/mcp-gateway) as another backend and expose those MCP servers with shared state through APIM as well, so that you have one shared front end. APIM and MCP Gateway are complementary, not interchangeable: APIM handles north-south concerns (OAuth, rate limiting, monitoring) while MCP Gateway handles east-west session-aware routing. The user's core concern—that MCP Gateway doesn't support per-user OAuth for remote servers like the GitHub MCP server—is valid. APIM can help by fronting MCP servers with Entra ID auth. 
 
 ### Known limitations
-APIM does have a couple of limitations to be aware of when hosting MCP servers. None of them re ally block the core use case of hosting remote MCP servers with Entra ID auth, but they are good to be aware of when designing your architecture:
+APIM does have a couple of limitations to be aware of when hosting MCP servers. None of them really block the core use case of hosting remote MCP servers with Entra ID auth, but they are good to be aware of when designing your architecture:
 
-- **APIM is stateless**: It does not maintain MCP session affinity. Each HTTP call flows independently[^3]
+- **APIM is stateless**: It does not maintain MCP session affinity. Each HTTP call flows independently
 - **No session-aware routing**: Cannot pin `Mcp-Session-Id` to a specific backend pod (unlike MCP Gateway)
-- **MCP tools only**: Currently supports MCP tools, not MCP resources or prompts[^4]
-- **Not available on Consumption tier**[^5]
-- **Response body access prohibited**: Don't use `context.Response.Body` in MCP server policies—it breaks streaming[^6]
-- **Workspace support**: MCP server capabilities not yet supported in APIM workspaces[^7]
+- **MCP tools only**: Currently supports MCP tools, not MCP resources or prompts
+- **Not available on Consumption tier**
+- **Response body access prohibited**: Don't use `context.Response.Body` in MCP server policies—it breaks streaming
+- **Workspace support**: MCP server capabilities not yet supported in APIM workspaces
 
 ### APIM Pricing Consideration
 Something to keep in mind is that APIM is billed per instance/tier, not per request. The Developer tier is cheapest (~$50/month) but has no SLA. Standard v2 starts around $170/month. This is significantly more expensive than just running MCP Gateway on an existing AKS cluster. If you already have an APIM instance running, then it does make sense to add this capability to it, as it is available out of the box. The value add of APIM is the security/routing/monitoring/rate-limiting features, so if you need those, it can be worth the cost. If you just want to host some MCP servers without those features, it might be overkill.
@@ -131,8 +131,7 @@ Something to keep in mind is that APIM is billed per instance/tier, not per requ
 Also note that the MCP server features are not available in the Consumption tier, so you need at least the Developer tier to use APIM for MCP servers.
 
 ### What I could not verify yet: Oauth
-- Whether APIM Credential Manager supports the OAuth passthrough required by the GitHub MCP server (the GitHub MCP server uses specific MCP-related scopes that may not align with standard GitHub OAuth App scopes)
-- Whether the GitHub MCP server at `api.githubcopilot.com/mcp/` would accept tokens from a GitHub OAuth App registered by the user (vs. the Copilot-internal OAuth flow)
+- Whether APIM Credential Manager supports the OAuth passthrough required by e.g. the GitHub MCP server (the GitHub MCP server uses specific MCP-related scopes that may not align with standard GitHub OAuth App scopes)
 - Performance characteristics of APIM fronting MCP streaming endpoints at scale
 
 So the main questions that remain: 
