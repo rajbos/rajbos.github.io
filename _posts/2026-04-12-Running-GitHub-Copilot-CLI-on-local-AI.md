@@ -277,11 +277,37 @@ The main functions that I use here is `set-copilot-local` for when I want to swi
 |---|---|---|
 | `online-copilot` (GitHub-hosted Claude/GPT) | ✅ Best | Default, no setup needed |
 | Ollama `qwen2.5:7b-instruct-32k` on NVIDIA | ✅ Works | ~13 tok/s, mediocre quality vs cloud |
-| LM Studio `qwen2.5-7b-instruct@q5_k_m`, 25 layers NVIDIA + CPU | ✅ Works | Acceptable speed, similar quality to Ollama |
+| LM Studio `qwen2.5-7b-instruct@q5_k_m`, 25 layers NVIDIA + CPU | ✅ Works | ~14 tok/s, similar quality to Ollama |
 | Foundry Local on Arc 140T (OpenVINO GPU) | ❌ Blocked | Needs Arc driver 32.0.101.8629 from Dell |
 | Foundry Local on NPU | ❌ Too small | 3,696 token limit, CLI needs ~21k |
 | Foundry Local CUDA 7B on NVIDIA | ❌ OOM crash | 6 GB isn't enough |
 | LM Studio on Arc 140T only (Vulkan) | ❌ Too slow | Saturates shared memory bus, freezes machine |
+
+## Throughput comparison
+
+Speed matters for interactive use. The Copilot CLI generates structured JSON for tool calls, thinks through multi-step plans, and writes code — all of which require hundreds of tokens of output per turn. Anything below ~8 tok/s starts to feel noticeably slow for a CLI tool.
+
+I measured output throughput (tokens per second) using a standardised benchmark: each provider was asked to generate a ~250-token PowerShell function, at `temperature=0.2` with `max_tokens=400`, repeated 5 times after a warm-up run. The warm-up run loads the model into VRAM and warms the KV cache; only the subsequent timed runs are averaged.
+
+The test prompt is a fixed PowerShell coding task so every provider generates a roughly comparable amount of output. This measures **output throughput** (decode speed) — which is what you feel as the response streaming in — not prompt processing speed or time-to-first-token.
+
+The script is available as a Gist: [`Measure-LocalAIThroughput.ps1`](https://gist.github.com/rajbos/8c9a5bfb832469db52482082f88aae06). It auto-detects which providers are running, manages LM Studio's lifecycle (kill before Ollama, start fresh for the LM Studio run), and outputs a ready-to-paste Markdown table.
+
+| Provider | Model | Avg tok/s | Notes |
+|---|---|---:|---|
+| Foundry Local | `qwen2.5-1.5b-instruct-cuda-gpu:4` | **117** | NVIDIA RTX PRO 500 CUDA — 1.5B model only (see note) |
+| LM Studio | `qwen2.5-7b-instruct@q5_k_m` | **13.6** | 25 layers NVIDIA GDDR + CPU remainder, 32k context |
+| Ollama | `qwen2.5:7b-instruct-32k` | **11.1** | NVIDIA RTX PRO 500 CUDA, 32k context |
+
+A few things to note from these numbers:
+
+- **Foundry Local at 117 tok/s** looks spectacular but the asterisk is that it's running the 1.5B model — the only Foundry Local model that actually runs on this hardware today. A 1.5B model is not capable enough for agentic tasks. Still, it's a preview of what the numbers could look like once the Arc 140T OpenVINO path is unblocked: running a proper 7B model on 16 GB VRAM with no memory pressure.
+- **LM Studio at 13.6 tok/s** edges out Ollama despite splitting the 7B model across 25 NVIDIA layers and CPU. The key is that with the correct 32k context window configured at load time, llama.cpp can compute an accurate VRAM budget and pack more layers onto the NVIDIA GDDR before falling back to CPU.
+- **Ollama at 11.1 tok/s** is the most robust option. The `OLLAMA_FLASH_ATTENTION=1` and `OLLAMA_KV_CACHE_TYPE=q8_0` settings are important — without them the KV cache alone consumes 1.75 GB of the 6 GB VRAM, leaving less room for model weights on GPU and dropping throughput to ~9 tok/s.
+- **You cannot run Ollama and LM Studio at the same time** on this machine. Both want to load the 7B model weights into the NVIDIA 6 GB VRAM. The benchmark script handles this automatically — it kills LM Studio before the Ollama run and starts it fresh afterward.
+- For context: online Claude 3.5 Sonnet generates at 80–100+ tok/s. Local 7B models at 11–14 tok/s are usable for quick tasks but noticeably slower for multi-step agentic work.
+
+---
 
 ## What I'm waiting for
 
