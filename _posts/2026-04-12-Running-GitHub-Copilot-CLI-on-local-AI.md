@@ -427,6 +427,12 @@ The `--gpu 0.78` flag is the critical one. `--gpu max` looks like it should work
 
 ---
 
+## Final verdict on local inference options for GitHub Copilot CLI on this machine:
+
+The Qwen2.5-7b-instruct@q4_k_s model running in LM Studio with a GPU split is the best local option today, giving a usable 17.2 tok/s. Ollama is a close second at 11.25 tok/s but has less flexible GPU usage and model options. The HuggingFace stack (vLLM, TGI) is currently impractical on 6 GB due to the need for CPU offload or lack of it, respectively.
+
+Working with this from the Copilot CLI is workable, and of course it cannot compare to the powerful models that the hosting providers can run in the cloud. But for basic agentic tasks, code generation, and tool calling, it's a workable local setup.
+
 ## What I'm waiting for
 
 The most promising path — Foundry Local with OpenVINO on the Arc 140T — is blocked by a single driver update. The Arc 140T has 16 GB of dedicated VRAM with Intel's optimised INT4 kernels via OpenVINO, and the 7B models should run fast and stable with no memory pressure. Once Dell publishes Arc driver 32.0.101.8629 for the MC14250, that's the first thing I'm testing.
