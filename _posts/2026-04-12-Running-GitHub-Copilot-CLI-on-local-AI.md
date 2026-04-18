@@ -16,8 +16,8 @@ The Copilot CLI now supports a "bring your own key" (BYOK) mode where you point 
 
 My machine is a Dell Pro Max 14 MC14250 from Q4, 2025. It has an Intel Core Ultra 7 265H processor in it, with 32GB RAM and a 1TB SSD. The interesting thing about this machine is that it has three separate AI-capable processors:
 
-- **Intel Arc 140T** (GPU 0) — 16 GB VRAM, integrated but a full GPU with XMX matrix units
-- **NVIDIA RTX PRO 500 Blackwell** (GPU 1) — 6.1 GB dedicated GDDR VRAM
+- **Intel Arc 140T** (GPU 0) — 16 GB VRAM, integrated but a full GPU with dedicated AI acceleration
+- **NVIDIA RTX PRO 500 Blackwell** (GPU 1) — 6.1 GB dedicated VRAM (GDDR — fast video memory separate from system RAM)
 - **Intel AI Boost NPU** — dedicated neural processing unit built into the CPU
 
 On paper that's a lot of local AI horsepower. In practice, as I found out, things are more complicated.
@@ -53,7 +53,7 @@ PARAMETER num_ctx 32768
 
 Then create it with: `ollama create qwen2.5:7b-instruct-32k -f Modelfile`
 
-A couple of performance settings also helped, particularly for flash attention and KV cache quantization:
+A couple of performance settings also helped, particularly for flash attention and KV cache quantization. The KV cache (key-value cache) stores the intermediate attention values the model computes for each token — with a 32k context window it can consume 1–2 GB of VRAM, so compressing it matters:
 
 ```powershell
 [System.Environment]::SetEnvironmentVariable("OLLAMA_FLASH_ATTENTION", "1", "User")
@@ -113,13 +113,13 @@ But even with Vulkan enabled, LM Studio still defaulted to the NVIDIA card — b
 {"json":[["llama.cpp-win-x86_64-vulkan-avx2",{"fields":[{"key":"load.gpuSplitConfig","value":{"strategy":"evenly","disabledGpus":[1],"priority":[],"customRatio":[]}}]}]],"meta":{"values":["map"]}}
 ```
 
-**Arc 140T alone is too slow.** This surprised me. The Arc has 16GB but it's *integrated* memory — shared LPDDR5x at ~68 GB/s bandwidth. Running a 7B model on it saturated the memory bus and froze my entire machine, including the mouse. LLM inference is completely memory-bandwidth-bound, and 68 GB/s shared with the CPU simply isn't enough for interactive use.
+**Arc 140T alone is too slow.** This surprised me. The Arc has 16GB but it's *integrated* memory — shared system memory (LPDDR5x) at ~68 GB/s bandwidth. Running a 7B model on it saturated the memory bus and froze my entire machine, including the mouse. LLM inference is completely memory-bandwidth-bound, and 68 GB/s shared with the CPU simply isn't enough for interactive use.
 
 The working configuration ended up being to offload **25 layers of the model to NVIDIA GDDR, the rest on CPU**. LM Studio auto-selects this split when both GPUs are enabled. The NVIDIA's dedicated GDDR bandwidth handles the hot layers and the CPU handles the rest. Inference takes longer than pure NVIDIA CUDA, but it works without freezing the machine.
 
 **Model selection for LM Studio:** My first download was `qwen2.5.1-coder-7b-instruct`, which technically works but is mediocre at agentic tasks — it doesn't proactively explore the repository you're working in and needs very explicit prompting. The coder fine-tune trades general instruction following for code completion, which hurts agentic behaviour.
 
-Switching to `qwen2.5-7b-instruct@q5_k_m` (the bartowski build from Discover) gave better results. Still not at the quality level of online Claude, but the tool calling works correctly and it handles the CLI's complex nested JSON schemas for things like asking the user clarifying questions.
+Switching to `qwen2.5-7b-instruct@q5_k_m` (the bartowski build from Discover) gave better results. The `@q5_k_m` suffix is the quantization level — 5-bit compressed weights, a smaller and faster-to-run version of the model with only a marginal quality trade-off versus the full-precision original. Still not at the quality level of online Claude, but the tool calling works correctly and it handles the CLI's complex nested JSON schemas for things like asking the user clarifying questions.
 
 I also tried **Gemma 4 E4B**, which is Google's newest model with 128K context and native tool calling support. The context window is great (it easily fits the CLI prompt with room to spare) but it consistently generated malformed JSON schemas when calling the `ask_user` tool — making up property names that don't exist in the schema. Small models struggle with deeply nested JSON Schema definitions and Gemma 4 E4B isn't an exception.
 
@@ -136,7 +136,7 @@ lms load qwen2.5-7b-instruct@q4_k_s --gpu 0.78 --context-length 32768
 lms load qwen2.5-7b-instruct@q4_k_s --gpu 0.78 --context-length 32768
 ```
 
-Also worth noting: `@q4_k_s` (4.46 GB) is slightly faster than `@q5_k_m` (4.78 GB) because the smaller file leaves more GPU headroom for the KV cache. In practice the quality difference between Q4_K_S and Q5_K_M is imperceptible for agentic tasks.
+Also worth noting: `@q4_k_s` (4-bit quantization, 4.46 GB) is slightly faster than `@q5_k_m` (5-bit quantization, 4.78 GB) because the smaller file leaves more GPU headroom for the KV cache. In practice the quality difference between Q4_K_S and Q5_K_M is imperceptible for agentic tasks.
 
 **LM Studio verdict:** ✅ Works with `qwen2.5-7b-instruct@q4_k_s --gpu 0.78`, 25 layers on NVIDIA, rest on CPU. Fastest 7B config measured on this machine. NPU is not accessible from LM Studio at all.
 
@@ -161,7 +161,7 @@ Before going further, it's worth understanding why these are separate ecosystems
 - **Ollama / LM Studio** → llama.cpp → GGUF only
 - **vLLM / TGI** → PyTorch → HuggingFace safetensors only
 
-Both support "4-bit" quantization but they're completely different kernel implementations. You can't load a GGUF file into vLLM or a safetensors file into Ollama.
+GGUF is the model file format used by llama.cpp — think of it as the packaging format for quantized models in the Ollama/LM Studio ecosystem. Safetensors is HuggingFace's format, used by PyTorch-based runtimes like vLLM and TGI. Both support "4-bit" quantization but they're completely different kernel implementations. You can't load a GGUF file into vLLM or a safetensors file into Ollama.
 
 For Qwen2.5-7B on a 6 GB GPU, the right HuggingFace model is `Qwen/Qwen2.5-7B-Instruct-AWQ` — an AWQ (Activation-aware Weight Quantization) 4-bit model, about 4.5 GB on disk.
 
@@ -184,9 +184,9 @@ docker run -d --runtime nvidia --gpus all --name vllm-server `
 ```
 
 Key constraints on a 6 GB card:
-- **Free VRAM after CUDA+NCCL init is only 4.89 GiB** out of 5.97 GiB total — `--gpu-memory-utilization 0.81` is the cap
+- **Free VRAM after CUDA runtime init is only 4.89 GiB** out of 5.97 GiB total — `--gpu-memory-utilization 0.81` is the cap
 - **AWQ weights alone need 5.2 GiB on-GPU** → `--cpu-offload-gb 2` drops that to 3.17 GiB, freeing 1.25 GiB for KV cache
-- **`--kv-cache-dtype fp8`** halves KV footprint vs fp16, required for 32k context
+- **`--kv-cache-dtype fp8`** halves KV footprint vs fp16 (fp8/fp16 = 8-bit vs 16-bit floating-point precision for stored values; lower precision = smaller memory footprint), required for 32k context
 - **`-v hf-cache:/root/.cache/...`** — use a named Docker volume, not a Windows bind mount. Loading from NTFS through VirtioFS takes 20+ minutes per model shard
 
 Use `127.0.0.1:8000:8000` not `8000:8000` — the unqualified form sometimes fails silently when old wslrelay processes still hold the port.
@@ -389,7 +389,7 @@ The test prompt is a fixed PowerShell coding task so every provider generates a 
 
 The script is available as a Gist: [`Measure-LocalAIThroughput.ps1`](https://gist.github.com/rajbos/8c9a5bfb832469db52482082f88aae06).
 
-| Provider | Model | Avg tok/s | Notes |
+| Provider | Model | Avg tok/s (tokens/sec) | Notes |
 |---|---|---:|---|
 | Foundry Local | `qwen2.5-1.5b-instruct-cuda-gpu:4` | **117** | NVIDIA RTX PRO 500 CUDA — **1.5B model** (not comparable to 7B rows) |
 | LM Studio | `qwen2.5-7b-instruct@q4_k_s` | **17.2** | `--gpu 0.78` (25/32 layers NVIDIA GDDR), 32k context — **fastest 7B** |
