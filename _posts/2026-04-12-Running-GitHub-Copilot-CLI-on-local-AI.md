@@ -367,9 +367,10 @@ The main functions that I use here is `set-copilot-local` for when I want to swi
 | Option | Status | Notes |
 |---|---|---|
 | `online-copilot` (GitHub-hosted Claude/GPT) | ✅ Best | Default, no setup needed |
-| LM Studio `qwen2.5-7b-instruct@q4_k_s`, `--gpu 0.78` | ✅ Works | **17.2 tok/s** — fastest 7B measured |
+| Ollama `qwen3:8b` on NVIDIA | ✅ Works | **22.1 tok/s** — fastest model on this machine 🏆 |
+| LM Studio `qwen2.5-7b-instruct@q4_k_s`, `--gpu 0.78` | ✅ Works | **15.2 tok/s** — fastest 7B in LM Studio |
 | LM Studio `qwen2.5-7b-instruct@q5_k_m`, 25 layers NVIDIA + CPU | ✅ Works | 13.6 tok/s |
-| Ollama `qwen2.5:7b-instruct-32k` on NVIDIA | ✅ Works | 11.25 tok/s |
+| Ollama `qwen2.5:7b-instruct-32k` on NVIDIA | ✅ Works | 12.3 tok/s |
 | vLLM `Qwen2.5-7B-Instruct-AWQ` with `--cpu-offload-gb 2` | ⚠️ Too slow | 2.6 tok/s — CPU offload bottleneck on 6 GB |
 | TGI `Qwen2.5-7B-Instruct-AWQ` | ❌ OOM | No CPU offload support; 5.2 GiB weights won't fit |
 | Foundry Local on Arc 140T (OpenVINO GPU) | ❌ Blocked | Needs Arc driver 32.0.101.8629 from Dell |
@@ -385,26 +386,29 @@ I measured output throughput (tokens per second) using a standardised benchmark:
 
 The test prompt is a fixed PowerShell coding task so every provider generates a roughly comparable amount of output. This measures **output throughput** (decode speed) — which is what you feel as the response streaming in — not prompt processing speed or time-to-first-token.
 
-> ⚠️ **Not a perfect apples-to-apples comparison for all rows.** Ollama, LM Studio, and vLLM run `qwen2.5-7b-instruct` in various quant/format variants (GGUF vs AWQ). Foundry Local runs `qwen2.5-1.5b-instruct` — the only model that fits on the hardware today. The LM Studio and Ollama 7B rows are directly comparable; vLLM is the same model family but different runtime architecture.
+> ⚠️ **Not a perfect apples-to-apples comparison for all rows.** The 1.5B rows are a separate size class — they're fast because of the smaller model, not the runtime. The Qwen3-8B row uses a newer model architecture; the 7B rows (LM Studio and Ollama) use the same `qwen2.5-7b-instruct` model in different quant/format variants and are directly comparable. Foundry Local runs `qwen2.5-1.5b-instruct` — the only model that fits on the hardware today. vLLM uses AWQ format but the same model family.
 
 The script is available as a Gist: [`Measure-LocalAIThroughput.ps1`](https://gist.github.com/rajbos/8c9a5bfb832469db52482082f88aae06).
 
-| Provider | Model | Avg tok/s (tokens/sec) | Notes |
+| Provider | Model | Avg tok/s | Notes |
 |---|---|---:|---|
-| Foundry Local | `qwen2.5-1.5b-instruct-cuda-gpu:4` | **117** | NVIDIA RTX PRO 500 CUDA — **1.5B model** (not comparable to 7B rows) |
-| LM Studio | `qwen2.5-7b-instruct@q4_k_s` | **17.2** | `--gpu 0.78` (25/32 layers NVIDIA GDDR), 32k context — **fastest 7B** |
-| LM Studio | `qwen2.5-7b-instruct@q5_k_m` | **13.6** | 25 layers NVIDIA GDDR + CPU, 32k context |
-| Ollama | `qwen2.5:7b-instruct-32k` | **11.25** | NVIDIA RTX PRO 500 CUDA, 32k context |
+| Foundry Local | `qwen2.5-1.5b-instruct-cuda-gpu:4` | **117** | NVIDIA RTX PRO 500 CUDA — **1.5B model** (not comparable to 7B/8B rows) |
+| Ollama (1.5B) | `qwen2.5:1.5b-instruct-32k` | **55.3** | NVIDIA RTX PRO 500 CUDA, 32k context — **1.5B model** |
+| LM Studio (1.5B) | `qwen2.5-coder-1.5b-instruct` | **49.8** | NVIDIA RTX PRO 500 CUDA full offload — **1.5B model** |
+| **Ollama (Qwen3-8B)** | `qwen3:8b` | **22.1** | NVIDIA RTX PRO 500 CUDA, 32k context — **fastest 7B/8B overall** 🏆 |
+| LM Studio (7B) | `qwen2.5-7b-instruct@q4_k_s` | **15.2** | `--gpu 0.78` (25/32 layers NVIDIA GDDR), 32k context |
+| Ollama (7B) | `qwen2.5:7b-instruct-32k` | **12.3** | NVIDIA RTX PRO 500 CUDA, 32k context |
 | vLLM (Docker) | `Qwen2.5-7B-Instruct-AWQ` | **2.6** | AWQ-Marlin + FlashAttention v2; `--cpu-offload-gb 2` bottleneck on 6 GB |
 
 A few things to note from these numbers:
 
 - **Foundry Local at 117 tok/s** looks spectacular but it's running a 1.5B model — not capable enough for agentic tasks. Still, it's a preview of what the numbers could look like once the Arc 140T OpenVINO path is unblocked: running a proper 7B model on 16 GB VRAM with no memory pressure.
-- **LM Studio Q4_K_S at 17.2 tok/s** is the clear winner for 7B on this machine. The `--gpu 0.78` flag is the key — without it, `--gpu max` silently falls back to CPU when the model + 32k KV cache don't fit, dropping to ~2 tok/s. Q4_K_S being slightly smaller than Q5_K_M gives a bit more KV cache headroom, which is why it beats the 5-bit variant.
-- **LM Studio Q5_K_M at 13.6 tok/s** and **Ollama at 11.25 tok/s** are the two most stable options. Ollama's `OLLAMA_FLASH_ATTENTION=1` and `OLLAMA_KV_CACHE_TYPE=q8_0` settings are important — without them the KV cache alone takes 1.75 GB of VRAM, reducing model layers on GPU and dropping throughput to ~9 tok/s.
+- **Ollama Qwen3-8B at 22.1 tok/s** is the new overall winner for usable models. Qwen3-8B is a newer architecture than Qwen2.5-7B and fits fully into the 6 GB NVIDIA VRAM (Q4_K_M = 4.68 GB, leaving room for KV cache and overhead). Ollama handles the 128k-capable model natively without needing a custom Modelfile. LM Studio's Q4_K_M variant fails to load — the 4.68 GB weights plus LM Studio's per-process overhead pushes it over the 6 GB limit; Q3 quantisation would be needed there.
+- **LM Studio Q4_K_S at 15.2 tok/s** remains the fastest 7B option and a solid fallback. The `--gpu 0.78` flag is the key — without it, `--gpu max` silently falls back to CPU when the model + 32k KV cache don't fit together, dropping to ~2 tok/s.
+- **LM Studio Q5_K_M at 13.6 tok/s** and **Ollama 7B at 12.3 tok/s** are the most stable lower-tier options. Ollama's `OLLAMA_FLASH_ATTENTION=1` and `OLLAMA_KV_CACHE_TYPE=q8_0` settings are important — without them the KV cache alone takes 1.75 GB of VRAM, reducing model layers on GPU and dropping throughput to ~9 tok/s.
 - **vLLM at 2.6 tok/s** uses AWQ-Marlin kernels and FlashAttention v2 — theoretically the fastest inference stack available. But on 6 GB you need `--cpu-offload-gb 2`, which means 2 GiB of weight layers cross the PCIe bus every single token. The framework overhead cancels out the kernel advantage entirely.
-- **You cannot run Ollama and LM Studio at the same time** on this machine. Both want to load the 7B model weights into NVIDIA's 6 GB VRAM. The benchmark script handles this automatically.
-- For context: online Claude 3.5 Sonnet generates at 80–100+ tok/s. Local 7B models at 11–17 tok/s are usable but noticeably slower for multi-step agentic work.
+- **You cannot run Ollama and LM Studio at the same time** on this machine. Both want to load the model weights into NVIDIA's 6 GB VRAM. The benchmark script handles this automatically.
+- For context: online Claude 3.5 Sonnet generates at 80–100+ tok/s. Local 7B/8B models at 12–22 tok/s are usable but noticeably slower for multi-step agentic work.
 
 ---
 
@@ -412,24 +416,25 @@ A few things to note from these numbers:
 
 Based on all the testing, the fastest practical setup for running GitHub Copilot CLI locally on this Dell Pro Max 14 is:
 
-**LM Studio with `qwen2.5-7b-instruct@q4_k_s`, `--gpu 0.78`** → **17.2 tok/s**
+**Ollama with `qwen3:8b`** → **22.1 tok/s** 🏆
 
 The key steps:
 
-1. Install LM Studio: `winget install ElementLabs.LMStudio --scope user`
-2. Download the model via `lms`: `lms get bartowski/Qwen2.5-7B-Instruct-GGUF:Q4_K_S`
-3. Load with the correct GPU split: `lms load qwen2.5-7b-instruct@q4_k_s --gpu 0.78 --context-length 32768`
-4. Set environment variables and switch Copilot CLI: `set-copilot-local` → LM Studio → q4_k_s
+1. Install Ollama: `winget install Ollama.Ollama`
+2. Pull the model: `ollama pull qwen3:8b`
+3. Set environment variables and switch Copilot CLI: `set-copilot-local` → Ollama → qwen3:8b
 
-The `--gpu 0.78` flag is the critical one. `--gpu max` looks like it should work but silently falls back to CPU when the model weights plus the 32k KV cache don't fit together in 6 GB. The only way to spot the fallback is to watch GPU memory: ~1.8 GB means CPU mode, ~4.9 GB means proper GPU split. Setting `0.78` explicitly (= fraction of layers to GPU, not layer count) reproducibly gets 25/32 layers onto the NVIDIA GDDR.
+No Modelfile needed — Ollama ships `qwen3:8b` with a 128k context window built in. No GPU fraction tuning either: at Q4_K_M (4.68 GB), the full model fits in 6 GB NVIDIA VRAM with room for KV cache and overhead.
 
-> **Real-world caveat:** These numbers are from a synthetic benchmark (3 runs × 200 tokens, fixed prompt). Real Copilot CLI sessions involve longer prompts, tool calls with JSON parsing, and multi-turn context accumulation — all of which affect throughput differently. I'll update this section after extended real-world use.
+The previous winner — **LM Studio with `qwen2.5-7b-instruct@q4_k_s --gpu 0.78`** at **15.2 tok/s** — is still a great fallback if you prefer LM Studio's UI or want to experiment with other models. The `--gpu 0.78` flag remains critical there: `--gpu max` silently falls back to CPU when model weights plus 32k KV cache don't fit together in 6 GB.
+
+> **Real-world caveat:** These numbers are from a synthetic benchmark (5 runs × 400 tokens, fixed prompt). Real Copilot CLI sessions involve longer prompts, tool calls with JSON parsing, and multi-turn context accumulation — all of which affect throughput differently. I'll update this section after extended real-world use.
 
 ---
 
 ## Final verdict on local inference options for GitHub Copilot CLI on this machine:
 
-The Qwen2.5-7b-instruct@q4_k_s model running in LM Studio with a GPU split is the best local option today, giving a usable 17.2 tok/s. Ollama is a close second at 11.25 tok/s but has less flexible GPU usage and model options. The HuggingFace stack (vLLM, TGI) is currently impractical on 6 GB due to the need for CPU offload or lack of it, respectively.
+**Ollama with `qwen3:8b`** is the best local option today at **22.1 tok/s** — nearly 2× faster than `qwen2.5-7b` on the same runtime (12.3 tok/s), and it beats LM Studio's 7B result (15.2 tok/s) too. The Qwen3 architecture simply uses the 6 GB NVIDIA VRAM more efficiently. LM Studio is a solid fallback at 15.2 tok/s if you prefer its tooling. The HuggingFace stack (vLLM, TGI) is currently impractical on 6 GB due to the need for CPU offload or lack of it, respectively.
 
 Working with this from the Copilot CLI is workable, and of course it cannot compare to the powerful models that the hosting providers can run in the cloud. But for basic agentic tasks, code generation, and tool calling, it's a workable local setup.
 
