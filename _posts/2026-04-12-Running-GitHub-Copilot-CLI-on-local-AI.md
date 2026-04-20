@@ -6,8 +6,6 @@ tags: [GitHub, GitHub Copilot, Generative AI, Local AI, Ollama, LM Studio, Found
 description: "A walkthrough of running the GitHub Copilot CLI against local AI inference engines on a Dell Pro Max 14 with Intel Arc 140T, NVIDIA RTX PRO 500, and Intel AI Boost NPU. Covers Ollama, LM Studio, Foundry Local, vLLM, and TGI — what worked, what didn't, and the fastest setup found."
 ---
 
-# Running GitHub Copilot CLI on local AI inference
-
 I've been using the GitHub Copilot CLI as my main terminal assistant for a while now. It works great with GitHub-hosted models (Claude, GPT-4) but that means every command, every file you give it context about, every prompt goes over the wire to a cloud provider. And what's worse: it means that the cloud provider is hosting the beefy LLM model for me, incurring a lot of compute cost. So I wanted to explore what it looks like to run the whole thing locally — both for privacy and just to see how far local models have come. I think I have a good setup on a recent laptop, with two GPU's and an NPU, so let's see how far we can go.
 
 The Copilot CLI now supports a "bring your own key" (BYOK) mode where you point it at any OpenAI-compatible API endpoint. That means any local inference engine that exposes a `/v1/chat/completions` endpoint should work in theory. In practice there's quite a bit to figure out.
