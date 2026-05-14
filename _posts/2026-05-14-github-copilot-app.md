@@ -3,6 +3,7 @@ layout: post
 title: "GitHub Copilot App is now in Technical Preview"
 date: 2026-05-14
 tags: [GitHub Copilot, GitHub App, Agentic, DevOps]
+description: "GitHub Copilot App is now in technical preview — a standalone desktop app for agent-driven development with parallel sessions, three session modes, and Agent Merge."
 ---
 
 Today GitHub released the [GitHub Copilot App](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app) into technical preview. I've been using it as my daily driver for a while now, so I started a video series to share what I've learned. This post covers the intro to the app and a first look at using it for repository maintenance.
