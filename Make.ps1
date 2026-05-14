@@ -8,6 +8,7 @@ while ($null -eq $Command -or $Command -eq "") {
     Write-Host " - new-post"
     Write-Host " - new-images"
     Write-Host " - check-links"
+    Write-Host " - serve"
     Write-Host " - quit"
     $Command = Read-Host "Enter command to run"
 }
@@ -153,4 +154,10 @@ if ($Command -eq "check-links") {
     }
 
     Write-Host "Checked [$($files.Count)] files and found [$foundLinks] links of which [$notFoundLinks] are broken"
+}
+
+if ($Command -eq "serve") {
+    Write-Host "Starting Jekyll at http://localhost:4000 ..."
+    Start-Process "http://localhost:4000"
+    docker run --rm -v "${PWD}:/site" -p 4000:4000 bretfisher/jekyll-serve bundle exec jekyll serve --force_polling -H 0.0.0.0 -P 4000 --config _config.yml,_config_dev.yml
 }

@@ -347,3 +347,302 @@ tr:nth-child(odd) td { background: #FEFEFE; }
 .panel-giscus {
     margin: 18px;
 }
+
+/* ============================================================
+   Two-column page layout (main + sidebar)
+   ============================================================ */
+.page-with-sidebar {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 900px) {
+    .page-with-sidebar {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100% !important;
+    }
+    .sidebar-card {
+        position: static !important;
+    }
+}
+
+/* ============================================================
+   Sidebar
+   ============================================================ */
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    position: sticky;
+    top: 80px;
+}
+
+.sidebar-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.sidebar-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 3px solid #B35800;
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebar-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 2px;
+    color: #222;
+}
+
+.sidebar-tagline {
+    font-size: 15px;
+    color: #B35800;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.sidebar-bio {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: filter 0.15s ease, transform 0.1s ease;
+    border: none;
+}
+
+.sidebar-link:hover {
+    text-decoration: none;
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.sidebar-link-linkedin {
+    background: #0077b5;
+    color: #fff !important;
+}
+
+.sidebar-link-github {
+    background: #24292e;
+    color: #fff !important;
+}
+
+.sidebar-link-sessionize {
+    background: #1ab394;
+    color: #fff !important;
+}
+
+.sidebar-link-books {
+    background: #e8590c;
+    color: #fff !important;
+}
+
+.sidebar-badges {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #f0f0f0;
+    margin-bottom: 14px;
+}
+
+.sidebar-badge-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.sidebar-badge-item:hover {
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.sidebar-badge {
+    width: 100%;
+    height: auto;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none;
+}
+
+.sidebar-badge-label {
+    font-size: 12px;
+    color: #888;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.sidebar-about-link {
+    display: inline-block;
+    font-size: 15px;
+    color: #B35800;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sidebar-about-link:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   Post cards (blog listing)
+   ============================================================ */
+.post-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #B35800;
+    margin-bottom: 18px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    overflow: hidden;
+}
+
+.post-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,.1);
+    transform: translateY(-2px);
+}
+
+.post-card-header {
+    padding: 16px 20px 4px;
+}
+
+.post-date {
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 4px;
+}
+
+.post-card .post-title {
+    margin: 4px 0 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #222;
+}
+
+.post-card .post-title a {
+    color: #B35800;
+    text-decoration: none;
+}
+
+.post-card .post-title a:hover {
+    text-decoration: underline;
+    color: #8a4400;
+}
+
+.post-card-body {
+    padding: 6px 20px 16px;
+}
+
+.post-excerpt-text {
+    color: #555;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.post-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.post-tag {
+    background: #f5f0eb;
+    color: #7a4400;
+    font-size: 12px;
+    padding: 2px 9px;
+    border-radius: 12px;
+    border: 1px solid #e8d9c8;
+    text-decoration: none;
+    transition: background-color 0.15s;
+}
+
+.post-tag:hover {
+    background: #ead9c4;
+    text-decoration: none;
+    color: #5a3000;
+}
+
+.read-more-link {
+    color: #B35800;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.read-more-link:hover {
+    text-decoration: underline;
+    color: #8a4400;
+}
+
+/* ============================================================
+   Post page header
+   ============================================================ */
+.post-meta-header {
+    font-size: 13px;
+    color: #999;
+    margin: 0 0 6px;
+    font-weight: 500;
+}
+
+.post-meta-header time {
+    font-weight: 600;
+    color: #B35800;
+}
