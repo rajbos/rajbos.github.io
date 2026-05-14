@@ -496,8 +496,9 @@ tr:nth-child(odd) td { background: #FEFEFE; }
 }
 
 .sidebar-badge {
-    max-height: 56px;
-    max-width: 76px;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none;

@@ -1,3 +1,4 @@
 _site/
 on-create.log
 .jekyll-metadata
+_config_dev.yml
