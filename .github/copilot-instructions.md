@@ -88,6 +88,10 @@ Source: [tropes.fyi/directory](https://tropes.fyi/directory) — refresh with `c
 - "Let's break this down" / "Let's unpack this" / "Let's dive in": unnecessary hand-holding preamble
 - Invented concept labels: "supervision paradox", "acceleration trap" used as if they are established terms
 
+**Paragraph structure**
+- Short punchy fragments: excessive very-short standalone sentences for manufactured emphasis ("He published this. Openly. In a book.")
+- Listicle in disguise: "The first... The second... The third..." used to dress up a list as prose
+
 **Formatting**
 - Em-dash addiction: 20+ em-dashes per piece
 - Bold-first bullets: every list item starting with a bolded phrase
@@ -98,7 +102,7 @@ Source: [tropes.fyi/directory](https://tropes.fyi/directory) — refresh with `c
 - Dead metaphor beating: one metaphor repeated 5–10 times throughout the piece
 - Historical analogy stacking: rapid-fire company or tech history to build false authority
 - One-point dilution: the same argument restated 8 different ways across thousands of words
-- Listicle in disguise: "The first... The second... The third..." used to avoid bullet points
+- Content duplication: repeating entire sections or paragraphs verbatim within the same piece
 - "Despite its challenges...": rigid formula that acknowledges problems only to immediately dismiss them
 - The signposted conclusion: "In conclusion...", "To sum up...", "In summary..."
 
