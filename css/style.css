@@ -381,6 +381,8 @@ tr:nth-child(odd) td { background: #FEFEFE; }
     width: 260px;
     flex-shrink: 0;
     align-self: flex-start;
+    position: sticky;
+    top: 80px;
 }
 
 .sidebar-card {
@@ -389,8 +391,6 @@ tr:nth-child(odd) td { background: #FEFEFE; }
     border-radius: 10px;
     padding: 22px 18px;
     text-align: center;
-    position: sticky;
-    top: 80px;
     box-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
 
