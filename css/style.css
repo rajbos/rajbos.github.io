@@ -471,10 +471,15 @@ tr:nth-child(odd) td { background: #FEFEFE; }
     color: #fff !important;
 }
 
+.sidebar-link-books {
+    background: #e8590c;
+    color: #fff !important;
+}
+
 .sidebar-badges {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 10px;
     padding-top: 8px;
     border-top: 1px solid #f0f0f0;
@@ -484,6 +489,7 @@ tr:nth-child(odd) td { background: #FEFEFE; }
 .sidebar-badge-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
 }
 
@@ -493,8 +499,8 @@ tr:nth-child(odd) td { background: #FEFEFE; }
 }
 
 .sidebar-badge {
-    height: 64px;
-    width: auto;
+    width: 100%;
+    height: auto;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none;
