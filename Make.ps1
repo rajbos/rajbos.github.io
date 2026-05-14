@@ -159,5 +159,5 @@ if ($Command -eq "check-links") {
 if ($Command -eq "serve") {
     Write-Host "Starting Jekyll at http://localhost:4000 ..."
     Start-Process "http://localhost:4000"
-    docker run --rm -v "${PWD}:/site" -p 4000:4000 bretfisher/jekyll-serve serve --config _config.yml,_config_dev.yml
+    docker run --rm -v "${PWD}:/site" -p 4000:4000 bretfisher/jekyll-serve bundle exec jekyll serve --force_polling -H 0.0.0.0 -P 4000 --config _config.yml,_config_dev.yml
 }
