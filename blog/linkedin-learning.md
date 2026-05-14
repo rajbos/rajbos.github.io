@@ -19,7 +19,7 @@ title: LinkedIn Learning Courses
 
 I'm a LinkedIn Learning Instructor. Below are the courses I've published. Click any course to view it on LinkedIn Learning.
 
-[![LinkedIn Learning Logo](/images/LinkedIn_Learning/LinkedIn_Learning_Logo.png)](https://www.linkedin.com/learning/instructors/rob-bos){:target="_blank"}
+[![LinkedIn Learning Logo](/images/LinkedIn_Learning/LinkedIn_Learning_Logo.png)](https://www.linkedin.com/learning/instructors/rob-bos)
 
 ---
 
@@ -30,7 +30,7 @@ I'm a LinkedIn Learning Instructor. Below are the courses I've published. Click 
     <div class="course-card-body">
       <h3>GitHub Advanced Security</h3>
       <p>Learn how to protect your codebase with GitHub Advanced Security — secret scanning, code scanning, and Dependabot.</p>
-      <a class="cta" href="/blog/2022/10/19/LinkedIn-Learning-GHAS" target="_blank">View course</a>
+      <a class="cta" href="/blog/2022/10/19/LinkedIn-Learning-GHAS">View course</a>
     </div>
   </div>
 
@@ -39,31 +39,34 @@ I'm a LinkedIn Learning Instructor. Below are the courses I've published. Click 
     <div class="course-card-body">
       <h3>GitHub Advanced Security for Azure DevOps</h3>
       <p>Bring GitHub Advanced Security capabilities to Azure DevOps — code scanning, secret detection, and dependency review in your existing pipelines.</p>
-      <a class="cta" href="https://www.linkedin.com/learning/learning-github-advanced-security-for-azure-devops/" target="_blank">View course</a>
+      <a class="cta" href="https://www.linkedin.com/learning/learning-github-advanced-security-for-azure-devops/">View course</a>
     </div>
   </div>
 
   <div class="course-card">
-    <div class="course-card-body" style="padding-top:16px;">
+    <img src="/images/LinkedIn_Learning/25_GitHub_Config_Files_500x281.png" alt="25 GitHub Configuration Files course thumbnail" />
+    <div class="course-card-body">
       <h3>25 GitHub Configuration Files You Should Be Using</h3>
       <p>A hands-on tour of the most useful GitHub configuration files that improve your repositories, workflows, and developer experience.</p>
-      <a class="cta" href="https://www.linkedin.com/learning/25-github-configuration-files-you-should-be-using" target="_blank">View course</a>
+      <a class="cta" href="https://www.linkedin.com/learning/25-github-configuration-files-you-should-be-using">View course</a>
     </div>
   </div>
 
   <div class="course-card">
-    <div class="course-card-body" style="padding-top:16px;">
+    <img src="/images/LinkedIn_Learning/Enterprise_AI_GitHub_Models_500x281.png" alt="Enterprise AI Development with GitHub Models and Azure course thumbnail" />
+    <div class="course-card-body">
       <h3>Enterprise AI Development with GitHub Models and Azure</h3>
       <p>Build enterprise-grade AI applications using GitHub Models and Azure, covering API integration, prompt engineering, and responsible AI practices.</p>
-      <a class="cta" href="https://www.linkedin.com/learning/enterprise-ai-development-with-github-models-and-azure/ai-with-github-models" target="_blank">View course</a>
+      <a class="cta" href="https://www.linkedin.com/learning/enterprise-ai-development-with-github-models-and-azure/ai-with-github-models">View course</a>
     </div>
   </div>
 
   <div class="course-card">
-    <div class="course-card-body" style="padding-top:16px;">
+    <img src="/images/LinkedIn_Learning/Responsible_GitHub_Copilot_500x281.png" alt="Responsible GitHub Copilot course thumbnail" />
+    <div class="course-card-body">
       <h3>Responsible GitHub Copilot: Creating Reliable Code Ethically</h3>
       <p>Understand how to use GitHub Copilot responsibly — writing reliable, ethical, and high-quality code with AI assistance.</p>
-      <a class="cta" href="https://www.linkedin.com/learning/responsible-github-copilot-creating-reliable-code-ethically-24981582/genai-and-creating-code-responsibly" target="_blank">View course</a>
+      <a class="cta" href="https://www.linkedin.com/learning/responsible-github-copilot-creating-reliable-code-ethically-24981582/genai-and-creating-code-responsibly">View course</a>
     </div>
   </div>
 
