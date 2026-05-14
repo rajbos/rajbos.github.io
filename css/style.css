@@ -380,6 +380,7 @@ tr:nth-child(odd) td { background: #FEFEFE; }
 .sidebar {
     width: 260px;
     flex-shrink: 0;
+    align-self: flex-start;
 }
 
 .sidebar-card {
@@ -473,12 +474,25 @@ tr:nth-child(odd) td { background: #FEFEFE; }
 .sidebar-badges {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     flex-wrap: wrap;
     padding-top: 8px;
     border-top: 1px solid #f0f0f0;
     margin-bottom: 14px;
+}
+
+.sidebar-badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+}
+
+.sidebar-badge-item:hover {
+    text-decoration: none;
+    opacity: 0.85;
 }
 
 .sidebar-badge {
@@ -487,6 +501,15 @@ tr:nth-child(odd) td { background: #FEFEFE; }
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none;
+}
+
+.sidebar-badge-label {
+    font-size: 10px;
+    color: #888;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
 }
 
 .sidebar-about-link {
