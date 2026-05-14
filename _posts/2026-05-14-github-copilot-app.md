@@ -45,8 +45,6 @@ A tip that's easy to miss: `Ctrl+K` / `Cmd+K` opens a command palette that lets 
 
 <iframe width="900" height="506" src="https://www.youtube.com/embed/v8xa5ZuRlR8" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-I'll keep adding videos to the series as I go deeper. Drop a comment on either video if there's something specific you want me to cover or ping me on [LinkedIn](https://www.linkedin.com/in/bosrob/)
-
 To give a sense of boosts this app can give an engineer: you can find my contributions on a page (created with the GitHub Copilot App ofc): [devex-metrics.github.io/devex-metrics](https://devex-metrics.github.io/devex-metrics/) where you can find 368 PR's MERGED in the last 30 days. Just on OSS contributions (mostly my own projects).
 
 In the image below you can find an overview of 2 days of sessions I have worked on with the App (and yes, I still work in the CLI and VS Code as well, although way less, might be only 5% outside of the App).
@@ -54,3 +52,5 @@ In the image below you can find an overview of 2 days of sessions I have worked 
 ![Overview of 2 days of sessions in the GitHub Copilot App](/images/2026/20260514/20260514_sessions_overview.png)
 
 Amazing to see what a person can do and achieve these days!
+
+I'll keep adding videos to the series as I go deeper. Drop a comment on either video if there's something specific you want me to cover or ping me on [LinkedIn](https://www.linkedin.com/in/bosrob/)
