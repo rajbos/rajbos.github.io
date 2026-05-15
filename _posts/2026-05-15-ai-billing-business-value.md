@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "The AI subsidy era is ending — time to talk business value"
+title: "The AI subsidy era is ending: time to talk business value"
 date: 2026-05-15
 tags: [GitHub Copilot, AI, Billing, DevOps]
-description: "Usage-based billing is here. The conversation has to shift from how fast AI makes engineers to what business value those AI sessions actually produce."
+description: "Usage-based billing is here. The conversation has to shift from how fast AI makes engineers to what business value those AI sessions actually produce. And next to that we need to talk about what AI unlocks: cost of opportunity is lowered, by a lot."
 ---
 
 GitHub Copilot [moves to usage-based billing on June 1](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/). We have already seen customers that will see their AI spend on Copilot go to 2x or 3x (median), with some even going 8x! And this is happening across all model hosters and vendors: Anthropic has been pushing people onto their Max tiers ($200/month) and metered Claude Code usage. Gemini, Cursor, Windsurf, and the rest are doing the same math and arriving at the same answer. The era where AI was heavily subsidised by vendors trying to grab market share is ending, and now we get to pay the actual price of hosting all those GPUs.
