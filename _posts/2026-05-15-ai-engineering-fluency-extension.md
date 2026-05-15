@@ -26,6 +26,8 @@ Clicking the status bar icon opens a detailed panel showing:
 - Breakdown by model (Claude Opus, Claude Sonnet, Mistral, GPT, etc.)
 - Estimated cost over time based on token usage
 
+![Screenshot of the extension detail panel](/images/2026/20260515/20260515_usage-by-editor.png)
+
 On the day I recorded the walkthrough, I had already hit 23 distinct working sessions and gone through over 120 million tokens across different tools. You can view charts per day, per week, or per month. I noticed my own usage has been following a hockey stick pattern since November — it just keeps going up. The charts also let you slice by model, editor, or even repository.
 
 The dashboard also breaks activity down by mode. In my case, a lot of sessions happen in CLI tools and agent mode, but I still use ask mode for direct questions. That distinction matters because not every AI interaction is the same kind of work.
@@ -37,6 +39,8 @@ One of the more interesting findings: 18% of my sessions in the last 30 days use
 ## Environmental impact
 
 Since we have all this token data, the extension also estimates your environmental footprint. CO2 consumption, water usage, and equivalent metrics like "how far could you drive a car" or "how many smartphone charges is that." These numbers are estimates based on public data for model/provider energy and water usage, so I treat them as directional rather than exact. The eye-opener for me was the estimated water consumption and the number of trees needed to offset my CO2 usage. There's compute in a data center somewhere being consumed every time you send a prompt — this makes that visible.
+
+![Environmental impact: estimated water usage and tree equivalent](/images/2026/20260515/20260515_environmental-impact.png)
 
 ## The Fluency Score
 
@@ -50,6 +54,8 @@ The real payoff is what we call the Fluency Score. It maps your usage patterns a
 6. **Workflow Integration** — Do you use AI regularly across different modes?
 
 Each aspect has four stages (Skeptic, Explorer, Collaborator, Strategist). The score highlights where you're strong and where you have room to grow — with links to documentation and short videos so you can learn about features you might not know exist.
+
+![Fluency Score radar chart showing Stage 4: AI Strategist](/images/2026/20260515/20260515_fluency-score.png)
 
 For example, my prompt engineering is at stage four because I do multi-turn sessions with an average of 4.8 exchanges. But my context engineering could use work — I could be more explicit about adding files and symbols to conversations. The extension also tracks which files were pulled into conversations and whether I added that context myself or the editor did it for me, which makes the context engineering score feel less abstract.
 
@@ -67,6 +73,13 @@ The extension supports a wide range of tools:
 - OpenCode, Crush, Continue
 - Visual Studio 2022+
 
+And has viewers for:
+- Visual Studio Code (and thus Codium based editors like Cursor, Windsurf, Trae, Kiro)
+- Visual Studio 2022+
+- JetBrains IDEs
+
+And even a CLI version for quick stats in the terminal. If you use any of these tools, you can get insights into your AI usage right away.
+
 ## Getting started
 
 Install it from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=RobBos.ai-engineering-fluency) or the [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/31580-ai-engineering-fluency). There's also a CLI version available via npm:
@@ -75,4 +88,4 @@ Install it from the [VS Code Marketplace](https://marketplace.visualstudio.com/i
 npx @rajbos/ai-engineering-fluency stats
 ```
 
-It's free, open source, and all your data stays local. The repo is at [github.com/rajbos/ai-engineering-fluency](https://github.com/rajbos/ai-engineering-fluency) — contributions and feature requests are welcome.
+It's free, open source, and all your data stays local. The repo is at [github.com/rajbos/ai-engineering-fluency](https://github.com/rajbos/ai-engineering-fluency) — contributions and feature requests are welcome through the repo as well.
