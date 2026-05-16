@@ -96,37 +96,11 @@ Here are some of the recordings for conference sessions I have done:
 
 ## Upcoming conferences 🎤 
 
-
-### Conferences in 2024
-
-|Date|Location|Topic|Conference|Session link|
-|---|---|---|---|---|
-|November|Bucharest, Romania|Protecting yourself from Supply Chain Attacks|DevCon.ro|[link](https://www.dev-con.ro/speakers/32-Rob+Bos)|
-|October|San Francisco, USA|Lessons learned from enabling thousands of developers on GitHub Copilot|GitHub Universe|[recording](https://youtu.be/eJRNJwlLFts)|
-|March|Antwerp, Belgium|Protecting yourself from Supply Chain Attacks|Techorama Belgium|[link](https://techorama.be)|
-
-### Conferences in 2023
+### Conferences in 2026
 
 |Date|Location|Topic|Conference|Session link|
 |---|---|---|---|---|
-|May 15-19|Nashville, TN, United States|GitHub Actions beyond CI/CD, GitHub security Features, Supply chain attacks|Visual Studio Live!|[link](https://vslive.com/events/nashville-2023/)| 
-|May 22-26|Aarhus, Denmark|Protect your code with GitHub security features, workshop "Secure and Compliant Cloud Delivery Embracing DevOps with GitHub"|GOTO Aarhus|[link](https://gotoaarhus.com/2023/speakers/2712/rob-bos)|
-|June 26-30|Nurnberg, DE|Protect your code with GitHub security features|Developer Week 2023|[link](https://www.developer-week.de/speaker/#/speaker/19526-rob-bos)|
-|October 9-11|Utrecht, NL|Protect your code with GitHub security features|Techorama NL|[link](https://techorama.nl/speakers/session/protect-your-code-with-github-security-features/)|
-|November 8-9|San Francisco, US|Collaborating effectively using GitHub|GitHub Universe|[recording](https://youtu.be/q6HuWbNeeOA?si=7YoTNWRIXMsgZfGz)|
-
-### Conferences in 2022
-
-|Date|Location|Topic|Conference|Session link|
-|---|---|---|---|---|
-|21 September 2022|Online|Protect your code with GitHub security features|User group: DotNetSheff UK|[link](https://dotnetsheff.co.uk/)|
-|4-7 April 2022|Oslo|Protect yourself against supply chain attacks through your pipeline|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
-|4-7 April 2022|Oslo|Protect your code with GitHub security features|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
-|4-7 April 2022|Oslo|How to use GitHub Actions with security in mind|NDC Security|[link](https://ndc-security.com/speakers/rob-bos)|
-|23-25 May 2022|Antwerp|How to use GitHub Actions with security in mind|Techorama BE|[link](https://techorama.be/speakers/speaker/rob-bos/)|
-|May 30th - June 2nd|Poland|3x Protect your code with GitHub security features|Code Europe|[link](https://www.codeeurope.pl/en/speakers/rob-bos)
-|8-10 June 2022|Virtual|I can hack your DevOps Pipeline|DevTalks Romania|[link](https://www.devtalks.ro/speakers/14-Rob+Bos/)|
-|10-12 October 2022|Utrecht, NL|Protect yourself against supply chain attacks through your pipeline|Techorama Utrecht|[link](https://techorama.nl/speakers/session/protect-yourself-against-supply-chain-attacks/)|
+|June 2-3|Stockholm, Sweden|Protect your code with GitHub security features|DevSum|[link](https://www.devsum.se/agenda/protect-your-code-with-github-security-features/)|
 
 <br />
 
