@@ -112,7 +112,7 @@ Me:<br />
 ![Rob](/images/Rob_OnStage.png)
 
 I work at Xebia <br />
-[![Xpirit Expert Blog](/images/xebia_logo_label_smaller.png)](https://xebia.com)  
+<a href="https://xebia.com"><img src="/images/xebia_logo_label_smaller.png" alt="Xebia" style="width:100%;aspect-ratio:180.3/72.8;object-fit:cover;border:none;border-radius:0;" /></a>
 
 Microsoft MVP since 2020 <br />
 [![MVP](/images/MVP.svg)](https://mvp.microsoft.com/en-us/PublicProfile/5003719)
