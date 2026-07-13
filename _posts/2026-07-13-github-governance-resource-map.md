@@ -54,7 +54,9 @@ This is the section teams ask for most right now:
 - [GitHub Copilot Premium Requests]({{ "/blog/2025/06/17/Copilot-premium-requests" | absolute_url }}) — model multipliers, per-plan allowances, and budget controls
 - [AI Billing and Business Value]({{ "/blog/2026/05/15/ai-billing-business-value" | absolute_url }})
 - [AI Engineering Fluency]({{ "/blog/2026/05/15/ai-engineering-fluency-extension" | absolute_url }}) — VS Code extension that tracks token usage, model choices, and fluency score
+- Book: [The GitHub Copilot Handbook](https://www.packtpub.com/en-us/product/the-github-copilot-handbook-9781806116638) (Packt)
 - LinkedIn Learning: [Responsible GitHub Copilot: Creating Reliable Code Ethically](https://www.linkedin.com/learning/responsible-github-copilot-creating-reliable-code-ethically)
+- [Xebia Copilot metrics dashboard (admin insights)](https://copilot-metrics.xebia.ms/)
 - [Xebia Copilot premium request and usage overviews](https://xebia.github.io/github-copilot-premium-reqs-usage/)
 - [Copilot updates and announcements](https://tech.xebia.ms/)
 - [GitHub Copilot model changes notifier](https://github.com/rajbos/github-copilot-model-notifier)
