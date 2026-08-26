@@ -81,7 +81,7 @@ The feature is legitimately useful: teams can enforce architecture rules, block 
 
 ## Agent Plugins 1.0
 
-Underneath the marketplace sits a package format that got standardised: [Agent Plugins 1.0](https://agent-plugins.org/specification), which shipped in VS Code, the Copilot CLI and the Copilot app in August 2026 (VS Code's side is documented under [agent plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins)). It is worth reading the spec, because most of the governance confusion I run into comes from people expecting it to do things it explicitly does not do.
+Underneath the marketplace sits a package format that got standardised: [Agent Plugins 1.0](https://agent-plugins.org/specification), which shipped in VS Code, the Copilot CLI and the Copilot app in August 2026 (VS Code's side is documented under [agent plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins)). Read the spec if you have twenty minutes, because most of the governance confusion I run into comes from people expecting it to do things it explicitly does not do.
 
 What the spec does define, normatively:
 
@@ -92,11 +92,11 @@ What the spec does define, normatively:
 - Component failure isolation, so one broken skill does not take the whole plugin down.
 - MCP transports limited to stdio and streamable HTTP, with the legacy SSE transport optional and non-loopback HTTP required to be HTTPS.
 
-What it does not define, and this is the part that matters for an enterprise: no registry protocol, no dependency graph, no lockfile, no publisher signature, no enterprise policy model, and no runtime sandbox. Path containment is a portability rule, not a security boundary. A skill that stays neatly inside `PLUGIN_ROOT` can still tell the agent to run `curl | sh`, because the agent is the thing executing, not the plugin.
+What it does not define, and this is the part that matters for an enterprise: no registry protocol, no dependency graph, no lockfile, no publisher signature, no enterprise policy model, and no runtime sandbox. Path containment is there for portability; it buys you nothing as a security boundary. A skill that stays neatly inside `PLUGIN_ROOT` can still tell the agent to run `curl | sh`, because the thing doing the executing is the agent.
 
-One detail that catches people out: the `env` and `headers` values in a plugin's `mcp.json` are package data. They ship with the plugin and anyone who can read the repo can read them. They are a place to point at a secret, not a place to put one.
+One detail that catches people out: the `env` and `headers` values in a plugin's `mcp.json` are package data. They ship with the plugin and anyone who can read the repo can read them. Point at a secret from there, never put one in.
 
-So Agent Plugins 1.0 is a good, stable, portable *packaging* contract, and I am glad it exists. It just answers "what is in this thing and how do I load it", not "am I allowed to run it".
+So Agent Plugins 1.0 answers "what is in this thing and how do I load it". It was never meant to answer "am I allowed to run it", and I keep meeting people who assume it does.
 
 
 
@@ -129,7 +129,7 @@ APM packages can declare `scripts` (think npm scripts), and the policy reference
 
 Versioning is fine on the manifest side: dependencies pin with `#tag` or `#sha`, the lockfile records resolved commit SHAs and content hashes, and the org policy can `require` specific versions with a `require_resolution` of `project-wins`, `policy-wins`, or `block`. Updates happen on `apm install --update`, not implicitly. Direct and transitive resolution stay the parts I would worry about: a package you trusted six months ago can pull in a new dependency on its next release, and unless your org policy has a tight `dependencies.allow` pattern, the new source slips through.
 
-Three caveats on maturity. The format is specified as [OpenAPM v0.1](https://microsoft.github.io/apm/specs/openapm-v01/), which is an editor's working draft under semver-zero, so it can still change under you. The policy engine is an early preview while `apm.lock.yaml` (resolved commits, tree SHA-256, deployed-file hashes) is the production-ready piece. And publisher attestations, the thing that would actually give you provenance rather than just integrity, are reserved for v0.2. Local bypasses also exist: `--no-policy` and a couple of environment flags will get a developer past the policy engine on their own machine, which is fine for a debugging escape hatch and not fine as your only enforcement point. APM is explicit that it stops at installation; runtime permissions are the harness's problem.
+The maturity picture is more mixed than the docs site suggests. The format is specified as [OpenAPM v0.1](https://microsoft.github.io/apm/specs/openapm-v01/), an editor's working draft under semver-zero, so it can still change under you. The policy engine is an early preview, while `apm.lock.yaml` (resolved commits, tree SHA-256, deployed-file hashes) is the production-ready piece. Publisher attestations, the thing that would give you provenance on top of integrity, are reserved for v0.2. Local bypasses exist too: `--no-policy` and a couple of environment flags get a developer past the policy engine on their own machine. Fine as a debugging escape hatch, bad as your only enforcement point. APM is explicit that it stops at installation; runtime permissions are the harness's problem.
 
 The MCP integration is worth a separate paragraph. `apm install --mcp NAME` adds an entry under `dependencies.mcp` in `apm.yml` and writes the resolved server config straight into the native config file of every detected client (Copilot, Claude, Cursor, Codex, OpenCode, Gemini) on the filesystem, bypassing each client's own registry or policy layer. The full mechanism is documented in the [APM MCP Servers guide](https://microsoft.github.io/apm/guides/mcp-servers/). Convenient for a developer; also a clean way around whatever per-client policy exists. You are then relying on the runtime side of those clients to apply policy, and only a few of them do, with workarounds.
 
@@ -227,7 +227,7 @@ You can deliver it through four channels:
 
 Precedence runs MDM > server > file > user, with one exception that I like: the Copilot CLI `sandbox` key merges most-restrictively across every source instead of letting the highest layer win outright. Team settings combine least-restrictively between teams and then sit underneath the enterprise-wide settings, so a developer in three teams gets the union of what those teams allow, capped by the enterprise.
 
-The keys worth knowing:
+The keys I would look at first:
 
 - `strictKnownMarketplaces` — set to an empty array and the CLI accepts no marketplace at all. This is the answer to the "any repo can be a marketplace" problem I described earlier, and it is the single highest-value key in the file.
 - `extraKnownMarketplaces` — the approved sources you do want.
@@ -237,17 +237,17 @@ The keys worth knowing:
 - `telemetry`, pointing at your own OpenTelemetry endpoint, with `captureContent` and `lockCaptureContent`.
 - `remoteControl`, set to `disabled`, `requireSSO`, or `enabled`.
 - `sandbox` for the CLI.
-- `model`, which sets a default model rather than an allowlist. Worth saying out loud, because people read it as a restriction and it is not one.
+- `model`, which sets a default model and does no restricting whatsoever. I have seen this one misread as an allowlist more than once.
 
 Three things about this file that I would want a security team to know before they trust it:
 
-**First-party Copilot MCP servers are exempt from `deniedMcpServers`.** The deny list is not a kill switch. If your incident response plan says "we deny the MCP server and we are done", test that assumption against the first-party servers first.
+**Deny-list exemption** — first-party Copilot MCP servers are exempt from `deniedMcpServers`, so the deny list falls short of being a kill switch. If your incident response plan says "we deny the MCP server and we are done", test that assumption against the first-party servers first.
 
-**An MCP server name is not a security identity.** Matching is possible by name, by canonical URL, or by exact command plus args. Names are trivially reused, so write your rules against the URL or the exact command line.
+**Name matching** — matching is possible by name, by canonical URL, or by exact command plus args. Names get reused trivially, so write your rules against the URL or the exact command line and treat the name as a label.
 
-**Key coverage is uneven across clients, and the least-covered client is your bypass path.** The Copilot CLI is the most complete surface: bypass mode, model, plugins, marketplaces, OTel, MCP, remote control and sandbox all land. VS Code covers nearly all of it but has only partial remote control and no sandbox. The Copilot app has no sandbox. JetBrains only picked up managed settings in August 2026 and is still partial on model and remote control, with no sandbox. The cloud agent honours plugins and marketplaces and little else. If you lock down VS Code and forget that the same developer has JetBrains installed, you have written a policy with a documented hole in it.
+**Uneven client coverage** — the least-covered client becomes your bypass path. The Copilot CLI is the most complete surface: bypass mode, model, plugins, marketplaces, OTel, MCP, remote control and sandbox all land. VS Code covers nearly all of it but has only partial remote control and no sandbox. The Copilot app has no sandbox. JetBrains only picked up managed settings in August 2026 and is still partial on model and remote control, with no sandbox. The cloud agent honours plugins and marketplaces and little else. If you lock down VS Code and forget that the same developer has JetBrains installed, you have written a policy with a documented hole in it.
 
-Two smaller traps. Server-managed policy is fetched, so an offline laptop with no cached response is a laptop with that channel missing — which is an argument for pairing the server channel with MDM rather than relying on it alone. And `telemetry` with `captureContent` enabled is an egress path for prompt and response content; if you turn it on, turn on `lockCaptureContent` too so a developer cannot flip it back.
+Two smaller traps. Server-managed policy is fetched, so an offline laptop with no cached response is a laptop with that channel missing, which argues for pairing the server channel with MDM instead of relying on it alone. And `telemetry` with `captureContent` enabled is an egress path for prompt and response content; if you turn it on, turn on `lockCaptureContent` too so a developer cannot flip it back.
 
 The baseline I would ship on day one:
 
@@ -292,7 +292,7 @@ If I line up the different surfaces by how much org-level governance is actually
 | VS Code extensions | Yes, via VS Code policy | Marketplace + signature | Differs across forks and Open VSX |
 | Managed settings | Yes, per client | n/a | Key coverage differs per client; JetBrains and the cloud agent lag |
 
-The pattern across all of them is that the per-developer experience is great, the per-org enforcement is either absent or has to be assembled from policies that live in different places than the feature itself. It also splits neatly into layers that people keep conflating: Agent Plugins 1.0 is the package format, APM is the dependency and deployment layer, `managed-settings.json` is the client policy plane, and runtime containment is a fourth thing that none of them provide. They are complementary, not competing, and you need all four before "we govern Copilot extensions" is a true statement.
+The pattern across all of them is that the per-developer experience is great, the per-org enforcement is either absent or has to be assembled from policies that live in different places than the feature itself. It also splits neatly into layers that people keep conflating: Agent Plugins 1.0 is the package format, APM is the dependency and deployment layer, `managed-settings.json` is the client policy plane, and runtime containment is a fourth thing that none of them provide. They stack. You need all four in place before "we govern Copilot extensions" is a true statement.
 
 The layer nobody covers at all is semantic safety. Every mechanism above answers "where did this file come from and is it allowed to load". None of them answer "does this skill tell the agent to do something stupid". That review is still a human reading the Markdown.
 
