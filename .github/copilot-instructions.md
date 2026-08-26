@@ -47,6 +47,8 @@ Image paths start from the image folder, so when an image path is copied in, it 
 
 ## Markdown Writing Guidelines
 
+When writing, editing, or reviewing a blog post, use the `blog-writing` skill (`.github/skills/blog-writing/SKILL.md`). It carries the full trope catalogue and the self-review workflow. The summary below is the quick reference.
+
 The following apply when writing or editing `.md` files, particularly blog posts in `_posts/`.
 
 ### Writing Style
@@ -65,7 +67,7 @@ The following apply when writing or editing `.md` files, particularly blog posts
 
 ### AI Writing Tropes to Avoid
 
-Source: [tropes.fyi/directory](https://tropes.fyi/directory) — refresh with `check-ai-tropes.prompt.md`.
+Sources: [tropes.fyi/directory](https://tropes.fyi/directory) and [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) — refresh with `check-ai-tropes.prompt.md`. Full catalogue with examples: `.github/skills/blog-writing/references/ai-tropes.md`.
 
 **Sentence structure**
 - Negative parallelism: "It's not X — it's Y" / "not because X, but because Y"
