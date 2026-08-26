@@ -2,19 +2,23 @@
 layout: post
 title: "Where the GitHub Copilot extension points break governance"
 date: 2026-05-01
-tags: [GitHub, GitHub Copilot, Security, Governance, MCP, VS Code, Copilot CLI, Skills, Plugins]
-description: "A walkthrough of the governance gaps in the GitHub Copilot and extension surfaces: the Copilot CLI with its plugin marketplace, the Agent Package Manager (APM), gh skills, MCP servers across editors, and VS Code extensions through the Microsoft Marketplace and Open VSX."
+tags: [GitHub, GitHub Copilot, Security, Governance, MCP, VS Code, Copilot CLI, Skills, Plugins, APM]
+description: "A walkthrough of the governance gaps in the GitHub Copilot and extension surfaces: the Copilot CLI with its plugin marketplace, Agent Plugins 1.0, enterprise managed settings, the Agent Package Manager (APM), gh skills, MCP servers across editors, and VS Code extensions through the Microsoft Marketplace and Open VSX."
 ---
+
+> **Update, August 2026**: I revisited this post after Agent Plugins 1.0 shipped and after the enterprise managed settings documentation filled out. Two new sections cover those, the APM section picked up some maturity caveats, and the summary table changed shape. The parts about the CLI marketplace, local extensions, `gh skill` and the registry split still hold.
 
 A lot of the recent additions to the GitHub Copilot ecosystem add real value for individual developers, yet they also expand the security surface that an enterprise has to reason about. Most of these new entry points let a developer pull executable instructions, configuration, or full processes from any random repository on the internet, with very little or no central control. This post looks at the five places where I think the gap between "useful for one engineer" and "safe to run across a 5,000 person org" is widest right now.
 
 We'll look at these topis:
 - GitHub Copilot CLI plugin marketplace
 - GitHub Copilot CLI local extensions
+- Agent Plugins 1.0, the package format underneath all of it
 - Agent Package Manager (APM)
 - `gh skill` now in the GitHub CLI
 - MCP servers across editors
 - VS Code extensions and the different registries
+- Enterprise managed settings
 
 
 ![Samuel Regan Asante from Unsplash](/images/2026/20260501/samuel-regan-asante-STDn0DxY8os-unsplash.jpg)
@@ -36,9 +40,9 @@ Versioning is the next gap. The [CLI plugin reference](https://docs.github.com/e
 
 Plugins themselves are executable assets.They sit in the directory the marketplace points at, get pulled to the user's machine, and run in the user's shell context with whatever permissions the developer has. That is the same context as their git credentials, their cloud CLI sessions, and any local secrets in their environment.
 
-What is missing for an enterprise:
+What is missing on the GitHub side:
 
-- No setting on a GitHub Enterprise or organization to restrict which marketplaces a Copilot CLI user is allowed to add. The MCP private registry policy that exists for VS Code does not cover this. I'd want at least to restrict this to repos under the organizations control. 
+- No setting on a GitHub Enterprise or organization to restrict which marketplaces a Copilot CLI user is allowed to add. Managed settings give you `strictKnownMarketplaces` (further down this post), which you do author centrally, but the Copilot client is what enforces it. That means it only covers clients that read managed settings, and it does nothing about the repos themselves.
 - No way to require signed plugins, or plugins from a verified publisher.
 - No audit trail on the GitHub side that tells you which plugins your developers installed and from where.
 - Clear versioning out of the box. preferably with provenance signing build in. 
@@ -75,6 +79,40 @@ What is missing for an enterprise:
 
 The feature is legitimately useful: teams can enforce architecture rules, block destructive commands, run linters after edits, and build self-healing test loops. But those same capabilities — prompt rewriting, permission suppression, tool argument modification — are exactly what a supply-chain attack would want, and right now there is no org-level control surface at all.
 
+## Agent Plugins 1.0
+
+Underneath the marketplace sits a package format that got standardised: [Agent Plugins 1.0](https://agent-plugins.org/specification), which shipped in VS Code, the Copilot CLI and the Copilot app in August 2026 (VS Code's side is documented under [agent plugins](https://code.visualstudio.com/docs/agent-customization/agent-plugins)). Read the spec if you have twenty minutes, because most of the governance confusion I run into comes from people expecting it to do things it explicitly does not do.
+
+What the spec does define, normatively:
+
+- A root `plugin.json` with `$schema` and `name` as the only required fields.
+- A portable core of exactly two component types: Agent Skills under `skills/<name>/SKILL.md`, and MCP servers in a root `mcp.json`. Any client that claims support has to handle those two.
+- Reverse-domain namespaces for client-specific components, so `com.github.copilot/` holds the agents, commands, rules, hooks, and canvases that only Copilot understands. Another client ignores that directory instead of guessing.
+- Path containment: everything a plugin references has to live inside the plugin root, exposed as `PLUGIN_ROOT`, with writable state in `PLUGIN_DATA`.
+- Component failure isolation, so one broken skill does not take the whole plugin down.
+- MCP transports limited to stdio and streamable HTTP, with the legacy SSE transport optional and non-loopback HTTP required to be HTTPS.
+
+What it does not define, and this is the part that matters for an enterprise: no registry protocol, no dependency graph, no lockfile, no publisher signature, no enterprise policy model, and no runtime sandbox. Path containment is there for portability; it buys you nothing as a security boundary. A skill that stays neatly inside `PLUGIN_ROOT` can still tell the agent to run `curl | sh`, because the thing doing the executing is the agent.
+
+One detail that catches people out: the `env` and `headers` values in a plugin's `mcp.json` are package data. They ship with the plugin and anyone who can read the repo can read them. Point at a secret from there, never put one in.
+
+So Agent Plugins 1.0 answers "what is in this thing and how do I load it". It was never meant to answer "am I allowed to run it", and I keep meeting people who assume it does.
+
+Support is not even across the Copilot clients, which matters if you are planning to standardise on the format. Where a plugin actually loads today:
+
+| Client | Support | Agent Plugins 1.0 | Notes |
+| --- | --- | --- | --- |
+| Copilot CLI | ✅ | Yes | Full plugin and marketplace commands, the most complete surface |
+| VS Code | ✅ | Yes | Enabling a plugin also starts its MCP servers |
+| Copilot app | ✅ | Yes | Shipped in the same August 2026 wave |
+| Cloud agent | ⚠️ | Partial | Honours plugins and marketplaces, no local component surface |
+| JetBrains IDEs | ❌ | No | Managed settings landed in August 2026, the plugin format did not |
+| Visual Studio, Xcode, Eclipse, Neovim | ❌ | No | No plugin loading documented |
+
+So if your standard is "we ship our internal tooling as an Agent Plugin", that reaches the three clients in the first block and leaves your JetBrains and Visual Studio developers to get the same capability some other way.
+
+
+
 ## Agent Package Manager (APM)
 
 [Microsoft APM](https://github.com/microsoft/apm) is a dependency manager for AI agent context. You declare an `apm.yml`, run `apm install`, and it pulls instructions, skills, prompts, agents, hooks, plugins, and MCP servers from any git host (GitHub, GitLab, Bitbucket, Azure DevOps, GitHub Enterprise) into every detected agent client on the machine.
@@ -103,6 +141,8 @@ There is also no auto-install. APM is purely a CLI; it has no editor extension t
 APM packages can declare `scripts` (think npm scripts), and the policy reference exposes `manifest.scripts: allow|deny` precisely because of this risk. Default is `allow`. So an attacker who lands a package in your dependency tree can also land scripts, unless your org policy denies them outright.
 
 Versioning is fine on the manifest side: dependencies pin with `#tag` or `#sha`, the lockfile records resolved commit SHAs and content hashes, and the org policy can `require` specific versions with a `require_resolution` of `project-wins`, `policy-wins`, or `block`. Updates happen on `apm install --update`, not implicitly. Direct and transitive resolution stay the parts I would worry about: a package you trusted six months ago can pull in a new dependency on its next release, and unless your org policy has a tight `dependencies.allow` pattern, the new source slips through.
+
+The maturity picture is more mixed than the docs site suggests. The format is specified as [OpenAPM v0.1](https://microsoft.github.io/apm/specs/openapm-v01/), an editor's working draft under semver-zero, so it can still change under you. The policy engine is an early preview, while `apm.lock.yaml` (resolved commits, tree SHA-256, deployed-file hashes) is the production-ready piece. Publisher attestations, the thing that would give you provenance on top of integrity, are reserved for v0.2. Local bypasses exist too: `--no-policy` and a couple of environment flags get a developer past the policy engine on their own machine. Fine as a debugging escape hatch, bad as your only enforcement point. APM is explicit that it stops at installation; runtime permissions are the harness's problem.
 
 The MCP integration is worth a separate paragraph. `apm install --mcp NAME` adds an entry under `dependencies.mcp` in `apm.yml` and writes the resolved server config straight into the native config file of every detected client (Copilot, Claude, Cursor, Codex, OpenCode, Gemini) on the filesystem, bypassing each client's own registry or policy layer. The full mechanism is documented in the [APM MCP Servers guide](https://microsoft.github.io/apm/guides/mcp-servers/). Convenient for a developer; also a clean way around whatever per-client policy exists. You are then relying on the runtime side of those clients to apply policy, and only a few of them do, with workarounds.
 
@@ -187,26 +227,137 @@ VS Code shipped a notable batch of new enterprise policies around late April 202
 
 These additions meaningfully strengthen the VS Code row in the summary table below. The gaps at the Copilot CLI, `gh skill`, and cross-editor MCP layers remain open.
 
+## Enterprise managed settings
+
+The one place where a real enterprise control plane does exist for Copilot clients is [`managed-settings.json`](https://docs.github.com/en/copilot/reference/enterprise-managed-settings-reference). I did not have this on my radar for a long time, partly because it is enforced by the client rather than by the platform, and lives outside the GitHub web UI, and partly because the key coverage per client keeps moving.
+
+You can deliver it through four channels:
+
+1. Server-managed, from a `.github-private` repository in your enterprise, at `copilot/managed-settings.json`, with `copilot/team-mappings.json` and `copilot/teams/*.json` for per-team specialisation.
+2. MDM-managed, through the Windows registry or macOS preferences. There is no Linux equivalent here.
+3. File-based, at `/Library/Application Support` on macOS, `%ProgramFiles%` on Windows, or `/etc/github-copilot` on Linux.
+4. User settings, which is the developer's own layer.
+
+Precedence runs MDM > server > file > user, with one exception that I like: the Copilot CLI `sandbox` key merges most-restrictively across every source instead of letting the highest layer win outright. Team settings combine least-restrictively between teams and then sit underneath the enterprise-wide settings, so a developer in three teams gets the union of what those teams allow, capped by the enterprise.
+
+Linux developers are the gap in that precedence chain. With no MDM channel, the strongest layer you can reach on a Linux workstation is the file-based one at `/etc/github-copilot`, which sits *below* the server channel and is only as tamper-resistant as your filesystem permissions and whatever config management owns the box. Ansible, Puppet, Chef or Salt writing that path is the practical answer, the same way VS Code 1.106 handled it with `/etc/vscode/policy.json`. If your regulated tier assumes MDM enforcement, check how many of your developers are on Linux before you write that assumption into a control document.
+
+The keys I would look at first:
+
+- `strictKnownMarketplaces` — set to an empty array and the CLI accepts no marketplace at all. This is the answer to the "any repo can be a marketplace" problem I described earlier, and it is the single highest-value key in the file.
+- `extraKnownMarketplaces` — the approved sources you do want.
+- `enabledPlugins`, keyed by `plugin@marketplace`. `true` requires the plugin, `false` forces it off.
+- `permissions.disableBypassPermissionsMode` — kills the "approve everything" escape hatch.
+- `allowedMcpServers` and `deniedMcpServers`. Allow lists intersect across sources, deny lists union, and deny wins.
+- `telemetry`, pointing at your own OpenTelemetry endpoint, with `captureContent` and `lockCaptureContent`.
+- `remoteControl`, set to `disabled`, `requireSSO`, or `enabled`.
+- `sandbox` — the Copilot CLI's [local sandbox](https://docs.github.com/en/copilot/how-tos/cloud-and-local-sandboxes/configuring-local-sandbox-settings), which runs shell commands, MCP servers and language servers in a confined environment. Filesystem access defaults to read/write in the working directory and the repo's `.git`, read-only for the rest of the repo above it. This is the only key in the file that constrains what happens *after* something has loaded; everything else decides what is allowed to load in the first place.
+- `model`, which sets a default model and does no restricting whatsoever. I have seen this one misread as an allowlist more than once.
+
+Three things about this file that I would want a security team to know before they trust it:
+
+**Deny-list exemption** — first-party Copilot MCP servers are exempt from `deniedMcpServers`, so the deny list falls short of being a kill switch. If your incident response plan says "we deny the MCP server and we are done", test that assumption against the first-party servers first.
+
+**Name matching** — matching is possible by name, by canonical URL, or by exact command plus args. Names get reused trivially, so write your rules against the URL or the exact command line and treat the name as a label.
+
+**Uneven client coverage** — the least-covered client becomes your bypass path. Which keys actually land where (✅ supported, ⚠️ partial, ❌ not supported, ❔ unconfirmed):
+
+| Key | Copilot CLI | VS Code | Visual Studio | Copilot app | JetBrains | Cloud agent |
+| --- | --- | --- | --- | --- | --- | --- |
+| `permissions.disableBypassPermissionsMode` | ✅ | ✅ | ❌ | ✅ | ✅ | ❌ |
+| `model` | ✅ | ✅ | ❌ | ✅ | ⚠️ | ⚠️ |
+| `enabledPlugins` | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ |
+| `extraKnownMarketplaces` / `strictKnownMarketplaces` | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ |
+| `allowedMcpServers` / `deniedMcpServers` | ✅ | ✅ | ❌ | ✅ | ✅ | ❌ |
+| `telemetry` (OTel) | ✅ | ✅ | ❌ | ❔ | ✅ | ❌ |
+| `remoteControl` | ✅ | ⚠️ | ❌ | ✅ | ⚠️ | ❌ |
+| `sandbox` | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+Visual Studio is an empty column because it does not read `managed-settings.json` at all. Copilot configuration there is local to the user, and Microsoft points enterprises at a [separate deployment guide](https://learn.microsoft.com/en-us/visualstudio/ide/deploy-copilot-to-enterprise) using VS-specific admin tooling. For a .NET shop that is a real problem: your biggest population of developers sits outside the policy plane you just built, and you have to govern them through a different mechanism with different keys.
+
+JetBrains only picked up managed settings in August 2026, which is why it is still thin.
+
+The `sandbox` row needs a caveat, because the ❌ marks are about this file rather than about sandboxing in general. VS Code has its own sandbox through the `ChatAgentSandboxEnabled` device policy I mentioned earlier, it is just configured through VS Code's policy channel instead of `managed-settings.json`. So the row says "the CLI is the only client you can sandbox *from here*", and if you want containment across clients you end up assembling it from two different policy systems. Visual Studio, the Copilot app and JetBrains have nothing comparable that I can find.
+
+I would also not oversell runtime containment as the answer. It is genuinely the only layer that catches what your allow lists missed, but both implementations are young, the CLI one is in preview, and a properly tight sandbox means more paths to grant, more approval prompts, and more tickets when a build cannot reach an internal registry. That cost is real and it lands on the same admins who are already maintaining the allow lists. My honest read is that it is worth turning on for a regulated tier where you have the appetite for the friction, and worth watching rather than rushing for everyone else. If you lock down VS Code and forget that the same developer has JetBrains installed, you have written a policy with a documented hole in it, and that gap is the cheaper thing to fix first.
+
+### Sandbox defaults are looser than the name suggests
+
+I went and read the [sandbox configuration doc](https://docs.github.com/en/copilot/how-tos/cloud-and-local-sandboxes/configuring-local-sandbox-settings) properly, and the defaults deserve a closer look before you count this as a control.
+
+Yes, `/sandbox` is an interactive slash command, and that tripped me up at first too. The thing to separate is enforcement from configuration. Enforcement lives in a setting: `sandbox` in the CLI's `settings.json`, read at session start, so if it says enabled then every session on that machine is sandboxed whether or not anyone types anything. `/sandbox` is the editor for that setting, an interactive dialog with tabs for General, Auth, Filesystem and Network that a developer can open mid-session to grant an extra path or turn something off. Enterprise-managed values show up there labelled `(managed)` and the dialog refuses to change them.
+
+So the slash command is how a developer *adjusts* the sandbox, not how they start it. `/sandbox enable` and `/sandbox disable` are shortcuts for the on/off toggle, and `/sandbox policy` prints the effective filesystem policy once your settings, the automatic grants and any managed policy are merged. That last one is what you run when you want to prove what a machine is actually enforcing.
+
+The defaults are where it gets interesting:
+
+- **Allow sandbox bypass is on.** When a command fails inside the sandbox, the model can ask to run it outside, and the developer gets a prompt. They can also disable the sandbox for the rest of the session unless your enterprise forbids it. A sandbox that asks "shall I step outside?" on failure is a speed bump for accidents and close to nothing against something deliberately trying to escape, because failing is exactly how you get asked. Set `allowBypass` to false and this becomes a real boundary.
+- **Outbound network access is on.** I had this backwards in an earlier draft: the sandbox can reach the internet by default, and the local network too, which means `localhost` services and anything else on your LAN. Turning both off is what "isolated" actually means here.
+- **Dev tool access is on.** Sandboxed commands get read access to developer-tool configuration and caches, explicitly including package-manager registries and the tokens they store. That is a sensible default for making `npm install` work inside the sandbox and an uncomfortable one if your threat model includes a skill that wants your registry tokens.
+
+> **Note**: local sandboxing is in public preview, and on Windows it needs a Windows Insiders build. For a regulated tier that is not something you can roll out fleet-wide today, which makes the ✅ in the table more of a "yes, on macOS and Linux, in preview" than a finished answer.
+
+The good parts are real, though. MCP and LSP servers run inside the sandbox by default, the proxy URL can be enforced through managed settings so sandbox traffic goes through your inspection point, and macOS Keychain access is off by default.
+
+Two smaller traps. Server-managed policy is fetched, so an offline laptop with no cached response is a laptop with that channel missing, which argues for pairing the server channel with MDM instead of relying on it alone. And `telemetry` with `captureContent` enabled is an egress path for prompt and response content; if you turn it on, turn on `lockCaptureContent` too so a developer cannot flip it back.
+
+The baseline I would ship on day one:
+
+```json
+{
+  "strictKnownMarketplaces": [],
+  "extraKnownMarketplaces": { "internal": "your-org/copilot-marketplace" },
+  "permissions": { "disableBypassPermissionsMode": true },
+  "telemetry": { "captureContent": false, "lockCaptureContent": true },
+  "sandbox": { "enabled": true, "allowBypass": false }
+}
+```
+
+Then add `allowedMcpServers` entries by URL or exact command, and grow `enabledPlugins` from a small approved set rather than trying to enumerate everything you want to block.
+
+## Loading order surprises
+
+A few merge rules that are easy to miss once you have plugins, workspace config and user config all in play at once:
+
+- CLI built-ins are always present and cannot be overridden by a plugin.
+- Agents and skills are first-found-wins, so a plugin's copy can be silently ignored because something earlier in the search order already claimed the name.
+- MCP servers are last-wins, which is the opposite direction. An extra MCP config file can quietly replace the server a plugin shipped.
+- In VS Code, enabling a plugin starts its MCP server without a separate trust prompt. Install implies trust.
+- Hooks from a plugin run alongside workspace and user hooks, and the most restrictive `PreToolUse` decision wins. VS Code currently ignores Claude-style hook matcher values, so a hook you expected to be scoped may be firing on everything.
+
+None of these are bugs exactly, but "first-found-wins for skills, last-wins for MCP" is the kind of asymmetry that makes an audit of what is actually loaded harder than reading the config files suggests.
+
 ## State of the plugin governance for GitHub Copilot
 
-If I line up the different surfaces by how much org-level governance is actually possible today:
+
+
+If I line up the different surfaces by how much org-level governance is actually possible today (✅ available, ⚠️ partial or conditional, ❌ nothing today):
 
 | Surface | Org-level allowlist | Provenance / pinning | Notes |
 | --- | --- | --- | --- |
-| Copilot CLI plugin marketplace | None | None | Any GitHub repo can be a marketplace |
-| Copilot CLI local extensions | None | None | Committed to repo; active on clone with no install step |
-| APM | Yes, via `apm-policy.yml` | Lockfile + content hashes | Policy is opt-in, customer-owned |
-| `gh skill` | None | Tag and SHA pinning | GitHub explicitly mentions verification |
-| MCP servers | Limited (Copilot in VS Code only) | None standardized | Local stdio and extension-contributed servers bypass the policy |
-| VS Code extensions | Yes, via VS Code policy | Marketplace + signature | Differs across forks and Open VSX |
+| Copilot CLI plugin marketplace | ⚠️ Client-enforced, via `strictKnownMarketplaces` | ❌ None | Nothing on the GitHub platform side |
+| Copilot CLI local extensions | ❌ None | ❌ None | Committed to repo; active on clone with no install step |
+| Agent Plugins 1.0 format | ❌ Not in scope of the spec | ❌ Not in scope of the spec | Portable package contract only, no signature and no sandbox |
+| APM | ✅ Yes, via `apm-policy.yml` | ✅ Lockfile + content hashes | Policy is opt-in, customer-owned, and still preview |
+| `gh skill` | ❌ None | ✅ Tag and SHA pinning | GitHub explicitly mentions verification |
+| MCP servers | ⚠️ Copilot in VS Code, plus managed settings allow/deny | ❌ None standardized | First-party servers are exempt from the deny list |
+| VS Code extensions | ✅ Yes, via VS Code policy | ✅ Marketplace + signature | Differs across forks and Open VSX |
+| Managed settings | ✅ Yes, per client | n/a | Key coverage differs per client; JetBrains and the cloud agent lag |
 
-The pattern across all of them is that the per-developer experience is great, the per-org enforcement is either absent or has to be assembled from policies that live in different places than the feature itself. None of these are unfixable, and APM in particular shows what the right shape looks like, but the gap between "shipped" and "safe to deploy at scale" is wider than the changelog posts suggest.
+The pattern across all of them is that the per-developer experience is great, the per-org enforcement is either absent or has to be assembled from policies that live in different places than the feature itself. It also splits neatly into layers that people keep conflating: Agent Plugins 1.0 is the package format, APM is the dependency and deployment layer, `managed-settings.json` is the client policy plane, and runtime containment is a fourth thing that none of them provide. They stack. You need all four in place before "we govern Copilot extensions" is a true statement.
+
+The layer nobody covers at all is semantic safety. Every mechanism above answers "where did this file come from and is it allowed to load". None of them answer "does this skill tell the agent to do something stupid". That review is still a human reading the Markdown.
+
+Which is exactly why running your own internal marketplace, with a real review process in front of it, matters more than any single policy key. If the only sources your developers can reach are ones you curate, then that human review happens once, by someone who knows what they are looking at, before the plugin ever lands on a laptop. `strictKnownMarketplaces` pointed at a marketplace nobody reviews just moves the problem somewhere tidier. The control is the review; the setting only makes the review the sole way in.
 
 If you are responsible for any of this in a larger org, the short version of what I would do:
 
 1. Decide which of these surfaces you want your developers to use at all. Default-allow is a choice that has consequences, not a neutral starting point.
-2. For the ones you allow, pick the strongest available control today (VS Code extension policy, the Copilot MCP registry, an APM policy file) and ship it.
-3. For the ones with no control today (CLI plugins, `gh skill`), at minimum log and review, and feed back to GitHub and Microsoft that this gap matters.
+2. Inventory what is already installed on your developers' machines before you write policy. You will find more than you expect.
+3. For the ones you allow, pick the strongest available control today (VS Code extension policy, `managed-settings.json`, the Copilot MCP registry, an APM policy file) and ship it. Roll APM policy out as `warn` first, push the results into code scanning as SARIF, and only then flip to `block`.
+4. Ship managed settings to every client your developers actually have, not just the one you think they use.
+5. For the ones with no control today (CLI plugins on the platform side, CLI local extensions, `gh skill`), at minimum log and review, and feed back to GitHub and Microsoft that this gap matters.
+
 Overall, tighten your grip on endpoint protection and your firewall/proxy configurations.
 
 The features themselves are fine. The missing layer is the one every package ecosystem has had to grow eventually: a place for an org to say which sources it trusts, applied uniformly across every client that can pull from them.
