@@ -6,6 +6,8 @@ tags: [GitHub, GitHub Copilot, Security, Governance, MCP, VS Code, Copilot CLI, 
 description: "A walkthrough of the governance gaps in the GitHub Copilot and extension surfaces: the Copilot CLI with its plugin marketplace, Agent Plugins 1.0, enterprise managed settings, the Agent Package Manager (APM), gh skills, MCP servers across editors, and VS Code extensions through the Microsoft Marketplace and Open VSX."
 ---
 
+> **Update, August 2026**: I revisited this post after Agent Plugins 1.0 shipped and after the enterprise managed settings documentation filled out. Two new sections cover those, the APM section picked up some maturity caveats, and the summary table changed shape. The parts about the CLI marketplace, local extensions, `gh skill` and the registry split still hold.
+
 A lot of the recent additions to the GitHub Copilot ecosystem add real value for individual developers, yet they also expand the security surface that an enterprise has to reason about. Most of these new entry points let a developer pull executable instructions, configuration, or full processes from any random repository on the internet, with very little or no central control. This post looks at the five places where I think the gap between "useful for one engineer" and "safe to run across a 5,000 person org" is widest right now.
 
 We'll look at these topis:
