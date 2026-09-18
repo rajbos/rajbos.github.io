@@ -1,20 +1,19 @@
 ---
 layout: post
-title: Running MCP servers securely
+title: "Running MCP servers securely"
 date: 2026-03-13
-tags: [GitHub, MCP, Servers, Security, Best Practices, GitHub Copilot, Copilot, Microsoft, Azure, Cloud, DevOps]
-description: "Learn best practices for running MCP servers securely, including configuration tips and security measures. Discusses private registries, MCP server configuration, ecosystems, and MCP Gateway setups"
+visible: 1
+tags: [MCP, Security, GitHub Copilot, Azure, DevOps]
+description: "How I am evaluating MCP security with Azure API Management, Azure API Center, and microsoft/mcp-gateway."
 ---
 
-# Hosting MCP Servers with security in mind
-
-MCP (Model Context Protocol) servers give AI assistants like GitHub Copilot access to external tools and data — think querying your databases, calling APIs, reading repositories, or triggering pipelines. Getting those servers running reliably and securely for a whole development team is where things get complicated fast. Over the last year there has been tons of development in this space.
+MCP (Model Context Protocol) servers give AI assistants like GitHub Copilot access to external tools and data: querying databases, calling APIs, reading repositories, and triggering pipelines. Getting those servers running reliably and securely for a whole development team gets complicated fast. There has been a lot of development in this space over the last year.
 
 There are several issues at play when you want to work with MCP Servers:
 1. Security concerns with executing them and the access they have
 2. Discovery and governance of which MCP servers are approved for use
 
-I've been researching the different hosting options to work in a more secure manner with MPC servers, and this is the state of the research so far. The core question is: how can we host MCP servers in a way that allows us to use them effectively while minimizing security risks and ensuring proper governance?
+I've been researching hosting options for MCP servers. This is the state of that research so far: how can we host them effectively while reducing security risks and giving teams clear governance?
 
 ## Security concerns
 MCP servers are powerful but potentially risky. They often need access to sensitive data, credentials, or internal systems. If a server is compromised, it could be a major attack vector. Running MCP servers locally on each developer's machine means they inherit all the security context of that machine — which is a big risk. That includes 3rd party libraries directly installed on the developer's OS. Running these MCP servers in a containerized environment with strict access controls could significantly reduce the attack surface, but a lot of MCP servers are not configured that way and run locally through `npx` (npm executable), `uvx` (PyPi executable), Docker or similar tools.
@@ -24,24 +23,30 @@ Research from EndorLabs about the [State of Dependency Management 2025](https://
 Since MCP servers are a very effective man in the middle in your AI workflow, they can be used to exfiltrate data, access internal systems, or perform malicious actions if compromised. An MCP server can expose prompts, agent definitions, and tools. All these places allow for manipulation of both data and your prompts (prompt injection attacks). if an attacker can compromise an MCP server, they could potentially manipulate the prompts being sent to the AI model, leading to unintended actions or leak data to a 3rd party system. This is especially concerning if the MCP server has access to sensitive data or internal systems (which is a high level of probability on an engineers development environment these days). 
 
 ## Running local server concerns
-Running MCP servers locally on developers' machines is the most common setup. Unfortunately most MCP Clients (for example: your code editor) host the MCP server only for themselves. That means there is no great way to expose these servers to all tools that support MCP Server in one go. So if you hop between editors: each editor will have to startup a process to communicate with the MCP servers you want to use. I'd expect that MCP tools become so prevalent that you'd run a centrally governed instance of a server on your machine as a service, and then each tool that wants to use them can find them, with a security layer on top that lets you allow list which MCP server is allowed to be used by which tools. 
+Running MCP servers locally on developers' machines is the most common setup. Unfortunately, most MCP clients, such as code editors, host a server only for themselves. If I hop between editors, each editor starts its own process for the MCP servers I use. I expect MCP tools to become common enough that a centrally governed local service will make sense, with an allowlist that controls which client can use each server.
 
 Let's take an example with an engineer that runs both VS Code and IntelliJ. They switch between those editors when they work on different parts of their normal work, for example backend work in Java in IntelliJ and front end work in Typescript in VS Code. Next to that they have a todo application where they plan their work. If they manage their work for a part in something like Jira (user stories and tasks), Azure Boards (work items), or GitHub Issues, they might need to plan things across all those environments. If they want to use an MCP server that can read and write to their issue tracker, they would need to run a separate instance of that MCP server for each editor, and then keep those in sync with each other. Each instance also would have to be set up with the correct credentials. 
 
 ![Diagram of running the same MCP server multiple times on the same machine](/images/2026/20260313/20260313_02_MCPServersInClients.png)  
 
-That is where a local MCP Gateway comes into play: you can host an MCP Gateway (e.g. this one [github.com/microsoft/mcp-gateway](https://github.com/microsoft/mcp-gateway)) locally, and then configure this Gateway in each editor. That way the MCP Server itself only has to run once, and the gateway can route the requests from each editor to the same MCP server instance. This also allows you to centralize the configuration of the MCP server, saves you some local resources, and centralizes the authentication for those external services as well.
+That is where a local MCP Gateway comes into play. I can host [microsoft/mcp-gateway](https://github.com/microsoft/mcp-gateway) locally and configure it in each editor. The MCP server runs once; the gateway routes requests from each editor to that instance. It also centralizes server configuration and authentication for external services.
 
-End result: 
+The resulting local setup:
 ![Diagram of a local MCP Gateway routing requests from multiple editors to a single MCP server](/images/2026/20260313/20260313_02_MCPGatewayInClients.png)  
 
-### Discovery and governance concerns
+## Discovery and governance concerns
 
 Next to the runtime security concerns (dependencies, hosting multiple instances, and even local installation issues if the ecosystem is not installed), there is also a discovery and governance problem: how do developers know which MCP servers they can use in your organization? How do you ensure they only use approved servers that meet your security standards? A central registry of approved MCP servers, integrated with developer tools, can help solve this.
 
 This part can be covered by hosting your own MCP Registry: a catalog of approved MCP servers that developers can discover and connect to. [Azure API Center](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-mcp-registry#option-2-using-azure-api-center-as-an-mcp-registry) provides this capability with an enterprise-grade MCP server registry integrated with VS Code and GitHub Copilot, or you can build and host your own, with an example available here [github.com/rajbos/mcp-registry-demo](https://github.com/rajbos/mcp-registry-demo).
 
-After setting up your registry, you can configure some Enterprise ready tools like VS Code to only allow connections to MCP servers that are registered in your registry, ensuring that developers can only use approved servers. For GitHub Copilot you get this option available with an GitHub Enterprise license, where you can configure an allowlist of MCP servers that your developers can use with Copilot by enforcing a private registry. Do be aware that this is configured on the Enterprise or Organization where the user gets their license from, and is only applied where the client supports this. 
+After setting up a registry, Enterprise-ready tools such as VS Code can allow connections only to registered servers. With GitHub Enterprise, GitHub Copilot can enforce an allowlist through a private registry. The policy is configured at the Enterprise or organization that grants the licence, and it applies only to supporting clients.
+
+### Registry validation happens on the developer device
+
+I found an important detail while configuring a server from a private MCP registry. The `name`, `type`, and URL in the local MCP configuration must exactly match the registered server, or the client will not start it. That protects developers from accidentally selecting a different server, but the validation happens locally.
+
+Someone who can alter local configuration can provide the expected registry values and redirect the endpoint through a local override to a different cloud service. A private registry should therefore be one layer of the control, not the only one. Endpoint protection needs to detect unexpected process and network activity, and anomaly detection should flag MCP traffic going to endpoints that are not part of the approved setup.
 
 As far as I can figure out at the moment this registry policy has been build in to support these environments:
 - GitHub Copilot in VS Code
@@ -59,13 +64,13 @@ Or other editors that do not support GitHub Copilot.
 
 ## Potential solutions for centralizing an MCP Gateway and Private Registry
 
-There are two solutions that I am researching at the moment to solve these issues:
-1. Using Azure API Management as a secure gateway in front of your MCP servers, that can be augmented wih Azure API Center as a private registry
+I am researching two approaches:
+1. Using Azure API Management as a secure gateway in front of MCP servers, augmented with Azure API Center as a private registry
 2. Using the MCP Gateway to host your MCP servers in a secure, containerized environment for the entire organization (instead of each developer running their own instance on their machine), moved behind the Azure API Management gateway for the security layer, also linking it up to Azure API Center as a private registry
 
 The TL;DR of things I am running into is that Azure API Management provides a powerful perimeter security layer with Entra ID authentication, rate limiting, and monitoring, but lacks session-aware routing and adapter lifecycle management. 
 
-The MCP Gateway itself provides session-aware routing and adapter management but does not natively support per-user OAuth for remote servers. Combining both could give you the best of both worlds.
+MCP Gateway provides session-aware routing and adapter management but does not natively support per-user OAuth for remote servers. The two products cover different parts of the problem.
 
 So in short:
 - APIM can help with remote MCP servers, but lacks user specific OAuth support
@@ -81,7 +86,7 @@ One option is to use the same [`microsoft/mcp-gateway`](https://github.com/micro
 
 Developers connect to a central endpoint and get all the MCP tools they need — no Node.js, no Python runtimes, no `npx` invocations cluttering their laptops, saving the bandwidth, security issues of the different package managers, and centralize the maintenance cycles of keeping these servers up to date.
 
-This also improves **security**. When an MCP server runs locally, it inherits the developer's environment: their filesystem access, their local credentials, their OS context. A containerized server running in a cluster is isolated — it only has access to what you explicitly give it. This is a meaningful reduction in the blast radius if an MCP server is compromised or behaves unexpectedly.
+This also improves security. A locally running MCP server inherits the developer's filesystem access, credentials, and OS context. A containerized server in a cluster has only the access I explicitly give it. That reduces the blast radius if a server is compromised or behaves unexpectedly.
 
 The MCP Gateway repo lets you configure the gateway with a couple of services:
 - MCP Server gateway: register and retrieve listed MCP servers
@@ -103,7 +108,9 @@ This blocks setting up this flow for MCP servers like:
 
 ## The Azure API Management (APIM) approach
 
-Azure API Management is a fully managed API gateway with first-class support for Entra ID configurations. It lets you configure access to the APIM endpoint as the MCP Gateway which means the endpoint is only available for authenticated users in your organization. Since this is API Management, it lets you configure policies to validate incoming tokens, enforce rate limits, and monitor usage with Application Insights. This is a powerful way to add a security perimeter around your MCP servers.Any MCP server that uses the normal REST API for tools/resources can be fronted with APIM, which can handle the Entra ID authentication and then forward the request to the backend MCP server. The only thing it cannot expose through this is the prompts an MCP server might have. It's not really clear __why__ this is the case, so this is something to look into further. Potentially this is not that big of an issue at the moment, as you can get prompts from plenty of other sources (like the [Awesome Copilot](https://github.com/github/awesome-copilot) repo).
+Azure API Management is a managed API gateway with first-class Entra ID support. It can restrict an MCP endpoint to authenticated people in my organization. APIM policies can validate incoming tokens, enforce rate limits, and send telemetry to Application Insights. An MCP server that exposes tools or resources over a normal REST API can sit behind APIM, which handles Entra ID authentication before forwarding the request.
+
+APIM currently cannot expose MCP prompts. I could not verify why, so that needs more research. It may not be a significant issue while prompts are also available from sources such as [Awesome Copilot](https://github.com/github/awesome-copilot).
 
 ## Options to run MCP servers in Azure API Management
 
@@ -140,7 +147,7 @@ So the main questions that remain:
 - How to centralize access/hosting to local servers like the GitHub MCP server that require per-user OAuth.
 
 ### Architectural overview of Clients/APIM + MCP Gateway
-![Architectural Overview of the Clients/APIM + MCP Gateway stetup with options](/images/2026/20260313/20260313_01_ArchitecturalOverview.png)
+![Architectural overview of the client, APIM, and MCP Gateway setup options](/images/2026/20260313/20260313_01_ArchitecturalOverview.png)
 
 
 ## Key References used in this research
