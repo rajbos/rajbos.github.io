@@ -3,24 +3,35 @@ layout: default
 title: DevOps Journal
 description: "Blog about GitHub, GitHub Actions, Azure DevOps, and supply chain security by Rob Bos. Practical DevOps tips, tutorials, and conference sessions."
 ---
-<div class="posts">
+<div class="page-with-sidebar">
 
-  {% for post in site.posts %}
-  <div class="panel panel-default">
-    <div class="panel-heading viewPost">
-        <a href="{{ post.url }}">
-          <span>{{ post.date | date_to_string }} - {{ post.title }}</span>
-        </a>
-    </div>
-    <div class="panel-body">
-      <div class="post-excerpt">
-        {{ post.description | default: post.excerpt | strip_html | truncatewords: 70 }}
-        &nbsp;<a href="{{ post.url }}" title="{{ post.title }}"><div class="btn btn-default viewPost">View post</div></a>
+  <main class="main-content">
+    {% for post in site.posts %}
+    <article class="post-card">
+      <div class="post-card-header">
+        <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d %b %Y" }}</time>
+        <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
       </div>
-    </div>
-  </div>
+      <div class="post-card-body">
+        <p class="post-excerpt-text">{{ post.description | default: post.excerpt | strip_html | truncatewords: 50 }}</p>
+        <div class="post-card-footer">
+          {% if post.tags.size > 0 %}
+          <div class="post-tags">
+            {% for tag in post.tags limit:4 %}
+            <a href="{{ site.baseurl }}/tag/{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+            {% endfor %}
+          </div>
+          {% else %}
+          <div></div>
+          {% endif %}
+          <a href="{{ post.url }}" class="read-more-link">Read post →</a>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </main>
 
-  {% endfor %}
+  {% include sidebar.html %}
 
 </div>
 

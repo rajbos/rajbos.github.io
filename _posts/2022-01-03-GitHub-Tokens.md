@@ -2,14 +2,16 @@
 layout: post
 title: "GitHub Access Tokens explained"
 date: 2022-01-03
-tags: [GitHub, Tokens, Personal Access Tokens, GITHUB_TOKEN, GitHub Apps, GitHub App Tokens]
-description: "A clear comparison of GitHub access tokens: Personal Access Tokens, the GITHUB_TOKEN, and GitHub App tokens, with security guidance on when to use each type."
+tags: [GitHub, Tokens, Personal Access Tokens, GITHUB_TOKEN, GitHub Apps, GitHub App Tokens, Deploy Keys]
+description: "A clear comparison of GitHub access tokens (Personal Access Tokens, the GITHUB_TOKEN, and GitHub App tokens) and deploy keys, with security guidance on when to use each type."
 ---
 
 There is a lot of confusion of what GitHub (access) tokens are and how you should use them for automating things inside of GitHub. There are three main types of tokens:
 1. Personal Access Tokens (PATs)
 1. The GITHUB_TOKEN environment variable (explainer [here](https://youtu.be/RIkqaPKuNFw))
 1. An access token created from a GitHub App (explainer [here](https://youtu.be/xtXnIV20XQw))
+
+There is also a fourth option, not a token but useful for automating deployments: deploy keys (covered in section 4).
 
 You can use these tokens to authenticate to GitHub and perform actions with it, like cloning repositories, making API calls, etc.
 
@@ -101,3 +103,21 @@ There are some downsides as well:
 * Configuring access from Jenkins pipelines to GitHub repos.
 * Inside workflows everywhere: I like the limited access the App has and do not want to give anything my PAT as it has way to much access!
 * Automating creation of repos with defined content for Global DevOps Bootcamp.
+
+# 4. Deploy keys
+Deploy keys are SSH keys that grant access to a single repository. The public part gets attached to the repository itself (not to a user account), and the private part stays on your server. If you are automating deployments from a server and just need to pull a repo, a deploy key is usually enough.
+
+To set one up, generate a key pair on your server with `ssh-keygen`, then add the public key to the repository under Settings > Deploy keys. They are read-only by default, but you can tick "Allow write access" if the deployment needs to push back to the repo. You can also create them through the [REST API](https://docs.github.com/en/rest/deploy-keys/deploy-keys), which helps if you are scripting the setup across multiple repositories.
+
+## Pros of deploy keys
+* Anyone with access to the repository and server can deploy the project.
+* Users don't have to change their local SSH settings.
+* Deploy keys are read-only by default, but you can give them write access when adding them to a repository.
+
+## Cons of deploy keys
+* Deploy keys only grant access to a single repository. More complex projects may have many repositories to pull to the same server, so you need a separate key for each one and SSH config aliases to pick the right key per repo.
+* Deploy keys are usually not protected by a passphrase, making the key easily accessible if the server is compromised.
+* Deploy keys are credentials that don't have an expiry date. Convenient, but there is no automatic cleanup if you forget about them.
+* Deploy keys aren't linked directly to organization membership. If the user who created the deploy key is removed from the repository, the deploy key will still be active as it isn't tied to the specific user, but rather to the repository.
+
+GitHub recommends using a GitHub App instead of deploy keys when you want more control over permissions. 

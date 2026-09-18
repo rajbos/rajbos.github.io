@@ -48,6 +48,7 @@ With the rise of AI-powered development tools, GitHub Copilot has introduced its
 |AGENTS.md|anywhere in the repository||Agent instructions for Copilot coding agent. The nearest file in the directory tree takes precedence. `CLAUDE.md` and `GEMINI.md` at the repository root are also supported as alternatives for other AI agents|[Custom Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)|
 |NAME.prompt.md|.github/prompts/||Reusable prompts for specific and repetitive tasks that can be invoked in Copilot Chat. Supports YAML frontmatter for metadata like description and which tools to use|[Prompt Files](https://docs.github.com/en/copilot/tutorials/customization-library/prompt-files)|
 |NAME.agent.md|.github/agents/|yes|Custom agent profiles with YAML frontmatter defining the agent's name, description, available tools, and MCP server configurations. Allows creating specialized agents with tailored expertise for specific development tasks. Available on GitHub.com, VS Code, JetBrains, Eclipse, and Xcode|[Custom Agents](https://docs.github.com/en/copilot/reference/custom-agents-configuration)|
+|settings.json|.github-private/.github/copilot/|no|Enterprise managed plugin standards for GitHub Copilot CLI. Defines a plugin marketplace, auto-installed plugins, MCP server configurations, and hooks that are distributed and applied automatically for all enterprise users with Copilot Business or Copilot Enterprise|[Enterprise managed client settings](https://docs.github.com/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-agents/configure-enterprise-plugin-standards)|
 
 Note: content exclusion (preventing Copilot from accessing certain files) is **not** configured via a file - it is set up through your repository or organization settings on GitHub.com. See the [content exclusion docs](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot) for more details.
 
@@ -57,6 +58,7 @@ These files help you customize the AI experience by:
 - Guiding Copilot's coding agents with information about your project conventions
 - Creating reusable prompts for common development tasks in your project
 - Building specialized custom agents with their own tools and MCP server configurations
+- Distributing enterprise-wide plugin standards, MCP configs, and hooks to all Copilot CLI users automatically (now in [public preview](https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview/))
 
 Just like the other magic files, these need to be named exactly right and placed in the correct directories to work their magic ✨.
 
