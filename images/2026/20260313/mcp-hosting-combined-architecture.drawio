@@ -1,0 +1,287 @@
+<mxfile host="65bd71144e">
+    <diagram id="mcp-hosting-options" name="MCP Hosting Options: Combined Architecture">
+        <mxGraphModel dx="1543" dy="1504" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1900" pageHeight="1400" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="page-title" value="&lt;font style=&quot;font-size:24px&quot;&gt;&lt;b&gt;MCP Server Hosting: Combined Azure Architecture&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px;color:#666&quot;&gt;How APIM, MCP Gateway, and Azure compute services work together&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="-10" width="1860" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="clients-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;strokeWidth=2;opacity=70;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="80" width="220" height="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="clients-title" value="&lt;font style=&quot;font-size:14px&quot;&gt;&lt;b&gt;🖥️  MCP Clients&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="85" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="vscode" value="&lt;b&gt;VS Code&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;GitHub Copilot&lt;br&gt;Agent Mode&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#FFFFFF;strokeColor=#004080;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="45" y="125" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="chatgpt" value="&lt;b&gt;ChatGPT / Claude&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;External AI Agents&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#10A37F;fontColor=#FFFFFF;strokeColor=#0D8A6A;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="45" y="200" width="170" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="custom-agent" value="&lt;b&gt;Custom AI Agents&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Semantic Kernel&lt;br&gt;Copilot Studio&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF66FF;fontColor=#FFFFFF;strokeColor=#512E5F;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="45" y="270" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="direct-label" value="&lt;font style=&quot;font-size:11px;color:#B85450&quot;&gt;&lt;b&gt;Direct Connection&lt;/b&gt;&lt;br&gt;(per-user OAuth 2.1)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="45" y="365" width="170" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="github-direct" value="&lt;b&gt;GitHub MCP Server&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;api.githubcopilot.com/mcp/&lt;br&gt;GitHub OAuth 2.1 + PKCE&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ABABAB;fontColor=#FFFFFF;strokeColor=#FFFFFF;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="45" y="410" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="github-note" value="&lt;font style=&quot;font-size:9px;color:#B85450&quot;&gt;✅ Already remote &amp; secure&lt;br&gt;❌ Cannot proxy via Entra ID&lt;br&gt;🔑 Uses GitHub as IdP&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="475" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-direct-gh" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#B85450;strokeWidth=2;dashed=1;endArrow=block;endFill=1;" parent="1" source="vscode" target="github-direct" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=3;opacity=70;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="80" width="380" height="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-title" value="&lt;font style=&quot;font-size:16px&quot;&gt;&lt;b&gt;🛡️  Azure API Management&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#4472C4&quot;&gt;North-South Gateway — Perimeter Security&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="85" width="380" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-auth" value="&lt;b&gt;🔐 Inbound Auth&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;validate-azure-ad-token&lt;br&gt;Subscription keys&lt;br&gt;JWT validation (Entra ID)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="305" y="135" width="165" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-cred" value="&lt;b&gt;🔑 Credential Manager&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;OAuth token brokering&lt;br&gt;GitHub / Entra ID / Custom&lt;br&gt;Per-user token exchange&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="135" width="165" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-policy" value="&lt;b&gt;📋 Policies&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Rate limiting&lt;br&gt;IP filtering&lt;br&gt;Request transformation&lt;br&gt;Header forwarding&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="305" y="225" width="165" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-monitor" value="&lt;b&gt;📊 Monitoring&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;App Insights&lt;br&gt;Azure Monitor&lt;br&gt;Correlation IDs&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="225" width="165" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-mcp-sep" value="&lt;font style=&quot;font-size:11px;color:#4472C4&quot;&gt;&lt;b&gt;MCP Server Capabilities&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="315" width="380" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-rest-mcp" value="&lt;b&gt;REST → MCP&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Expose any REST API&lt;br&gt;as MCP server&lt;br&gt;(auto tool generation)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2EFDA;strokeColor=#548235;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="305" y="345" width="165" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-proxy-mcp" value="&lt;b&gt;Proxy Existing MCP&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Front existing remote&lt;br&gt;MCP servers with&lt;br&gt;auth + rate limits&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2EFDA;strokeColor=#548235;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="345" width="165" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-limits" value="&lt;font style=&quot;font-size:9px;color:#B85450&quot;&gt;⚠ Stateless — no MCP session affinity&lt;br&gt;⚠ Tools only (no prompts)&lt;br&gt;⚠ Not on Consumption tier&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="305" y="430" width="350" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="apim-prm" value="&lt;font style=&quot;font-size:9px&quot;&gt;&lt;b&gt;OAuth 2.1 + PRM Discovery&lt;/b&gt;&lt;br&gt;/.well-known/oauth-protected-resource&lt;br&gt;(RFC 9728)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="480" width="270" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-vscode-apim" value="Entra ID Token or APIM Key" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#4472C4;strokeWidth=2;endArrow=block;endFill=1;labelBackgroundColor=#FFFFFF;" parent="1" source="vscode" target="apim-auth" edge="1">
+                    <mxGeometry x="-0.1628" y="19" relative="1" as="geometry">
+                        <mxPoint x="-8" y="-16" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow-chatgpt-apim" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#4472C4;strokeWidth=2;endArrow=block;endFill=1;" parent="1" source="chatgpt" target="apim-auth" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-custom-apim" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#4472C4;strokeWidth=2;endArrow=block;endFill=1;" parent="1" source="custom-agent" target="apim-policy" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="mcpgw-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF4E1;strokeColor=#D6A656;strokeWidth=3;opacity=70;" parent="1" vertex="1">
+                    <mxGeometry x="882.5" y="75" width="370" height="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="mcpgw-title" value="&lt;font style=&quot;font-size:16px&quot;&gt;&lt;b&gt;⚡ MCP Gateway&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#7A5C00&quot;&gt;East-West Gateway — Session-Aware Routing (K8s)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="877.5" y="83" width="370" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="mcpgw-ctrl" value="&lt;b&gt;Control Plane&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;POST /adapters — deploy MCP servers&lt;br&gt;POST /tools — register tools&lt;br&gt;GET /adapters/{name}/status&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6A656;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="892.5" y="133" width="170" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="mcpgw-data" value="&lt;b&gt;Data Plane&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;POST /adapters/{name}/mcp&lt;br&gt;POST /mcp (tool router)&lt;br&gt;Session affinity via Redis&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6A656;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1077.5" y="133" width="155" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="mcpgw-proxy" value="&lt;b&gt;mcp-proxy Shim&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Wraps stdio → HTTP&lt;br&gt;MCP_COMMAND / MCP_ARGS&lt;br&gt;MCP_PROXY_URL (remote)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6A656;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="892.5" y="223" width="170" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="mcpgw-session" value="&lt;b&gt;Session Store&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Redis (local) / Cosmos DB (Azure)&lt;br&gt;session_id → pod mapping&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6A656;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1077.5" y="223" width="155" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="mcpgw-note" value="&lt;font style=&quot;font-size:9px;color:#548235&quot;&gt;✅ Session affinity for stateful MCP&lt;br&gt;✅ Adapter lifecycle management&lt;br&gt;✅ Stdio → HTTP bridging&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-size:9px;color:#B85450&quot;&gt;❌ No per-user OAuth&lt;br&gt;❌ No rate limiting / monitoring&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="892.5" y="308" width="340" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-apim-mcpgw" value="Authenticated +enriched requests" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#D6A656;strokeWidth=3;endArrow=block;endFill=1;labelBackgroundColor=#FFFFFF;shadow=0;" parent="1" edge="1">
+                    <mxGeometry x="-0.1806" y="16" relative="1" as="geometry">
+                        <mxPoint x="478" y="218" as="sourcePoint"/>
+                        <mxPoint x="1158" y="207" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="k8s-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=#999999;strokeWidth=2;opacity=60;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="440" width="530" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="k8s-title" value="&lt;font style=&quot;font-size:14px&quot;&gt;&lt;b&gt;☸️  Kubernetes Cluster (AKS / Docker Desktop)&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="445" width="530" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pod-azure" value="&lt;b&gt;azure-0&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;mcp-proxy wrapping&lt;br&gt;npx @azure/mcp&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="737.5" y="516" width="120" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="pod-ctx7" value="&lt;b&gt;context7-0&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;mcp-proxy wrapping&lt;br&gt;npx @upstash/context7&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="872.5" y="516" width="120" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="pod-custom" value="&lt;b&gt;custom-0&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;Your custom&lt;br&gt;MCP server image&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1007.5" y="516" width="120" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="tool-router" value="&lt;b&gt;Tool Gateway Router&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;toolgateway-0, toolgateway-1&lt;br&gt;Dynamic routing to registered tools&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#548235;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="737.5" y="586" width="250" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="tool-weather" value="&lt;font style=&quot;font-size:8px&quot;&gt;&lt;b&gt;weather-0&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4D6;strokeColor=#C65911;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1007.5" y="586" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="tool-other" value="&lt;font style=&quot;font-size:8px&quot;&gt;&lt;b&gt;tool-n&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4D6;strokeColor=#C65911;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1097.5" y="586" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="redis" value="&lt;font style=&quot;font-size:9px&quot;&gt;💾 Redis&lt;br&gt;Session Store&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=#999999;strokeWidth=1;size=10;" parent="1" vertex="1">
+                    <mxGeometry x="1152.5" y="506" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-gw-pods" value="Session affinity" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#82B366;strokeWidth=2;endArrow=block;endFill=1;labelBackgroundColor=#FFFFFF;" parent="1" source="mcpgw-data" target="pod-ctx7" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1155" y="123"/>
+                            <mxPoint x="878" y="123"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow-gw-router" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#548235;strokeWidth=2;dashed=1;endArrow=block;endFill=1;" parent="1" source="tool-router" target="tool-weather" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="alt-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2EFDA;strokeColor=#548235;strokeWidth=2;opacity=60;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="620" width="380" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="alt-title" value="&lt;font style=&quot;font-size:14px&quot;&gt;&lt;b&gt;☁️  Alternative Azure Compute (MCP backends)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;color:#548235&quot;&gt;Can be used standalone or behind APIM&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="625" width="380" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="aca" value="&lt;b&gt;Azure Container Apps&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;✅ Recommended default&lt;br&gt;Any container, autoscale to zero&lt;br&gt;Streamable HTTP, Dapr support&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#548235;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="305" y="670" width="170" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="afunc" value="&lt;b&gt;Azure Functions&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;MCP extension trigger&lt;br&gt;Stateless, per-invocation&lt;br&gt;Good for lightweight tools&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#548235;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="670" width="165" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="appservice" value="&lt;b&gt;Azure App Service&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;Code-based deploy&lt;br&gt;Bolt-on MCP to existing apps&lt;br&gt;Built-in Entra auth&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#548235;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="305" y="755" width="170" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="aca-sessions" value="&lt;b&gt;ACA Dynamic Sessions&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:8px&quot;&gt;Hyper-V sandboxed&lt;br&gt;Python/shell code execution&lt;br&gt;Platform-managed MCP&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#548235;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="755" width="165" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="alt-note" value="&lt;font style=&quot;font-size:9px;color:#548235&quot;&gt;All support Entra ID auth · All integrate with App Insights&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="305" y="835" width="350" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-apim-alt" value="Backend routing" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#548235;strokeWidth=2;endArrow=block;endFill=1;dashed=1;labelBackgroundColor=#FFFFFF;" parent="1" source="apim-rest-mcp" target="aca" edge="1">
+                    <mxGeometry x="0.1067" y="93" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="388" y="540"/>
+                            <mxPoint x="388" y="610"/>
+                            <mxPoint x="388" y="610"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow-apim-func" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#548235;strokeWidth=2;endArrow=block;endFill=1;dashed=1;" parent="1" source="apim-proxy-mcp" target="afunc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="573" y="540"/>
+                            <mxPoint x="573" y="610"/>
+                            <mxPoint x="573" y="610"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="apicenter-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4D6;strokeColor=#C65911;strokeWidth=2;opacity=60;" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="80" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="apicenter-title" value="&lt;font style=&quot;font-size:14px&quot;&gt;&lt;b&gt;📚 Azure API Center&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;color:#C65911&quot;&gt;Enterprise MCP Registry&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="85" width="200" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="apicenter-feat" value="&lt;font style=&quot;font-size:9px&quot;&gt;• Discover MCP servers&lt;br&gt;• Allowlist enforcement&lt;br&gt;• VS Code integration&lt;br&gt;• Copilot integration&lt;br&gt;• mcp.azure.com portal&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1295" y="125" width="170" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="apicenter-link" value="&lt;font style=&quot;font-size:9px;color:#4472C4&quot;&gt;Registers MCP servers&lt;br&gt;hosted in APIM + external&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1290" y="210" width="180" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-apicenter-apim" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#C65911;strokeWidth=1;dashed=1;endArrow=block;endFill=0;startArrow=block;startFill=0;" parent="1" source="apicenter-feat" target="apim-monitor" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="entra" value="&lt;b&gt;🔒 Microsoft Entra ID&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Identity Provider&lt;br&gt;OAuth 2.1 tokens&lt;br&gt;App roles (mcp.admin, mcp.engineer)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#FFFFFF;strokeColor=#005A9E;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="320" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow-entra-apim" value="Token validation" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#0078D4;strokeWidth=1;dashed=1;endArrow=block;endFill=1;labelBackgroundColor=#FFFFFF;" parent="1" source="entra" target="apim-cred" edge="1">
+                    <mxGeometry x="-0.2407" y="-14" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1260" y="360"/>
+                            <mxPoint x="1260" y="65"/>
+                            <mxPoint x="573" y="65"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CCCCCC;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="620" width="240" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-title" value="&lt;font style=&quot;font-size:12px&quot;&gt;&lt;b&gt;Legend&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="625" width="240" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-1" value="" style="endArrow=block;endFill=1;strokeColor=#4472C4;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="35" y="665" as="sourcePoint"/>
+                        <mxPoint x="85" y="665" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend-1t" value="&lt;font style=&quot;font-size:9px&quot;&gt;Client → APIM (inbound auth)&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="95" y="655" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-2" value="" style="endArrow=block;endFill=1;strokeColor=#D6A656;strokeWidth=3;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="35" y="695" as="sourcePoint"/>
+                        <mxPoint x="85" y="695" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend-2t" value="&lt;font style=&quot;font-size:9px&quot;&gt;APIM → MCP Gateway&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="95" y="685" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-3" value="" style="endArrow=block;endFill=1;strokeColor=#82B366;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="35" y="725" as="sourcePoint"/>
+                        <mxPoint x="85" y="725" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend-3t" value="&lt;font style=&quot;font-size:9px&quot;&gt;Gateway → K8s pods (session)&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="95" y="715" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-4" value="" style="endArrow=block;endFill=1;strokeColor=#548235;strokeWidth=2;dashed=1;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="35" y="755" as="sourcePoint"/>
+                        <mxPoint x="85" y="755" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend-4t" value="&lt;font style=&quot;font-size:9px&quot;&gt;APIM → Alt compute backends&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="95" y="745" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-5" value="" style="endArrow=block;endFill=1;strokeColor=#B85450;strokeWidth=2;dashed=1;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="35" y="785" as="sourcePoint"/>
+                        <mxPoint x="85" y="785" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend-5t" value="&lt;font style=&quot;font-size:9px&quot;&gt;Direct (no gateway) — GitHub&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="95" y="775" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-sep" value="" style="line;strokeColor=#CCCCCC;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="35" y="805" as="sourcePoint"/>
+                        <mxPoint x="245" y="805" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="legend-key1" value="&lt;font style=&quot;font-size:9px&quot;&gt;&lt;b&gt;Blue&lt;/b&gt; = APIM (perimeter security)&lt;br&gt;&lt;b&gt;Orange&lt;/b&gt; = MCP Gateway (session routing)&lt;br&gt;&lt;b&gt;Green&lt;/b&gt; = Compute backends&lt;br&gt;&lt;b&gt;Coral&lt;/b&gt; = API Center (registry)&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="35" y="812" width="220" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="callout-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2;opacity=80;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="720" width="530" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="callout-title" value="&lt;font style=&quot;font-size:13px&quot;&gt;&lt;b&gt;💡 Key Insight: Complementary Pattern&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="725" width="530" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="callout-text" value="&lt;font style=&quot;font-size:10px&quot;&gt;&lt;b&gt;APIM + MCP Gateway are not interchangeable — use them together:&lt;/b&gt;&lt;br&gt;&lt;br&gt;• &lt;b&gt;APIM&lt;/b&gt; = North-South: OAuth validation, rate limits, monitoring, credential brokering&lt;br&gt;• &lt;b&gt;MCP Gateway&lt;/b&gt; = East-West: Session-aware routing, adapter lifecycle, stdio bridging&lt;br&gt;• &lt;b&gt;Alt Compute&lt;/b&gt; (Container Apps, Functions) = Build custom MCP servers with per-user auth&lt;br&gt;• &lt;b&gt;API Center&lt;/b&gt; = Discover and govern which MCP servers developers can use&lt;br&gt;&lt;br&gt;&lt;b&gt;GitHub MCP Server&lt;/b&gt;: Keep as direct connection — it uses GitHub OAuth (not Entra ID),&lt;br&gt;is already cloud-hosted, and requires no containerization or proxying.&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="735" y="755" width="500" height="140" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
