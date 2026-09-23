@@ -40,27 +40,52 @@ Next to the runtime security concerns (dependencies, hosting multiple instances,
 
 This part can be covered by hosting your own MCP Registry: a catalog of approved MCP servers that developers can discover and connect to. [Azure API Center](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-mcp-registry#option-2-using-azure-api-center-as-an-mcp-registry) provides this capability with an enterprise-grade MCP server registry integrated with VS Code and GitHub Copilot, or you can build and host your own, with an example available here [github.com/rajbos/mcp-registry-demo](https://github.com/rajbos/mcp-registry-demo).
 
-After setting up a registry, Enterprise-ready tools such as VS Code can allow connections only to registered servers. With GitHub Enterprise, GitHub Copilot can enforce an allowlist through a private registry. The policy is configured at the Enterprise or organization that grants the licence, and it applies only to supporting clients.
+After setting up a registry, Enterprise-ready tools such as VS Code can allow connections only to registered servers. With GitHub Enterprise, GitHub Copilot can enforce an allowlist through a private registry: the [MCP registry access policy](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/restrict-based-on-registry) can be set to "Allow all" or "Registry only". The policy is configured at the Enterprise or organization that grants the licence, and it applies only to supporting clients.
+
+Note that GitHub marks this registry policy as public preview and does not call it the recommended method. For stricter control GitHub points to the [enterprise MCP allowlist in `managed-settings.json`](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-enterprise-allowlist), which is generally available. That allowlist matches remote servers by URL (`serverUrl`) and local servers by their exact command and arguments (`serverCommand`), and is deployed to the developer machines with device management.
+
+### Local and remote servers in the registry
+
+"Registry only" is not limited to remote servers. Local (stdio) servers that run on the developer machine through `npx`, `uvx`, or Docker are enforced as well: they need to be in the registry, or the client blocks them. You can see the difference in the registry data. A remote server has a `remotes` entry with the URL the client connects to:
+
+```json
+"remotes": [
+  { "type": "streamable-http", "url": "https://learn.microsoft.com/api/mcp" }
+]
+```
+
+A local server has a `packages` entry that tells the client what to download and run, where the `registryType` indicates how: `npm` (`npx`), `pypi` (`uvx`), or `oci` (a container image run with Docker):
+
+```json
+"packages": [
+  {
+    "registryType": "oci",
+    "identifier": "docker.io/sonarsource/sonarqube-mcp",
+    "transport": { "type": "stdio" }
+  }
+]
+```
+
+The [servers.json in my demo registry](https://github.com/rajbos/mcp-registry-demo/blob/main/src/data/servers.json) has examples of both, including the Docker-based SonarQube MCP server, and the [CONTRIBUTING guide](https://github.com/rajbos/mcp-registry-demo/blob/main/CONTRIBUTING.md) shows the matching client configuration.
 
 ### Registry validation happens on the developer device
 
-I found an important detail while configuring a server from a private MCP registry. The `name`, `type`, and URL in the local MCP configuration must exactly match the registered server, or the client will not start it. That protects developers from accidentally selecting a different server, but the validation happens locally.
+I found an important detail while configuring a server from a private MCP registry. The `name`, `type`, and URL in the local MCP configuration must exactly match the registered server, or the client will not start it. For local servers, the name in your `mcp.json` has to match the server name in the registry, so a server configured as `sonarqube` is blocked when the registry has it as `io.github.SonarSource/sonarqube-mcp-server`. Installing the server from the registry (for example through the MCP gallery in VS Code) sets the matching name for you. That protects developers from accidentally selecting a different server, but the validation happens locally.
 
-Someone who can alter local configuration can provide the expected registry values and redirect the endpoint through a local override to a different cloud service. A private registry should therefore be one layer of the control, not the only one. Endpoint protection needs to detect unexpected process and network activity, and anomaly detection should flag MCP traffic going to endpoints that are not part of the approved setup.
+Someone who can alter local configuration can provide the expected registry values and redirect the endpoint through a local override to a different cloud service. GitHub confirms this in the [MCP private registry enforcement reference](https://docs.github.com/en/copilot/reference/enterprise-administrators/mcp-private-registry-enforcement): enforcement is based only on server name/ID matching, and can be bypassed by editing configuration files. A private registry should therefore be one layer of the control, not the only one. Endpoint protection needs to detect unexpected process and network activity, and anomaly detection should flag MCP traffic going to endpoints that are not part of the approved setup.
 
-As far as I can figure out at the moment this registry policy has been build in to support these environments:
-- GitHub Copilot in VS Code
+According to that same reference, the registry policy is enforced in these clients:
+- GitHub Copilot in VS Code (v1.109.3 and up)
+- GitHub Copilot in Visual Studio (v18.4.0 and up)
+- GitHub Copilot in JetBrains IDEs (v1.5.64 and up)
+- GitHub Copilot in Eclipse (v4.38 and up)
+- GitHub Copilot in Xcode (v0.47.0 and up)
+- GitHub Copilot CLI (v1.0.11 and up)
 
-And is not yet supported in:
-- GitHub Copilot in JetBrains IDEs
-- GitHub Copilot in Neovim
-- GitHub Copilot CLI
-- GitHub Copilot Spark
-- GitHub Copilot Spaces
-- GitHub Copilot Coding Agent
-- GitHub Copilot Review Agent
+And is not supported in:
+- GitHub Copilot cloud agent
 
-Or other editors that do not support GitHub Copilot.
+Clients that are not in that list, such as GitHub Copilot in Neovim, GitHub Copilot Spaces, and the GitHub Copilot Review Agent, are not covered as far as I can tell. The same goes for other editors that do not support GitHub Copilot.
 
 ## Potential solutions for centralizing an MCP Gateway and Private Registry
 
