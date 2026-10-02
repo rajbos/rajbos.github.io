@@ -62,6 +62,14 @@ These files help you customize the AI experience by:
 - Building specialized custom agents with their own tools and MCP server configurations
 - Distributing enterprise-wide plugin standards, MCP configs, and hooks to Copilot users automatically
 
+## Sharing custom agents across an organization
+
+Organization-level custom agents live in the `/agents` directory at the root of the organization's `.github` or `.github-private` repository. Both repository names work the same way: agents merged into the default branch become available to every member of the organization, even if they cannot access the repository that contains the agent profiles. A private `.github-private` repository keeps the source restricted, while an internal or public `.github` repository lets members view and contribute to the profiles.
+
+GitHub also provides a useful test path. Put a draft agent in `.github/agents/` inside the `.github-private` repository. That version is only available to people with access to the repository and only while they run a task against that repository. When it is ready, move the profile from `.github/agents/` to the root-level `/agents` directory and merge it into the default branch. The [organization setup documentation](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/prepare-for-custom-agents) explains the shared repository, and the [testing and release guide](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/test-custom-agents) covers this promotion flow.
+
+The organization-level `/agents` directory is for agent profiles. To distribute skills, package them in an Agent Plugins 1.0 plugin and use the enterprise-managed plugin settings described below.
+
 ## Enterprise-managed Copilot settings
 
 The enterprise-managed settings file lives in the `.github-private` repository at `copilot/managed-settings.json`. GitHub still accepts the older `.github-private/.github/copilot/settings.json` location, but new configurations should use `managed-settings.json`. The file is downloaded by supported Copilot clients and lets an organization set defaults that users cannot override for the keys it manages.
