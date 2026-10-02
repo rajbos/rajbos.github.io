@@ -49,7 +49,8 @@ With the rise of AI-powered development tools, GitHub Copilot has introduced its
 |AGENTS.md|anywhere in the repository||Agent instructions for Copilot coding agent. The nearest file in the directory tree takes precedence. `CLAUDE.md` and `GEMINI.md` at the repository root are also supported as alternatives for other AI agents|[Custom Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)|
 |NAME.prompt.md|.github/prompts/||Reusable prompts for specific and repetitive tasks that can be invoked in Copilot Chat. Supports YAML frontmatter for metadata like description and which tools to use|[Prompt Files](https://docs.github.com/en/copilot/tutorials/customization-library/prompt-files)|
 |NAME.agent.md|.github/agents/|yes|Custom agent profiles with YAML frontmatter defining the agent's name, description, available tools, and MCP server configurations. Allows creating specialized agents with tailored expertise for specific development tasks. Available on GitHub.com, VS Code, JetBrains, Eclipse, and Xcode|[Custom Agents](https://docs.github.com/en/copilot/reference/custom-agents-configuration)|
-|settings.json|.github-private/.github/copilot/|no|Enterprise managed plugin standards for GitHub Copilot CLI. Defines a plugin marketplace, auto-installed plugins, MCP server configurations, and hooks that are distributed and applied automatically for all enterprise users with Copilot Business or Copilot Enterprise|[Enterprise managed client settings](https://docs.github.com/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-agents/configure-enterprise-plugin-standards)|
+|managed-settings.json|.github-private/copilot/|no|Enterprise-managed Copilot settings for clients such as Copilot CLI, VS Code, the GitHub Copilot app, and cloud agent. The older `.github-private/.github/copilot/settings.json` path remains supported for compatibility|[Enterprise-managed settings](https://docs.github.com/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-agents/configure-enterprise-managed-settings)|
+|lsp-config.json|.github/||Repository-level language-server configuration for Copilot CLI|[Configure language servers](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/add-lsp-servers)|
 
 Note: content exclusion (preventing Copilot from accessing certain files) is **not** configured via a file - it is set up through your repository or organization settings on GitHub.com. See the [content exclusion docs](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot) for more details.
 
@@ -59,7 +60,27 @@ These files help you customize the AI experience by:
 - Guiding Copilot's coding agents with information about your project conventions
 - Creating reusable prompts for common development tasks in your project
 - Building specialized custom agents with their own tools and MCP server configurations
-- Distributing enterprise-wide plugin standards, MCP configs, and hooks to all Copilot CLI users automatically (now in [public preview](https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview/))
+- Distributing enterprise-wide plugin standards, MCP configs, and hooks to Copilot users automatically
+
+## Sharing custom agents across an organization
+
+Organization-level custom agents live in the `/agents` directory at the root of the organization's `.github` or `.github-private` repository. Both repository names work the same way: agents merged into the default branch become available to every member of the organization, even if they cannot access the repository that contains the agent profiles. A private `.github-private` repository keeps the source restricted, while an internal or public `.github` repository lets members view and contribute to the profiles.
+
+GitHub also provides a useful test path. Put a draft agent in `.github/agents/` inside the `.github-private` repository. That version is only available to people with access to the repository and only while they run a task against that repository. When it is ready, move the profile from `.github/agents/` to the root-level `/agents` directory and merge it into the default branch. The [organization setup documentation](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/prepare-for-custom-agents) explains the shared repository, and the [testing and release guide](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/test-custom-agents) covers this promotion flow.
+
+The organization-level `/agents` directory is for agent profiles. To distribute skills, package them in an Agent Plugins 1.0 plugin and use the enterprise-managed plugin settings described below.
+
+## Enterprise-managed Copilot settings
+
+The enterprise-managed settings file lives in the `.github-private` repository at `copilot/managed-settings.json`. GitHub still accepts the older `.github-private/.github/copilot/settings.json` location, but new configurations should use `managed-settings.json`. The file is downloaded by supported Copilot clients and lets an organization set defaults that users cannot override for the keys it manages.
+
+The available settings include `model`, `enabledPlugins`, `extraKnownMarketplaces`, and `strictKnownMarketplaces`. Administrators can also control permission bypassing with `disableBypassPermissionsMode`, and govern MCP access with `allowedMcpServers` and `deniedMcpServers`. These controls are useful when an organization wants to provide a known set of plugins and tools instead of relying on every developer to configure them locally.
+
+Managed settings apply to [Copilot CLI](https://docs.github.com/copilot/how-tos/use-copilot-agents/coding-agent/manage-agents), [VS Code](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-policies), the [GitHub Copilot app](https://docs.github.com/copilot/how-tos/use-copilot-agents/manage-agents), and the [cloud agent](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/manage-agents), depending on the setting. The [enterprise-managed settings documentation](https://docs.github.com/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-agents/configure-enterprise-managed-settings) lists the supported clients and keys. Managed values take precedence over local values for settings controlled by the organization, and clients refresh the configuration periodically. GitHub also supports team-specific overrides for organizations that need different policies for different groups.
+
+Enterprise-managed settings are also the place to standardize [Copilot plugins](https://docs.github.com/en/copilot/concepts/agents/about-plugins). An Agent Plugins 1.0 package can include a `plugin.json` manifest, reusable `skills/`, an `mcp.json` configuration, and a `com.github.copilot/` directory for Copilot-specific resources. The `enabledPlugins` and marketplace settings in `managed-settings.json` control which of these plugins are available to enterprise users.
+
+Copilot CLI also supports repository-level language-server configuration in `.github/lsp-config.json`. User-level configuration belongs in `~/.copilot/lsp-config.json`, so that file is useful but isn't a repository magic file.
 
 Just like the other magic files, these need to be named exactly right and placed in the correct directories to work their magic ✨.
 
