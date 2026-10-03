@@ -52,6 +52,10 @@ a:hover, a:focus {
     margin: 0 auto;
     padding: 0 15px;
 }
+/* Blog posts: use more of the screen so wide tables fit (sidebar stays fixed width) */
+.container-wide {
+    max-width: 1600px;
+}
 .container-fluid {
     width: 100%;
     padding: 0 15px;
@@ -304,7 +308,63 @@ table {
     collapse; border-spacing: 0; 
 }
 
-td, th {  
+/* Tables in posts scroll horizontally on their own when wider than the content */
+.post table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Narrow screens: turn each table row into a card.
+   First cell becomes the card heading, other cells get their column name as a label
+   (data-label is filled in by the script in _layouts/post.html). */
+@media (max-width: 700px) {
+    .post table,
+    .post tbody,
+    .post tr,
+    .post td {
+        display: block;
+    }
+    .post thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+    }
+    .post tr {
+        margin-bottom: 14px;
+        border: 1px solid silver;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    .post td {
+        border: 0;
+        border-bottom: 1px solid #e3e3e3;
+        padding: 6px 10px;
+    }
+    .post td:last-child {
+        border-bottom: 0;
+    }
+    .post td:first-child {
+        background: #DFDFDF;
+        font-weight: bold;
+    }
+    .post td:not(:first-child)::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        color: #777;
+    }
+    .post td:empty {
+        display: none;
+    }
+}
+
+td, th {
     border: 1px solid silver;
     padding: 5px;
 }
