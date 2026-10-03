@@ -15,7 +15,7 @@ layout: default
         <h1> {{ page.title }} </h1>
       </div>
 
-      <div class="panel-body post" style="overflow-x:scroll">
+      <div class="panel-body post" style="overflow-x:auto">
         
         {{ content }}
 
@@ -63,6 +63,18 @@ layout: default
   {% include sidebar.html %}
 
 </div>
+
+<script>
+  // Copy each column header onto its cells so the stacked (mobile) table layout can show it as a label
+  document.querySelectorAll('.post table').forEach(function (table) {
+    var headers = Array.prototype.map.call(table.querySelectorAll('thead th'), function (th) { return th.textContent.trim(); });
+    table.querySelectorAll('tbody tr').forEach(function (row) {
+      Array.prototype.forEach.call(row.children, function (cell, i) {
+        if (headers[i]) { cell.setAttribute('data-label', headers[i]); }
+      });
+    });
+  });
+</script>
 
 <style>
     .linkedin-share {
