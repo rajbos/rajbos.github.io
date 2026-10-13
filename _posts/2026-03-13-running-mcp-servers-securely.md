@@ -179,6 +179,7 @@ So the main questions that remain:
 Of course I used AI to help me with this research, so I also looked for a lot of resources to understand the different options and their limitations. Here are some of the key references I used in this research:
 
 ### Official Microsoft Documentation
+
 | Resource | URL |
 |----------|-----|
 | APIM MCP Server Overview | https://learn.microsoft.com/en-us/azure/api-management/mcp-server-overview |
@@ -191,6 +192,7 @@ Of course I used AI to help me with this research, so I also looked for a lot of
 | Azure API Center MCP Registry | https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server |
 
 ### GitHub Samples
+
 | Repository | Description |
 |------------|-------------|
 | [blackchoey/remote-mcp-apim-oauth-prm](https://github.com/blackchoey/remote-mcp-apim-oauth-prm) | MCP Server with PRM + APIM + Entra ID |
@@ -201,6 +203,7 @@ Of course I used AI to help me with this research, so I also looked for a lot of
 | [microsoft/mcp-gateway](https://github.com/microsoft/mcp-gateway) | This repo - session-aware MCP reverse proxy |
 
 ### Blog Posts and Articles
+
 | Article | URL |
 |---------|-----|
 | Secure Remote MCP Servers with Entra ID and APIM (Den Delimarsky) | https://den.dev/blog/remote-mcp-server/ |
