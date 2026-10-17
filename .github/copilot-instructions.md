@@ -76,6 +76,7 @@ Sources: [tropes.fyi/directory](https://tropes.fyi/directory) and [Wikipedia: Si
 - Anaphora abuse: the same sentence opener repeated multiple times in a row
 - Tricolon overuse: stacked rule-of-three patterns back-to-back
 - "It's worth noting" and variants: "Importantly", "Notably", "Interestingly" as filler transitions
+- Vague connection: "associated with" / "connected to" instead of stating the relationship
 - False ranges: "from X to Y" where X and Y aren't on any real spectrum
 - Superficial analysis: trailing "-ing" phrases that add no meaning ("reflecting broader trends")
 
@@ -97,6 +98,8 @@ Sources: [tropes.fyi/directory](https://tropes.fyi/directory) and [Wikipedia: Si
 **Formatting**
 - Em-dash addiction: 20+ em-dashes per piece
 - Bold-first bullets: every list item starting with a bolded phrase
+- Hedging disclaimers and chatbot-style collaborative phrasing nobody asked for
+- Markdown artefacts: `---` between every section, emoji as decoration
 - Unicode decoration: → arrows and curly quotes instead of standard keyboard characters
 
 **Composition**
@@ -112,4 +115,5 @@ Sources: [tropes.fyi/directory](https://tropes.fyi/directory) and [Wikipedia: Si
 - "Delve" and friends: "certainly", "utilize", "leverage" (as verb), "robust", "streamline", "harness"
 - "Tapestry" and grand nouns: "landscape", "paradigm", "synergy", "ecosystem" when overused
 - Magic adverbs: "quietly", "deeply", "fundamentally", "remarkably", "arguably"
+- Mid-2026 vocabulary: "leverage", "multifaceted", "universally"
 - "Serves as" dodge: "serves as", "stands as", "marks", "represents" instead of "is"

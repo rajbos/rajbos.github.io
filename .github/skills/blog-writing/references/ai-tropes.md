@@ -5,7 +5,7 @@ Two sources, merged and deduplicated:
 - [tropes.fyi/directory](https://tropes.fyi/directory) — a running catalogue of AI writing tells, tagged by category and by whether the pattern is `consistent`, `rising`, `new`, or `fading`.
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) — the English Wikipedia editors' guide, focused on encyclopedic prose but the underlying tells generalise.
 
-Last refreshed: 2026-08-26.
+Last refreshed: 2026-10-17.
 
 ---
 
@@ -31,6 +31,11 @@ Last refreshed: 2026-08-26.
 
 **Superficial analysis** — a trailing "-ing" participle phrase that adds no information: "highlighting its significance", "reflecting broader trends", "underscoring the importance of", "ensuring", "fostering", "encompassing". Wikipedia flags this as one of the strongest signals.
 > "...the population stood at 56,998 inhabitants, creating a lively community within its borders."
+
+**"It's worth noting"** — filler transitions ("Importantly", "Notably", "Interestingly") that connect nothing. Fading on tropes.fyi.
+> "It's worth noting that this approach has limitations."
+
+**Vague connection** — "associated with" or "connected to" where the actual relationship should be stated.
 
 **False ranges** — "from X to Y" where X and Y aren't endpoints on any real spectrum.
 
@@ -131,6 +136,10 @@ Last refreshed: 2026-08-26.
 **"Where / What / Why" headers** — headings built on a Wh-word as the default section-naming shape.
 > "Where the market is stuck today"
 
+**Hedging disclaimers** — caveats about source availability or "recommended use" that nobody asked for. Wikipedia lists these among the most common signs as of October 2026. Related: chatbot-style collaborative phrasing.
+
+**Markdown artefacts** — thematic breaks (`---`) between every section, emoji as bullets or heading decoration, odd table use.
+
 **Unicode decoration** — → arrows, curly quotes, and other non-keyboard characters instead of plain ASCII.
 
 **"X and Y" section headers** — especially "Awards and recognition", "Challenges and legacy", "Future outlook".
@@ -142,6 +151,8 @@ Last refreshed: 2026-08-26.
 **"Delve" and friends** — *delve, certainly, utilize, leverage* (as a verb), *robust, streamline, harness, seamless, crucial*.
 
 **"Tapestry" and grand nouns** — *tapestry, landscape, paradigm, synergy, ecosystem, framework*, plus newer entrants *load-bearing* (for important) and *gated* (for restricted).
+
+**Mid-2026 vocabulary** — Wikipedia's newest additions to the word list: *leverage, multifaceted, universally*, plus a drift towards shorter sentences of about 8-20 words. Em dashes are now listed there as a mostly historical tell, but they still read as a tell on tropes.fyi.
 
 **Magic adverbs** — *quietly, deeply, fundamentally, remarkably, arguably*, and the "unusually well [X]" construction. Used to make mundane descriptions feel significant.
 
