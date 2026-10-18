@@ -53,6 +53,13 @@ There are other reasons why a schedule might not trigger:
 
 ![Screenshot of the mail message being send that the workflow will be disabled soon](/images/2022/20220812/20220812_EmailNotification.png)
 
+### Schedules do not start after the initial push of a (mirrored) repository
+Another one I ran into: I mirrored a repository to a new location, so the full history, including the workflow files with a `schedule` trigger, was pushed in one go. I did not make any changes on `main` afterwards, I only added the Actions variables and secrets the workflow needed. The workflow was on the default branch, enabled, and the cron expression was valid, but the schedule never started.
+
+What worked for me was to switch the default branch of the repository to another branch and then switch it back to `main` again (Settings > Branches > Default branch). Without making any changes to the repository, the schedule started running at the next scheduled time.
+
+I have not found official documentation on why this happens. My assumption is that the schedule is only registered for the workflow once GitHub processes a change to the default branch, and that this does not happen for the initial (mirror) push. So if you are in this situation, and a new commit on the default branch is not an option or not wanted, switching the default branch and back is a harmless way to get it going. Making a (small) commit on the default branch should work as well.
+
 ## Manual runs (workflow_dispatch) UI is not visible
 This is the common next step when the schedule does not start: you just add a workflow dispatch trigger to the workflow to trigger it manually. But since this is a new workflow that has not existed yet, the UI for it to trigger is not visible! This is the same as creating a new workflow file with this trigger in one go. 
 
